@@ -815,6 +815,298 @@
         flex-direction: column
       }
     }
+
+    /* 🚆 交通注意事項與 APP 啟用指南樣式 */
+    .transit-guide {
+      margin-top: 48px;
+    }
+
+    .alert-card {
+      background: linear-gradient(135deg, #fffdf8 0%, #fff 100%);
+      border: 1.5px solid #d6a34a;
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 8px 24px rgba(214, 163, 74, .12);
+      position: relative;
+    }
+
+    .alert-card-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .alert-badge {
+      display: inline-block;
+      padding: 4px 10px;
+      background: #d6a34a;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+
+    .alert-card h4 {
+      margin: 0;
+      font-size: 17px;
+      font-family: "Noto Serif TC", serif;
+      color: var(--primary);
+    }
+
+    .alert-card p {
+      margin: 0 0 16px 0;
+      font-size: 13.5px;
+      color: #4a5568;
+      line-height: 1.7;
+    }
+
+    .step-flow {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 14px;
+    }
+
+    .step-item {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 16px;
+      position: relative;
+    }
+
+    .step-item b {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+
+    .step-num {
+      width: 22px;
+      height: 22px;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .step-item p {
+      margin: 0;
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .transit-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .transit-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .transit-card .eyebrow {
+      margin-bottom: 6px;
+    }
+
+    .transit-card h4 {
+      margin: 0 0 10px 0;
+      font-size: 16px;
+      font-family: "Noto Serif TC", serif;
+      color: var(--primary);
+    }
+
+    .transit-card ul {
+      margin: 0;
+      padding-left: 18px;
+      font-size: 13px;
+      color: #4a5568;
+      line-height: 1.7;
+    }
+
+    .transit-card li {
+      margin-bottom: 6px;
+    }
+
+    /* 🧳 行前須知與行李準備樣式 */
+    .notice-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .notice-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      transition: transform .2s, border-color .2s;
+    }
+
+    .notice-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+    }
+
+    .notice-card .notice-icon {
+      font-size: 26px;
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+
+    .notice-card h4 {
+      margin: 0 0 8px 0;
+      font-size: 16px;
+      font-family: "Noto Serif TC", serif;
+      color: var(--primary);
+    }
+
+    .notice-card p {
+      margin: 0;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .packing-section {
+      margin-top: 56px;
+    }
+
+    .packing-header-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .packing-progress {
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 12.5px;
+      color: var(--primary);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .packing-reset-btn {
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 11.5px;
+      padding: 3px 10px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all .2s;
+    }
+
+    .packing-reset-btn:hover {
+      background: var(--secondary);
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+
+    .checklist-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .checklist-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .checklist-card h4 {
+      margin: 0 0 16px 0;
+      font-size: 15px;
+      color: var(--primary);
+      font-family: "Noto Serif TC", serif;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 10px;
+    }
+
+    .checklist-card ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+      color: #334155;
+      cursor: pointer;
+      line-height: 1.5;
+      user-select: none;
+    }
+
+    .checklist-item input[type="checkbox"] {
+      margin-top: 2px;
+      cursor: pointer;
+      accent-color: var(--primary);
+      width: 15px;
+      height: 15px;
+    }
+
+    .checklist-item.checked span {
+      text-decoration: line-through;
+      color: #94a3b8;
+    }
+
+    .checklist-item small {
+      display: block;
+      font-size: 11px;
+      color: #94a3b8;
+      margin-top: 1px;
+    }
+
+    @media (max-width: 900px) {
+      .step-flow,
+      .transit-grid,
+      .notice-grid,
+      .checklist-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 
@@ -860,6 +1152,70 @@
       <div class="table-wrap">
         <table id="rails"></table>
       </div>
+
+      <!-- 🚆 搭乘交通重要注意事項與 APP 啟用指南 -->
+      <div class="transit-guide">
+        <h3 style="margin-top:48px">搭乘交通重要注意事項與 APP 啟用指南　Transit Guidelines</h3>
+        
+        <!-- 核心規則速查警示卡 -->
+        <div class="alert-card">
+          <div class="alert-card-head">
+            <span class="alert-badge">重要觀念 · 一目了然</span>
+            <h4>火車種類與 APP 票券操作速查（Trenord vs Trenitalia vs 城際對號車）</h4>
+          </div>
+          <p>
+            不同鐵路營運商與車種的規則不同，請依您購買車票的管道與車種核對，避免混淆：
+          </p>
+          <div class="step-flow">
+            <div class="step-item">
+              <b><span class="step-num">1</span> Trenord APP（倫巴第鐵路）</b>
+              <p><strong>完全不用手動 Check-in！</strong>機場快線（Malpensa Express）或米蘭近郊 RE（往貝爾加莫、瓦倫納）在 Trenord 購買的票，<strong>乘車當日自 00:01 起系統會在 Wallet 錢包自動生成動態 QR Code</strong>，直接上車出示即可。</p>
+            </div>
+            <div class="step-item">
+              <b><span class="step-num">2</span> 城際對號車 IC（Intercity）</b>
+              <p><strong>完全不用 Check-in！</strong>本次行程的 <strong>IC 659、IC 657、IC 674、IC 633</strong> 均為劃位城際快車，票上已印有固定車廂（Carrozza）與座位號（Posto），直接按座位入座即可。</p>
+            </div>
+            <div class="step-item">
+              <b><span class="step-num">3</span> Trenitalia 國鐵 Regionale</b>
+              <p><strong>2024 年 9 月起已全面改為「自動 Check-in」！</strong>若在 Trenitalia APP 購買區間車，發車時刻一到系統即自動開通 Validated；若需改班次，務必於「原發車前」在 APP 更改。</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 通票與各交通系統啟用方式對照 -->
+        <div class="transit-grid">
+          <article class="transit-card">
+            <div class="eyebrow">PASSES & CITY CARDS</div>
+            <h4>我的通票是否也需要 Check-in？</h4>
+            <ul>
+              <li><strong>通票完全不需要做火車 Check-in！</strong>但各票券有各自的「開通／啟用 (Active)」方式：</li>
+              <li><strong>米蘭城市通票（感應卡）</strong>：進地鐵閘門直接感應拍卡，首次感應當刻起算 24 小時。</li>
+              <li><strong>貝爾加莫通票（ATB APP）</strong>：抵達貝爾加莫、上第一趟公車或登山纜車前，在 ATB APP 內點擊<strong>「Attiva (啟用)」</strong>開始計時 24 小時。</li>
+              <li><strong>科莫湖渡輪一日票（憑證）</strong>：前往碼頭窗口兌換或直接出示憑證蓋章登船，與鐵路系統無關。</li>
+              <li><strong>熱那亞 MetDaily 一日票（AMT APP）</strong>：搭乘前往菲諾港的 782 公車前，在 APP 點擊<strong>「Attiva (啟用)」</strong>。</li>
+              <li><strong>南法 PASS SUD AZUR（感應卡）</strong>：搭乘尼斯輕軌 Tram 或公車時，在候車柱或車上感應機拍卡（Validé）一次即可。</li>
+            </ul>
+          </article>
+          <article class="transit-card">
+            <div class="eyebrow">TICKET VALIDATION</div>
+            <h4>實體紙本車票：上車前必打卡</h4>
+            <ul>
+              <li><strong>月台打票機 (Convalida)</strong>：若是於車站售票機或櫃檯購買的「實體磁條紙票」，<strong>走上月台前務必插入綠色/黃色打卡機蓋印日期時間戳記</strong>。</li>
+              <li>未打印時間戳直接上車視同逃票。若遇到打票機故障沒印出，請在第一時間上車主動尋找列車長（Capotreno）簽名補註。</li>
+              <li><strong>APP 購買之數位車票（有動態 QR Code 者）不需在實體機器打卡</strong>。</li>
+            </ul>
+          </article>
+          <article class="transit-card">
+            <div class="eyebrow">STATION & SAFETY</div>
+            <h4>米蘭市區交通與月台乘車要領</h4>
+            <ul>
+              <li><strong>米蘭地鐵 Tap & Go</strong>：支援 Apple Pay / 信用卡感應進出閘門，<strong>務必同站進出刷同一張實體卡或同裝置</strong>，系統自動結算單日優惠。</li>
+              <li><strong>尋找列車月台</strong>：歐洲車站通常在發車前 10~15 分鐘才公佈月台（Binario / Voie），請以<strong>「列車車次編號 (如 RE 2219)」</strong>核對大看板，勿只認終點站。</li>
+              <li><strong>防扒與行李安全</strong>：上下火車與地鐵人潮擁擠時最易有扒手，請將後背包前揹；大件行李放置於座位視線所及的行李架，貴重隨身包切勿離開身體。</li>
+            </ul>
+          </article>
+        </div>
+      </div>
     </section>
     <section id="destinations" class="pad alt">
       <div class="wrap">
@@ -875,6 +1231,67 @@
       <div class="wrap">
         <div class="section-title" id="hotel-title"></div>
         <div class="hotel-grid" id="hotel-grid"></div>
+      </div>
+    </section>
+    <section id="guide" class="pad alt">
+      <div class="wrap">
+        <div class="section-title">
+          <div class="eyebrow">PRE-TRIP & PACKING · 行前叮嚀與行李清單</div>
+          <h2>旅途行前須知與行李準備</h2>
+          <p>出發前的細心打點，是享受從容優雅慢活旅程的基石。為您整理必備須知與互動行李清單。</p>
+        </div>
+
+        <!-- 6 大行前須知卡片 -->
+        <div class="notice-grid">
+          <article class="notice-card">
+            <span class="notice-icon">🛂</span>
+            <h4>護照效期與申根免簽</h4>
+            <p>中華民國護照享有歐盟申根區 90 天免簽證待遇。請務必確認<strong>護照效期自返國日起算仍在 6 個月以上</strong>，並隨身攜帶電子機票證明與飯店預約單供入境海關抽查。</p>
+          </article>
+          <article class="notice-card">
+            <span class="notice-icon">💶</span>
+            <h4>歐元現金與 4 碼 PIN 密碼</h4>
+            <p>歐洲刷卡極為普及，建議每人僅需攜帶約 200~400 歐元小額現金（以 €10、€20、€50 為主，避免 €100 以上大鈔）。請提前向發卡銀行<strong>開通海外刷卡與預借現金 4 位數 PIN 碼</strong>（歐洲自動售票機常需輸入）。</p>
+          </article>
+          <article class="notice-card">
+            <span class="notice-icon">🔌</span>
+            <h4>電壓 220V 與雙圓孔轉接頭</h4>
+            <p>義大利與法國電壓皆為 220V / 50Hz，插座孔型為<strong>歐規雙圓孔（Type C / L，圓柱直徑 4.0mm~4.8mm）</strong>。一般手機、相機、筆電充電器皆支援 100~240V 全球電壓，只需攜帶轉接插頭即可（吹風機請使用飯店提供）。</p>
+          </article>
+          <article class="notice-card">
+            <span class="notice-icon">📶</span>
+            <h4>eSIM 網路與離線地圖</h4>
+            <p>建議出發前一至二天安裝好歐洲跨國 eSIM 或確認電信漫遊方案。請提前在 Google Maps 下載<strong>米蘭、科莫湖、熱那亞、菲諾港、尼斯等城市之離線地圖</strong>，並安裝 Trenitalia 與 SNCF Connect APP。</p>
+          </article>
+          <article class="notice-card">
+            <span class="notice-icon">🧥</span>
+            <h4>10 月氣候穿搭與健走好鞋</h4>
+            <p>10 月中下旬北義米蘭氣溫約 10°C~18°C，南法蔚藍海岸約 14°C~22°C，日夜溫差大。請採用<strong>「洋蔥式層疊穿法」</strong>（保暖薄內搭＋毛衣/罩衫＋防風輕暖外套與圍巾）。歐洲古城石板路多，<strong>必備支撐度佳、耐走的運動健走鞋</strong>。</p>
+          </article>
+          <article class="notice-card">
+            <span class="notice-icon">🛡️</span>
+            <h4>防扒防竊與隨身安全心法</h4>
+            <p>米蘭中央車站、米蘭大教堂周圍、地鐵車廂人多時請隨時提高警覺。<strong>後背包拉鍊加安全鎖扣或置於胸前</strong>，手機避免拿在手上貼近地鐵門邊滑手機，重要護照、大額現金請放置於貼身隱形腰包或飯店保險箱。</p>
+          </article>
+        </div>
+
+        <!-- 互動行李準備清單 -->
+        <div class="packing-section">
+          <div class="packing-header-flex">
+            <div>
+              <div class="eyebrow">INTERACTIVE CHECKLIST</div>
+              <h3 style="margin:4px 0 0 0">出發前行李打包清單（可點擊打勾核對）</h3>
+            </div>
+            <div class="packing-progress">
+              <span>進度：<strong id="packing-count">0</strong> / <span id="packing-total">0</span></span>
+              <button class="packing-reset-btn" onclick="resetPacking()">重設清單</button>
+            </div>
+          </div>
+
+          <div class="checklist-grid" id="packing-checklist-grid">
+            <!-- 由 JS 動態生成並支援點擊勾選與 localStorage 自動記錄 -->
+          </div>
+        </div>
       </div>
     </section>
     <section id="itinerary" class="pad wrap">
@@ -1414,7 +1831,11 @@ items: [
         },
       ],
 
-
+      notes: [
+        "返程請預留 3 小時抵達尼斯蔚藍海岸機場（NCE）第二航廈（Terminal 2），以利悠閒辦理退稅手續與託運行李。",
+        "歐盟境內購買之退稅物品（香氛、精品、特產），請於托運前至機場海關 PABLO 電子驗證機感應退稅單條碼。",
+        "機上長途飛行請多補充水分、定時活動伸展雙腿，安度舒適平穩的萬里歸途。"
+      ],
 
     };
 
@@ -1451,7 +1872,7 @@ items: [
     function sectionTitle(o) { return `<div class="eyebrow">${esc(o.eyebrow)}</div>${o.title ? `<h2>${esc(o.title)}</h2>` : ""}${o.text ? `<p>${esc(o.text)}</p>` : ""}` }
     document.title = `${tour.title}｜${tour.departDate} 出發`;
     brand.textContent = tour.brand; code.textContent = tour.code;
-    nav.innerHTML = [["overview", "旅行概念"], ["transport", "航班票券"], ["destinations", "著名景點"], ["food", "精緻美食"], ["hotels", "住宿"], ["itinerary", "每日行程"]].map(x => `<a href="#${x[0]}">${x[1]}</a>`).join("");
+    nav.innerHTML = [["overview", "旅行概念"], ["transport", "航班交通"], ["guide", "行前與行李"], ["destinations", "著名景點"], ["food", "精緻美食"], ["hotels", "住宿"], ["itinerary", "每日行程"]].map(x => `<a href="#${x[0]}">${x[1]}</a>`).join("");
     const heroImg = document.getElementById("hero-img");
     heroImg.src = imgSrc(tour.heroImage, tour.title, "HERO", "21/9");
     heroImg.alt = tour.heroAlt;
@@ -1485,10 +1906,159 @@ items: [
       return `<li class="day">${cover ? `<figure class="day-cover"><img src="${imgSrc(cover.src, cover.caption, day.label, '21/9')}" alt="${esc(cover.caption)}" loading="lazy" onerror="handleImgErr(this,'${esc(cover.caption)}','${esc(day.label)}','21/9')"><div class="day-caption"><span class="day-no">${esc(day.label)}</span><span class="day-date">${esc(day.date)}</span><h3 class="day-title">${esc(day.title)}</h3><small>${esc(cover.caption)}</small></div></figure>` : `<div class="card-head"><span class="day-no">${esc(day.label)}</span> <span class="day-date">${esc(day.date)}</span><h3>${esc(day.title)}</h3></div>`}
  <div class="day-body"><div><div class="tags">${day.tags.map(t => `<span class="tag">${esc(t)}</span>`).join("")}</div><ul class="items">${day.items.map(it => `<li>${esc(it)}</li>`).join("")}</ul><dl class="meta"><div><b>交通</b>${esc(day.transport)}</div><div><b>住宿</b>${esc(day.hotel)}</div></dl></div>${rest.length ? `<div class="day-gallery">${rest.map(im => `<figure><img src="${imgSrc(im.src, im.caption, day.label, '4/3')}" alt="${esc(im.caption)}" loading="lazy" onerror="handleImgErr(this,'${esc(im.caption)}','${esc(day.label)}','4/3')"><figcaption>${esc(im.caption)}</figcaption></figure>`).join("")}</div>` : ""}</div></li>`
     }).join("");
-    notes.innerHTML = tour.notes.map(n => `<li>${esc(n)}</li>`).join("");
-    document.getElementById("contact-title").textContent = tour.contact.title; document.getElementById("contact-text").textContent = tour.contact.text;
-    document.getElementById("contact-info").innerHTML = [["電話", tour.contact.phone], ["Email", tour.contact.email], ["LINE", tour.contact.lineId]].map(x => `<div><small>${x[0]}</small><strong>${esc(x[1])}</strong></div>`).join("");
-    document.getElementById("footer-left").textContent = `${tour.brand}　|　${tour.title}`; document.getElementById("footer-right").textContent = `${tour.departDate} － ${tour.returnDate}`;
+    const notesEl = document.getElementById("notes");
+    if (notesEl && tour.notes) {
+      notesEl.innerHTML = tour.notes.map(n => `<li>${esc(n)}</li>`).join("");
+    }
+    const ctTitle = document.getElementById("contact-title");
+    if (ctTitle && tour.contact) ctTitle.textContent = tour.contact.title;
+    const ctText = document.getElementById("contact-text");
+    if (ctText && tour.contact) ctText.textContent = tour.contact.text;
+    const ctInfo = document.getElementById("contact-info");
+    if (ctInfo && tour.contact) {
+      ctInfo.innerHTML = [["電話", tour.contact.phone], ["Email", tour.contact.email], ["LINE", tour.contact.lineId]].map(x => `<div><small>${x[0]}</small><strong>${esc(x[1])}</strong></div>`).join("");
+    }
+    const ftLeft = document.getElementById("footer-left");
+    if (ftLeft) ftLeft.textContent = `${tour.brand}　|　${tour.title}`;
+    const ftRight = document.getElementById("footer-right");
+    if (ftRight) ftRight.textContent = `${tour.departDate} － ${tour.returnDate}`;
+
+    // 🧳 行李打包互動清單資料與邏輯
+    const PACKING_DATA = [
+      {
+        category: "重要證件與財物",
+        icon: "💼",
+        items: [
+          { id: "doc-1", text: "護照正本", desc: "效期自回程日起算需滿 6 個月以上" },
+          { id: "doc-2", text: "護照影本與證件照備份", desc: "紙本影本 2 份分開存放，手機存電子檔" },
+          { id: "doc-3", text: "海外信用卡 2 張", desc: "不同國際發卡組織，並備妥 4 碼 PIN 密碼" },
+          { id: "doc-4", text: "歐元現金", desc: "建議攜帶 €200~€400，以 €10/€20/€50 小鈔為主" },
+          { id: "doc-5", text: "旅平不便險英文保單", desc: "含海外突發疾病與海外急難救助專線" }
+        ]
+      },
+      {
+        category: "3C 數位設備與配件",
+        icon: "🔌",
+        items: [
+          { id: "elec-1", text: "行動電源", desc: "⚠️【嚴禁托運，必須隨身攜帶】，額定容量合規" },
+          { id: "elec-2", text: "歐規雙圓孔轉接插頭", desc: "Type C / L（直徑 4.0~4.8mm），建議備 2~3 個" },
+          { id: "elec-3", text: "手機充電線與多孔快充頭", desc: "支援 Type-C / Lightning 快充" },
+          { id: "elec-4", text: "歐洲跨國 eSIM / 上網卡", desc: "出發前完成安裝開通，並下載離線地圖" },
+          { id: "elec-5", text: "隨身耳機", desc: "長途飛行與搭火車使用" }
+        ]
+      },
+      {
+        category: "10 月穿搭衣物與鞋履",
+        icon: "👔",
+        items: [
+          { id: "cloth-1", text: "好走耐震健走鞋", desc: "歐洲古城多石板坡道，必備已穿合腳之健走鞋" },
+          { id: "cloth-2", text: "防風保暖外套", desc: "防潑水輕量風衣或輕羽絨外套" },
+          { id: "cloth-3", text: "洋蔥式內搭層", desc: "長袖保暖衣、薄發熱衣 3~4 件，方便穿脫" },
+          { id: "cloth-4", text: "便服長褲與耐磨褲裝", desc: "舒適透氣、好活動之材質" },
+          { id: "cloth-5", text: "圍巾 / 絲巾 / 披肩", desc: "早晚海風防寒與拍照穿搭" },
+          { id: "cloth-6", text: "遮陽帽與太陽眼鏡", desc: "蔚藍海岸地中海陽光強烈防眩" }
+        ]
+      },
+      {
+        category: "常備藥品與健康照護",
+        icon: "💊",
+        items: [
+          { id: "med-1", text: "個人慢性病處方藥", desc: "攜帶足量＋多備數日份隨身攜帶，備英文藥單" },
+          { id: "med-2", text: "綜合感冒藥與止痛退燒藥", desc: "普拿疼、消炎止痛藥" },
+          { id: "med-3", text: "腸胃藥與止瀉藥", desc: "預防水土不服與飲食差異" },
+          { id: "med-4", text: "暈車暈船藥", desc: "菲諾港快艇一日遊或山路公車備用" },
+          { id: "med-5", text: "保濕滋潤乳液與護唇膏", desc: "歐洲秋冬室內外空氣乾燥必備" },
+          { id: "med-6", text: "OK繃與防磨腳膏", desc: "長距離步行足部保護" }
+        ]
+      },
+      {
+        category: "生活隨身與防護備品",
+        icon: "🧳",
+        items: [
+          { id: "life-1", text: "貼身防盜小包 / 胸前包", desc: "護照、現金與大額信用卡隨身貼身防扒" },
+          { id: "life-2", text: "輕量摺疊晴雨傘", desc: "收納於隨身包備用" },
+          { id: "life-3", text: "輕量保溫隨行水杯", desc: "過安檢後裝水或在飯店泡茶" },
+          { id: "life-4", text: "行李箱海關鎖與束帶", desc: "方便辨識與行李箱防爆箱" },
+          { id: "life-5", text: "隨身紙巾與酒精濕紙巾", desc: "用餐與搭乘交通前清潔" }
+        ]
+      },
+      {
+        category: "行李託運與航空規定",
+        icon: "✈️",
+        items: [
+          { id: "air-1", text: "隨身液體限制規範", desc: "單瓶容量不超過 100ml，需裝入透明夾鏈袋" },
+          { id: "air-2", text: "貴重物品嚴禁托運", desc: "筆電、相機、現金、重要證件請一律隨身" },
+          { id: "air-3", text: "托運行李重量確認", desc: "請確認航空公司托運重量限制（阿聯酋 25~30kg）" },
+          { id: "air-4", text: "行李吊牌填寫英文聯絡資訊", desc: "姓名、英文電話與 Email" }
+        ]
+      }
+    ];
+
+    const STORAGE_KEY = "trval_packing_checked";
+    function getStoredPacking() {
+      try {
+        return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+      } catch(e) {
+        return {};
+      }
+    }
+
+    function renderPackingChecklist() {
+      const container = document.getElementById("packing-checklist-grid");
+      if (!container) return;
+      const stored = getStoredPacking();
+      let total = 0;
+      let checkedCount = 0;
+
+      container.innerHTML = PACKING_DATA.map(cat => {
+        const itemsHtml = cat.items.map(it => {
+          total++;
+          const isChecked = !!stored[it.id];
+          if (isChecked) checkedCount++;
+          return `
+            <li class="checklist-item ${isChecked ? 'checked' : ''}" onclick="togglePackingItem('${it.id}')">
+              <input type="checkbox" id="${it.id}" ${isChecked ? 'checked' : ''} onclick="event.stopPropagation(); togglePackingItem('${it.id}')">
+              <div>
+                <span>${esc(it.text)}</span>
+                <small>${esc(it.desc)}</small>
+              </div>
+            </li>
+          `;
+        }).join("");
+
+        return `
+          <article class="checklist-card">
+            <h4><span>${cat.icon}</span> ${esc(cat.category)}</h4>
+            <ul>${itemsHtml}</ul>
+          </article>
+        `;
+      }).join("");
+
+      const countEl = document.getElementById("packing-count");
+      const totalEl = document.getElementById("packing-total");
+      if (countEl) countEl.textContent = checkedCount;
+      if (totalEl) totalEl.textContent = total;
+    }
+
+    window.togglePackingItem = function(id) {
+      const stored = getStoredPacking();
+      stored[id] = !stored[id];
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(stored));
+      } catch(e) {}
+      renderPackingChecklist();
+    };
+
+    window.resetPacking = function() {
+      if (confirm("確定要重設行李準備清單，清空所有打勾項目嗎？")) {
+        try {
+          localStorage.removeItem(STORAGE_KEY);
+        } catch(e) {}
+        renderPackingChecklist();
+      }
+    };
+
+    renderPackingChecklist();
   </script>
 </body>
 
