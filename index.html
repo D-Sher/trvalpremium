@@ -12,6 +12,7 @@
     href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;600;700&display=swap"
     rel="stylesheet">
   <link rel="icon" href="favicon.ico">
+  <link rel="preload" as="image" href="hero.webp" fetchpriority="high">
   <style>
     :root {
       --bg: #faf9f5;
@@ -824,7 +825,7 @@
       <nav id="nav"></nav><a class="pill" href="#itinerary">查看每日行程</a>
     </div>
   </header>
-  <section class="hero"><img id="hero-img">
+  <section class="hero"><img id="hero-img" src="hero.webp" alt="義大利 × 南法蔚藍海岸 15 日熟齡慢活旅程" fetchpriority="high">
     <div class="wrap hero-copy">
       <div class="eyebrow" id="hero-code"></div>
       <h1 id="hero-title"></h1>
@@ -905,57 +906,57 @@
     // 📸 圖片設定區 (41 個專屬獨立圖檔，完全無共用圖片)
     const IMAGE = {
       // 頂部主視覺 (Hero)
-      hero: "hero.jpg",
+      hero: "hero.webp",
       // 行程路線地圖 (Route Map)
-      routeMap: "rmap.jpeg",
+      routeMap: "rmap.webp",
 
       // 6 大精選景點 (Destinations)
-      destMilano: "milano.jpg",
-      destBergamo: "bergamo.jpg",
-      destComo: "como.jpg",
-      destGenova: "genova.jpg",
-      destPortofino: "portofinomain.jpg",
-      destCapferrat: "capferrat.jpg",
-      destNice: "dest-nice.jpg",
+      destMilano: "milano.webp",
+      destBergamo: "bergamo.webp",
+      destComo: "como.webp",
+      destGenova: "genova.webp",
+      destPortofino: "portofinomain.webp",
+      destCapferrat: "capferrat.webp",
+      destNice: "dest-nice.webp",
 
       // 3 大精選停留飯店 (Hotels)
-      hotelMilan: "hotel-milan.jpg",
-      hotelGenova: "hotel-genova.jpg",
-      hotelNice: "hotel-nice.jpg",
+      hotelMilan: "hotel-milan.webp",
+      hotelGenova: "hotel-genova.webp",
+      hotelNice: "hotel-nice.webp",
 
       // 每日行程相簿 (Itinerary Gallery - 31 張完全獨立專屬圖檔)
-      day01Flight: "day01-flight.jpg",
-      day01Milano: "day01-milano.jpg",
-      day02Malpensa: "day02-malpensa-express.jpg",
-      day02Navigli: "navigli.jpg",
-      day02DuomoTeaser: "day02-duomo-teaser.jpg",
-      day03DuomoRoof: "duomo-roof.jpg",
-      day03Galleria: "day03-galleria.jpg",
-      day03NavigliSunset: "day03-navigli-sunset.jpg",
-      day03Montanelli:"day03Montanelli.jpg",
-      day04BergamoFunicular: "day04-bergamo-funicular.jpg",
-      day04MilanReturn: "day04-milan-return.jpg",
-      day05VarennaLake: "day05-varenna-lake.jpg",
-      day05Bellagio: "bellagio.jpg",
-      day06GenovaStation: "day06-genova-station.jpg",
-      day06GenovaPort: "genova-port.jpg",
-      day07PalazziRolli: "day07-palazzi-rolli.jpg",
-      day07PortoAnticoCafe: "day07-porto-antico-cafe.jpg",
-      day08Portofino: "portofino.jpg",
-      day08SantaMargherita: "day08-santa-margherita.jpg",
-      day09Ventimiglia: "ventimiglia.jpg",
-      day09NiceStation: "day09-nice-station.jpg",
-      day09NiceHotelSunset: "day09-nice-hotel-sunset.jpg",
-      day10CoursSaleya: "nice-oldtown.jpg",
-      day10PromenadeCafe: "day10-promenade-cafe.jpg",
-      day10BaieDesAnges: "day10-baie-des-anges.jpg",
-      day11Villefranche: "villefranche.jpg",
-      day11NiceFree: "day11-nice-free.jpg",
-      day12VillaRothschild: "day12-villa-rothschild.jpg",
-      day12CapferratCoast: "day12-capferrat-coast.jpg",
-      day13Promenade: "nice-promenade.jpg",
-      day13NiceShopping: "day13-nice-shopping.jpg",
-      day14NiceDeparture: "day14-nice-departure.jpg"
+      day01Flight: "day01-flight.webp",
+      day01Milano: "day01-milano.webp",
+      day02Malpensa: "day02-malpensa-express.webp",
+      day02Navigli: "navigli.webp",
+      day02DuomoTeaser: "day02-duomo-teaser.webp",
+      day03DuomoRoof: "duomo-roof.webp",
+      day03Galleria: "day03-galleria.webp",
+      day03NavigliSunset: "day03-navigli-sunset.webp",
+      day03Montanelli: "day03Montanelli.webp",
+      day04BergamoFunicular: "day04-bergamo-funicular.webp",
+      day04MilanReturn: "milano.webp",
+      day05VarennaLake: "day05-varenna-lake.webp",
+      day05Bellagio: "bellagio.webp",
+      day06GenovaStation: "day06-genova-station.webp",
+      day06GenovaPort: "genova-port.webp",
+      day07PalazziRolli: "day07-palazzi-rolli.webp",
+      day07PortoAnticoCafe: "day07-porto-antico-cafe.webp",
+      day08Portofino: "portofino.webp",
+      day08SantaMargherita: "day08-santa-margherita.webp",
+      day09Ventimiglia: "ventimiglia.webp",
+      day09NiceStation: "day09-nice-station.webp",
+      day09NiceHotelSunset: "day09-nice-hotel-sunset.webp",
+      day10CoursSaleya: "nice-oldtown.webp",
+      day10PromenadeCafe: "day10-promenade-cafe.webp",
+      day10BaieDesAnges: "day10-baie-des-anges.webp",
+      day11Villefranche: "villefranche.webp",
+      day11NiceFree: "day11-nice-free.webp",
+      day12VillaRothschild: "day12-villa-rothschild.webp",
+      day12CapferratCoast: "day12-capferrat-coast.webp",
+      day13Promenade: "nice-promenade.webp",
+      day13NiceShopping: "day13-nice-shopping.webp",
+      day14NiceDeparture: "day14-nice-departure.webp"
     };
 
 
@@ -1439,6 +1440,14 @@ items: [
       return 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
     }
     function imgSrc(v, title, category, aspect) { return (typeof v === "string" && v.trim()) ? v : placeholderSvg(title, category, aspect) }
+    function handleImgErr(el, title, cat, aspect) {
+      if (el.src && el.src.includes('.webp')) {
+        el.src = el.src.replace('.webp', '.jpg');
+      } else {
+        el.onerror = null;
+        el.src = placeholderSvg(title, cat, aspect);
+      }
+    }
     function sectionTitle(o) { return `<div class="eyebrow">${esc(o.eyebrow)}</div>${o.title ? `<h2>${esc(o.title)}</h2>` : ""}${o.text ? `<p>${esc(o.text)}</p>` : ""}` }
     document.title = `${tour.title}｜${tour.departDate} 出發`;
     brand.textContent = tour.brand; code.textContent = tour.code;
@@ -1446,7 +1455,7 @@ items: [
     const heroImg = document.getElementById("hero-img");
     heroImg.src = imgSrc(tour.heroImage, tour.title, "HERO", "21/9");
     heroImg.alt = tour.heroAlt;
-    heroImg.onerror = function () { this.onerror = null; this.src = placeholderSvg(tour.title, "HERO", "21/9"); };
+    heroImg.onerror = function () { handleImgErr(this, tour.title, "HERO", "21/9"); };
     document.getElementById("hero-code").textContent = `${tour.code}　/　${tour.days} 天 ${tour.nights} 夜`;
     document.getElementById("hero-title").textContent = tour.title; document.getElementById("hero-subtitle").textContent = tour.subtitle;
     facts.innerHTML = [["出發", tour.departDate], ["返抵", tour.returnDate], ["三大基地", tour.bases], ["長途交通", tour.railway]].map(x => `<div class="fact"><dt class="eyebrow">${esc(x[0])}</dt><dd class="value">${esc(x[1])}</dd></div>`).join("");
@@ -1454,23 +1463,27 @@ items: [
     stats.innerHTML = tour.overview.stats.map(s => `<div class="stat"><b>${esc(s.value)}</b><p>${esc(s.label)}</p></div>`).join("");
     document.getElementById("principle-eye").textContent = tour.principle.eyebrow;
     const mapImg = document.getElementById("principle-map-img");
-    if (mapImg) { mapImg.src = tour.principle.map || "rmap.jpeg"; mapImg.alt = tour.principle.mapAlt || "行程路線地圖"; }
+    if (mapImg) {
+      mapImg.src = tour.principle.map || "rmap.webp";
+      mapImg.alt = tour.principle.mapAlt || "行程路線地圖";
+      mapImg.onerror = function () { handleImgErr(this, "行程路線地圖", "MAP", "16/9"); };
+    }
     route.innerHTML = tour.principle.route.map(r => `<li><strong>${esc(r.place)}</strong><span>${esc(r.detail)}</span></li>`).join("");
     document.getElementById("transport-title").innerHTML = sectionTitle(tour.flights);
     document.getElementById("flight-cards").innerHTML = tour.flights.cards.map(c => `<article class="card"><div class="card-head"><div class="eyebrow">${esc(c.badge)}</div><h3>${esc(c.title)}</h3></div><dl class="rows">${c.rows.map(r => `<div><dt>${esc(r.label)}</dt><dd>${esc(r.value)}</dd></div>`).join("")}</dl></article>`).join("");
     function table(id, head, rows) { document.getElementById(id).innerHTML = `<thead><tr>${head.map(h => `<th>${esc(h)}</th>`).join("")}</tr></thead><tbody>${rows.map(r => `<tr>${r.map(c => `<td>${esc(c)}</td>`).join("")}</tr>`).join("")}</tbody>` }
     table("passes", tour.passes.head, tour.passes.rows); table("rails", tour.rails.head, tour.rails.rows);
     document.getElementById("dest-title").innerHTML = sectionTitle(tour.destinations);
-    document.getElementById("dest-grid").innerHTML = tour.destinations.items.map(i => `<figure class="photo-card"><img src="${imgSrc(i.image, i.title, i.area, '4/3')}" alt="${esc(i.title)}" loading="lazy" onerror="this.onerror=null;this.src=placeholderSvg('${esc(i.title)}','${esc(i.area)}','4/3');"><figcaption><div class="eyebrow">${esc(i.area)}</div><h3>${esc(i.title)}</h3><p>${esc(i.text)}</p></figcaption></figure>`).join("");
+    document.getElementById("dest-grid").innerHTML = tour.destinations.items.map(i => `<figure class="photo-card"><img src="${imgSrc(i.image, i.title, i.area, '4/3')}" alt="${esc(i.title)}" loading="lazy" onerror="handleImgErr(this,'${esc(i.title)}','${esc(i.area)}','4/3')"><figcaption><div class="eyebrow">${esc(i.area)}</div><h3>${esc(i.title)}</h3><p>${esc(i.text)}</p></figcaption></figure>`).join("");
     document.getElementById("food-title").innerHTML = sectionTitle(tour.food);
     document.getElementById("food-grid").innerHTML = tour.food.items.map(i => `<article class="food-item"><div class="eyebrow">${esc(i.area)}</div><h3>${esc(i.title)}</h3><p>${esc(i.text)}</p></article>`).join("");
     document.getElementById("hotel-title").innerHTML = sectionTitle(tour.hotels);
-    document.getElementById("hotel-grid").innerHTML = tour.hotels.items.map(i => `<article class="card hotel"><img src="${imgSrc(i.image, i.name, i.city, '16/9')}" alt="${esc(i.name)}" loading="lazy" onerror="this.onerror=null;this.src=placeholderSvg('${esc(i.name)}','${esc(i.city)}','16/9');"><div class="hotel-body"><div class="eyebrow">${esc(i.base)}　/　${esc(i.nights)}</div><h3>${esc(i.city)} <span class="muted" style="font:400 13px 'Noto Sans TC'">${esc(i.name)}</span></h3><p>${esc(i.text)}</p></div></article>`).join("");
+    document.getElementById("hotel-grid").innerHTML = tour.hotels.items.map(i => `<article class="card hotel"><img src="${imgSrc(i.image, i.name, i.city, '16/9')}" alt="${esc(i.name)}" loading="lazy" onerror="handleImgErr(this,'${esc(i.name)}','${esc(i.city)}','16/9')"><div class="hotel-body"><div class="eyebrow">${esc(i.base)}　/　${esc(i.nights)}</div><h3>${esc(i.city)} <span class="muted" style="font:400 13px 'Noto Sans TC'">${esc(i.name)}</span></h3><p>${esc(i.text)}</p></div></article>`).join("");
     document.getElementById("itinerary-title").innerHTML = sectionTitle(tour.itineraryIntro);
     document.getElementById("days").innerHTML = tour.itinerary.map(day => {
       const gallery = day.gallery ?? (day.image ? [{ src: day.image, caption: day.title }] : []), cover = gallery[0], rest = gallery.slice(1);
-      return `<li class="day">${cover ? `<figure class="day-cover"><img src="${imgSrc(cover.src, cover.caption, day.label, '21/9')}" alt="${esc(cover.caption)}" loading="lazy" onerror="this.onerror=null;this.src=placeholderSvg('${esc(cover.caption)}','${esc(day.label)}','21/9');"><div class="day-caption"><span class="day-no">${esc(day.label)}</span><span class="day-date">${esc(day.date)}</span><h3 class="day-title">${esc(day.title)}</h3><small>${esc(cover.caption)}</small></div></figure>` : `<div class="card-head"><span class="day-no">${esc(day.label)}</span> <span class="day-date">${esc(day.date)}</span><h3>${esc(day.title)}</h3></div>`}
- <div class="day-body"><div><div class="tags">${day.tags.map(t => `<span class="tag">${esc(t)}</span>`).join("")}</div><ul class="items">${day.items.map(it => `<li>${esc(it)}</li>`).join("")}</ul><dl class="meta"><div><b>交通</b>${esc(day.transport)}</div><div><b>住宿</b>${esc(day.hotel)}</div></dl></div>${rest.length ? `<div class="day-gallery">${rest.map(im => `<figure><img src="${imgSrc(im.src, im.caption, day.label, '4/3')}" alt="${esc(im.caption)}" loading="lazy" onerror="this.onerror=null;this.src=placeholderSvg('${esc(im.caption)}','${esc(day.label)}','4/3');"><figcaption>${esc(im.caption)}</figcaption></figure>`).join("")}</div>` : ""}</div></li>`
+      return `<li class="day">${cover ? `<figure class="day-cover"><img src="${imgSrc(cover.src, cover.caption, day.label, '21/9')}" alt="${esc(cover.caption)}" loading="lazy" onerror="handleImgErr(this,'${esc(cover.caption)}','${esc(day.label)}','21/9')"><div class="day-caption"><span class="day-no">${esc(day.label)}</span><span class="day-date">${esc(day.date)}</span><h3 class="day-title">${esc(day.title)}</h3><small>${esc(cover.caption)}</small></div></figure>` : `<div class="card-head"><span class="day-no">${esc(day.label)}</span> <span class="day-date">${esc(day.date)}</span><h3>${esc(day.title)}</h3></div>`}
+ <div class="day-body"><div><div class="tags">${day.tags.map(t => `<span class="tag">${esc(t)}</span>`).join("")}</div><ul class="items">${day.items.map(it => `<li>${esc(it)}</li>`).join("")}</ul><dl class="meta"><div><b>交通</b>${esc(day.transport)}</div><div><b>住宿</b>${esc(day.hotel)}</div></dl></div>${rest.length ? `<div class="day-gallery">${rest.map(im => `<figure><img src="${imgSrc(im.src, im.caption, day.label, '4/3')}" alt="${esc(im.caption)}" loading="lazy" onerror="handleImgErr(this,'${esc(im.caption)}','${esc(day.label)}','4/3')"><figcaption>${esc(im.caption)}</figcaption></figure>`).join("")}</div>` : ""}</div></li>`
     }).join("");
     notes.innerHTML = tour.notes.map(n => `<li>${esc(n)}</li>`).join("");
     document.getElementById("contact-title").textContent = tour.contact.title; document.getElementById("contact-text").textContent = tour.contact.text;
