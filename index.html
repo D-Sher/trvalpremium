@@ -1107,6 +1107,80 @@
         grid-template-columns: 1fr;
       }
     }
+
+    /* 🗺️ Google 導覽地圖按鈕樣式 */
+    .pill-gold {
+      background: linear-gradient(135deg, #d6a34a, #bf8c35);
+      color: #fff !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      font-size: 12.5px;
+      font-weight: 500;
+      border-radius: 999px;
+      box-shadow: 0 4px 14px rgba(214, 163, 74, .32);
+      transition: all .2s ease;
+      white-space: nowrap;
+    }
+    .pill-gold:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(214, 163, 74, .45);
+      background: linear-gradient(135deg, #dfaf57, #c6943d);
+    }
+
+    .map-btn-box {
+      margin-top: 20px;
+      display: block;
+      background: linear-gradient(135deg, #244b67 0%, #173246 100%);
+      color: #fff;
+      padding: 16px 20px;
+      border-radius: 12px;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(23, 50, 70, .2);
+      border: 1.5px solid #d6a34a;
+      transition: all .25s ease;
+    }
+    .map-btn-box:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(23, 50, 70, .32);
+      border-color: #f1bf63;
+      background: linear-gradient(135deg, #2b587a 0%, #1b3a52 100%);
+    }
+    .map-btn-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .map-btn-title {
+      font-family: "Noto Serif TC", serif;
+      font-size: 15.5px;
+      color: #d6a34a;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+    .map-btn-desc {
+      font-size: 12.5px;
+      color: rgba(255, 255, 255, .82);
+      line-height: 1.5;
+    }
+    .map-btn-arrow {
+      background: rgba(214, 163, 74, .2);
+      border: 1px solid #d6a34a;
+      color: #d6a34a;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
   </style>
 </head>
 
@@ -1114,7 +1188,8 @@
   <header>
     <div class="wrap nav">
       <div class="brand"><strong id="brand"></strong><small id="code"></small></div>
-      <nav id="nav"></nav><a class="pill" href="#itinerary">查看每日行程</a>
+      <nav id="nav"></nav>
+      <a class="pill pill-gold" href="https://www.google.com/maps/d/u/0/viewer?mid=1i1NniCAh-6yz6sYBBcQNWLX5Ykykln8" target="_blank" rel="noopener noreferrer">🗺️ 導覽地圖</a>
     </div>
   </header>
   <section class="hero"><img id="hero-img" src="hero.webp" alt="義大利 × 南法蔚藍海岸 15 日熟齡慢活旅程" fetchpriority="high">
@@ -1137,6 +1212,21 @@
         <div>
           <div class="eyebrow" id="principle-eye"></div>
           <figure class="principle-map"><img id="principle-map-img" loading="lazy"></figure>
+          
+          <!-- 🗺️ Google 我的行程導覽地圖快速入口 -->
+          <a href="https://www.google.com/maps/d/u/0/viewer?mid=1i1NniCAh-6yz6sYBBcQNWLX5Ykykln8" target="_blank" rel="noopener noreferrer" class="map-btn-box">
+            <div class="map-btn-content">
+              <div>
+                <div class="map-btn-title">
+                  <span>🗺️</span> 2026 蔚藍海岸慢活 · Google 行程導覽地圖
+                </div>
+                <div class="map-btn-desc">
+                  收錄 10 大每日路線圖層、地鐵電車站牌、科莫湖渡輪班次、私房拍照景觀點與寄物小餐館，支援手機 Google Maps App 即時隨身導航！
+                </div>
+              </div>
+              <div class="map-btn-arrow">➔</div>
+            </div>
+          </a>
         </div>
         <ol class="route" id="route"></ol>
       </div>
@@ -1299,7 +1389,7 @@
       <div class="section-title" id="itinerary-title"></div>
       <ol class="days" id="days"></ol>
     </section>
-    <section id="notes" class="pad notes">
+    <section id="notes-section" class="pad notes">
       <div class="wrap">
         <div class="section-title">
           <div class="eyebrow">平安歸途</div>
@@ -1432,18 +1522,20 @@
         map: IMAGE.routeMap,
         mapAlt: "義大利 × 南法蔚藍海岸 15 日行程路線地圖",
         route: [
-          { place: "台北桃園機場 TPE", detail: "10/15 23:50 起飛" },
-          { place: "杜拜國際機場 DXB", detail: "轉機" },
-          { place: "米蘭彭薩機場 MXP", detail: "10/16  抵達" },
-          { place: "米蘭 Milano", detail: "10/16–10/20（4 晚）" },
-          { place: "貝加莫 Bergamo", detail: "10/17 參觀上城 (Città Alta)，傍晚返回米蘭" },
-          { place: "科莫湖 Como", detail: "10/18 科莫湖區一日慢遊：科莫 Como 市區 → 乘船往返 Bellagio（可彈性調整）。" },
-          { place: "熱那亞 Genova", detail: "10/20–10/23（3 晚）" },
-          { place: "菲諾小漁港 Portofino", detail: "10/20 專程前往，並於 Santa Margherita Ligure 安排午餐後返回熱那亞" },
-          { place: "文提米利亞 Ventimiglia", detail: "10/23 寄放行李、午餐與魯瓦那河慢遊" },
-          { place: "尼斯 Nice", detail: "10/23–10/28（5 晚）" },
-          { place: "尼斯機場 NCE", detail: "10/28 14:30 起飛" },
-          { place: "台北桃園機場 TPE", detail: "10/29 抵達" },
+          { place: "台北桃園機場 TPE", detail: "10/15 23:50 起飛（T2 阿聯酋 EK367）" },
+          { place: "杜拜國際機場 DXB", detail: "10/16 轉機（T3 停留約 5 小時，轉 EK205）" },
+          { place: "米蘭馬爾彭薩機場 MXP", detail: "10/16 14:10 抵達，搭乘快線直達米蘭中央車站" },
+          { place: "米蘭 Milano", detail: "10/16–10/20（4 晚）入住 Hilton Milan；10/17 米蘭經典巡禮" },
+          { place: "貝爾加莫 Bergamo", detail: "10/18 搭 RE 快車前往，搭百年纜車登 Città Alta 上城" },
+          { place: "科莫湖 Lago di Como", detail: "10/19 直達快車往瓦倫納（Varenna），乘渡輪往返貝拉焦（Bellagio）" },
+          { place: "熱那亞 Genova", detail: "10/20–10/23（3 晚）IC 一等艙南下，入住 Grand Hotel Savoia，巴爾比街王宮散步" },
+          { place: "熱那亞歷史港都", detail: "10/21 法拉利廣場、總督宮、索普拉納門與舊港海王星號" },
+          { place: "菲諾港 Portofino", detail: "10/22 IC 一等艙往聖瑪格麗塔，轉 782 公車一日慢遊" },
+          { place: "文提米利亞 Ventimiglia", detail: "10/23 邊境中繼站：Sir Thomas 寄放行李、午餐與 Roya 河慢步" },
+          { place: "尼斯 Nice", detail: "10/23–10/28（5 晚）入住 AC Hotel Nice 海景飯店，跨國列車直達" },
+          { place: "濱海自由城與費拉角", detail: "10/25 自由城 TER 火車 7 分鐘；10/26 羅斯柴爾德花園別墅" },
+          { place: "尼斯機場 NCE", detail: "10/28 14:30 起飛（T2 阿聯酋 EK078 經杜拜轉機）" },
+          { place: "台北桃園機場 TPE", detail: "10/29 15:35 圓滿返抵國門" },
         ],
       },
 
@@ -1483,12 +1575,12 @@
         title: "旅行通票與城市卡明細　Passes & City Cards",
         head: ["名稱", "使用日期／效期", "兌換／取得方式", "適用範圍與備註"],
         rows: [
-          ["米蘭城市通票(感應卡)", "10/16 領票／10/17 使用（24 小時）", "Milan Visitor Center - Tours 實體兌換", "24 小時連續使用，兌換地點位於米蘭中央車站附近。"],
-          ["貝爾加莫通票（APP）", "10/18 使用（24 小時）", "搭乘米蘭往貝爾加莫時手動啟用", "24 小時連續使用，貝爾加莫交通票。"],
-          ["科莫湖中央湖區一日票(憑證)", "10/19 使用（24 小時）", "出示憑證給檢票員即可", "24 小時連續使用，可無限次數來回中央湖區任意碼頭。"],
-          ["熱那亞城市通票(條碼)", "10/21 使用（24 小時）", "出示憑證給檢票員即可", "涵蓋熱那亞市區交通與重點景點門票。"],
-          ["MetDaily一日票(APP條碼)", "10/22 使用 （24 小時）", "出示憑證給檢票員即可", "主要以 SANTA MARGHERITA LIGURE、Portofino 區間移動為主。"],
-          ["PASS SUD AZUR EXPLORE(感應卡)", "依行程規劃彈性開通", "自行取得票券", "濱海阿爾卑斯省通票，適用芒通 ↔ 坎城附近區域鐵路與大眾運輸。"],
+          ["米蘭城市通票(感應卡)", "10/16 領票／10/17 使用（24 小時）", "Milan Visitor Center - Tours 實體兌換", "24 小時連續使用，進地鐵直接感應閘門啟用。"],
+          ["貝爾加莫通票（APP）", "10/18 使用（24 小時）", "搭乘首班公車或纜車前手動點擊啟用", "24 小時連續使用，涵蓋貝爾加莫市區公車與登山纜車。"],
+          ["科莫湖中央湖區一日票(憑證)", "10/19 使用（24 小時）", "碼頭出示憑證兌換或直接出示蓋章登船", "當日無限次數搭乘中央湖區渡輪（瓦倫納 ↔ 貝拉焦）。"],
+          ["熱那亞城市通票(條碼)", "10/21 使用（24 小時）", "出示憑證或條碼給檢票員即可", "涵蓋熱那亞地鐵市區交通與重點歷史景點門票。"],
+          ["MetDaily一日票(APP條碼)", "10/22 使用（24 小時）", "搭乘 782 公車前在 AMT APP 點擊啟用", "適用 Santa Margherita Ligure ↔ Portofino 區間移動。"],
+          ["PASS SUD AZUR EXPLORE(感應卡)", "10/24–10/26 彈性開通", "輕軌候車站柱或車上感應機拍卡（Validé）", "濱海阿爾卑斯省通票，涵蓋尼斯輕軌、公車與 TER 區間火車。"],
         ],
       },
 
@@ -1496,16 +1588,17 @@
         title: "義大利鐵路與機場快線時刻總表",
         head: ["日期", "出發地 ➔ 目的地", "車次", "車種／艙等", "出發", "抵達", "行車時間", "取票／型態", "備註"],
         rows: [
-          ["10/16", "米蘭機場 ➔ 米蘭", "MXP 2951", "機場快線／不分艙等", "16:11", "17:07", "56 分", "QR Code", "全天可用"],
-          ["10/18", "米蘭 ➔ 貝爾加莫", "RE 2219", "區域快車（RE）", "09:05", "09:53", "48 分", "QR Code", "近郊慢遊"],
-          ["10/18", "貝爾加莫 ➔ 米蘭", "RE 2232", "區域快車（RE）", "15:02", "15:50", "48 分", "QR Code", "提早返回休息"],
-          ["10/19", "米蘭 ➔ 瓦倫納（科莫湖）", "RE 2818", "區域快車（RE）", "09:20", "10:25", "1 小時 04 分", "QR Code", "湖畔慢遊"],
-          ["10/19", "瓦倫納 ➔ 米蘭", "待定", "區域快車（RE）", "待定", "待定", "待定", "現場／自行訂票", "尚未預訂（保有彈性）"],
-          ["10/20", "米蘭 ➔ 熱那亞", "IC 659", "城際列車／一等艙", "09:10", "10:40", "1 小時 30 分", "QR Code", "跨區移動，快適一等艙"],
-          ["10/22", "熱那亞 ➔ S. Margherita Ligure", "IC 657", "城際列車／一等艙", "09:47", "10:14", "27 分", "QR Code", "菲諾港一日慢遊"],
-          ["10/22", "S. Margherita Ligure ➔ 熱那亞", "IC 674", "城際列車／一等艙", "15:46", "16:14", "27 分", "QR Code", "傍晚回飯店休息"],
-          ["10/23", "熱那亞 ➔ 文提米利亞", "IC 633", "城際列車／一等艙", "08:58", "10:58", "2 小時 00 分", "QR Code", "前往邊境享用午餐"],
-          ["10/23", "文提米利亞 ➔ 尼斯", "ZOU! / TER", "區間列車／二等艙", "15:00 前後", "約 54 分後", "約 54 分", "QR Code", "抵達 Nice Ville 享用 PAUL 下午茶"],
+          ["10/16", "米蘭機場 ➔ 米蘭中央車站", "MXP 2951", "機場快線／不分艙等", "16:11", "17:07", "56 分", "QR Code", "全天有效，免手動 Check-in"],
+          ["10/18", "米蘭 ➔ 貝爾加莫", "RE 2219", "區域快車（RE）", "09:05", "09:53", "48 分", "QR Code", "直達快車，近郊慢遊"],
+          ["10/18", "貝爾加莫 ➔ 米蘭", "RE 2232", "區域快車（RE）", "15:02", "15:50", "48 分", "QR Code", "提早返回飯店休息"],
+          ["10/19", "米蘭 ➔ 瓦倫納（科莫湖）", "RE 2818", "區域快車（RE）", "09:20", "10:25", "1 小時 04 分", "QR Code", "湖畔慢遊，免換車"],
+          ["10/19", "瓦倫納 ➔ 米蘭", "彈性班次", "區域快車（RE）", "15:35 左右", "約 1 小時後", "約 1 小時", "現場／APP 訂票", "保留彈性，下午充裕休息"],
+          ["10/20", "米蘭 ➔ 熱那亞", "IC 659", "城際列車／一等艙", "09:10", "10:40", "1 小時 30 分", "QR Code", "劃位城際快車，舒適南下"],
+          ["10/22", "熱那亞 ➔ S. Margherita Ligure", "IC 657", "城際列車／一等艙", "09:47", "10:14", "27 分", "QR Code", "菲諾港一日慢遊，直達海岸"],
+          ["10/22", "S. Margherita Ligure ➔ 熱那亞", "IC 674", "城際列車／一等艙", "15:46", "16:14", "27 分", "QR Code", "傍晚回飯店放鬆"],
+          ["10/23", "熱那亞 ➔ 文提米利亞", "IC 633", "城際列車／一等艙", "08:58", "10:58", "2 小時 00 分", "QR Code", "前往邊境小鎮享用午餐"],
+          ["10/23", "文提米利亞 ➔ 尼斯", "ZOU! / TER", "跨國區間車／二等艙", "15:00 前後", "約 54 分後", "約 54 分", "QR Code", "抵達 Nice Ville，下午茶休息"],
+          ["10/25", "尼斯 ↔ 濱海自由城", "TER 區間車", "景觀火車／二等艙", "彈性班次", "約 7 分後", "約 7 分", "PASS SUD AZUR", "懸崖海灣短程接駁，無山路負擔"],
         ],
       },
 
@@ -1514,13 +1607,13 @@
         title: "核心區域的著名地景",
         text: "精選大教堂、湖畔小鎮、港都歷史與海灣風景；刪去必須長時間爬坡的景點，改以舒適觀景為主。",
         items: [
-          { image: IMAGE.destMilano, area: "MILANO", title: "米蘭大教堂", text: "哥德式建築的極致" },
-          { image: IMAGE.destBergamo, area: "BERGAMO", title: "貝爾加莫上城古城", text: "Città Alta 中世紀古城、威尼斯城牆與老廣場。" },
-          { image: IMAGE.destComo, area: "LAKE COMO", title: "科莫湖與貝拉焦小鎮", text: "絕美湖光山色與古典貴族莊園。" },
-          { image: IMAGE.destGenova, area: "GENOVA", title: "法拉利廣場與總督宮", text: "航海歷史與文藝復興底蘊。" },
-          { image: IMAGE.destPortofino, area: "PORTOFINO", title: "聖瑪格麗塔海灣", text: "搭船前往菲諾港一日慢遊" },
-          { image: IMAGE.destCapferrat, area: "CAP-FERRAT", title: "費拉角・羅斯柴爾德伯爵別墅", text: "華麗海景莊園與九大主題花園。" },
-          { image: IMAGE.destNice, area: "FRENCH RIVIERA", title: "尼斯天使灣", text: "Promenade des Anglais 英國人散步大道。" },
+          { image: IMAGE.destMilano, area: "MILANO", title: "米蘭大教堂與拱廊街", text: "於大教堂廣場悠閒散步拍照，漫步艾曼紐二世迴廊與斯卡拉歌劇院，享受米蘭慢活氛圍。" },
+          { image: IMAGE.destBergamo, area: "BERGAMO", title: "貝爾加莫 Città Alta 古城", text: "搭乘百年歷史登山纜車直達老廣場，漫步聖賈科莫城門俯瞰下城開闊全景。" },
+          { image: IMAGE.destComo, area: "LAKE COMO", title: "科莫湖瓦倫納與貝拉焦", text: "走過瓦倫納情人紅色水上步道、探訪湖畔別墅，搭乘渡輪巡遊明珠貝拉焦。" },
+          { image: IMAGE.destGenova, area: "GENOVA", title: "法拉利廣場與熱那亞舊港", text: "青銅噴泉、總督宮與古老索普拉納雙塔門，漫步舊港碼頭近觀海王星海盜帆船。" },
+          { image: IMAGE.destPortofino, area: "PORTOFINO", title: "菲諾港粉彩海灣與全景步道", text: "從聖瑪格麗塔搭乘 782 公車沿海直達，登上平緩的景觀步道遠眺奢華遊艇港灣。" },
+          { image: IMAGE.destCapferrat, area: "CAP-FERRAT", title: "費拉角・羅斯柴爾德花園別墅", text: "粉紅法式宮殿、隨古典樂舞動的音樂噴泉，坐擁九大主題花園與蔚藍地中海。" },
+          { image: IMAGE.destNice, area: "FRENCH RIVIERA", title: "尼斯天使灣與薩萊亞花市", text: "漫步英國人散步大道看湛藍海岸夕陽，穿梭薩萊亞市集品味南法鮮花與特產。" },
         ],
       },
 
@@ -1529,13 +1622,13 @@
         title: "義大利北域與南法蔚藍海岸美饌",
         text: "從米蘭鬱金香燉飯、貝爾加莫方餃，到熱那亞青醬與尼斯海鮮。",
         items: [
-          { area: "MILANO", title: "米蘭鬱金香燉飯與燉牛膝", text: "Ossobuco & Risotto alla Milanese：鬱金香的黃與軟嫩牛肉的極致組合。" },
-          { area: "BERGAMO", title: "貝爾加莫傳統方餃 Casoncelli", text: "夾入肉餡、鼠尾草與焦香奶油的古典北義美味。" },
-          { area: "LAKE COMO", title: "科莫湖畔鱸魚燉飯", text: "Risotto al Filetto di Pesce Persico：鮮甜鱸魚配上香濃奶油燉飯。" },
-          { area: "PORTOFINO", title: "聖瑪格麗塔海鮮墨魚麵", text: "Fregola ai frutti di mare：道地的義大利海港鮮味。" },
-          { area: "GENOVA", title: "熱那亞羅勒青醬手挽麵", text: "Trofie al Pesto：青醬發源地，純粹的羅勒與帕馬森起司香氣。" },
-          { area: "VENTIMIGLIA", title: "邊境海鮮與 Focaccia 輕食", text: "中途停靠享用的現炸海鮮與經典橄欖油佛卡夏麵包。" },
-          { area: "NICE", title: "尼斯沙拉與普羅旺斯魚湯", text: "Bouillabaisse & Salade Niçoise：蔚藍海岸最經典的海鮮饗宴。" },
+          { area: "MILANO", title: "米蘭鬱金香燉飯與燉牛膝", text: "Ossobuco & Risotto alla Milanese：鬱金香金黃色澤與軟嫩牛肉的極致風味；亦推薦迴廊百年餐館 Ristorante Galleria。" },
+          { area: "BERGAMO", title: "貝爾加莫傳統方餃 Casoncelli", text: "肉餡、鼠尾草與焦香奶油的古典美味；於老廣場歷史悠久的 Caffè del Tasso 1476 享用義式咖啡與點心。" },
+          { area: "LAKE COMO", title: "科莫湖畔鱸魚燉飯與湖景美饌", text: "Risotto al Filetto di Pesce Persico：鮮甜湖鱸魚佐香濃奶油燉飯；在貝拉焦 Ristorante Genazzini 1788 坐擁無敵湖景。" },
+          { area: "GENOVA", title: "熱那亞羅勒青醬手挽麵", text: "Trofie al Pesto：青醬發源地純粹的羅勒與帕馬森起司香氣；推薦舊城 Pesto per Amore 或 Trattoria Tralalero。" },
+          { area: "PORTOFINO", title: "菲諾港海鮮墨魚麵與白葡萄酒", text: "Fregola & Frutti di mare：地中海海港的極致鮮甜；在海灣第一排景觀餐廳 DaV Mare 或 Trattoria Tripoli 享受愜意午宴。" },
+          { area: "VENTIMIGLIA", title: "邊境 Sir Thomas 輕食與 Focaccia", text: "中途停靠邊境小餐館享用手作義大利麵、現烤橄欖油佛卡夏，並享有貼心行李寄放服務。" },
+          { area: "NICE & CÔTE D'AZUR", title: "尼斯沙拉與蔚藍海岸海鮮料理", text: "Salade Niçoise & Bouillabaisse：推薦舊城名店 La Voglia、Bocca Nissa 與自由城海景餐廳 Mayssa Beach、La Mère Germaine。" },
         ],
       },
 
@@ -1544,9 +1637,9 @@
         title: "3 大精選停留飯店規劃",
         text: "精簡住宿據點，減少換飯店次數；每天控制活動密度，優先選擇火車、地鐵、纜車與電梯，避免長距離步行。",
         items: [
-          { base: "BASE 01", nights: "4 晚", city: "Milano", name: "Hilton Milan", text: "米蘭核心基地，方便前往市區與當日往返貝爾加莫、科莫湖。", image: IMAGE.hotelMilan },
-          { base: "BASE 02", nights: "3 晚", city: "Genova", name: "Grand Hotel Savoia", text: "靠近車站與舊港區，連住 3 晚，方便移動與往返菲諾港。", image: IMAGE.hotelGenova },
-          { base: "BASE 03", nights: "5 晚", city: "Nice", name: "AC Hotel Nice／海景飯店", text: "位於英國人散步大道核心地段，延長停留享受南法陽光。", image: IMAGE.hotelNice },
+          { base: "BASE 01", nights: "4 晚", city: "Milano", name: "Hilton Milan", text: "距米蘭中央車站步行僅 3 分鐘，周邊 M2/M3 地鐵與輕軌網絡四通八達，當日往返貝爾加莫與科莫湖免拖行李。", image: IMAGE.hotelMilan },
+          { base: "BASE 02", nights: "3 晚", city: "Genova", name: "Grand Hotel Savoia", text: "緊鄰熱那亞王子廣場車站（Genova Piazza Principe）步行 2 分鐘，百年古典五星風格，漫步舊港區與前往菲諾港皆極為便捷。", image: IMAGE.hotelGenova },
+          { base: "BASE 03", nights: "5 晚", city: "Nice", name: "AC Hotel Nice／海景飯店", text: "坐落於著名英國人散步大道（Promenade des Anglais）旁，門口即是輕軌站（Centre Universitaire Méditerranéen），步行即達蔚藍海岸沙灘與屋頂海景露台。", image: IMAGE.hotelNice },
         ],
       },
 
@@ -1560,164 +1653,147 @@
         {
           date: "10/15（四）",
           label: "DAY 01",
-          title: "台北桃園國際機場（TPE）➔ 啟程出發",
+          title: "台北桃園國際機場（TPE）➔ 啟程出發（深夜啟航）",
           transport: "阿聯酋航空 EK367（23:50 起飛）",
           hotel: "機上／旅途中",
-          tags: ["T2 報到", "EK367", "深夜起飛"],
+          tags: ["T2 報到", "EK367", "深夜起飛", "25kg 行李託運"],
           gallery: [
             { src: IMAGE.day01Flight, caption: "台北啟程出發：長途飛行與轉機" }
           ],
           items: [
-            "晚間抵達桃園國際機場第二航廈（Terminal 2）阿聯酋航空櫃檯辦理報到與託運。",
-            "23:50 搭乘阿聯酋航空 EK367 航班起飛，經杜拜轉機飛往米蘭。",
+            "晚間 20:50 於桃園國際機場第二航廈（Terminal 2）阿聯酋航空櫃檯辦理登機報到與行李託運（每人 25kg 託運額度）。",
+            "23:50 搭乘阿聯酋航空 EK367 準時起飛，舒適夜航飛往杜拜國際機場（DXB）第三航廈轉機。",
           ],
         },
         {
           date: "10/16（五）",
           label: "DAY 02",
-          title: "抵達米蘭中央車站 ➔ Check-in ➔ 迎賓晚餐",
+          title: "抵達米蘭 ➔ 快線直達中央車站 ➔ 領取通票 ➔ 迎賓晚餐",
           transport: "MXP 2951 機場快線（不分艙等）16:11–17:07",
           hotel: "Hilton Milan（1/4）",
-          tags: ["不分艙等快線", "MXP 2951", "米蘭通票領票", "迎賓晚餐"],
+          tags: ["快線免換票", "MXP 2951", "米蘭通票領票", "迎賓晚餐"],
           gallery: [
             { src: IMAGE.day02Malpensa, caption: "米蘭市區，機場快線 56 分直達" },
             { src: IMAGE.day02Navigli, caption: "首夜於飯店享用迎賓晚餐" },
             { src: IMAGE.day02DuomoTeaser, caption: "明日的主角：米蘭大教堂" },
           ],
           items: [
-            "航班順利降落米蘭馬爾彭薩機場（MXP），辦理入境與提領行李。",
-            "16:11 搭乘 Malpensa Express 機場快線（MXP 2951），於 17:07 直達米蘭中央車站。",
-            "至車站附近的 Milan Visitor Center - Tours 實體領取「米蘭城市通票（Milan Pass）」（預計 10/17 啟用）。",
-            "前往飯店辦理 Check-in，洗漱休息調整時差，傍晚於周邊享用道地義式迎賓晚餐。",
+            "14:10 航班順利降落米蘭馬爾彭薩機場（MXP）第一航廈，從容辦理入境查驗與提領託運行李。",
+            "16:11 搭乘 Malpensa Express 機場快線（MXP 2951，票券全天有效免 Check-in），於 17:07 直達米蘭中央車站。",
+            "出站前往車站附近的 Milan Visitor Center - Tours 實體領取「米蘭城市通票（Milan Pass）」（預計隔日 10/17 啟用）。",
+            "步行 3 分鐘抵達 Hilton Milan 辦理入住，洗漱休息調整時差，晚間於飯店周邊享用道地義式迎賓晚餐。",
           ],
         },
         {
-  date: "10/17（六）",
-  label: "DAY 03",
-  title: "米蘭經典城市巡遊：大教堂＋藝文街區＋蒙塔內利花園",
-  transport: "米蘭城市通票（24 小時）／地鐵／電車／步行",
-  hotel: "Hilton Milan（2/4）",
-  tags: [
-    "米蘭城市通票",
-    "米蘭大教堂",
-    "艾曼紐二世迴廊",
-    "斯卡拉大劇院",
-    "蒙塔內利花園",
-    "Porta Venezia"
-  ],
-  gallery: [
-    {
-      src: IMAGE.day03DuomoRoof,
-      caption: "搭電梯登上米蘭大教堂頂樓露台"
-    },
-    {
-      src: IMAGE.day03Galleria,
-      caption: "米蘭大教堂廣場與艾曼紐二世迴廊"
-    },
-    {
-      src: IMAGE.day03Montanelli,
-      caption: "蒙塔內利花園與杜尼亞尼宮"
-    },
-    
-  ],
-  items: [
-    "開通啟用「米蘭城市通票」，由 Hilton Milan 搭乘地鐵前往 Duomo，以電梯登頂為主參觀米蘭大教堂，並順遊教堂廣場與艾曼紐二世迴廊。",
-    "中午於大教堂周邊用餐，午後前往 La Corte Romanengo 與斯卡拉大劇院一帶，感受米蘭歷史建築與城市文化氛圍。",
-    "搭乘 Tram 1 前往 P.Za Cavour，再步行進入蒙塔內利花園，沿途經過杜尼亞尼宮與自然歷史博物館，安排較輕鬆的城市散步。",
-    "傍晚前往 Porta Venezia 一帶，可依體力選擇晚餐；餐後搭乘市區交通返回 Hilton Milan 休息。",
-    
-  ],
-  
-},
-{
-date: "10/18（日）",
-label: "DAY 04",
-title: "貝爾加莫 Città Alta：纜車登上古城",
-transport: "RE 2219（09:05–09:53）＋公車＋登山纜車＋公車 15",
-hotel: "Hilton Milan（3/4）",
-tags: ["RE 區域快車", "公車", "登山纜車", "Città Alta", "Piazza Vecchia"],
-gallery: [
-{ src: IMAGE.day04BergamoFunicular, caption: "搭乘登山纜車前往 Città Alta 上城" },
-],
-items: [
-"09:05 從米蘭中央車站搭乘 RE 2219 前往 Bergamo，09:53 抵達。",
-"抵達後搭乘公車前往纜車站，再搭登山纜車進入 Città Alta。",
-"遊覽 Piazza Vecchia 與周邊古城街區，安排咖啡、甜點與午餐休息。",
-"午後沿 Via San Giacomo 前往 Porta San Giacomo，欣賞古城門與城牆景觀。",
-"從 Porta San Giacomo 搭公車 15 返回 Bergamo 火車站，再搭 RE 2232（15:02–15:50）回米蘭。",
-],
-},
+          date: "10/17（六）",
+          label: "DAY 03",
+          title: "米蘭經典城市巡遊：大教堂＋藝文街區＋蒙塔內利花園",
+          transport: "米蘭城市通票（24 小時）／地鐵 M3／復古電車 1 號／步行",
+          hotel: "Hilton Milan（2/4）",
+          tags: ["米蘭城市通票", "地鐵 M3", "米蘭大教堂", "艾曼紐二世迴廊", "復古電車 1 號", "蒙塔內利花園"],
+          gallery: [
+            { src: IMAGE.day03DuomoRoof, caption: "米蘭大教堂宏偉哥德式外觀與大理石雕刻" },
+            { src: IMAGE.day03Galleria, caption: "米蘭大教堂廣場與艾曼紐二世迴廊" },
+            { src: IMAGE.day03Montanelli, caption: "蒙塔內利花園與杜尼亞尼宮" },
+          ],
+          items: [
+            "開通啟用「米蘭城市通票」，由飯店旁 Centrale FS 搭乘地鐵 M3 直達 Duomo 站，不排隊登頂，以廣場悠閒漫步、欣賞大教堂宏偉外觀拍照為主，並順遊艾曼紐二世迴廊。",
+            "中午於大教堂或迴廊周邊（如 Ristorante Galleria）享用精緻午餐，午後漫步前往斯卡拉大劇院（Teatro alla Scala）一帶感受藝文建築氛圍。",
+            "於劇院前搭乘著名的「復古路面電車 1 號（Tram 1）」直達 P.za Cavour，步行進入蒙塔內利花園，漫步杜尼亞尼宮（Palazzo Dugnani）與自然歷史博物館，享受綠意樹蔭。",
+            "傍晚悠閒漫步至威尼斯門（Porta Venezia M1）街區，可搭乘輕軌電車從容返回中央車站與 Hilton 飯店休息。",
+          ],
+        },
+        {
+          date: "10/18（日）",
+          label: "DAY 04",
+          title: "貝爾加莫 Città Alta：登山纜車與中世紀古城慢遊",
+          transport: "RE 2219（09:05–09:53）＋市區公車 1 號＋登山纜車",
+          hotel: "Hilton Milan（3/4）",
+          tags: ["RE 區域快車", "公車 1 號", "登山纜車", "老廣場 Piazza Vecchia", "聖賈科莫門"],
+          gallery: [
+            { src: IMAGE.day04BergamoFunicular, caption: "搭乘登山纜車前往 Città Alta 上城" },
+          ],
+          items: [
+            "09:05 從米蘭中央車站搭乘直達區域快車 RE 2219 前往 Bergamo，09:53 輕鬆抵達。",
+            "出站搭乘市區公車 1 號（Linea 1）直達登山纜車站，轉搭具有百年歷史的登山纜車（Funicolare）直登 Città Alta 上城。",
+            "漫步老廣場（Piazza Vecchia）、參觀聖母聖殿與城市塔，於歷史悠久的 Caffè del Tasso 1476 喝杯咖啡，品嚐貝爾加莫傳統方餃午餐。",
+            "午後沿著優美的 Via San Giacomo 漫步至「聖賈科莫老城門（Porta San Giacomo）」，在威尼斯防禦城牆邊俯瞰下城開闊全景。",
+            "於城門前搭乘公車返回 Bergamo 火車站，搭乘 15:02 的 RE 2232 區間快車於 15:50 返回米蘭，早早回飯店洗漱放鬆。",
+          ],
+        },
 
         {
           date: "10/19（一）",
           label: "DAY 05",
-          title: "科莫湖 Varenna 湖畔慢遊與行船",
-          transport: "RE 2818（09:20–10:25）／回程 RE 彈性現場購票",
+          title: "科莫湖雙城慢遊：瓦倫納湖畔步道與貝拉焦渡輪",
+          transport: "RE 2818（09:20–10:25）／渡輪／回程 RE 彈性現場購票",
           hotel: "Hilton Milan（4/4）",
-          tags: ["RE 2818", "科莫湖", "Varenna 湖畔咖啡", "彈性回程"],
+          tags: ["RE 2818", "科莫湖渡輪", "貝拉焦午餐", "情人步道", "Villa Monastero"],
           gallery: [
             { src: IMAGE.day05VarennaLake, caption: "Varenna 湖岸與山色" },
-            { src: IMAGE.day05Bellagio, caption: "體力允許時搭渡輪前往貝拉焦" },
+            { src: IMAGE.day05Bellagio, caption: "搭乘渡輪前往對岸貝拉焦" },
           ],
           items: [
-            "09:20 搭乘直達區域快車 RE 2818 前往 Varenna-Esino，10:25 抵達後以湖畔景觀＋咖啡休息為主。",
-            "上午以 Varenna 湖岸與小鎮核心為主，不安排連續上坡路段。",
-            "體力狀況良好時，再搭乘渡輪前往 Bellagio 或 Lenno；若覺得累，直接留在 Varenna 慢慢用餐即可。",
-            "午後自行購買 RE 區域快車返回米蘭，為隔天搬行李南下熱那亞預留體力。",
+            "09:20 由米蘭中央車站搭乘直達區域快車 RE 2818，沿途欣賞北義田園與湖山美景，10:25 抵達瓦倫納（Varenna-Esino）。",
+            "出站後步行至 Varenna (Traghetto) 渡輪碼頭，搭乘 10:57 或 11:07 班次渡輪前往「科莫湖明珠」貝拉焦（Bellagio）。【貼心提醒：湖面風勢強勁，航行時請務必戴帽子並穿著防風外套！】",
+            "抵達貝拉焦後沿著歐洲林蔭步道（Lungolago Europa）悠閒漫步，於湖景餐廳從容享用午餐與義式咖啡，沉浸於湖光山色。",
+            "午後搭渡輪返回瓦倫納，走過標誌性的「情人紅色水上步道（Passeggiata degli innamorati）」，往反方向拍可捕捉瓦倫納最經典的湖景明信片視角；並推薦順遊 Villa Monastero 欣賞延伸入湖的古典花園別墅。",
+            "午後於瓦倫納湖畔咖啡座稍作休息，再至車站搭乘 RE 區域快車返回米蘭中央車站，為隔天南下熱那亞預留充沛體力。",
           ],
         },
         {
           date: "10/20（二）",
           label: "DAY 06",
-          title: "米蘭中央車站 ➔ 熱那亞王子廣場車站",
+          title: "米蘭中央車站 ➔ 熱那亞王子廣場（移動休息日 · 巴爾比街與王宮散步）",
           transport: "IC 659 城際列車（一等艙）09:10–10:40",
           hotel: "Grand Hotel Savoia（1/3）",
-          tags: ["IC 659 一等艙", "熱那亞城市通票", "舒適跨區", "舊港散步"],
+          tags: ["IC 659 一等艙", "火車站前 3 分鐘", "巴爾比街散步", "熱那亞王宮", "移動休息日"],
           gallery: [
-            { src: IMAGE.day06GenovaStation, caption: "抵達熱那亞，港都的第一印象" }
+            { src: IMAGE.day06GenovaStation, caption: "抵達熱那亞王子廣場站，港都的第一印象" },
           ],
           items: [
-            "上午辦理退房，09:10 搭乘城際列車 IC 659（一等艙）南下熱那亞，10:40 抵達。",
-            "抵達後前往飯店寄放行李與辦理 Check-in。",
-            "稍作休息後，視體力前往舊港區短距離散步。",
-            "晚餐選飯店附近餐廳，避免晚上再安排跨區移動。",
+            "上午於米蘭飯店辦理退房，09:10 搭乘城際快車 IC 659（一等艙）舒適南下，穿越亞平寧山脈，10:40 準時抵達熱那亞王子廣場車站（Genova Piazza Principe）。",
+            "出站步行僅 2~3 分鐘即可抵達五星古典飯店 Grand Hotel Savoia 辦理入住或寄放行李，免除大件行李拖拉奔波。",
+            "中午於飯店周邊特色餐館（如 Trattoria Tralalero 或 Acquamarina）享用道地利古里亞海鮮午餐。",
+            "本日為移動休息日（尚未開通一日票），午後最推薦從飯店門口前方的世界遺產大道「巴爾比街（Via Balbi）」悠閒散步，僅約 4~5 分鐘（350 公尺）即可抵達宏偉的「熱那亞王宮（Palazzo Reale）」，欣賞巴洛克庭院與遠眺港灣的空中花園，免搭車、免走遠，散步後從容回飯店放鬆休息。",
           ],
         },
-    {
-date: "10/21（三）",
-label: "DAY 07",
-title: "熱那亞歷史核心：法拉利廣場、總督宮與港口散步",
-transport: "地鐵／市區交通＋短距離步行",
-hotel: "Grand Hotel Savoia（2/3）",
-tags: ["法拉利廣場", "總督宮", "熱那亞港", "短距離"],
-gallery: [
-{ src: IMAGE.day07PalazziRolli, caption: "法拉利廣場與歷史街區" },
-{ src: IMAGE.day07PortoAnticoCafe, caption: "港口散步與咖啡休息" },
-],
-items: [
-"上午從飯店出發，搭乘市區交通前往熱那亞歷史核心。",
-"沿法拉利廣場、總督宮與周邊歷史街區參觀，搭配咖啡與短暫休息。",
-"中午在舊城區用餐，安排坐著休息的時間。",
-"午後前往港口與 Darsena 一帶散步，欣賞海港景色與城市風貌。",
-"視體力在港口附近喝咖啡或用餐，之後返回飯店休息。",
-],
-},
+        {
+          date: "10/21（三）",
+          label: "DAY 07",
+          title: "熱那亞歷史核心：法拉利廣場、總督宮與舊港帆船巡禮",
+          transport: "地鐵（Principe ➔ De Ferrari / San Giorgio）＋平緩慢步",
+          hotel: "Grand Hotel Savoia（2/3）",
+          tags: ["法拉利廣場", "總督宮", "哥倫布故居", "正宗青醬", "海王星帆船"],
+          gallery: [
+            { src: IMAGE.day07PalazziRolli, caption: "法拉利廣場與歷史街區" },
+            { src: IMAGE.day07PortoAnticoCafe, caption: "港口散步與咖啡休息" },
+          ],
+          items: [
+            "上午由飯店旁 Principe 站搭乘熱那亞地鐵直達 De Ferrari（法拉利廣場），欣賞宏偉青銅噴泉與總督宮（Palazzo Ducale）。",
+            "順路漫步探訪哥倫布故居（Casa di Colombo）與古老石造雙塔「索普拉納門（Porta Soprana）」，沉浸於航海古都風貌。",
+            "中午於舊城巷弄享用著名的熱那亞羅勒青醬手工麵（Pesto per Amore），保留充裕用餐與休息時間。",
+            "午後搭地鐵至舊港 San Giorgio 站，漫步港灣碼頭近距離觀賞壯麗的「海王星號海盜帆船（Neptune）」，於港邊露天咖啡座看海景喝下午茶。",
+            "傍晚搭地鐵短程返回王子廣場站與飯店，不需長途健行，體力充裕無負擔。",
+          ],
+        },
         {
           date: "10/22（四）",
           label: "DAY 08",
-          title: "菲諾港一日慢遊：海灣小鎮＋聖馬格利塔",
-          transport: "IC 657／IC 674 一等艙",
+          title: "菲諾港一日慢遊：782 公車直達夢幻粉彩海灣",
+          transport: "IC 657／IC 674 一等艙 ＋ 市區公車 782",
           hotel: "Grand Hotel Savoia（3/3）",
-          tags: ["IC 一等艙", "S. Margherita Ligure", "Portofino", "海灣慢遊"],
+          tags: ["IC 一等艙", "S. Margherita 火車站", "782 公車", "菲諾港海灣", "Punto Panoramico"],
           gallery: [
-            { src: IMAGE.day08Portofino, caption: "菲諾港的粉彩屋與船影" }
+            { src: IMAGE.day08Portofino, caption: "菲諾港的粉彩屋與船影" },
+            { src: IMAGE.day08SantaMargherita, caption: "聖瑪格麗塔海灣的悠閒漫步" },
           ],
           items: [
-            "09:47 由 Genova Piazza Principe 搭乘 IC 657 一等艙前往 Santa Margherita Ligure，10:14 抵達。",
-            "搭乘 782 公車前往 Portofino（菲諾港），不追求一次走完所有景點，以海灣、港口與小鎮景色為主。",
-            "在小鎮沿海灣散步、喝咖啡，感受利古里亞海岸小鎮氛圍。",
-            "中午安排海景午餐或咖啡，保留充足坐下休息的時間，不安排密集景點與長距離步行。",
-            "15:46 由 Santa Margherita Ligure 搭乘 IC 674 一等艙出發，16:14 抵達熱那亞，回飯店後保留完整晚間休息時間。",
+            "09:47 由 Genova Piazza Principe 搭乘城際快車 IC 657 一等艙出發，沿蔚藍海岸行駛，10:14 抵達海濱度假勝地 Santa Margherita Ligure。",
+            "火車站正前方即是「782 號公車總站（Capolinea linea 782）」，搭乘景觀公車沿著蜿蜒海岸山壁直達 Portofino（菲諾港）。",
+            "漫步環繞天然海灣的鵝黃粉彩老屋，登上平緩的景觀步道 Punto Panoramico 遠眺整個港灣與地中海遊艇全景。",
+            "中午於海港景觀餐廳（如 DaV Mare 或 Trattoria Tripoli）享用招牌海鮮墨魚麵與白葡萄酒，享受奢華悠閒的海邊時光。",
+            "午後搭乘 782 公車返回聖瑪格麗塔海岸小憩，搭乘 15:46 的 IC 674 一等艙於 16:14 返抵熱那亞飯店休息。",
           ],
         },
         {
@@ -1733,101 +1809,101 @@ items: [
             { src: IMAGE.day09NiceHotelSunset, caption: "飯店周邊的海岸夕陽" },
           ],
           items: [
-            "上午從熱那亞退房，08:58 搭乘城際列車（一等艙）前往義大利西部邊境城市 Ventimiglia（文提米利亞）。",
-            "10:58 抵達後不急著轉乘，先將行李寄放於車站附近，輕鬆展開這段義法邊境的半日慢遊。",
-            "中午在文提米利亞享用午餐，找一間舒適的餐廳坐下來好好休息，讓跨國移動的這一天保持悠閒節奏。",
-            "午餐後沿著 Roya 河（Fiume Roia）一帶散步，欣賞河岸、城市街景與地中海邊境風情。",
-            "約 14:30 返回車站取回行李，約 15:00 前後搭乘 ZOU!／TER 跨國列車沿蔚藍海岸前往法國，抵達 Nice Ville。",
-            "先於車站內 PAUL 享用輕食與咖啡，再至附近的 Agence de Mobilité ZOU! 辦理區域交通通票購買。",
-            "搭乘UBER 前往 AC Hotel Nice 辦理入住，傍晚以飯店周邊海岸散步與休息為主，正式開啟尼斯五晚的慢遊時光。",
+            "上午從熱那亞退房，08:58 搭乘城際列車 IC 633（一等艙）前往義大利西部邊境城市 Ventimiglia（文提米利亞），10:58 抵達。",
+            "抵達後前往車站旁小餐館「Sir Thomas」寄放行李並悠閒享用午餐與現烤 Focaccia，不必拖著大行李逛街，保持從容步伐。",
+            "午餐後沿著 Roya 河（Fiume Roia）一帶散步，欣賞河岸、歷史小鎮街景與地中海邊境風情。",
+            "約 14:30 返回 Sir Thomas 取回行李，約 15:00 前後搭乘 ZOU!／TER 跨國列車沿蔚藍海岸前往法國，抵達 Nice Ville。",
+            "先於車站內 PAUL 享用輕食咖啡，再至站旁 Agence de Mobilité 購買電車通票；搭乘路面電車 L2／L3 於「Centre Universitaire Méditerranéen」站下車直達 AC Hotel Nice 辦理入住。",
+            "傍晚以飯店周邊海岸散步與休息為主，正式開啟尼斯五晚的慢遊時光。",
           ],
         },
         {
           date: "10/24（六）",
           label: "DAY 10",
-          title: "尼斯舊城慢遊：薩萊亞集市＋海岸咖啡",
-          transport: "PASS SUD AZUR EXPLORE／步行／電車",
+          title: "尼斯舊城慢遊：薩萊亞花市與天使灣海岸時光",
+          transport: "PASS SUD AZUR EXPLORE／輕軌電車 L2／平緩漫步",
           hotel: "AC Hotel Nice／海景飯店（2/5）",
-          tags: ["PASS SUD AZUR", "Cours Saleya", "舊城", "海岸散步"],
+          tags: ["PASS SUD AZUR", "Cours Saleya", "尼斯歌劇院", "薩萊亞花市", "天使灣夕陽"],
           gallery: [
             { src: IMAGE.day10CoursSaleya, caption: "Cours Saleya 花市與舊城街區" },
             { src: IMAGE.day10PromenadeCafe, caption: "平坦海岸散步，找咖啡座休息" },
             { src: IMAGE.day10BaieDesAnges, caption: "傍晚回到天使灣看夕陽" },
           ],
           items: [
-            "可搭配「PASS SUD AZUR EXPLORE 通票」輕鬆搭乘蔚藍海岸區域鐵路與電車。",
-            "上午前往 Cours Saleya，集中看市場與舊城最有特色的幾區。",
-            "不安排城堡山登坡；改在平坦的海岸與廣場找咖啡座休息。",
-            "午餐後回飯店午休，傍晚再到海邊看夕陽。",
+            "上午由飯店外搭乘公車或輕軌直達「Opéra - Vieille Ville（尼斯歌劇院站）」，輕鬆步入舊城心臟地帶。",
+            "漫步著名而熱鬧的「Cours Saleya（薩萊亞市集）」，欣賞鮮花盛開與南法香料、橄欖油、手工皂特產攤位。",
+            "中午於舊城知名景觀餐館（如 La Voglia 或 Bocca Nissa）品嚐經典尼斯沙拉（Salade Niçoise）與海鮮燉飯。",
+            "全程安排平緩海濱與市集步道，避開陡峭的城堡山階梯；午後回飯店小睡片刻，傍晚在英國人散步大道看天使灣金黃夕陽。",
           ],
         },
         {
           date: "10/25（日）",
           label: "DAY 11",
-          title: "Villefranche-sur-Mer 半日海灣慢遊",
-          transport: "PASS SUD AZUR EXPLORE（TER 火車短程往返）",
+          title: "濱海自由城 Villefranche-sur-Mer 半日海灣慢遊",
+          transport: "PASS SUD AZUR EXPLORE（TER 區間火車約 7 分鐘）",
           hotel: "AC Hotel Nice／海景飯店（3/5）",
-          tags: ["PASS SUD AZUR", "火車直達", "海灣風景", "半日遊"],
+          tags: ["PASS SUD AZUR", "TER 火車 7 分鐘", "彩色海灣", "濱海城堡花園", "半日悠活"],
           gallery: [
             { src: IMAGE.day11Villefranche, caption: "Villefranche-sur-Mer 海灣與彩色老屋" },
-            // { src: IMAGE.day11NiceFree, caption: "午後回尼斯，下午完全自由" },
           ],
           items: [
-            "使用 PASS SUD AZUR EXPLORE 通票搭乘 TER 火車前往 Villefranche-sur-Mer，避開公車與長途車程。",
-            "只安排車站周邊、海灣與港口一帶，找一間海景餐廳坐著用餐。",
-            "中午後即可回尼斯休息，下午完全自由。",
+            "上午由 Nice-Ville 車站搭乘 TER 區間火車，僅約 7 分鐘即達 Villefranche-sur-Mer，避開迂迴公車與顛簸山路。",
+            "火車站緊鄰海岸懸崖，一出站即可俯瞰半圓形蔚藍海灣與彩色老城石屋，是蔚藍海岸最迷人的經典全景。",
+            "沿著平緩的濱海小徑漫步至海灣碼頭，於臨海餐館（如 Mayssa Beach、La Mère Germaine 或 LOU BANTRY）享用普羅旺斯海鮮午餐。",
+            "午後順訪緊鄰海灣的「濱海城堡花園（Jardins de la Citadelle）」樹蔭小憩，隨後搭火車輕鬆返回尼斯，下午享有完整自由休憩時光。",
           ],
         },
         {
           date: "10/26（一）",
           label: "DAY 12",
-          title: "費拉角一日慢遊：羅斯柴爾德伯爵別墅",
-          transport: "短程火車／短程公車",
+          title: "費拉角貴族莊園：羅斯柴爾德花園別墅與聖讓港",
+          transport: "輕軌 L2 ➔ 市區公車（Passable / Rothschild 站直達）",
           hotel: "AC Hotel Nice／海景飯店（4/5）",
-          tags: ["費拉角", "羅斯柴爾德伯爵別墅", "九大主題花園", "海景慢遊"],
+          tags: ["費拉角", "羅斯柴爾德別墅", "九大主題花園", "音樂噴泉", "聖讓港"],
           gallery: [
             { src: IMAGE.day12VillaRothschild, caption: "羅斯柴爾德伯爵別墅與九大花園" },
             { src: IMAGE.day12CapferratCoast, caption: "費拉角一帶的海岸風景" },
           ],
           items: [
-            "上午從尼斯悠閒出發，前往 Saint-Jean-Cap-Ferrat，避免早晨趕行程。",
-            "參觀 Villa Ephrussi de Rothschild（羅斯柴爾德伯爵別墅），欣賞豪華宅邸與九大主題花園。",
-            "以花園、海景與建築欣賞為主，不安排長距離環島步道，保留充足休息時間。",
-            "中午可於別墅享用午餐或咖啡，午後可到聖讓港逛逛後慢慢返回尼斯，晚餐以飯店附近為主。",
+            "上午搭乘輕軌 L2 至 Port Lympia 轉乘公車前往億萬富豪半島 Saint-Jean-Cap-Ferrat，於「Passable / Rothschild」站直達莊園門口。",
+            "參觀奢華粉紅宮殿「Villa Ephrussi de Rothschild（羅斯柴爾德別墅）」，欣賞華美宅邸與隨著古典樂翩翩起舞的音樂噴泉。",
+            "漫步於法式、日式、佛羅倫斯、西班牙等九大主題花園，三面環海的景觀視野極為遼闊壯麗。",
+            "中午可於莊園海景茶沙龍悠閒用餐或下午茶；午後順訪寧靜小巧的「聖讓港（Port de Saint-Jean）」，感受蔚藍海港悠然氣息後返回尼斯。",
           ],
         },
         {
           date: "10/27（二）",
           label: "DAY 13",
-          title: "尼斯最後慢活日：海岸散步＋紀念品採買＋整理行李",
-          transport: "步行",
+          title: "尼斯最後慢活日：盎格魯大道藍椅漫步＋舊城香氛採買＋提早整理行李",
+          transport: "輕軌電車 L2／悠閒步行",
           hotel: "AC Hotel Nice／海景飯店（5/5）",
-          tags: ["自由日", "海岸散步", "採買", "提早整理行李"],
+          tags: ["自由漫活日", "藍色座椅 Chaises Bleues", "香氛橄欖油採買", "提早打包"],
           gallery: [
             { src: IMAGE.day13Promenade, caption: "英國人散步大道的最後一個黃昏" },
             { src: IMAGE.day13NiceShopping, caption: "舊城採買香氛與南法紀念品" },
           ],
           items: [
-            "早餐後按照自己的節奏活動，不設定固定集合時間。",
-            "採買香氛、橄欖油與南法紀念品；疲累時隨時回飯店休息。",
-            "傍晚只走一小段海岸，看最後一次天使灣夕陽。",
-            "晚餐後完成行李整理，為 10/28 午後航班預留充足緩衝。",
+            "早餐後按照自己的舒服節奏出發，坐在 Promenade des Anglais 標誌性的藍色座椅（Chaises Bleues）吹海風放空。",
+            "漫步至馬賽納廣場周邊或舊城，採買正宗南法花宮娜香氛（Fragonard）、薰衣草手工皂與 A L'Olivier 特產橄欖油作為精美伴手禮。",
+            "中午於海濱露天餐館悠閒享用午餐；午後回飯店小憩，提前將伴手禮與大件行李打包妥當，避免退房當日慌亂。",
+            "傍晚在飯店海景露台或沙灘邊，欣賞最後一次地中海金黃夕陽染紅天使灣的美麗景致。",
           ],
         },
         {
           date: "10/28（三）–10/29（四）",
           label: "DAY 14–15",
-          title: "尼斯（NCE）➔ 杜拜（DXB）➔ 台北（TPE）歸途",
-          transport: "阿聯酋航空 EK078（14:30 起飛）",
-          hotel: "機上",
-          tags: ["EK078", "Aerogare 2", "杜拜轉機", "10/29 抵台"],
+          title: "尼斯蔚藍海岸機場（NCE）➔ 杜拜（DXB）➔ 台北桃園（TPE）平安歸途",
+          transport: "阿聯酋航空 EK078（14:30 起飛）➔ EK366 轉機",
+          hotel: "機上／溫暖的家",
+          tags: ["EK078", "Aerogare 2", "PABLO 電子退稅", "杜拜轉機", "10/29 抵台"],
           gallery: [
             { src: IMAGE.day14NiceDeparture, caption: "告別蔚藍海岸，午後從尼斯起飛" },
           ],
           items: [
-            "中午前搭乘UBER前往尼斯蔚藍海岸機場 Aerogare 2 辦理登機與退稅。",
-            "14:30 搭乘阿聯酋航空 EK078 飛往杜拜，23:35 抵達杜拜 Terminal 3 轉機。",
-            "台灣時間 10/29（四）順利返抵台北桃園國際機場，圓滿結束 15 天慢旅。",
+            "上午於飯店悠閒享用早餐，10:30 搭乘計程車或輕軌 L2 直達尼斯機場第二航廈（Terminal 2，約 15 分鐘車程）。",
+            "前往海關 PABLO 機台感應退稅條碼完成驗證，隨後至阿聯酋航空櫃檯託運行李並領取登機證。",
+            "14:30 搭乘阿聯酋航空 EK078 飛往杜拜（DXB），23:35 抵達 Terminal 3 舒適轉機。",
+            "10/29 03:40 轉搭 EK366 航班，於台灣時間 10/29（四）15:35 順利返抵台北桃園機場第二航廈，圓滿結束 15 天奢華慢活之旅！",
           ],
         },
       ],
@@ -1873,7 +1949,7 @@ items: [
     function sectionTitle(o) { return `<div class="eyebrow">${esc(o.eyebrow)}</div>${o.title ? `<h2>${esc(o.title)}</h2>` : ""}${o.text ? `<p>${esc(o.text)}</p>` : ""}` }
     document.title = `${tour.title}｜${tour.departDate} 出發`;
     brand.textContent = tour.brand; code.textContent = tour.code;
-    nav.innerHTML = [["overview", "旅行概念"], ["transport", "航班交通"], ["guide", "行前與行李"], ["destinations", "著名景點"], ["food", "精緻美食"], ["hotels", "住宿"], ["itinerary", "每日行程"]].map(x => `<a href="#${x[0]}">${x[1]}</a>`).join("");
+    nav.innerHTML = [["overview", "旅行概念"], ["transport", "航班交通"], ["guide", "行前準備"], ["destinations", "景點美饌"], ["itinerary", "每日行程"]].map(x => `<a href="#${x[0]}">${x[1]}</a>`).join("");
     const heroImg = document.getElementById("hero-img");
     heroImg.src = imgSrc(tour.heroImage, tour.title, "HERO", "21/9");
     heroImg.alt = tour.heroAlt;
