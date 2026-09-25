@@ -657,6 +657,123 @@
       background: #f4f8f5;
     }
 
+    /* 歐風票券膠囊徽章 (Status Pill Badges) - 典雅低飽和色系、高對比俐落、無螢光反光 */
+    .pill-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 2.5px;
+      font-size: 6.6pt;
+      font-weight: 700;
+      padding: 1.0px 5.5px;
+      border-radius: 10px;
+      line-height: 1.2;
+      white-space: nowrap;
+      vertical-align: middle;
+      letter-spacing: 0.02em;
+      margin-right: 3px;
+    }
+
+    /* 🟢 免換直通 / 免打卡 (Sage Green) */
+    .pill-badge-direct {
+      background: #ecfdf5;
+      color: #065f46;
+      border: 1px solid #a7f3d0;
+    }
+
+    /* 🟡 需現場兌換 / 需開通 (Warm Butter Amber) */
+    .pill-badge-exchange {
+      background: #fef9c3;
+      color: #854d0e;
+      border: 1px solid #fde047;
+    }
+
+    /* 🟠 需現場 / APP 購買 (Soft Terracotta Orange) */
+    .pill-badge-buy {
+      background: #fff7ed;
+      color: #9a3412;
+      border: 1px solid #fdba74;
+    }
+
+    /* 🔴 ⚠️ 實體紙票必打卡 (Subtle Rose Crimson) */
+    .pill-badge-stamp {
+      background: #fef2f2;
+      color: #991b1b;
+      border: 1.2px solid #f87171;
+      font-weight: 800;
+    }
+
+    /* 票券動作指引圖例條 */
+    .tp-legend-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #fdfaf3;
+      border: 1px solid #ebd9b6;
+      border-radius: 4px;
+      padding: 0.8mm 2.2mm;
+      font-size: 6.6pt;
+      margin-bottom: 1.2mm;
+      color: #334155;
+    }
+
+    .tp-legend-items {
+      display: flex;
+      align-items: center;
+      gap: 1.6mm;
+    }
+
+    /* 全行程時間軸對照大表 (Chronological Master Schedule Table) */
+    .chron-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 7.0pt;
+      line-height: 1.28;
+      margin-bottom: 1.2mm;
+    }
+
+    .chron-table th {
+      background: var(--galilee-green);
+      color: #fff;
+      padding: 0.9mm 1.2mm;
+      text-align: left;
+      font-weight: 700;
+      font-size: 7.3pt;
+      border-right: 1px solid rgba(255, 255, 255, 0.15);
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+
+    .chron-table th:last-child {
+      border-right: none;
+    }
+
+    .chron-table td {
+      padding: 0.75mm 1.2mm;
+      border-bottom: 1px solid #e2e8f0;
+      color: #1a202c;
+      vertical-align: middle;
+    }
+
+    .chron-table tr:nth-child(even) td {
+      background: #fbf9f5;
+    }
+
+    .chron-table tr:hover td {
+      background: #f1f6f9;
+    }
+
+    .chron-day-badge {
+      display: inline-block;
+      background: var(--galilee-green-tint);
+      color: var(--galilee-green);
+      font-weight: 700;
+      font-size: 6.8pt;
+      padding: 0.5px 3.5px;
+      border-radius: 3px;
+      margin-left: 2px;
+      vertical-align: middle;
+    }
+
     /* 封面與封底 */
     .galilee-cover-page {
       background: #faf8f5 !important;
@@ -1364,166 +1481,138 @@
       </div>
     </div>
     <!-- =========================================================================
-         PAGE 04: 義大利鐵路與機場快線時刻總表 (All 11 rows from index.html)
+         PAGE 04: 全行程時間軸對照大表 · 前半程（Day 01–Day 07 北義都會與湖區）
          ========================================================================= -->
     <div class="a5-page">
       <div class="page-header">
-        <span class="page-header-title">RAIL TIMETABLE</span>
-        <span>義大利鐵路與機場快線時刻總表</span>
+        <span class="page-header-title">TRANSPORT & PASSES · 01</span>
+        <span>全行程交通與通票時間軸總表（前半程 · 北義都會與湖區）</span>
       </div>
 
       <div class="page-content">
         <div
-          style="font-family: 'Noto Serif TC', serif; font-size: 13pt; font-weight: 700; color: var(--galilee-green); margin-bottom: 0.5mm;">
-          義大利鐵路與機場快線時刻總表
+          style="font-family: 'Noto Serif TC', serif; font-size: 12.5pt; font-weight: 700; color: var(--galilee-green); margin-bottom: 0.5mm;">
+          交通與通票時間軸總表 · 前半程（D01–D07）
         </div>
-        <div style="font-size: 7.8pt; color: #555; margin-bottom: 2mm;">
-          預先訂購的高規一等艙／區域快車，完全匹配 index.html 官方完整班次時刻。
+        <div style="font-size: 7.2pt; color: #555; margin-bottom: 1.2mm;">
+          按日期順序整併鐵路快線、渡輪、城市通票與門票，精準標註票券型態與動作指引。
         </div>
 
-        <table class="galilee-table">
+        <!-- 票券動作指引圖例條 -->
+        <div class="tp-legend-bar">
+          <strong style="color: var(--galilee-green); font-size: 7.2pt; flex-shrink: 0;">🏷️ 票券動作指引：</strong>
+          <div class="tp-legend-items">
+            <span class="pill-badge pill-badge-direct">免換直通·免打卡</span>
+            <span class="pill-badge pill-badge-exchange">需現場兌換／開通</span>
+            <span class="pill-badge pill-badge-buy">需現場／APP購買</span>
+            <span class="pill-badge pill-badge-stamp">⚠️ 實體紙票必打卡</span>
+          </div>
+        </div>
+
+        <table class="chron-table">
           <thead>
             <tr>
-              <th style="width: 8%;">日期</th>
-              <th style="width: 25%;">出發地 ➔ 目的地</th>
-              <th style="width: 12%;">車次</th>
-              <th style="width: 17%;">車種／艙等</th>
-              <th style="width: 8%;">出發</th>
-              <th style="width: 8%;">抵達</th>
-              <th style="width: 10%;">行車時間</th>
-              <th style="width: 12%;">型態／備註</th>
+              <th style="width: 11%;">日期／天數</th>
+              <th style="width: 23%;">路線行程／通票名稱</th>
+              <th style="width: 14%;">車次／工具</th>
+              <th style="width: 13%;">時間／效期</th>
+              <th style="width: 39%;">取票型態與動作指引（膠囊標籤）</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>10/16</strong></td>
-              <td>米蘭機場 ➔ 米蘭中央車站</td>
-              <td>MXP 2951</td>
-              <td>機場快線／不分艙等</td>
-              <td>16:11</td>
-              <td>17:07</td>
-              <td>56 分</td>
-              <td>Wallet QR (免換票)</td>
+              <td><strong>10/16</strong> <span class="chron-day-badge">D02</span></td>
+              <td><strong>米蘭機場 ➔ 米蘭中央車站</strong></td>
+              <td>MXP 2951 快線</td>
+              <td>16:11 ➔ 17:07<br><span style="color:#666;">(56 分)</span></td>
+              <td><span class="pill-badge pill-badge-direct">免換直通</span>持 Trenord APP Wallet QR 掃閘門進站， 乘車前確認 Check-in
+              </td>
             </tr>
             <tr>
-              <td><strong>10/18</strong></td>
-              <td>米蘭 ➔ 貝爾加莫</td>
-              <td>RE 2219</td>
-              <td>區域快車（RE）</td>
-              <td>09:05</td>
-              <td>09:53</td>
-              <td>48 分</td>
-              <td>Trenord APP (Wallet QR)</td>
+              <td><strong>10/16</strong> <span class="chron-day-badge">D02</span></td>
+              <td><strong>米蘭城市通票（Milano Card）</strong></td>
+              <td>實體感應卡</td>
+              <td>抵達領取<br><span style="color:#666;">(連續 24h)</span></td>
+              <td><span class="pill-badge pill-badge-exchange">需現場兌換</span>抵達後於中央車站遊客中心出示憑證領卡</td>
             </tr>
             <tr>
-              <td><strong>10/18</strong></td>
-              <td>貝爾加莫 ➔ 米蘭</td>
-              <td>RE 2232</td>
-              <td>區域快車（RE）</td>
-              <td>15:02</td>
-              <td>15:50</td>
-              <td>48 分</td>
-              <td>Trenord APP (Wallet QR)</td>
+              <td><strong>10/17</strong> <span class="chron-day-badge">D03</span></td>
+              <td><strong>米蘭 M1–M3 地鐵／復古電車</strong></td>
+              <td>市區大眾運輸</td>
+              <td>首刷起算<br><span style="color:#666;">(24 小時有效)</span></td>
+              <td><span class="pill-badge pill-badge-exchange">需感應開通</span>進地鐵閘門首拍啟用通票，全日無限搭乘</td>
             </tr>
             <tr>
-              <td><strong>10/19</strong></td>
-              <td>米蘭 ➔ 瓦倫納（科莫湖）</td>
-              <td>RE 2818</td>
-              <td>區域快車（RE）</td>
-              <td>09:20</td>
-              <td>10:25</td>
-              <td>1 小時 04 分</td>
-              <td>直達快車 (Wallet QR)</td>
+              <td><strong>10/18</strong> <span class="chron-day-badge">D04</span></td>
+              <td><strong>米蘭 ➔ 貝爾加莫（去程）</strong></td>
+              <td>RE 2219 快車</td>
+              <td>09:05 ➔ 09:53<br><span style="color:#666;">(48 分直達)</span></td>
+              <td><span class="pill-badge pill-badge-direct">免換直通</span>出示 Trenord APP Wallet QR 供查驗，免打卡</td>
             </tr>
             <tr>
-              <td><strong>10/19</strong></td>
-              <td>瓦倫納 ➔ 米蘭</td>
-              <td>彈性班次</td>
-              <td>區域快車（RE）</td>
-              <td>15:35 左右</td>
-              <td>約 1 小時後</td>
-              <td>約 1 小時</td>
-              <td>實體紙本票 (黃色機打卡)</td>
+              <td><strong>10/18</strong> <span class="chron-day-badge">D04</span></td>
+              <td><strong>貝爾加莫 24h 交通通票</strong></td>
+              <td>ATB 巴士與纜車</td>
+              <td>24 小時連續</td>
+              <td><span class="pill-badge pill-badge-exchange">搭車前手動啟用</span>ATB APP 已經購票,需在手機上啟用後使用</td>
+
             </tr>
             <tr>
-              <td><strong>10/20</strong></td>
-              <td>米蘭 ➔ 熱那亞</td>
-              <td>IC 659</td>
-              <td>城際列車／一等艙</td>
-              <td>09:10</td>
-              <td>10:40</td>
-              <td>1 小時 30 分</td>
-              <td>A4 紙本對號座 (免打卡)</td>
+              <td><strong>10/18</strong> <span class="chron-day-badge">D04</span></td>
+              <td><strong>貝爾加莫 ➔ 米蘭（回程）</strong></td>
+              <td>RE 2232 快車</td>
+              <td>15:02 ➔ 15:50<br><span style="color:#666;">(48 分直達)</span></td>
+              <td><span class="pill-badge pill-badge-direct">免換直通</span>出示手機 Trenord APP Wallet QR 供列車長查驗，免打卡</td>
             </tr>
             <tr>
-              <td><strong>10/22</strong></td>
-              <td>熱那亞 ➔ S. Margherita Ligure</td>
-              <td>IC 657</td>
-              <td>城際列車／一等艙</td>
-              <td>09:47</td>
-              <td>10:14</td>
-              <td>27 分</td>
-              <td>A4 紙本對號座 (免打卡)</td>
+              <td><strong>10/19</strong> <span class="chron-day-badge">D05</span></td>
+              <td><strong>米蘭 ➔ 瓦倫納（科莫湖）</strong></td>
+              <td>RE 2818 快車</td>
+              <td>09:20 ➔ 10:25<br><span style="color:#666;">(65 分直達)</span></td>
+              <td><span class="pill-badge pill-badge-direct">免換直通</span>湖區直達車，出示手機 Trenord APP Wallet QR 碼即可</td>
             </tr>
             <tr>
-              <td><strong>10/22</strong></td>
-              <td>S. Margherita Ligure ➔ 熱那亞</td>
-              <td>IC 674</td>
-              <td>城際列車／一等艙</td>
-              <td>15:46</td>
-              <td>16:14</td>
-              <td>27 分</td>
-              <td>A4 紙本對號座 (免打卡)</td>
+              <td><strong>10/19</strong> <span class="chron-day-badge">D05</span></td>
+              <td><strong>科莫湖中央湖區渡輪一日票</strong></td>
+              <td>渡輪 (瓦倫納↔貝拉焦)</td>
+              <td>當日無限次</td>
+              <td><span class="pill-badge pill-badge-buy">碼頭檢票</span>瓦倫納渡輪碼頭窗口出示憑證或購票登船</td>
             </tr>
             <tr>
-              <td><strong>10/23</strong></td>
-              <td>熱那亞 ➔ 文提米利亞</td>
-              <td>IC 633</td>
-              <td>城際列車／一等艙</td>
-              <td>08:58</td>
-              <td>10:58</td>
-              <td>2 小時 00 分</td>
-              <td>A4 紙本對號座 (免打卡)</td>
+              <td><strong>10/19</strong> <span class="chron-day-badge">D05</span></td>
+              <td><strong>瓦倫納 ➔ 米蘭（回程區間車）</strong></td>
+              <td>區域快車 (彈性)</td>
+              <td>約 15:35 前後<br><span style="color:#666;">(約 1 小時)</span></td>
+              <td><span class="pill-badge pill-badge-buy">需現場購票</span>窗口買紙票 ＋ <span
+                  class="pill-badge pill-badge-stamp">⚠️ 上車必打卡</span>月台黃機打印戳印！</td>
             </tr>
             <tr>
-              <td><strong>10/23</strong></td>
-              <td>文提米利亞 ➔ 尼斯</td>
-              <td>ZOU! / TER</td>
-              <td>跨國區間車／二等艙</td>
-              <td>15:00 前後</td>
-              <td>約 54 分後</td>
-              <td>約 54 分</td>
-              <td>實體小卡紙票 (需打卡)</td>
+              <td><strong>10/20</strong> <span class="chron-day-badge">D06</span></td>
+              <td><strong>米蘭中央 ➔ 熱那亞王子廣場</strong></td>
+              <td>IC 659 一等艙</td>
+              <td>09:10 ➔ 10:40<br><span style="color:#666;">(1 小時 30 分)</span></td>
+              <td><span class="pill-badge pill-badge-direct">對號免打卡</span>持預印 A4 紙本依車廂與座位直接入座</td>
             </tr>
             <tr>
-              <td><strong>10/25</strong></td>
-              <td>尼斯 ↔ 濱海自由城</td>
-              <td>TER 區間車</td>
-              <td>景觀火車／二等艙</td>
-              <td>彈性班次</td>
-              <td>約 7 分後</td>
-              <td>約 7 分</td>
-              <td>PASS SUD AZUR / 感應拍卡</td>
+              <td><strong>10/21</strong> <span class="chron-day-badge">D07</span></td>
+              <td><strong>熱那亞城市通票 24h (紙本條碼)</strong></td>
+              <td>Genova City Pass</td>
+              <td>24 小時有效</td>
+              <td><span class="pill-badge pill-badge-exchange">需掃碼開通</span>出示憑證啟用，含 AMT 地鐵公車與宮殿優惠</td>
             </tr>
           </tbody>
         </table>
 
-        <!-- 乘車與打票安心守則 · 參考加利利標準 -->
+        <!-- 乘車與打票安心守則 -->
         <div
-          style="background: #faf9f6; border: 1px solid #e2e8f0; border-radius: 4px; padding: 1.8mm 2.8mm; font-size: 7.0pt; line-height: 1.38; color: #1a202c; margin-bottom: 1.5mm;">
-          <div style="font-weight: 700; color: var(--galilee-green); margin-bottom: 0.5mm; font-size: 8.0pt;">
-            🚄 義大利與法國鐵路乘車必知
+          style="background: #faf9f6; border: 1px solid #e2e8f0; border-radius: 4px; padding: 1.1mm 2.2mm; font-size: 6.6pt; line-height: 1.30; color: #1a202c;">
+          <div style="font-weight: 700; color: var(--galilee-green); margin-bottom: 0.3mm; font-size: 7.3pt;">
+            🚄 前半程乘車與打票安心守則
           </div>
-          <div style="margin-bottom: 0.4mm;"><strong>1. 實體紙票打卡規定：</strong>義大利 Regionale
-            區間車紙票，上車前必須於月台綠白/黃色打卡機（Convalidatrice）打印時間；<strong>IC 城際快車（一等艙）持印出 A4 紙本直接對號入座，免打卡</strong>。</div>
-          <div style="margin-bottom: 0.4mm;"><strong>2. Trenord 電子票（Wallet QR）：</strong>乘車前請確認手機 Apple/Google Wallet 內
-            QR Code 與 Check-in 狀態，供列車長查驗。</div>
-          <div><strong>3. 大件行李安置：</strong>一等車廂頭尾均有大型行李架，重要證件隨身攜帶，下車前 5 分鐘提前準備。</div>
-        </div>
-
-        <div
-          style="background: #fdfbf7; border-left: 3px solid var(--galilee-gold); padding: 1.2mm 2.8mm; border-radius: 0 3px 3px 0; font-size: 6.8pt; line-height: 1.35; color: #2d3748;">
-          <strong>無障礙月台指引：</strong>米蘭中央車站、熱那亞王子廣場與尼斯車站均設有無障礙電梯與付費洗手間（約 €1.00，支援無接觸信用卡感應）。
+          <div style="margin-bottom: 0.3mm;"><strong>1.
+              實體紙票打卡規定：</strong>僅「車站購買的實體小卡紙票」上車前必須於月台綠白/黃色打卡機（Convalidatrice）打印戳印；<strong>IC 一等艙 A4 紙本對號票與 Trenord APP
+              電子票均免打卡</strong>。</div>
+          <div><strong>2. 行李與無障礙：</strong>一等車廂頭尾均有大型行李架；米蘭中央車站與熱那亞王子廣場站均設有無障礙電梯與付費洗手間（約 €1.00，支援無接觸信用卡）。</div>
         </div>
       </div>
 
@@ -1533,90 +1622,131 @@
       </div>
     </div>
     <!-- =========================================================================
-         PAGE 05: 旅行通票與城市卡明細 (Matching index.html tour.passes)
+         PAGE 05: 全行程時間軸對照大表 · 後半程（Day 08–Day 15 菲諾港與南法蔚藍海岸）
          ========================================================================= -->
     <div class="a5-page">
       <div class="page-header">
-        <span class="page-header-title">PASSES & CITY CARDS</span>
-        <span>旅行通票與城市卡明細</span>
+        <span class="page-header-title">TRANSPORT & PASSES · 02</span>
+        <span>全行程交通與通票時間軸總表（後半程 · 菲諾港與南法蔚藍海岸）</span>
       </div>
 
       <div class="page-content">
         <div
-          style="font-family: 'Noto Serif TC', serif; font-size: 13pt; font-weight: 700; color: var(--galilee-green); margin-bottom: 0.5mm;">
-          旅行通票與城市卡明細
+          style="font-family: 'Noto Serif TC', serif; font-size: 12.5pt; font-weight: 700; color: var(--galilee-green); margin-bottom: 0.5mm;">
+          交通與通票時間軸總表 · 後半程（D08–D15）
         </div>
-        <div style="font-size: 7.8pt; color: #555; margin-bottom: 2mm;">
-          Passes & City Cards · 隨身出示 · 免去長者排隊購票之苦 · 暢行無阻
+        <div style="font-size: 7.2pt; color: #555; margin-bottom: 1.2mm;">
+          利古里亞海灣、跨國邊境銜接、南法輕軌通票與尼斯蔚藍海岸全覽。
         </div>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5mm; margin-bottom: 2.5mm;">
-          <!-- 1. 米蘭城市通票 -->
-          <div
-            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 2.6mm 3mm; font-size: 7.6pt; line-height: 1.42; color: #1a202c;">
-            <div style="font-weight: 700; color: var(--galilee-green); font-size: 9.0pt; margin-bottom: 0.8mm;">★
-              米蘭城市通票（感應卡）</div>
-            <div><strong>使用日期：</strong>10/16 領票／10/17 使用（24 小時）</div>
-            <div><strong>兌換方式：</strong>Milan Visitor Center 實體兌換</div>
-            <div><strong>適用範圍：</strong>24 小時連續使用，進地鐵直接感應閘門啟用，含 M1-M5 地鐵、復古 1 號路面電車與公車無限搭乘。</div>
-          </div>
-
-          <!-- 2. 貝爾加莫通票 -->
-          <div
-            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 2.6mm 3mm; font-size: 7.6pt; line-height: 1.42; color: #1a202c;">
-            <div style="font-weight: 700; color: var(--galilee-green); font-size: 9.0pt; margin-bottom: 0.8mm;">★
-              貝爾加莫通票（APP）</div>
-            <div><strong>使用日期：</strong>10/18 使用（24 小時）</div>
-            <div><strong>兌換方式：</strong>搭乘首班公車或纜車前手動點擊啟用</div>
-            <div><strong>適用範圍：</strong>24 小時連續使用，涵蓋貝爾加莫市區公車（1 號線）與百年登山纜車（Funicolare）。</div>
-          </div>
-
-          <!-- 3. 科莫湖中央湖區一日票 -->
-          <div
-            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 2.6mm 3mm; font-size: 7.6pt; line-height: 1.42; color: #1a202c;">
-            <div style="font-weight: 700; color: var(--galilee-green); font-size: 9.0pt; margin-bottom: 0.8mm;">★
-              科莫湖中央湖區一日票（憑證）</div>
-            <div><strong>使用日期：</strong>10/19 使用（24 小時）</div>
-            <div><strong>兌換方式：</strong>碼頭出示憑證兌換或直接出示蓋章登船</div>
-            <div><strong>適用範圍：</strong>當日無限次數搭乘中央湖區渡輪（瓦倫納 Varenna ↔ 貝拉焦 Bellagio）。</div>
-          </div>
-
-          <!-- 4. 熱那亞城市通票 -->
-          <div
-            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 2.6mm 3mm; font-size: 7.6pt; line-height: 1.42; color: #1a202c;">
-            <div style="font-weight: 700; color: var(--galilee-green); font-size: 9.0pt; margin-bottom: 0.8mm;">★
-              熱那亞城市通票（Genova City Pass）</div>
-            <div><strong>使用日期：</strong>10/21 使用（24 小時）</div>
-            <div><strong>兌換方式：</strong>出示手機憑證／QR Code 掃描啟用</div>
-            <div><strong>適用範圍：</strong>含 24h AMT 地鐵與市區交通；可用於哥倫布故居、索普拉納雙塔門、新街世界遺產宮殿群門票優惠。</div>
-          </div>
-
-          <!-- 5. MetDaily一日票 -->
-          <div
-            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 2.6mm 3mm; font-size: 7.6pt; line-height: 1.42; color: #1a202c;">
-            <div style="font-weight: 700; color: var(--galilee-green); font-size: 9.0pt; margin-bottom: 0.8mm;">★
-              MetDaily
-              一日票（APP 條碼）</div>
-            <div><strong>使用日期：</strong>10/22 使用（24 小時）</div>
-            <div><strong>兌換方式：</strong>搭乘 782 公車前在 AMT APP 刷卡點擊啟用</div>
-            <div><strong>適用範圍：</strong>適用 Santa Margherita Ligure ↔ Portofino（菲諾港）區間 782 號公車無限次搭乘。</div>
-          </div>
-
-          <!-- 6. PASS SUD AZUR EXPLORE -->
-          <div
-            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 2.6mm 3mm; font-size: 7.6pt; line-height: 1.42; color: #1a202c;">
-            <div style="font-weight: 700; color: var(--galilee-green); font-size: 9.0pt; margin-bottom: 0.8mm;">★ PASS
-              SUD
-              AZUR EXPLORE（感應卡）</div>
-            <div><strong>使用日期：</strong>10/24–10/26 彈性開通</div>
-            <div><strong>兌換方式：</strong>輕軌候車站柱或車上感應機拍卡（Validé）</div>
-            <div><strong>適用範圍：</strong>濱海阿爾卑斯省通票，涵蓋尼斯輕軌（L1-L3）、市區公車與 TER 區間火車（往返自由城）。</div>
+        <!-- 票券動作指引圖例條 -->
+        <div class="tp-legend-bar">
+          <strong style="color: var(--galilee-green); font-size: 7.2pt; flex-shrink: 0;">🏷️ 票券動作指引：</strong>
+          <div class="tp-legend-items">
+            <span class="pill-badge pill-badge-direct">免換直通·免打卡</span>
+            <span class="pill-badge pill-badge-exchange">需現場兌換／開通</span>
+            <span class="pill-badge pill-badge-buy">需現場／APP購買</span>
+            <span class="pill-badge pill-badge-stamp">⚠️ 實體紙票必打卡</span>
           </div>
         </div>
 
+        <table class="chron-table">
+          <thead>
+            <tr>
+              <th style="width: 11%;">日期／天數</th>
+              <th style="width: 23%;">路線行程／通票名稱</th>
+              <th style="width: 14%;">車次／工具</th>
+              <th style="width: 13%;">時間／效期</th>
+              <th style="width: 39%;">取票型態與動作指引（膠囊標籤）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>10/22</strong> <span class="chron-day-badge">D08</span></td>
+              <td><strong>熱那亞 ➔ 聖瑪格麗塔（去程）</strong></td>
+              <td>IC 657 一等艙</td>
+              <td>09:47 ➔ 10:14<br><span style="color:#666;">(27 分)</span></td>
+              <td><span class="pill-badge pill-badge-direct">對號免打卡</span>持預印 A4 紙本對號車票直接入座</td>
+            </tr>
+            <tr>
+              <td><strong>10/22</strong> <span class="chron-day-badge">D08</span></td>
+              <td><strong>MetDaily 一日票（菲諾港公車）</strong></td>
+              <td>AMT 782 公車</td>
+              <td>24 小時有效</td>
+              <td><span class="pill-badge pill-badge-buy">需 APP 購票</span>於 AMT APP 購買 ＋ <span
+                  class="pill-badge pill-badge-exchange">搭車前啟用</span></td>
+            </tr>
+            <tr>
+              <td><strong>10/22</strong> <span class="chron-day-badge">D08</span></td>
+              <td><strong>聖瑪格麗塔 ➔ 熱那亞（回程）</strong></td>
+              <td>IC 674 一等艙</td>
+              <td>15:46 ➔ 16:14<br><span style="color:#666;">(27 分)</span></td>
+              <td><span class="pill-badge pill-badge-direct">對號免打卡</span>持預印 A4 紙本對號車票直接入座</td>
+            </tr>
+            <tr>
+              <td><strong>10/23</strong> <span class="chron-day-badge">D09</span></td>
+              <td><strong>熱那亞 ➔ 文提米利亞邊境</strong></td>
+              <td>IC 633 一等艙</td>
+              <td>08:58 ➔ 10:58<br><span style="color:#666;">(2 小時)</span></td>
+              <td><span class="pill-badge pill-badge-direct">對號免打卡</span>持預印 A4 紙本對號車票直接入座</td>
+            </tr>
+            <tr>
+              <td><strong>10/23</strong> <span class="chron-day-badge">D09</span></td>
+              <td><strong>文提米利亞 ➔ 尼斯城（跨國）</strong></td>
+              <td>ZOU! / TER 列車</td>
+              <td>約 15:00 前後<br><span style="color:#666;">(54 分)</span></td>
+              <td><span class="pill-badge pill-badge-buy">需邊境購票</span>售票機買紙票 ＋ <span
+                  class="pill-badge pill-badge-stamp">⚠️ 上車必打卡</span>上車前於黃機打卡！</td>
+            </tr>
+            <tr>
+              <td><strong>10/24</strong> <span class="chron-day-badge">D10</span></td>
+              <td><strong>PASS SUD AZUR EXPLORE</strong></td>
+              <td>南法通票感應卡</td>
+              <td>10/24–10/26<br><span style="color:#666;">(彈性開通)</span></td>
+              <td><span class="pill-badge pill-badge-exchange">需車站領卡</span>憑證領實體卡 ＋ <span
+                  class="pill-badge pill-badge-direct">每趟感應搭乘</span>搭輕軌公車拍 Validé 柱</td>
+            </tr>
+            <tr>
+              <td><strong>10/25</strong> <span class="chron-day-badge">D11</span></td>
+              <td><strong>尼斯城 ↔ 濱海自由城</strong></td>
+              <td>TER 懸崖景觀車</td>
+              <td>彈性班次<br><span style="color:#666;">(約 7 分鐘)</span></td>
+              <td><span class="pill-badge pill-badge-direct">持通票搭乘</span>PASS SUD AZUR 感應卡直接進站</td>
+            </tr>
+            <tr>
+              <td><strong>10/26</strong> <span class="chron-day-badge">D12</span></td>
+              <td><strong>尼斯 ↔ 費拉角半島</strong></td>
+              <td>15 號海濱公車</td>
+              <td>車程約 25 分</td>
+              <td><span class="pill-badge pill-badge-direct">持通票搭乘</span>上車刷 PASS SUD AZUR 感應卡</td>
+            </tr>
+            <tr>
+              <td><strong>10/26</strong> <span class="chron-day-badge">D12</span></td>
+              <td><strong>羅斯柴爾德花園別墅門票</strong></td>
+              <td>粉紅宮殿門票</td>
+              <td><strong>10:30 音樂噴泉</strong></td>
+              <td><span class="pill-badge pill-badge-buy">現場購票</span>入口售票處現場購票 一人約600台幣</td>
+            </tr>
+            <tr>
+              <td><strong>10/28</strong> <span class="chron-day-badge">D14</span></td>
+              <td><strong>尼斯市區 ➔ 尼斯機場 T2</strong></td>
+              <td>輕軌 L2 機場線</td>
+              <td>車程約 25 分</td>
+              <td><span class="pill-badge pill-badge-buy">需購票／拍卡</span>售票機買單程票 €1.70 或刷 PASS SUD AZUR</td>
+            </tr>
+
+          </tbody>
+        </table>
+
+        <!-- 通票與數位備份保障須知 -->
         <div
-          style="background: #fdfaf3; border-left: 3px solid var(--galilee-gold); padding: 1.8mm 3mm; border-radius: 0 3px 3px 0; font-size: 7.2pt; line-height: 1.42; color: #2d3748;">
-          <strong>數位備份保障：</strong>各項通票憑證已由隨行領隊於系統建立電子備份。若手機沒電或實體卡片遺失，請立即告知領隊協助調出檔案驗票。
+          style="background: #fdfaf3; border: 1px solid #ebd9b6; border-left: 3px solid var(--galilee-gold); padding: 1.1mm 2.2mm; border-radius: 0 4px 4px 0; font-size: 6.6pt; line-height: 1.30; color: #2d3748;">
+          <div style="font-weight: 700; color: var(--galilee-green); margin-bottom: 0.3mm; font-size: 7.3pt;">
+            🎫 後半程通票與數位備份保障須知
+          </div>
+          <div style="margin-bottom: 0.3mm;"><strong>1.
+              隨行領隊電子備份：</strong>所有機票、車票、通票與別墅憑證均由隨行領隊於系統建立雲端備份，若手機沒電或卡片遺失，請立即告知領隊協助調出檔案驗票。</div>
+          <div><strong>2. 邊境跨國驗票指引：</strong>義法跨國火車偶有邊境警察查驗護照，乘車期間請將護照正本隨身攜帶，切勿放入行李架大件行李箱中。</div>
         </div>
       </div>
 
