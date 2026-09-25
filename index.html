@@ -1100,6 +1100,7 @@
     }
 
     @media (max-width: 900px) {
+
       .step-flow,
       .transit-grid,
       .notice-grid,
@@ -1108,78 +1109,223 @@
       }
     }
 
-    /* 🗺️ Google 導覽地圖按鈕樣式 */
-    .pill-gold {
-      background: linear-gradient(135deg, #d6a34a, #bf8c35);
-      color: #fff !important;
+    /* 🧳 頂部導航列「雙工具組」與手機版響應式自適應 */
+    .nav-tools {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(23, 50, 70, .06);
+      border: 1px solid rgba(23, 50, 70, .14);
+      border-radius: 999px;
+      padding: 3px;
+      gap: 4px;
+      flex-shrink: 0;
+    }
+
+    .nav-tool-btn {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 8px 16px;
+      padding: 7px 14px;
+      border-radius: 999px;
       font-size: 12.5px;
       font-weight: 500;
-      border-radius: 999px;
-      box-shadow: 0 4px 14px rgba(214, 163, 74, .32);
+      text-decoration: none;
       transition: all .2s ease;
       white-space: nowrap;
     }
-    .pill-gold:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 6px 18px rgba(214, 163, 74, .45);
-      background: linear-gradient(135deg, #dfaf57, #c6943d);
+
+    .handbook-tool-btn {
+      background: var(--primary);
+      color: #fff !important;
+      box-shadow: 0 2px 8px rgba(36, 75, 103, .22);
     }
 
-    .map-btn-box {
-      margin-top: 20px;
-      display: block;
-      background: linear-gradient(135deg, #244b67 0%, #173246 100%);
-      color: #fff;
-      padding: 16px 20px;
+    .handbook-tool-btn:hover {
+      background: #1b3a52;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(36, 75, 103, .32);
+    }
+
+    .handbook-tool-btn .tool-badge {
+      background: rgba(255, 255, 255, .22);
+      font-size: 10px;
+      padding: 1px 5px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    .map-tool-btn {
+      background: linear-gradient(135deg, #d6a34a, #c08d36);
+      color: #fff !important;
+      box-shadow: 0 2px 8px rgba(214, 163, 74, .28);
+    }
+
+    .map-tool-btn:hover {
+      background: linear-gradient(135deg, #dfaf57, #c6943d);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(214, 163, 74, .4);
+    }
+
+    @media (max-width: 600px) {
+      .brand small {
+        display: none !important;
+        /* 手機版隱藏超長副標題，徹底避免頂部被擠爆 */
+      }
+
+      .brand strong {
+        font-size: 17px;
+      }
+
+      .nav {
+        gap: 8px;
+        min-height: 52px;
+      }
+
+      .nav-tools {
+        padding: 2px;
+        gap: 2px;
+      }
+
+      .nav-tool-btn {
+        padding: 5px 8px;
+        font-size: 11.5px;
+        gap: 3px;
+      }
+
+      .handbook-tool-btn .tool-badge {
+        display: none;
+      }
+    }
+
+    /* 🧳 行程大動線區「隨行雙必備」工具卡片整併 */
+    .travel-toolkit-grid {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .travel-toolkit-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+    }
+
+    .toolkit-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 16px 18px;
       border-radius: 12px;
       text-decoration: none;
-      box-shadow: 0 8px 24px rgba(23, 50, 70, .2);
-      border: 1.5px solid #d6a34a;
       transition: all .25s ease;
+      position: relative;
     }
-    .map-btn-box:hover {
+
+    .toolkit-card:hover {
       transform: translateY(-2px);
-      box-shadow: 0 12px 28px rgba(23, 50, 70, .32);
+    }
+
+    .map-card {
+      background: linear-gradient(135deg, #1d4059 0%, #132b3d 100%);
+      border: 1.5px solid #d6a34a;
+      box-shadow: 0 6px 20px rgba(23, 50, 70, .18);
+    }
+
+    .map-card:hover {
       border-color: #f1bf63;
-      background: linear-gradient(135deg, #2b587a 0%, #1b3a52 100%);
+      box-shadow: 0 10px 26px rgba(23, 50, 70, .3);
+      background: linear-gradient(135deg, #244b67 0%, #173246 100%);
     }
-    .map-btn-content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
+
+    .handbook-card {
+      background: linear-gradient(135deg, #fdfbf7 0%, #f7f3ea 100%);
+      border: 1.5px solid #d6a34a;
+      box-shadow: 0 6px 20px rgba(214, 163, 74, .12);
     }
-    .map-btn-title {
-      font-family: "Noto Serif TC", serif;
-      font-size: 15.5px;
-      color: #d6a34a;
+
+    .handbook-card:hover {
+      border-color: #b8862d;
+      box-shadow: 0 10px 26px rgba(214, 163, 74, .25);
+      background: linear-gradient(135deg, #fff 0%, #faf6ee 100%);
+    }
+
+    .toolkit-card-head {
       display: flex;
       align-items: center;
       gap: 8px;
-      margin-bottom: 4px;
-      font-weight: 600;
+      margin-bottom: 8px;
     }
-    .map-btn-desc {
-      font-size: 12.5px;
-      color: rgba(255, 255, 255, .82);
-      line-height: 1.5;
+
+    .toolkit-card-icon {
+      font-size: 20px;
+      line-height: 1;
     }
-    .map-btn-arrow {
-      background: rgba(214, 163, 74, .2);
-      border: 1px solid #d6a34a;
+
+    .map-card .toolkit-card-title {
+      font-family: "Noto Serif TC", serif;
+      font-size: 15px;
+      font-weight: 700;
       color: #d6a34a;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      display: flex;
+    }
+
+    .handbook-card .toolkit-card-title {
+      font-family: "Noto Serif TC", serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: #173246;
+    }
+
+    .toolkit-card-tag {
+      font-size: 10px;
+      font-weight: 600;
+      padding: 1.5px 6px;
+      border-radius: 4px;
+      margin-left: auto;
+    }
+
+    .map-card .toolkit-card-tag {
+      background: rgba(214, 163, 74, .22);
+      color: #f3cf88;
+      border: 1px solid rgba(214, 163, 74, .4);
+    }
+
+    .handbook-card .toolkit-card-tag {
+      background: rgba(23, 50, 70, .08);
+      color: #244b67;
+      border: 1px solid rgba(23, 50, 70, .15);
+    }
+
+    .map-card .toolkit-card-desc {
+      font-size: 12px;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, .82);
+      margin-bottom: 12px;
+    }
+
+    .handbook-card .toolkit-card-desc {
+      font-size: 12px;
+      line-height: 1.5;
+      color: #4a5568;
+      margin-bottom: 12px;
+    }
+
+    .toolkit-card-action {
+      display: inline-flex;
       align-items: center;
-      justify-content: center;
-      font-size: 14px;
-      flex-shrink: 0;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-top: auto;
+    }
+
+    .map-card .toolkit-card-action {
+      color: #f1bf63;
+    }
+
+    .handbook-card .toolkit-card-action {
+      color: #244b67;
     }
   </style>
 </head>
@@ -1189,9 +1335,19 @@
     <div class="wrap nav">
       <div class="brand"><strong id="brand"></strong><small id="code"></small></div>
       <nav id="nav"></nav>
-      <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
-        <a class="pill" href="print-handbook.html" target="_blank" style="padding:8px 14px;font-size:12.5px;font-weight:500;" title="開啟 A5 隨身旅行備忘手冊，支援一鍵列印與存為 PDF">📖 隨身手冊 (A5列印)</a>
-        <a class="pill pill-gold" href="https://www.google.com/maps/d/u/0/viewer?mid=1i1NniCAh-6yz6sYBBcQNWLX5Ykykln8" target="_blank" rel="noopener noreferrer">🗺️ 導覽地圖</a>
+      <div class="nav-tools">
+        <a class="nav-tool-btn handbook-tool-btn" href="print-handbook.html" target="_blank"
+          title="開啟 A5 隨身旅行手冊 (可列印/存PDF)">
+          <span>📖</span>
+          <span>隨身手冊</span>
+          <span class="tool-badge">A5</span>
+        </a>
+        <a class="nav-tool-btn map-tool-btn"
+          href="https://www.google.com/maps/d/u/0/viewer?mid=1i1NniCAh-6yz6sYBBcQNWLX5Ykykln8" target="_blank"
+          rel="noopener noreferrer" title="開啟 Google 我的地圖導覽">
+          <span>🗺️</span>
+          <span>導覽地圖</span>
+        </a>
       </div>
     </div>
   </header>
@@ -1215,21 +1371,34 @@
         <div>
           <div class="eyebrow" id="principle-eye"></div>
           <figure class="principle-map"><img id="principle-map-img" loading="lazy"></figure>
-          
-          <!-- 🗺️ Google 我的行程導覽地圖快速入口 -->
-          <a href="https://www.google.com/maps/d/u/0/viewer?mid=1i1NniCAh-6yz6sYBBcQNWLX5Ykykln8" target="_blank" rel="noopener noreferrer" class="map-btn-box">
-            <div class="map-btn-content">
-              <div>
-                <div class="map-btn-title">
-                  <span>🗺️</span> 2026 蔚藍海岸慢活 · Google 行程導覽地圖
-                </div>
-                <div class="map-btn-desc">
-                  收錄 10 大每日路線圖層、地鐵電車站牌、科莫湖渡輪班次、私房拍照景觀點與寄物小餐館，支援手機 Google Maps App 即時隨身導航！
-                </div>
+
+          <!-- 🧳 旅人隨行雙必備：Google 導覽地圖 + A5 隨身手冊 -->
+          <div class="travel-toolkit-grid">
+            <a href="https://www.google.com/maps/d/u/0/viewer?mid=1i1NniCAh-6yz6sYBBcQNWLX5Ykykln8" target="_blank"
+              rel="noopener noreferrer" class="toolkit-card map-card">
+              <div class="toolkit-card-head">
+                <span class="toolkit-card-icon">🗺️</span>
+                <span class="toolkit-card-title">Google 行程導覽地圖</span>
+                <span class="toolkit-card-tag">線上即時導航</span>
               </div>
-              <div class="map-btn-arrow">➔</div>
-            </div>
-          </a>
+              <div class="toolkit-card-desc">
+                收錄 10 大每日路線圖層、地鐵電車站牌、渡輪班次、私房拍照景觀點與寄物小店，支援手機 Google Maps App 即時定位與語音導航。
+              </div>
+              <div class="toolkit-card-action">開啟 Google Maps 導覽 ➔</div>
+            </a>
+
+            <a href="print-handbook.html" target="_blank" class="toolkit-card handbook-card">
+              <div class="toolkit-card-head">
+                <span class="toolkit-card-icon">📖</span>
+                <span class="toolkit-card-title">隨身旅行備忘手冊</span>
+                <span class="toolkit-card-tag">A5 列印 / PDF</span>
+              </div>
+              <div class="toolkit-card-desc">
+                完整 20 頁官方規格，含每日精準火車時刻、三大五星飯店規格、行李打包核對表、個人零用記帳表與長輩慢活叮嚀。
+              </div>
+              <div class="toolkit-card-action">預覽 A5 隨身手冊 ➔</div>
+            </a>
+          </div>
         </div>
         <ol class="route" id="route"></ol>
       </div>
@@ -1249,7 +1418,7 @@
       <!-- 🚆 搭乘交通重要注意事項與 APP 啟用指南 -->
       <div class="transit-guide">
         <h3 style="margin-top:48px">搭乘交通重要注意事項與 APP 啟用指南　Transit Guidelines</h3>
-        
+
         <!-- 核心規則速查警示卡 -->
         <div class="alert-card">
           <div class="alert-card-head">
@@ -1262,15 +1431,19 @@
           <div class="step-flow">
             <div class="step-item">
               <b><span class="step-num">1</span> 區域列車：Trenord APP（確認 Wallet QR 與 Check-in）</b>
-              <p>機場快線（Malpensa Express）或米蘭近郊 RE（往貝爾加莫、瓦倫納）：乘車前打開 <strong>Trenord APP</strong>，確認 <strong>Wallet（電子錢包）裡的票券 QR Code 與 Check-in 狀態</strong>，乘車時出示手機螢幕供查票，免換實體票。</p>
+              <p>機場快線（Malpensa Express）或米蘭近郊 RE（往貝爾加莫、瓦倫納）：乘車前打開 <strong>Trenord APP</strong>，確認
+                <strong>Wallet（電子錢包）裡的票券 QR Code 與 Check-in 狀態</strong>，乘車時出示手機螢幕供查票，免換實體票。
+              </p>
             </div>
             <div class="step-item">
               <b><span class="step-num">2</span> 城際對號車：國鐵 Trenitalia 印出的紙本票</b>
-              <p>本次行程的 <strong>IC 659、IC 657、IC 674、IC 633</strong> 均為劃位城際快車，<strong>請攜帶預先由 Trenitalia 印出之 A4 紙本票</strong>，票上已有固定車廂（Carrozza）與座位號（Posto），<strong>完全不用在月台打卡</strong>，直接對號入座。</p>
+              <p>本次行程的 <strong>IC 659、IC 657、IC 674、IC 633</strong> 均為劃位城際快車，<strong>請攜帶預先由 Trenitalia 印出之 A4
+                  紙本票</strong>，票上已有固定車廂（Carrozza）與座位號（Posto），<strong>完全不用在月台打卡</strong>，直接對號入座。</p>
             </div>
             <div class="step-item">
               <b><span class="step-num">3</span> 自行購買的紙本票</b>
-              <p>回程彈性車次（如瓦倫納回米蘭、邊境文提米利亞往尼斯）於車站窗口或自動售票機自行購買。<strong>⚠️ 特別注意：若購買傳統實體小卡紙票，上車前必須在月台黃色打票機打卡（蓋上時間印戳）</strong>；若於 APP 購買電子票則免打卡。</p>
+              <p>回程彈性車次（如瓦倫納回米蘭、邊境文提米利亞往尼斯）於車站窗口或自動售票機自行購買。<strong>⚠️
+                  特別注意：若購買傳統實體小卡紙票，上車前必須在月台黃色打票機打卡（蓋上時間印戳）</strong>；若於 APP 購買電子票則免打卡。</p>
             </div>
           </div>
         </div>
@@ -1283,9 +1456,11 @@
             <ul>
               <li><strong>通票完全不需要做火車 Check-in！</strong>但各票券有各自的「開通／啟用 (Active)」方式：</li>
               <li><strong>米蘭城市通票（感應卡）</strong>：進地鐵閘門直接感應拍卡，首次感應當刻起算 24 小時。</li>
-              <li><strong>貝爾加莫通票（ATB APP）</strong>：抵達貝爾加莫、上第一趟公車或登山纜車前，在 ATB APP 內點擊<strong>「Attiva (啟用)」</strong>開始計時 24 小時。</li>
+              <li><strong>貝爾加莫通票（ATB APP）</strong>：抵達貝爾加莫、上第一趟公車或登山纜車前，在 ATB APP 內點擊<strong>「Attiva (啟用)」</strong>開始計時
+                24 小時。</li>
               <li><strong>科莫湖渡輪一日票（憑證）</strong>：前往碼頭窗口兌換或直接出示憑證蓋章登船，與鐵路系統無關。</li>
-              <li><strong>熱那亞 MetDaily 一日票（AMT APP）</strong>：搭乘前往菲諾港的 782 公車前，在 APP 點擊<strong>「Attiva (啟用)」</strong>。</li>
+              <li><strong>熱那亞 MetDaily 一日票（AMT APP）</strong>：搭乘前往菲諾港的 782 公車前，在 APP 刷卡並點擊<strong>「Attiva (啟用)」</strong>。
+              </li>
               <li><strong>南法 PASS SUD AZUR（感應卡）</strong>：搭乘尼斯輕軌 Tram 或公車時，在候車柱或車上感應機拍卡（Validé）一次即可。</li>
             </ul>
           </article>
@@ -1293,7 +1468,8 @@
             <div class="eyebrow">E-TICKET GUIDE</div>
             <h4>全線電子票（PDF / APP）：免換票、免打卡</h4>
             <ul>
-              <li><strong>免排隊換票、免月台打卡</strong>：您行程中的所有車票均為<strong>數位電子票（PDF 或 APP QR Code）</strong>，已具備完整法律效力，<strong>完全不需要去售票機換票，也絕對不用（且無法）在月台打票機蓋印</strong>。</li>
+              <li><strong>免排隊換票、免月台打卡</strong>：您行程中的所有車票均為<strong>數位電子票（PDF 或 APP QR
+                  Code）</strong>，已具備完整法律效力，<strong>完全不需要去售票機換票，也絕對不用（且無法）在月台打票機蓋印</strong>。</li>
               <li><strong>手機直接出示</strong>：列車長查票時，只需調亮手機螢幕、秀出 PDF 中的 QR Code 供掃描即可。</li>
               <li><strong>離線保存防斷網</strong>：車站地下月台常有網路死角，建議出發前<strong>將所有 PDF 車票下載儲存至手機「檔案」或離線相簿</strong>，隨點隨開。</li>
               <li><strong>A4 紙本備份（建議備用）</strong>：若擔心手機在外沒電，亦可將 PDF 列印一張 A4 紙本放包包，掃描紙本一樣合法有效。</li>
@@ -1303,8 +1479,10 @@
             <div class="eyebrow">STATION & SAFETY</div>
             <h4>米蘭市區交通與月台乘車要領</h4>
             <ul>
-              <li><strong>米蘭地鐵 Tap & Go</strong>：支援 Apple Pay / 信用卡感應進出閘門，<strong>務必同站進出刷同一張實體卡或同裝置</strong>，系統自動結算單日優惠。</li>
-              <li><strong>尋找列車月台</strong>：歐洲車站通常在發車前 10~15 分鐘才公佈月台（Binario / Voie），請以<strong>「列車車次編號 (如 RE 2219)」</strong>核對大看板，勿只認終點站。</li>
+              <li><strong>米蘭地鐵 Tap & Go</strong>：支援 Apple Pay / 信用卡感應進出閘門，<strong>務必同站進出刷同一張實體卡或同裝置</strong>，系統自動結算單日優惠。
+              </li>
+              <li><strong>尋找列車月台</strong>：歐洲車站通常在發車前 10~15 分鐘才公佈月台（Binario / Voie），請以<strong>「列車車次編號 (如 RE
+                  2219)」</strong>核對大看板，勿只認終點站。</li>
               <li><strong>防扒與行李安全</strong>：上下火車與地鐵人潮擁擠時最易有扒手，請將後背包前揹；大件行李放置於座位視線所及的行李架，貴重隨身包切勿離開身體。</li>
             </ul>
           </article>
@@ -1345,27 +1523,34 @@
           <article class="notice-card">
             <span class="notice-icon">💶</span>
             <h4>歐元現金與 4 碼 PIN 密碼</h4>
-            <p>歐洲刷卡極為普及，建議每人僅需攜帶約 200~400 歐元小額現金（以 €10、€20、€50 為主，避免 €100 以上大鈔）。請提前向發卡銀行<strong>開通海外刷卡與預借現金 4 位數 PIN 碼</strong>（歐洲自動售票機常需輸入）。</p>
+            <p>歐洲刷卡極為普及，建議每人僅需攜帶約 200~400 歐元小額現金（以 €10、€20、€50 為主，避免 €100 以上大鈔）。請提前向發卡銀行<strong>開通海外刷卡與預借現金 4 位數 PIN
+                碼</strong>（歐洲自動售票機常需輸入）。</p>
           </article>
           <article class="notice-card">
             <span class="notice-icon">🔌</span>
             <h4>電壓 220V 與雙圓孔轉接頭</h4>
-            <p>義大利與法國電壓皆為 220V / 50Hz，插座孔型為<strong>歐規雙圓孔（Type C / L，圓柱直徑 4.0mm~4.8mm）</strong>。一般手機、相機、筆電充電器皆支援 100~240V 全球電壓，只需攜帶轉接插頭即可（吹風機請使用飯店提供）。</p>
+            <p>義大利與法國電壓皆為 220V / 50Hz，插座孔型為<strong>歐規雙圓孔（Type C / L，圓柱直徑 4.0mm~4.8mm）</strong>。一般手機、相機、筆電充電器皆支援 100~240V
+              全球電壓，只需攜帶轉接插頭即可（吹風機請使用飯店提供）。</p>
           </article>
           <article class="notice-card">
             <span class="notice-icon">📶</span>
             <h4>eSIM 網路與離線地圖</h4>
-            <p>建議出發前一至二天安裝好歐洲跨國 eSIM 或確認電信漫遊方案。請提前在 Google Maps 下載<strong>米蘭、科莫湖、熱那亞、菲諾港、尼斯等城市之離線地圖</strong>，並安裝 Trenitalia 與 SNCF Connect APP。</p>
+            <p>建議出發前一至二天安裝好歐洲跨國 eSIM 或確認電信漫遊方案。請提前在 Google Maps 下載<strong>米蘭、科莫湖、熱那亞、菲諾港、尼斯等城市之離線地圖</strong>，並安裝
+              Trenitalia 與 SNCF Connect APP。</p>
           </article>
           <article class="notice-card">
             <span class="notice-icon">🧥</span>
             <h4>10 月氣候穿搭與健走好鞋</h4>
-            <p>10 月中下旬北義米蘭氣溫約 10°C~18°C，南法蔚藍海岸約 14°C~22°C，日夜溫差大。請採用<strong>「洋蔥式層疊穿法」</strong>（保暖薄內搭＋毛衣/罩衫＋防風輕暖外套與圍巾）。歐洲古城石板路多，<strong>必備支撐度佳、耐走的運動健走鞋</strong>。</p>
+            <p>10 月中下旬北義米蘭氣溫約 10°C~18°C，南法蔚藍海岸約
+              14°C~22°C，日夜溫差大。請採用<strong>「洋蔥式層疊穿法」</strong>（保暖薄內搭＋毛衣/罩衫＋防風輕暖外套與圍巾）。歐洲古城石板路多，<strong>必備支撐度佳、耐走的運動健走鞋</strong>。
+            </p>
           </article>
           <article class="notice-card">
             <span class="notice-icon">🛡️</span>
             <h4>防扒防竊與隨身安全心法</h4>
-            <p>米蘭中央車站、米蘭大教堂周圍、地鐵車廂人多時請隨時提高警覺。<strong>後背包拉鍊加安全鎖扣或置於胸前</strong>，手機避免拿在手上貼近地鐵門邊滑手機，重要護照、大額現金請放置於貼身隱形腰包或飯店保險箱。</p>
+            <p>
+              米蘭中央車站、米蘭大教堂周圍、地鐵車廂人多時請隨時提高警覺。<strong>後背包拉鍊加安全鎖扣或置於胸前</strong>，手機避免拿在手上貼近地鐵門邊滑手機，重要護照、大額現金請放置於貼身隱形腰包或飯店保險箱。
+            </p>
           </article>
         </div>
 
@@ -1789,7 +1974,7 @@
           tags: ["IC 一等艙", "S. Margherita 火車站", "782 公車", "菲諾港海灣", "Punto Panoramico"],
           gallery: [
             { src: IMAGE.day08Portofino, caption: "菲諾港的粉彩屋與船影" },
-            { src: IMAGE.day08SantaMargherita, caption: "聖瑪格麗塔海灣的悠閒漫步" },
+            // { src: IMAGE.day08SantaMargherita, caption: "聖瑪格麗塔海灣的悠閒漫步" },
           ],
           items: [
             "09:47 由 Genova Piazza Principe 搭乘城際快車 IC 657 一等艙出發，沿蔚藍海岸行駛，10:14 抵達海濱度假勝地 Santa Margherita Ligure。",
@@ -2078,7 +2263,7 @@
     function getStoredPacking() {
       try {
         return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
-      } catch(e) {
+      } catch (e) {
         return {};
       }
     }
@@ -2120,20 +2305,20 @@
       if (totalEl) totalEl.textContent = total;
     }
 
-    window.togglePackingItem = function(id) {
+    window.togglePackingItem = function (id) {
       const stored = getStoredPacking();
       stored[id] = !stored[id];
       try {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(stored));
-      } catch(e) {}
+      } catch (e) { }
       renderPackingChecklist();
     };
 
-    window.resetPacking = function() {
+    window.resetPacking = function () {
       if (confirm("確定要重設行李準備清單，清空所有打勾項目嗎？")) {
         try {
           localStorage.removeItem(STORAGE_KEY);
-        } catch(e) {}
+        } catch (e) { }
         renderPackingChecklist();
       }
     };
