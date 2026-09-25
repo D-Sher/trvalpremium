@@ -1,0 +1,1946 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>義大利 × 南法蔚藍海岸 15 日 · 隨身旅行備忘行程手冊 (A5 列印版)</title>
+  <meta name="description" content="義大利 × 南法蔚藍海岸 15 日熟齡慢活旅程 - A5 隨身備忘行程記事小手冊">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    /* ==========================================================================
+       A5 TRAVEL HANDBOOK DESIGN SYSTEM
+       尺寸：標準 A5 直式 (148mm × 210mm)
+       ========================================================================== */
+    :root {
+      --navy: #1b364b;
+      --navy-light: #244b67;
+      --navy-dark: #132433;
+      --gold: #d6a34a;
+      --gold-dark: #a87928;
+      --gold-light: #fdf6e7;
+      --bg-paper: #faf9f5;
+      --text-main: #273447;
+      --text-muted: #5e6b78;
+      --border-color: #dce3e8;
+      --border-light: #edf2f5;
+      --accent-red: #c0392b;
+      --accent-green: #27ae60;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #eef2f5;
+      color: var(--text-main);
+      font-family: "Noto Sans TC", system-ui, -apple-system, sans-serif;
+      font-size: 11pt;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: "Noto Serif TC", "Songti TC", serif;
+      color: var(--navy);
+      margin: 0;
+      line-height: 1.25;
+    }
+
+    /* 頂部螢幕專用操作控制列 */
+    .screen-toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: #1b364b;
+      color: #fff;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 16px rgba(0,0,0,.2);
+      border-bottom: 2px solid var(--gold);
+    }
+    .toolbar-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .toolbar-title h2 {
+      font-size: 16px;
+      color: #fff;
+      font-weight: 600;
+    }
+    .toolbar-title span {
+      background: var(--gold);
+      color: #1b364b;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+    .toolbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .btn-print {
+      background: linear-gradient(135deg, #e5b358 0%, #d6a34a 100%);
+      color: #1b364b;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.2);
+      transition: all .2s ease;
+    }
+    .btn-print:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(214,163,74,.4);
+    }
+    .btn-web {
+      background: rgba(255,255,255,.12);
+      color: #fff;
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 13px;
+      border: 1px solid rgba(255,255,255,.3);
+      transition: all .2s;
+    }
+    .btn-web:hover {
+      background: rgba(255,255,255,.2);
+    }
+    .print-tip {
+      font-size: 12px;
+      color: #d8e4ec;
+      background: rgba(0,0,0,.25);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    /* 手冊容器 */
+    .handbook-wrapper {
+      max-width: 900px;
+      margin: 24px auto;
+      padding-bottom: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 28px;
+    }
+
+    /* A5 頁面主體 (148mm x 210mm) */
+    .a5-page {
+      width: 148mm;
+      min-height: 210mm;
+      height: 210mm;
+      background: var(--bg-paper);
+      padding: 12mm 11mm;
+      position: relative;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+      border-radius: 3px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      page-break-after: always;
+      break-after: page;
+    }
+
+    /* 頁首與頁尾標籤 */
+    .page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 3.5mm;
+      margin-bottom: 3.5mm;
+      font-size: 8pt;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+    }
+    .page-header-title {
+      font-weight: 700;
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .page-header-title::before {
+      content: "";
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+    .page-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border-color);
+      padding-top: 3mm;
+      margin-top: auto;
+      font-size: 7.5pt;
+      color: var(--text-muted);
+    }
+    .page-num {
+      font-family: "Noto Serif TC", serif;
+      font-weight: 700;
+      color: var(--navy);
+      background: #fff;
+      padding: 1px 6px;
+      border-radius: 10px;
+      border: 1px solid var(--border-color);
+    }
+
+    .page-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* 封面專屬樣式 */
+    .cover-page {
+      background: linear-gradient(160deg, #132433 0%, #1b364b 50%, #244b67 100%);
+      color: #fff;
+      padding: 14mm 12mm;
+      position: relative;
+      border: 1px solid #132433;
+    }
+    .cover-border {
+      position: absolute;
+      top: 6mm;
+      left: 6mm;
+      right: 6mm;
+      bottom: 6mm;
+      border: 1.5px solid rgba(214, 163, 74, 0.45);
+      pointer-events: none;
+      border-radius: 4px;
+    }
+    .cover-inner-border {
+      position: absolute;
+      top: 7.5mm;
+      left: 7.5mm;
+      right: 7.5mm;
+      bottom: 7.5mm;
+      border: 0.5px solid rgba(214, 163, 74, 0.25);
+      pointer-events: none;
+    }
+    .cover-brand {
+      text-align: center;
+      font-size: 9pt;
+      letter-spacing: 0.3em;
+      color: var(--gold);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 6mm;
+    }
+    .cover-hero-title {
+      text-align: center;
+      margin-top: 14mm;
+    }
+    .cover-hero-title h1 {
+      color: #ffffff;
+      font-size: 20pt;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      margin-bottom: 4mm;
+      text-shadow: 0 2px 8px rgba(0,0,0,.4);
+    }
+    .cover-hero-title .sub {
+      color: var(--gold);
+      font-size: 11pt;
+      letter-spacing: 0.15em;
+      font-family: "Noto Serif TC", serif;
+    }
+    .cover-emblem {
+      width: 48px;
+      height: 48px;
+      margin: 8mm auto;
+      border: 1.5px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      background: rgba(214, 163, 74, 0.1);
+    }
+    .cover-tags {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 3mm;
+    }
+    .cover-tag {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(214,163,74,0.3);
+      color: #f0f4f8;
+      font-size: 7.5pt;
+      padding: 3px 8px;
+      border-radius: 3px;
+    }
+    .cover-user-box {
+      margin-top: auto;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 6px;
+      padding: 4mm 5mm;
+      backdrop-filter: blur(4px);
+    }
+    .cover-user-box h4 {
+      color: var(--gold);
+      font-size: 8pt;
+      margin-bottom: 2mm;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(214,163,74,0.25);
+      padding-bottom: 1mm;
+    }
+    .cover-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 7.5pt;
+      margin-bottom: 2mm;
+      color: #e2e8f0;
+    }
+    .cover-line {
+      border-bottom: 1px dotted rgba(255,255,255,0.4);
+      flex: 1;
+      margin: 0 4px 2px 4px;
+    }
+
+    /* 內頁元件樣式 */
+    .section-headline {
+      margin-bottom: 3mm;
+    }
+    .section-headline .eye {
+      font-size: 7pt;
+      color: var(--gold-dark);
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .section-headline h2 {
+      font-size: 13.5pt;
+      color: var(--navy);
+      font-weight: 700;
+      margin-top: 0.5mm;
+    }
+
+    /* 資訊卡片元件 */
+    .card {
+      background: #fff;
+      border: 1px solid var(--border-color);
+      border-radius: 5px;
+      padding: 3mm 3.5mm;
+      margin-bottom: 2.8mm;
+    }
+    .card-navy {
+      background: #f4f7f9;
+      border-left: 3px solid var(--navy);
+    }
+    .card-gold {
+      background: #fdfaf3;
+      border-left: 3px solid var(--gold);
+    }
+    .card-title {
+      font-size: 9pt;
+      font-weight: 700;
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5mm;
+    }
+    .badge {
+      font-size: 6.5pt;
+      padding: 1.5px 5px;
+      border-radius: 3px;
+      font-weight: 600;
+    }
+    .badge-gold {
+      background: var(--gold-light);
+      color: var(--gold-dark);
+      border: 1px solid rgba(214,163,74,.4);
+    }
+    .badge-navy {
+      background: #e9eff4;
+      color: var(--navy);
+    }
+
+    /* 表格設計 */
+    table.data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 7pt;
+      margin-top: 1mm;
+      margin-bottom: 2mm;
+    }
+    table.data-table th {
+      background: var(--navy);
+      color: #fff;
+      padding: 3px 4px;
+      text-align: left;
+      font-weight: 600;
+      font-size: 6.5pt;
+    }
+    table.data-table td {
+      padding: 3px 4px;
+      border-bottom: 1px solid var(--border-color);
+      color: var(--text-main);
+      vertical-align: middle;
+    }
+    table.data-table tr:nth-child(even) td {
+      background: #f8fafb;
+    }
+
+    /* 每日行程專屬樣式 */
+    .day-header-banner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      color: #fff;
+      padding: 3.5mm 4.5mm;
+      border-radius: 5px;
+      margin-bottom: 2.5mm;
+    }
+    .day-num-box {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+    .day-num-box h2 {
+      color: #fff;
+      font-size: 15pt;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+    .day-date {
+      color: var(--gold);
+      font-size: 9pt;
+      font-weight: 600;
+    }
+    .day-city-badge {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(214,163,74,0.4);
+      color: #fff;
+      font-size: 7pt;
+      padding: 2px 7px;
+      border-radius: 12px;
+      font-weight: 500;
+    }
+
+    .day-title-sub {
+      font-size: 9pt;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 2mm;
+      line-height: 1.35;
+      font-family: "Noto Serif TC", serif;
+      border-left: 2.5px solid var(--gold);
+      padding-left: 6px;
+    }
+
+    .day-flow-box {
+      background: #fff;
+      border: 1px solid var(--border-color);
+      border-radius: 5px;
+      padding: 2.5mm 3.5mm;
+      margin-bottom: 2.5mm;
+    }
+    .day-flow-item {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 2mm;
+      font-size: 7.5pt;
+      line-height: 1.45;
+    }
+    .day-flow-item:last-child {
+      margin-bottom: 0;
+    }
+    .flow-badge {
+      font-size: 6.5pt;
+      font-weight: 700;
+      color: #fff;
+      background: var(--navy);
+      padding: 1px 5px;
+      border-radius: 3px;
+      height: fit-content;
+      white-space: nowrap;
+      margin-top: 1px;
+    }
+    .flow-badge-orange {
+      background: #d35400;
+    }
+    .flow-badge-gold {
+      background: var(--gold-dark);
+    }
+    .flow-badge-green {
+      background: #27ae60;
+    }
+
+    .day-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5mm;
+      margin-bottom: 2.5mm;
+    }
+    .mini-info-box {
+      background: #fdfaf3;
+      border: 1px solid #fae6c3;
+      border-radius: 4px;
+      padding: 2mm 3mm;
+      font-size: 7pt;
+    }
+    .mini-info-box strong {
+      color: var(--gold-dark);
+      display: block;
+      font-size: 7.5pt;
+      margin-bottom: 1mm;
+    }
+
+    /* 筆記與記事留白格 */
+    .notes-journal-box {
+      margin-top: auto;
+      border: 1px dashed #c8d3dc;
+      background: #fff;
+      border-radius: 5px;
+      padding: 2.5mm 3.5mm;
+      position: relative;
+    }
+    .notes-journal-title {
+      font-size: 7pt;
+      font-weight: 700;
+      color: var(--navy);
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1.5mm;
+    }
+    .write-lines {
+      display: flex;
+      flex-direction: column;
+      gap: 4mm;
+      margin-top: 2mm;
+    }
+    .write-line {
+      border-bottom: 1px dotted #d0dbe2;
+      height: 1px;
+      width: 100%;
+    }
+    .expense-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 6.5pt;
+      color: var(--text-muted);
+      border-top: 1px solid #f0f4f7;
+      padding-top: 1.5mm;
+      margin-top: 2mm;
+    }
+
+    /* 雙語求助卡 */
+    .phrase-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2mm;
+      margin-top: 1.5mm;
+    }
+    .phrase-card {
+      background: #fff;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      padding: 2mm 2.5mm;
+      font-size: 7pt;
+    }
+    .phrase-zh {
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 1px;
+    }
+    .phrase-lang {
+      color: var(--text-muted);
+      font-size: 6.5pt;
+      font-style: italic;
+    }
+    .phrase-pron {
+      color: #b33939;
+      font-size: 6.5pt;
+      font-weight: 500;
+    }
+
+    /* 打包核對清單 Checkbox */
+    .checklist-col {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5mm;
+    }
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 7.5pt;
+    }
+    .check-box {
+      width: 10px;
+      height: 10px;
+      border: 1px solid var(--navy);
+      border-radius: 2px;
+      display: inline-block;
+    }
+
+    /* 列印專用樣式覆寫 */
+    @media print {
+      body {
+        background: #fff;
+      }
+      .screen-toolbar {
+        display: none !important;
+      }
+      .handbook-wrapper {
+        margin: 0;
+        padding: 0;
+        gap: 0;
+      }
+      .a5-page {
+        box-shadow: none;
+        border-radius: 0;
+        margin: 0;
+        width: 148mm;
+        height: 210mm;
+        page-break-after: always !important;
+        break-after: page !important;
+      }
+      @page {
+        size: A5 portrait;
+        margin: 0; /* 頁面內建 11mm~12mm padding */
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 螢幕專用操作控制列 -->
+  <header class="screen-toolbar">
+    <div class="toolbar-title">
+      <h2>義大利 × 南法 15 日 · A5 隨身旅行備忘手冊</h2>
+      <span>A5 列印與 PDF 專用</span>
+    </div>
+    <div class="toolbar-actions">
+      <div class="print-tip">💡 列印建議：紙張選「A5」、勾選「背景圖形」、邊界設為「無」</div>
+      <button class="btn-print" onclick="window.print()">🖨️ 立即列印 / 存為 A5 PDF</button>
+      <a class="btn-web" href="index.html">← 返回完整導覽網頁</a>
+    </div>
+  </header>
+
+  <div class="handbook-wrapper">
+
+    <!-- =========================================================================
+         PAGE 01: 手冊封面 (Cover Page)
+         ========================================================================= -->
+    <div class="a5-page cover-page">
+      <div class="cover-border"></div>
+      <div class="cover-inner-border"></div>
+
+      <div class="cover-brand">TRAVEL EURO · SENIOR SLOW TRAVEL</div>
+
+      <div class="cover-hero-title">
+        <div class="sub">2026 熟齡慢活旅程</div>
+        <h1>義大利 × 南法蔚藍海岸</h1>
+        <div class="sub">湖光 ‧ 山城 ‧ 風情小鎮 ‧ 蔚藍海岸 15 日</div>
+      </div>
+
+      <div class="cover-emblem">⚓</div>
+
+      <div class="cover-tags">
+        <span class="cover-tag">10/15–10/29</span>
+        <span class="cover-tag">4-3-5 三大基地</span>
+        <span class="cover-tag">100% 舒適鐵道</span>
+        <span class="cover-tag">米蘭 ‧ 熱那亞 ‧ 尼斯</span>
+      </div>
+
+      <div class="cover-user-box">
+        <h4>TRAVELER MEMO · 旅人隨身緊急備忘卡</h4>
+        <div class="cover-row">
+          <span>旅人姓名：</span>
+          <span class="cover-line"></span>
+          <span>護照號碼：</span>
+          <span class="cover-line"></span>
+        </div>
+        <div class="cover-row">
+          <span>緊急聯絡人：</span>
+          <span class="cover-line"></span>
+          <span>聯絡電話：</span>
+          <span class="cover-line"></span>
+        </div>
+        <div class="cover-row">
+          <span>在台親友電話：</span>
+          <span class="cover-line"></span>
+          <span>海外保單號：</span>
+          <span class="cover-line"></span>
+        </div>
+      </div>
+
+      <div style="text-align: center; font-size: 6.5pt; color: rgba(255,255,255,.5); margin-top: 3mm;">
+        隨身攜帶 ‧ 離線安心 ‧ 溫馨慢遊 ‧ POCKET HANDBOOK
+      </div>
+    </div>
+
+
+    <!-- =========================================================================
+         PAGE 02: 緊急聯絡通訊錄與 Google 導覽地圖入口
+         ========================================================================= -->
+    <div class="a5-page">
+      <div class="page-header">
+        <span class="page-header-title">EMERGENCY & MAP</span>
+        <span>緊急求助與線上導覽</span>
+      </div>
+
+      <div class="page-content">
+        <div class="section-headline">
+          <div class="eye">IMPORTANT CONTACTS</div>
+          <h2>緊急聯絡與海外求助電話</h2>
+        </div>
+
+        <div class="card card-navy">
+          <div class="card-title">
+            <span>🚨 歐洲通用緊急救難電話（免加國碼）</span>
+            <span class="badge badge-navy">24 小時免費</span>
+          </div>
+          <p style="font-size: 8pt; margin: 1mm 0 2mm 0; line-height: 1.4;">
+            <strong>手機直接撥打「112」</strong>（如同台灣 110/119，警察、消防、救護一體）。不需解鎖手機、無 SIM 卡亦可撥通。
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">🇹🇼 中華民國駐外館處緊急急難救助電話</div>
+          <table class="data-table">
+            <tr>
+              <th width="35%">館處名稱</th>
+              <th width="38%">緊急救助專線（境內直撥）</th>
+              <th>備註</th>
+            </tr>
+            <tr>
+              <td><strong>駐義大利代表處（羅馬）</strong></td>
+              <td><strong>+39 338 141 8941</strong></td>
+              <td>米蘭、熱那亞全境適用</td>
+            </tr>
+            <tr>
+              <td><strong>駐普羅旺斯辦事處（南法）</strong></td>
+              <td><strong>+33 6 46 84 46 95</strong></td>
+              <td>尼斯、自由城、費拉角全境</td>
+            </tr>
+            <tr>
+              <td>外交部領事事務局緊急電話</td>
+              <td>+886 800-085-095</td>
+              <td>在台家屬 24h 查詢專線</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="card card-gold" style="margin-top: 1mm;">
+          <div class="card-title">
+            <span>🗺️ Google 專屬行程導覽地圖隨身查</span>
+            <span class="badge badge-gold">離線推薦</span>
+          </div>
+          <div style="display: flex; gap: 8px; align-items: center; margin-top: 1mm;">
+            <div style="flex: 1; font-size: 7.5pt; line-height: 1.45;">
+              行程已建立專屬 Google 我的地圖，收錄 10 大每日圖層、車站、渡輪碼頭與小餐館：<br>
+              <strong>網址：</strong> <span style="font-family: monospace; font-size: 7pt;">tinyurl.com/travel2026-map</span><br>
+              出發前可於 Google Maps App 下載米蘭、熱那亞、尼斯之離線圖資！
+            </div>
+            <div style="width: 58px; height: 58px; background: #fff; border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; font-size: 7pt; text-align: center; color: var(--navy); font-weight: 700; border-radius: 4px;">
+              MAP<br>QR CODE
+            </div>
+          </div>
+        </div>
+
+        <div class="notes-journal-box" style="margin-top: auto;">
+          <div class="notes-journal-title">
+            <span>✍️ 個人備忘欄（信用卡 24h 專線 / 電信漫遊客服）</span>
+          </div>
+          <div class="write-lines">
+            <div class="write-line"></div>
+            <div class="write-line"></div>
+            <div class="write-line"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>TRAVEL EURO · 熟齡慢活手冊</span>
+        <span class="page-num">02</span>
+      </div>
+    </div>
+
+
+    <!-- =========================================================================
+         PAGE 03: 航班資訊與三大基地飯店「問路防走失卡」
+         ========================================================================= -->
+    <div class="a5-page">
+      <div class="page-header">
+        <span class="page-header-title">FLIGHTS & HOTELS</span>
+        <span>航班與三大基地飯店</span>
+      </div>
+
+      <div class="page-content">
+        <div class="section-headline">
+          <div class="eye">EMIRATES & ACCOMMODATION</div>
+          <h2>航班資訊與三大核心住宿</h2>
+        </div>
+
+        <!-- 航班一覽 -->
+        <div class="card" style="padding: 2.5mm 3.5mm;">
+          <div class="card-title">
+            <span>✈️ 阿聯酋航空來回航班資訊</span>
+            <span class="badge badge-navy">託運 25kg / 人</span>
+          </div>
+          <table class="data-table" style="margin-top: 1mm;">
+            <tr>
+              <th>行程</th>
+              <th>航班</th>
+              <th>出發時刻</th>
+              <th>抵達時刻</th>
+              <th>航廈與轉機</th>
+            </tr>
+            <tr>
+              <td><strong>去程</strong></td>
+              <td>EK367 ➔ EK205</td>
+              <td>10/15 23:50 (TPE)</td>
+              <td>10/16 14:10 (MXP)</td>
+              <td>TPE T2 報到；杜拜 T3 轉機 5h</td>
+            </tr>
+            <tr>
+              <td><strong>回程</strong></td>
+              <td>EK078 ➔ EK366</td>
+              <td>10/28 14:30 (NCE)</td>
+              <td>10/29 15:35 (TPE)</td>
+              <td>NCE T2 報到；杜拜 T3 轉機 4h</td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- 3 大基地飯店問路卡 -->
+        <div style="font-size: 8pt; font-weight: 700; color: var(--navy); margin: 2mm 0 1.5mm 0;">
+          🏨 3 大基地飯店速查卡（計程車或問路直接出示本頁）
+        </div>
+
+        <!-- Base 1: 米蘭 -->
+        <div class="card card-navy" style="margin-bottom: 2mm; padding: 2mm 3mm;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline;">
+            <strong style="color: var(--navy); font-size: 8.5pt;">米蘭（連住 4 晚）: Hilton Milan</strong>
+            <span style="font-size: 7pt; color: var(--text-muted);">📞 +39 02 69831</span>
+          </div>
+          <div style="font-size: 7pt; color: #444; margin-top: 1px;">
+            <strong>地址：</strong> Via Luigi Galvani, 12, 20124 Milano MI, Italy<br>
+            <strong>交通：</strong> 出米蘭中央車站步行僅 3 分鐘即達。<br>
+            <span style="color: #666; font-style: italic;">*義文問路：Per favore, mi porti all'Hotel Hilton vicino alla Stazione Centrale.</span>
+          </div>
+        </div>
+
+        <!-- Base 2: 熱那亞 -->
+        <div class="card card-navy" style="margin-bottom: 2mm; padding: 2mm 3mm;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline;">
+            <strong style="color: var(--navy); font-size: 8.5pt;">熱那亞（連住 3 晚）: Grand Hotel Savoia</strong>
+            <span style="font-size: 7pt; color: var(--text-muted);">📞 +39 010 2477272</span>
+          </div>
+          <div style="font-size: 7pt; color: #444; margin-top: 1px;">
+            <strong>地址：</strong> Via Arsenale di Terra, 5, 16126 Genova GE, Italy<br>
+            <strong>交通：</strong> 緊鄰熱那亞王子廣場車站（Genova Piazza Principe）步行 2 分鐘。
+          </div>
+        </div>
+
+        <!-- Base 3: 尼斯 -->
+        <div class="card card-navy" style="margin-bottom: 0; padding: 2mm 3mm;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline;">
+            <strong style="color: var(--navy); font-size: 8.5pt;">尼斯（連住 5 晚）: AC Hotel Nice</strong>
+            <span style="font-size: 7pt; color: var(--text-muted);">📞 +33 4 93 97 90 90</span>
+          </div>
+          <div style="font-size: 7pt; color: #444; margin-top: 1px;">
+            <strong>地址：</strong> 59 Promenade des Anglais, 06000 Nice, France<br>
+            <strong>交通：</strong> 門口即是輕軌站（CUM 站），直通英國人散步大道與蔚藍海灘。
+          </div>
+        </div>
+
+      </div>
+
+      <div class="page-footer">
+        <span>TRAVEL EURO · 熟齡慢活手冊</span>
+        <span class="page-num">03</span>
+      </div>
+    </div>
+
+
+    <!-- =========================================================================
+         PAGE 04: 義大利鐵路與交通時刻總表 & 乘車心法
+         ========================================================================= -->
+    <div class="a5-page">
+      <div class="page-header">
+        <span class="page-header-title">RAIL SCHEDULE</span>
+        <span>鐵路時刻與乘車要領</span>
+      </div>
+
+      <div class="page-content">
+        <div class="section-headline">
+          <div class="eye">TIME TABLE & PASSES</div>
+          <h2>鐵路時刻表與搭乘安心指引</h2>
+        </div>
+
+        <!-- 乘車要領警示卡 -->
+        <div class="card card-gold" style="padding: 2mm 3mm; margin-bottom: 2mm;">
+          <div style="font-size: 7.5pt; font-weight: 700; color: var(--gold-dark); margin-bottom: 1mm;">
+            🌟 全線電子票乘車心法：免排隊換票、免在月台打卡！
+          </div>
+          <div style="font-size: 6.8pt; line-height: 1.4; color: #444;">
+            • <strong>手機出示 QR Code</strong>：所有車票均為數位電子票，查票時直接秀出 PDF 供列車長掃描。<br>
+            • <strong>完全不用打卡</strong>：月台黃色打票機僅供傳統厚紙票使用，電子票嚴禁且無法打卡。<br>
+            • <strong>看車次對螢幕</strong>：發車前 10~15 分鐘看大螢幕以「車次編號（如 RE 2219）」核對月台（Binario）。
+          </div>
+        </div>
+
+        <!-- 時刻總表 -->
+        <table class="data-table">
+          <tr>
+            <th width="10%">日期</th>
+            <th width="36%">行駛區間</th>
+            <th width="16%">車次／車種</th>
+            <th width="18%">時刻</th>
+            <th>型態</th>
+          </tr>
+          <tr>
+            <td>10/16</td>
+            <td>米蘭機場 ➔ 米蘭中央車站</td>
+            <td>MXP 2951 快線</td>
+            <td>16:11 ➔ 17:07</td>
+            <td>免Check-in</td>
+          </tr>
+          <tr>
+            <td>10/18</td>
+            <td>米蘭 ➔ 貝爾加莫 (Bergamo)</td>
+            <td>RE 2219 區間快</td>
+            <td>09:05 ➔ 09:53</td>
+            <td>直達 48 分</td>
+          </tr>
+          <tr>
+            <td>10/18</td>
+            <td>貝爾加莫 ➔ 米蘭中央車站</td>
+            <td>RE 2232 區間快</td>
+            <td>15:02 ➔ 15:50</td>
+            <td>回飯店放鬆</td>
+          </tr>
+          <tr>
+            <td>10/19</td>
+            <td>米蘭 ➔ 瓦倫納（科莫湖）</td>
+            <td>RE 2818 區間快</td>
+            <td>09:20 ➔ 10:25</td>
+            <td>湖畔慢遊</td>
+          </tr>
+          <tr>
+            <td>10/19</td>
+            <td>瓦倫納 ➔ 米蘭中央車站</td>
+            <td>RE 區間快車</td>
+            <td>約 15:35 彈性</td>
+            <td>APP 訂購</td>
+          </tr>
+          <tr>
+            <td>10/20</td>
+            <td>米蘭 ➔ 熱那亞王子廣場</td>
+            <td>IC 659 一等艙</td>
+            <td>09:10 ➔ 10:40</td>
+            <td>劃位對號車</td>
+          </tr>
+          <tr>
+            <td>10/22</td>
+            <td>熱那亞 ➔ S. Margherita</td>
+            <td>IC 657 一等艙</td>
+            <td>09:47 ➔ 10:14</td>
+            <td>往菲諾港</td>
+          </tr>
+          <tr>
+            <td>10/22</td>
+            <td>S. Margherita ➔ 熱那亞</td>
+            <td>IC 674 一等艙</td>
+            <td>15:46 ➔ 16:14</td>
+            <td>舒適返程</td>
+          </tr>
+          <tr>
+            <td>10/23</td>
+            <td>熱那亞 ➔ 文提米利亞</td>
+            <td>IC 633 一等艙</td>
+            <td>08:58 ➔ 10:58</td>
+            <td>邊境中繼站</td>
+          </tr>
+          <tr>
+            <td>10/23</td>
+            <td>文提米利亞 ➔ 尼斯 Nice</td>
+            <td>ZOU! / TER 跨國</td>
+            <td>15:00 前後</td>
+            <td>沿海直達</td>
+          </tr>
+          <tr>
+            <td>10/25</td>
+            <td>尼斯 ↔ 濱海自由城</td>
+            <td>TER 區間景觀火車</td>
+            <td>彈性班次</td>
+            <td>車程僅 7 分</td>
+          </tr>
+        </table>
+
+        <!-- 通票開通要點 -->
+        <div class="card" style="margin-top: 1mm; padding: 2mm 3mm;">
+          <div style="font-size: 7.5pt; font-weight: 700; color: var(--navy); margin-bottom: 1mm;">
+            🎫 各城市通票啟用備忘
+          </div>
+          <div style="font-size: 6.8pt; line-height: 1.4; color: var(--text-main);">
+            • <strong>米蘭城市通票（感應卡）</strong>：進地鐵感應閘門直接開通，連續使用 24 小時。<br>
+            • <strong>貝爾加莫通票（ATB APP）</strong>：登首班公車或登山纜車前在 APP 點擊「啟用 (Attiva)」。<br>
+            • <strong>南法 PASS SUD AZUR</strong>：搭乘尼斯輕軌或公車時，在站台立柱或車上感應機拍卡（Validé）。
+          </div>
+        </div>
+
+      </div>
+
+      <div class="page-footer">
+        <span>TRAVEL EURO · 熟齡慢活手冊</span>
+        <span class="page-num">04</span>
+      </div>
+    </div>
+
+
+    <!-- =========================================================================
+         PAGE 05: 行前須知與行李打包檢查清單
+         ========================================================================= -->
+    <div class="a5-page">
+      <div class="page-header">
+        <span class="page-header-title">PRE-TRIP & PACKING</span>
+        <span>行前須知與打包清單</span>
+      </div>
+
+      <div class="page-content">
+        <div class="section-headline">
+          <div class="eye">CHECKLIST & NOTICES</div>
+          <h2>出發行前叮嚀與行李清單</h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5mm; margin-bottom: 3mm;">
+          <div class="card" style="padding: 2mm 2.5mm; margin-bottom: 0;">
+            <div style="font-weight: 700; color: var(--navy); font-size: 7.5pt;">🛂 護照與歐盟申根免簽</div>
+            <div style="font-size: 6.8pt; color: #444; margin-top: 1px;">護照效期需自返國日（10/29）起算仍有 6 個月以上。</div>
+          </div>
+          <div class="card" style="padding: 2mm 2.5mm; margin-bottom: 0;">
+            <div style="font-weight: 700; color: var(--navy); font-size: 7.5pt;">💶 歐元小額與 4 碼 PIN</div>
+            <div style="font-size: 6.8pt; color: #444; margin-top: 1px;">每人備 200~400 歐元現金；提前向銀行開通刷卡 4 碼 PIN 碼。</div>
+          </div>
+          <div class="card" style="padding: 2mm 2.5mm; margin-bottom: 0;">
+            <div style="font-weight: 700; color: var(--navy); font-size: 7.5pt;">🔌 歐規雙圓孔 220V</div>
+            <div style="font-size: 6.8pt; color: #444; margin-top: 1px;">雙圓孔插頭（Type C/L）；手機相機支援國際電壓免變壓。</div>
+          </div>
+          <div class="card" style="padding: 2mm 2.5mm; margin-bottom: 0;">
+            <div style="font-weight: 700; color: var(--navy); font-size: 7.5pt;">🧥 10 月穿搭與好走鞋</div>
+            <div style="font-size: 6.8pt; color: #444; margin-top: 1px;">早晚溫差大，洋蔥式層疊穿著；歐洲石板路必備健走鞋。</div>
+          </div>
+        </div>
+
+        <!-- 打包清單 -->
+        <div class="card card-navy" style="flex: 1; display: flex; flex-direction: column;">
+          <div class="card-title">
+            <span>🧳 出發前行李準備核對表（出發前打勾確認）</span>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; flex: 1;">
+            <div class="checklist-col">
+              <strong style="font-size: 7.5pt; color: var(--navy); border-bottom: 1px solid #d0dce5; padding-bottom: 1px;">證件與重要財務</strong>
+              <div class="check-item"><span class="check-box"></span> 護照正本（效期 6 個月以上）</div>
+              <div class="check-item"><span class="check-box"></span> 護照影本與大頭照 2 張備用</div>
+              <div class="check-item"><span class="check-box"></span> 海外刷卡信用卡 2 張（不同發卡機構）</div>
+              <div class="check-item"><span class="check-box"></span> 歐元現鈔（10/20/50 歐元小額為主）</div>
+              <div class="check-item"><span class="check-box"></span> 電子機票證明與飯店確認單紙本</div>
+
+              <strong style="font-size: 7.5pt; color: var(--navy); border-bottom: 1px solid #d0dce5; padding-bottom: 1px; margin-top: 2mm;">電器與通訊</strong>
+              <div class="check-item"><span class="check-box"></span> 歐洲跨國 eSIM 或漫遊已設定完成</div>
+              <div class="check-item"><span class="check-box"></span> 歐規雙圓孔轉接頭（建議帶 2 個）</div>
+              <div class="check-item"><span class="check-box"></span> 行動電源（需放置於隨身隨行包，勿托運）</div>
+            </div>
+
+            <div class="checklist-col">
+              <strong style="font-size: 7.5pt; color: var(--navy); border-bottom: 1px solid #d0dce5; padding-bottom: 1px;">個人衣物與健走</strong>
+              <div class="check-item"><span class="check-box"></span> 支撐力佳、止滑之運動健走鞋</div>
+              <div class="check-item"><span class="check-box"></span> 防風保暖外套與保暖圍巾（科莫湖、海邊風大）</div>
+              <div class="check-item"><span class="check-box"></span> 洋蔥式穿搭內搭、長袖上衣</div>
+              <div class="check-item"><span class="check-box"></span> 遮陽帽、太陽眼鏡</div>
+
+              <strong style="font-size: 7.5pt; color: var(--navy); border-bottom: 1px solid #d0dce5; padding-bottom: 1px; margin-top: 2mm;">藥品與隨身安心</strong>
+              <div class="check-item"><span class="check-box"></span> 個人慢性病處方藥（帶足天數＋3日備用）</div>
+              <div class="check-item"><span class="check-box"></span> 常備腸胃藥、止痛退燒藥、感冒藥</div>
+              <div class="check-item"><span class="check-box"></span> 貼身防扒隱形腰包 / 前背小斜背包</div>
+              <div class="check-item"><span class="check-box"></span> 保溫隨身水瓶、摺疊輕便傘</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="page-footer">
+        <span>TRAVEL EURO · 熟齡慢活手冊</span>
+        <span class="page-num">05</span>
+      </div>
+    </div>
+
+
+    <!-- =========================================================================
+         PAGE 06: DAY 01 & DAY 02
+         ========================================================================= -->
+    <div class="a5-page">
+      <div class="page-header">
+        <span class="page-header-title">DAY 01 & 02 · MILANO</span>
+        <span>台北啟航 ➔ 抵達米蘭</span>
+      </div>
+
+      <div class="page-content">
+        <!-- DAY 01 -->
+        <div style="margin-bottom: 4mm;">
+          <div class="day-header-banner">
+            <div class="day-num-box">
+              <h2>DAY 01</h2>
+              <span class="day-date">10/15（四）</span>
+            </div>
+            <div class="day-city-badge">台北 TPE ➔ 機上</div>
+          </div>
+          <div class="day-title-sub">桃園機場啟程出發（深夜夜航飛往杜拜轉機）</div>
+          <div class="day-flow-box">
+            <div class="day-flow-item">
+              <span class="flow-badge">20:50</span>
+              <div>桃園機場第二航廈（T2）阿聯酋櫃檯集合報到，辦理登機手續與行李託運（每人 25kg 額度）。</div>
+            </div>
+            <div class="day-flow-item">
+              <span class="flow-badge">23:50</span>
+              <div>搭乘阿聯酋航空 <strong>EK367</strong> 準時起飛，夜航前往杜拜機場（DXB）第三航廈。機上多喝水、穿著保暖寬鬆長褲。</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DAY 02 -->
+        <div style="flex: 1; display: flex; flex-direction: column;">
+          <div class="day-header-banner">
+            <div class="day-num-box">
+              <h2>DAY 02</h2>
+              <span class="day-date">10/16（五）</span>
+            </div>
+            <div class="day-city-badge">抵達米蘭 · 入住 Hilton</div>
+          </div>
+          <div class="day-title-sub">抵達米蘭 ➔ 快線直達中央車站 ➔ 實體領取通票 ➔ 迎賓晚餐</div>
+          <div class="day-flow-box">
+            <div class="day-flow-item">
+              <span class="flow-badge flow-badge-orange">14:10</span>
+              <div>降落米蘭馬爾彭薩機場（MXP）第一航廈，辦理入境查驗與提領託運行李。</div>
+            </div>
+            <div class="day-flow-item">
+              <span class="flow-badge">16:11</span>
+              <div>搭乘 <strong>MXP 2951</strong> 機場快線直達米蘭中央車站（17:07 抵達，免換票免 Check-in）。</div>
+            </div>
+            <div class="day-flow-item">
+              <span class="flow-badge flow-badge-gold">傍晚</span>
+              <div>前往車站旁 Milan Visitor Center 實體領取「米蘭城市通票」；步行 3 分鐘抵達 Hilton Milan 辦理入住。</div>
+            </div>
+            <div class="day-flow-item">
+              <span class="flow-badge flow-badge-green">晚間</span>
+              <div>洗漱休息調整時差，於飯店周邊享用道地義式迎賓晚餐，早早安歇為明日儲備體力。</div>
+            </div>
+          </div>
+
+          <div class="notes-journal-box">
+            <div class="notes-journal-title">
+              <span>📝 旅行手記與心情亮點</span>
+              <span>今日天氣 / 穿搭：__________</span>
+            </div>
+            <div class="write-lines">
+              <div class="write-line"></div>
+              <div class="write-line"></div>
+            </div>
+            <div class="expense-row">
+              <span>今日餐飲 / 零用支出：€ ________</span>
+              <span>印章 / 票根黏貼處</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="page-footer">
+        <span>TRAVEL EURO · 熟齡慢活手冊</span>
+        <span class="page-num">06</span>
+      </div>
+    </div>
+
+
+    <!-- =========================================================================
+         PAGE 07: DAY 03 · 米蘭經典城市巡遊
+         ========================================================================= -->
+    <div class="a5-page">
+      <div class="page-header">
+        <span class="page-header-title">DAY 03 · MILANO CLASSIC</span>
+        <span>米蘭經典巡禮</span>
+      </div>
+
+      <div class="page-content">
+        <div class="day-header-banner">
+          <div class="day-num-box">
+            <h2>DAY 03</h2>
+            <span class="day-date">10/17（六）</span>
+          </div>
+          <div class="day-city-badge">住 Hilton Milan (2/4)</div>
+        </div>
+
+        <div class="day-title-sub">米蘭經典巡遊：大教堂廣場＋艾曼紐二世迴廊＋復古電車＋蒙塔內利花園</div>
+
+        <div class="day-flow-box">
+          <div class="day-flow-item">
+            <span class="flow-badge">上午</span>
+            <div>
+              <strong>開通啟用「米蘭城市通票」</strong>，搭地鐵 M3 直達 Duomo 站。不排隊耗力登頂，以廣場悠閒漫步、欣賞大教堂宏偉外觀拍照為主，順遊金碧輝煌的艾曼紐二世迴廊。
+            </div>
+          </div>
+          <div class="day-flow-item">
+            <span class="flow-badge flow-badge-gold">午餐</span>
+            <div>於迴廊或周邊百年餐館（如 Ristorante Galleria）悠閒享用午餐，品味經典<strong>米蘭鬱金香金黃燉飯與燉牛膝</strong>。</div>
+          </div>
+          <div class="day-flow-item">
+            <span class="flow-badge">午後</span>
+            <div>漫步至斯卡拉大劇院前，搭乘著名的<strong>「復古路面電車 1 號（Tram 1）」</strong>直達 P.za Cavour，進入蒙塔內利花園漫步綠蔭、參觀杜尼亞尼宮。</div>
+          </div>
+          <div class="day-flow-item">
+            <span class="flow-badge flow-badge-green">傍晚</span>
+            <div>由威尼斯門（Porta Venezia）搭輕軌電車從容返回中央車站與 Hilton 飯店休息，充份留白不疲累。</div>
+          </div>
+        </div>
+
+        <div class="day-grid-2">
+          <div class="mini-info-box">
+            <strong>🎫 今日票券指引</strong>
+            米蘭城市通票（感應卡）：進地鐵閘門刷卡即開通，連續 24 小時搭乘地鐵與輕軌電車。
+          </div>
+          <div class="mini-info-box">
+            <strong>💡 貼心防扒叮嚀</strong>
+            大教堂周邊人潮眾多，隨身小斜背包請務必置於胸前，勿理會發鴿子飼料或幸運手環的陌生人。
+          </div>
+        </div>
+
+        <div class="notes-journal-box">
+          <div class="notes-journal-title">
+            <span>📝 旅行記事與美味回憶</span>
+            <span>氣溫：約 11°C~18°C</span>
+          </div>
+          <div class="write-lines">
+            <div class="write-line"></div>
+            <div class="write-line"></div>
+            <div class="write-line"></div>
+          </div>
+          <div class="expense-row">
+            <span>今日咖啡 / 美食記帳：€ ________</span>
+            <span>大教堂紀念章蓋印處</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="page-footer">
+        <span>TRAVEL EURO · 熟齡慢活手冊</span>
+        <span class="page-num">07</span>
+      </div>
+    </div>
+
+
+    <!-- =========================================================================
+         PAGE 08: DAY 04 · 貝爾加莫中世紀古城慢遊
+         ========================================================================= -->
+    <div class="a5-page">
+      <div class="page-header">
+        <span class="page-header-title">DAY 04 · BERGAMO</span>
+        <span>貝爾加莫中世紀上城</span>
+      </div>
+
+      <div class="page-content">
+        <div class="day-header-banner">
+          <div class="day-num-box">
+            <h2>DAY 04</h2>
+            <span class="day-date">10/18（日）</span>
+          </div>
+          <div class="day-city-badge">住 Hilton Milan (3/4)</div>
+        </div>
+
+        <div class="day-title-sub">貝爾加莫 Città Alta：百年登山纜車與中世紀古城悠活</div>
+
+        <div class="day-flow-box">
+          <div class="day-flow-item">
+            <span class="flow-badge">09:05</span>
+            <div>由米蘭中央車站搭乘區域快車 <strong>RE 2219</strong> 出發，09:53 抵達 Bergamo 車站。出站搭市區公車 1 號直達纜車站。</div>
+          </div>
+          <div class="day-flow-item">
+            <span class="flow-badge flow-badge-orange">上午</span>
+            <div>轉乘百年歷史<strong>登山纜車（Funicolare）</strong>直登 Città Alta 上城。漫步老廣場（Piazza Vecchia）、欣賞聖母聖殿與城市塔。</div>
+          </div>
+          <div class="day-flow-item">
+            <span class="flow-badge flow-badge-gold">午餐</span>
+            <div>於 1476 年創立的老咖啡館 <strong>Caffè del Tasso 1476</strong> 喝咖啡，享用鼠尾草焦香奶油<strong>傳統方餃 Casoncelli</strong>。</div>
+          </div>
+          <div class="day-flow-item">
+            <span class="flow-badge">午後</span>
+            <div>沿著 Via San Giacomo 漫步至<strong>聖賈科莫老城門</strong>，在威尼斯城牆邊遠眺下城開闊全景；搭公車返火車站。</div>
+          </div>
+          <div class="day-flow-item">
+            <span class="flow-badge flow-badge-green">15:02</span>
+            <div>搭乘 <strong>RE 2232</strong> 區間快車，15:50 提早返回米蘭，回飯店洗漱放鬆，享受無負擔的午後時光。</div>
+          </div>
+        </div>
+
+        <div class="day-grid-2">
+          <div class="mini-info-box">
+            <strong>🎫 貝爾加莫通票指引</strong>
+            登首班公車或纜車前，在 ATB APP 點擊「Attiva」開通 24 小時，涵蓋公車與纜車。
+          </div>
+          <div class="mini-info-box">
+            <strong>👟 石板路健走提醒</strong>
+            上城為中世紀鵝卵石石板路，請穿著緩震支撐度佳的健走鞋，步行從容慢走。
+          </div>
+        </div>
+
+        <div class="notes-journal-box">
+          <div class="notes-journal-title">
+            <span>📝 貝爾加莫手記</span>
+            <span>最喜歡的一景：__________</span>
+          </div>
+          <div class="write-lines">
+            <div class="write-line"></div>
+            <div class="write-line"></div>
+          </div>
+          <div class="expense-row">
+            <span>今日零用開銷：€ ________</span>
+            <span>纜車站票根貼紙區</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="page-footer">
+        <span>TRAVEL EURO · 熟齡慢活手冊</span>
+        <span class="page-num">08</span>
+      </div>
+    </div>
+
+
+    <!-- =========================================================================
+         PAGE 09: DAY 05 · 科莫湖雙城慢遊
+         ========================================================================= -->
+    <div class="a5-page">
+      <div class="page-header">
+        <span class="page-header-title">DAY 05 · LAKE COMO</span>
+        <span>科莫湖瓦倫納與貝拉焦</span>
+      </div>
+
+      <div class="page-content">
+        <div class="day-header-banner">
+          <div class="day-num-box">
+            <h2>DAY 05</h2>
+            <span class="day-date">10/19（一）</span>
+          </div>
+          <div class="day-city-badge">住 Hilton Milan (4/4)</div>
+        </div>
+
+        <div class="day-title-sub">科莫湖雙城：瓦倫納湖畔步道與「科莫湖明珠」貝拉焦渡輪</div>
+
+        <div class="day-flow-box">
+          <div class="day-flow-item">
+            <span class="flow-badge">09:20</span>
+            <div>由米蘭中央車站搭乘直達區域快車 <strong>RE 2818</strong>，沿途欣賞北義田園湖光，10:25 抵達瓦倫納（Varenna-Esino）。</div>
+          </div>
+          <div class="day-flow-item">
+            <span class="flow-badge flow-badge-orange">10:57</span>
+            <div>步行至渡輪碼頭，搭乘班次渡輪巡遊至對岸「科莫湖明珠」<strong>貝拉焦（Bellagio）</strong>。</div>
+          </div>
+          <div class="day-flow-item">
+            <span class="flow-badge flow-badge-gold">午餐</span>
+            <div>漫步歐洲林蔭步道，於湖景餐廳（如 Ristorante Genazzini 1788）享用鮮美<strong>科莫湖鱸魚燉飯</strong>與咖啡。</div>
+          </div>
+          <div class="day-flow-item">
+            <span class="flow-badge">午後</span>
+            <div>搭渡輪返回瓦倫納，漫步標誌性的<strong>情人紅色水上步道</strong>，往回捕捉最經典明信片湖景；順遊湖畔花園 Villa Monastero。</div>
+          </div>
+          <div class="day-flow-item">
+            <span class="flow-badge flow-badge-green">返程</span>
+            <div>於湖畔咖啡座小憩，搭 15:35 左右的 RE 快車返回米蘭中央車站，為隔日南下熱那亞預留充沛體力。</div>
+          </div>
+        </div>
+
+        <div class="day-grid-2">
+          <div class="mini-info-box">
+            <strong>🌬️ 湖畔保暖必備</strong>
+            渡輪航行與湖邊風勢較大，請隨身攜帶防風保暖外套與薄帽子，避免著涼。
+          </div>
+          <div class="mini-info-box">
+            <strong>🚢 渡輪憑證提醒</strong>
+            於碼頭出示科莫湖一日票憑證或蓋章登船，本日往返搭乘免再買票。
+          </div>
+        </div>
+
+        <div class="notes-journal-box">
+          <div class="notes-journal-title">
+            <span>📝 湖光山色心情隨筆</span>
+            <span>科莫湖溫度：約 12°C~17°C</span>
+          </div>
+          <div class="write-lines">
+            <div class="write-line"></div>
+            <div class="write-line"></div>
+          </div>
+          <div class="expense-row">
+            <span>今日花費支出：€ ________</span>
+            <span>渡輪登船章留白區</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="page-footer">
+        <span>TRAVEL EURO · 熟齡慢活手冊</span>
+        <span class="page-num">09</span>
+      </div>
+    </div>
+
+
+    <!-- =========================================================================
+         PAGE 10: DAY 06 & DAY 07 · 熱那亞港都慢遊
+         ========================================================================= -->
+    <div class="a5-page">
+      <div class="page-header">
+        <span class="page-header-title">DAY 06 & 07 · GENOVA</span>
+        <span>熱那亞歷史港都</span>
+      </div>
+
+      <div class="page-content">
+        <!-- DAY 06 -->
+        <div style="margin-bottom: 3.5mm;">
+          <div class="day-header-banner">
+            <div class="day-num-box">
+              <h2>DAY 06</h2>
+              <span class="day-date">10/20（二）</span>
+            </div>
+            <div class="day-city-badge">南下熱那亞 · 住 Savoia (1/3)</div>
+          </div>
+          <div class="day-title-sub">移動休息日：城際快車南下 ➔ 飯店步行2分鐘 ➔ 王宮漫步</div>
+          <div class="day-flow-box">
+            <div class="day-flow-item">
+              <span class="flow-badge">09:10</span>
+              <div>退房後搭 <strong>IC 659 一等艙</strong> 舒適南下，10:40 抵達熱那亞王子廣場車站。步行 2 分鐘即達五星 Grand Hotel Savoia 入住。</div>
+            </div>
+            <div class="day-flow-item">
+              <span class="flow-badge flow-badge-gold">午後</span>
+              <div>本日為移動休息日。從飯店門口前方的「巴爾比街」漫步 4 分鐘即抵宏偉<strong>熱那亞王宮</strong>，欣賞巴洛克庭院與遠眺海港花園，從容放鬆。</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DAY 07 -->
+        <div style="flex: 1; display: flex; flex-direction: column;">
+          <div class="day-header-banner">
+            <div class="day-num-box">
+              <h2>DAY 07</h2>
+              <span class="day-date">10/21（三）</span>
+            </div>
+            <div class="day-city-badge">住 Savoia (2/3)</div>
+          </div>
+          <div class="day-title-sub">熱那亞核心：法拉利廣場＋總督宮＋哥倫布故居＋舊港帆船</div>
+          <div class="day-flow-box">
+            <div class="day-flow-item">
+              <span class="flow-badge">上午</span>
+              <div>搭地鐵直達 De Ferrari（法拉利廣場），欣賞宏偉青銅噴泉與總督宮；順訪哥倫布故居與索普拉納雙塔門。</div>
+            </div>
+            <div class="day-flow-item">
+              <span class="flow-badge flow-badge-gold">午餐</span>
+              <div>於舊城享用熱那亞正宗<strong>羅勒青醬手工手挽麵（Trofie al Pesto）</strong>。</div>
+            </div>
+            <div class="day-flow-item">
+              <span class="flow-badge">午後</span>
+              <div>搭地鐵至舊港 San Giorgio 站，近距離觀賞壯麗的<strong>「海王星號海盜帆船」</strong>，港邊露天咖啡座看海喝下午茶，傍晚回飯店。</div>
+            </div>
+          </div>
+
+          <div class="notes-journal-box">
+            <div class="notes-journal-title">
+              <span>📝 熱那亞青醬與港灣記事</span>
+              <span>開通熱那亞城市通票</span>
+            </div>
+            <div class="write-lines">
+              <div class="write-line"></div>
+              <div class="write-line"></div>
+            </div>
+            <div class="expense-row">
+              <span>今日支出總計：€ ________</span>
+              <span>總督宮紀念章區</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="page-footer">
+        <span>TRAVEL EURO · 熟齡慢活手冊</span>
+        <span class="page-num">10</span>
+      </div>
+    </div>
+
+
+    <!-- =========================================================================
+         PAGE 11: DAY 08 · 菲諾港一日慢遊
+         ========================================================================= -->
+    <div class="a5-page">
+      <div class="page-header">
+        <span class="page-header-title">DAY 08 · PORTOFINO</span>
+        <span>菲諾港粉彩海灣</span>
+      </div>
+
+      <div class="page-content">
+        <div class="day-header-banner">
+          <div class="day-num-box">
+            <h2>DAY 08</h2>
+            <span class="day-date">10/22（四）</span>
+          </div>
+          <div class="day-city-badge">住 Savoia (3/3)</div>
+        </div>
+
+        <div class="day-title-sub">菲諾港一日慢遊：景觀公車直達夢幻粉彩海灣與全景步道</div>
+
+        <div class="day-flow-box">
+          <div class="day-flow-item">
+            <span class="flow-badge">09:47</span>
+            <div>由熱那亞搭 <strong>IC 657 一等艙</strong> 沿海岸行駛，10:14 抵達 Santa Margherita Ligure 車站。</div>
+          </div>
+          <div class="day-flow-item">
+            <span class="flow-badge flow-badge-orange">10:30</span>
+            <div>出站正前方搭乘 <strong>782 號景觀公車</strong>，沿著蜿蜒海岸山壁直達 Portofino（菲諾港），免爬山路。</div>
+          </div>
+          <div class="day-flow-item">
+            <span class="flow-badge">慢步</span>
+            <div>漫步環繞海灣的鵝黃粉彩老屋，沿平緩的景觀步道 Punto Panoramico 遠眺整個奢華遊艇海港全景。</div>
+          </div>
+          <div class="day-flow-item">
+            <span class="flow-badge flow-badge-gold">午餐</span>
+            <div>海港景觀餐廳（DaV Mare 或 Trattoria Tripoli）享用招牌<strong>地中海海鮮墨魚麵與義大利白酒</strong>。</div>
+          </div>
+          <div class="day-flow-item">
+            <span class="flow-badge flow-badge-green">15:46</span>
+            <div>搭 782 公車返回聖瑪格麗塔，搭乘 <strong>IC 674 一等艙</strong> 於 16:14 返抵熱那亞飯店休息。</div>
+          </div>
+        </div>
+
+        <div class="day-grid-2">
+          <div class="mini-info-box">
+            <strong>🚌 782 號公車啟用</strong>
+            搭公車前在 AMT APP 內啟用 MetDaily 一日票，上車出示手機 QR Code 即可。
+          </div>
+          <div class="mini-info-box">
+            <strong>📸 私房拍照點</strong>
+            從碼頭往山坡小教堂方向慢走 5 分鐘，可拍下粉彩房屋與清澈海灣倒影全貌。
+          </div>
+        </div>
+
+        <div class="notes-journal-box">
+          <div class="notes-journal-title">
+            <span>📝 菲諾港悠閒手記</span>
+            <span>地中海陽光與海風：__________</span>
+          </div>
+          <div class="write-lines">
+            <div class="write-line"></div>
+            <div class="write-line"></div>
+            <div class="write-line"></div>
+          </div>
+          <div class="expense-row">
+            <span>今日零用開銷：€ ________</span>
+            <span>海港餐廳發票 / 票根處</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="page-footer">
+        <span>TRAVEL EURO · 熟齡慢活手冊</span>
+        <span class="page-num">11</span>
+      </div>
+    </div>
+
+
+    <!-- =========================================================================
+         PAGE 12: DAY 09 & DAY 10 · 邊境移動與尼斯舊城
+         ========================================================================= -->
+    <div class="a5-page">
+      <div class="page-header">
+        <span class="page-header-title">DAY 09 & 10 · NICE</span>
+        <span>跨越國境 ➔ 抵達尼斯</span>
+      </div>
+
+      <div class="page-content">
+        <!-- DAY 09 -->
+        <div style="margin-bottom: 3.5mm;">
+          <div class="day-header-banner">
+            <div class="day-num-box">
+              <h2>DAY 09</h2>
+              <span class="day-date">10/23（五）</span>
+            </div>
+            <div class="day-city-badge">義 ➔ 法 · 住 AC Hotel Nice (1/5)</div>
+          </div>
+          <div class="day-title-sub">熱那亞 ➔ 文提米利亞（Sir Thomas 寄行李/午餐）➔ 跨國 TER 列車 ➔ 尼斯</div>
+          <div class="day-flow-box">
+            <div class="day-flow-item">
+              <span class="flow-badge">08:58</span>
+              <div>搭 <strong>IC 633 一等艙</strong> 抵達邊境 Ventimiglia（10:58）。前往站旁「Sir Thomas」寄放行李享用現烤 Focaccia 與午餐。</div>
+            </div>
+            <div class="day-flow-item">
+              <span class="flow-badge">午後</span>
+              <div>漫步 Roya 河畔風情；15:00 搭 <strong>ZOU!/TER 跨國列車</strong> 前往法國 Nice-Ville。轉輕軌 L2 直達 AC Hotel Nice 入住。</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DAY 10 -->
+        <div style="flex: 1; display: flex; flex-direction: column;">
+          <div class="day-header-banner">
+            <div class="day-num-box">
+              <h2>DAY 10</h2>
+              <span class="day-date">10/24（六）</span>
+            </div>
+            <div class="day-city-badge">住 AC Hotel Nice (2/5)</div>
+          </div>
+          <div class="day-title-sub">尼斯舊城慢遊：薩萊亞花市鮮花特產＋天使灣金色夕陽</div>
+          <div class="day-flow-box">
+            <div class="day-flow-item">
+              <span class="flow-badge">上午</span>
+              <div>輕軌直達歌劇院站，步入著名的<strong>薩萊亞市集（Cours Saleya）</strong>，欣賞南法鮮花、香料與橄欖油攤位。</div>
+            </div>
+            <div class="day-flow-item">
+              <span class="flow-badge flow-badge-gold">午餐</span>
+              <div>於舊城知名餐館品嚐正宗<strong>尼斯沙拉（Salade Niçoise）</strong>與海鮮料理。</div>
+            </div>
+            <div class="day-flow-item">
+              <span class="flow-badge flow-badge-green">傍晚</span>
+              <div>避開陡峭山路，回飯店午睡；傍晚坐在英國人散步大道標誌性的<strong>藍色座椅（Chaises Bleues）</strong>看天使灣金黃夕陽。</div>
+            </div>
+          </div>
+
+          <div class="notes-journal-box">
+            <div class="notes-journal-title">
+              <span>📝 南法花市香氛隨筆</span>
+              <span>南法氣溫：約 14°C~22°C</span>
+            </div>
+            <div class="write-lines">
+              <div class="write-line"></div>
+              <div class="write-line"></div>
+            </div>
+            <div class="expense-row">
+              <span>今日香氛 / 特產支出：€ ________</span>
+              <span>尼斯花市明信片粘貼處</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="page-footer">
+        <span>TRAVEL EURO · 熟齡慢活手冊</span>
+        <span class="page-num">12</span>
+      </div>
+    </div>
+
+
+    <!-- =========================================================================
+         PAGE 13: DAY 11 & DAY 12 · 自由城與費拉角莊園
+         ========================================================================= -->
+    <div class="a5-page">
+      <div class="page-header">
+        <span class="page-header-title">DAY 11 & 12 · CÔTE D'AZUR</span>
+        <span>自由城海灣與費拉角</span>
+      </div>
+
+      <div class="page-content">
+        <!-- DAY 11 -->
+        <div style="margin-bottom: 3.5mm;">
+          <div class="day-header-banner">
+            <div class="day-num-box">
+              <h2>DAY 11</h2>
+              <span class="day-date">10/25（日）</span>
+            </div>
+            <div class="day-city-badge">住 AC Hotel Nice (3/5)</div>
+          </div>
+          <div class="day-title-sub">濱海自由城 Villefranche：TER 景觀火車 7 分鐘直達半圓蔚藍海灣</div>
+          <div class="day-flow-box">
+            <div class="day-flow-item">
+              <span class="flow-badge">上午</span>
+              <div>由 Nice-Ville 搭 TER 火車僅 7 分鐘直達 Villefranche。一出站俯瞰彩色老城與半圓海灣，是蔚藍海岸最美全景。</div>
+            </div>
+            <div class="day-flow-item">
+              <span class="flow-badge flow-badge-gold">午後</span>
+              <div>碼頭臨海餐廳（Mayssa Beach）享用普羅旺斯海鮮午餐；順訪城堡花園樹蔭小憩；搭火車返回尼斯，下午享有完整自由留白。</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DAY 12 -->
+        <div style="flex: 1; display: flex; flex-direction: column;">
+          <div class="day-header-banner">
+            <div class="day-num-box">
+              <h2>DAY 12</h2>
+              <span class="day-date">10/26（一）</span>
+            </div>
+            <div class="day-city-badge">住 AC Hotel Nice (4/5)</div>
+          </div>
+          <div class="day-title-sub">費拉角貴族莊園：羅斯柴爾德花園別墅與音樂噴泉</div>
+          <div class="day-flow-box">
+            <div class="day-flow-item">
+              <span class="flow-badge">上午</span>
+              <div>輕軌轉公車直達富豪半島 Saint-Jean-Cap-Ferrat「Rothschild 莊園門口」，無步行負擔。</div>
+            </div>
+            <div class="day-flow-item">
+              <span class="flow-badge flow-badge-orange">別墅</span>
+              <div>參觀奢華粉紅宮殿<strong>Villa Ephrussi de Rothschild</strong>，漫步九大主題花園，欣賞隨古典樂起舞的音樂噴泉與無敵海景。</div>
+            </div>
+            <div class="day-flow-item">
+              <span class="flow-badge flow-badge-green">下午</span>
+              <div>於莊園海景茶沙龍悠閒午茶；順訪寧靜小巧的聖讓港（Port de Saint-Jean），感受奢華悠然氣息後返回尼斯。</div>
+            </div>
+          </div>
+
+          <div class="notes-journal-box">
+            <div class="notes-journal-title">
+              <span>📝 蔚藍海灣與粉紅別墅筆記</span>
+              <span>PASS SUD AZUR 暢行</span>
+            </div>
+            <div class="write-lines">
+              <div class="write-line"></div>
+              <div class="write-line"></div>
+            </div>
+            <div class="expense-row">
+              <span>今日茶沙龍支出：€ ________</span>
+              <span>別墅花園門票貼紙區</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="page-footer">
+        <span>TRAVEL EURO · 熟齡慢活手冊</span>
+        <span class="page-num">13</span>
+      </div>
+    </div>
+
+
+    <!-- =========================================================================
+         PAGE 14: DAY 13, 14, 15 · 尼斯慢活與平安返台
+         ========================================================================= -->
+    <div class="a5-page">
+      <div class="page-header">
+        <span class="page-header-title">DAY 13, 14 & 15 · FAREWELL</span>
+        <span>打包伴手禮 ➔ 萬里歸途</span>
+      </div>
+
+      <div class="page-content">
+        <!-- DAY 13 -->
+        <div style="margin-bottom: 3mm;">
+          <div class="day-header-banner">
+            <div class="day-num-box">
+              <h2>DAY 13</h2>
+              <span class="day-date">10/27（二）</span>
+            </div>
+            <div class="day-city-badge">住 AC Hotel Nice (5/5)</div>
+          </div>
+          <div class="day-title-sub">尼斯最後慢活日：盎格魯大道藍椅漫步＋舊城香氛採買＋提早打包</div>
+          <div class="day-flow-box">
+            <div class="day-flow-item">
+              <span class="flow-badge">慢活</span>
+              <div>坐藍椅吹海風；漫步舊城採買南法<strong>花宮娜香氛（Fragonard）、薰衣草手工皂與橄欖油</strong>。下午小睡並提早打包行李。</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DAY 14 - 15 -->
+        <div style="flex: 1; display: flex; flex-direction: column;">
+          <div class="day-header-banner">
+            <div class="day-num-box">
+              <h2>DAY 14–15</h2>
+              <span class="day-date">10/28（三）– 10/29（四）</span>
+            </div>
+            <div class="day-city-badge">尼斯 ➔ 杜拜 ➔ 台北返家</div>
+          </div>
+          <div class="day-title-sub">尼斯機場 T2 ➔ PABLO 電子退稅 ➔ 杜拜轉機 ➔ 10/29 抵達台北</div>
+          <div class="day-flow-box">
+            <div class="day-flow-item">
+              <span class="flow-badge flow-badge-orange">10:30</span>
+              <div>搭計程車或輕軌 L2 直達尼斯機場第二航廈（T2，約 15 分鐘車程）。</div>
+            </div>
+            <div class="day-flow-item">
+              <span class="flow-badge">退稅</span>
+              <div>託運行李前，至海關 <strong>PABLO 電子機台感應條碼</strong> 完成退稅驗證；至阿聯酋櫃檯報到託運行李。</div>
+            </div>
+            <div class="day-flow-item">
+              <span class="flow-badge">14:30</span>
+              <div>搭 <strong>EK078</strong> 飛往杜拜（23:35 抵達 T3 舒適轉機）；10/29 03:40 轉搭 <strong>EK366</strong>。</div>
+            </div>
+            <div class="day-flow-item">
+              <span class="flow-badge flow-badge-green">15:35</span>
+              <div>台灣時間 <strong>10/29（四）15:35 順利返抵台北桃園機場（T2）</strong>，圓滿結束 15 天奢華慢活旅程！</div>
+            </div>
+          </div>
+
+          <div class="notes-journal-box">
+            <div class="notes-journal-title">
+              <span>✍️ 歸途總結與難忘片刻</span>
+              <span>Au revoir, Côte d'Azur!</span>
+            </div>
+            <div class="write-lines">
+              <div class="write-line"></div>
+              <div class="write-line"></div>
+            </div>
+            <div class="expense-row">
+              <span>退稅總計：€ ________</span>
+              <span>登機證存根收納</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="page-footer">
+        <span>TRAVEL EURO · 熟齡慢活手冊</span>
+        <span class="page-num">14</span>
+      </div>
+    </div>
+
+
+    <!-- =========================================================================
+         PAGE 15: 實用義大利語與法語雙語對照卡 & 退稅 3 步驟
+         ========================================================================= -->
+    <div class="a5-page">
+      <div class="page-header">
+        <span class="page-header-title">PHRASES & TAX REFUND</span>
+        <span>日常會話與退稅指南</span>
+      </div>
+
+      <div class="page-content">
+        <div class="section-headline">
+          <div class="eye">SURVIVAL PHRASES</div>
+          <h2>旅途實用日常短句（義大利文與法文）</h2>
+        </div>
+
+        <div class="phrase-grid">
+          <div class="phrase-card">
+            <div class="phrase-zh">您好 / 早安</div>
+            <div class="phrase-lang">義: Buongiorno / 法: Bonjour</div>
+            <div class="phrase-pron">義: 崩揪爾諾 / 法: 崩珠</div>
+          </div>
+          <div class="phrase-card">
+            <div class="phrase-zh">謝謝</div>
+            <div class="phrase-lang">義: Grazie / 法: Merci</div>
+            <div class="phrase-pron">義: 格拉齊耶 / 法: 美西</div>
+          </div>
+          <div class="phrase-card">
+            <div class="phrase-zh">請結帳買單</div>
+            <div class="phrase-lang">義: Il conto, per favore. / 法: L'addition, s'il vous plaît.</div>
+            <div class="phrase-pron">義: 依爾孔多 / 法: 拉迪胸</div>
+          </div>
+          <div class="phrase-card">
+            <div class="phrase-zh">請問洗手間在哪？</div>
+            <div class="phrase-lang">義: Dov'è il bagno? / 法: Où sont les toilettes?</div>
+            <div class="phrase-pron">義: 多威爾巴紐 / 法: 烏松雷托瓦列特</div>
+          </div>
+          <div class="phrase-card">
+            <div class="phrase-zh">請給我水（不帶氣泡）</div>
+            <div class="phrase-lang">義: Acqua naturale / 法: De l'eau plate</div>
+            <div class="phrase-pron">義: 阿瓜納圖拉雷 / 法: 德羅普拉特</div>
+          </div>
+          <div class="phrase-card">
+            <div class="phrase-zh">對不起 / 借過</div>
+            <div class="phrase-lang">義: Scusi / Permesso / 法: Pardon</div>
+            <div class="phrase-pron">義: 斯庫吉 / 法: 趴動</div>
+          </div>
+        </div>
+
+        <div class="section-headline" style="margin-top: 4mm;">
+          <div class="eye">PABLO GUIDE</div>
+          <h2>尼斯機場 PABLO 電子退稅 3 步驟</h2>
+        </div>
+
+        <div class="card card-gold">
+          <div style="display: flex; gap: 6px; margin-bottom: 2mm;">
+            <span class="flow-badge">步驟 1</span>
+            <div style="font-size: 7.2pt; line-height: 1.4;">
+              <strong>先不要託運行李！</strong>抵達尼斯 T2 機場後，先前往海關 PABLO 退稅機台區。退稅商品需放在手提或方便取出的行李層供抽查。
+            </div>
+          </div>
+          <div style="display: flex; gap: 6px; margin-bottom: 2mm;">
+            <span class="flow-badge flow-badge-orange">步驟 2</span>
+            <div style="font-size: 7.2pt; line-height: 1.4;">
+              於 PABLO 機台選擇「繁體中文」，將退稅單上的條碼對準掃描紅光。<strong>螢幕出現綠色打勾即代表驗證成功</strong>，完全不用排人工隊伍！
+            </div>
+          </div>
+          <div style="display: flex; gap: 6px;">
+            <span class="flow-badge flow-badge-green">步驟 3</span>
+            <div style="font-size: 7.2pt; line-height: 1.4;">
+              驗證成功後，若退回信用卡，將單據裝入信封投入退稅信箱；若退現金，至旁邊 Travelex 櫃檯提領歐元。隨後再至航空公司櫃檯託運行李。
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="page-footer">
+        <span>TRAVEL EURO · 熟齡慢活手冊</span>
+        <span class="page-num">15</span>
+      </div>
+    </div>
+
+
+    <!-- =========================================================================
+         PAGE 16: 封底 (Back Cover)
+         ========================================================================= -->
+    <div class="a5-page cover-page" style="justify-content: center; text-align: center;">
+      <div class="cover-border"></div>
+      <div class="cover-inner-border"></div>
+
+      <div class="cover-emblem" style="margin: 0 auto 6mm auto;">✨</div>
+
+      <div style="font-family: 'Noto Serif TC', serif; font-size: 15pt; color: #fff; margin-bottom: 2mm;">
+        一場從湖光山色，到蔚藍海岸的慢旅
+      </div>
+      <div style="font-size: 9.5pt; color: var(--gold); letter-spacing: 0.15em; font-family: 'Noto Serif TC', serif; margin-bottom: 8mm;">
+        Au revoir, Côte d'Azur!
+      </div>
+
+      <p style="font-size: 7.5pt; color: rgba(255,255,255,0.75); line-height: 1.7; max-width: 90%; margin: 0 auto;">
+        生活不是趕路，而是在合適的節奏裡慢慢看風景。<br>
+        願這 15 天的湖光、古城、港灣與海風，<br>
+        化為心中長久而溫暖的金色記憶。
+      </p>
+
+      <div style="margin-top: 10mm; padding-top: 6mm; border-top: 1px solid rgba(214,163,74,0.3); font-size: 7pt; color: rgba(255,255,255,0.6);">
+        <strong>TRAVEL EURO · SENIOR SLOW TRAVEL 2026</strong><br>
+        MILANO ‧ GENOVA ‧ NICE ‧ PORTOFINO ‧ LAKE COMO
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
