@@ -552,19 +552,24 @@
     }
 
     /* =========================================================================
-       Page 02 放大地圖與城際里程專用樣式 · 參考加利利標準
+       Page 02 全幅大圖典藏版專用樣式 · 參考加利利標準
        ========================================================================= */
     .galilee-map-hero {
-      width: 100%;
-      height: 98mm;
-      background: #ffffff;
-      border: 1px solid #d6a34a;
-      border-radius: 5px;
+      width: calc(100% + 20mm);
+      margin-left: -10mm;
+      margin-right: -10mm;
+      height: 156mm;
+      background: #111a24;
+      border-top: 1.5px solid #d6a34a;
+      border-bottom: 1.5px solid #d6a34a;
+      border-left: none;
+      border-right: none;
+      border-radius: 0;
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      box-shadow: 0 2px 10px rgba(23, 50, 70, 0.08);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
       position: relative;
     }
 
@@ -1367,108 +1372,36 @@
     </div>
 
     <!-- =========================================================================
-         PAGE 02: 景點距離參考與參考航班 (放大地圖版)
+         PAGE 02: 15 日慢旅全景路線圖 (全幅大圖典藏版)
          ========================================================================= -->
     <div class="a5-page">
       <div class="page-header">
-        <span class="page-header-title">DISTANCE & ROUTE MAP</span>
-        <span>15 日慢旅路線全景圖 · 城際里程與交通</span>
+        <span class="page-header-title">ROUTE MAP</span>
+        <span>15 日慢旅路線全景圖</span>
       </div>
 
       <div class="page-content">
         <!-- 頁面標題列 -->
-        <div
-          style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 1.5mm; border-bottom: 1.5px solid var(--galilee-green); padding-bottom: 0.6mm;">
-          <div>
-            <div
-              style="font-family: 'Noto Serif TC', serif; font-size: 13pt; font-weight: 700; color: var(--galilee-green); line-height: 1.2;">
-              15 日慢旅全景路線圖與城際移動
-            </div>
-            <div style="font-size: 7.2pt; color: #555; margin-top: 0.3mm;">
-              米蘭 · 貝爾加莫 · 科莫湖 · 熱那亞 · 菲諾港 · 尼斯 · 摩納哥／費拉角全景巡禮
-            </div>
+        <div style="border-bottom: 1.5px solid var(--galilee-green); padding-bottom: 0.6mm; margin-bottom: 1.2mm;">
+          <div
+            style="font-family: 'Noto Serif TC', serif; font-size: 13.5pt; font-weight: 700; color: var(--galilee-green); line-height: 1.2;">
+            義大利 × 南法蔚藍海岸 15 日慢旅全景動線
           </div>
-          <div style="text-align: right; flex-shrink: 0;">
-            <span
-              style="font-size: 7.0pt; font-weight: 700; background: #faf8f5; border: 1px solid var(--galilee-gold); color: var(--galilee-green-dark); padding: 1.2px 7px; border-radius: 10px;">
-              行車與鐵道總里程 約 <strong>1,200 Km</strong>
-            </span>
+          <div style="font-size: 7.5pt; color: #555; margin-top: 0.3mm;">
+            米蘭 · 貝爾加莫 · 科莫湖 · 熱那亞 · 菲諾港 · 尼斯 · 摩納哥／費拉角全景巡禮
           </div>
         </div>
 
-        <!-- 大幅全景路線圖 (Hero Map) -->
+        <!-- 巨幅全景路線圖 (Hero Map) -->
         <div class="galilee-map-hero">
           <img src="rmap.webp" alt="義大利 × 南法蔚藍海岸 15 日行程路線地圖">
         </div>
-        <div
-          style="font-size: 7.2pt; color: #173246; font-weight: 700; text-align: center; margin-top: 1mm; background: #faf9f5; border: 1px solid #d6a34a; padding: 0.8mm 1.5mm; border-radius: 3px; line-height: 1.35;">
-          ✦ 15日慢旅大動線：米蘭（4晚）➔ 貝爾加莫 ➔ 科莫湖 ➔ 熱那亞（3晚）➔ 菲諾港 ➔ 尼斯（5晚）✦
-        </div>
 
-        <!-- 下半部：雙欄城際景點距離與移動速查卡片 -->
-        <div class="dist-grid-container">
-          <!-- 左欄：北義都會與湖區 -->
-          <div class="dist-section-card">
-            <div class="dist-section-title">
-              <span>🏛️ 北義都會與阿爾卑斯湖區</span>
-              <span style="font-size: 6.5pt; color: var(--galilee-gold); font-weight: 700;">米蘭基地 4 晚</span>
-            </div>
-            <div class="dist-item">
-              <span class="dist-name">✈️ 機場 ➔ 米蘭市區</span>
-              <span class="dist-meta">MXP 快線 56分</span>
-            </div>
-            <div class="dist-item">
-              <span class="dist-name">🚆 米蘭 ➔ 貝爾加莫高地</span>
-              <span class="dist-meta">50 Km · RE快車 48分</span>
-            </div>
-            <div class="dist-item">
-              <span class="dist-name">🚆 米蘭 ➔ 瓦倫納（科莫湖）</span>
-              <span class="dist-meta">75 Km · RE快車 1h04m</span>
-            </div>
-            <div class="dist-item">
-              <span class="dist-name">⛴️ 瓦倫納 ➔ 貝拉焦半島</span>
-              <span class="dist-meta">渡輪約 20分</span>
-            </div>
-            <div class="dist-item">
-              <span class="dist-name">🚄 米蘭中央 ➔ 熱那亞王子廣場</span>
-              <span class="dist-meta">145 Km · IC 1h30m</span>
-            </div>
-          </div>
-
-          <!-- 右欄：利古里亞海與蔚藍海岸 -->
-          <div class="dist-section-card">
-            <div class="dist-section-title">
-              <span>🌊 利古里亞海與南法蔚藍海岸</span>
-              <span style="font-size: 6.5pt; color: var(--galilee-gold); font-weight: 700;">熱那亞 3 晚 ＋ 尼斯 5 晚</span>
-            </div>
-            <div class="dist-item">
-              <span class="dist-name">🚆 熱那亞 ➔ 菲諾港海灣</span>
-              <span class="dist-meta">35 Km · IC + 782公車</span>
-            </div>
-            <div class="dist-item">
-              <span class="dist-name">🚄 熱那亞 ➔ 文提米利亞邊境</span>
-              <span class="dist-meta">155 Km · IC海濱車 2h00m</span>
-            </div>
-            <div class="dist-item">
-              <span class="dist-name">🚆 文提米利亞 ➔ 尼斯城</span>
-              <span class="dist-meta">35 Km · TER列車 54分</span>
-            </div>
-            <div class="dist-item">
-              <span class="dist-name">🚆 尼斯城 ↔ 濱海自由城</span>
-              <span class="dist-meta">8 Km · TER火車 7分</span>
-            </div>
-            <div class="dist-item">
-              <span class="dist-name">🚊 尼斯 ↔ 費拉角半島別墅</span>
-              <span class="dist-meta">10 Km · 輕軌 + 15號公車</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 底部慢活理念標籤列 -->
-        <div
-          style="margin-top: 1.5mm; background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 3px; padding: 1.1mm 2.5mm; display: flex; justify-content: space-between; align-items: center; font-size: 6.8pt; line-height: 1.35; color: #173246;">
-          <div>
-            <strong>🌿 熟齡慢活移動哲學（4-3-5 節奏）：</strong>全程精選 3 大住宿據點僅換 2 次飯店，主要長程移動均搭乘高鐵一等艙與直達快車，免拖行李箱天天奔波。
+        <!-- 底部慢活大動線條 -->
+        <div style="margin-top: 1.2mm;">
+          <div
+            style="font-size: 7.6pt; color: #173246; font-weight: 700; text-align: center; background: #faf9f5; border: 1px solid #d6a34a; padding: 1.0mm 2.2mm; border-radius: 4px; line-height: 1.35;">
+            ✦ 慢活大動線：米蘭（連住 4 晚）➔ 貝爾加莫 ➔ 科莫湖 ➔ 熱那亞（連住 3 晚）➔ 菲諾港 ➔ 尼斯（連住 5 晚）✦
           </div>
         </div>
       </div>
@@ -1696,7 +1629,8 @@
               <td>區域快車 (彈性)</td>
               <td>約 15:35 前後<br><span style="color:#666;">(約 1 小時)</span></td>
               <td><span class="pill-badge pill-badge-stamp">⚠️ 上車必打卡</span> <span
-                  class="pill-badge pill-badge-buy">需現場購票</span> 窗口買紙票，<strong style="color: #991b1b;">月台黃機打戳印！</strong></td>
+                  class="pill-badge pill-badge-buy">需現場購票</span> 窗口買紙票，<strong style="color: #991b1b;">月台黃機打戳印！</strong>
+              </td>
             </tr>
             <tr>
               <td><strong>10/20</strong> <span class="chron-day-badge">D06</span></td>
@@ -1797,7 +1731,8 @@
               <td>ZOU! / TER 列車</td>
               <td>約 15:00 前後<br><span style="color:#666;">(54 分)</span></td>
               <td><span class="pill-badge pill-badge-stamp">⚠️ 上車必打卡</span> <span
-                  class="pill-badge pill-badge-buy">需邊境購票</span> 售票機買紙票，<strong style="color: #991b1b;">上車前於黃機打卡！</strong></td>
+                  class="pill-badge pill-badge-buy">需邊境購票</span> 售票機買紙票，<strong
+                  style="color: #991b1b;">上車前於黃機打卡！</strong></td>
             </tr>
             <tr>
               <td><strong>10/24</strong> <span class="chron-day-badge">D10</span></td>
@@ -1844,17 +1779,20 @@
           <div class="galilee-flight-head" style="font-size: 7.5pt; padding: 1.0mm 2.6mm;">
             <span>✈️ 國際長程航線 · 阿聯酋航空 Emirates (Saver / 每人託運 25kg)</span>
             <span
-              style="background: rgba(255,255,255,0.22); padding: 1px 7px; border-radius: 10px; font-weight: 600; font-size: 6.6pt;">桃園 T2 報到 ➔ 杜拜 T3 轉機 ➔ 尼斯 T2 返程</span>
+              style="background: rgba(255,255,255,0.22); padding: 1px 7px; border-radius: 10px; font-weight: 600; font-size: 6.6pt;">桃園
+              T2 報到 ➔ 杜拜 T3 轉機 ➔ 尼斯 T2 返程</span>
           </div>
           <div class="galilee-flight-body" style="padding: 1.2mm 2.4mm; font-size: 6.7pt; line-height: 1.35; gap: 2mm;">
             <div class="galilee-flight-leg" style="padding: 1.0mm 2.0mm;">
-              <div class="flight-leg-title" style="font-size: 7.2pt; margin-bottom: 0.3mm; padding-bottom: 0.2mm;">✈️ 去程航段 · EK367 ➔ EK205（桃園 T2 報到）</div>
+              <div class="flight-leg-title" style="font-size: 7.2pt; margin-bottom: 0.3mm; padding-bottom: 0.2mm;">✈️
+                去程航段 · EK367 ➔ EK205（桃園 T2 報到）</div>
               <div>• <strong>EK367：</strong>10/15 23:50 台北 T2 ➔ 10/16 04:35 杜拜 T3（停留 5h）</div>
               <div>• <strong>EK205：</strong>10/16 09:35 杜拜 T3 ➔ 10/16 14:10 米蘭 MXP T1</div>
               <div style="font-size: 6.2pt; color: #4a5568; margin-top: 0.2mm;">抵達後搭快線至中央車站，步行 3 分鐘入住 Hilton。</div>
             </div>
             <div class="galilee-flight-leg" style="padding: 1.0mm 2.0mm;">
-              <div class="flight-leg-title" style="font-size: 7.2pt; margin-bottom: 0.3mm; padding-bottom: 0.2mm;">✈️ 回程航段 · EK078 ➔ EK366（尼斯 T2 返程）</div>
+              <div class="flight-leg-title" style="font-size: 7.2pt; margin-bottom: 0.3mm; padding-bottom: 0.2mm;">✈️
+                回程航段 · EK078 ➔ EK366（尼斯 T2 返程）</div>
               <div>• <strong>EK078：</strong>10/28 14:30 尼斯 T2 ➔ 10/28 23:35 杜拜 T3（停留 4h）</div>
               <div>• <strong>EK366：</strong>10/29 03:40 杜拜 T3 ➔ 10/29 15:35 台北 T2</div>
               <div style="font-size: 6.2pt; color: #4a5568; margin-top: 0.2mm;">10/28 尼斯機場 PABLO 退稅後託運，10/29 抵達台灣。</div>
