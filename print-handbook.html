@@ -817,35 +817,59 @@
           <h2>航班資訊與三大核心住宿</h2>
         </div>
 
-        <!-- 航班一覽 -->
-        <div class="card" style="padding: 2.5mm 3.5mm;">
+        <!-- 航班一覽（含兩段航程與杜拜轉機明細） -->
+        <div class="card" style="padding: 2.2mm 3mm; margin-bottom: 2mm;">
           <div class="card-title">
-            <span>✈️ 阿聯酋航空來回航班資訊</span>
+            <span>✈️ 阿聯酋航空來回航班與杜拜轉機時刻明細</span>
             <span class="badge badge-navy">託運 25kg / 人</span>
           </div>
-          <table class="data-table" style="margin-top: 1mm;">
+          <table class="data-table" style="margin-top: 1mm; font-size: 6.6pt;">
             <tr>
-              <th>行程</th>
-              <th>航班</th>
-              <th>出發時刻</th>
-              <th>抵達時刻</th>
-              <th>航廈與轉機</th>
+              <th width="10%">行程</th>
+              <th width="16%">航班號</th>
+              <th width="28%">起飛時刻（航廈）</th>
+              <th width="28%">抵達時刻（航廈）</th>
+              <th width="18%">轉機與行李</th>
+            </tr>
+            <!-- 去程 -->
+            <tr>
+              <td rowspan="2" style="background:#f4f7f9; font-weight:700; text-align:center; vertical-align:middle;">
+                去程<br><span style="font-size:5.8pt; color:var(--text-muted);">10/15-16</span>
+              </td>
+              <td><strong>EK 367</strong></td>
+              <td>10/15 23:50<br><span style="color:#666;">台北桃園 TPE (T2)</span></td>
+              <td>10/16 04:35<br><span style="color:#666;">杜拜國際 DXB (T3)</span></td>
+              <td rowspan="2" style="vertical-align:middle; background:#fdfaf3; font-size:6.2pt; line-height:1.35;">
+                <strong style="color:var(--gold-dark);">杜拜 T3 轉機</strong><br>停留約 5 小時<br>（04:35–09:35）<br>行李直掛米蘭
+              </td>
             </tr>
             <tr>
-              <td><strong>去程</strong></td>
-              <td>EK367 ➔ EK205</td>
-              <td>10/15 23:50 (TPE)</td>
-              <td>10/16 14:10 (MXP)</td>
-              <td>TPE T2 報到；杜拜 T3 轉機 5h</td>
+              <td><strong>EK 205</strong></td>
+              <td>10/16 09:35<br><span style="color:#666;">杜拜國際 DXB (T3)</span></td>
+              <td>10/16 14:10<br><span style="color:#666;">米蘭馬爾彭薩 MXP (T1)</span></td>
+            </tr>
+            <!-- 回程 -->
+            <tr>
+              <td rowspan="2" style="background:#f4f7f9; font-weight:700; text-align:center; vertical-align:middle;">
+                回程<br><span style="font-size:5.8pt; color:var(--text-muted);">10/28-29</span>
+              </td>
+              <td><strong>EK 078</strong></td>
+              <td>10/28 14:30<br><span style="color:#666;">尼斯蔚藍海岸 NCE (T2)</span></td>
+              <td>10/28 23:35<br><span style="color:#666;">杜拜國際 DXB (T3)</span></td>
+              <td rowspan="2" style="vertical-align:middle; background:#fdfaf3; font-size:6.2pt; line-height:1.35;">
+                <strong style="color:var(--gold-dark);">杜拜 T3 轉機</strong><br>停留約 4 小時<br>（23:35–03:40）<br>行李直掛台北
+              </td>
             </tr>
             <tr>
-              <td><strong>回程</strong></td>
-              <td>EK078 ➔ EK366</td>
-              <td>10/28 14:30 (NCE)</td>
-              <td>10/29 15:35 (TPE)</td>
-              <td>NCE T2 報到；杜拜 T3 轉機 4h</td>
+              <td><strong>EK 366</strong></td>
+              <td>10/29 03:40<br><span style="color:#666;">杜拜國際 DXB (T3)</span></td>
+              <td>10/29 15:35<br><span style="color:#666;">台北桃園 TPE (T2)</span></td>
             </tr>
           </table>
+          <div style="font-size: 6.2pt; color: var(--text-muted); display:flex; justify-content:space-between; margin-top:0.5mm;">
+            <span>💡 <strong>開櫃時間：</strong>去程 10/15 20:50 (TPE T2)；回程 10/28 10:30 (NCE T2)。</span>
+            <span>🧳 託運 25kg / 隨身 7kg</span>
+          </div>
         </div>
 
         <!-- 3 大基地飯店問路卡 -->
@@ -914,103 +938,112 @@
           <h2>鐵路時刻表與搭乘安心指引</h2>
         </div>
 
-        <!-- 乘車要領警示卡 -->
-        <div class="card card-gold" style="padding: 2mm 3mm; margin-bottom: 2mm;">
-          <div style="font-size: 7.5pt; font-weight: 700; color: var(--gold-dark); margin-bottom: 1mm;">
-            🌟 全線電子票乘車心法：免排隊換票、免在月台打卡！
+        <!-- 乘車要領警示卡（明確區分 3 大票券型態） -->
+        <div class="card card-gold" style="padding: 2mm 2.8mm; margin-bottom: 2mm;">
+          <div style="font-size: 7.3pt; font-weight: 700; color: var(--gold-dark); margin-bottom: 1.2mm;">
+            🌟 乘車票券 3 大型態與搭乘安心指引：
           </div>
-          <div style="font-size: 6.8pt; line-height: 1.4; color: #444;">
-            • <strong>手機出示 QR Code</strong>：所有車票均為數位電子票，查票時直接秀出 PDF 供列車長掃描。<br>
-            • <strong>完全不用打卡</strong>：月台黃色打票機僅供傳統厚紙票使用，電子票嚴禁且無法打卡。<br>
-            • <strong>看車次對螢幕</strong>：發車前 10~15 分鐘看大螢幕以「車次編號（如 RE 2219）」核對月台（Binario）。
+          <div style="display: flex; flex-direction: column; gap: 1.2mm; font-size: 6.4pt; line-height: 1.35; color: #2c3e50;">
+            <div style="background: #fff; border-left: 2.5px solid var(--navy); padding: 1.2mm 2.2mm; border-radius: 2px;">
+              <strong style="color: var(--navy);">1. 區域列車（Trenord APP）：</strong>
+              乘車前打開 <strong>Trenord APP</strong>，確認 <strong>Wallet（電子錢包）裡面票券 QR Code 與 Check-in 狀態</strong>，乘車時出示手機螢幕掃描。（適用：機場快線 MXP、往返貝爾加莫 RE、往科莫湖 RE）
+            </div>
+            <div style="background: #fff; border-left: 2.5px solid var(--gold); padding: 1.2mm 2.2mm; border-radius: 2px;">
+              <strong style="color: var(--gold-dark);">2. 城際列車（國鐵 Trenitalia 印出的紙本票）：</strong>
+              本次 <strong>IC 659、IC 657、IC 674、IC 633</strong> 均為劃位城際快車，<strong>攜帶印出之 A4 紙本票</strong>，票上已有固定車廂與座位號，<strong>免在月台打卡</strong>，直接對號入座、查票出示紙本。
+            </div>
+            <div style="background: #fff; border-left: 2.5px solid #d35400; padding: 1.2mm 2.2mm; border-radius: 2px;">
+              <strong style="color: #d35400;">3. 自行購買的紙本票：</strong>
+              回程彈性車次（瓦倫納回米蘭、邊境往尼斯等）於車站售票機或窗口自行購買。<strong>⚠️ 注意：若購買傳統實體小卡紙票，上車前必須在月台黃色打票機打卡蓋印！</strong>
+            </div>
           </div>
         </div>
 
         <!-- 時刻總表 -->
-        <table class="data-table">
+        <table class="data-table" style="font-size: 6.5pt;">
           <tr>
-            <th width="10%">日期</th>
-            <th width="36%">行駛區間</th>
+            <th width="9%">日期</th>
+            <th width="33%">行駛區間</th>
             <th width="16%">車次／車種</th>
-            <th width="18%">時刻</th>
-            <th>型態</th>
+            <th width="16%">時刻</th>
+            <th>票券型態與乘車指引</th>
           </tr>
           <tr>
             <td>10/16</td>
             <td>米蘭機場 ➔ 米蘭中央車站</td>
             <td>MXP 2951 快線</td>
             <td>16:11 ➔ 17:07</td>
-            <td>免Check-in</td>
+            <td><strong>Trenord APP</strong> (Wallet QR)</td>
           </tr>
           <tr>
             <td>10/18</td>
             <td>米蘭 ➔ 貝爾加莫 (Bergamo)</td>
             <td>RE 2219 區間快</td>
             <td>09:05 ➔ 09:53</td>
-            <td>直達 48 分</td>
+            <td><strong>Trenord APP</strong> (Wallet QR)</td>
           </tr>
           <tr>
             <td>10/18</td>
             <td>貝爾加莫 ➔ 米蘭中央車站</td>
             <td>RE 2232 區間快</td>
             <td>15:02 ➔ 15:50</td>
-            <td>回飯店放鬆</td>
+            <td><strong>Trenord APP</strong> (Wallet QR)</td>
           </tr>
           <tr>
             <td>10/19</td>
             <td>米蘭 ➔ 瓦倫納（科莫湖）</td>
             <td>RE 2818 區間快</td>
             <td>09:20 ➔ 10:25</td>
-            <td>湖畔慢遊</td>
+            <td><strong>Trenord APP</strong> (Wallet QR)</td>
           </tr>
           <tr>
             <td>10/19</td>
             <td>瓦倫納 ➔ 米蘭中央車站</td>
-            <td>RE 區間快車</td>
+            <td>RE 彈性班次</td>
             <td>約 15:35 彈性</td>
-            <td>APP 訂購</td>
+            <td><strong>自行購買的紙本票</strong>（車站購票）</td>
           </tr>
           <tr>
             <td>10/20</td>
             <td>米蘭 ➔ 熱那亞王子廣場</td>
             <td>IC 659 一等艙</td>
             <td>09:10 ➔ 10:40</td>
-            <td>劃位對號車</td>
+            <td><strong>Trenitalia 印出的紙本票</strong>（免打卡）</td>
           </tr>
           <tr>
             <td>10/22</td>
             <td>熱那亞 ➔ S. Margherita</td>
             <td>IC 657 一等艙</td>
             <td>09:47 ➔ 10:14</td>
-            <td>往菲諾港</td>
+            <td><strong>Trenitalia 印出的紙本票</strong>（免打卡）</td>
           </tr>
           <tr>
             <td>10/22</td>
             <td>S. Margherita ➔ 熱那亞</td>
             <td>IC 674 一等艙</td>
             <td>15:46 ➔ 16:14</td>
-            <td>舒適返程</td>
+            <td><strong>Trenitalia 印出的紙本票</strong>（免打卡）</td>
           </tr>
           <tr>
             <td>10/23</td>
             <td>熱那亞 ➔ 文提米利亞</td>
             <td>IC 633 一等艙</td>
             <td>08:58 ➔ 10:58</td>
-            <td>邊境中繼站</td>
+            <td><strong>Trenitalia 印出的紙本票</strong>（免打卡）</td>
           </tr>
           <tr>
             <td>10/23</td>
             <td>文提米利亞 ➔ 尼斯 Nice</td>
             <td>ZOU! / TER 跨國</td>
             <td>15:00 前後</td>
-            <td>沿海直達</td>
+            <td><strong>自行購買的紙本票</strong>（邊境購票）</td>
           </tr>
           <tr>
             <td>10/25</td>
             <td>尼斯 ↔ 濱海自由城</td>
             <td>TER 區間景觀火車</td>
-            <td>彈性班次</td>
-            <td>車程僅 7 分</td>
+            <td>彈性班次 (7分)</td>
+            <td><strong>PASS SUD AZUR / 自行購買紙票</strong></td>
           </tr>
         </table>
 
