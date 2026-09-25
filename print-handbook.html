@@ -1142,28 +1142,29 @@
     }
 
     /* =========================================================================
-       封底 (Back Cover): 再見蔚藍海岸 · 法式浪漫漫旅詩篇
+       封底 (Back Cover): 典藏法式蔚藍海岸紀念明信片 (Carte Postale Souvenir)
        ========================================================================= */
     .galilee-back-cover {
-      background: linear-gradient(168deg, #173246 0%, #1e405a 45%, #0f2230 100%) !important;
-      color: #e2ede5 !important;
-      padding: 9mm 9mm 8mm 9mm !important;
+      background: radial-gradient(ellipse at 50% 25%, #ffffff 0%, #fdfbf7 60%, #f6f0e4 100%) !important;
+      color: #173246 !important;
+      padding: 6.8mm 8mm 6.2mm 8mm !important;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       position: relative;
       overflow: hidden;
+      border: 1.5px solid #c5a059 !important;
     }
 
-    /* 內層典雅細金邊框與法式飾紋 */
+    /* 內層典雅細金邊框與明信片邊角飾紋 */
     .galilee-back-cover::before {
       content: "";
       position: absolute;
-      top: 4mm;
-      left: 4mm;
-      right: 4mm;
-      bottom: 4mm;
-      border: 1px solid rgba(214, 163, 74, 0.45);
+      top: 3.2mm;
+      left: 3.2mm;
+      right: 3.2mm;
+      bottom: 3.2mm;
+      border: 0.65px solid rgba(197, 160, 89, 0.45);
       pointer-events: none;
       border-radius: 2px;
     }
@@ -1171,71 +1172,164 @@
     .galilee-back-cover::after {
       content: "";
       position: absolute;
-      top: 5mm;
-      left: 5mm;
-      right: 5mm;
-      bottom: 5mm;
-      border: 0.5px solid rgba(214, 163, 74, 0.2);
+      top: 4.4mm;
+      left: 4.4mm;
+      right: 4.4mm;
+      bottom: 4.4mm;
+      border: 0.45px dashed rgba(197, 160, 89, 0.25);
       pointer-events: none;
     }
 
+    /* 頂部明信片抬頭與郵戳郵票區 */
     .back-cover-header {
-      text-align: center;
-      margin-top: 1mm;
-      margin-bottom: 2mm;
       position: relative;
       z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-top: 0.5mm;
+      margin-bottom: 2mm;
+      gap: 3mm;
+    }
+
+    .back-cover-header-left {
+      flex: 1;
+    }
+
+    .back-cover-carte-banner {
+      font-size: 5.6pt;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--galilee-gold);
+      text-transform: uppercase;
+      margin-bottom: 0.8mm;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      white-space: nowrap;
+    }
+
+    .back-cover-carte-banner .banner-line {
+      display: inline-block;
+      width: 14px;
+      height: 1px;
+      background: rgba(197, 160, 89, 0.4);
     }
 
     .back-cover-eyebrow {
-      font-size: 6.5pt;
+      font-size: 6.8pt;
       font-weight: 700;
-      letter-spacing: 0.28em;
-      color: var(--galilee-gold);
+      letter-spacing: 0.2em;
+      color: #173246;
       text-transform: uppercase;
-      margin-bottom: 1mm;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-    }
-
-    .back-cover-eyebrow span {
-      display: inline-block;
-      width: 18px;
-      height: 1px;
-      background: rgba(214, 163, 74, 0.45);
+      margin-bottom: 0.6mm;
     }
 
     .back-cover-title {
       font-family: "Noto Serif TC", serif;
-      font-size: 19pt;
+      font-size: 19.5pt;
       font-weight: 900;
-      color: #ffffff;
-      letter-spacing: 0.08em;
+      color: #173246;
+      letter-spacing: 0.05em;
       line-height: 1.15;
-      margin: 0 0 1mm 0;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+      margin: 0 0 0.8mm 0;
     }
 
     .back-cover-subtitle {
       font-family: "Georgia", "Noto Serif TC", serif;
-      font-size: 8.5pt;
-      color: var(--galilee-gold-light);
-      letter-spacing: 0.08em;
+      font-size: 8.2pt;
+      color: #826227;
+      letter-spacing: 0.04em;
       font-style: italic;
     }
 
-    /* 封底中央落日照片框 */
+    /* 右上角：法式蔚藍海岸紀念郵票與郵戳消印 */
+    .back-cover-stamp-col {
+      flex-shrink: 0;
+      position: relative;
+      width: 52mm;
+      height: 28mm;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+      overflow: visible;
+    }
+
+    .postcard-stamp-wrap {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .postcard-wavy-lines {
+      position: absolute;
+      right: 30mm;
+      top: 6mm;
+      width: 21mm;
+      height: 10mm;
+      opacity: 0.85;
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    .postcard-postmark {
+      position: absolute;
+      right: 14mm;
+      top: 0.5mm;
+      width: 20mm;
+      height: 20mm;
+      z-index: 4;
+      transform: rotate(-8deg);
+      pointer-events: none;
+      overflow: visible;
+    }
+
+    .postcard-timbre {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 23mm;
+      height: 28mm;
+      filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.18));
+      z-index: 2;
+    }
+
+    /* 航空信籤條 (Par Avion Badge) */
+    .par-avion-badge {
+      display: inline-flex;
+      align-items: center;
+      background: #173246;
+      color: #ffffff;
+      font-size: 5.2pt;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      padding: 1px 6px;
+      border-radius: 2px;
+      border: 0.5px solid #d6a34a;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      margin-right: 5px;
+    }
+
+    /* 封底中央落日寫真框 (明信片主畫面 - 壯麗放大至 68mm) */
     .back-cover-photo-wrap {
       position: relative;
       z-index: 2;
-      height: 48mm;
-      border-radius: 4px;
+      height: 68mm;
+      border-radius: 2px;
       overflow: hidden;
-      border: 1.5px solid #d6a34a;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+      background: #ffffff;
+      padding: 1.8mm;
+      border: 0.8px solid #c5a059;
+      box-shadow: 0 4px 14px rgba(23, 50, 70, 0.12);
       margin-bottom: 2.6mm;
+    }
+
+    .back-cover-photo-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      border-radius: 1px;
     }
 
     .back-cover-photo-wrap img {
@@ -1245,14 +1339,51 @@
       display: block;
     }
 
+    /* 復古明信片金屬包角 (Photo Corners - 典雅金箔三角相角) */
+    .photo-corner {
+      position: absolute;
+      width: 0;
+      height: 0;
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    .photo-corner-tl {
+      top: 0;
+      left: 0;
+      border-top: 13px solid #b8862d;
+      border-right: 13px solid transparent;
+    }
+
+    .photo-corner-tr {
+      top: 0;
+      right: 0;
+      border-top: 13px solid #b8862d;
+      border-left: 13px solid transparent;
+    }
+
+    .photo-corner-bl {
+      bottom: 0;
+      left: 0;
+      border-bottom: 13px solid #b8862d;
+      border-right: 13px solid transparent;
+    }
+
+    .photo-corner-br {
+      bottom: 0;
+      right: 0;
+      border-bottom: 13px solid #b8862d;
+      border-left: 13px solid transparent;
+    }
+
     .back-cover-photo-caption {
       position: absolute;
       bottom: 0;
       left: 0;
       right: 0;
-      background: linear-gradient(to top, rgba(15, 34, 48, 0.92) 0%, rgba(15, 34, 48, 0.5) 65%, transparent 100%);
+      background: linear-gradient(to top, rgba(15, 34, 48, 0.88) 0%, rgba(15, 34, 48, 0.45) 70%, transparent 100%);
       padding: 3mm 4mm 1.5mm;
-      font-size: 6.2pt;
+      font-size: 6.4pt;
       color: #fdfcf9;
       display: flex;
       justify-content: space-between;
@@ -1261,30 +1392,36 @@
 
     .back-cover-photo-caption span.fr {
       font-style: italic;
-      color: var(--galilee-gold-light);
+      color: #fbf6ec;
       font-family: "Georgia", serif;
       letter-spacing: 0.03em;
     }
 
-    /* 法式浪漫詩篇卡片 */
+    .back-cover-photo-caption span.zh {
+      color: #dfaf57;
+      font-weight: 600;
+    }
+
+    /* 法式浪漫詩篇卡片 (明信片羊皮紙質感 - 寬裕舒展排版) */
     .back-cover-poem-card {
       position: relative;
       z-index: 2;
-      background: rgba(23, 50, 70, 0.55);
-      border: 1px solid rgba(214, 163, 74, 0.35);
-      border-radius: 4px;
-      padding: 2.6mm 3.5mm;
+      background: #faf6ee;
+      border: 1px solid #ebd9b6;
+      border-radius: 3px;
+      padding: 2.8mm 4.2mm;
       margin-bottom: 2.6mm;
+      box-shadow: 0 1px 4px rgba(23, 50, 70, 0.04);
     }
 
     .back-cover-poem-fr {
       font-family: "Georgia", serif;
       font-style: italic;
-      font-size: 6.8pt;
-      color: #f8efe0;
-      line-height: 1.45;
+      font-size: 7.3pt;
+      color: #173246;
+      line-height: 1.48;
       text-align: center;
-      margin-bottom: 1.5mm;
+      margin-bottom: 1.2mm;
       letter-spacing: 0.02em;
     }
 
@@ -1295,92 +1432,74 @@
       gap: 6px;
       margin: 1.2mm 0;
       color: var(--galilee-gold);
-      font-size: 6pt;
+      font-size: 6.5pt;
     }
 
     .back-cover-poem-divider::before,
     .back-cover-poem-divider::after {
       content: "";
-      width: 26px;
+      width: 28px;
       height: 0.5px;
-      background: rgba(214, 163, 74, 0.4);
+      background: rgba(184, 134, 45, 0.35);
     }
 
     .back-cover-poem-zh {
       font-family: "Noto Serif TC", serif;
-      font-size: 6.2pt;
-      color: #cbd5e1;
-      line-height: 1.5;
+      font-size: 6.8pt;
+      color: #334155;
+      line-height: 1.54;
       text-align: center;
       letter-spacing: 0.03em;
     }
 
-    /* 旅程記憶地標膠囊 */
-    .back-cover-milestones {
-      position: relative;
-      z-index: 2;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 2mm;
-      margin-bottom: 2.6mm;
-    }
-
-    .back-cover-milestone-item {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(214, 163, 74, 0.22);
-      border-radius: 3px;
-      padding: 1.8mm 1.5mm;
-      text-align: center;
-    }
-
-    .back-cover-milestone-item .city-fr {
-      font-size: 5.6pt;
-      color: var(--galilee-gold-light);
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      margin-bottom: 0.5mm;
-    }
-
-    .back-cover-milestone-item .city-zh {
-      font-size: 5.8pt;
-      color: #e2ede5;
-      font-weight: 500;
-    }
-
-    /* 平安歸途叮嚀卡 */
+    /* 平安歸途叮嚀卡 (明信片暖心附註) */
     .back-cover-return-card {
       position: relative;
       z-index: 2;
-      background: rgba(214, 163, 74, 0.08);
-      border-left: 2px solid var(--galilee-gold);
-      padding: 1.8mm 3mm;
+      background: #fbf9f4;
+      border-left: 2.5px solid var(--galilee-gold);
+      border-top: 1px solid #ebd9b6;
+      border-right: 1px solid #ebd9b6;
+      border-bottom: 1px solid #ebd9b6;
+      border-radius: 0 3px 3px 0;
+      padding: 2.0mm 3.2mm;
       margin-bottom: 2.6mm;
-      font-size: 5.8pt;
-      line-height: 1.45;
-      color: #cbd5e1;
+      font-size: 6.2pt;
+      line-height: 1.46;
+      color: #475569;
     }
 
     .back-cover-return-card strong {
-      color: var(--galilee-gold-light);
+      color: #173246;
       font-weight: 700;
     }
 
-    /* 封底底部簽名欄 */
+    /* 封底底部明信片簽署與祝福 */
     .back-cover-footer {
       position: relative;
       z-index: 2;
       text-align: center;
-      padding-top: 2mm;
-      border-top: 1px solid rgba(214, 163, 74, 0.25);
+      padding-top: 1.8mm;
+      border-top: 1px solid rgba(197, 160, 89, 0.35);
+    }
+
+    .back-cover-blessing {
+      font-family: "Georgia", serif;
+      font-style: italic;
+      font-size: 8.0pt;
+      font-weight: 600;
+      color: #826227;
+      letter-spacing: 0.04em;
+      margin-bottom: 1.0mm;
     }
 
     .back-cover-brand {
       font-family: "Noto Serif TC", serif;
       font-weight: 700;
-      font-size: 8.5pt;
-      color: #ffffff;
+      font-size: 7.6pt;
+      color: #173246;
       letter-spacing: 0.12em;
-      margin-bottom: 0.6mm;
+      margin-bottom: 0.4mm;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1392,18 +1511,9 @@
     }
 
     .back-cover-edition {
-      font-size: 5.6pt;
-      color: #94a3b8;
+      font-size: 5.4pt;
+      color: #8a99a8;
       letter-spacing: 0.15em;
-      margin-bottom: 0.8mm;
-    }
-
-    .back-cover-blessing {
-      font-family: "Georgia", serif;
-      font-style: italic;
-      font-size: 6.8pt;
-      color: var(--galilee-gold-light);
-      letter-spacing: 0.06em;
     }
 
     /* 列印專屬媒體查詢 */
@@ -2187,7 +2297,7 @@
                 <div class="galilee-t-time">20:50</div>
                 <div class="galilee-t-label">T2 報到</div>
                 <div class="galilee-t-dur">託運 25kg</div>
-                <span class="galilee-t-station-cue">起：桃機 T2</span>
+                <span class="galilee-t-station-cue">起：桃機 TPE T2</span>
               </div>
               <div class="galilee-timeline-node">
                 <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
@@ -2216,7 +2326,7 @@
                 <div class="galilee-t-time">09:35</div>
                 <div class="galilee-t-label">EK205 飛米蘭</div>
                 <div class="galilee-t-dur">航程 6h35m</div>
-                <span class="galilee-t-station-cue alert-cue">抵：米蘭 MXP</span>
+                <span class="galilee-t-station-cue alert-cue">抵：米蘭 MXP T1</span>
               </div>
             </div>
           </div>
@@ -2303,7 +2413,7 @@
                     <circle cx="12" cy="12" r="4" fill="#000" />
                   </svg></div>
                 <div class="galilee-t-time">17:07</div>
-                <div class="galilee-t-label">中央車站</div>
+                <div class="galilee-t-label">中央車站(Milano Centrale)</div>
                 <div class="galilee-t-dur">領取米蘭通票</div>
                 <span class="galilee-t-station-cue alert-cue">前站: Garibaldi</span>
               </div>
@@ -2343,7 +2453,7 @@
               <div class="galilee-spec-body">
                 <div><strong>早餐：</strong>機上精緻早餐</div>
                 <div><strong>午餐：</strong>機上 / 機場輕食</div>
-                <div><strong>晚餐：</strong>飯店周邊道地義式迎賓晚餐</div>
+                <div><strong>晚餐：</strong>飯店內道地義式迎賓晚餐</div>
               </div>
             </div>
             <div class="galilee-spec-cell">
@@ -4388,51 +4498,53 @@
       </div>
     </div>
     <!-- =========================================================================
-         PAGE 19: 旅人隨筆與紀念印章收集頁
+         PAGE 19: 旅人隨筆與慢遊手札筆記頁 (Travel Notes & Journal)
          ========================================================================= -->
     <div class="a5-page">
       <div class="page-header">
-        <span class="page-header-title">TRAVEL MEMORIES</span>
-        <span>旅人隨筆 · 紀念印章收集頁</span>
+        <span class="page-header-title">TRAVEL NOTES & JOURNAL</span>
+        <span>旅人隨筆 · 慢遊旅行手札</span>
       </div>
 
       <div class="page-content">
         <div
           style="font-family: 'Noto Serif TC', serif; font-size: 13pt; font-weight: 700; color: var(--galilee-green); margin-bottom: 0.5mm;">
-          旅人心情隨筆與印章收集
+          旅人心情隨筆與慢遊手札
         </div>
-        <div style="font-size: 7.8pt; color: #555; margin-bottom: 2.5mm;">
-          記錄旅途中的微小感動、手繪隨筆，以及各車站、博物館紀念戳印
+        <div style="font-size: 7.8pt; color: #555; margin-bottom: 2.2mm;">
+          記錄旅途中的微小感動、私房美景、在地美味與熟齡慢活時光 (Travel Notes & Memories)
         </div>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3mm; height: 145mm;">
-          <!-- 心情隨筆欄 -->
+        <!-- 全版寬幅旅行手札筆記區 -->
+        <div
+          style="border: 1px solid #e2e8f0; border-radius: 4px; padding: 2.8mm 3.6mm; background: #fff; height: 147mm; display: flex; flex-direction: column; box-shadow: 0 1px 4px rgba(0,0,0,0.03);">
+
+          <!-- 頂部手札資訊欄：日期、地點、天氣 -->
           <div
-            style="border: 1px solid #e2e8f0; border-radius: 4px; padding: 2.5mm; background: #fff; display: flex; flex-direction: column;">
-            <div
-              style="font-weight: 700; color: var(--galilee-green); font-size: 8.5pt; border-bottom: 1px solid #eee; padding-bottom: 1mm; margin-bottom: 2mm;">
-              ✍️ 旅行隨筆與心情速記 (Notes)
+            style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.2px solid #ebd9b6; padding-bottom: 1.6mm; margin-bottom: 2.2mm; font-size: 7.2pt; color: #173246;">
+            <div style="font-weight: 700; color: var(--galilee-green); font-size: 8.4pt; white-space: nowrap;">
+              ✍️ 旅行隨筆與漫遊日記 (Travel Journal)
             </div>
-            <div
-              style="flex: 1; background-image: repeating-linear-gradient(transparent, transparent 19px, #f0ede6 20px); line-height: 20px;">
+            <div style="font-size: 6.8pt; color: #64748b; white-space: nowrap;">
+              <span>📅 日期：________</span>　
+              <span>📍 地點：________</span>　
+              <span>☀️ 天氣：______</span>
             </div>
           </div>
 
-          <!-- 紀念戳印欄 -->
+          <!-- 全版舒適橫線筆記區 (約 18 行完整書寫行) -->
           <div
-            style="border: 1.5px dashed #cbd5e1; border-radius: 4px; padding: 2.5mm; background: #fdfcf9; display: flex; flex-direction: column; justify-content: space-between;">
-            <div>
-              <div
-                style="font-weight: 700; color: var(--galilee-green); font-size: 8.5pt; border-bottom: 1px solid #e5eae6; padding-bottom: 1mm; margin-bottom: 2mm;">
-                📮 紀念戳印收集處 (Souvenir Stamps)
-              </div>
-              <div style="font-size: 7.2pt; color: #777; text-align: center; margin-top: 25mm; line-height: 1.5;">
-                可在此蓋上米蘭、貝爾加莫古城、科莫湖、熱那亞、菲諾港或尼斯各景點與車站之紀念印章
-              </div>
+            style="flex: 1; background-image: repeating-linear-gradient(transparent, transparent 21px, #e8e3d8 22px); line-height: 22px;">
+          </div>
+
+          <!-- 底部典雅小語與手冊簽署 -->
+          <div
+            style="display: flex; justify-content: space-between; align-items: center; font-size: 6.4pt; color: #94a3b8; border-top: 1px dotted #e5eae6; padding-top: 1.6mm; margin-top: 1mm;">
+            <div style="font-family: 'Georgia', serif; font-style: italic; color: #826227; white-space: nowrap;">
+              « Le véritable voyage consiste à avoir de nouveaux yeux. » · 願每筆隨記皆成永恆
             </div>
-            <div
-              style="text-align: center; font-size: 6.8pt; color: #888; border-top: 1px dotted #e5eae6; padding-top: 1.5mm;">
-              TRAVEL EURO · 北義 × 南法蔚藍海岸 15 日慢旅手冊
+            <div style="white-space: nowrap;">
+              TRAVEL EURO · 15 日慢旅隨身手札
             </div>
           </div>
         </div>
@@ -4445,28 +4557,164 @@
     </div>
 
     <!-- =========================================================================
-         PAGE 20: 封底 (Back Cover) · 再見蔚藍海岸 (Au revoir, Côte d'Azur!)
+         PAGE 20: 封底 (Back Cover) · 典藏法式蔚藍海岸紀念明信片 (Carte Postale Souvenir)
          ========================================================================= -->
     <div class="a5-page galilee-back-cover">
-      <!-- 頂部標題區 -->
+      <!-- 頂部明信片抬頭與郵票郵戳區 -->
       <div class="back-cover-header">
-        <div class="back-cover-eyebrow">
-          <span></span> AU REVOIR, CÔTE D'AZUR <span></span>
+        <div class="back-cover-header-left">
+          <div class="back-cover-carte-banner">
+            <span class="par-avion-badge">PAR AVION</span>
+            <span class="banner-line"></span> CARTE POSTALE DE LA CÔTE D'AZUR <span class="banner-line"></span>
+          </div>
+          <div class="back-cover-eyebrow">AU REVOIR, CÔTE D'AZUR</div>
+          <h2 class="back-cover-title">再見！蔚藍海岸</h2>
+          <div class="back-cover-subtitle">Ce n'est qu'un au revoir · 願海風常駐於心</div>
         </div>
-        <h2 class="back-cover-title">再見！蔚藍海岸</h2>
-        <div class="back-cover-subtitle">Ce n'est qu'un au revoir · 願海風常駐於心</div>
+
+        <!-- 右上角：法式蔚藍海岸紀念郵票與郵戳消印 -->
+        <div class="back-cover-stamp-col">
+          <div class="postcard-stamp-wrap">
+            <!-- 郵戳波浪消印線 (les vagues d'oblitération) -->
+            <svg class="postcard-wavy-lines" viewBox="0 0 90 40" fill="none" stroke="rgba(23, 50, 70, 0.72)"
+              stroke-width="1.3">
+              <path d="M0,10 Q15,4 30,10 T60,10 T90,10" />
+              <path d="M0,19 Q15,13 30,19 T60,19 T90,19" />
+              <path d="M0,28 Q15,22 30,28 T60,28 T90,28" />
+            </svg>
+
+            <!-- 圓形紀念郵戳 (Cachet postal) -->
+            <div class="postcard-postmark">
+              <svg viewBox="0 0 100 100" style="width: 100%; height: 100%; overflow: visible;">
+                <circle cx="50" cy="50" r="46" fill="none" stroke="rgba(23, 50, 70, 0.85)" stroke-width="1.6" />
+                <circle cx="50" cy="50" r="41" fill="none" stroke="rgba(23, 50, 70, 0.85)" stroke-width="0.8"
+                  stroke-dasharray="2.5,2" />
+                <path id="postmark-arc-top" d="M 14 50 A 36 36 0 0 1 86 50" fill="none" />
+                <text font-size="7.5" font-weight="700" font-family="'Noto Sans TC', sans-serif"
+                  fill="rgba(23, 50, 70, 0.9)" letter-spacing="1">
+                  <textPath href="#postmark-arc-top" startOffset="50%" text-anchor="middle">★ NICE · CÔTE D'AZUR ★
+                  </textPath>
+                </text>
+                <text x="50" y="49" font-size="7.8" font-weight="700" font-family="'Barlow Condensed', sans-serif"
+                  fill="rgba(23, 50, 70, 0.95)" text-anchor="middle" letter-spacing="1.2">26 · X · 2026</text>
+                <text x="50" y="58" font-size="5.8" font-family="'Georgia', serif" font-style="italic"
+                  fill="rgba(23, 50, 70, 0.85)" text-anchor="middle">Voyage Privé</text>
+                <path id="postmark-arc-bottom" d="M 18 52 A 32 32 0 0 0 82 52" fill="none" />
+                <text font-size="6.2" font-weight="700" font-family="'Noto Sans TC', sans-serif"
+                  fill="rgba(23, 50, 70, 0.88)" letter-spacing="1.1">
+                  <textPath href="#postmark-arc-bottom" startOffset="50%" text-anchor="middle">✦ POSTES · FRANCE ✦
+                  </textPath>
+                </text>
+              </svg>
+            </div>
+
+            <!-- 法國齒孔紀念郵票 (Timbre-poste avec dentelure) -->
+            <div class="postcard-timbre">
+              <svg viewBox="0 0 88 104" style="width: 100%; height: 100%; display: block;">
+                <defs>
+                  <linearGradient id="stampSkyGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#142c3d" />
+                    <stop offset="55%" stop-color="#244b67" />
+                    <stop offset="85%" stop-color="#d69f43" />
+                    <stop offset="100%" stop-color="#f5d68a" />
+                  </linearGradient>
+                </defs>
+                <!-- 白色郵票底紙 -->
+                <rect x="0" y="0" width="88" height="104" fill="#fffefb" />
+                <!-- 齒孔咬痕 (Perforations) -->
+                <circle cx="8" cy="0" r="2.8" fill="#fdfaf5" />
+                <circle cx="16" cy="0" r="2.8" fill="#fdfaf5" />
+                <circle cx="24" cy="0" r="2.8" fill="#fdfaf5" />
+                <circle cx="32" cy="0" r="2.8" fill="#fdfaf5" />
+                <circle cx="40" cy="0" r="2.8" fill="#fdfaf5" />
+                <circle cx="48" cy="0" r="2.8" fill="#fdfaf5" />
+                <circle cx="56" cy="0" r="2.8" fill="#fdfaf5" />
+                <circle cx="64" cy="0" r="2.8" fill="#fdfaf5" />
+                <circle cx="72" cy="0" r="2.8" fill="#fdfaf5" />
+                <circle cx="80" cy="0" r="2.8" fill="#fdfaf5" />
+
+                <circle cx="8" cy="104" r="2.8" fill="#fdfaf5" />
+                <circle cx="16" cy="104" r="2.8" fill="#fdfaf5" />
+                <circle cx="24" cy="104" r="2.8" fill="#fdfaf5" />
+                <circle cx="32" cy="104" r="2.8" fill="#fdfaf5" />
+                <circle cx="40" cy="104" r="2.8" fill="#fdfaf5" />
+                <circle cx="48" cy="104" r="2.8" fill="#fdfaf5" />
+                <circle cx="56" cy="104" r="2.8" fill="#fdfaf5" />
+                <circle cx="64" cy="104" r="2.8" fill="#fdfaf5" />
+                <circle cx="72" cy="104" r="2.8" fill="#fdfaf5" />
+                <circle cx="80" cy="104" r="2.8" fill="#fdfaf5" />
+
+                <circle cx="0" cy="8" r="2.8" fill="#fdfaf5" />
+                <circle cx="0" cy="16" r="2.8" fill="#fdfaf5" />
+                <circle cx="0" cy="24" r="2.8" fill="#fdfaf5" />
+                <circle cx="0" cy="32" r="2.8" fill="#fdfaf5" />
+                <circle cx="0" cy="40" r="2.8" fill="#fdfaf5" />
+                <circle cx="0" cy="48" r="2.8" fill="#fdfaf5" />
+                <circle cx="0" cy="56" r="2.8" fill="#fdfaf5" />
+                <circle cx="0" cy="64" r="2.8" fill="#fdfaf5" />
+                <circle cx="0" cy="72" r="2.8" fill="#fdfaf5" />
+                <circle cx="0" cy="80" r="2.8" fill="#fdfaf5" />
+                <circle cx="0" cy="88" r="2.8" fill="#fdfaf5" />
+                <circle cx="0" cy="96" r="2.8" fill="#fdfaf5" />
+
+                <circle cx="88" cy="8" r="2.8" fill="#fdfaf5" />
+                <circle cx="88" cy="16" r="2.8" fill="#fdfaf5" />
+                <circle cx="88" cy="24" r="2.8" fill="#fdfaf5" />
+                <circle cx="88" cy="32" r="2.8" fill="#fdfaf5" />
+                <circle cx="88" cy="40" r="2.8" fill="#fdfaf5" />
+                <circle cx="88" cy="48" r="2.8" fill="#fdfaf5" />
+                <circle cx="88" cy="56" r="2.8" fill="#fdfaf5" />
+                <circle cx="88" cy="64" r="2.8" fill="#fdfaf5" />
+                <circle cx="88" cy="72" r="2.8" fill="#fdfaf5" />
+                <circle cx="88" cy="80" r="2.8" fill="#fdfaf5" />
+                <circle cx="88" cy="88" r="2.8" fill="#fdfaf5" />
+                <circle cx="88" cy="96" r="2.8" fill="#fdfaf5" />
+
+                <!-- 郵票內側圖面 -->
+                <rect x="6" y="6" width="76" height="92" rx="1" fill="url(#stampSkyGrad)" />
+                <rect x="8.5" y="8.5" width="71" height="87" rx="0.5" fill="none" stroke="rgba(255,255,255,0.65)"
+                  stroke-width="0.7" />
+
+                <!-- 頂部郵政國名 -->
+                <text x="44" y="17" font-size="4.4" font-weight="700" font-family="'Noto Sans TC', sans-serif"
+                  fill="#ffffff" text-anchor="middle" letter-spacing="0.8">RÉPUBLIQUE FRANÇAISE</text>
+
+                <!-- 地中海海浪與帆船圖形 -->
+                <path d="M9,64 Q25,58 45,63 T80,60 L80,72 L9,72 Z" fill="rgba(15, 34, 48, 0.45)" />
+                <ellipse cx="44" cy="72" rx="32" ry="5" fill="rgba(245, 214, 138, 0.3)" />
+                <path d="M43,30 L43,62 L56,62 Z" fill="#ffffff" opacity="0.95" />
+                <path d="M41,36 L41,62 L32,62 Z" fill="#ffffff" opacity="0.85" />
+                <path d="M29,64 Q44,69 59,64 L56,68 L32,68 Z" fill="#142c3d" />
+
+                <!-- 蔚藍海岸地名與郵資 -->
+                <text x="44" y="78" font-size="4.2" font-family="'Georgia', serif" font-style="italic" fill="#ffffff"
+                  text-anchor="middle" letter-spacing="0.6">Côte d'Azur</text>
+                <text x="13" y="90" font-size="4.0" font-family="'Noto Sans TC', sans-serif" font-weight="600"
+                  fill="#ffffff">LA POSTE</text>
+                <text x="75" y="90" font-size="6.8" font-family="'Barlow Condensed', sans-serif" font-weight="700"
+                  fill="#ffffff" text-anchor="end">1,90 €</text>
+              </svg>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- 中央蔚藍夕陽寫真 -->
+      <!-- 中央蔚藍夕陽寫真 (明信片主畫面) -->
       <div class="back-cover-photo-wrap">
-        <img src="day09-nice-hotel-sunset.webp" alt="尼斯天使之灣落日餘暉 Baie des Anges">
-        <div class="back-cover-photo-caption">
-          <span class="fr">« La mer Méditerranée garde nos plus doux souvenirs »</span>
-          <span>✦ 天使之灣落日晚霞 · Nice</span>
+        <div class="back-cover-photo-inner">
+          <div class="photo-corner photo-corner-tl"></div>
+          <div class="photo-corner photo-corner-tr"></div>
+          <div class="photo-corner photo-corner-bl"></div>
+          <div class="photo-corner photo-corner-br"></div>
+          <img src="day09-nice-hotel-sunset.webp" alt="尼斯天使之灣落日餘暉 Baie des Anges">
+          <div class="back-cover-photo-caption">
+            <span class="fr">« La mer Méditerranée garde nos plus doux souvenirs »</span>
+            <span class="zh">✦ 天使之灣落日晚霞 · Baie des Anges, Nice</span>
+          </div>
         </div>
       </div>
 
-      <!-- 法式浪漫詩篇小語 (文學對照) -->
+      <!-- 法式浪漫詩篇小語 (明信片文學對照) -->
       <div class="back-cover-poem-card">
         <div class="back-cover-poem-fr">
           « Partir, c'est vivre un peu plus fort. Revenir, c'est emporter l'éternité d'un azur dans le cœur.<br>
@@ -4479,25 +4727,9 @@
         </div>
       </div>
 
-      <!-- 15日慢旅回憶里程碑 -->
-      <div class="back-cover-milestones">
-        <div class="back-cover-milestone-item">
-          <div class="city-fr">MILANO & BERGAMO</div>
-          <div class="city-zh">古典大教堂 · 上城纜車</div>
-        </div>
-        <div class="back-cover-milestone-item">
-          <div class="city-fr">COMO & PORTOFINO</div>
-          <div class="city-zh">湖光山色 · 彩色港灣</div>
-        </div>
-        <div class="back-cover-milestone-item">
-          <div class="city-fr">NICE & CAP-FERRAT</div>
-          <div class="city-zh">海角花園 · 蔚藍長階</div>
-        </div>
-      </div>
-
-      <!-- 平安歸途備忘 (承接 index.html notes) -->
+      <!-- 平安歸途備忘 (明信片溫馨備忘) -->
       <div class="back-cover-return-card">
-        <div style="font-weight: 700; color: var(--galilee-gold-light); margin-bottom: 0.8mm; letter-spacing: 0.05em;">
+        <div style="font-weight: 700; color: var(--galilee-gold); margin-bottom: 0.6mm; letter-spacing: 0.05em;">
           ✦ 平安歸途叮嚀 · BON VOYAGE DE RETOUR ✦
         </div>
         <div>
@@ -4506,16 +4738,16 @@
         </div>
       </div>
 
-      <!-- 封底典雅奢簽與法式祝福 -->
+      <!-- 封底典雅奢簽與法式祝福 (明信片底款) -->
       <div class="back-cover-footer">
+        <div class="back-cover-blessing">
+          « Ce n'est pas un adieu, c'est une promesse de retour. À bientôt ! »
+        </div>
         <div class="back-cover-brand">
           <span>✦</span> TRAVEL EURO 慢旅漫遊 <span>✦</span>
         </div>
         <div class="back-cover-edition">
-          SENIOR SLOW TRAVEL · 北義 × 南法蔚藍海岸 15 日隨身慢活手冊
-        </div>
-        <div class="back-cover-blessing">
-          « Ce n'est pas un adieu, c'est une promesse de retour. À bientôt ! »
+          SENIOR SLOW TRAVEL · 北義 × 南法蔚藍海岸 15 日隨身慢活手冊 · CARTE POSTALE DE SOUVENIR
         </div>
       </div>
     </div>
