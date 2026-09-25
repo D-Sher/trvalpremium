@@ -265,7 +265,7 @@
 
     .galilee-day-route-title {
       font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
-      font-size: 10.8pt;
+      font-size: 13.5pt;
       font-weight: 700;
       color: #000000;
       line-height: 1.25;
@@ -280,13 +280,13 @@
     }
 
     .galilee-day-date {
-      font-size: 7.5pt;
+      font-size: 8.5pt;
       font-weight: 600;
       color: var(--galilee-green);
     }
 
     .galilee-day-base {
-      font-size: 6.8pt;
+      font-size: 8.0pt;
       color: var(--galilee-gold);
       font-weight: 600;
     }
@@ -296,7 +296,7 @@
        ========================================================================= */
     .galilee-timeline-wrap {
       position: relative;
-      margin: 1.2mm 0 2.5mm 0;
+      margin: 1.2mm 0 2.2mm 0;
       padding: 1px 0;
     }
 
@@ -344,14 +344,14 @@
     }
 
     .galilee-t-time {
-      font-size: 7pt;
+      font-size: 8.2pt;
       font-weight: 700;
       color: var(--galilee-green);
       line-height: 1.15;
     }
 
     .galilee-t-label {
-      font-size: 6.6pt;
+      font-size: 7.2pt;
       font-weight: 700;
       color: var(--galilee-green);
       line-height: 1.15;
@@ -359,13 +359,13 @@
     }
 
     .galilee-t-dur {
-      font-size: 5.6pt;
+      font-size: 6.4pt;
       color: #555555;
       line-height: 1.15;
     }
 
     /* =========================================================================
-       放大版攝影圖文展示 (Enlarged Photography & Narrative)
+       放大版攝影圖文展示 (Enlarged Photography & Narrative) · 參考加利利標準
        ========================================================================= */
     .galilee-photo-grid-2 {
       display: grid;
@@ -381,18 +381,18 @@
 
     .galilee-photo-item img {
       width: 100%;
-      height: 53mm;
-      /* 顯著放大照片排版 */
+      height: 44mm;
+      /* 依加利利標準最適化比例 */
       object-fit: cover;
       border-radius: 3px;
       display: block;
-      margin-bottom: 1.5mm;
+      margin-bottom: 1.2mm;
       box-shadow: 0 1.5px 5px rgba(0, 0, 0, 0.08);
       border: 1px solid rgba(0, 0, 0, 0.06);
     }
 
     .galilee-spot-heading {
-      font-size: 8.5pt;
+      font-size: 10.5pt;
       font-weight: 700;
       color: #000000;
       margin-bottom: 0.8mm;
@@ -403,14 +403,14 @@
 
     .galilee-spot-heading .en {
       font-weight: 400;
-      font-size: 6.8pt;
+      font-size: 7.8pt;
       color: #666666;
     }
 
     .galilee-spot-desc {
-      font-size: 6.4pt;
-      line-height: 1.48;
-      color: #333333;
+      font-size: 8.5pt;
+      line-height: 1.45;
+      color: #222222;
       text-align: justify;
     }
 
@@ -422,11 +422,11 @@
 
     .galilee-photo-hero img {
       width: 100%;
-      height: 56mm;
+      height: 46mm;
       object-fit: cover;
       border-radius: 3px;
       display: block;
-      margin-bottom: 1.8mm;
+      margin-bottom: 1.5mm;
       box-shadow: 0 1.5px 6px rgba(0, 0, 0, 0.08);
       border: 1px solid rgba(0, 0, 0, 0.06);
     }
@@ -434,45 +434,56 @@
     .galilee-sub-feature-box {
       background: #faf9f6;
       border-left: 2.5px solid var(--galilee-green);
-      padding: 1.8mm 2.8mm;
+      padding: 1.5mm 2.5mm;
       border-radius: 0 3px 3px 0;
-      margin-bottom: 1.8mm;
-      font-size: 6.4pt;
-      line-height: 1.45;
+      margin-bottom: 1.5mm;
+      font-size: 8.0pt;
+      line-height: 1.42;
     }
 
     .galilee-sub-feature-title {
       font-weight: 700;
       color: var(--galilee-green);
-      font-size: 7.2pt;
-      margin-bottom: 0.6mm;
+      font-size: 9.0pt;
+      margin-bottom: 0.5mm;
       display: flex;
       align-items: center;
       gap: 4px;
     }
 
-    /* 雙日合併頁半頁區塊 (照片放大版) */
+    /* 雙日合併頁半頁區塊 (照片與字體平衡版) */
     .galilee-split-day-block {
-      margin-bottom: 1.8mm;
-      padding-bottom: 1.8mm;
+      margin-bottom: 0.8mm;
+      padding-bottom: 0.8mm;
     }
 
     .galilee-split-day-block:first-child {
       border-bottom: 1px dashed #cbd5e1;
     }
 
+    .galilee-split-day-block .galilee-day-header {
+      margin-bottom: 0.6mm;
+    }
+
+    .galilee-split-day-block .galilee-day-route-title {
+      font-size: 11.5pt;
+      line-height: 1.22;
+    }
+
+    .galilee-split-day-block .galilee-timeline-wrap {
+      margin: 0.6mm 0 1.0mm 0;
+    }
+
     .galilee-split-content {
       display: flex;
       gap: 3mm;
       align-items: center;
-      margin-bottom: 1.5mm;
+      margin-bottom: 0.8mm;
     }
 
     .galilee-split-content img {
-      width: 52mm;
-      /* 由 44mm 放大至 52mm */
-      height: 33mm;
-      /* 由 28mm 放大至 33mm */
+      width: 46mm;
+      height: 26mm;
       object-fit: cover;
       border-radius: 3px;
       flex-shrink: 0;
@@ -482,22 +493,30 @@
 
     .galilee-split-text {
       flex: 1;
-      font-size: 6.8pt;
-      line-height: 1.5;
+      font-size: 8.0pt;
+      line-height: 1.38;
       color: #1a202c;
     }
 
+    .galilee-split-day-block .galilee-spec-footer {
+      padding-top: 0.8mm;
+      margin-top: 0.8mm;
+      gap: 2mm;
+      font-size: 7.4pt;
+      line-height: 1.32;
+    }
+
     /* =========================================================================
-       底欄三聯表 (3-Column Spec Footer) · 熟齡清晰版
+       底欄三聯表 (3-Column Spec Footer) · 參考加利利 8.2pt 標準
        ========================================================================= */
     .galilee-spec-footer {
       margin-top: auto;
       border-top: 1px dotted #cbd5e1;
-      padding-top: 1.8mm;
+      padding-top: 1.5mm;
       display: grid;
       grid-template-columns: 1.15fr 1.15fr 1.1fr;
       gap: 3mm;
-      font-size: 6.6pt;
+      font-size: 7.8pt;
       line-height: 1.4;
       color: #1a202c;
     }
@@ -533,12 +552,11 @@
     }
 
     /* =========================================================================
-       Page 02 放大地圖與航班專用樣式
+       Page 02 放大地圖與航班專用樣式 · 參考加利利標準
        ========================================================================= */
     .galilee-map-container {
       width: 100%;
-      height: 84mm;
-      /* 適配 A5 頁面，搭配大動線標籤與左側大字對照表 */
+      height: 80mm;
       background: #ffffff;
       border: 1px solid #cbd5e1;
       border-radius: 4px;
@@ -571,7 +589,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 7.2pt;
+      font-size: 8.2pt;
       font-weight: 700;
       letter-spacing: 0.05em;
     }
@@ -581,7 +599,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 3mm;
-      font-size: 6.5pt;
+      font-size: 7.5pt;
       line-height: 1.45;
     }
 
@@ -595,29 +613,29 @@
     .flight-leg-title {
       display: block;
       color: var(--galilee-green-dark);
-      font-size: 7.2pt;
+      font-size: 8.5pt;
       font-weight: 700;
       margin-bottom: 0.8mm;
       border-bottom: 1px dashed rgba(214, 163, 74, 0.4);
       padding-bottom: 0.4mm;
     }
 
-    /* 表格樣式 (Page 4 鐵路時刻總表 · 熟齡大字易讀版) */
+    /* 表格樣式 (Page 4 鐵路時刻總表 · 參考加利利標準) */
     .galilee-table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 6.0pt;
-      line-height: 1.28;
-      margin-bottom: 2mm;
+      font-size: 7.0pt;
+      line-height: 1.32;
+      margin-bottom: 1.2mm;
     }
 
     .galilee-table th {
       background: var(--galilee-green);
       color: #fff;
-      padding: 1.5mm 1.2mm;
+      padding: 1.1mm 1.2mm;
       text-align: left;
       font-weight: 700;
-      font-size: 6.2pt;
+      font-size: 7.5pt;
       border-right: 1px solid rgba(255, 255, 255, 0.15);
     }
 
@@ -626,7 +644,7 @@
     }
 
     .galilee-table td {
-      padding: 1.2mm 1.2mm;
+      padding: 0.85mm 1.2mm;
       border-bottom: 1px solid #e2e8f0;
       color: #1a202c;
     }
@@ -1165,12 +1183,12 @@
           <div style="flex: 1.05; display: flex; flex-direction: column; justify-content: space-between;">
             <div>
               <div
-                style="font-family: 'Noto Serif TC', serif; font-size: 11.5pt; font-weight: 700; color: var(--galilee-green); margin-bottom: 1.5mm; border-bottom: 1.5px solid var(--galilee-green); padding-bottom: 0.8mm;">
+                style="font-family: 'Noto Serif TC', serif; font-size: 13pt; font-weight: 700; color: var(--galilee-green); margin-bottom: 1.2mm; border-bottom: 1.5px solid var(--galilee-green); padding-bottom: 0.6mm;">
                 景點距離與移動參考
               </div>
-              <div style="font-size: 7.0pt; line-height: 1.55; color: #1a202c;">
+              <div style="font-size: 7.8pt; line-height: 1.45; color: #1a202c;">
                 <div>✈️ <strong>國際長程：</strong>台北 ➔ 杜拜 (8.5h) ➔ 米蘭 (6.5h) ｜ 尼斯返程</div>
-                <div style="border-top: 1px dotted #cbd5e1; margin: 0.8mm 0 1mm;"></div>
+                <div style="border-top: 1px dotted #cbd5e1; margin: 0.6mm 0 0.8mm;"></div>
                 <div>• 機場 － 米蘭市區 <strong style="color: var(--galilee-green-dark);">快線 56分</strong> (MXP 2951)</div>
                 <div>• 米蘭 － 貝爾加莫 <strong style="color: var(--galilee-green-dark);">50 Km</strong> (RE快車 48分)</div>
                 <div>• 米蘭 － 科莫湖 <strong style="color: var(--galilee-green-dark);">75 Km</strong> (RE快車 1h04m)</div>
@@ -1184,7 +1202,7 @@
               </div>
             </div>
             <div
-              style="margin-top: 1mm; font-weight: 700; color: var(--galilee-green-dark); border-top: 1px dotted #ccc; padding-top: 0.8mm; font-size: 7.2pt;">
+              style="margin-top: 0.8mm; font-weight: 700; color: var(--galilee-green-dark); border-top: 1px dotted #ccc; padding-top: 0.6mm; font-size: 8.2pt;">
               行車與鐵道總里程 約 <strong>1,200 Km</strong>
             </div>
           </div>
@@ -1193,7 +1211,8 @@
             <div class="galilee-map-container" style="flex: 1;">
               <img src="rmap.webp" alt="義大利 × 南法蔚藍海岸 15 日行程路線地圖">
             </div>
-            <div style="font-size: 6.2pt; color: #173246; font-weight: 700; text-align: center; margin-top: 1.2mm; background: #faf9f5; border: 1px solid #d6a34a; padding: 1mm 1.5mm; border-radius: 3px; line-height: 1.35;">
+            <div
+              style="font-size: 7.2pt; color: #173246; font-weight: 700; text-align: center; margin-top: 1mm; background: #faf9f5; border: 1px solid #d6a34a; padding: 0.8mm 1.5mm; border-radius: 3px; line-height: 1.35;">
               ✦ 15日慢旅大動線：米蘭 ➔ 貝爾加莫 ➔ 科莫湖 ➔ 熱那亞 ➔ 菲諾港 ➔ 尼斯 ✦
             </div>
           </div>
@@ -1201,28 +1220,32 @@
 
         <!-- 參考航班 (完全匹配 index.html tour.flights · 熟齡大字版) -->
         <div class="galilee-flight-box" style="margin-top: 1mm;">
-          <div class="galilee-flight-head" style="font-size: 7.2pt; padding: 1.6mm 3mm;">
+          <div class="galilee-flight-head" style="font-size: 8.2pt; padding: 1.6mm 3mm;">
             <span>✈️ 參考航班 · 阿聯酋航空 Emirates (Saver / 託運 25kg)</span>
-            <span style="background: rgba(255,255,255,0.22); padding: 1px 8px; border-radius: 10px; font-weight: 600;">桃園 T2 報到 ➔ 杜拜 T3 轉機 ➔ 尼斯 T2 返程</span>
+            <span
+              style="background: rgba(255,255,255,0.22); padding: 1px 8px; border-radius: 10px; font-weight: 600;">桃園 T2
+              報到 ➔ 杜拜 T3 轉機 ➔ 尼斯 T2 返程</span>
           </div>
-          <div class="galilee-flight-body" style="padding: 2mm 3mm; font-size: 6.5pt; line-height: 1.42;">
+          <div class="galilee-flight-body" style="padding: 1.8mm 3mm; font-size: 7.2pt; line-height: 1.4;">
             <div class="galilee-flight-leg">
               <div class="flight-leg-title">✈️ 去程航班 · EK367 / EK205 (桃園 T2 報到)</div>
               <div>• <strong>第一段 EK367：</strong>10/15 23:50 台北（TPE T2）➔ 10/16 04:35 杜拜（DXB T3）</div>
               <div>• <strong>杜拜轉機：</strong>杜拜國際機場第三航廈轉機，停留約 5 小時</div>
               <div>• <strong>第二段 EK205：</strong>10/16 09:35 杜拜（DXB T3）➔ 10/16 14:10 米蘭（MXP T1）</div>
-              <div style="font-size: 5.8pt; color: #4a5568; margin-top: 0.3mm;">抵達後搭乘機場快線直達米蘭中央車站，步行 3 分鐘入住 Hilton。</div>
+              <div style="font-size: 6.5pt; color: #4a5568; margin-top: 0.3mm;">抵達後搭乘機場快線直達米蘭中央車站，步行 3 分鐘入住 Hilton。
+              </div>
             </div>
             <div class="galilee-flight-leg">
               <div class="flight-leg-title">✈️ 回程航班 · EK078 / EK366 (尼斯 T2 返程)</div>
               <div>• <strong>第一段 EK078：</strong>10/28 14:30 尼斯（NCE T2）➔ 10/28 23:35 杜拜（DXB T3）</div>
               <div>• <strong>杜拜轉機：</strong>杜拜國際機場第三航廈轉機，停留約 4 小時</div>
               <div>• <strong>第二段 EK366：</strong>10/29 03:40 杜拜（DXB T3）➔ 10/29 15:35 台北（TPE T2）</div>
-              <div style="font-size: 5.8pt; color: #4a5568; margin-top: 0.3mm;">10/27 於尼斯多停留一晚，10/28 午後搭機，10/29 下午平安返抵國門。</div>
+              <div style="font-size: 6.5pt; color: #4a5568; margin-top: 0.3mm;">10/27 於尼斯多停留一晚，10/28 午後搭機，10/29
+                下午平安返抵國門。</div>
             </div>
           </div>
           <div
-            style="padding: 1.2mm 3mm; background: #faf9f6; font-size: 5.8pt; color: #555; border-top: 1px solid #eee; font-style: italic;">
+            style="padding: 1.2mm 3mm; background: #faf9f6; font-size: 6.6pt; color: #555; border-top: 1px solid #eee; font-style: italic;">
             (以上為阿聯酋航空預排班機時刻，每人享有 25kg 託運行李額度；實際起降與航站資訊以電子機票證明與行前說明會資料為準。)
           </div>
         </div>
@@ -1244,35 +1267,35 @@
 
       <div class="page-content">
         <div
-          style="font-family: 'Noto Serif TC', serif; font-size: 11pt; font-weight: 700; color: var(--galilee-green); margin-bottom: 0.5mm;">
+          style="font-family: 'Noto Serif TC', serif; font-size: 13pt; font-weight: 700; color: var(--galilee-green); margin-bottom: 0.5mm;">
           3 大精選停留飯店規劃
         </div>
-        <div style="font-size: 6.5pt; color: #555; margin-bottom: 2mm;">
+        <div style="font-size: 7.8pt; color: #555; margin-bottom: 2mm;">
           精簡住宿據點，減少換飯店次數；每天控制活動密度，優先選擇火車、地鐵、纜車與電梯，避免長距離步行。
         </div>
 
-        <!-- 3 大飯店卡片 -->
-        <div style="display: flex; flex-direction: column; gap: 2.2mm;">
+        <!-- 3 大飯店卡片 · 參考加利利標準 -->
+        <div style="display: flex; flex-direction: column; gap: 2mm;">
           <!-- 飯店 1: Hilton Milan -->
           <div
             style="border: 1px solid #e2e8f0; border-radius: 4px; overflow: hidden; background: #fff; box-shadow: 0 1px 4px rgba(0,0,0,0.05); display: flex;">
-            <img src="hotel-milan.webp" alt="Hilton Milan" style="width: 46mm; height: 35mm; object-fit: cover;">
+            <img src="hotel-milan.webp" alt="Hilton Milan" style="width: 44mm; height: 33mm; object-fit: cover;">
             <div
               style="flex: 1; padding: 2mm 3mm; display: flex; flex-direction: column; justify-content: space-between;">
               <div>
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8mm;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6mm;">
                   <span
-                    style="font-size: 6.2pt; font-weight: 700; background: var(--galilee-green); color: #fff; padding: 1px 6px; border-radius: 3px;">BASE
+                    style="font-size: 7.0pt; font-weight: 700; background: var(--galilee-green); color: #fff; padding: 1px 6px; border-radius: 3px;">BASE
                     01 · 4 晚 · Milano</span>
-                  <span style="font-size: 6pt; color: var(--galilee-gold); font-weight: 700;">★★★★ 四星優質</span>
+                  <span style="font-size: 6.8pt; color: var(--galilee-gold); font-weight: 700;">★★★★ 四星優質</span>
                 </div>
-                <div style="font-size: 8.5pt; font-weight: 700; color: #000; font-family: 'Noto Serif TC', serif;">
+                <div style="font-size: 9.8pt; font-weight: 700; color: #000; font-family: 'Noto Serif TC', serif;">
                   Hilton Milan（米蘭希爾頓酒店）</div>
-                <div style="font-size: 6.3pt; line-height: 1.45; color: #333; margin-top: 1mm;">
+                <div style="font-size: 7.8pt; line-height: 1.4; color: #333; margin-top: 0.8mm;">
                   距米蘭中央車站步行僅 3 分鐘，周邊 M2/M3 地鐵與輕軌網絡四通八達，當日往返貝爾加莫與科莫湖免拖行李。
                 </div>
               </div>
-              <div style="font-size: 5.6pt; color: #666; background: #faf9f6; padding: 1mm 2mm; border-radius: 2px;">
+              <div style="font-size: 6.8pt; color: #555; background: #faf9f6; padding: 0.8mm 2mm; border-radius: 2px;">
                 💡 貼心優勢：連住 4 晚免天天打包行李，車站旁生活機能完備，出站即達。
               </div>
             </div>
@@ -1281,23 +1304,23 @@
           <!-- 飯店 2: Grand Hotel Savoia -->
           <div
             style="border: 1px solid #e2e8f0; border-radius: 4px; overflow: hidden; background: #fff; box-shadow: 0 1px 4px rgba(0,0,0,0.05); display: flex;">
-            <img src="hotel-genova.webp" alt="Grand Hotel Savoia" style="width: 46mm; height: 35mm; object-fit: cover;">
+            <img src="hotel-genova.webp" alt="Grand Hotel Savoia" style="width: 44mm; height: 33mm; object-fit: cover;">
             <div
               style="flex: 1; padding: 2mm 3mm; display: flex; flex-direction: column; justify-content: space-between;">
               <div>
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8mm;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6mm;">
                   <span
-                    style="font-size: 6.2pt; font-weight: 700; background: var(--galilee-green); color: #fff; padding: 1px 6px; border-radius: 3px;">BASE
+                    style="font-size: 7.0pt; font-weight: 700; background: var(--galilee-green); color: #fff; padding: 1px 6px; border-radius: 3px;">BASE
                     02 · 3 晚 · Genova</span>
-                  <span style="font-size: 6pt; color: var(--galilee-gold); font-weight: 700;">★★★★★ 五星古典</span>
+                  <span style="font-size: 6.8pt; color: var(--galilee-gold); font-weight: 700;">★★★★★ 五星古典</span>
                 </div>
-                <div style="font-size: 8.5pt; font-weight: 700; color: #000; font-family: 'Noto Serif TC', serif;">Grand
+                <div style="font-size: 9.8pt; font-weight: 700; color: #000; font-family: 'Noto Serif TC', serif;">Grand
                   Hotel Savoia（薩伏亞大飯店）</div>
-                <div style="font-size: 6.3pt; line-height: 1.45; color: #333; margin-top: 1mm;">
-                  緊鄰熱那亞王子廣場車站（Genova Piazza Principe）步行 2 分鐘，百年古典五星風格，漫步舊港區與前往菲諾港皆極為便捷。
+                <div style="font-size: 7.8pt; line-height: 1.4; color: #333; margin-top: 0.8mm;">
+                  緊鄰熱那亞王子廣場車站步行 2 分鐘，百年古典五星風格，漫步舊港區與前往菲諾港皆極為便捷。
                 </div>
               </div>
-              <div style="font-size: 5.6pt; color: #666; background: #faf9f6; padding: 1mm 2mm; border-radius: 2px;">
+              <div style="font-size: 6.8pt; color: #555; background: #faf9f6; padding: 0.8mm 2mm; border-radius: 2px;">
                 💡 貼心優勢：火車站正前方免拉行李奔波，門前即是世界遺產巴爾比街。
               </div>
             </div>
@@ -1306,23 +1329,23 @@
           <!-- 飯店 3: AC Hotel Nice -->
           <div
             style="border: 1px solid #e2e8f0; border-radius: 4px; overflow: hidden; background: #fff; box-shadow: 0 1px 4px rgba(0,0,0,0.05); display: flex;">
-            <img src="hotel-nice.webp" alt="AC Hotel Nice" style="width: 46mm; height: 35mm; object-fit: cover;">
+            <img src="hotel-nice.webp" alt="AC Hotel Nice" style="width: 44mm; height: 33mm; object-fit: cover;">
             <div
               style="flex: 1; padding: 2mm 3mm; display: flex; flex-direction: column; justify-content: space-between;">
               <div>
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8mm;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6mm;">
                   <span
-                    style="font-size: 6.2pt; font-weight: 700; background: var(--galilee-green); color: #fff; padding: 1px 6px; border-radius: 3px;">BASE
+                    style="font-size: 7.0pt; font-weight: 700; background: var(--galilee-green); color: #fff; padding: 1px 6px; border-radius: 3px;">BASE
                     03 · 5 晚 · Nice</span>
-                  <span style="font-size: 6pt; color: var(--galilee-gold); font-weight: 700;">★★★★ 海景飯店</span>
+                  <span style="font-size: 6.8pt; color: var(--galilee-gold); font-weight: 700;">★★★★ 海景飯店</span>
                 </div>
-                <div style="font-size: 8.5pt; font-weight: 700; color: #000; font-family: 'Noto Serif TC', serif;">AC
+                <div style="font-size: 9.8pt; font-weight: 700; color: #000; font-family: 'Noto Serif TC', serif;">AC
                   Hotel Nice／海景飯店（萬豪集團）</div>
-                <div style="font-size: 6.3pt; line-height: 1.45; color: #333; margin-top: 1mm;">
-                  坐落於著名英國人散步大道（Promenade des Anglais）旁，門口即是輕軌站（Centre Universitaire Méditerranéen），步行即達蔚藍海岸沙灘與屋頂海景露台。
+                <div style="font-size: 7.8pt; line-height: 1.4; color: #333; margin-top: 0.8mm;">
+                  坐落於著名英國人散步大道旁，門口即是輕軌站，步行即達蔚藍海岸沙灘與屋頂海景露台。
                 </div>
               </div>
-              <div style="font-size: 5.6pt; color: #666; background: #faf9f6; padding: 1mm 2mm; border-radius: 2px;">
+              <div style="font-size: 6.8pt; color: #555; background: #faf9f6; padding: 0.8mm 2mm; border-radius: 2px;">
                 💡 貼心優勢：連住 5 晚深度慢活，輕軌直達舊城、機場與尼斯車站。
               </div>
             </div>
@@ -1330,7 +1353,7 @@
         </div>
 
         <div
-          style="margin-top: 2.2mm; background: #faf9f6; border-left: 2.5px solid var(--galilee-gold); padding: 1.8mm 2.5mm; border-radius: 0 3px 3px 0; font-size: 6.1pt; line-height: 1.4; color: #444;">
+          style="margin-top: 2mm; background: #faf9f6; border-left: 2.5px solid var(--galilee-gold); padding: 1.5mm 2.5mm; border-radius: 0 3px 3px 0; font-size: 7.2pt; line-height: 1.4; color: #333;">
           <strong>🌿 慢活基地理念（4-3-5 節奏）：</strong>全程僅更換 2 次飯店，大幅減少搬運行李的體力消耗；每天保留充裕午休與自由時間，讓長輩享受如同度假般的從容步伐。
         </div>
       </div>
@@ -1351,10 +1374,10 @@
 
       <div class="page-content">
         <div
-          style="font-family: 'Noto Serif TC', serif; font-size: 11pt; font-weight: 700; color: var(--galilee-green); margin-bottom: 0.5mm;">
+          style="font-family: 'Noto Serif TC', serif; font-size: 13pt; font-weight: 700; color: var(--galilee-green); margin-bottom: 0.5mm;">
           義大利鐵路與機場快線時刻總表
         </div>
-        <div style="font-size: 6.3pt; color: #555; margin-bottom: 2mm;">
+        <div style="font-size: 7.8pt; color: #555; margin-bottom: 2mm;">
           預先訂購的高規一等艙／區域快車，完全匹配 index.html 官方完整班次時刻。
         </div>
 
@@ -1485,19 +1508,21 @@
           </tbody>
         </table>
 
-        <!-- 乘車與打票安心守則 · 熟齡大字版 -->
+        <!-- 乘車與打票安心守則 · 參考加利利標準 -->
         <div
-          style="background: #faf9f6; border: 1px solid #e2e8f0; border-radius: 4px; padding: 2mm 2.8mm; font-size: 6.2pt; line-height: 1.4; color: #1a202c; margin-bottom: 2mm;">
-          <div style="font-weight: 700; color: var(--galilee-green); margin-bottom: 0.6mm; font-size: 7.2pt;">
+          style="background: #faf9f6; border: 1px solid #e2e8f0; border-radius: 4px; padding: 1.8mm 2.8mm; font-size: 7.0pt; line-height: 1.38; color: #1a202c; margin-bottom: 1.5mm;">
+          <div style="font-weight: 700; color: var(--galilee-green); margin-bottom: 0.5mm; font-size: 8.0pt;">
             🚄 義大利與法國鐵路乘車必知
           </div>
-          <div style="margin-bottom: 0.5mm;"><strong>1. 實體紙票打卡規定：</strong>義大利 Regionale 區間車紙票，上車前必須於月台綠白/黃色打卡機（Convalidatrice）打印時間；<strong>IC 城際快車（一等艙）持印出 A4 紙本直接對號入座，免打卡</strong>。</div>
-          <div style="margin-bottom: 0.5mm;"><strong>2. Trenord 電子票（Wallet QR）：</strong>乘車前請確認手機 Apple/Google Wallet 內 QR Code 與 Check-in 狀態，供列車長查驗。</div>
+          <div style="margin-bottom: 0.4mm;"><strong>1. 實體紙票打卡規定：</strong>義大利 Regionale
+            區間車紙票，上車前必須於月台綠白/黃色打卡機（Convalidatrice）打印時間；<strong>IC 城際快車（一等艙）持印出 A4 紙本直接對號入座，免打卡</strong>。</div>
+          <div style="margin-bottom: 0.4mm;"><strong>2. Trenord 電子票（Wallet QR）：</strong>乘車前請確認手機 Apple/Google Wallet 內
+            QR Code 與 Check-in 狀態，供列車長查驗。</div>
           <div><strong>3. 大件行李安置：</strong>一等車廂頭尾均有大型行李架，重要證件隨身攜帶，下車前 5 分鐘提前準備。</div>
         </div>
 
         <div
-          style="background: #fdfbf7; border-left: 3px solid var(--galilee-gold); padding: 1.5mm 2.8mm; border-radius: 0 3px 3px 0; font-size: 6.1pt; line-height: 1.35; color: #2d3748;">
+          style="background: #fdfbf7; border-left: 3px solid var(--galilee-gold); padding: 1.2mm 2.8mm; border-radius: 0 3px 3px 0; font-size: 6.8pt; line-height: 1.35; color: #2d3748;">
           <strong>無障礙月台指引：</strong>米蘭中央車站、熱那亞王子廣場與尼斯車站均設有無障礙電梯與付費洗手間（約 €1.00，支援無接觸信用卡感應）。
         </div>
       </div>
@@ -1518,18 +1543,18 @@
 
       <div class="page-content">
         <div
-          style="font-family: 'Noto Serif TC', serif; font-size: 11pt; font-weight: 700; color: var(--galilee-green); margin-bottom: 0.5mm;">
+          style="font-family: 'Noto Serif TC', serif; font-size: 13pt; font-weight: 700; color: var(--galilee-green); margin-bottom: 0.5mm;">
           旅行通票與城市卡明細
         </div>
-        <div style="font-size: 6.3pt; color: #555; margin-bottom: 2mm;">
+        <div style="font-size: 7.8pt; color: #555; margin-bottom: 2mm;">
           Passes & City Cards · 隨身出示 · 免去長者排隊購票之苦 · 暢行無阻
         </div>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.8mm; margin-bottom: 3mm;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5mm; margin-bottom: 2.5mm;">
           <!-- 1. 米蘭城市通票 -->
           <div
-            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 3mm 3.2mm; font-size: 6.8pt; line-height: 1.48; color: #1a202c;">
-            <div style="font-weight: 700; color: var(--galilee-green); font-size: 7.8pt; margin-bottom: 1mm;">★
+            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 2.6mm 3mm; font-size: 7.6pt; line-height: 1.42; color: #1a202c;">
+            <div style="font-weight: 700; color: var(--galilee-green); font-size: 9.0pt; margin-bottom: 0.8mm;">★
               米蘭城市通票（感應卡）</div>
             <div><strong>使用日期：</strong>10/16 領票／10/17 使用（24 小時）</div>
             <div><strong>兌換方式：</strong>Milan Visitor Center 實體兌換</div>
@@ -1538,8 +1563,8 @@
 
           <!-- 2. 貝爾加莫通票 -->
           <div
-            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 3mm 3.2mm; font-size: 6.8pt; line-height: 1.48; color: #1a202c;">
-            <div style="font-weight: 700; color: var(--galilee-green); font-size: 7.8pt; margin-bottom: 1mm;">★
+            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 2.6mm 3mm; font-size: 7.6pt; line-height: 1.42; color: #1a202c;">
+            <div style="font-weight: 700; color: var(--galilee-green); font-size: 9.0pt; margin-bottom: 0.8mm;">★
               貝爾加莫通票（APP）</div>
             <div><strong>使用日期：</strong>10/18 使用（24 小時）</div>
             <div><strong>兌換方式：</strong>搭乘首班公車或纜車前手動點擊啟用</div>
@@ -1548,8 +1573,8 @@
 
           <!-- 3. 科莫湖中央湖區一日票 -->
           <div
-            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 3mm 3.2mm; font-size: 6.8pt; line-height: 1.48; color: #1a202c;">
-            <div style="font-weight: 700; color: var(--galilee-green); font-size: 7.8pt; margin-bottom: 1mm;">★
+            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 2.6mm 3mm; font-size: 7.6pt; line-height: 1.42; color: #1a202c;">
+            <div style="font-weight: 700; color: var(--galilee-green); font-size: 9.0pt; margin-bottom: 0.8mm;">★
               科莫湖中央湖區一日票（憑證）</div>
             <div><strong>使用日期：</strong>10/19 使用（24 小時）</div>
             <div><strong>兌換方式：</strong>碼頭出示憑證兌換或直接出示蓋章登船</div>
@@ -1558,18 +1583,19 @@
 
           <!-- 4. 熱那亞城市通票 -->
           <div
-            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 3mm 3.2mm; font-size: 6.8pt; line-height: 1.48; color: #1a202c;">
-            <div style="font-weight: 700; color: var(--galilee-green); font-size: 7.8pt; margin-bottom: 1mm;">★
+            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 2.6mm 3mm; font-size: 7.6pt; line-height: 1.42; color: #1a202c;">
+            <div style="font-weight: 700; color: var(--galilee-green); font-size: 9.0pt; margin-bottom: 0.8mm;">★
               熱那亞城市通票（Genova City Pass）</div>
             <div><strong>使用日期：</strong>10/21 使用（24 小時）</div>
             <div><strong>兌換方式：</strong>出示手機憑證／QR Code 掃描啟用</div>
-            <div><strong>適用範圍：</strong>含 24h AMT 地鐵與市區交通；可用於哥倫布故居、索普拉納雙塔門、新街世界遺產宮殿群（紅宮、白宮）門票優惠。</div>
+            <div><strong>適用範圍：</strong>含 24h AMT 地鐵與市區交通；可用於哥倫布故居、索普拉納雙塔門、新街世界遺產宮殿群門票優惠。</div>
           </div>
 
           <!-- 5. MetDaily一日票 -->
           <div
-            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 3mm 3.2mm; font-size: 6.8pt; line-height: 1.48; color: #1a202c;">
-            <div style="font-weight: 700; color: var(--galilee-green); font-size: 7.8pt; margin-bottom: 1mm;">★ MetDaily
+            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 2.6mm 3mm; font-size: 7.6pt; line-height: 1.42; color: #1a202c;">
+            <div style="font-weight: 700; color: var(--galilee-green); font-size: 9.0pt; margin-bottom: 0.8mm;">★
+              MetDaily
               一日票（APP 條碼）</div>
             <div><strong>使用日期：</strong>10/22 使用（24 小時）</div>
             <div><strong>兌換方式：</strong>搭乘 782 公車前在 AMT APP 點擊啟用</div>
@@ -1578,8 +1604,9 @@
 
           <!-- 6. PASS SUD AZUR EXPLORE -->
           <div
-            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 3mm 3.2mm; font-size: 6.8pt; line-height: 1.48; color: #1a202c;">
-            <div style="font-weight: 700; color: var(--galilee-green); font-size: 7.8pt; margin-bottom: 1mm;">★ PASS SUD
+            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 2.6mm 3mm; font-size: 7.6pt; line-height: 1.42; color: #1a202c;">
+            <div style="font-weight: 700; color: var(--galilee-green); font-size: 9.0pt; margin-bottom: 0.8mm;">★ PASS
+              SUD
               AZUR EXPLORE（感應卡）</div>
             <div><strong>使用日期：</strong>10/24–10/26 彈性開通</div>
             <div><strong>兌換方式：</strong>輕軌候車站柱或車上感應機拍卡（Validé）</div>
@@ -1588,7 +1615,7 @@
         </div>
 
         <div
-          style="background: #fdfaf3; border-left: 3px solid var(--galilee-gold); padding: 2.2mm 3.2mm; border-radius: 0 3px 3px 0; font-size: 6.8pt; line-height: 1.45; color: #2d3748;">
+          style="background: #fdfaf3; border-left: 3px solid var(--galilee-gold); padding: 1.8mm 3mm; border-radius: 0 3px 3px 0; font-size: 7.2pt; line-height: 1.42; color: #2d3748;">
           <strong>數位備份保障：</strong>各項通票憑證已由隨行領隊於系統建立電子備份。若手機沒電或實體卡片遺失，請立即告知領隊協助調出檔案驗票。
         </div>
       </div>
@@ -1609,111 +1636,177 @@
 
       <div class="page-content">
         <div
-          style="font-family: 'Noto Serif TC', serif; font-size: 11pt; font-weight: 700; color: var(--galilee-green); margin-bottom: 0.5mm;">
+          style="font-family: 'Noto Serif TC', serif; font-size: 13pt; font-weight: 700; color: var(--galilee-green); margin-bottom: 0.5mm;">
           旅途行前須知與行李準備
         </div>
-        <div style="font-size: 6.3pt; color: #555; margin-bottom: 2mm;">
+        <div style="font-size: 7.8pt; color: #555; margin-bottom: 2mm;">
           出發前的細心打點，是享受從容優雅慢活旅程的基石。完全對齊 index.html 官方指南。
         </div>
 
-        <!-- 6 大行前須知卡片 -->
-        <!-- 6 大行前須知卡片 · 熟齡大字版 -->
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.8mm; margin-bottom: 3.5mm;">
+        <!-- 6 大行前須知卡片 · 參考加利利標準 -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.2mm; margin-bottom: 2.5mm;">
           <div
-            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 2.8mm 3.2mm; font-size: 7.2pt; line-height: 1.5; color: #1a202c;">
-            <div style="font-weight: 700; color: var(--galilee-green); font-size: 7.8pt; margin-bottom: 0.8mm;">🛂 護照效期與申根免簽</div>
+            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 2.2mm 2.8mm; font-size: 7.6pt; line-height: 1.4; color: #1a202c;">
+            <div style="font-weight: 700; color: var(--galilee-green); font-size: 8.8pt; margin-bottom: 0.5mm;">🛂
+              護照效期與申根免簽</div>
             <div>中華民國護照享申根區 90 天免簽證。請確認<strong>護照效期自返國日起算 6 個月以上</strong>，隨身攜帶電子機票與飯店預約單。</div>
           </div>
           <div
-            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 2.8mm 3.2mm; font-size: 7.2pt; line-height: 1.5; color: #1a202c;">
-            <div style="font-weight: 700; color: var(--galilee-green); font-size: 7.8pt; margin-bottom: 0.8mm;">💶 歐元現金與 4 碼 PIN 密碼</div>
-            <div>歐洲刷卡普及，每人攜帶約 <strong>€200~€400 小額現金</strong>（以 €10/€20/€50 為主）。提前向發卡銀行<strong>開通 4 位數預借現金 PIN 碼</strong>。</div>
+            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 2.2mm 2.8mm; font-size: 7.6pt; line-height: 1.4; color: #1a202c;">
+            <div style="font-weight: 700; color: var(--galilee-green); font-size: 8.8pt; margin-bottom: 0.5mm;">💶 歐元現金與
+              4 碼 PIN 密碼</div>
+            <div>歐洲刷卡普及，每人攜帶約 <strong>€200~€400 小額現金</strong>（以 €10/€20/€50 為主）。提前向發卡銀行<strong>開通 4 位數預借現金 PIN
+                碼</strong>。</div>
           </div>
           <div
-            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 2.8mm 3.2mm; font-size: 7.2pt; line-height: 1.5; color: #1a202c;">
-            <div style="font-weight: 700; color: var(--galilee-green); font-size: 7.8pt; margin-bottom: 0.8mm;">🔌 電壓 220V 與雙圓孔轉接頭</div>
+            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 2.2mm 2.8mm; font-size: 7.6pt; line-height: 1.4; color: #1a202c;">
+            <div style="font-weight: 700; color: var(--galilee-green); font-size: 8.8pt; margin-bottom: 0.5mm;">🔌 電壓
+              220V 與雙圓孔轉接頭</div>
             <div>義法電壓 220V/50Hz，插座孔型為<strong>歐規雙圓孔（Type C / L，直徑 4.0~4.8mm）</strong>。手機充電器皆支援全球電壓，只需攜帶轉接頭。</div>
           </div>
           <div
-            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 2.8mm 3.2mm; font-size: 7.2pt; line-height: 1.5; color: #1a202c;">
-            <div style="font-weight: 700; color: var(--galilee-green); font-size: 7.8pt; margin-bottom: 0.8mm;">📶 eSIM 網路與離線地圖</div>
+            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 2.2mm 2.8mm; font-size: 7.6pt; line-height: 1.4; color: #1a202c;">
+            <div style="font-weight: 700; color: var(--galilee-green); font-size: 8.8pt; margin-bottom: 0.5mm;">📶 eSIM
+              網路與離線地圖</div>
             <div>出發前開通歐洲 eSIM。提前在 Google Maps 下載<strong>米蘭、貝爾加莫、科莫湖、熱那亞、菲諾港、尼斯之離線地圖</strong>，安裝 Trenitalia APP。</div>
           </div>
           <div
-            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 2.8mm 3.2mm; font-size: 7.2pt; line-height: 1.5; color: #1a202c;">
-            <div style="font-weight: 700; color: var(--galilee-green); font-size: 7.8pt; margin-bottom: 0.8mm;">🧥 10 月氣候穿搭與健走好鞋</div>
-            <div>北義約 10°C~18°C，尼斯約 14°C~22°C，溫差大。採<strong>「洋蔥式層疊穿法」</strong>（保暖內搭＋風衣外套與圍巾）。<strong>必備支撐耐走健走鞋</strong>。</div>
+            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 2.2mm 2.8mm; font-size: 7.6pt; line-height: 1.4; color: #1a202c;">
+            <div style="font-weight: 700; color: var(--galilee-green); font-size: 8.8pt; margin-bottom: 0.5mm;">🧥 10
+              月氣候穿搭與健走好鞋</div>
+            <div>北義約 10°C~18°C，尼斯約 14°C~22°C，溫差大。採<strong>「洋蔥式層疊穿法」</strong>（保暖內搭＋風衣外套與圍巾）。<strong>必備支撐耐走健走鞋</strong>。
+            </div>
           </div>
           <div
-            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 2.8mm 3.2mm; font-size: 7.2pt; line-height: 1.5; color: #1a202c;">
-            <div style="font-weight: 700; color: var(--galilee-green); font-size: 7.8pt; margin-bottom: 0.8mm;">🛡️ 防扒防竊與隨身安全心法</div>
+            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 2.2mm 2.8mm; font-size: 7.6pt; line-height: 1.4; color: #1a202c;">
+            <div style="font-weight: 700; color: var(--galilee-green); font-size: 8.8pt; margin-bottom: 0.5mm;">🛡️
+              防扒防竊與隨身安全心法</div>
             <div>米蘭大教堂、地鐵車廂人多時提高警覺。<strong>後背包置於胸前或加鎖扣</strong>，避免門邊滑手機，重要護照現金放置貼身隱形腰包。</div>
           </div>
         </div>
 
-        <!-- 行李打包分類核對表 (6 大分類 · 熟齡大字易勾選版) -->
-        <div style="font-weight: 700; color: var(--galilee-green); font-size: 7.8pt; margin-bottom: 1.5mm;">
+        <!-- 行李打包分類核對表 (6 大分類 · 參考加利利標準) -->
+        <div style="font-weight: 700; color: var(--galilee-green); font-size: 8.8pt; margin-bottom: 1.2mm;">
           🧳 行李打包備忘核對表（出發前請逐項核對打勾）
         </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2.8mm; font-size: 6.8pt; line-height: 1.52; color: #1a202c;">
-          <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 4px; padding: 2.5mm 2.8mm;">
+        <div
+          style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2.2mm; font-size: 7.2pt; line-height: 1.42; color: #1a202c;">
+          <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 4px; padding: 2mm 2.4mm;">
             <div
-              style="font-weight: 700; color: var(--galilee-green); border-bottom: 1px solid #eee; padding-bottom: 0.8mm; margin-bottom: 1mm; font-size: 7.2pt;">
+              style="font-weight: 700; color: var(--galilee-green); border-bottom: 1px solid #eee; padding-bottom: 0.6mm; margin-bottom: 0.8mm; font-size: 8.0pt;">
               💼 重要證件與財物</div>
-            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 護照正本（效期 6 個月以上）</div>
-            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 護照影本 2 份與證件照備份</div>
-            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 海外信用卡 2 張（開通 PIN 碼）</div>
-            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 歐元現金 €200~€400 小鈔</div>
-            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 英文海外突發疾病保單</div>
+            <div><span
+                style="display: inline-block; width: 9px; height: 9px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span>
+              護照正本（效期 6 個月以上）</div>
+            <div><span
+                style="display: inline-block; width: 9px; height: 9px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span>
+              護照影本 2 份與證件照備份</div>
+            <div><span
+                style="display: inline-block; width: 9px; height: 9px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span>
+              海外信用卡 2 張（開通 PIN 碼）</div>
+            <div><span
+                style="display: inline-block; width: 9px; height: 9px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span>
+              歐元現金 €200~€400 小鈔</div>
+            <div><span
+                style="display: inline-block; width: 9px; height: 9px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span>
+              英文海外突發疾病保單</div>
           </div>
-          <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 4px; padding: 2.5mm 2.8mm;">
+          <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 4px; padding: 2mm 2.4mm;">
             <div
-              style="font-weight: 700; color: var(--galilee-green); border-bottom: 1px solid #eee; padding-bottom: 0.8mm; margin-bottom: 1mm; font-size: 7.2pt;">
+              style="font-weight: 700; color: var(--galilee-green); border-bottom: 1px solid #eee; padding-bottom: 0.6mm; margin-bottom: 0.8mm; font-size: 8.0pt;">
               🔌 3C 數位與穿戴</div>
-            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 行動電源（⚠️嚴禁托運隨身帶）</div>
-            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 歐規雙圓孔轉接頭（備 2~3 個）</div>
-            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 手機充電線與多孔快充頭</div>
-            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 歐洲跨國 eSIM / 下載離線地圖</div>
-            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 隨身耳機（長途飛行火車用）</div>
+            <div><span
+                style="display: inline-block; width: 9px; height: 9px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span>
+              行動電源（⚠️嚴禁托運隨身帶）</div>
+            <div><span
+                style="display: inline-block; width: 9px; height: 9px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span>
+              歐規雙圓孔轉接頭（備 2~3 個）</div>
+            <div><span
+                style="display: inline-block; width: 9px; height: 9px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span>
+              手機充電線與多孔快充頭</div>
+            <div><span
+                style="display: inline-block; width: 9px; height: 9px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span>
+              歐洲跨國 eSIM / 下載離線地圖</div>
+            <div><span
+                style="display: inline-block; width: 9px; height: 9px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span>
+              隨身耳機（長途飛行火車用）</div>
           </div>
-          <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 4px; padding: 2.5mm 2.8mm;">
+          <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 4px; padding: 2mm 2.4mm;">
             <div
-              style="font-weight: 700; color: var(--galilee-green); border-bottom: 1px solid #eee; padding-bottom: 0.8mm; margin-bottom: 1mm; font-size: 7.2pt;">
+              style="font-weight: 700; color: var(--galilee-green); border-bottom: 1px solid #eee; padding-bottom: 0.6mm; margin-bottom: 0.8mm; font-size: 8.0pt;">
               👔 10 月衣物與鞋履</div>
-            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 好走耐震健走鞋（已合腳）</div>
-            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 防風保暖輕羽絨 / 風衣外套</div>
-            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 洋蔥式保暖薄發熱衣 3~4 件</div>
-            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 舒適透氣便服長褲</div>
-            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 保暖圍巾 / 遮陽帽與太陽眼鏡</div>
+            <div><span
+                style="display: inline-block; width: 9px; height: 9px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span>
+              好走耐震健走鞋（已合腳）</div>
+            <div><span
+                style="display: inline-block; width: 9px; height: 9px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span>
+              防風保暖輕羽絨 / 風衣外套</div>
+            <div><span
+                style="display: inline-block; width: 9px; height: 9px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span>
+              洋蔥式保暖薄發熱衣 3~4 件</div>
+            <div><span
+                style="display: inline-block; width: 9px; height: 9px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span>
+              舒適透氣便服長褲</div>
+            <div><span
+                style="display: inline-block; width: 9px; height: 9px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span>
+              保暖圍巾 / 遮陽帽與太陽眼鏡</div>
           </div>
-          <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 4px; padding: 2.5mm 2.8mm;">
+          <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 4px; padding: 2mm 2.4mm;">
             <div
-              style="font-weight: 700; color: var(--galilee-green); border-bottom: 1px solid #eee; padding-bottom: 0.8mm; margin-bottom: 1mm; font-size: 7.2pt;">
+              style="font-weight: 700; color: var(--galilee-green); border-bottom: 1px solid #eee; padding-bottom: 0.6mm; margin-bottom: 0.8mm; font-size: 8.0pt;">
               💊 常備藥品與健康</div>
-            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 個人慢性病處方藥（多備數日份）</div>
-            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 綜合感冒藥與普拿疼止痛藥</div>
-            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 腸胃藥與止瀉藥</div>
-            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 暈車暈船藥（菲諾港公車備用）</div>
-            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 保濕乳液、護唇膏與 OK 繃</div>
+            <div><span
+                style="display: inline-block; width: 9px; height: 9px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span>
+              個人慢性病處方藥（多備數日份）</div>
+            <div><span
+                style="display: inline-block; width: 9px; height: 9px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span>
+              綜合感冒藥與普拿疼止痛藥</div>
+            <div><span
+                style="display: inline-block; width: 9px; height: 9px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span>
+              腸胃藥與止瀉藥</div>
+            <div><span
+                style="display: inline-block; width: 9px; height: 9px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span>
+              暈車暈船藥（菲諾港公車備用）</div>
+            <div><span
+                style="display: inline-block; width: 9px; height: 9px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span>
+              保濕乳液、護唇膏與 OK 繃</div>
           </div>
-          <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 4px; padding: 2.5mm 2.8mm;">
+          <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 4px; padding: 2mm 2.4mm;">
             <div
-              style="font-weight: 700; color: var(--galilee-green); border-bottom: 1px solid #eee; padding-bottom: 0.8mm; margin-bottom: 1mm; font-size: 7.2pt;">
+              style="font-weight: 700; color: var(--galilee-green); border-bottom: 1px solid #eee; padding-bottom: 0.6mm; margin-bottom: 0.8mm; font-size: 8.0pt;">
               🧳 生活隨身防護</div>
-            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 貼身防盜小包 / 胸前包</div>
-            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 輕量折疊晴雨傘</div>
-            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 輕量保溫隨行水杯</div>
-            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 行李箱海關鎖與辨識束帶</div>
-            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 隨身紙巾與酒精濕紙巾</div>
+            <div><span
+                style="display: inline-block; width: 9px; height: 9px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span>
+              貼身防盜小包 / 胸前包</div>
+            <div><span
+                style="display: inline-block; width: 9px; height: 9px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span>
+              輕量折疊晴雨傘</div>
+            <div><span
+                style="display: inline-block; width: 9px; height: 9px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span>
+              輕量保溫隨行水杯</div>
+            <div><span
+                style="display: inline-block; width: 9px; height: 9px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span>
+              行李箱海關鎖與辨識束帶</div>
+            <div><span
+                style="display: inline-block; width: 9px; height: 9px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span>
+              隨身紙巾與酒精濕紙巾</div>
           </div>
-          <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 4px; padding: 2.5mm 2.8mm;">
+          <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 4px; padding: 2mm 2.4mm;">
             <div
-              style="font-weight: 700; color: var(--galilee-green); border-bottom: 1px solid #eee; padding-bottom: 0.8mm; margin-bottom: 1mm; font-size: 7.2pt;">
+              style="font-weight: 700; color: var(--galilee-green); border-bottom: 1px solid #eee; padding-bottom: 0.6mm; margin-bottom: 0.8mm; font-size: 8.0pt;">
               ✈️ 託運與航空規定</div>
-            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 隨身液體單瓶 ≤100ml 透明袋裝</div>
-            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 貴重筆電相機一律隨身嚴禁託運</div>
-            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 阿聯酋託運行李重量確認（25kg）</div>
-            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 行李吊牌填寫英文聯絡資訊</div>
+            <div><span
+                style="display: inline-block; width: 9px; height: 9px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span>
+              隨身液體單瓶 ≤100ml 透明袋裝</div>
+            <div><span
+                style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span>
+              貴重筆電相機一律隨身嚴禁託運</div>
+            <div><span
+                style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span>
+              阿聯酋託運行李重量確認（25kg）</div>
+            <div><span
+                style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span>
+              行李吊牌填寫英文聯絡資訊</div>
           </div>
         </div>
       </div>
@@ -2359,7 +2452,7 @@
         <!-- 顯著放大照片排版 (53mm 高度) -->
         <div class="galilee-photo-grid-2">
           <div class="galilee-photo-item">
-            <img src="day05-varenna-lake.webp" alt="Varenna 湖岸與山色">
+            <img src="bellagio.webp" alt="Varenna 湖岸與山色">
             <div class="galilee-spot-heading">
               <span>★ 科莫湖渡輪與明珠貝拉焦</span>
               <span class="en">Traghetto & Bellagio</span>
@@ -2371,7 +2464,7 @@
           </div>
 
           <div class="galilee-photo-item">
-            <img src="bellagio.webp" alt="搭乘渡輪前往對岸貝拉焦">
+            <img src="day05-varenna-lake.webp" alt="搭乘渡輪前往對岸貝拉焦">
             <div class="galilee-spot-heading">
               <span>▲ 瓦倫納情人步道與湖畔別墅</span>
               <span class="en">Passeggiata & Villa Monastero</span>
@@ -2777,152 +2870,12 @@
             </div>
           </div>
 
-          <div class="galilee-photo-item">
-            <img src="day08-santa-margherita.webp" alt="聖瑪格麗塔海灣的悠閒漫步">
-            <div class="galilee-spot-heading">
-              <span>▲ 聖瑪格麗塔海灣漫步與午茶</span>
-              <span class="en">Santa Margherita Ligure</span>
+          <!-- 美食推薦 -->
+          <div class="galilee-sub-feature-box">
+            <div class="galilee-sub-feature-title">
+              <span>🍷</span> 菲諾港海鮮墨魚麵與利古里亞白葡萄酒 Fregola & Frutti di mare
             </div>
-            <div class="galilee-spot-desc">
-              於海港第一排景觀餐廳享用招牌海鮮墨魚麵與利古里亞白葡萄酒。午後搭乘 782 公車返回聖瑪格麗塔海岸小憩喝下午茶，搭乘 15:46 的 IC 674 一等艙於 16:14 返抵熱那亞飯店休息。
-            </div>
-          </div>
-        </div>
-
-        <!-- 美食推薦 -->
-        <div class="galilee-sub-feature-box">
-          <div class="galilee-sub-feature-title">
-            <span>🍷</span> 菲諾港海鮮墨魚麵與利古里亞白葡萄酒 Fregola & Frutti di mare
-          </div>
-          <div>地中海海港的極致鮮甜；在海灣第一排景觀餐廳（如 DaV Mare 或 Trattoria Tripoli）享受愜意奢華午宴，沉醉於蔚藍海灣與奢華帆船的悠閒氛圍。</div>
-        </div>
-
-        <div class="galilee-spec-footer">
-          <div class="galilee-spec-cell">
-            <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-              <path
-                d="M12 4a2 2 0 0 0-2 2h4a2 2 0 0 0-2-2zM3 17h18a1 1 0 0 1 1 1v1H2v-1a1 1 0 0 1 1-1zm1-2a8 8 0 0 1 16 0H4z" />
-            </svg>
-            <div class="galilee-spec-body">
-              <div><strong>早餐：</strong>飯店內美式自助</div>
-              <div><strong>午餐：</strong>菲諾港景觀餐廳海鮮墨魚麵佐利古里亞白葡萄酒</div>
-              <div><strong>晚餐：</strong>熱那亞市區精選美饌晚宴</div>
-            </div>
-          </div>
-          <div class="galilee-spec-cell">
-            <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-              <path d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 7h2M9 11h2M9 15h2M13 7h2M13 11h2M13 15h2" />
-            </svg>
-            <div class="galilee-spec-body">
-              <div>5星 Grand Hotel Savoia 薩伏亞大飯店（連住第 3 晚）</div>
-            </div>
-          </div>
-          <div class="galilee-spec-cell">
-            <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-              <rect x="3" y="5" width="18" height="14" rx="2" />
-              <path d="M3 7l9 6 9-6" />
-              <polygon points="12,11 13.5,14 17,14.5 14.5,17 15,20.5 12,18.8 9,20.5 9.5,17 7,14.5 10.5,14"
-                fill="#b8862d" stroke="none" />
-            </svg>
-            <div class="galilee-spec-body">
-              <div><strong>【團費包含】</strong>★IC 657 / IC 674 城際快車一等艙來回票、★MetDaily 一日票（782 號公車無限搭乘）。</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="page-footer">
-        <span class="page-footer-brand">TRAVEL EURO · 隨身慢活手冊</span>
-        <span class="page-footer-num">12</span>
-      </div>
-    </div>
-    <!-- =========================================================================
-         PAGE 13: DAY 09 & DAY 10 (Matching index.html)
-         ========================================================================= -->
-    <div class="a5-page">
-      <div class="page-header">
-        <span class="page-header-title">DAY 09 & DAY 10</span>
-        <span>跨越國境 · 進駐尼斯</span>
-      </div>
-
-      <div class="page-content">
-        <!-- DAY 09 -->
-        <div class="galilee-split-day-block">
-          <div class="galilee-day-header">
-            <div class="galilee-day-number">DAY 9</div>
-            <div class="galilee-day-heading-col">
-              <h2 class="galilee-day-route-title">熱那亞 ➔ 文提米利亞 ➔ Roya 河 ➔ Nice Ville ➔ ZOU 通票</h2>
-              <div class="galilee-day-sub-bar">
-                <span class="galilee-day-date">10/23（五）</span>
-                <span class="galilee-day-base">【尼斯 · 連住 5 晚（第 1 晚）· AC Hotel Nice】</span>
-              </div>
-            </div>
-          </div>
-          <div class="galilee-timeline-wrap">
-            <div class="galilee-timeline-track"></div>
-            <div class="galilee-timeline-nodes">
-              <div class="galilee-timeline-node">
-                <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
-                    <path
-                      d="M12 2c-4.4 0-8 .6-8 4v10a3 3 0 0 0 3 3l-1.5 1.5V21h13v-.5L17 19a3 3 0 0 0 3-3V6c0-3.4-3.6-4-8-4zm-6 4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v4H6V6zm2 10a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm8 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
-                  </svg></div>
-                <div class="galilee-t-time">08:58</div>
-                <div class="galilee-t-label">IC 633</div>
-                <div class="galilee-t-dur">城際一等艙</div>
-              </div>
-              <div class="galilee-timeline-node">
-                <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2" />
-                    <circle cx="12" cy="12" r="4" fill="#000" />
-                  </svg></div>
-                <div class="galilee-t-time">10:58</div>
-                <div class="galilee-t-label">文提米利亞</div>
-                <div class="galilee-t-dur">抵達邊境車站</div>
-              </div>
-              <div class="galilee-timeline-node">
-                <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
-                    <path
-                      d="M11 2v9a2 2 0 0 1-2 2H8v9H6v-9H5a2 2 0 0 1-2-2V2h2v6h1V2h2v6h1V2h1zm7 0a4 4 0 0 1 4 4v5a2 2 0 0 1-2 2h-1v9h-2v-9h-1a2 2 0 0 1-2-2V6a4 4 0 0 1 4-4z" />
-                  </svg></div>
-                <div class="galilee-t-time">11:30</div>
-                <div class="galilee-t-label">Sir Thomas</div>
-                <div class="galilee-t-dur">寄行李與佛卡夏</div>
-              </div>
-              <div class="galilee-timeline-node">
-                <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2" />
-                    <circle cx="12" cy="12" r="4" fill="#000" />
-                  </svg></div>
-                <div class="galilee-t-time">13:00</div>
-                <div class="galilee-t-label">Roya 河散步</div>
-                <div class="galilee-t-dur">邊境歷史小鎮</div>
-              </div>
-              <div class="galilee-timeline-node">
-                <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
-                    <path
-                      d="M12 2c-4.4 0-8 .6-8 4v10a3 3 0 0 0 3 3l-1.5 1.5V21h13v-.5L17 19a3 3 0 0 0 3-3V6c0-3.4-3.6-4-8-4zm-6 4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v4H6V6zm2 10a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm8 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
-                  </svg></div>
-                <div class="galilee-t-time">15:00</div>
-                <div class="galilee-t-label">TER 列車</div>
-                <div class="galilee-t-dur">跨國前往尼斯</div>
-              </div>
-              <div class="galilee-timeline-node">
-                <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
-                    <path d="M19 7h-8v8H3V5H1v15h2v-3h18v3h2v-9a4 4 0 0 0-4-4zm-12 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                  </svg></div>
-                <div class="galilee-t-time">17:00</div>
-                <div class="galilee-t-label">入住 AC Hotel</div>
-                <div class="galilee-t-dur">海岸夕陽慢步</div>
-              </div>
-            </div>
-          </div>
-          <div class="galilee-split-content">
-            <img src="ventimiglia.webp" alt="文提米利亞與 Roya 河畔散步">
-            <div class="galilee-split-text">
-              上午退房，08:58 搭乘 IC 633（一等艙）前往義大利西部邊境 Ventimiglia (10:58 抵達)。前往車站旁小餐館「Sir Thomas」寄放行李並享用午餐與現烤
-              Focaccia，不必拖著大行李逛街。午餐後沿 Roya 河散步欣賞邊境風情。14:30 取回行李，15:00 搭乘 TER 跨國列車抵達 Nice Ville。購買通票後搭輕軌 L2/L3 直達 AC
-              Hotel Nice 辦理入住，傍晚海岸散步開啟尼斯 5 晚慢遊。
-            </div>
+            <div>地中海海港的極致鮮甜；在海灣第一排景觀餐廳（如 DaV Mare 或 Trattoria Tripoli）享受愜意奢華午宴，沉醉於蔚藍海灣與奢華帆船的悠閒氛圍。</div>
           </div>
 
           <div class="galilee-spec-footer">
@@ -2933,8 +2886,8 @@
               </svg>
               <div class="galilee-spec-body">
                 <div><strong>早餐：</strong>飯店內美式自助</div>
-                <div><strong>午餐：</strong>Sir Thomas 手作義大利麵與現烤佛卡夏</div>
-                <div><strong>晚餐：</strong>尼斯海濱露天餐廳地中海晚宴</div>
+                <div><strong>午餐：</strong>菲諾港景觀餐廳海鮮墨魚麵佐利古里亞白葡萄酒</div>
+                <div><strong>晚餐：</strong>熱那亞市區精選美饌晚宴</div>
               </div>
             </div>
             <div class="galilee-spec-cell">
@@ -2943,7 +2896,7 @@
                   d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 7h2M9 11h2M9 15h2M13 7h2M13 11h2M13 15h2" />
               </svg>
               <div class="galilee-spec-body">
-                <div>AC Hotel Nice 海景飯店（連住第 1 晚）</div>
+                <div>5星 Grand Hotel Savoia 薩伏亞大飯店（連住第 3 晚）</div>
               </div>
             </div>
             <div class="galilee-spec-cell">
@@ -2954,44 +2907,565 @@
                   fill="#b8862d" stroke="none" />
               </svg>
               <div class="galilee-spec-body">
-                <div><strong>【團費包含】</strong>★IC 633 一等艙車票、★ZOU!/TER 跨國列車車票、★Sir Thomas 行李寄放服務。</div>
+                <div><strong>【團費包含】</strong>★IC 657 / IC 674 城際快車一等艙來回票、★MetDaily 一日票（782 號公車無限搭乘）。</div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- DAY 10 -->
-        <div class="galilee-split-day-block" style="margin-bottom:0; padding-bottom:0; border-bottom:none;">
-          <div class="galilee-day-header">
-            <div class="galilee-day-number">DAY 10</div>
-            <div class="galilee-day-heading-col">
-              <h2 class="galilee-day-route-title">尼斯舊城慢遊：薩萊亞花市與天使灣海岸時光</h2>
-              <div class="galilee-day-sub-bar">
-                <span class="galilee-day-date">10/24（六）</span>
-                <span class="galilee-day-base">【尼斯 · 連住 5 晚（第 2 晚）· AC Hotel Nice】</span>
+        <div class="page-footer">
+          <span class="page-footer-brand">TRAVEL EURO · 隨身慢活手冊</span>
+          <span class="page-footer-num">12</span>
+        </div>
+      </div>
+      <!-- =========================================================================
+         PAGE 13: DAY 09 & DAY 10 (Matching index.html)
+         ========================================================================= -->
+      <div class="a5-page">
+        <div class="page-header">
+          <span class="page-header-title">DAY 09 & DAY 10</span>
+          <span>跨越國境 · 進駐尼斯</span>
+        </div>
+
+        <div class="page-content">
+          <!-- DAY 09 -->
+          <div class="galilee-split-day-block">
+            <div class="galilee-day-header">
+              <div class="galilee-day-number">DAY 9</div>
+              <div class="galilee-day-heading-col">
+                <h2 class="galilee-day-route-title">熱那亞 ➔ 文提米利亞 ➔ Roya 河 ➔ Nice Ville ➔ ZOU 通票</h2>
+                <div class="galilee-day-sub-bar">
+                  <span class="galilee-day-date">10/23（五）</span>
+                  <span class="galilee-day-base">【尼斯 · 連住 5 晚（第 1 晚）· AC Hotel Nice】</span>
+                </div>
+              </div>
+            </div>
+            <div class="galilee-timeline-wrap">
+              <div class="galilee-timeline-track"></div>
+              <div class="galilee-timeline-nodes">
+                <div class="galilee-timeline-node">
+                  <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
+                      <path
+                        d="M12 2c-4.4 0-8 .6-8 4v10a3 3 0 0 0 3 3l-1.5 1.5V21h13v-.5L17 19a3 3 0 0 0 3-3V6c0-3.4-3.6-4-8-4zm-6 4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v4H6V6zm2 10a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm8 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
+                    </svg></div>
+                  <div class="galilee-t-time">08:58</div>
+                  <div class="galilee-t-label">IC 633</div>
+                  <div class="galilee-t-dur">城際一等艙</div>
+                </div>
+                <div class="galilee-timeline-node">
+                  <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2" />
+                      <circle cx="12" cy="12" r="4" fill="#000" />
+                    </svg></div>
+                  <div class="galilee-t-time">10:58</div>
+                  <div class="galilee-t-label">文提米利亞</div>
+                  <div class="galilee-t-dur">抵達邊境車站</div>
+                </div>
+                <div class="galilee-timeline-node">
+                  <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
+                      <path
+                        d="M11 2v9a2 2 0 0 1-2 2H8v9H6v-9H5a2 2 0 0 1-2-2V2h2v6h1V2h2v6h1V2h1zm7 0a4 4 0 0 1 4 4v5a2 2 0 0 1-2 2h-1v9h-2v-9h-1a2 2 0 0 1-2-2V6a4 4 0 0 1 4-4z" />
+                    </svg></div>
+                  <div class="galilee-t-time">11:30</div>
+                  <div class="galilee-t-label">Sir Thomas</div>
+                  <div class="galilee-t-dur">寄行李與佛卡夏</div>
+                </div>
+                <div class="galilee-timeline-node">
+                  <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2" />
+                      <circle cx="12" cy="12" r="4" fill="#000" />
+                    </svg></div>
+                  <div class="galilee-t-time">13:00</div>
+                  <div class="galilee-t-label">Roya 河散步</div>
+                  <div class="galilee-t-dur">邊境歷史小鎮</div>
+                </div>
+                <div class="galilee-timeline-node">
+                  <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
+                      <path
+                        d="M12 2c-4.4 0-8 .6-8 4v10a3 3 0 0 0 3 3l-1.5 1.5V21h13v-.5L17 19a3 3 0 0 0 3-3V6c0-3.4-3.6-4-8-4zm-6 4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v4H6V6zm2 10a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm8 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
+                    </svg></div>
+                  <div class="galilee-t-time">15:00</div>
+                  <div class="galilee-t-label">TER 列車</div>
+                  <div class="galilee-t-dur">跨國前往尼斯</div>
+                </div>
+                <div class="galilee-timeline-node">
+                  <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
+                      <path d="M19 7h-8v8H3V5H1v15h2v-3h18v3h2v-9a4 4 0 0 0-4-4zm-12 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                    </svg></div>
+                  <div class="galilee-t-time">17:00</div>
+                  <div class="galilee-t-label">入住 AC Hotel</div>
+                  <div class="galilee-t-dur">海岸夕陽慢步</div>
+                </div>
+              </div>
+            </div>
+            <div class="galilee-split-content">
+              <img src="ventimiglia.webp" alt="文提米利亞與 Roya 河畔散步">
+              <div class="galilee-split-text">
+                上午退房，08:58 搭乘 IC 633（一等艙）前往義大利西部邊境 Ventimiglia (10:58 抵達)。前往車站旁小餐館「Sir Thomas」寄放行李並享用午餐與現烤
+                Focaccia，不必拖著大行李逛街。午餐後沿 Roya 河散步欣賞邊境風情。14:30 取回行李，15:00 搭乘 TER 跨國列車抵達 Nice Ville。購買通票後搭輕軌 L2/L3 直達 AC
+                Hotel Nice 辦理入住，傍晚海岸散步開啟尼斯 5 晚慢遊。
+              </div>
+            </div>
+
+            <div class="galilee-spec-footer">
+              <div class="galilee-spec-cell">
+                <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path
+                    d="M12 4a2 2 0 0 0-2 2h4a2 2 0 0 0-2-2zM3 17h18a1 1 0 0 1 1 1v1H2v-1a1 1 0 0 1 1-1zm1-2a8 8 0 0 1 16 0H4z" />
+                </svg>
+                <div class="galilee-spec-body">
+                  <div><strong>早餐：</strong>飯店內美式自助</div>
+                  <div><strong>午餐：</strong>Sir Thomas 手作義大利麵與現烤佛卡夏</div>
+                  <div><strong>晚餐：</strong>尼斯海濱露天餐廳地中海晚宴</div>
+                </div>
+              </div>
+              <div class="galilee-spec-cell">
+                <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path
+                    d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 7h2M9 11h2M9 15h2M13 7h2M13 11h2M13 15h2" />
+                </svg>
+                <div class="galilee-spec-body">
+                  <div>AC Hotel Nice 海景飯店（連住第 1 晚）</div>
+                </div>
+              </div>
+              <div class="galilee-spec-cell">
+                <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <rect x="3" y="5" width="18" height="14" rx="2" />
+                  <path d="M3 7l9 6 9-6" />
+                  <polygon points="12,11 13.5,14 17,14.5 14.5,17 15,20.5 12,18.8 9,20.5 9.5,17 7,14.5 10.5,14"
+                    fill="#b8862d" stroke="none" />
+                </svg>
+                <div class="galilee-spec-body">
+                  <div><strong>【團費包含】</strong>★IC 633 一等艙車票、★ZOU!/TER 跨國列車車票、★Sir Thomas 行李寄放服務。</div>
+                </div>
               </div>
             </div>
           </div>
+
+          <!-- DAY 10 -->
+          <div class="galilee-split-day-block" style="margin-bottom:0; padding-bottom:0; border-bottom:none;">
+            <div class="galilee-day-header">
+              <div class="galilee-day-number">DAY 10</div>
+              <div class="galilee-day-heading-col">
+                <h2 class="galilee-day-route-title">尼斯舊城慢遊：薩萊亞花市與天使灣海岸時光</h2>
+                <div class="galilee-day-sub-bar">
+                  <span class="galilee-day-date">10/24（六）</span>
+                  <span class="galilee-day-base">【尼斯 · 連住 5 晚（第 2 晚）· AC Hotel Nice】</span>
+                </div>
+              </div>
+            </div>
+            <div class="galilee-timeline-wrap">
+              <div class="galilee-timeline-track"></div>
+              <div class="galilee-timeline-nodes">
+                <div class="galilee-timeline-node">
+                  <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
+                      <path
+                        d="M12 2c-4.4 0-8 .6-8 4v10a3 3 0 0 0 3 3l-1.5 1.5V21h13v-.5L17 19a3 3 0 0 0 3-3V6c0-3.4-3.6-4-8-4zm-6 4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v4H6V6zm2 10a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm8 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
+                    </svg></div>
+                  <div class="galilee-t-time">09:30</div>
+                  <div class="galilee-t-label">輕軌 L2</div>
+                  <div class="galilee-t-dur">直達歌劇院站</div>
+                </div>
+                <div class="galilee-timeline-node">
+                  <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2" />
+                      <circle cx="12" cy="12" r="4" fill="#000" />
+                    </svg></div>
+                  <div class="galilee-t-time">10:00</div>
+                  <div class="galilee-t-label">薩萊亞花市</div>
+                  <div class="galilee-t-dur">Cours Saleya 鮮花</div>
+                </div>
+                <div class="galilee-timeline-node">
+                  <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
+                      <path
+                        d="M11 2v9a2 2 0 0 1-2 2H8v9H6v-9H5a2 2 0 0 1-2-2V2h2v6h1V2h2v6h1V2h1zm7 0a4 4 0 0 1 4 4v5a2 2 0 0 1-2 2h-1v9h-2v-9h-1a2 2 0 0 1-2-2V6a4 4 0 0 1 4-4z" />
+                    </svg></div>
+                  <div class="galilee-t-time">12:30</div>
+                  <div class="galilee-t-label">尼斯沙拉</div>
+                  <div class="galilee-t-dur">La Voglia 名店</div>
+                </div>
+                <div class="galilee-timeline-node">
+                  <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
+                      <path d="M19 7h-8v8H3V5H1v15h2v-3h18v3h2v-9a4 4 0 0 0-4-4zm-12 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                    </svg></div>
+                  <div class="galilee-t-time">14:30</div>
+                  <div class="galilee-t-label">飯店午休</div>
+                  <div class="galilee-t-dur">避開爬坡階梯</div>
+                </div>
+                <div class="galilee-timeline-node">
+                  <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2" />
+                      <circle cx="12" cy="12" r="4" fill="#000" />
+                    </svg></div>
+                  <div class="galilee-t-time">17:30</div>
+                  <div class="galilee-t-label">天使灣夕陽</div>
+                  <div class="galilee-t-dur">英國人散步大道</div>
+                </div>
+                <div class="galilee-timeline-node">
+                  <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
+                      <path
+                        d="M11 2v9a2 2 0 0 1-2 2H8v9H6v-9H5a2 2 0 0 1-2-2V2h2v6h1V2h2v6h1V2h1zm7 0a4 4 0 0 1 4 4v5a2 2 0 0 1-2 2h-1v9h-2v-9h-1a2 2 0 0 1-2-2V6a4 4 0 0 1 4-4z" />
+                    </svg></div>
+                  <div class="galilee-t-time">18:30</div>
+                  <div class="galilee-t-label">舊城晚宴</div>
+                  <div class="galilee-t-dur">南法海鮮美饌</div>
+                </div>
+              </div>
+            </div>
+            <div class="galilee-split-content">
+              <img src="nice-oldtown.webp" alt="Cours Saleya 花市與舊城街區">
+              <div class="galilee-split-text">
+                搭乘輕軌直達「Opéra - Vieille Ville（尼斯歌劇院站）」步入舊城。漫步熱鬧的「Cours Saleya
+                薩萊亞市集」，欣賞鮮花盛開與南法香料、橄欖油、手工皂特產攤位。中午於舊城知名景觀餐館（如
+                La Voglia 或 Bocca Nissa）品嚐經典尼斯沙拉（Salade
+                Niçoise）與海鮮燉飯。全程安排平緩海濱與市集步道，避開陡峭城堡山階梯；午後回飯店小睡，傍晚在英國人散步大道看天使灣金黃夕陽。
+              </div>
+            </div>
+
+            <div class="galilee-spec-footer">
+              <div class="galilee-spec-cell">
+                <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path
+                    d="M12 4a2 2 0 0 0-2 2h4a2 2 0 0 0-2-2zM3 17h18a1 1 0 0 1 1 1v1H2v-1a1 1 0 0 1 1-1zm1-2a8 8 0 0 1 16 0H4z" />
+                </svg>
+                <div class="galilee-spec-body">
+                  <div><strong>早餐：</strong>飯店內美式自助</div>
+                  <div><strong>午餐：</strong>舊城名店經典尼斯沙拉 (Salade Niçoise) 與海鮮燉飯</div>
+                  <div><strong>晚餐：</strong>英國人散步大道海景景觀晚宴</div>
+                </div>
+              </div>
+              <div class="galilee-spec-cell">
+                <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path
+                    d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 7h2M9 11h2M9 15h2M13 7h2M13 11h2M13 15h2" />
+                </svg>
+                <div class="galilee-spec-body">
+                  <div>AC Hotel Nice 海景飯店（連住第 2 晚）</div>
+                </div>
+              </div>
+              <div class="galilee-spec-cell">
+                <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <rect x="3" y="5" width="18" height="14" rx="2" />
+                  <path d="M3 7l9 6 9-6" />
+                  <polygon points="12,11 13.5,14 17,14.5 14.5,17 15,20.5 12,18.8 9,20.5 9.5,17 7,14.5 10.5,14"
+                    fill="#b8862d" stroke="none" />
+                </svg>
+                <div class="galilee-spec-body">
+                  <div><strong>【團費包含】</strong>★PASS SUD AZUR 蔚藍海岸通票（輕軌 L1-L3 無限搭乘）。</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="page-footer">
+          <span class="page-footer-brand">TRAVEL EURO · 隨身慢活手冊</span>
+          <span class="page-footer-num">13</span>
+        </div>
+      </div>
+      <!-- =========================================================================
+         PAGE 14: DAY 11 & DAY 12 (Matching index.html)
+         ========================================================================= -->
+      <div class="a5-page">
+        <div class="page-header">
+          <span class="page-header-title">DAY 11 & DAY 12</span>
+          <span>海灣古城 · 貴族莊園</span>
+        </div>
+
+        <div class="page-content">
+          <!-- DAY 11 -->
+          <div class="galilee-split-day-block">
+            <div class="galilee-day-header">
+              <div class="galilee-day-number">DAY 11</div>
+              <div class="galilee-day-heading-col">
+                <h2 class="galilee-day-route-title">濱海自由城 Villefranche-sur-Mer 半日海灣慢遊</h2>
+                <div class="galilee-day-sub-bar">
+                  <span class="galilee-day-date">10/25（日）</span>
+                  <span class="galilee-day-base">【尼斯 · 連住 5 晚（第 3 晚）· AC Hotel Nice】</span>
+                </div>
+              </div>
+            </div>
+            <div class="galilee-timeline-wrap">
+              <div class="galilee-timeline-track"></div>
+              <div class="galilee-timeline-nodes">
+                <div class="galilee-timeline-node">
+                  <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
+                      <path
+                        d="M12 2c-4.4 0-8 .6-8 4v10a3 3 0 0 0 3 3l-1.5 1.5V21h13v-.5L17 19a3 3 0 0 0 3-3V6c0-3.4-3.6-4-8-4zm-6 4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v4H6V6zm2 10a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm8 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
+                    </svg></div>
+                  <div class="galilee-t-time">09:45</div>
+                  <div class="galilee-t-label">Nice-Ville</div>
+                  <div class="galilee-t-dur">搭 TER 火車</div>
+                </div>
+                <div class="galilee-timeline-node">
+                  <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2" />
+                      <circle cx="12" cy="12" r="4" fill="#000" />
+                    </svg></div>
+                  <div class="galilee-t-time">10:00</div>
+                  <div class="galilee-t-label">抵自由城</div>
+                  <div class="galilee-t-dur">僅約 7 分鐘</div>
+                </div>
+                <div class="galilee-timeline-node">
+                  <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2" />
+                      <circle cx="12" cy="12" r="4" fill="#000" />
+                    </svg></div>
+                  <div class="galilee-t-time">10:30</div>
+                  <div class="galilee-t-label">彩色海灣</div>
+                  <div class="galilee-t-dur">懸崖俯瞰絕景</div>
+                </div>
+                <div class="galilee-timeline-node">
+                  <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
+                      <path
+                        d="M11 2v9a2 2 0 0 1-2 2H8v9H6v-9H5a2 2 0 0 1-2-2V2h2v6h1V2h2v6h1V2h1zm7 0a4 4 0 0 1 4 4v5a2 2 0 0 1-2 2h-1v9h-2v-9h-1a2 2 0 0 1-2-2V6a4 4 0 0 1 4-4z" />
+                    </svg></div>
+                  <div class="galilee-t-time">12:30</div>
+                  <div class="galilee-t-label">海景午餐</div>
+                  <div class="galilee-t-dur">Mayssa Beach</div>
+                </div>
+                <div class="galilee-timeline-node">
+                  <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2" />
+                      <circle cx="12" cy="12" r="4" fill="#000" />
+                    </svg></div>
+                  <div class="galilee-t-time">14:00</div>
+                  <div class="galilee-t-label">城堡花園</div>
+                  <div class="galilee-t-dur">樹蔭臨海小憩</div>
+                </div>
+                <div class="galilee-timeline-node">
+                  <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
+                      <path
+                        d="M12 2c-4.4 0-8 .6-8 4v10a3 3 0 0 0 3 3l-1.5 1.5V21h13v-.5L17 19a3 3 0 0 0 3-3V6c0-3.4-3.6-4-8-4zm-6 4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v4H6V6zm2 10a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm8 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
+                    </svg></div>
+                  <div class="galilee-t-time">15:00</div>
+                  <div class="galilee-t-label">返抵尼斯</div>
+                  <div class="galilee-t-dur">享受自由留白</div>
+                </div>
+              </div>
+            </div>
+            <div class="galilee-split-content">
+              <img src="villefranche.webp" alt="Villefranche-sur-Mer 海灣與彩色老屋">
+              <div class="galilee-split-text">
+                上午由 Nice-Ville 搭乘 TER 區間火車，僅約 7 分鐘即達
+                Villefranche-sur-Mer，避開迂迴公車與顛簸山路。出站即可俯瞰半圓形蔚藍海灣與彩色老城石屋，是蔚藍海岸最迷人的經典全景。沿平緩濱海小徑漫步至海灣碼頭，於臨海餐館（如 Mayssa Beach
+                或
+                La Mère Germaine）享用普羅旺斯海鮮午餐。午後順訪「濱海城堡花園」樹蔭小憩，搭火車輕鬆回尼斯，下午享有完整自由休憩時光。
+              </div>
+            </div>
+
+            <div class="galilee-spec-footer">
+              <div class="galilee-spec-cell">
+                <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path
+                    d="M12 4a2 2 0 0 0-2 2h4a2 2 0 0 0-2-2zM3 17h18a1 1 0 0 1 1 1v1H2v-1a1 1 0 0 1 1-1zm1-2a8 8 0 0 1 16 0H4z" />
+                </svg>
+                <div class="galilee-spec-body">
+                  <div><strong>早餐：</strong>飯店內美式自助</div>
+                  <div><strong>午餐：</strong>Mayssa Beach 臨海景觀普羅旺斯海鮮午宴</div>
+                  <div><strong>晚餐：</strong>尼斯舊城特色餐館地中海料理</div>
+                </div>
+              </div>
+              <div class="galilee-spec-cell">
+                <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path
+                    d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 7h2M9 11h2M9 15h2M13 7h2M13 11h2M13 15h2" />
+                </svg>
+                <div class="galilee-spec-body">
+                  <div>AC Hotel Nice 海景飯店（連住第 3 晚）</div>
+                </div>
+              </div>
+              <div class="galilee-spec-cell">
+                <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <rect x="3" y="5" width="18" height="14" rx="2" />
+                  <path d="M3 7l9 6 9-6" />
+                  <polygon points="12,11 13.5,14 17,14.5 14.5,17 15,20.5 12,18.8 9,20.5 9.5,17 7,14.5 10.5,14"
+                    fill="#b8862d" stroke="none" />
+                </svg>
+                <div class="galilee-spec-body">
+                  <div><strong>【團費包含】</strong>★TER 區間景觀火車來回票、★PASS SUD AZUR 通票。</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- DAY 12 -->
+          <div class="galilee-split-day-block" style="margin-bottom:0; padding-bottom:0; border-bottom:none;">
+            <div class="galilee-day-header">
+              <div class="galilee-day-number">DAY 12</div>
+              <div class="galilee-day-heading-col">
+                <h2 class="galilee-day-route-title">費拉角貴族莊園：羅斯柴爾德花園別墅與聖讓港</h2>
+                <div class="galilee-day-sub-bar">
+                  <span class="galilee-day-date">10/26（一）</span>
+                  <span class="galilee-day-base">【尼斯 · 連住 5 晚（第 4 晚）· AC Hotel Nice】</span>
+                </div>
+              </div>
+            </div>
+            <div class="galilee-timeline-wrap">
+              <div class="galilee-timeline-track"></div>
+              <div class="galilee-timeline-nodes">
+                <div class="galilee-timeline-node">
+                  <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
+                      <path
+                        d="M4 16V6a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v10a2 2 0 0 1-2 2v2a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-2H9v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-2a2 2 0 0 1-2-2zm2-8h12V6a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v2zm0 2v4h12v-4H6zm1.5 5.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm11 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
+                    </svg></div>
+                  <div class="galilee-t-time">09:30</div>
+                  <div class="galilee-t-label">輕軌轉公車</div>
+                  <div class="galilee-t-dur">Port Lympia 轉乘</div>
+                </div>
+                <div class="galilee-timeline-node">
+                  <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2" />
+                      <circle cx="12" cy="12" r="4" fill="#000" />
+                    </svg></div>
+                  <div class="galilee-t-time">10:15</div>
+                  <div class="galilee-t-label">直達門口</div>
+                  <div class="galilee-t-dur">Passable 站</div>
+                </div>
+                <div class="galilee-timeline-node">
+                  <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2" />
+                      <circle cx="12" cy="12" r="4" fill="#000" />
+                    </svg></div>
+                  <div class="galilee-t-time">10:30</div>
+                  <div class="galilee-t-label">粉紅宮殿</div>
+                  <div class="galilee-t-dur">音樂噴泉演出</div>
+                </div>
+                <div class="galilee-timeline-node">
+                  <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2" />
+                      <circle cx="12" cy="12" r="4" fill="#000" />
+                    </svg></div>
+                  <div class="galilee-t-time">11:30</div>
+                  <div class="galilee-t-label">九大主題花園</div>
+                  <div class="galilee-t-dur">三面環海全景</div>
+                </div>
+                <div class="galilee-timeline-node">
+                  <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
+                      <path
+                        d="M11 2v9a2 2 0 0 1-2 2H8v9H6v-9H5a2 2 0 0 1-2-2V2h2v6h1V2h2v6h1V2h1zm7 0a4 4 0 0 1 4 4v5a2 2 0 0 1-2 2h-1v9h-2v-9h-1a2 2 0 0 1-2-2V6a4 4 0 0 1 4-4z" />
+                    </svg></div>
+                  <div class="galilee-t-time">12:30</div>
+                  <div class="galilee-t-label">莊園茶沙龍</div>
+                  <div class="galilee-t-dur">海景精緻午茶</div>
+                </div>
+                <div class="galilee-timeline-node">
+                  <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2" />
+                      <circle cx="12" cy="12" r="4" fill="#000" />
+                    </svg></div>
+                  <div class="galilee-t-time">14:30</div>
+                  <div class="galilee-t-label">聖讓港漫步</div>
+                  <div class="galilee-t-dur">悠然港灣氣息</div>
+                </div>
+                <div class="galilee-timeline-node">
+                  <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
+                      <path d="M19 7h-8v8H3V5H1v15h2v-3h18v3h2v-9a4 4 0 0 0-4-4zm-12 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                    </svg></div>
+                  <div class="galilee-t-time">16:30</div>
+                  <div class="galilee-t-label">返回尼斯</div>
+                  <div class="galilee-t-dur">精選主廚晚宴</div>
+                </div>
+              </div>
+            </div>
+            <div class="galilee-split-content">
+              <img src="day12-villa-rothschild.webp" alt="羅斯柴爾德伯爵別墅與九大花園">
+              <div class="galilee-split-text">
+                搭乘輕軌 L2 至 Port Lympia 轉乘公車前往億萬富豪半島 Saint-Jean-Cap-Ferrat，於「Passable / Rothschild」站直達門口。參觀奢華粉紅宮殿「Villa
+                Ephrussi de
+                Rothschild」，欣賞華美宅邸與隨古典樂起舞的音樂噴泉。漫步法式、日式、西班牙等九大主題花園，三面環海視野極為壯麗。中午於莊園海景茶沙龍悠閒午餐或下午茶；午後順訪寧靜小巧的「聖讓港」感受蔚藍氣息後返回尼斯。
+              </div>
+            </div>
+
+            <div class="galilee-spec-footer">
+              <div class="galilee-spec-cell">
+                <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path
+                    d="M12 4a2 2 0 0 0-2 2h4a2 2 0 0 0-2-2zM3 17h18a1 1 0 0 1 1 1v1H2v-1a1 1 0 0 1 1-1zm1-2a8 8 0 0 1 16 0H4z" />
+                </svg>
+                <div class="galilee-spec-body">
+                  <div><strong>早餐：</strong>飯店內美式自助</div>
+                  <div><strong>午餐：</strong>羅斯柴爾德莊園海景茶沙龍精緻輕食午宴</div>
+                  <div><strong>晚餐：</strong>尼斯地中海風味晚宴</div>
+                </div>
+              </div>
+              <div class="galilee-spec-cell">
+                <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path
+                    d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 7h2M9 11h2M9 15h2M13 7h2M13 11h2M13 15h2" />
+                </svg>
+                <div class="galilee-spec-body">
+                  <div>AC Hotel Nice 海景飯店（連住第 4 晚）</div>
+                </div>
+              </div>
+              <div class="galilee-spec-cell">
+                <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <rect x="3" y="5" width="18" height="14" rx="2" />
+                  <path d="M3 7l9 6 9-6" />
+                  <polygon points="12,11 13.5,14 17,14.5 14.5,17 15,20.5 12,18.8 9,20.5 9.5,17 7,14.5 10.5,14"
+                    fill="#b8862d" stroke="none" />
+                </svg>
+                <div class="galilee-spec-body">
+                  <div><strong>【團費包含】</strong>★羅斯柴爾德花園別墅入場門票（含語音導覽與音樂噴泉演出）。</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="page-footer">
+          <span class="page-footer-brand">TRAVEL EURO · 隨身慢活手冊</span>
+          <span class="page-footer-num">14</span>
+        </div>
+      </div>
+      <!-- =========================================================================
+         PAGE 15: DAY 13 · 尼斯最後慢活日 (Enlarged Photos Layout)
+         ========================================================================= -->
+      <div class="a5-page">
+        <div class="page-header">
+          <span class="page-header-title">DAY 13 · NICE SLOW LIVING</span>
+          <span>尼斯最後慢活日</span>
+        </div>
+
+        <div class="page-content">
+          <div class="galilee-day-header">
+            <div class="galilee-day-number">DAY 13</div>
+            <div class="galilee-day-heading-col">
+              <h2 class="galilee-day-route-title">尼斯最後慢活日：盎格魯大道藍椅漫步＋舊城香氛採買＋提早整理行李</h2>
+              <div class="galilee-day-sub-bar">
+                <span class="galilee-day-date">10/27（二）</span>
+                <span class="galilee-day-base">【尼斯 · 連住 5 晚（第 5 晚）· AC Hotel Nice】</span>
+              </div>
+            </div>
+          </div>
+
           <div class="galilee-timeline-wrap">
             <div class="galilee-timeline-track"></div>
             <div class="galilee-timeline-nodes">
               <div class="galilee-timeline-node">
                 <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
-                    <path
-                      d="M12 2c-4.4 0-8 .6-8 4v10a3 3 0 0 0 3 3l-1.5 1.5V21h13v-.5L17 19a3 3 0 0 0 3-3V6c0-3.4-3.6-4-8-4zm-6 4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v4H6V6zm2 10a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm8 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
-                  </svg></div>
-                <div class="galilee-t-time">09:30</div>
-                <div class="galilee-t-label">輕軌 L2</div>
-                <div class="galilee-t-dur">直達歌劇院站</div>
-              </div>
-              <div class="galilee-timeline-node">
-                <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
                     <circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2" />
                     <circle cx="12" cy="12" r="4" fill="#000" />
                   </svg></div>
-                <div class="galilee-t-time">10:00</div>
-                <div class="galilee-t-label">薩萊亞花市</div>
-                <div class="galilee-t-dur">Cours Saleya 鮮花</div>
+                <div class="galilee-t-time">09:30</div>
+                <div class="galilee-t-label">盎格魯大道</div>
+                <div class="galilee-t-dur">藍色座椅放空</div>
+              </div>
+              <div class="galilee-timeline-node">
+                <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4H6zm10 8a4 4 0 0 1-8 0" />
+                  </svg></div>
+                <div class="galilee-t-time">10:30</div>
+                <div class="galilee-t-label">馬賽納廣場</div>
+                <div class="galilee-t-dur">花宮娜香氛採買</div>
+              </div>
+              <div class="galilee-timeline-node">
+                <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4H6zm10 8a4 4 0 0 1-8 0" />
+                  </svg></div>
+                <div class="galilee-t-time">11:30</div>
+                <div class="galilee-t-label">特產伴手禮</div>
+                <div class="galilee-t-dur">A L'Olivier 橄欖油</div>
               </div>
               <div class="galilee-timeline-node">
                 <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
@@ -2999,16 +3473,16 @@
                       d="M11 2v9a2 2 0 0 1-2 2H8v9H6v-9H5a2 2 0 0 1-2-2V2h2v6h1V2h2v6h1V2h1zm7 0a4 4 0 0 1 4 4v5a2 2 0 0 1-2 2h-1v9h-2v-9h-1a2 2 0 0 1-2-2V6a4 4 0 0 1 4-4z" />
                   </svg></div>
                 <div class="galilee-t-time">12:30</div>
-                <div class="galilee-t-label">尼斯沙拉</div>
-                <div class="galilee-t-dur">La Voglia 名店</div>
+                <div class="galilee-t-label">海濱午餐</div>
+                <div class="galilee-t-dur">露天南法美饌</div>
               </div>
               <div class="galilee-timeline-node">
                 <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
                     <path d="M19 7h-8v8H3V5H1v15h2v-3h18v3h2v-9a4 4 0 0 0-4-4zm-12 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
                   </svg></div>
                 <div class="galilee-t-time">14:30</div>
-                <div class="galilee-t-label">飯店午休</div>
-                <div class="galilee-t-dur">避開爬坡階梯</div>
+                <div class="galilee-t-label">飯店小憩整理</div>
+                <div class="galilee-t-dur">提前打包免慌亂</div>
               </div>
               <div class="galilee-timeline-node">
                 <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
@@ -3017,25 +3491,51 @@
                   </svg></div>
                 <div class="galilee-t-time">17:30</div>
                 <div class="galilee-t-label">天使灣夕陽</div>
-                <div class="galilee-t-dur">英國人散步大道</div>
+                <div class="galilee-t-dur">海景露台最後金黃</div>
               </div>
               <div class="galilee-timeline-node">
                 <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
                     <path
                       d="M11 2v9a2 2 0 0 1-2 2H8v9H6v-9H5a2 2 0 0 1-2-2V2h2v6h1V2h2v6h1V2h1zm7 0a4 4 0 0 1 4 4v5a2 2 0 0 1-2 2h-1v9h-2v-9h-1a2 2 0 0 1-2-2V6a4 4 0 0 1 4-4z" />
                   </svg></div>
-                <div class="galilee-t-time">18:30</div>
-                <div class="galilee-t-label">舊城晚宴</div>
-                <div class="galilee-t-dur">南法海鮮美饌</div>
+                <div class="galilee-t-time">19:00</div>
+                <div class="galilee-t-label">惜別晚宴</div>
+                <div class="galilee-t-dur">蔚藍海岸海鮮盛宴</div>
               </div>
             </div>
           </div>
-          <div class="galilee-split-content">
-            <img src="nice-oldtown.webp" alt="Cours Saleya 花市與舊城街區">
-            <div class="galilee-split-text">
-              搭乘輕軌直達「Opéra - Vieille Ville（尼斯歌劇院站）」步入舊城。漫步熱鬧的「Cours Saleya 薩萊亞市集」，欣賞鮮花盛開與南法香料、橄欖油、手工皂特產攤位。中午於舊城知名景觀餐館（如
-              La Voglia 或 Bocca Nissa）品嚐經典尼斯沙拉（Salade Niçoise）與海鮮燉飯。全程安排平緩海濱與市集步道，避開陡峭城堡山階梯；午後回飯店小睡，傍晚在英國人散步大道看天使灣金黃夕陽。
+
+          <!-- 顯著放大照片排版 (53mm 高度) -->
+          <div class="galilee-photo-grid-2">
+            <div class="galilee-photo-item">
+              <img src="nice-promenade.webp" alt="英國人散步大道的最後一個黃昏">
+              <div class="galilee-spot-heading">
+                <span>★ 盎格魯大道藍色座椅與漫步</span>
+                <span class="en">Promenade des Anglais</span>
+              </div>
+              <div class="galilee-spot-desc">
+                早餐後按照自己的舒服節奏出發，坐在 Promenade des Anglais 標誌性的藍色座椅（Chaises Bleues）吹海風放空，看地中海浪花拍岸，品味南法無拘無束的悠然步調與純淨陽光。
+              </div>
             </div>
+
+            <div class="galilee-photo-item">
+              <img src="day13-nice-shopping.webp" alt="舊城採買香氛與南法紀念品">
+              <div class="galilee-spot-heading">
+                <span>▲ 舊城香氛採買與提早打包</span>
+                <span class="en">Fragonard & Packaging</span>
+              </div>
+              <div class="galilee-spot-desc">
+                漫步馬賽納廣場周邊或舊城，採買正宗南法花宮娜香氛（Fragonard）、薰衣草手工皂與 A L'Olivier 特產橄欖油。午後回飯店小憩並提前打包行李免退房慌亂，傍晚在露台欣賞染金天使灣夕陽。
+              </div>
+            </div>
+          </div>
+
+          <!-- 伴手禮指南 -->
+          <div class="galilee-sub-feature-box">
+            <div class="galilee-sub-feature-title">
+              <span>🎁</span> 南法必買香氛與橄欖油伴手禮精選
+            </div>
+            <div>格拉斯花宮娜香氛系列、馬賽天然純植物薰衣草香皂、百年名店 A L'Olivier 頂級初榨橄欖油；飯店房內從容打包，無後顧之憂享受最後蔚藍之夜。</div>
           </div>
 
           <div class="galilee-spec-footer">
@@ -3046,8 +3546,8 @@
               </svg>
               <div class="galilee-spec-body">
                 <div><strong>早餐：</strong>飯店內美式自助</div>
-                <div><strong>午餐：</strong>舊城名店經典尼斯沙拉 (Salade Niçoise) 與海鮮燉飯</div>
-                <div><strong>晚餐：</strong>英國人散步大道海景景觀晚宴</div>
+                <div><strong>午餐：</strong>尼斯舊城露天餐館普羅旺斯燉菜與燉海鮮</div>
+                <div><strong>晚餐：</strong>尼斯蔚藍海岸惜別海鮮盛宴</div>
               </div>
             </div>
             <div class="galilee-spec-cell">
@@ -3056,7 +3556,7 @@
                   d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 7h2M9 11h2M9 15h2M13 7h2M13 11h2M13 15h2" />
               </svg>
               <div class="galilee-spec-body">
-                <div>AC Hotel Nice 海景飯店（連住第 2 晚）</div>
+                <div>AC Hotel Nice 海景飯店（連住第 5 晚）</div>
               </div>
             </div>
             <div class="galilee-spec-cell">
@@ -3067,229 +3567,125 @@
                   fill="#b8862d" stroke="none" />
               </svg>
               <div class="galilee-spec-body">
-                <div><strong>【團費包含】</strong>★PASS SUD AZUR 蔚藍海岸通票（輕軌 L1-L3 無限搭乘）。</div>
+                <div><strong>【團費包含】</strong>★市區輕軌電車乘車票、★花宮娜與特產伴手禮專屬折扣安排。</div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="page-footer">
-        <span class="page-footer-brand">TRAVEL EURO · 隨身慢活手冊</span>
-        <span class="page-footer-num">13</span>
+        <div class="page-footer">
+          <span class="page-footer-brand">TRAVEL EURO · 隨身慢活手冊</span>
+          <span class="page-footer-num">15</span>
+        </div>
       </div>
-    </div>
-    <!-- =========================================================================
-         PAGE 14: DAY 11 & DAY 12 (Matching index.html)
+      <!-- =========================================================================
+         PAGE 16: DAY 14–15 · 平安歸途 (Matching index.html)
          ========================================================================= -->
-    <div class="a5-page">
-      <div class="page-header">
-        <span class="page-header-title">DAY 11 & DAY 12</span>
-        <span>海灣古城 · 貴族莊園</span>
-      </div>
-
-      <div class="page-content">
-        <!-- DAY 11 -->
-        <div class="galilee-split-day-block">
-          <div class="galilee-day-header">
-            <div class="galilee-day-number">DAY 11</div>
-            <div class="galilee-day-heading-col">
-              <h2 class="galilee-day-route-title">濱海自由城 Villefranche-sur-Mer 半日海灣慢遊</h2>
-              <div class="galilee-day-sub-bar">
-                <span class="galilee-day-date">10/25（日）</span>
-                <span class="galilee-day-base">【尼斯 · 連住 5 晚（第 3 晚）· AC Hotel Nice】</span>
-              </div>
-            </div>
-          </div>
-          <div class="galilee-timeline-wrap">
-            <div class="galilee-timeline-track"></div>
-            <div class="galilee-timeline-nodes">
-              <div class="galilee-timeline-node">
-                <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
-                    <path
-                      d="M12 2c-4.4 0-8 .6-8 4v10a3 3 0 0 0 3 3l-1.5 1.5V21h13v-.5L17 19a3 3 0 0 0 3-3V6c0-3.4-3.6-4-8-4zm-6 4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v4H6V6zm2 10a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm8 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
-                  </svg></div>
-                <div class="galilee-t-time">09:45</div>
-                <div class="galilee-t-label">Nice-Ville</div>
-                <div class="galilee-t-dur">搭 TER 火車</div>
-              </div>
-              <div class="galilee-timeline-node">
-                <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2" />
-                    <circle cx="12" cy="12" r="4" fill="#000" />
-                  </svg></div>
-                <div class="galilee-t-time">10:00</div>
-                <div class="galilee-t-label">抵自由城</div>
-                <div class="galilee-t-dur">僅約 7 分鐘</div>
-              </div>
-              <div class="galilee-timeline-node">
-                <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2" />
-                    <circle cx="12" cy="12" r="4" fill="#000" />
-                  </svg></div>
-                <div class="galilee-t-time">10:30</div>
-                <div class="galilee-t-label">彩色海灣</div>
-                <div class="galilee-t-dur">懸崖俯瞰絕景</div>
-              </div>
-              <div class="galilee-timeline-node">
-                <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
-                    <path
-                      d="M11 2v9a2 2 0 0 1-2 2H8v9H6v-9H5a2 2 0 0 1-2-2V2h2v6h1V2h2v6h1V2h1zm7 0a4 4 0 0 1 4 4v5a2 2 0 0 1-2 2h-1v9h-2v-9h-1a2 2 0 0 1-2-2V6a4 4 0 0 1 4-4z" />
-                  </svg></div>
-                <div class="galilee-t-time">12:30</div>
-                <div class="galilee-t-label">海景午餐</div>
-                <div class="galilee-t-dur">Mayssa Beach</div>
-              </div>
-              <div class="galilee-timeline-node">
-                <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2" />
-                    <circle cx="12" cy="12" r="4" fill="#000" />
-                  </svg></div>
-                <div class="galilee-t-time">14:00</div>
-                <div class="galilee-t-label">城堡花園</div>
-                <div class="galilee-t-dur">樹蔭臨海小憩</div>
-              </div>
-              <div class="galilee-timeline-node">
-                <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
-                    <path
-                      d="M12 2c-4.4 0-8 .6-8 4v10a3 3 0 0 0 3 3l-1.5 1.5V21h13v-.5L17 19a3 3 0 0 0 3-3V6c0-3.4-3.6-4-8-4zm-6 4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v4H6V6zm2 10a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm8 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
-                  </svg></div>
-                <div class="galilee-t-time">15:00</div>
-                <div class="galilee-t-label">返抵尼斯</div>
-                <div class="galilee-t-dur">享受自由留白</div>
-              </div>
-            </div>
-          </div>
-          <div class="galilee-split-content">
-            <img src="villefranche.webp" alt="Villefranche-sur-Mer 海灣與彩色老屋">
-            <div class="galilee-split-text">
-              上午由 Nice-Ville 搭乘 TER 區間火車，僅約 7 分鐘即達
-              Villefranche-sur-Mer，避開迂迴公車與顛簸山路。出站即可俯瞰半圓形蔚藍海灣與彩色老城石屋，是蔚藍海岸最迷人的經典全景。沿平緩濱海小徑漫步至海灣碼頭，於臨海餐館（如 Mayssa Beach 或
-              La Mère Germaine）享用普羅旺斯海鮮午餐。午後順訪「濱海城堡花園」樹蔭小憩，搭火車輕鬆回尼斯，下午享有完整自由休憩時光。
-            </div>
-          </div>
-
-          <div class="galilee-spec-footer">
-            <div class="galilee-spec-cell">
-              <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                <path
-                  d="M12 4a2 2 0 0 0-2 2h4a2 2 0 0 0-2-2zM3 17h18a1 1 0 0 1 1 1v1H2v-1a1 1 0 0 1 1-1zm1-2a8 8 0 0 1 16 0H4z" />
-              </svg>
-              <div class="galilee-spec-body">
-                <div><strong>早餐：</strong>飯店內美式自助</div>
-                <div><strong>午餐：</strong>Mayssa Beach 臨海景觀普羅旺斯海鮮午宴</div>
-                <div><strong>晚餐：</strong>尼斯舊城特色餐館地中海料理</div>
-              </div>
-            </div>
-            <div class="galilee-spec-cell">
-              <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                <path
-                  d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 7h2M9 11h2M9 15h2M13 7h2M13 11h2M13 15h2" />
-              </svg>
-              <div class="galilee-spec-body">
-                <div>AC Hotel Nice 海景飯店（連住第 3 晚）</div>
-              </div>
-            </div>
-            <div class="galilee-spec-cell">
-              <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                <rect x="3" y="5" width="18" height="14" rx="2" />
-                <path d="M3 7l9 6 9-6" />
-                <polygon points="12,11 13.5,14 17,14.5 14.5,17 15,20.5 12,18.8 9,20.5 9.5,17 7,14.5 10.5,14"
-                  fill="#b8862d" stroke="none" />
-              </svg>
-              <div class="galilee-spec-body">
-                <div><strong>【團費包含】</strong>★TER 區間景觀火車來回票、★PASS SUD AZUR 通票。</div>
-              </div>
-            </div>
-          </div>
+      <div class="a5-page">
+        <div class="page-header">
+          <span class="page-header-title">DAY 14–15 · RETURN HOME</span>
+          <span>尼斯 ➔ 杜拜 ➔ 台北平安歸途</span>
         </div>
 
-        <!-- DAY 12 -->
-        <div class="galilee-split-day-block" style="margin-bottom:0; padding-bottom:0; border-bottom:none;">
+        <div class="page-content">
           <div class="galilee-day-header">
-            <div class="galilee-day-number">DAY 12</div>
+            <div class="galilee-day-number">14-15</div>
             <div class="galilee-day-heading-col">
-              <h2 class="galilee-day-route-title">費拉角貴族莊園：羅斯柴爾德花園別墅與聖讓港</h2>
+              <h2 class="galilee-day-route-title">尼斯蔚藍海岸機場（NCE）➔ 杜拜（DXB）➔ 台北桃園（TPE）平安歸途</h2>
               <div class="galilee-day-sub-bar">
-                <span class="galilee-day-date">10/26（一）</span>
-                <span class="galilee-day-base">【尼斯 · 連住 5 晚（第 4 晚）· AC Hotel Nice】</span>
+                <span class="galilee-day-date">10/28（三）– 10/29（四）</span>
+                <span class="galilee-day-base">【阿聯酋航空 EK078 ➔ EK366 · 機上／溫暖的家】</span>
               </div>
             </div>
           </div>
+
           <div class="galilee-timeline-wrap">
             <div class="galilee-timeline-track"></div>
             <div class="galilee-timeline-nodes">
-              <div class="galilee-timeline-node">
-                <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
-                    <path
-                      d="M4 16V6a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v10a2 2 0 0 1-2 2v2a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-2H9v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-2a2 2 0 0 1-2-2zm2-8h12V6a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v2zm0 2v4h12v-4H6zm1.5 5.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm11 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
-                  </svg></div>
-                <div class="galilee-t-time">09:30</div>
-                <div class="galilee-t-label">輕軌轉公車</div>
-                <div class="galilee-t-dur">Port Lympia 轉乘</div>
-              </div>
-              <div class="galilee-timeline-node">
-                <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2" />
-                    <circle cx="12" cy="12" r="4" fill="#000" />
-                  </svg></div>
-                <div class="galilee-t-time">10:15</div>
-                <div class="galilee-t-label">直達門口</div>
-                <div class="galilee-t-dur">Passable 站</div>
-              </div>
-              <div class="galilee-timeline-node">
-                <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2" />
-                    <circle cx="12" cy="12" r="4" fill="#000" />
-                  </svg></div>
-                <div class="galilee-t-time">10:30</div>
-                <div class="galilee-t-label">粉紅宮殿</div>
-                <div class="galilee-t-dur">音樂噴泉演出</div>
-              </div>
-              <div class="galilee-timeline-node">
-                <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2" />
-                    <circle cx="12" cy="12" r="4" fill="#000" />
-                  </svg></div>
-                <div class="galilee-t-time">11:30</div>
-                <div class="galilee-t-label">九大主題花園</div>
-                <div class="galilee-t-dur">三面環海全景</div>
-              </div>
-              <div class="galilee-timeline-node">
-                <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
-                    <path
-                      d="M11 2v9a2 2 0 0 1-2 2H8v9H6v-9H5a2 2 0 0 1-2-2V2h2v6h1V2h2v6h1V2h1zm7 0a4 4 0 0 1 4 4v5a2 2 0 0 1-2 2h-1v9h-2v-9h-1a2 2 0 0 1-2-2V6a4 4 0 0 1 4-4z" />
-                  </svg></div>
-                <div class="galilee-t-time">12:30</div>
-                <div class="galilee-t-label">莊園茶沙龍</div>
-                <div class="galilee-t-dur">海景精緻午茶</div>
-              </div>
-              <div class="galilee-timeline-node">
-                <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2" />
-                    <circle cx="12" cy="12" r="4" fill="#000" />
-                  </svg></div>
-                <div class="galilee-t-time">14:30</div>
-                <div class="galilee-t-label">聖讓港漫步</div>
-                <div class="galilee-t-dur">悠然港灣氣息</div>
-              </div>
               <div class="galilee-timeline-node">
                 <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
                     <path d="M19 7h-8v8H3V5H1v15h2v-3h18v3h2v-9a4 4 0 0 0-4-4zm-12 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
                   </svg></div>
-                <div class="galilee-t-time">16:30</div>
-                <div class="galilee-t-label">返回尼斯</div>
-                <div class="galilee-t-dur">精選主廚晚宴</div>
+                <div class="galilee-t-time">10:30</div>
+                <div class="galilee-t-label">退房出發</div>
+                <div class="galilee-t-dur">輕軌/車至 NCE T2</div>
+              </div>
+              <div class="galilee-timeline-node">
+                <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2" />
+                    <circle cx="12" cy="12" r="4" fill="#000" />
+                  </svg></div>
+                <div class="galilee-t-time">11:00</div>
+                <div class="galilee-t-label">PABLO 退稅</div>
+                <div class="galilee-t-dur">機台掃描感應</div>
+              </div>
+              <div class="galilee-timeline-node">
+                <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
+                    <path
+                      d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
+                  </svg></div>
+                <div class="galilee-t-time">11:30</div>
+                <div class="galilee-t-label">阿聯酋開櫃</div>
+                <div class="galilee-t-dur">託運 25kg 行李</div>
+              </div>
+              <div class="galilee-timeline-node">
+                <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
+                    <path
+                      d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
+                  </svg></div>
+                <div class="galilee-t-time">14:30</div>
+                <div class="galilee-t-label">EK078 起飛</div>
+                <div class="galilee-t-dur">飛往杜拜國際機場</div>
+              </div>
+              <div class="galilee-timeline-node">
+                <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2" />
+                    <circle cx="12" cy="12" r="4" fill="#000" />
+                  </svg></div>
+                <div class="galilee-t-time">23:35</div>
+                <div class="galilee-t-label">抵杜拜 T3</div>
+                <div class="galilee-t-dur">舒適轉機約 4 小時</div>
+              </div>
+              <div class="galilee-timeline-node">
+                <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
+                    <path
+                      d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
+                  </svg></div>
+                <div class="galilee-t-time">03:40</div>
+                <div class="galilee-t-label">EK366 飛台北</div>
+                <div class="galilee-t-dur">10/29 萬里返航</div>
+              </div>
+              <div class="galilee-timeline-node">
+                <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2" />
+                    <circle cx="12" cy="12" r="4" fill="#000" />
+                  </svg></div>
+                <div class="galilee-t-time">15:35</div>
+                <div class="galilee-t-label">返抵桃園 T2</div>
+                <div class="galilee-t-dur">圓滿結束精彩旅程</div>
               </div>
             </div>
           </div>
-          <div class="galilee-split-content">
-            <img src="day12-villa-rothschild.webp" alt="羅斯柴爾德伯爵別墅與九大花園">
-            <div class="galilee-split-text">
-              搭乘輕軌 L2 至 Port Lympia 轉乘公車前往億萬富豪半島 Saint-Jean-Cap-Ferrat，於「Passable / Rothschild」站直達門口。參觀奢華粉紅宮殿「Villa
-              Ephrussi de
-              Rothschild」，欣賞華美宅邸與隨古典樂起舞的音樂噴泉。漫步法式、日式、西班牙等九大主題花園，三面環海視野極為壯麗。中午於莊園海景茶沙龍悠閒午餐或下午茶；午後順訪寧靜小巧的「聖讓港」感受蔚藍氣息後返回尼斯。
+
+          <!-- 放大橫幅照片展示 (56mm 高度) -->
+          <div class="galilee-photo-hero">
+            <img src="day14-nice-departure.webp" alt="告別蔚藍海岸，午後從尼斯起飛">
+          </div>
+
+          <div style="font-size: 8.2pt; line-height: 1.42; color: #222; margin-bottom: 2mm; text-align: justify;">
+            <strong>★ 告別蔚藍海岸與 PABLO 電子退稅：</strong>上午於飯店悠閒享用早餐，10:30 搭乘計程車或輕軌 L2 直達尼斯機場第二航廈（Terminal 2，約 15 分鐘車程）。前往海關
+            PABLO 機台感應退稅條碼完成驗證，隨後至阿聯酋航空櫃檯託運行李並領取登機證。<br>
+            <strong>★ 飛航杜拜平安返抵國門：</strong>14:30 搭乘阿聯酋航空 EK078 飛往杜拜（DXB），23:35 抵達 Terminal 3 舒適轉機。10/29 03:40 轉搭 EK366
+            航班，於台灣時間 10/29（四）15:35 順利返抵台北桃園機場第二航廈，圓滿結束 15 天奢華慢活之旅！
+          </div>
+
+          <!-- 歸途重要提醒 -->
+          <div class="galilee-sub-feature-box">
+            <div class="galilee-sub-feature-title">
+              <span>✈️</span> 歸途貼心提醒（Au revoir, Côte d'Azur!）
             </div>
+            <div>• 歐盟境內購買之退稅物品（香氛、精品、特產），請於託運前至機場海關 PABLO 電子驗證機感應退稅單條碼。<br>
+              • 機上長途飛行請多補充水分、定時活動伸展雙腿，安度舒適平穩的萬里歸途。</div>
           </div>
 
           <div class="galilee-spec-footer">
@@ -3300,8 +3696,8 @@
               </svg>
               <div class="galilee-spec-body">
                 <div><strong>早餐：</strong>飯店內美式自助</div>
-                <div><strong>午餐：</strong>羅斯柴爾德莊園海景茶沙龍精緻輕食午宴</div>
-                <div><strong>晚餐：</strong>尼斯地中海風味晚宴</div>
+                <div><strong>午餐：</strong>機場貴賓室 / 機上精緻美饌</div>
+                <div><strong>晚餐：</strong>阿聯酋航空夜航精選晚宴</div>
               </div>
             </div>
             <div class="galilee-spec-cell">
@@ -3310,7 +3706,7 @@
                   d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 7h2M9 11h2M9 15h2M13 7h2M13 11h2M13 15h2" />
               </svg>
               <div class="galilee-spec-body">
-                <div>AC Hotel Nice 海景飯店（連住第 4 晚）</div>
+                <div>豪華客機夜宿機上 / 溫暖的家</div>
               </div>
             </div>
             <div class="galilee-spec-cell">
@@ -3321,687 +3717,384 @@
                   fill="#b8862d" stroke="none" />
               </svg>
               <div class="galilee-spec-body">
-                <div><strong>【團費包含】</strong>★羅斯柴爾德花園別墅入場門票（含語音導覽與音樂噴泉演出）。</div>
+                <div><strong>【團費包含】</strong>★阿聯酋航空國際機票（含 25kg 託運行李）、★尼斯機場接送與退稅協助。</div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="page-footer">
-        <span class="page-footer-brand">TRAVEL EURO · 隨身慢活手冊</span>
-        <span class="page-footer-num">14</span>
-      </div>
-    </div>
-    <!-- =========================================================================
-         PAGE 15: DAY 13 · 尼斯最後慢活日 (Enlarged Photos Layout)
-         ========================================================================= -->
-    <div class="a5-page">
-      <div class="page-header">
-        <span class="page-header-title">DAY 13 · NICE SLOW LIVING</span>
-        <span>尼斯最後慢活日</span>
-      </div>
-
-      <div class="page-content">
-        <div class="galilee-day-header">
-          <div class="galilee-day-number">DAY 13</div>
-          <div class="galilee-day-heading-col">
-            <h2 class="galilee-day-route-title">尼斯最後慢活日：盎格魯大道藍椅漫步＋舊城香氛採買＋提早整理行李</h2>
-            <div class="galilee-day-sub-bar">
-              <span class="galilee-day-date">10/27（二）</span>
-              <span class="galilee-day-base">【尼斯 · 連住 5 晚（第 5 晚）· AC Hotel Nice】</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="galilee-timeline-wrap">
-          <div class="galilee-timeline-track"></div>
-          <div class="galilee-timeline-nodes">
-            <div class="galilee-timeline-node">
-              <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
-                  <circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2" />
-                  <circle cx="12" cy="12" r="4" fill="#000" />
-                </svg></div>
-              <div class="galilee-t-time">09:30</div>
-              <div class="galilee-t-label">盎格魯大道</div>
-              <div class="galilee-t-dur">藍色座椅放空</div>
-            </div>
-            <div class="galilee-timeline-node">
-              <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
-                  <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4H6zm10 8a4 4 0 0 1-8 0" />
-                </svg></div>
-              <div class="galilee-t-time">10:30</div>
-              <div class="galilee-t-label">馬賽納廣場</div>
-              <div class="galilee-t-dur">花宮娜香氛採買</div>
-            </div>
-            <div class="galilee-timeline-node">
-              <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
-                  <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4H6zm10 8a4 4 0 0 1-8 0" />
-                </svg></div>
-              <div class="galilee-t-time">11:30</div>
-              <div class="galilee-t-label">特產伴手禮</div>
-              <div class="galilee-t-dur">A L'Olivier 橄欖油</div>
-            </div>
-            <div class="galilee-timeline-node">
-              <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
-                  <path
-                    d="M11 2v9a2 2 0 0 1-2 2H8v9H6v-9H5a2 2 0 0 1-2-2V2h2v6h1V2h2v6h1V2h1zm7 0a4 4 0 0 1 4 4v5a2 2 0 0 1-2 2h-1v9h-2v-9h-1a2 2 0 0 1-2-2V6a4 4 0 0 1 4-4z" />
-                </svg></div>
-              <div class="galilee-t-time">12:30</div>
-              <div class="galilee-t-label">海濱午餐</div>
-              <div class="galilee-t-dur">露天南法美饌</div>
-            </div>
-            <div class="galilee-timeline-node">
-              <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
-                  <path d="M19 7h-8v8H3V5H1v15h2v-3h18v3h2v-9a4 4 0 0 0-4-4zm-12 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                </svg></div>
-              <div class="galilee-t-time">14:30</div>
-              <div class="galilee-t-label">飯店小憩整理</div>
-              <div class="galilee-t-dur">提前打包免慌亂</div>
-            </div>
-            <div class="galilee-timeline-node">
-              <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
-                  <circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2" />
-                  <circle cx="12" cy="12" r="4" fill="#000" />
-                </svg></div>
-              <div class="galilee-t-time">17:30</div>
-              <div class="galilee-t-label">天使灣夕陽</div>
-              <div class="galilee-t-dur">海景露台最後金黃</div>
-            </div>
-            <div class="galilee-timeline-node">
-              <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
-                  <path
-                    d="M11 2v9a2 2 0 0 1-2 2H8v9H6v-9H5a2 2 0 0 1-2-2V2h2v6h1V2h2v6h1V2h1zm7 0a4 4 0 0 1 4 4v5a2 2 0 0 1-2 2h-1v9h-2v-9h-1a2 2 0 0 1-2-2V6a4 4 0 0 1 4-4z" />
-                </svg></div>
-              <div class="galilee-t-time">19:00</div>
-              <div class="galilee-t-label">惜別晚宴</div>
-              <div class="galilee-t-dur">蔚藍海岸海鮮盛宴</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 顯著放大照片排版 (53mm 高度) -->
-        <div class="galilee-photo-grid-2">
-          <div class="galilee-photo-item">
-            <img src="nice-promenade.webp" alt="英國人散步大道的最後一個黃昏">
-            <div class="galilee-spot-heading">
-              <span>★ 盎格魯大道藍色座椅與漫步</span>
-              <span class="en">Promenade des Anglais</span>
-            </div>
-            <div class="galilee-spot-desc">
-              早餐後按照自己的舒服節奏出發，坐在 Promenade des Anglais 標誌性的藍色座椅（Chaises Bleues）吹海風放空，看地中海浪花拍岸，品味南法無拘無束的悠然步調與純淨陽光。
-            </div>
-          </div>
-
-          <div class="galilee-photo-item">
-            <img src="day13-nice-shopping.webp" alt="舊城採買香氛與南法紀念品">
-            <div class="galilee-spot-heading">
-              <span>▲ 舊城香氛採買與提早打包</span>
-              <span class="en">Fragonard & Packaging</span>
-            </div>
-            <div class="galilee-spot-desc">
-              漫步馬賽納廣場周邊或舊城，採買正宗南法花宮娜香氛（Fragonard）、薰衣草手工皂與 A L'Olivier 特產橄欖油。午後回飯店小憩並提前打包行李免退房慌亂，傍晚在露台欣賞染金天使灣夕陽。
-            </div>
-          </div>
-        </div>
-
-        <!-- 伴手禮指南 -->
-        <div class="galilee-sub-feature-box">
-          <div class="galilee-sub-feature-title">
-            <span>🎁</span> 南法必買香氛與橄欖油伴手禮精選
-          </div>
-          <div>格拉斯花宮娜香氛系列、馬賽天然純植物薰衣草香皂、百年名店 A L'Olivier 頂級初榨橄欖油；飯店房內從容打包，無後顧之憂享受最後蔚藍之夜。</div>
-        </div>
-
-        <div class="galilee-spec-footer">
-          <div class="galilee-spec-cell">
-            <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-              <path
-                d="M12 4a2 2 0 0 0-2 2h4a2 2 0 0 0-2-2zM3 17h18a1 1 0 0 1 1 1v1H2v-1a1 1 0 0 1 1-1zm1-2a8 8 0 0 1 16 0H4z" />
-            </svg>
-            <div class="galilee-spec-body">
-              <div><strong>早餐：</strong>飯店內美式自助</div>
-              <div><strong>午餐：</strong>尼斯舊城露天餐館普羅旺斯燉菜與燉海鮮</div>
-              <div><strong>晚餐：</strong>尼斯蔚藍海岸惜別海鮮盛宴</div>
-            </div>
-          </div>
-          <div class="galilee-spec-cell">
-            <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-              <path d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 7h2M9 11h2M9 15h2M13 7h2M13 11h2M13 15h2" />
-            </svg>
-            <div class="galilee-spec-body">
-              <div>AC Hotel Nice 海景飯店（連住第 5 晚）</div>
-            </div>
-          </div>
-          <div class="galilee-spec-cell">
-            <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-              <rect x="3" y="5" width="18" height="14" rx="2" />
-              <path d="M3 7l9 6 9-6" />
-              <polygon points="12,11 13.5,14 17,14.5 14.5,17 15,20.5 12,18.8 9,20.5 9.5,17 7,14.5 10.5,14"
-                fill="#b8862d" stroke="none" />
-            </svg>
-            <div class="galilee-spec-body">
-              <div><strong>【團費包含】</strong>★市區輕軌電車乘車票、★花宮娜與特產伴手禮專屬折扣安排。</div>
-            </div>
-          </div>
+        <div class="page-footer">
+          <span class="page-footer-brand">TRAVEL EURO · 隨身慢活手冊</span>
+          <span class="page-footer-num">16</span>
         </div>
       </div>
-
-      <div class="page-footer">
-        <span class="page-footer-brand">TRAVEL EURO · 隨身慢活手冊</span>
-        <span class="page-footer-num">15</span>
-      </div>
-    </div>
-    <!-- =========================================================================
-         PAGE 16: DAY 14–15 · 平安歸途 (Matching index.html)
-         ========================================================================= -->
-    <div class="a5-page">
-      <div class="page-header">
-        <span class="page-header-title">DAY 14–15 · RETURN HOME</span>
-        <span>尼斯 ➔ 杜拜 ➔ 台北平安歸途</span>
-      </div>
-
-      <div class="page-content">
-        <div class="galilee-day-header">
-          <div class="galilee-day-number">14-15</div>
-          <div class="galilee-day-heading-col">
-            <h2 class="galilee-day-route-title">尼斯蔚藍海岸機場（NCE）➔ 杜拜（DXB）➔ 台北桃園（TPE）平安歸途</h2>
-            <div class="galilee-day-sub-bar">
-              <span class="galilee-day-date">10/28（三）– 10/29（四）</span>
-              <span class="galilee-day-base">【阿聯酋航空 EK078 ➔ EK366 · 機上／溫暖的家】</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="galilee-timeline-wrap">
-          <div class="galilee-timeline-track"></div>
-          <div class="galilee-timeline-nodes">
-            <div class="galilee-timeline-node">
-              <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
-                  <path d="M19 7h-8v8H3V5H1v15h2v-3h18v3h2v-9a4 4 0 0 0-4-4zm-12 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                </svg></div>
-              <div class="galilee-t-time">10:30</div>
-              <div class="galilee-t-label">退房出發</div>
-              <div class="galilee-t-dur">輕軌/車至 NCE T2</div>
-            </div>
-            <div class="galilee-timeline-node">
-              <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
-                  <circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2" />
-                  <circle cx="12" cy="12" r="4" fill="#000" />
-                </svg></div>
-              <div class="galilee-t-time">11:00</div>
-              <div class="galilee-t-label">PABLO 退稅</div>
-              <div class="galilee-t-dur">機台掃描感應</div>
-            </div>
-            <div class="galilee-timeline-node">
-              <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
-                  <path
-                    d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
-                </svg></div>
-              <div class="galilee-t-time">11:30</div>
-              <div class="galilee-t-label">阿聯酋開櫃</div>
-              <div class="galilee-t-dur">託運 25kg 行李</div>
-            </div>
-            <div class="galilee-timeline-node">
-              <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
-                  <path
-                    d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
-                </svg></div>
-              <div class="galilee-t-time">14:30</div>
-              <div class="galilee-t-label">EK078 起飛</div>
-              <div class="galilee-t-dur">飛往杜拜國際機場</div>
-            </div>
-            <div class="galilee-timeline-node">
-              <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
-                  <circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2" />
-                  <circle cx="12" cy="12" r="4" fill="#000" />
-                </svg></div>
-              <div class="galilee-t-time">23:35</div>
-              <div class="galilee-t-label">抵杜拜 T3</div>
-              <div class="galilee-t-dur">舒適轉機約 4 小時</div>
-            </div>
-            <div class="galilee-timeline-node">
-              <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
-                  <path
-                    d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
-                </svg></div>
-              <div class="galilee-t-time">03:40</div>
-              <div class="galilee-t-label">EK366 飛台北</div>
-              <div class="galilee-t-dur">10/29 萬里返航</div>
-            </div>
-            <div class="galilee-timeline-node">
-              <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
-                  <circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2" />
-                  <circle cx="12" cy="12" r="4" fill="#000" />
-                </svg></div>
-              <div class="galilee-t-time">15:35</div>
-              <div class="galilee-t-label">返抵桃園 T2</div>
-              <div class="galilee-t-dur">圓滿結束精彩旅程</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 放大橫幅照片展示 (56mm 高度) -->
-        <div class="galilee-photo-hero">
-          <img src="day14-nice-departure.webp" alt="告別蔚藍海岸，午後從尼斯起飛">
-        </div>
-
-        <div style="font-size: 6.4pt; line-height: 1.48; color: #333; margin-bottom: 2mm; text-align: justify;">
-          <strong>★ 告別蔚藍海岸與 PABLO 電子退稅：</strong>上午於飯店悠閒享用早餐，10:30 搭乘計程車或輕軌 L2 直達尼斯機場第二航廈（Terminal 2，約 15 分鐘車程）。前往海關
-          PABLO 機台感應退稅條碼完成驗證，隨後至阿聯酋航空櫃檯託運行李並領取登機證。<br>
-          <strong>★ 飛航杜拜平安返抵國門：</strong>14:30 搭乘阿聯酋航空 EK078 飛往杜拜（DXB），23:35 抵達 Terminal 3 舒適轉機。10/29 03:40 轉搭 EK366
-          航班，於台灣時間 10/29（四）15:35 順利返抵台北桃園機場第二航廈，圓滿結束 15 天奢華慢活之旅！
-        </div>
-
-        <!-- 歸途重要提醒 -->
-        <div class="galilee-sub-feature-box">
-          <div class="galilee-sub-feature-title">
-            <span>✈️</span> 歸途貼心提醒（Au revoir, Côte d'Azur!）
-          </div>
-          <div>• 歐盟境內購買之退稅物品（香氛、精品、特產），請於託運前至機場海關 PABLO 電子驗證機感應退稅單條碼。<br>
-            • 機上長途飛行請多補充水分、定時活動伸展雙腿，安度舒適平穩的萬里歸途。</div>
-        </div>
-
-        <div class="galilee-spec-footer">
-          <div class="galilee-spec-cell">
-            <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-              <path
-                d="M12 4a2 2 0 0 0-2 2h4a2 2 0 0 0-2-2zM3 17h18a1 1 0 0 1 1 1v1H2v-1a1 1 0 0 1 1-1zm1-2a8 8 0 0 1 16 0H4z" />
-            </svg>
-            <div class="galilee-spec-body">
-              <div><strong>早餐：</strong>飯店內美式自助</div>
-              <div><strong>午餐：</strong>機場貴賓室 / 機上精緻美饌</div>
-              <div><strong>晚餐：</strong>阿聯酋航空夜航精選晚宴</div>
-            </div>
-          </div>
-          <div class="galilee-spec-cell">
-            <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-              <path d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 7h2M9 11h2M9 15h2M13 7h2M13 11h2M13 15h2" />
-            </svg>
-            <div class="galilee-spec-body">
-              <div>豪華客機夜宿機上 / 溫暖的家</div>
-            </div>
-          </div>
-          <div class="galilee-spec-cell">
-            <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-              <rect x="3" y="5" width="18" height="14" rx="2" />
-              <path d="M3 7l9 6 9-6" />
-              <polygon points="12,11 13.5,14 17,14.5 14.5,17 15,20.5 12,18.8 9,20.5 9.5,17 7,14.5 10.5,14"
-                fill="#b8862d" stroke="none" />
-            </svg>
-            <div class="galilee-spec-body">
-              <div><strong>【團費包含】</strong>★阿聯酋航空國際機票（含 25kg 託運行李）、★尼斯機場接送與退稅協助。</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="page-footer">
-        <span class="page-footer-brand">TRAVEL EURO · 隨身慢活手冊</span>
-        <span class="page-footer-num">16</span>
-      </div>
-    </div>
-    <!-- =========================================================================
+      <!-- =========================================================================
          PAGE 17: 實用義大利語與法語日常對照卡 & 退稅 3 步驟
          ========================================================================= -->
-    <div class="a5-page">
-      <div class="page-header">
-        <span class="page-header-title">TRAVEL ESSENTIALS</span>
-        <span>實用義法日常詞彙 · 退稅步驟</span>
-      </div>
-
-      <div class="page-content">
-        <div
-          style="font-family: 'Noto Serif TC', serif; font-size: 11pt; font-weight: 700; color: var(--galilee-green); margin-bottom: 0.5mm;">
-          實用義大利語與法語日常對照卡
-        </div>
-        <div style="font-size: 6.3pt; color: #555; margin-bottom: 2mm;">
-          手指即可溝通 · 隨身必備實用禮貌問候與用餐單字
+      <div class="a5-page">
+        <div class="page-header">
+          <span class="page-header-title">TRAVEL ESSENTIALS</span>
+          <span>實用義法日常詞彙 · 退稅步驟</span>
         </div>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3.5mm; margin-bottom: 3.5mm;">
+        <div class="page-content">
           <div
-            style="background: #faf8f5; border: 1.5px solid #d6a34a; border-radius: 5px; padding: 3.5mm 4mm; font-size: 8.2pt; line-height: 1.62; color: #1a202c;">
+            style="font-family: 'Noto Serif TC', serif; font-size: 13pt; font-weight: 700; color: var(--galilee-green); margin-bottom: 0.5mm;">
+            實用義大利語與法語日常對照卡
+          </div>
+          <div style="font-size: 7.8pt; color: #555; margin-bottom: 2mm;">
+            手指即可溝通 · 隨身必備實用禮貌問候與用餐單字
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3.5mm; margin-bottom: 3.5mm;">
             <div
-              style="font-weight: 700; color: var(--galilee-green); font-size: 9pt; margin-bottom: 1.2mm; border-bottom: 1.5px solid #ebd9b6; padding-bottom: 0.8mm;">
-              🇮🇹 實用義大利語 (Italiano · 指給店員看)
+              style="background: #faf8f5; border: 1.5px solid #d6a34a; border-radius: 5px; padding: 3.5mm 4mm; font-size: 8.2pt; line-height: 1.62; color: #1a202c;">
+              <div
+                style="font-weight: 700; color: var(--galilee-green); font-size: 9pt; margin-bottom: 1.2mm; border-bottom: 1.5px solid #ebd9b6; padding-bottom: 0.8mm;">
+                🇮🇹 實用義大利語 (Italiano · 指給店員看)
+              </div>
+              <div>• 你好 / 再見：<strong style="color: var(--galilee-green-dark); font-size: 8.8pt;">Ciao!</strong> /
+                <strong style="color: var(--galilee-green-dark); font-size: 8.8pt;">Buongiorno!</strong></div>
+              <div>• 晚安：<strong style="color: var(--galilee-green-dark);">Buonasera!</strong></div>
+              <div>• 請 / 拜託：<strong style="color: var(--galilee-green-dark);">Per favore</strong></div>
+              <div>• 謝謝：<strong style="color: var(--galilee-green-dark);">Grazie!</strong> (非常感謝：Grazie mille)</div>
+              <div>• 不好意思：<strong style="color: var(--galilee-green-dark);">Scusi / Mi scusi</strong></div>
+              <div>• 洗手間在哪？：<strong style="color: #b8862d; font-size: 8.8pt;">Dov'è il bagno?</strong></div>
+              <div>• 買單結帳：<strong style="color: #b8862d; font-size: 8.8pt;">Il conto, per favore.</strong></div>
+              <div>• 水（無氣泡/氣泡）：<strong>Naturale / Frizzante</strong></div>
             </div>
-            <div>• 你好 / 再見：<strong style="color: var(--galilee-green-dark); font-size: 8.8pt;">Ciao!</strong> / <strong style="color: var(--galilee-green-dark); font-size: 8.8pt;">Buongiorno!</strong></div>
-            <div>• 晚安：<strong style="color: var(--galilee-green-dark);">Buonasera!</strong></div>
-            <div>• 請 / 拜託：<strong style="color: var(--galilee-green-dark);">Per favore</strong></div>
-            <div>• 謝謝：<strong style="color: var(--galilee-green-dark);">Grazie!</strong> (非常感謝：Grazie mille)</div>
-            <div>• 不好意思：<strong style="color: var(--galilee-green-dark);">Scusi / Mi scusi</strong></div>
-            <div>• 洗手間在哪？：<strong style="color: #b8862d; font-size: 8.8pt;">Dov'è il bagno?</strong></div>
-            <div>• 買單結帳：<strong style="color: #b8862d; font-size: 8.8pt;">Il conto, per favore.</strong></div>
-            <div>• 水（無氣泡/氣泡）：<strong>Naturale / Frizzante</strong></div>
+
+            <div
+              style="background: #faf8f5; border: 1.5px solid #d6a34a; border-radius: 5px; padding: 3.5mm 4mm; font-size: 8.2pt; line-height: 1.62; color: #1a202c;">
+              <div
+                style="font-weight: 700; color: var(--galilee-green); font-size: 9pt; margin-bottom: 1.2mm; border-bottom: 1.5px solid #ebd9b6; padding-bottom: 0.8mm;">
+                🇫🇷 實用法語 (Français · 指給店員看)
+              </div>
+              <div>• 您好：<strong style="color: var(--galilee-green-dark); font-size: 8.8pt;">Bonjour!</strong> (進商店必說問候)
+              </div>
+              <div>• 晚安：<strong style="color: var(--galilee-green-dark);">Bonsoir!</strong></div>
+              <div>• 請：<strong style="color: var(--galilee-green-dark);">S'il vous plaît</strong></div>
+              <div>• 謝謝：<strong style="color: var(--galilee-green-dark);">Merci!</strong> (非常感謝：Merci beaucoup)</div>
+              <div>• 不好意思：<strong style="color: var(--galilee-green-dark);">Pardon / Excusez-moi</strong></div>
+              <div>• 洗手間在哪？：<strong style="color: #b8862d; font-size: 8.8pt;">Où sont les toilettes?</strong></div>
+              <div>• 買單結帳：<strong style="color: #b8862d; font-size: 8.8pt;">L'addition, s'il vous plaît.</strong></div>
+              <div>• 自來水/氣泡水：<strong>Une carafe d'eau / Gazeuse</strong></div>
+            </div>
+          </div>
+
+          <!-- 歐盟與法國 PABLO 退稅 3 步驟 · 熟齡大字版 -->
+          <div style="font-weight: 700; color: var(--galilee-green); font-size: 8.5pt; margin-bottom: 1.5mm;">
+            💶 法國與歐盟 PABLO 電子退稅 3 步驟指南
+          </div>
+          <div
+            style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2.8mm; margin-bottom: 2.8mm; font-size: 7.2pt; line-height: 1.48; color: #1a202c;">
+            <div style="background: #fff; border: 1px solid #cbd5e1; border-radius: 4px; padding: 2.8mm 3mm;">
+              <div style="font-weight: 700; color: var(--galilee-green); font-size: 7.8pt; margin-bottom: 0.8mm;">步驟
+                1：索取退稅單</div>
+              <div>同一店家單日消費滿 <strong>€100.01</strong> 即可退稅。結帳時出示護照，索取含 PABLO 條碼之正式退稅單。</div>
+            </div>
+            <div style="background: #fff; border: 1px solid #cbd5e1; border-radius: 4px; padding: 2.8mm 3mm;">
+              <div style="font-weight: 700; color: var(--galilee-green); font-size: 7.8pt; margin-bottom: 0.8mm;">步驟
+                2：PABLO 掃描驗證</div>
+              <div>抵達尼斯機場第二航廈（T2）託運行李前，至海關 <strong>PABLO 電子機台感應條碼</strong>，螢幕出現綠色勾勾即核銷完成。</div>
+            </div>
+            <div style="background: #fff; border: 1px solid #cbd5e1; border-radius: 4px; padding: 2.8mm 3mm;">
+              <div style="font-weight: 700; color: var(--galilee-green); font-size: 7.8pt; margin-bottom: 0.8mm;">步驟
+                3：退稅款領取</div>
+              <div>選擇退回信用卡者無須郵寄紙本；選擇退現金者持已核銷單據至 Travelex 換匯櫃檯領取歐元現鈔。</div>
+            </div>
           </div>
 
           <div
-            style="background: #faf8f5; border: 1.5px solid #d6a34a; border-radius: 5px; padding: 3.5mm 4mm; font-size: 8.2pt; line-height: 1.62; color: #1a202c;">
-            <div
-              style="font-weight: 700; color: var(--galilee-green); font-size: 9pt; margin-bottom: 1.2mm; border-bottom: 1.5px solid #ebd9b6; padding-bottom: 0.8mm;">
-              🇫🇷 實用法語 (Français · 指給店員看)
-            </div>
-            <div>• 您好：<strong style="color: var(--galilee-green-dark); font-size: 8.8pt;">Bonjour!</strong> (進商店必說問候)</div>
-            <div>• 晚安：<strong style="color: var(--galilee-green-dark);">Bonsoir!</strong></div>
-            <div>• 請：<strong style="color: var(--galilee-green-dark);">S'il vous plaît</strong></div>
-            <div>• 謝謝：<strong style="color: var(--galilee-green-dark);">Merci!</strong> (非常感謝：Merci beaucoup)</div>
-            <div>• 不好意思：<strong style="color: var(--galilee-green-dark);">Pardon / Excusez-moi</strong></div>
-            <div>• 洗手間在哪？：<strong style="color: #b8862d; font-size: 8.8pt;">Où sont les toilettes?</strong></div>
-            <div>• 買單結帳：<strong style="color: #b8862d; font-size: 8.8pt;">L'addition, s'il vous plaît.</strong></div>
-            <div>• 自來水/氣泡水：<strong>Une carafe d'eau / Gazeuse</strong></div>
+            style="background: #faf9f6; border-left: 3px solid var(--galilee-green); padding: 2mm 3.2mm; border-radius: 0 3px 3px 0; font-size: 6.8pt; line-height: 1.45; color: #2d3748;">
+            <strong>⚠️ 退稅重要提醒：</strong>退稅商品在出境海關查驗前<strong>請勿拆封使用</strong>，建議將退稅品集中放置於行李箱最上層，若遇海關抽查能迅速出示。
           </div>
         </div>
 
-        <!-- 歐盟與法國 PABLO 退稅 3 步驟 · 熟齡大字版 -->
-        <div style="font-weight: 700; color: var(--galilee-green); font-size: 8.5pt; margin-bottom: 1.5mm;">
-          💶 法國與歐盟 PABLO 電子退稅 3 步驟指南
-        </div>
-        <div
-          style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2.8mm; margin-bottom: 2.8mm; font-size: 7.2pt; line-height: 1.48; color: #1a202c;">
-          <div style="background: #fff; border: 1px solid #cbd5e1; border-radius: 4px; padding: 2.8mm 3mm;">
-            <div style="font-weight: 700; color: var(--galilee-green); font-size: 7.8pt; margin-bottom: 0.8mm;">步驟 1：索取退稅單</div>
-            <div>同一店家單日消費滿 <strong>€100.01</strong> 即可退稅。結帳時出示護照，索取含 PABLO 條碼之正式退稅單。</div>
-          </div>
-          <div style="background: #fff; border: 1px solid #cbd5e1; border-radius: 4px; padding: 2.8mm 3mm;">
-            <div style="font-weight: 700; color: var(--galilee-green); font-size: 7.8pt; margin-bottom: 0.8mm;">步驟 2：PABLO 掃描驗證</div>
-            <div>抵達尼斯機場第二航廈（T2）託運行李前，至海關 <strong>PABLO 電子機台感應條碼</strong>，螢幕出現綠色勾勾即核銷完成。</div>
-          </div>
-          <div style="background: #fff; border: 1px solid #cbd5e1; border-radius: 4px; padding: 2.8mm 3mm;">
-            <div style="font-weight: 700; color: var(--galilee-green); font-size: 7.8pt; margin-bottom: 0.8mm;">步驟 3：退稅款領取</div>
-            <div>選擇退回信用卡者無須郵寄紙本；選擇退現金者持已核銷單據至 Travelex 換匯櫃檯領取歐元現鈔。</div>
-          </div>
-        </div>
-
-        <div
-          style="background: #faf9f6; border-left: 3px solid var(--galilee-green); padding: 2mm 3.2mm; border-radius: 0 3px 3px 0; font-size: 6.8pt; line-height: 1.45; color: #2d3748;">
-          <strong>⚠️ 退稅重要提醒：</strong>退稅商品在出境海關查驗前<strong>請勿拆封使用</strong>，建議將退稅品集中放置於行李箱最上層，若遇海關抽查能迅速出示。
+        <div class="page-footer">
+          <span class="page-footer-brand">TRAVEL EURO · 隨身慢活手冊</span>
+          <span class="page-footer-num">17</span>
         </div>
       </div>
-
-      <div class="page-footer">
-        <span class="page-footer-brand">TRAVEL EURO · 隨身慢活手冊</span>
-        <span class="page-footer-num">17</span>
-      </div>
-    </div>
-    <!-- =========================================================================
+      <!-- =========================================================================
          PAGE 18: 旅途花費記帳與伴手禮購物清單
          ========================================================================= -->
-    <div class="a5-page">
-      <div class="page-header">
-        <span class="page-header-title">EXPENSE & SOUVENIRS</span>
-        <span>花費記帳 · 伴手禮購物清單</span>
+      <div class="a5-page">
+        <div class="page-header">
+          <span class="page-header-title">EXPENSE & SOUVENIRS</span>
+          <span>花費記帳 · 伴手禮購物清單</span>
+        </div>
+
+        <div class="page-content">
+          <div
+            style="font-family: 'Noto Serif TC', serif; font-size: 13pt; font-weight: 700; color: var(--galilee-green); margin-bottom: 0.5mm;">
+            旅途花費記帳與伴手禮清單
+          </div>
+          <div style="font-size: 7.8pt; color: #555; margin-bottom: 2mm;">
+            隨手記錄每筆支出與親友託買紀念品 · 避免遺漏與預算超支
+          </div>
+
+          <!-- 記帳表格 -->
+          <div style="font-weight: 700; color: var(--galilee-green); font-size: 8.2pt; margin-bottom: 1mm;">
+            💶 每日個人零用支出記帳表 (Daily Expenses)
+          </div>
+          <table class="galilee-table" style="margin-bottom: 2.5mm;">
+            <thead>
+              <tr>
+                <th style="width: 12%;">日期</th>
+                <th style="width: 32%;">支出項目／商家名稱</th>
+                <th style="width: 16%;">金額 (€)</th>
+                <th style="width: 16%;">支付方式</th>
+                <th style="width: 24%;">備註 / 是否退稅</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>/</td>
+                <td>&nbsp;</td>
+                <td>€</td>
+                <td>現金 / 信用卡</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>/</td>
+                <td>&nbsp;</td>
+                <td>€</td>
+                <td>現金 / 信用卡</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>/</td>
+                <td>&nbsp;</td>
+                <td>€</td>
+                <td>現金 / 信用卡</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>/</td>
+                <td>&nbsp;</td>
+                <td>€</td>
+                <td>現金 / 信用卡</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>/</td>
+                <td>&nbsp;</td>
+                <td>€</td>
+                <td>現金 / 信用卡</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>/</td>
+                <td>&nbsp;</td>
+                <td>€</td>
+                <td>現金 / 信用卡</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- 伴手禮購物清單 -->
+          <div style="font-weight: 700; color: var(--galilee-green); font-size: 6.8pt; margin-bottom: 1mm;">
+            🎁 義法名品與伴手禮採買核對清單 (Souvenir Checklist)
+          </div>
+          <table class="galilee-table">
+            <thead>
+              <tr>
+                <th style="width: 28%;">推薦採買伴手禮</th>
+                <th style="width: 22%;">代表城市 / 店家</th>
+                <th style="width: 26%;">贈送對象 / 數量</th>
+                <th style="width: 12%;">預估金額</th>
+                <th style="width: 12%;">完成</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Fragonard 花宮娜香氛</strong></td>
+                <td>尼斯舊城專賣店</td>
+                <td>親友女性 / 瓶</td>
+                <td>€ 35~60</td>
+                <td>☐</td>
+              </tr>
+              <tr>
+                <td><strong>天然馬賽薰衣草皂</strong></td>
+                <td>薩萊亞花市 Cours Saleya</td>
+                <td>好友同事 / 塊</td>
+                <td>€ 3~5</td>
+                <td>☐</td>
+              </tr>
+              <tr>
+                <td><strong>A L'Olivier 特級橄欖油</strong></td>
+                <td>尼斯舊城百年名店</td>
+                <td>長輩自用 / 瓶</td>
+                <td>€ 15~30</td>
+                <td>☐</td>
+              </tr>
+              <tr>
+                <td><strong>Baci 義大利之吻巧克力</strong></td>
+                <td>米蘭中央車站超市</td>
+                <td>親友分享 / 盒</td>
+                <td>€ 8~12</td>
+                <td>☐</td>
+              </tr>
+              <tr>
+                <td><strong>熱那亞羅勒青醬罐 (Pesto)</strong></td>
+                <td>熱那亞特產專賣店</td>
+                <td>自用煮麵 / 罐</td>
+                <td>€ 6~10</td>
+                <td>☐</td>
+              </tr>
+              <tr>
+                <td><strong>利古里亞白葡萄酒</strong></td>
+                <td>聖瑪格麗塔酒莊小舖</td>
+                <td>親友品茗 / 瓶</td>
+                <td>€ 18~35</td>
+                <td>☐</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="page-footer">
+          <span class="page-footer-brand">TRAVEL EURO · 隨身慢活手冊</span>
+          <span class="page-footer-num">18</span>
+        </div>
       </div>
-
-      <div class="page-content">
-        <div
-          style="font-family: 'Noto Serif TC', serif; font-size: 11pt; font-weight: 700; color: var(--galilee-green); margin-bottom: 0.5mm;">
-          旅途花費記帳與伴手禮清單
-        </div>
-        <div style="font-size: 6.3pt; color: #555; margin-bottom: 2mm;">
-          隨手記錄每筆支出與親友託買紀念品 · 避免遺漏與預算超支
-        </div>
-
-        <!-- 記帳表格 -->
-        <div style="font-weight: 700; color: var(--galilee-green); font-size: 6.8pt; margin-bottom: 1mm;">
-          💶 每日個人零用支出記帳表 (Daily Expenses)
-        </div>
-        <table class="galilee-table" style="margin-bottom: 2.5mm;">
-          <thead>
-            <tr>
-              <th style="width: 12%;">日期</th>
-              <th style="width: 32%;">支出項目／商家名稱</th>
-              <th style="width: 16%;">金額 (€)</th>
-              <th style="width: 16%;">支付方式</th>
-              <th style="width: 24%;">備註 / 是否退稅</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>/</td>
-              <td>&nbsp;</td>
-              <td>€</td>
-              <td>現金 / 信用卡</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>/</td>
-              <td>&nbsp;</td>
-              <td>€</td>
-              <td>現金 / 信用卡</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>/</td>
-              <td>&nbsp;</td>
-              <td>€</td>
-              <td>現金 / 信用卡</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>/</td>
-              <td>&nbsp;</td>
-              <td>€</td>
-              <td>現金 / 信用卡</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>/</td>
-              <td>&nbsp;</td>
-              <td>€</td>
-              <td>現金 / 信用卡</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>/</td>
-              <td>&nbsp;</td>
-              <td>€</td>
-              <td>現金 / 信用卡</td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
-
-        <!-- 伴手禮購物清單 -->
-        <div style="font-weight: 700; color: var(--galilee-green); font-size: 6.8pt; margin-bottom: 1mm;">
-          🎁 義法名品與伴手禮採買核對清單 (Souvenir Checklist)
-        </div>
-        <table class="galilee-table">
-          <thead>
-            <tr>
-              <th style="width: 28%;">推薦採買伴手禮</th>
-              <th style="width: 22%;">代表城市 / 店家</th>
-              <th style="width: 26%;">贈送對象 / 數量</th>
-              <th style="width: 12%;">預估金額</th>
-              <th style="width: 12%;">完成</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Fragonard 花宮娜香氛</strong></td>
-              <td>尼斯舊城專賣店</td>
-              <td>親友女性 / 瓶</td>
-              <td>€ 35~60</td>
-              <td>☐</td>
-            </tr>
-            <tr>
-              <td><strong>天然馬賽薰衣草皂</strong></td>
-              <td>薩萊亞花市 Cours Saleya</td>
-              <td>好友同事 / 塊</td>
-              <td>€ 3~5</td>
-              <td>☐</td>
-            </tr>
-            <tr>
-              <td><strong>A L'Olivier 特級橄欖油</strong></td>
-              <td>尼斯舊城百年名店</td>
-              <td>長輩自用 / 瓶</td>
-              <td>€ 15~30</td>
-              <td>☐</td>
-            </tr>
-            <tr>
-              <td><strong>Baci 義大利之吻巧克力</strong></td>
-              <td>米蘭中央車站超市</td>
-              <td>親友分享 / 盒</td>
-              <td>€ 8~12</td>
-              <td>☐</td>
-            </tr>
-            <tr>
-              <td><strong>熱那亞羅勒青醬罐 (Pesto)</strong></td>
-              <td>熱那亞特產專賣店</td>
-              <td>自用煮麵 / 罐</td>
-              <td>€ 6~10</td>
-              <td>☐</td>
-            </tr>
-            <tr>
-              <td><strong>利古里亞白葡萄酒</strong></td>
-              <td>聖瑪格麗塔酒莊小舖</td>
-              <td>親友品茗 / 瓶</td>
-              <td>€ 18~35</td>
-              <td>☐</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="page-footer">
-        <span class="page-footer-brand">TRAVEL EURO · 隨身慢活手冊</span>
-        <span class="page-footer-num">18</span>
-      </div>
-    </div>
-    <!-- =========================================================================
+      <!-- =========================================================================
          PAGE 19: 旅人隨筆與紀念印章收集頁
          ========================================================================= -->
-    <div class="a5-page">
-      <div class="page-header">
-        <span class="page-header-title">TRAVEL MEMORIES</span>
-        <span>旅人隨筆 · 紀念印章收集頁</span>
-      </div>
-
-      <div class="page-content">
-        <div
-          style="font-family: 'Noto Serif TC', serif; font-size: 11pt; font-weight: 700; color: var(--galilee-green); margin-bottom: 0.5mm;">
-          旅人心情隨筆與印章收集
-        </div>
-        <div style="font-size: 6.3pt; color: #555; margin-bottom: 2.5mm;">
-          記錄旅途中的微小感動、手繪隨筆，以及各車站、博物館紀念戳印
+      <div class="a5-page">
+        <div class="page-header">
+          <span class="page-header-title">TRAVEL MEMORIES</span>
+          <span>旅人隨筆 · 紀念印章收集頁</span>
         </div>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3mm; height: 145mm;">
-          <!-- 心情隨筆欄 -->
+        <div class="page-content">
           <div
-            style="border: 1px solid #e2e8f0; border-radius: 4px; padding: 2.5mm; background: #fff; display: flex; flex-direction: column;">
-            <div
-              style="font-weight: 700; color: var(--galilee-green); font-size: 6.8pt; border-bottom: 1px solid #eee; padding-bottom: 1mm; margin-bottom: 2mm;">
-              ✍️ 旅行隨筆與心情速記 (Notes)
-            </div>
-            <div
-              style="flex: 1; background-image: repeating-linear-gradient(transparent, transparent 19px, #f0ede6 20px); line-height: 20px;">
-            </div>
+            style="font-family: 'Noto Serif TC', serif; font-size: 13pt; font-weight: 700; color: var(--galilee-green); margin-bottom: 0.5mm;">
+            旅人心情隨筆與印章收集
+          </div>
+          <div style="font-size: 7.8pt; color: #555; margin-bottom: 2.5mm;">
+            記錄旅途中的微小感動、手繪隨筆，以及各車站、博物館紀念戳印
           </div>
 
-          <!-- 紀念戳印欄 -->
-          <div
-            style="border: 1.5px dashed #cbd5e1; border-radius: 4px; padding: 2.5mm; background: #fdfcf9; display: flex; flex-direction: column; justify-content: space-between;">
-            <div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3mm; height: 145mm;">
+            <!-- 心情隨筆欄 -->
+            <div
+              style="border: 1px solid #e2e8f0; border-radius: 4px; padding: 2.5mm; background: #fff; display: flex; flex-direction: column;">
               <div
-                style="font-weight: 700; color: var(--galilee-green); font-size: 6.8pt; border-bottom: 1px solid #e5eae6; padding-bottom: 1mm; margin-bottom: 2mm;">
-                📮 紀念戳印收集處 (Souvenir Stamps)
+                style="font-weight: 700; color: var(--galilee-green); font-size: 8.5pt; border-bottom: 1px solid #eee; padding-bottom: 1mm; margin-bottom: 2mm;">
+                ✍️ 旅行隨筆與心情速記 (Notes)
               </div>
-              <div style="font-size: 5.6pt; color: #888; text-align: center; margin-top: 25mm;">
-                可在此蓋上米蘭、貝爾加莫古城、科莫湖、熱那亞、菲諾港或尼斯各景點與車站之紀念印章
+              <div
+                style="flex: 1; background-image: repeating-linear-gradient(transparent, transparent 19px, #f0ede6 20px); line-height: 20px;">
               </div>
             </div>
+
+            <!-- 紀念戳印欄 -->
             <div
-              style="text-align: center; font-size: 5.5pt; color: #aaa; border-top: 1px dotted #e5eae6; padding-top: 1.5mm;">
-              TRAVEL EURO · 義大利 × 南法蔚藍海岸 15 日慢旅手冊
+              style="border: 1.5px dashed #cbd5e1; border-radius: 4px; padding: 2.5mm; background: #fdfcf9; display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div
+                  style="font-weight: 700; color: var(--galilee-green); font-size: 8.5pt; border-bottom: 1px solid #e5eae6; padding-bottom: 1mm; margin-bottom: 2mm;">
+                  📮 紀念戳印收集處 (Souvenir Stamps)
+                </div>
+                <div style="font-size: 7.2pt; color: #777; text-align: center; margin-top: 25mm; line-height: 1.5;">
+                  可在此蓋上米蘭、貝爾加莫古城、科莫湖、熱那亞、菲諾港或尼斯各景點與車站之紀念印章
+                </div>
+              </div>
+              <div
+                style="text-align: center; font-size: 6.8pt; color: #888; border-top: 1px dotted #e5eae6; padding-top: 1.5mm;">
+                TRAVEL EURO · 義大利 × 南法蔚藍海岸 15 日慢旅手冊
+              </div>
             </div>
           </div>
         </div>
+
+        <div class="page-footer">
+          <span class="page-footer-brand">TRAVEL EURO · 隨身慢活手冊</span>
+          <span class="page-footer-num">19</span>
+        </div>
       </div>
 
-      <div class="page-footer">
-        <span class="page-footer-brand">TRAVEL EURO · 隨身慢活手冊</span>
-        <span class="page-footer-num">19</span>
-      </div>
-    </div>
-
-    <!-- =========================================================================
+      <!-- =========================================================================
          PAGE 20: 封底 (Back Cover) · 再見蔚藍海岸 (Au revoir, Côte d'Azur!)
          ========================================================================= -->
-    <div class="a5-page galilee-back-cover">
-      <!-- 頂部標題區 -->
-      <div class="back-cover-header">
-        <div class="back-cover-eyebrow">
-          <span></span> AU REVOIR, CÔTE D'AZUR <span></span>
+      <div class="a5-page galilee-back-cover">
+        <!-- 頂部標題區 -->
+        <div class="back-cover-header">
+          <div class="back-cover-eyebrow">
+            <span></span> AU REVOIR, CÔTE D'AZUR <span></span>
+          </div>
+          <h2 class="back-cover-title">再見！蔚藍海岸</h2>
+          <div class="back-cover-subtitle">Ce n'est qu'un au revoir · 願海風常駐於心</div>
         </div>
-        <h2 class="back-cover-title">再見！蔚藍海岸</h2>
-        <div class="back-cover-subtitle">Ce n'est qu'un au revoir · 願海風常駐於心</div>
+
+        <!-- 中央蔚藍夕陽寫真 -->
+        <div class="back-cover-photo-wrap">
+          <img src="day09-nice-hotel-sunset.webp" alt="尼斯天使之灣落日餘暉 Baie des Anges">
+          <div class="back-cover-photo-caption">
+            <span class="fr">« La mer Méditerranée garde nos plus doux souvenirs »</span>
+            <span>✦ 天使之灣落日晚霞 · Nice</span>
+          </div>
+        </div>
+
+        <!-- 法式浪漫詩篇小語 (文學對照) -->
+        <div class="back-cover-poem-card">
+          <div class="back-cover-poem-fr">
+            « Partir, c'est vivre un peu plus fort. Revenir, c'est emporter l'éternité d'un azur dans le cœur.<br>
+            De la lumière dorée de Milan et Bergame aux flots étincelants de Nice, chaque pas fut une douce poésie. »
+          </div>
+          <div class="back-cover-poem-divider">✦ &nbsp; ⚜ &nbsp; ✦</div>
+          <div class="back-cover-poem-zh">
+            「啟程，是讓生命更為熾熱；歸途，是將永恆的蔚藍珍藏於心。<br>
+            自米蘭大理石尖塔與貝爾加莫古城晨光，行至天使之灣落日金波，每一步皆是歲月譜寫的溫柔詩篇。」
+          </div>
+        </div>
+
+        <!-- 15日慢旅回憶里程碑 -->
+        <div class="back-cover-milestones">
+          <div class="back-cover-milestone-item">
+            <div class="city-fr">MILANO & BERGAMO</div>
+            <div class="city-zh">古典大教堂 · 上城纜車</div>
+          </div>
+          <div class="back-cover-milestone-item">
+            <div class="city-fr">COMO & PORTOFINO</div>
+            <div class="city-zh">湖光山色 · 彩色港灣</div>
+          </div>
+          <div class="back-cover-milestone-item">
+            <div class="city-fr">NICE & CAP-FERRAT</div>
+            <div class="city-zh">海角花園 · 蔚藍長階</div>
+          </div>
+        </div>
+
+        <!-- 平安歸途備忘 (承接 index.html notes) -->
+        <div class="back-cover-return-card">
+          <div
+            style="font-weight: 700; color: var(--galilee-gold-light); margin-bottom: 0.8mm; letter-spacing: 0.05em;">
+            ✦ 平安歸途叮嚀 · BON VOYAGE DE RETOUR ✦
+          </div>
+          <div>
+            • <strong>機場退稅：</strong>返程請預留 3 小時抵達尼斯蔚藍海岸機場（NCE T2），於托運前至海關 PABLO 機感應退稅單。<br>
+            • <strong>舒適飛行：</strong>機上長途飛行請多補充水分、定時活動伸展雙腿，伴著南法暖陽與海風回憶，安度平穩萬里歸途。
+          </div>
+        </div>
+
+        <!-- 封底典雅奢簽與法式祝福 -->
+        <div class="back-cover-footer">
+          <div class="back-cover-brand">
+            <span>✦</span> TRAVEL EURO 慢旅漫遊 <span>✦</span>
+          </div>
+          <div class="back-cover-edition">
+            SENIOR SLOW TRAVEL · 義大利 × 南法蔚藍海岸 15 日隨身慢活手冊
+          </div>
+          <div class="back-cover-blessing">
+            « Ce n'est pas un adieu, c'est une promesse de retour. À bientôt ! »
+          </div>
+        </div>
       </div>
 
-      <!-- 中央蔚藍夕陽寫真 -->
-      <div class="back-cover-photo-wrap">
-        <img src="day09-nice-hotel-sunset.webp" alt="尼斯天使之灣落日餘暉 Baie des Anges">
-        <div class="back-cover-photo-caption">
-          <span class="fr">« La mer Méditerranée garde nos plus doux souvenirs »</span>
-          <span>✦ 天使之灣落日晚霞 · Nice</span>
-        </div>
-      </div>
-
-      <!-- 法式浪漫詩篇小語 (文學對照) -->
-      <div class="back-cover-poem-card">
-        <div class="back-cover-poem-fr">
-          « Partir, c'est vivre un peu plus fort. Revenir, c'est emporter l'éternité d'un azur dans le cœur.<br>
-          De la lumière dorée de Milan et Bergame aux flots étincelants de Nice, chaque pas fut une douce poésie. »
-        </div>
-        <div class="back-cover-poem-divider">✦ &nbsp; ⚜ &nbsp; ✦</div>
-        <div class="back-cover-poem-zh">
-          「啟程，是讓生命更為熾熱；歸途，是將永恆的蔚藍珍藏於心。<br>
-          自米蘭大理石尖塔與貝爾加莫古城晨光，行至天使之灣落日金波，每一步皆是歲月譜寫的溫柔詩篇。」
-        </div>
-      </div>
-
-      <!-- 15日慢旅回憶里程碑 -->
-      <div class="back-cover-milestones">
-        <div class="back-cover-milestone-item">
-          <div class="city-fr">MILANO & BERGAMO</div>
-          <div class="city-zh">古典大教堂 · 上城纜車</div>
-        </div>
-        <div class="back-cover-milestone-item">
-          <div class="city-fr">COMO & PORTOFINO</div>
-          <div class="city-zh">湖光山色 · 彩色港灣</div>
-        </div>
-        <div class="back-cover-milestone-item">
-          <div class="city-fr">NICE & CAP-FERRAT</div>
-          <div class="city-zh">海角花園 · 蔚藍長階</div>
-        </div>
-      </div>
-
-      <!-- 平安歸途備忘 (承接 index.html notes) -->
-      <div class="back-cover-return-card">
-        <div style="font-weight: 700; color: var(--galilee-gold-light); margin-bottom: 0.8mm; letter-spacing: 0.05em;">
-          ✦ 平安歸途叮嚀 · BON VOYAGE DE RETOUR ✦
-        </div>
-        <div>
-          • <strong>機場退稅：</strong>返程請預留 3 小時抵達尼斯蔚藍海岸機場（NCE T2），於托運前至海關 PABLO 機感應退稅單。<br>
-          • <strong>舒適飛行：</strong>機上長途飛行請多補充水分、定時活動伸展雙腿，伴著南法暖陽與海風回憶，安度平穩萬里歸途。
-        </div>
-      </div>
-
-      <!-- 封底典雅奢簽與法式祝福 -->
-      <div class="back-cover-footer">
-        <div class="back-cover-brand">
-          <span>✦</span> TRAVEL EURO 慢旅漫遊 <span>✦</span>
-        </div>
-        <div class="back-cover-edition">
-          SENIOR SLOW TRAVEL · 義大利 × 南法蔚藍海岸 15 日隨身慢活手冊
-        </div>
-        <div class="back-cover-blessing">
-          « Ce n'est pas un adieu, c'est une promesse de retour. À bientôt ! »
-        </div>
-      </div>
     </div>
-
-  </div>
 </body>
 
 </html>
