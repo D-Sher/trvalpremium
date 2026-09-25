@@ -482,24 +482,24 @@
 
     .galilee-split-text {
       flex: 1;
-      font-size: 6.4pt;
-      line-height: 1.48;
-      color: #333333;
+      font-size: 6.8pt;
+      line-height: 1.5;
+      color: #1a202c;
     }
 
     /* =========================================================================
-       底欄三聯表 (3-Column Spec Footer)
+       底欄三聯表 (3-Column Spec Footer) · 熟齡清晰版
        ========================================================================= */
     .galilee-spec-footer {
       margin-top: auto;
-      border-top: 1px dotted #bbb;
+      border-top: 1px dotted #cbd5e1;
       padding-top: 1.8mm;
       display: grid;
       grid-template-columns: 1.15fr 1.15fr 1.1fr;
       gap: 3mm;
-      font-size: 6pt;
-      line-height: 1.35;
-      color: #333333;
+      font-size: 6.6pt;
+      line-height: 1.4;
+      color: #1a202c;
     }
 
     .galilee-spec-cell {
@@ -537,8 +537,8 @@
        ========================================================================= */
     .galilee-map-container {
       width: 100%;
-      height: 106mm;
-      /* 大幅放大地圖高達 106mm */
+      height: 84mm;
+      /* 適配 A5 頁面，搭配大動線標籤與左側大字對照表 */
       background: #ffffff;
       border: 1px solid #cbd5e1;
       border-radius: 4px;
@@ -559,7 +559,7 @@
     .galilee-flight-box {
       border: 1.5px solid var(--galilee-green);
       border-radius: 4px;
-      margin-top: 2.2mm;
+      margin-top: 1.8mm;
       overflow: hidden;
       background: #fff;
     }
@@ -567,7 +567,7 @@
     .galilee-flight-head {
       background: var(--galilee-green);
       color: #fff;
-      padding: 1.8mm 3mm;
+      padding: 1.6mm 3mm;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -581,39 +581,43 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 3mm;
-      font-size: 6.2pt;
-      line-height: 1.4;
+      font-size: 6.5pt;
+      line-height: 1.45;
     }
 
     .galilee-flight-leg {
       background: #faf8f5;
-      padding: 1.5mm 2.2mm;
+      padding: 1.8mm 2.4mm;
       border-radius: 3px;
       border-left: 2px solid var(--galilee-gold);
     }
 
-    .galilee-flight-leg strong {
+    .flight-leg-title {
       display: block;
-      color: var(--galilee-green);
-      font-size: 6.8pt;
-      margin-bottom: 0.5mm;
+      color: var(--galilee-green-dark);
+      font-size: 7.2pt;
+      font-weight: 700;
+      margin-bottom: 0.8mm;
+      border-bottom: 1px dashed rgba(214, 163, 74, 0.4);
+      padding-bottom: 0.4mm;
     }
 
-    /* 表格樣式 (Page 4 鐵路時刻總表) */
+    /* 表格樣式 (Page 4 鐵路時刻總表 · 熟齡大字易讀版) */
     .galilee-table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 5.6pt;
-      line-height: 1.25;
+      font-size: 6.0pt;
+      line-height: 1.28;
       margin-bottom: 2mm;
     }
 
     .galilee-table th {
       background: var(--galilee-green);
       color: #fff;
-      padding: 1.5mm 1.5mm;
+      padding: 1.5mm 1.2mm;
       text-align: left;
-      font-weight: 600;
+      font-weight: 700;
+      font-size: 6.2pt;
       border-right: 1px solid rgba(255, 255, 255, 0.15);
     }
 
@@ -622,9 +626,9 @@
     }
 
     .galilee-table td {
-      padding: 1.2mm 1.5mm;
-      border-bottom: 1px solid #e5e5e5;
-      color: #333;
+      padding: 1.2mm 1.2mm;
+      border-bottom: 1px solid #e2e8f0;
+      color: #1a202c;
     }
 
     .galilee-table tr:nth-child(even) td {
@@ -775,11 +779,13 @@
     .galilee-cover-brand-logo {
       font-family: "Noto Serif TC", serif;
       font-weight: 700;
-      font-size: 9.5pt;
+      font-size: 8.5pt;
       color: #fff;
       display: flex;
       align-items: center;
       gap: 6px;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
 
     .galilee-cover-brand-logo span {
@@ -1138,7 +1144,9 @@
         <div class="galilee-cover-brand-logo">
           <span>✦</span> TRAVEL EURO 慢旅漫遊
         </div>
-        <div>米蘭 Milano · 科莫湖 Lago di Como · 熱那亞 Genova · 菲諾港 Portofino · 尼斯 Nice</div>
+        <div style="font-size: 6.2pt; letter-spacing: 0.05em; color: #fdfcf9; white-space: nowrap;">
+          米蘭 · 貝爾加莫 · 科莫湖 · 熱那亞 · 菲諾港 · 尼斯
+        </div>
       </div>
     </div>
 
@@ -1157,65 +1165,64 @@
           <div style="flex: 1.05; display: flex; flex-direction: column; justify-content: space-between;">
             <div>
               <div
-                style="font-family: 'Noto Serif TC', serif; font-size: 11pt; font-weight: 700; color: var(--galilee-green); margin-bottom: 1.5mm; border-bottom: 1.5px solid var(--galilee-green); padding-bottom: 0.8mm;">
+                style="font-family: 'Noto Serif TC', serif; font-size: 11.5pt; font-weight: 700; color: var(--galilee-green); margin-bottom: 1.5mm; border-bottom: 1.5px solid var(--galilee-green); padding-bottom: 0.8mm;">
                 景點距離與移動參考
               </div>
-              <div style="font-size: 6.2pt; line-height: 1.55; color: #333;">
-                <div>台北 － 杜拜 <strong>飛行 8h45m</strong> (阿聯酋航空)</div>
-                <div>杜拜 － 米蘭 <strong>飛行 6h35m</strong> (轉機約 5h)</div>
-                <div>米蘭機場 － 中央車站 <strong>快線 56mins</strong> (MXP 2951)</div>
-                <div>米蘭 － 貝爾加莫 <strong>50 Km</strong> (RE快車 48m)</div>
-                <div>米蘭 － 科莫湖瓦倫納 <strong>75 Km</strong> (RE快車 1h04m)</div>
-                <div>瓦倫納 － 貝拉焦 <strong>渡輪約 20mins</strong> (中央湖區)</div>
-                <div>米蘭 － 熱那亞 <strong>145 Km</strong> (IC一等艙 1h30m)</div>
-                <div>熱那亞 － 菲諾港 <strong>35 Km</strong> (IC 27m + 782公車)</div>
-                <div>熱那亞 － 文提米利亞 <strong>155 Km</strong> (IC一等艙 2h00m)</div>
-                <div>文提米利亞 － 尼斯 <strong>35 Km</strong> (TER列車約 54m)</div>
-                <div>尼斯 － 濱海自由城 <strong>8 Km</strong> (TER火車約 7mins)</div>
-                <div>尼斯 － 費拉角莊園 <strong>10 Km</strong> (輕軌+公車直達)</div>
-                <div>尼斯 － 台北 <strong>返程阿聯酋經杜拜轉機</strong></div>
+              <div style="font-size: 7.0pt; line-height: 1.55; color: #1a202c;">
+                <div>✈️ <strong>國際長程：</strong>台北 ➔ 杜拜 (8.5h) ➔ 米蘭 (6.5h) ｜ 尼斯返程</div>
+                <div style="border-top: 1px dotted #cbd5e1; margin: 0.8mm 0 1mm;"></div>
+                <div>• 機場 － 米蘭市區 <strong style="color: var(--galilee-green-dark);">快線 56分</strong> (MXP 2951)</div>
+                <div>• 米蘭 － 貝爾加莫 <strong style="color: var(--galilee-green-dark);">50 Km</strong> (RE快車 48分)</div>
+                <div>• 米蘭 － 科莫湖 <strong style="color: var(--galilee-green-dark);">75 Km</strong> (RE快車 1h04m)</div>
+                <div>• 瓦倫納 － 貝拉焦 <strong style="color: var(--galilee-green-dark);">渡輪約 20分</strong> (中央湖區)</div>
+                <div>• 米蘭 － 熱那亞 <strong style="color: var(--galilee-green-dark);">145 Km</strong> (IC一等艙 1h30m)</div>
+                <div>• 熱那亞 － 菲諾港 <strong style="color: var(--galilee-green-dark);">35 Km</strong> (IC+782公車)</div>
+                <div>• 熱那亞 － 文提米利亞 <strong style="color: var(--galilee-green-dark);">155 Km</strong> (IC 2h00m)</div>
+                <div>• 文提米利亞 － 尼斯 <strong style="color: var(--galilee-green-dark);">35 Km</strong> (TER列車 54分)</div>
+                <div>• 尼斯 － 自由城 <strong style="color: var(--galilee-green-dark);">8 Km</strong> (TER火車 7分)</div>
+                <div>• 尼斯 － 費拉角 <strong style="color: var(--galilee-green-dark);">10 Km</strong> (輕軌+公車直達)</div>
               </div>
             </div>
             <div
-              style="margin-top: 1mm; font-weight: 700; color: var(--galilee-green-dark); border-top: 1px dotted #ccc; padding-top: 1mm; font-size: 6.5pt;">
+              style="margin-top: 1mm; font-weight: 700; color: var(--galilee-green-dark); border-top: 1px dotted #ccc; padding-top: 0.8mm; font-size: 7.2pt;">
               行車與鐵道總里程 約 <strong>1,200 Km</strong>
             </div>
           </div>
-          <!-- 右側：大幅放大的行程路線地圖 -->
-          <div style="flex: 1.35;">
-            <div class="galilee-map-container">
+          <!-- 右側：大幅放大的行程路線地圖 + 清晰文字路線軌跡 -->
+          <div style="flex: 1.35; display: flex; flex-direction: column;">
+            <div class="galilee-map-container" style="flex: 1;">
               <img src="rmap.webp" alt="義大利 × 南法蔚藍海岸 15 日行程路線地圖">
+            </div>
+            <div style="font-size: 6.2pt; color: #173246; font-weight: 700; text-align: center; margin-top: 1.2mm; background: #faf9f5; border: 1px solid #d6a34a; padding: 1mm 1.5mm; border-radius: 3px; line-height: 1.35;">
+              ✦ 15日慢旅大動線：米蘭 ➔ 貝爾加莫 ➔ 科莫湖 ➔ 熱那亞 ➔ 菲諾港 ➔ 尼斯 ✦
             </div>
           </div>
         </div>
 
-        <!-- 參考航班 (完全匹配 index.html tour.flights) -->
-        <div class="galilee-flight-box">
-          <div class="galilee-flight-head">
+        <!-- 參考航班 (完全匹配 index.html tour.flights · 熟齡大字版) -->
+        <div class="galilee-flight-box" style="margin-top: 1mm;">
+          <div class="galilee-flight-head" style="font-size: 7.2pt; padding: 1.6mm 3mm;">
             <span>✈️ 參考航班 · 阿聯酋航空 Emirates (Saver / 託運 25kg)</span>
-            <span style="background: rgba(255,255,255,0.2); padding: 1px 8px; border-radius: 10px;">桃園 T2 報到 ➔ 杜拜 T3 轉機
-              ➔ 尼斯 T2 返程</span>
+            <span style="background: rgba(255,255,255,0.22); padding: 1px 8px; border-radius: 10px; font-weight: 600;">桃園 T2 報到 ➔ 杜拜 T3 轉機 ➔ 尼斯 T2 返程</span>
           </div>
-          <div class="galilee-flight-body">
+          <div class="galilee-flight-body" style="padding: 2mm 3mm; font-size: 6.5pt; line-height: 1.42;">
             <div class="galilee-flight-leg">
-              <strong>去程航班 · EK367 / EK205 (T2 報到)</strong>
+              <div class="flight-leg-title">✈️ 去程航班 · EK367 / EK205 (桃園 T2 報到)</div>
               <div>• <strong>第一段 EK367：</strong>10/15 23:50 台北（TPE T2）➔ 10/16 04:35 杜拜（DXB T3）</div>
-              <div>• <strong>轉機候機：</strong>杜拜國際機場第三航廈轉機，停留約 5 小時</div>
+              <div>• <strong>杜拜轉機：</strong>杜拜國際機場第三航廈轉機，停留約 5 小時</div>
               <div>• <strong>第二段 EK205：</strong>10/16 09:35 杜拜（DXB T3）➔ 10/16 14:10 米蘭（MXP T1）</div>
-              <div style="font-size: 5.6pt; color: #666; margin-top: 0.5mm;">抵達後搭乘 Malpensa Express 機場快線直達米蘭中央車站，入住
-                Hilton。</div>
+              <div style="font-size: 5.8pt; color: #4a5568; margin-top: 0.3mm;">抵達後搭乘機場快線直達米蘭中央車站，步行 3 分鐘入住 Hilton。</div>
             </div>
             <div class="galilee-flight-leg">
-              <strong>回程航班 · EK078 / EK366 (Aerogare 2)</strong>
+              <div class="flight-leg-title">✈️ 回程航班 · EK078 / EK366 (尼斯 T2 返程)</div>
               <div>• <strong>第一段 EK078：</strong>10/28 14:30 尼斯（NCE T2）➔ 10/28 23:35 杜拜（DXB T3）</div>
-              <div>• <strong>轉機候機：</strong>杜拜國際機場第三航廈轉機，停留約 4 小時</div>
+              <div>• <strong>杜拜轉機：</strong>杜拜國際機場第三航廈轉機，停留約 4 小時</div>
               <div>• <strong>第二段 EK366：</strong>10/29 03:40 杜拜（DXB T3）➔ 10/29 15:35 台北（TPE T2）</div>
-              <div style="font-size: 5.6pt; color: #666; margin-top: 0.5mm;">10/27 於尼斯多停留一晚，10/28 午後搭機，10/29 下午平安返抵國門。
-              </div>
+              <div style="font-size: 5.8pt; color: #4a5568; margin-top: 0.3mm;">10/27 於尼斯多停留一晚，10/28 午後搭機，10/29 下午平安返抵國門。</div>
             </div>
           </div>
           <div
-            style="padding: 1.2mm 3mm; background: #faf9f6; font-size: 5.5pt; color: #666; border-top: 1px solid #eee; font-style: italic;">
+            style="padding: 1.2mm 3mm; background: #faf9f6; font-size: 5.8pt; color: #555; border-top: 1px solid #eee; font-style: italic;">
             (以上為阿聯酋航空預排班機時刻，每人享有 25kg 託運行李額度；實際起降與航站資訊以電子機票證明與行前說明會資料為準。)
           </div>
         </div>
@@ -1478,21 +1485,19 @@
           </tbody>
         </table>
 
-        <!-- 乘車與打票安心守則 -->
+        <!-- 乘車與打票安心守則 · 熟齡大字版 -->
         <div
-          style="background: #faf9f6; border: 1px solid #e2e8f0; border-radius: 4px; padding: 2mm 2.8mm; font-size: 6.1pt; line-height: 1.45; color: #333; margin-bottom: 2mm;">
-          <div style="font-weight: 700; color: var(--galilee-green); margin-bottom: 0.6mm; font-size: 6.8pt;">
+          style="background: #faf9f6; border: 1px solid #e2e8f0; border-radius: 4px; padding: 2mm 2.8mm; font-size: 6.2pt; line-height: 1.4; color: #1a202c; margin-bottom: 2mm;">
+          <div style="font-weight: 700; color: var(--galilee-green); margin-bottom: 0.6mm; font-size: 7.2pt;">
             🚄 義大利與法國鐵路乘車必知
           </div>
-          <div><strong>1. 實體紙票打卡規定：</strong>義大利 Regionale 區間車紙票，上車前必須於月台綠白/黃色打卡機（Convalidatrice）打印時間；<strong>IC
-              城際快車（一等艙）持印出 A4 紙本直接對號入座，免打卡</strong>。</div>
-          <div><strong>2. Trenord 電子票（Wallet QR）：</strong>乘車前請確認手機 Apple/Google Wallet 內 QR Code 與 Check-in 狀態，供列車長查驗。
-          </div>
+          <div style="margin-bottom: 0.5mm;"><strong>1. 實體紙票打卡規定：</strong>義大利 Regionale 區間車紙票，上車前必須於月台綠白/黃色打卡機（Convalidatrice）打印時間；<strong>IC 城際快車（一等艙）持印出 A4 紙本直接對號入座，免打卡</strong>。</div>
+          <div style="margin-bottom: 0.5mm;"><strong>2. Trenord 電子票（Wallet QR）：</strong>乘車前請確認手機 Apple/Google Wallet 內 QR Code 與 Check-in 狀態，供列車長查驗。</div>
           <div><strong>3. 大件行李安置：</strong>一等車廂頭尾均有大型行李架，重要證件隨身攜帶，下車前 5 分鐘提前準備。</div>
         </div>
 
         <div
-          style="background: #fdfbf7; border-left: 2.5px solid var(--galilee-gold); padding: 1.5mm 2.5mm; border-radius: 0 3px 3px 0; font-size: 5.8pt; line-height: 1.35; color: #444;">
+          style="background: #fdfbf7; border-left: 3px solid var(--galilee-gold); padding: 1.5mm 2.8mm; border-radius: 0 3px 3px 0; font-size: 6.1pt; line-height: 1.35; color: #2d3748;">
           <strong>無障礙月台指引：</strong>米蘭中央車站、熱那亞王子廣場與尼斯車站均設有無障礙電梯與付費洗手間（約 €1.00，支援無接觸信用卡感應）。
         </div>
       </div>
@@ -1520,21 +1525,21 @@
           Passes & City Cards · 隨身出示 · 免去長者排隊購票之苦 · 暢行無阻
         </div>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.2mm; margin-bottom: 2mm;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.8mm; margin-bottom: 3mm;">
           <!-- 1. 米蘭城市通票 -->
           <div
-            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 2mm 2.5mm; font-size: 6.1pt; line-height: 1.42;">
-            <div style="font-weight: 700; color: var(--galilee-green); font-size: 7pt; margin-bottom: 0.6mm;">★
+            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 3mm 3.2mm; font-size: 6.8pt; line-height: 1.48; color: #1a202c;">
+            <div style="font-weight: 700; color: var(--galilee-green); font-size: 7.8pt; margin-bottom: 1mm;">★
               米蘭城市通票（感應卡）</div>
             <div><strong>使用日期：</strong>10/16 領票／10/17 使用（24 小時）</div>
-            <div><strong>兌換方式：</strong>Milan Visitor Center - Tours 實體兌換</div>
+            <div><strong>兌換方式：</strong>Milan Visitor Center 實體兌換</div>
             <div><strong>適用範圍：</strong>24 小時連續使用，進地鐵直接感應閘門啟用，含 M1-M5 地鐵、復古 1 號路面電車與公車無限搭乘。</div>
           </div>
 
           <!-- 2. 貝爾加莫通票 -->
           <div
-            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 2mm 2.5mm; font-size: 6.1pt; line-height: 1.42;">
-            <div style="font-weight: 700; color: var(--galilee-green); font-size: 7pt; margin-bottom: 0.6mm;">★
+            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 3mm 3.2mm; font-size: 6.8pt; line-height: 1.48; color: #1a202c;">
+            <div style="font-weight: 700; color: var(--galilee-green); font-size: 7.8pt; margin-bottom: 1mm;">★
               貝爾加莫通票（APP）</div>
             <div><strong>使用日期：</strong>10/18 使用（24 小時）</div>
             <div><strong>兌換方式：</strong>搭乘首班公車或纜車前手動點擊啟用</div>
@@ -1543,8 +1548,8 @@
 
           <!-- 3. 科莫湖中央湖區一日票 -->
           <div
-            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 2mm 2.5mm; font-size: 6.1pt; line-height: 1.42;">
-            <div style="font-weight: 700; color: var(--galilee-green); font-size: 7pt; margin-bottom: 0.6mm;">★
+            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 3mm 3.2mm; font-size: 6.8pt; line-height: 1.48; color: #1a202c;">
+            <div style="font-weight: 700; color: var(--galilee-green); font-size: 7.8pt; margin-bottom: 1mm;">★
               科莫湖中央湖區一日票（憑證）</div>
             <div><strong>使用日期：</strong>10/19 使用（24 小時）</div>
             <div><strong>兌換方式：</strong>碼頭出示憑證兌換或直接出示蓋章登船</div>
@@ -1553,18 +1558,18 @@
 
           <!-- 4. 熱那亞城市通票 -->
           <div
-            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 2mm 2.5mm; font-size: 6.1pt; line-height: 1.42;">
-            <div style="font-weight: 700; color: var(--galilee-green); font-size: 7pt; margin-bottom: 0.6mm;">★
+            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 3mm 3.2mm; font-size: 6.8pt; line-height: 1.48; color: #1a202c;">
+            <div style="font-weight: 700; color: var(--galilee-green); font-size: 7.8pt; margin-bottom: 1mm;">★
               熱那亞城市通票（Genova City Pass）</div>
             <div><strong>使用日期：</strong>10/21 使用（24 小時）</div>
             <div><strong>兌換方式：</strong>出示手機憑證／QR Code 掃描啟用</div>
-            <div><strong>適用範圍：</strong>含 24h AMT 地鐵與市區交通；可用於哥倫布故居、索普拉納雙塔門、新街世界遺產宮殿群（紅宮、白宮）及總督宮門票優惠。</div>
+            <div><strong>適用範圍：</strong>含 24h AMT 地鐵與市區交通；可用於哥倫布故居、索普拉納雙塔門、新街世界遺產宮殿群（紅宮、白宮）門票優惠。</div>
           </div>
 
           <!-- 5. MetDaily一日票 -->
           <div
-            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 2mm 2.5mm; font-size: 6.1pt; line-height: 1.42;">
-            <div style="font-weight: 700; color: var(--galilee-green); font-size: 7pt; margin-bottom: 0.6mm;">★ MetDaily
+            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 3mm 3.2mm; font-size: 6.8pt; line-height: 1.48; color: #1a202c;">
+            <div style="font-weight: 700; color: var(--galilee-green); font-size: 7.8pt; margin-bottom: 1mm;">★ MetDaily
               一日票（APP 條碼）</div>
             <div><strong>使用日期：</strong>10/22 使用（24 小時）</div>
             <div><strong>兌換方式：</strong>搭乘 782 公車前在 AMT APP 點擊啟用</div>
@@ -1573,17 +1578,17 @@
 
           <!-- 6. PASS SUD AZUR EXPLORE -->
           <div
-            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 2mm 2.5mm; font-size: 6.1pt; line-height: 1.42;">
-            <div style="font-weight: 700; color: var(--galilee-green); font-size: 7pt; margin-bottom: 0.6mm;">★ PASS SUD
+            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 3mm 3.2mm; font-size: 6.8pt; line-height: 1.48; color: #1a202c;">
+            <div style="font-weight: 700; color: var(--galilee-green); font-size: 7.8pt; margin-bottom: 1mm;">★ PASS SUD
               AZUR EXPLORE（感應卡）</div>
             <div><strong>使用日期：</strong>10/24–10/26 彈性開通</div>
             <div><strong>兌換方式：</strong>輕軌候車站柱或車上感應機拍卡（Validé）</div>
-            <div><strong>適用範圍：</strong>濱海阿爾卑斯省通票，涵蓋尼斯輕軌（L1-L3）、市區公車與 TER 區間火車（往返濱海自由城）。</div>
+            <div><strong>適用範圍：</strong>濱海阿爾卑斯省通票，涵蓋尼斯輕軌（L1-L3）、市區公車與 TER 區間火車（往返自由城）。</div>
           </div>
         </div>
 
         <div
-          style="background: #fdfaf3; border-left: 2.5px solid var(--galilee-gold); padding: 1.8mm 2.5mm; border-radius: 0 3px 3px 0; font-size: 6pt; line-height: 1.4; color: #444;">
+          style="background: #fdfaf3; border-left: 3px solid var(--galilee-gold); padding: 2.2mm 3.2mm; border-radius: 0 3px 3px 0; font-size: 6.8pt; line-height: 1.45; color: #2d3748;">
           <strong>數位備份保障：</strong>各項通票憑證已由隨行領隊於系統建立電子備份。若手機沒電或實體卡片遺失，請立即告知領隊協助調出檔案驗票。
         </div>
       </div>
@@ -1612,104 +1617,103 @@
         </div>
 
         <!-- 6 大行前須知卡片 -->
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2mm; margin-bottom: 2.2mm;">
+        <!-- 6 大行前須知卡片 · 熟齡大字版 -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.8mm; margin-bottom: 3.5mm;">
           <div
-            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 3px; padding: 1.5mm 2.2mm; font-size: 5.8pt; line-height: 1.38;">
-            <div style="font-weight: 700; color: var(--galilee-green); margin-bottom: 0.5mm;">🛂 護照效期與申根免簽</div>
+            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 2.8mm 3.2mm; font-size: 7.2pt; line-height: 1.5; color: #1a202c;">
+            <div style="font-weight: 700; color: var(--galilee-green); font-size: 7.8pt; margin-bottom: 0.8mm;">🛂 護照效期與申根免簽</div>
             <div>中華民國護照享申根區 90 天免簽證。請確認<strong>護照效期自返國日起算 6 個月以上</strong>，隨身攜帶電子機票與飯店預約單。</div>
           </div>
           <div
-            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 3px; padding: 1.5mm 2.2mm; font-size: 5.8pt; line-height: 1.38;">
-            <div style="font-weight: 700; color: var(--galilee-green); margin-bottom: 0.5mm;">💶 歐元現金與 4 碼 PIN 密碼</div>
-            <div>歐洲刷卡普及，每人攜帶約 <strong>€200~€400 小額現金</strong>（以 €10/€20/€50 為主）。提前向銀行<strong>開通 4 位數預借現金 PIN 碼</strong>。
-            </div>
+            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 2.8mm 3.2mm; font-size: 7.2pt; line-height: 1.5; color: #1a202c;">
+            <div style="font-weight: 700; color: var(--galilee-green); font-size: 7.8pt; margin-bottom: 0.8mm;">💶 歐元現金與 4 碼 PIN 密碼</div>
+            <div>歐洲刷卡普及，每人攜帶約 <strong>€200~€400 小額現金</strong>（以 €10/€20/€50 為主）。提前向發卡銀行<strong>開通 4 位數預借現金 PIN 碼</strong>。</div>
           </div>
           <div
-            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 3px; padding: 1.5mm 2.2mm; font-size: 5.8pt; line-height: 1.38;">
-            <div style="font-weight: 700; color: var(--galilee-green); margin-bottom: 0.5mm;">🔌 電壓 220V 與雙圓孔轉接頭</div>
+            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 2.8mm 3.2mm; font-size: 7.2pt; line-height: 1.5; color: #1a202c;">
+            <div style="font-weight: 700; color: var(--galilee-green); font-size: 7.8pt; margin-bottom: 0.8mm;">🔌 電壓 220V 與雙圓孔轉接頭</div>
             <div>義法電壓 220V/50Hz，插座孔型為<strong>歐規雙圓孔（Type C / L，直徑 4.0~4.8mm）</strong>。手機充電器皆支援全球電壓，只需攜帶轉接頭。</div>
           </div>
           <div
-            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 3px; padding: 1.5mm 2.2mm; font-size: 5.8pt; line-height: 1.38;">
-            <div style="font-weight: 700; color: var(--galilee-green); margin-bottom: 0.5mm;">📶 eSIM 網路與離線地圖</div>
-            <div>出發前開通歐洲 eSIM。提前在 Google Maps 下載<strong>米蘭、科莫湖、熱那亞、菲諾港、尼斯之離線地圖</strong>，安裝 Trenitalia APP。</div>
+            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 2.8mm 3.2mm; font-size: 7.2pt; line-height: 1.5; color: #1a202c;">
+            <div style="font-weight: 700; color: var(--galilee-green); font-size: 7.8pt; margin-bottom: 0.8mm;">📶 eSIM 網路與離線地圖</div>
+            <div>出發前開通歐洲 eSIM。提前在 Google Maps 下載<strong>米蘭、貝爾加莫、科莫湖、熱那亞、菲諾港、尼斯之離線地圖</strong>，安裝 Trenitalia APP。</div>
           </div>
           <div
-            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 3px; padding: 1.5mm 2.2mm; font-size: 5.8pt; line-height: 1.38;">
-            <div style="font-weight: 700; color: var(--galilee-green); margin-bottom: 0.5mm;">🧥 10 月氣候穿搭與健走好鞋</div>
-            <div>北義約 10°C~18°C，尼斯約 14°C~22°C，溫差大。採<strong>「洋蔥式層疊穿法」</strong>（保暖內搭＋風衣外套與圍巾）。<strong>必備支撐耐走健走鞋</strong>。
-            </div>
+            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 2.8mm 3.2mm; font-size: 7.2pt; line-height: 1.5; color: #1a202c;">
+            <div style="font-weight: 700; color: var(--galilee-green); font-size: 7.8pt; margin-bottom: 0.8mm;">🧥 10 月氣候穿搭與健走好鞋</div>
+            <div>北義約 10°C~18°C，尼斯約 14°C~22°C，溫差大。採<strong>「洋蔥式層疊穿法」</strong>（保暖內搭＋風衣外套與圍巾）。<strong>必備支撐耐走健走鞋</strong>。</div>
           </div>
           <div
-            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 3px; padding: 1.5mm 2.2mm; font-size: 5.8pt; line-height: 1.38;">
-            <div style="font-weight: 700; color: var(--galilee-green); margin-bottom: 0.5mm;">🛡️ 防扒防竊與隨身安全心法</div>
+            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 2.8mm 3.2mm; font-size: 7.2pt; line-height: 1.5; color: #1a202c;">
+            <div style="font-weight: 700; color: var(--galilee-green); font-size: 7.8pt; margin-bottom: 0.8mm;">🛡️ 防扒防竊與隨身安全心法</div>
             <div>米蘭大教堂、地鐵車廂人多時提高警覺。<strong>後背包置於胸前或加鎖扣</strong>，避免門邊滑手機，重要護照現金放置貼身隱形腰包。</div>
           </div>
         </div>
 
-        <!-- 行李打包分類核對表 (6 大分類) -->
-        <div style="font-weight: 700; color: var(--galilee-green); font-size: 7.2pt; margin-bottom: 1.2mm;">
-          🧳 行李打包備忘核對表（出發前請逐項打勾）
+        <!-- 行李打包分類核對表 (6 大分類 · 熟齡大字易勾選版) -->
+        <div style="font-weight: 700; color: var(--galilee-green); font-size: 7.8pt; margin-bottom: 1.5mm;">
+          🧳 行李打包備忘核對表（出發前請逐項核對打勾）
         </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2mm; font-size: 5.5pt; line-height: 1.35;">
-          <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 3px; padding: 1.5mm 2mm;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2.8mm; font-size: 6.8pt; line-height: 1.52; color: #1a202c;">
+          <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 4px; padding: 2.5mm 2.8mm;">
             <div
-              style="font-weight: 700; color: var(--galilee-green); border-bottom: 1px solid #eee; padding-bottom: 0.5mm; margin-bottom: 0.8mm;">
+              style="font-weight: 700; color: var(--galilee-green); border-bottom: 1px solid #eee; padding-bottom: 0.8mm; margin-bottom: 1mm; font-size: 7.2pt;">
               💼 重要證件與財物</div>
-            <div>☐ 護照正本（效期 6 個月以上）</div>
-            <div>☐ 護照影本 2 份與證件照備份</div>
-            <div>☐ 海外信用卡 2 張（開通 PIN 碼）</div>
-            <div>☐ 歐元現金 €200~€400 小鈔</div>
-            <div>☐ 英文海外突發疾病保單</div>
+            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 護照正本（效期 6 個月以上）</div>
+            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 護照影本 2 份與證件照備份</div>
+            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 海外信用卡 2 張（開通 PIN 碼）</div>
+            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 歐元現金 €200~€400 小鈔</div>
+            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 英文海外突發疾病保單</div>
           </div>
-          <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 3px; padding: 1.5mm 2mm;">
+          <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 4px; padding: 2.5mm 2.8mm;">
             <div
-              style="font-weight: 700; color: var(--galilee-green); border-bottom: 1px solid #eee; padding-bottom: 0.5mm; margin-bottom: 0.8mm;">
+              style="font-weight: 700; color: var(--galilee-green); border-bottom: 1px solid #eee; padding-bottom: 0.8mm; margin-bottom: 1mm; font-size: 7.2pt;">
               🔌 3C 數位與穿戴</div>
-            <div>☐ 行動電源（⚠️嚴禁托運隨身帶）</div>
-            <div>☐ 歐規雙圓孔轉接頭（備 2~3 個）</div>
-            <div>☐ 手機充電線與多孔快充頭</div>
-            <div>☐ 歐洲跨國 eSIM / 下載離線地圖</div>
-            <div>☐ 隨身耳機（長途飛行火車用）</div>
+            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 行動電源（⚠️嚴禁托運隨身帶）</div>
+            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 歐規雙圓孔轉接頭（備 2~3 個）</div>
+            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 手機充電線與多孔快充頭</div>
+            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 歐洲跨國 eSIM / 下載離線地圖</div>
+            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 隨身耳機（長途飛行火車用）</div>
           </div>
-          <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 3px; padding: 1.5mm 2mm;">
+          <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 4px; padding: 2.5mm 2.8mm;">
             <div
-              style="font-weight: 700; color: var(--galilee-green); border-bottom: 1px solid #eee; padding-bottom: 0.5mm; margin-bottom: 0.8mm;">
+              style="font-weight: 700; color: var(--galilee-green); border-bottom: 1px solid #eee; padding-bottom: 0.8mm; margin-bottom: 1mm; font-size: 7.2pt;">
               👔 10 月衣物與鞋履</div>
-            <div>☐ 好走耐震健走鞋（已合腳）</div>
-            <div>☐ 防風保暖輕羽絨 / 風衣外套</div>
-            <div>☐ 洋蔥式保暖薄發熱衣 3~4 件</div>
-            <div>☐ 舒適透氣便服長褲</div>
-            <div>☐ 保暖圍巾 / 遮陽帽與太陽眼鏡</div>
+            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 好走耐震健走鞋（已合腳）</div>
+            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 防風保暖輕羽絨 / 風衣外套</div>
+            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 洋蔥式保暖薄發熱衣 3~4 件</div>
+            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 舒適透氣便服長褲</div>
+            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 保暖圍巾 / 遮陽帽與太陽眼鏡</div>
           </div>
-          <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 3px; padding: 1.5mm 2mm;">
+          <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 4px; padding: 2.5mm 2.8mm;">
             <div
-              style="font-weight: 700; color: var(--galilee-green); border-bottom: 1px solid #eee; padding-bottom: 0.5mm; margin-bottom: 0.8mm;">
+              style="font-weight: 700; color: var(--galilee-green); border-bottom: 1px solid #eee; padding-bottom: 0.8mm; margin-bottom: 1mm; font-size: 7.2pt;">
               💊 常備藥品與健康</div>
-            <div>☐ 個人慢性病處方藥（多備數日份）</div>
-            <div>☐ 綜合感冒藥與普拿疼止痛藥</div>
-            <div>☐ 腸胃藥與止瀉藥</div>
-            <div>☐ 暈車暈船藥（菲諾港公車備用）</div>
-            <div>☐ 保濕乳液、護唇膏與 OK 繃</div>
+            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 個人慢性病處方藥（多備數日份）</div>
+            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 綜合感冒藥與普拿疼止痛藥</div>
+            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 腸胃藥與止瀉藥</div>
+            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 暈車暈船藥（菲諾港公車備用）</div>
+            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 保濕乳液、護唇膏與 OK 繃</div>
           </div>
-          <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 3px; padding: 1.5mm 2mm;">
+          <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 4px; padding: 2.5mm 2.8mm;">
             <div
-              style="font-weight: 700; color: var(--galilee-green); border-bottom: 1px solid #eee; padding-bottom: 0.5mm; margin-bottom: 0.8mm;">
+              style="font-weight: 700; color: var(--galilee-green); border-bottom: 1px solid #eee; padding-bottom: 0.8mm; margin-bottom: 1mm; font-size: 7.2pt;">
               🧳 生活隨身防護</div>
-            <div>☐ 貼身防盜小包 / 胸前包</div>
-            <div>☐ 輕量折疊晴雨傘</div>
-            <div>☐ 輕量保溫隨行水杯</div>
-            <div>☐ 行李箱海關鎖與辨識束帶</div>
-            <div>☐ 隨身紙巾與酒精濕紙巾</div>
+            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 貼身防盜小包 / 胸前包</div>
+            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 輕量折疊晴雨傘</div>
+            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 輕量保溫隨行水杯</div>
+            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 行李箱海關鎖與辨識束帶</div>
+            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 隨身紙巾與酒精濕紙巾</div>
           </div>
-          <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 3px; padding: 1.5mm 2mm;">
+          <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 4px; padding: 2.5mm 2.8mm;">
             <div
-              style="font-weight: 700; color: var(--galilee-green); border-bottom: 1px solid #eee; padding-bottom: 0.5mm; margin-bottom: 0.8mm;">
+              style="font-weight: 700; color: var(--galilee-green); border-bottom: 1px solid #eee; padding-bottom: 0.8mm; margin-bottom: 1mm; font-size: 7.2pt;">
               ✈️ 託運與航空規定</div>
-            <div>☐ 隨身液體單瓶 ≤100ml 透明袋裝</div>
-            <div>☐ 貴重筆電相機一律隨身嚴禁託運</div>
-            <div>☐ 阿聯酋託運行李重量確認（25kg）</div>
-            <div>☐ 行李吊牌填寫英文聯絡資訊</div>
+            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 隨身液體單瓶 ≤100ml 透明袋裝</div>
+            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 貴重筆電相機一律隨身嚴禁託運</div>
+            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 阿聯酋託運行李重量確認（25kg）</div>
+            <div><span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #244b67; border-radius: 2px; vertical-align: -1px; margin-right: 3px;"></span> 行李吊牌填寫英文聯絡資訊</div>
           </div>
         </div>
       </div>
@@ -3655,62 +3659,62 @@
           手指即可溝通 · 隨身必備實用禮貌問候與用餐單字
         </div>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5mm; margin-bottom: 2.2mm;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3.5mm; margin-bottom: 3.5mm;">
           <div
-            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 2mm 2.5mm; font-size: 6pt; line-height: 1.42;">
+            style="background: #faf8f5; border: 1.5px solid #d6a34a; border-radius: 5px; padding: 3.5mm 4mm; font-size: 8.2pt; line-height: 1.62; color: #1a202c;">
             <div
-              style="font-weight: 700; color: var(--galilee-green); font-size: 7.2pt; margin-bottom: 0.8mm; border-bottom: 1px solid #ebd9b6; padding-bottom: 0.5mm;">
-              🇮🇹 實用義大利語 (Italiano)
+              style="font-weight: 700; color: var(--galilee-green); font-size: 9pt; margin-bottom: 1.2mm; border-bottom: 1.5px solid #ebd9b6; padding-bottom: 0.8mm;">
+              🇮🇹 實用義大利語 (Italiano · 指給店員看)
             </div>
-            <div>• 你好 / 再見：<strong>Ciao!</strong> / <strong>Buongiorno!</strong></div>
-            <div>• 晚安：<strong>Buonasera!</strong></div>
-            <div>• 請 / 拜託：<strong>Per favore</strong></div>
-            <div>• 謝謝：<strong>Grazie!</strong> (非常感謝：Grazie mille)</div>
-            <div>• 不好意思 / 對不起：<strong>Scusi / Mi scusi</strong></div>
-            <div>• 洗手間在哪裡？：<strong>Dov'è il bagno?</strong></div>
-            <div>• 買單結帳：<strong>Il conto, per favore.</strong></div>
-            <div>• 水（無氣泡／有氣泡）：<strong>Naturale / Frizzante</strong></div>
+            <div>• 你好 / 再見：<strong style="color: var(--galilee-green-dark); font-size: 8.8pt;">Ciao!</strong> / <strong style="color: var(--galilee-green-dark); font-size: 8.8pt;">Buongiorno!</strong></div>
+            <div>• 晚安：<strong style="color: var(--galilee-green-dark);">Buonasera!</strong></div>
+            <div>• 請 / 拜託：<strong style="color: var(--galilee-green-dark);">Per favore</strong></div>
+            <div>• 謝謝：<strong style="color: var(--galilee-green-dark);">Grazie!</strong> (非常感謝：Grazie mille)</div>
+            <div>• 不好意思：<strong style="color: var(--galilee-green-dark);">Scusi / Mi scusi</strong></div>
+            <div>• 洗手間在哪？：<strong style="color: #b8862d; font-size: 8.8pt;">Dov'è il bagno?</strong></div>
+            <div>• 買單結帳：<strong style="color: #b8862d; font-size: 8.8pt;">Il conto, per favore.</strong></div>
+            <div>• 水（無氣泡/氣泡）：<strong>Naturale / Frizzante</strong></div>
           </div>
 
           <div
-            style="background: #faf8f5; border: 1px solid #ebd9b6; border-radius: 4px; padding: 2mm 2.5mm; font-size: 6pt; line-height: 1.42;">
+            style="background: #faf8f5; border: 1.5px solid #d6a34a; border-radius: 5px; padding: 3.5mm 4mm; font-size: 8.2pt; line-height: 1.62; color: #1a202c;">
             <div
-              style="font-weight: 700; color: var(--galilee-green); font-size: 7.2pt; margin-bottom: 0.8mm; border-bottom: 1px solid #ebd9b6; padding-bottom: 0.5mm;">
-              🇫🇷 實用法語 (Français)
+              style="font-weight: 700; color: var(--galilee-green); font-size: 9pt; margin-bottom: 1.2mm; border-bottom: 1.5px solid #ebd9b6; padding-bottom: 0.8mm;">
+              🇫🇷 實用法語 (Français · 指給店員看)
             </div>
-            <div>• 您好：<strong>Bonjour!</strong> (進商店必說)</div>
-            <div>• 晚安：<strong>Bonsoir!</strong></div>
-            <div>• 請：<strong>S'il vous plaît</strong></div>
-            <div>• 謝謝：<strong>Merci!</strong> (非常感謝：Merci beaucoup)</div>
-            <div>• 不好意思 / 借過：<strong>Pardon / Excusez-moi</strong></div>
-            <div>• 洗手間在哪裡？：<strong>Où sont les toilettes?</strong></div>
-            <div>• 買單結帳：<strong>L'addition, s'il vous plaît.</strong></div>
-            <div>• 水（自來水/氣泡）：<strong>Une carafe d'eau / Gazeuse</strong></div>
+            <div>• 您好：<strong style="color: var(--galilee-green-dark); font-size: 8.8pt;">Bonjour!</strong> (進商店必說問候)</div>
+            <div>• 晚安：<strong style="color: var(--galilee-green-dark);">Bonsoir!</strong></div>
+            <div>• 請：<strong style="color: var(--galilee-green-dark);">S'il vous plaît</strong></div>
+            <div>• 謝謝：<strong style="color: var(--galilee-green-dark);">Merci!</strong> (非常感謝：Merci beaucoup)</div>
+            <div>• 不好意思：<strong style="color: var(--galilee-green-dark);">Pardon / Excusez-moi</strong></div>
+            <div>• 洗手間在哪？：<strong style="color: #b8862d; font-size: 8.8pt;">Où sont les toilettes?</strong></div>
+            <div>• 買單結帳：<strong style="color: #b8862d; font-size: 8.8pt;">L'addition, s'il vous plaît.</strong></div>
+            <div>• 自來水/氣泡水：<strong>Une carafe d'eau / Gazeuse</strong></div>
           </div>
         </div>
 
-        <!-- 歐盟與法國 PABLO 退稅 3 步驟 -->
-        <div style="font-weight: 700; color: var(--galilee-green); font-size: 7.5pt; margin-bottom: 1.2mm;">
+        <!-- 歐盟與法國 PABLO 退稅 3 步驟 · 熟齡大字版 -->
+        <div style="font-weight: 700; color: var(--galilee-green); font-size: 8.5pt; margin-bottom: 1.5mm;">
           💶 法國與歐盟 PABLO 電子退稅 3 步驟指南
         </div>
         <div
-          style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2mm; margin-bottom: 2mm; font-size: 5.8pt; line-height: 1.38;">
-          <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 3px; padding: 1.8mm 2.2mm;">
-            <div style="font-weight: 700; color: var(--galilee-green); margin-bottom: 0.5mm;">步驟 1：索取退稅單</div>
+          style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2.8mm; margin-bottom: 2.8mm; font-size: 7.2pt; line-height: 1.48; color: #1a202c;">
+          <div style="background: #fff; border: 1px solid #cbd5e1; border-radius: 4px; padding: 2.8mm 3mm;">
+            <div style="font-weight: 700; color: var(--galilee-green); font-size: 7.8pt; margin-bottom: 0.8mm;">步驟 1：索取退稅單</div>
             <div>同一店家單日消費滿 <strong>€100.01</strong> 即可退稅。結帳時出示護照，索取含 PABLO 條碼之正式退稅單。</div>
           </div>
-          <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 3px; padding: 1.8mm 2.2mm;">
-            <div style="font-weight: 700; color: var(--galilee-green); margin-bottom: 0.5mm;">步驟 2：PABLO 掃描驗證</div>
+          <div style="background: #fff; border: 1px solid #cbd5e1; border-radius: 4px; padding: 2.8mm 3mm;">
+            <div style="font-weight: 700; color: var(--galilee-green); font-size: 7.8pt; margin-bottom: 0.8mm;">步驟 2：PABLO 掃描驗證</div>
             <div>抵達尼斯機場第二航廈（T2）託運行李前，至海關 <strong>PABLO 電子機台感應條碼</strong>，螢幕出現綠色勾勾即核銷完成。</div>
           </div>
-          <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 3px; padding: 1.8mm 2.2mm;">
-            <div style="font-weight: 700; color: var(--galilee-green); margin-bottom: 0.5mm;">步驟 3：退稅款領取</div>
+          <div style="background: #fff; border: 1px solid #cbd5e1; border-radius: 4px; padding: 2.8mm 3mm;">
+            <div style="font-weight: 700; color: var(--galilee-green); font-size: 7.8pt; margin-bottom: 0.8mm;">步驟 3：退稅款領取</div>
             <div>選擇退回信用卡者無須郵寄紙本；選擇退現金者持已核銷單據至 Travelex 換匯櫃檯領取歐元現鈔。</div>
           </div>
         </div>
 
         <div
-          style="background: #faf9f6; border-left: 2.5px solid var(--galilee-green); padding: 1.5mm 2.5mm; border-radius: 0 3px 3px 0; font-size: 5.8pt; line-height: 1.35; color: #444;">
+          style="background: #faf9f6; border-left: 3px solid var(--galilee-green); padding: 2mm 3.2mm; border-radius: 0 3px 3px 0; font-size: 6.8pt; line-height: 1.45; color: #2d3748;">
           <strong>⚠️ 退稅重要提醒：</strong>退稅商品在出境海關查驗前<strong>請勿拆封使用</strong>，建議將退稅品集中放置於行李箱最上層，若遇海關抽查能迅速出示。
         </div>
       </div>
@@ -3904,7 +3908,7 @@
                 📮 紀念戳印收集處 (Souvenir Stamps)
               </div>
               <div style="font-size: 5.6pt; color: #888; text-align: center; margin-top: 25mm;">
-                可在此蓋上米蘭、貝爾加莫古城、熱那亞、菲諾港或尼斯各車站景點的紀念印章
+                可在此蓋上米蘭、貝爾加莫古城、科莫湖、熱那亞、菲諾港或尼斯各景點與車站之紀念印章
               </div>
             </div>
             <div
@@ -3947,24 +3951,24 @@
       <div class="back-cover-poem-card">
         <div class="back-cover-poem-fr">
           « Partir, c'est vivre un peu plus fort. Revenir, c'est emporter l'éternité d'un azur dans le cœur.<br>
-          De la lumière dorée de Milan aux flots étincelants de Nice, chaque pas fut une douce poésie. »
+          De la lumière dorée de Milan et Bergame aux flots étincelants de Nice, chaque pas fut une douce poésie. »
         </div>
         <div class="back-cover-poem-divider">✦ &nbsp; ⚜ &nbsp; ✦</div>
         <div class="back-cover-poem-zh">
           「啟程，是讓生命更為熾熱；歸途，是將永恆的蔚藍珍藏於心。<br>
-          自米蘭大理石尖塔的晨光，行至天使之灣的落日金波，每一步皆是歲月譜寫的溫柔詩篇。」
+          自米蘭大理石尖塔與貝爾加莫古城晨光，行至天使之灣落日金波，每一步皆是歲月譜寫的溫柔詩篇。」
         </div>
       </div>
 
       <!-- 15日慢旅回憶里程碑 -->
       <div class="back-cover-milestones">
         <div class="back-cover-milestone-item">
-          <div class="city-fr">MILANO & COMO</div>
-          <div class="city-zh">古典大教堂 · 湖畔微風</div>
+          <div class="city-fr">MILANO & BERGAMO</div>
+          <div class="city-zh">古典大教堂 · 上城纜車</div>
         </div>
         <div class="back-cover-milestone-item">
-          <div class="city-fr">GÊNES & PORTOFINO</div>
-          <div class="city-zh">利古里亞海 · 彩色小鎮</div>
+          <div class="city-fr">COMO & PORTOFINO</div>
+          <div class="city-zh">湖光山色 · 彩色港灣</div>
         </div>
         <div class="back-cover-milestone-item">
           <div class="city-fr">NICE & CAP-FERRAT</div>
