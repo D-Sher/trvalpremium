@@ -366,23 +366,29 @@
 
     /* 交通站點提醒標籤 (Node Station Cue Badge) */
     .galilee-t-station-cue {
-      font-size: 5.6pt;
+      font-size: 5.0pt;
       font-weight: 600;
       line-height: 1.15;
-      color: #1e3d34;
+      color: #166534;
       background: #f0fdf4;
-      border: 0.5px solid #bbf7d0;
+      border: 0.5px solid #86efac;
       border-radius: 2px;
-      padding: 0.5px 2.5px;
+      padding: 0.5px 2px;
       margin-top: 1.5px;
       display: inline-block;
+      max-width: 63px;
       white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: center;
+      box-sizing: border-box;
+      letter-spacing: -0.01em;
     }
 
     .galilee-t-station-cue.alert-cue {
       color: #991b1b;
       background: #fef2f2;
-      border-color: #fecaca;
+      border-color: #fca5a5;
       font-weight: 700;
     }
 
@@ -2181,7 +2187,7 @@
                 <div class="galilee-t-time">20:50</div>
                 <div class="galilee-t-label">T2 報到</div>
                 <div class="galilee-t-dur">託運 25kg</div>
-                <span class="galilee-t-station-cue">起：台北桃園 T2</span>
+                <span class="galilee-t-station-cue">起：桃機 T2</span>
               </div>
               <div class="galilee-timeline-node">
                 <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
@@ -2191,7 +2197,6 @@
                 <div class="galilee-t-time">23:50</div>
                 <div class="galilee-t-label">EK367 起飛</div>
                 <div class="galilee-t-dur">舒適夜航</div>
-                <span class="galilee-t-station-cue">直飛杜拜 T3</span>
               </div>
               <div class="galilee-timeline-node">
                 <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
@@ -2201,7 +2206,7 @@
                 <div class="galilee-t-time">04:35</div>
                 <div class="galilee-t-label">杜拜 T3</div>
                 <div class="galilee-t-dur">轉機停留 5h</div>
-                <span class="galilee-t-station-cue alert-cue">抵：DXB T3 轉機</span>
+                <span class="galilee-t-station-cue alert-cue">中轉：DXB T3</span>
               </div>
               <div class="galilee-timeline-node">
                 <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
@@ -2211,16 +2216,7 @@
                 <div class="galilee-t-time">09:35</div>
                 <div class="galilee-t-label">EK205 飛米蘭</div>
                 <div class="galilee-t-dur">航程 6h35m</div>
-                <span class="galilee-t-station-cue alert-cue">抵：米蘭 MXP T1</span>
-              </div>
-            </div>
-            <!-- 航班行程核對提醒條 -->
-            <div class="galilee-transit-station-bar">
-              <span class="gts-tag gts-tag-flight">✈️ 航班行程核對</span>
-              <div class="gts-info">
-                <span class="gts-leg"><strong>第一段 EK367</strong>：啟程 <em>台北桃園 T2 (23:50)</em> ➔ 到達 <em class="gts-prev-station">杜拜 DXB T3 (04:35)</em></span>
-                <span class="gts-sep">｜</span>
-                <span class="gts-leg"><strong>第二段 EK205</strong>：啟程 <em>杜拜 DXB T3 (09:35)</em> ➔ 到達 <em class="gts-prev-station">米蘭馬爾彭薩 MXP T1 (14:10)</em></span>
+                <span class="galilee-t-station-cue alert-cue">抵：米蘭 MXP</span>
               </div>
             </div>
           </div>
@@ -2290,7 +2286,6 @@
                 <div class="galilee-t-time">14:10</div>
                 <div class="galilee-t-label">抵達 MXP</div>
                 <div class="galilee-t-dur">第一航廈通關</div>
-                <span class="galilee-t-station-cue">抵：MXP T1</span>
               </div>
               <div class="galilee-timeline-node">
                 <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
@@ -2310,7 +2305,7 @@
                 <div class="galilee-t-time">17:07</div>
                 <div class="galilee-t-label">中央車站</div>
                 <div class="galilee-t-dur">領取米蘭通票</div>
-                <span class="galilee-t-station-cue alert-cue">前站: Garibaldi ➔ 抵</span>
+                <span class="galilee-t-station-cue alert-cue">前站: Garibaldi</span>
               </div>
               <div class="galilee-timeline-node">
                 <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
@@ -2328,13 +2323,6 @@
                 <div class="galilee-t-time">19:00</div>
                 <div class="galilee-t-label">迎賓晚餐</div>
                 <div class="galilee-t-dur">道地義式美饌</div>
-              </div>
-            </div>
-            <!-- 機場快線核對提醒條 -->
-            <div class="galilee-transit-station-bar">
-              <span class="gts-tag">🚆 機場快線核對</span>
-              <div class="gts-info">
-                <span class="gts-leg"><strong>MXP 2951 快線</strong>：啟程站 <em>Malpensa Aeroporto T1 (16:11)</em> ➔ 前一停靠站 <em class="gts-prev-station">Milano Porta Garibaldi</em> ➔ 到達站 <em>Milano Centrale (米蘭中央車站 17:07)</em></span>
               </div>
             </div>
           </div>
@@ -2419,7 +2407,7 @@
               <div class="galilee-t-time">09:30</div>
               <div class="galilee-t-label">Centrale M3</div>
               <div class="galilee-t-dur">開通米蘭通票</div>
-              <span class="galilee-t-station-cue">起：Centrale FS</span>
+              <span class="galilee-t-station-cue">起：Centrale</span>
             </div>
             <div class="galilee-timeline-node">
               <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
@@ -2429,7 +2417,7 @@
               <div class="galilee-t-time">10:00</div>
               <div class="galilee-t-label">大教堂廣場</div>
               <div class="galilee-t-dur">哥德外觀拍照</div>
-              <span class="galilee-t-station-cue alert-cue">前站: Montenapoleone</span>
+              <span class="galilee-t-station-cue alert-cue">前站: Montenap.</span>
             </div>
             <div class="galilee-timeline-node">
               <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
@@ -2457,7 +2445,6 @@
               <div class="galilee-t-time">14:30</div>
               <div class="galilee-t-label">復古電車1號</div>
               <div class="galilee-t-dur">穿越市區街景</div>
-              <span class="galilee-t-station-cue">市區街景</span>
             </div>
             <div class="galilee-timeline-node">
               <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
@@ -2476,16 +2463,6 @@
               <div class="galilee-t-time">18:30</div>
               <div class="galilee-t-label">主廚晚宴</div>
               <div class="galilee-t-dur">米蘭名饌料理</div>
-            </div>
-          </div>
-
-          <!-- 市區交通核對提醒條 -->
-          <div class="galilee-transit-station-bar">
-            <span class="gts-tag gts-tag-metro">🚇 市區交通核對</span>
-            <div class="gts-info">
-              <span class="gts-leg"><strong>米蘭地鐵 M3 黃線</strong>：啟程站 <em>Centrale FS</em> ➔ 前一停靠站 <em class="gts-prev-station">Montenapoleone</em> ➔ 到達站 <em>Duomo (米蘭大教堂)</em></span>
-              <span class="gts-sep">｜</span>
-              <span class="gts-leg"><strong>復古電車 1 號</strong>：貫穿斯卡拉歌劇院與古城街區</span>
             </div>
           </div>
         </div>
@@ -2595,7 +2572,7 @@
               <div class="galilee-t-time">09:05</div>
               <div class="galilee-t-label">RE 2219</div>
               <div class="galilee-t-dur">米蘭中央出發</div>
-              <span class="galilee-t-station-cue">起：Milano Centrale</span>
+              <span class="galilee-t-station-cue">起：米蘭中央</span>
             </div>
             <div class="galilee-timeline-node">
               <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
@@ -2605,7 +2582,7 @@
               <div class="galilee-t-time">09:53</div>
               <div class="galilee-t-label">抵 Bergamo</div>
               <div class="galilee-t-dur">公車 1 號接駁</div>
-              <span class="galilee-t-station-cue alert-cue">前站: Verdello-Dalmine</span>
+              <span class="galilee-t-station-cue alert-cue">前站: Verdello</span>
             </div>
             <div class="galilee-timeline-node">
               <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
@@ -2652,16 +2629,6 @@
               <div class="galilee-t-label">RE 2232</div>
               <div class="galilee-t-dur">15:50 返抵米蘭</div>
               <span class="galilee-t-station-cue alert-cue">前站: Lambrate</span>
-            </div>
-          </div>
-
-          <!-- 鐵路車次核對提醒條 -->
-          <div class="galilee-transit-station-bar">
-            <span class="gts-tag">🚆 鐵路車次核對</span>
-            <div class="gts-info">
-              <span class="gts-leg"><strong>去程 RE 2219</strong>：啟程站 <em>Milano Centrale (09:05)</em> ➔ 前一停靠站 <em class="gts-prev-station">Verdello-Dalmine</em> ➔ 到達站 <em>Bergamo (09:53)</em></span>
-              <span class="gts-sep">｜</span>
-              <span class="gts-leg"><strong>回程 RE 2232</strong>：啟程站 <em>Bergamo (15:02)</em> ➔ 前一停靠站 <em class="gts-prev-station">Milano Lambrate</em> ➔ 到達站 <em>Milano Centrale (15:50)</em></span>
             </div>
           </div>
         </div>
@@ -2772,7 +2739,7 @@
               <div class="galilee-t-time">09:20</div>
               <div class="galilee-t-label">RE 2818</div>
               <div class="galilee-t-dur">米蘭中央出發</div>
-              <span class="galilee-t-station-cue">起：Milano Centrale</span>
+              <span class="galilee-t-station-cue">起：米蘭中央</span>
             </div>
             <div class="galilee-timeline-node">
               <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
@@ -2828,17 +2795,7 @@
               <div class="galilee-t-time">15:35</div>
               <div class="galilee-t-label">RE 快車</div>
               <div class="galilee-t-dur">返米蘭預留體力</div>
-              <span class="galilee-t-station-cue alert-cue">前站: Monza ➔ 抵</span>
-            </div>
-          </div>
-
-          <!-- 交通與渡輪核對提醒條 -->
-          <div class="galilee-transit-station-bar">
-            <span class="gts-tag">🚆 交通與渡輪核對</span>
-            <div class="gts-info">
-              <span class="gts-leg"><strong>去程 RE 2818</strong>：啟程站 <em>Milano Centrale (09:20)</em> ➔ 前一停靠站 <em class="gts-prev-station">Mandello del Lario</em> ➔ 到達站 <em>Varenna-Esino (10:25)</em></span>
-              <span class="gts-sep">｜</span>
-              <span class="gts-leg"><strong>回程 RE 快車</strong>：啟程站 <em>Varenna-Esino</em> ➔ 前一停靠站 <em class="gts-prev-station">Monza</em> ➔ 到達站 <em>Milano Centrale</em></span>
+              <span class="galilee-t-station-cue alert-cue">前站: Monza</span>
             </div>
           </div>
         </div>
@@ -2950,7 +2907,7 @@
                 <div class="galilee-t-time">09:10</div>
                 <div class="galilee-t-label">IC 659</div>
                 <div class="galilee-t-dur">城際一等艙</div>
-                <span class="galilee-t-station-cue">起：Milano Centrale</span>
+                <span class="galilee-t-station-cue">起：米蘭中央</span>
               </div>
               <div class="galilee-timeline-node">
                 <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
@@ -2996,13 +2953,6 @@
                 <div class="galilee-t-time">18:30</div>
                 <div class="galilee-t-label">港都晚宴</div>
                 <div class="galilee-t-dur">古典美饌</div>
-              </div>
-            </div>
-            <!-- 城際快車核對提醒條 -->
-            <div class="galilee-transit-station-bar">
-              <span class="gts-tag">🚆 城際快車核對</span>
-              <div class="gts-info">
-                <span class="gts-leg"><strong>IC 659 一等艙</strong>：啟程站 <em>Milano Centrale (09:10)</em> ➔ 前一停靠站 <em class="gts-prev-station">Tortona</em> ➔ 到達站 <em>Genova Piazza Principe (10:40)</em></span>
               </div>
             </div>
           </div>
@@ -3082,7 +3032,7 @@
                 <div class="galilee-t-time">10:00</div>
                 <div class="galilee-t-label">法拉利廣場</div>
                 <div class="galilee-t-dur">青銅噴泉/總督宮</div>
-                <span class="galilee-t-station-cue alert-cue">前站: San Giorgio</span>
+                <span class="galilee-t-station-cue alert-cue">前站: S.Giorgio</span>
               </div>
               <div class="galilee-timeline-node">
                 <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
@@ -3119,15 +3069,6 @@
                 <div class="galilee-t-time">18:30</div>
                 <div class="galilee-t-label">海鮮晚餐</div>
                 <div class="galilee-t-dur">港邊露天美饌</div>
-              </div>
-            </div>
-            <!-- 市區交通核對提醒條 -->
-            <div class="galilee-transit-station-bar">
-              <span class="gts-tag gts-tag-metro">🚇 地鐵纜車核對</span>
-              <div class="gts-info">
-                <span class="gts-leg"><strong>熱那亞地鐵紅線</strong>：啟程站 <em>Principe</em> ➔ 前一站 <em class="gts-prev-station">San Giorgio</em> ➔ 到達站 <em>De Ferrari</em></span>
-                <span class="gts-sep">｜</span>
-                <span class="gts-leg"><strong>澤卡-里吉纜車</strong>：<em>Zecca ➔ Righi</em> 登高全景</span>
               </div>
             </div>
           </div>
@@ -3271,22 +3212,12 @@
               <span class="galilee-t-station-cue alert-cue">前站: Brignole</span>
             </div>
           </div>
-
-          <!-- 交通站點核對提醒條 (Transit Station Alert Bar) -->
-          <div class="galilee-transit-station-bar">
-            <span class="gts-tag">🚆 乘車站點核對</span>
-            <div class="gts-info">
-              <span class="gts-leg"><strong>去程 IC 657</strong>：啟程站 <em>Genova Piazza Principe (09:47)</em> ➔ 前一停靠站 <em class="gts-prev-station">Genova Brignole (09:55)</em> ➔ 到達站 <em>Santa Margherita Ligure (10:14)</em></span>
-              <span class="gts-sep">｜</span>
-              <span class="gts-leg"><strong>回程 IC 674</strong>：啟程站 <em>Santa Margherita Ligure (15:46)</em> ➔ 前一停靠站 <em class="gts-prev-station">Genova Brignole (16:04)</em> ➔ 到達站 <em>Genova Piazza Principe (16:14)</em></span>
-            </div>
-          </div>
         </div>
 
         <!-- 全景菲諾港大景橫幅相片 (Panoramic Hero Photo) -->
-        <div class="galilee-photo-hero" style="position: relative; margin-bottom: 1.2mm;">
+        <div class="galilee-photo-hero" style="position: relative; margin-bottom: 1.4mm;">
           <img src="portofinomain.webp" alt="全景菲諾港：由全景步道俯瞰粉彩海灣與地中海蔚藍絕景"
-            style="height: 32mm; width: 100%; object-fit: cover; border-radius: 4px; box-shadow: 0 2px 7px rgba(0,0,0,0.1); border: 1px solid rgba(0,0,0,0.08);">
+            style="height: 38mm; width: 100%; object-fit: cover; border-radius: 4px; box-shadow: 0 2px 7px rgba(0,0,0,0.1); border: 1px solid rgba(0,0,0,0.08);">
           <div
             style="position: absolute; bottom: 2mm; right: 2.5mm; background: rgba(0,0,0,0.65); color: #fff; font-size: 6.6pt; padding: 1px 6.5px; border-radius: 3px; backdrop-filter: blur(2px);">
             ✦ 全景俯瞰 Punto Panoramico · Portofino
@@ -3434,7 +3365,7 @@
                 <div class="galilee-t-time">15:00</div>
                 <div class="galilee-t-label">TER 列車</div>
                 <div class="galilee-t-dur">跨國前往尼斯</div>
-                <span class="galilee-t-station-cue alert-cue">前站: Nice Riquier</span>
+                <span class="galilee-t-station-cue alert-cue">前站: Riquier</span>
               </div>
               <div class="galilee-timeline-node">
                 <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
@@ -3443,15 +3374,6 @@
                 <div class="galilee-t-time">17:00</div>
                 <div class="galilee-t-label">入住 AC Hotel</div>
                 <div class="galilee-t-dur">海岸夕陽慢步</div>
-              </div>
-            </div>
-            <!-- 跨國鐵路核對提醒條 -->
-            <div class="galilee-transit-station-bar">
-              <span class="gts-tag">🚆 跨國鐵路核對</span>
-              <div class="gts-info">
-                <span class="gts-leg"><strong>義大利 IC 633</strong>：啟程站 <em>Genova Piazza Principe (08:58)</em> ➔ 前一停靠站 <em class="gts-prev-station">Bordighera (10:50)</em> ➔ 到達站 <em>Ventimiglia (10:58)</em></span>
-                <span class="gts-sep">｜</span>
-                <span class="gts-leg"><strong>跨國 TER 列車</strong>：啟程站 <em>Ventimiglia (15:00)</em> ➔ 前一停靠站 <em class="gts-prev-station">Nice Riquier</em> ➔ 到達站 <em>Nice-Ville (尼斯城車站)</em></span>
               </div>
             </div>
           </div>
@@ -3532,7 +3454,7 @@
                 <div class="galilee-t-time">10:00</div>
                 <div class="galilee-t-label">薩萊亞花市</div>
                 <div class="galilee-t-dur">Cours Saleya 鮮花</div>
-                <span class="galilee-t-station-cue alert-cue">前站: Jean Médecin ➔ 抵</span>
+                <span class="galilee-t-station-cue alert-cue">前站: Médecin</span>
               </div>
               <div class="galilee-timeline-node">
                 <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
@@ -3568,13 +3490,6 @@
                 <div class="galilee-t-time">18:30</div>
                 <div class="galilee-t-label">舊城晚宴</div>
                 <div class="galilee-t-dur">南法海鮮美饌</div>
-              </div>
-            </div>
-            <!-- 市區輕軌核對提醒條 -->
-            <div class="galilee-transit-station-bar">
-              <span class="gts-tag gts-tag-metro">🚊 尼斯輕軌核對</span>
-              <div class="gts-info">
-                <span class="gts-leg"><strong>輕軌 L2 線</strong>：啟程站 <em>Magnan (飯店出發)</em> ➔ 前一停靠站 <em class="gts-prev-station">Jean Médecin</em> ➔ 到達站 <em>Opéra - Vieille Ville (歌劇院舊城站)</em></span>
               </div>
             </div>
           </div>
@@ -3672,7 +3587,7 @@
                 <div class="galilee-t-time">10:00</div>
                 <div class="galilee-t-label">抵自由城</div>
                 <div class="galilee-t-dur">僅約 7 分鐘</div>
-                <span class="galilee-t-station-cue alert-cue">前站: Nice Riquier</span>
+                <span class="galilee-t-station-cue alert-cue">前站: Riquier</span>
               </div>
               <div class="galilee-timeline-node">
                 <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
@@ -3709,16 +3624,7 @@
                 <div class="galilee-t-time">15:00</div>
                 <div class="galilee-t-label">返抵尼斯</div>
                 <div class="galilee-t-dur">享受自由留白</div>
-                <span class="galilee-t-station-cue alert-cue">前站: Riquier ➔ 抵</span>
-              </div>
-            </div>
-            <!-- 景觀鐵路核對提醒條 -->
-            <div class="galilee-transit-station-bar">
-              <span class="gts-tag">🚆 景觀鐵路核對</span>
-              <div class="gts-info">
-                <span class="gts-leg"><strong>去程 TER</strong>：啟程站 <em>Nice-Ville (09:45)</em> ➔ 前一停靠站 <em class="gts-prev-station">Nice Riquier</em> ➔ 到達站 <em>Villefranche-sur-Mer (10:00)</em></span>
-                <span class="gts-sep">｜</span>
-                <span class="gts-leg"><strong>回程 TER</strong>：啟程站 <em>Villefranche-sur-Mer (15:00)</em> ➔ 前一停靠站 <em class="gts-prev-station">Nice Riquier</em> ➔ 到達站 <em>Nice-Ville</em></span>
+                <span class="galilee-t-station-cue alert-cue">前站: Riquier</span>
               </div>
             </div>
           </div>
@@ -3790,7 +3696,7 @@
                 <div class="galilee-t-time">09:30</div>
                 <div class="galilee-t-label">輕軌轉公車</div>
                 <div class="galilee-t-dur">Port Lympia 轉乘</div>
-                <span class="galilee-t-station-cue">起：Port Lympia</span>
+                <span class="galilee-t-station-cue">起：Lympia</span>
               </div>
               <div class="galilee-timeline-node">
                 <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
@@ -3800,7 +3706,7 @@
                 <div class="galilee-t-time">10:15</div>
                 <div class="galilee-t-label">直達門口</div>
                 <div class="galilee-t-dur">Passable 站</div>
-                <span class="galilee-t-station-cue alert-cue">前站: Pont St-Jean</span>
+                <span class="galilee-t-station-cue alert-cue">前站: St-Jean</span>
               </div>
               <div class="galilee-timeline-node">
                 <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
@@ -3845,13 +3751,6 @@
                 <div class="galilee-t-time">16:30</div>
                 <div class="galilee-t-label">返回尼斯</div>
                 <div class="galilee-t-dur">精選主廚晚宴</div>
-              </div>
-            </div>
-            <!-- 海濱公車核對提醒條 -->
-            <div class="galilee-transit-station-bar">
-              <span class="gts-tag gts-tag-bus">🚌 海濱公車核對</span>
-              <div class="gts-info">
-                <span class="gts-leg"><strong>15 號公車</strong>：啟程站 <em>Port Lympia (尼斯林匹亞港)</em> ➔ 前一停靠站 <em class="gts-prev-station">Pont Saint-Jean</em> ➔ 到達站 <em>Passable / Rothschild (別墅門口)</em></span>
               </div>
             </div>
           </div>
@@ -3990,14 +3889,6 @@
               <div class="galilee-t-dur">蔚藍海岸海鮮盛宴</div>
             </div>
           </div>
-
-          <!-- 市區通票核對提醒條 -->
-          <div class="galilee-transit-station-bar">
-            <span class="gts-tag gts-tag-metro">🚊 市區通票核對</span>
-            <div class="gts-info">
-              <span class="gts-leg"><strong>尼斯輕軌 L2 全線</strong>：持 PASS SUD AZUR 通票無限次搭乘 <em>Magnan (飯店門口) ↔ Jean Médecin (精品大道) ↔ Garibaldi (老城舊港)</em></span>
-            </div>
-          </div>
         </div>
 
         <!-- 顯著放大照片排版 (53mm 高度) -->
@@ -4122,7 +4013,7 @@
               <div class="galilee-t-time">11:30</div>
               <div class="galilee-t-label">阿聯酋開櫃</div>
               <div class="galilee-t-dur">託運 25kg 行李</div>
-              <div class="galilee-t-station-cue alert-cue">前站: T1 ➔ 抵: T2</div>
+              <div class="galilee-t-station-cue alert-cue">前站: T1</div>
             </div>
             <div class="galilee-timeline-node">
               <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
@@ -4132,7 +4023,7 @@
               <div class="galilee-t-time">14:30</div>
               <div class="galilee-t-label">EK078 起飛</div>
               <div class="galilee-t-dur">飛往杜拜國際機場</div>
-              <div class="galilee-t-station-cue">起：尼斯 NCE T2</div>
+              <div class="galilee-t-station-cue">起：NCE T2</div>
             </div>
             <div class="galilee-timeline-node">
               <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
@@ -4142,7 +4033,6 @@
               <div class="galilee-t-time">23:35</div>
               <div class="galilee-t-label">抵杜拜 T3</div>
               <div class="galilee-t-dur">舒適轉機約 4 小時</div>
-              <div class="galilee-t-station-cue alert-cue">抵：杜拜 DXB T3</div>
             </div>
             <div class="galilee-timeline-node">
               <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
@@ -4152,7 +4042,7 @@
               <div class="galilee-t-time">03:40</div>
               <div class="galilee-t-label">EK366 飛台北</div>
               <div class="galilee-t-dur">10/29 萬里返航</div>
-              <div class="galilee-t-station-cue">起：杜拜 DXB T3</div>
+              <div class="galilee-t-station-cue">起：DXB T3</div>
             </div>
             <div class="galilee-timeline-node">
               <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
@@ -4162,24 +4052,13 @@
               <div class="galilee-t-time">15:35</div>
               <div class="galilee-t-label">返抵桃園 T2</div>
               <div class="galilee-t-dur">圓滿結束精彩旅程</div>
-              <div class="galilee-t-station-cue alert-cue">抵：台北桃園 T2</div>
-            </div>
-          </div>
-
-          <!-- 站點提醒 Capsule Bar -->
-          <div class="galilee-transit-station-bar">
-            <span class="gts-tag gts-tag-flight">✈️ 返程交通航班核對</span>
-            <div class="gts-info">
-              <span class="gts-leg"><strong>輕軌 L2 機場線</strong>：啟程站 <em>Magnan</em> ➔ 前一停靠站 <em class="gts-prev-station">Aéroport Terminal 1</em> ➔ 到達站 <em>Aéroport Terminal 2</em></span>
-              <span class="gts-sep">｜</span>
-              <span class="gts-leg"><strong>國際返航航班</strong>：第一段 <em>EK078 (尼斯 NCE T2 ➔ 杜拜 DXB T3)</em> ➔ 第二段 <em>EK366 (杜拜 DXB T3 ➔ 台北桃園 TPE T2)</em></span>
             </div>
           </div>
         </div>
 
         <!-- 放大橫幅照片展示 -->
         <div class="galilee-photo-hero">
-          <img src="day14-nice-departure.webp" alt="告別蔚藍海岸，午後從尼斯起飛" style="height: 33mm;">
+          <img src="day14-nice-departure.webp" alt="告別蔚藍海岸，午後從尼斯起飛" style="height: 38mm;">
         </div>
 
         <div style="font-size: 8.2pt; line-height: 1.42; color: #222; margin-bottom: 2mm; text-align: justify;">
