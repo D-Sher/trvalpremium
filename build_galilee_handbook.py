@@ -1,4 +1,25 @@
-<!DOCTYPE html>
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Galilee Tours Travel Agency Style Generator for print-handbook.html
+Complete 20-Page A5 Travel Handbook Builder (Refined Edition)
+"""
+
+import os
+from generate_galilee_parts import (
+    ICON_CLOCHE, ICON_HOTEL, ICON_INCLUDED,
+    ICON_TRAIN, ICON_BUS, ICON_FERRY, ICON_MEAL,
+    ICON_SIGHT, ICON_PLANE, ICON_SHOP, ICON_HOTEL_NODE,
+    build_timeline, build_footer_specs, build_page_footer
+)
+
+def generate_handbook():
+    print("Generating refined Galilee-style print-handbook.html...")
+    
+    html = []
+    
+    # 1. HTML Header & CSS
+    html.append('''<!DOCTYPE html>
 <html lang="zh-Hant">
 
 <head>
@@ -789,7 +810,12 @@
   </header>
 
   <div class="handbook-wrapper">
-
+''')
+    
+    # -------------------------------------------------------------------------
+    # PAGE 01: 手冊封面 (Cover Page)
+    # -------------------------------------------------------------------------
+    html.append('''
     <!-- =========================================================================
          PAGE 01: 手冊封面 (Cover Page)
          ========================================================================= -->
@@ -826,7 +852,12 @@
         <div>台北(02)2717-3188 · 新竹(03)578-5555 · 台中(04)2369-2288 · 高雄(07)586-9355</div>
       </div>
     </div>
+''')
 
+    # -------------------------------------------------------------------------
+    # PAGE 02: 景點距離參考 & 參考航班 (Mirroring Galileo Page 9)
+    # -------------------------------------------------------------------------
+    html.append('''
     <!-- =========================================================================
          PAGE 02: 景點距離參考與參考航班
          ========================================================================= -->
@@ -895,13 +926,14 @@
         </div>
       </div>
 
-      
-      <div class="page-footer">
-        <span class="page-footer-brand">TRAVEL EURO · 隨身慢活手冊</span>
-        <span class="page-footer-num">02</span>
-      </div>
+      ''' + build_page_footer(2) + '''
     </div>
+''')
 
+    # -------------------------------------------------------------------------
+    # PAGE 03: 璀璨星月荏苒 高雅格調飯店 (Mirroring Galileo Page 7)
+    # -------------------------------------------------------------------------
+    html.append('''
     <!-- =========================================================================
          PAGE 03: 璀璨星月荏苒 高雅格調飯店
          ========================================================================= -->
@@ -955,13 +987,14 @@
         </div>
       </div>
 
-      
-      <div class="page-footer">
-        <span class="page-footer-brand">TRAVEL EURO · 隨身慢活手冊</span>
-        <span class="page-footer-num">03</span>
-      </div>
+      ''' + build_page_footer(3) + '''
     </div>
+''')
 
+    # -------------------------------------------------------------------------
+    # PAGE 04: 特選鐵路列車 榮賞蔚藍海岸 (Mirroring Galileo Page 3)
+    # -------------------------------------------------------------------------
+    html.append('''
     <!-- =========================================================================
          PAGE 04: 特選鐵路列車 榮賞蔚藍海岸
          ========================================================================= -->
@@ -1045,13 +1078,14 @@
         </div>
       </div>
 
-      
-      <div class="page-footer">
-        <span class="page-footer-brand">TRAVEL EURO · 隨身慢活手冊</span>
-        <span class="page-footer-num">04</span>
-      </div>
+      ''' + build_page_footer(4) + '''
     </div>
+''')
 
+    # -------------------------------------------------------------------------
+    # PAGE 05: 精選 6 大城市通票與門票特選 (Mirroring Galileo Page 4)
+    # -------------------------------------------------------------------------
+    html.append('''
     <!-- =========================================================================
          PAGE 05: 精選 6 大城市通票與門票特選
          ========================================================================= -->
@@ -1097,13 +1131,14 @@
         </div>
       </div>
 
-      
-      <div class="page-footer">
-        <span class="page-footer-brand">TRAVEL EURO · 隨身慢活手冊</span>
-        <span class="page-footer-num">05</span>
-      </div>
+      ''' + build_page_footer(5) + '''
     </div>
+''')
 
+    # -------------------------------------------------------------------------
+    # PAGE 06: 行前須知與行李打包檢查清單
+    # -------------------------------------------------------------------------
+    html.append('''
     <!-- =========================================================================
          PAGE 06: 行前須知與行李打包檢查清單
          ========================================================================= -->
@@ -1158,13 +1193,28 @@
         </div>
       </div>
 
-      
-      <div class="page-footer">
-        <span class="page-footer-brand">TRAVEL EURO · 隨身慢活手冊</span>
-        <span class="page-footer-num">06</span>
-      </div>
+      ''' + build_page_footer(6) + '''
     </div>
+''')
 
+    # -------------------------------------------------------------------------
+    # PAGE 07: DAY 01 & DAY 02 · 台北 ➔ 米蘭啟程與初會
+    # -------------------------------------------------------------------------
+    timeline_d1 = [
+        {'icon': ICON_BUS, 'time': '20:00', 'label': '桃園機場集合', 'dur': '領隊協辦登機'},
+        {'icon': ICON_PLANE, 'time': '23:15', 'label': '班機啟航', 'dur': '長榮/義法聯營'},
+        {'icon': ICON_MEAL, 'time': '00:30', 'label': '機上美饌', 'dur': '夜間平穩巡航'},
+        {'icon': ICON_HOTEL_NODE, 'time': '02:00', 'label': '雲端歇息', 'dur': '迎接晨曦'}
+    ]
+    timeline_d2 = [
+        {'icon': ICON_PLANE, 'time': '07:50', 'label': '抵達米蘭', 'dur': '馬爾彭薩機場'},
+        {'icon': ICON_TRAIN, 'time': '09:30', 'label': '快線特快', 'dur': '直達中央車站'},
+        {'icon': ICON_HOTEL_NODE, 'time': '10:30', 'label': '飯店寄行李', 'dur': '希爾頓米蘭'},
+        {'icon': ICON_SIGHT, 'time': '14:00', 'label': '歌劇院巡禮', 'dur': '史卡拉廣場'},
+        {'icon': ICON_MEAL, 'time': '18:30', 'label': '主廚晚餐', 'dur': '義式迎賓晚宴'}
+    ]
+
+    html.append('''
     <!-- =========================================================================
          PAGE 07: DAY 01 & DAY 02
          ========================================================================= -->
@@ -1187,66 +1237,14 @@
               </div>
             </div>
           </div>
-          
-      <div class="galilee-timeline-wrap">
-        <div class="galilee-timeline-track"></div>
-        <div class="galilee-timeline-nodes">
-          
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M4 16V6a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v10a2 2 0 0 1-2 2v2a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-2H9v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-2a2 2 0 0 1-2-2zm2-8h12V6a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v2zm0 2v4h12v-4H6zm1.5 5.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm11 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg></div>
-          <div class="galilee-t-time">20:00</div>
-          <div class="galilee-t-label">桃園機場集合</div>
-          <div class="galilee-t-dur">領隊協辦登機</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg></div>
-          <div class="galilee-t-time">23:15</div>
-          <div class="galilee-t-label">班機啟航</div>
-          <div class="galilee-t-dur">長榮/義法聯營</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M11 2v9a2 2 0 0 1-2 2H8v9H6v-9H5a2 2 0 0 1-2-2V2h2v6h1V2h2v6h1V2h1zm7 0a4 4 0 0 1 4 4v5a2 2 0 0 1-2 2h-1v9h-2v-9h-1a2 2 0 0 1-2-2V6a4 4 0 0 1 4-4z"/></svg></div>
-          <div class="galilee-t-time">00:30</div>
-          <div class="galilee-t-label">機上美饌</div>
-          <div class="galilee-t-dur">夜間平穩巡航</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M19 7h-8v8H3V5H1v15h2v-3h18v3h2v-9a4 4 0 0 0-4-4zm-12 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg></div>
-          <div class="galilee-t-time">02:00</div>
-          <div class="galilee-t-label">雲端歇息</div>
-          <div class="galilee-t-dur">迎接晨曦</div>
-        </div>
-        </div>
-      </div>
+          ''' + build_timeline(timeline_d1) + '''
           <div class="galilee-split-content">
             <img src="day01-flight.webp" alt="啟程飛往歐洲">
             <div class="galilee-split-text">
               懷著期盼已久的悠閒心情，於傍晚齊聚桃園國際機場。在專業隨團領隊悉心協助下辦妥登機與行李托運手續，搭乘豪華客機直飛時尚之都米蘭。機上備有個人娛樂系統與精緻熱餐，養精蓄銳，迎接明晨地中海燦爛晨光。
             </div>
           </div>
-          
-      <div class="galilee-spec-footer">
-        <div class="galilee-spec-cell">
-          <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4a2 2 0 0 0-2 2h4a2 2 0 0 0-2-2zM3 17h18a1 1 0 0 1 1 1v1H2v-1a1 1 0 0 1 1-1zm1-2a8 8 0 0 1 16 0H4z"/></svg>
-          <div class="galilee-spec-body">
-            <div><strong>早餐：</strong>敬請自理</div>
-            <div><strong>午餐：</strong>敬請自理</div>
-            <div><strong>晚餐：</strong>機上精緻美饌</div>
-          </div>
-        </div>
-        <div class="galilee-spec-cell">
-          <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 7h2M9 11h2M9 15h2M13 7h2M13 11h2M13 15h2"/></svg>
-          <div class="galilee-spec-body">
-            <div>豪華客機夜宿機上</div>
-          </div>
-        </div>
-        <div class="galilee-spec-cell">
-          <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/><polygon points="12,11 13.5,14 17,14.5 14.5,17 15,20.5 12,18.8 9,20.5 9.5,17 7,14.5 10.5,14" fill="#b8862d" stroke="none"/></svg>
-          <div class="galilee-spec-body">
-            <div><strong>【團費包含】</strong>★國際線直飛來回機票。</div>
-          </div>
-        </div>
-      </div>
+          ''' + build_footer_specs(['敬請自理', '敬請自理', '機上精緻美饌'], '豪華客機夜宿機上', '★國際線直飛來回機票。') + '''
         </div>
 
         <!-- DAY 02 -->
@@ -1261,82 +1259,34 @@
               </div>
             </div>
           </div>
-          
-      <div class="galilee-timeline-wrap">
-        <div class="galilee-timeline-track"></div>
-        <div class="galilee-timeline-nodes">
-          
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg></div>
-          <div class="galilee-t-time">07:50</div>
-          <div class="galilee-t-label">抵達米蘭</div>
-          <div class="galilee-t-dur">馬爾彭薩機場</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M12 2c-4.4 0-8 .6-8 4v10a3 3 0 0 0 3 3l-1.5 1.5V21h13v-.5L17 19a3 3 0 0 0 3-3V6c0-3.4-3.6-4-8-4zm-6 4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v4H6V6zm2 10a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm8 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg></div>
-          <div class="galilee-t-time">09:30</div>
-          <div class="galilee-t-label">快線特快</div>
-          <div class="galilee-t-dur">直達中央車站</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M19 7h-8v8H3V5H1v15h2v-3h18v3h2v-9a4 4 0 0 0-4-4zm-12 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg></div>
-          <div class="galilee-t-time">10:30</div>
-          <div class="galilee-t-label">飯店寄行李</div>
-          <div class="galilee-t-dur">希爾頓米蘭</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="#000"/></svg></div>
-          <div class="galilee-t-time">14:00</div>
-          <div class="galilee-t-label">歌劇院巡禮</div>
-          <div class="galilee-t-dur">史卡拉廣場</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M11 2v9a2 2 0 0 1-2 2H8v9H6v-9H5a2 2 0 0 1-2-2V2h2v6h1V2h2v6h1V2h1zm7 0a4 4 0 0 1 4 4v5a2 2 0 0 1-2 2h-1v9h-2v-9h-1a2 2 0 0 1-2-2V6a4 4 0 0 1 4-4z"/></svg></div>
-          <div class="galilee-t-time">18:30</div>
-          <div class="galilee-t-label">主廚晚餐</div>
-          <div class="galilee-t-dur">義式迎賓晚宴</div>
-        </div>
-        </div>
-      </div>
+          ''' + build_timeline(timeline_d2) + '''
           <div class="galilee-split-content">
             <img src="day02-malpensa-express.webp" alt="馬爾彭薩快線列車">
             <div class="galilee-split-text">
               班機清晨平安降落米蘭馬爾彭薩國際機場，通關後隨即搭乘馬爾彭薩特快火車輕鬆直達米蘭中央車站，步行 3 分鐘進駐希爾頓酒店寄放行李。午後漫步至史卡拉歌劇院廣場，在百年老樹濃蔭下喝杯義式濃縮咖啡，優雅感受米蘭慢步調。
             </div>
           </div>
-          
-      <div class="galilee-spec-footer">
-        <div class="galilee-spec-cell">
-          <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4a2 2 0 0 0-2 2h4a2 2 0 0 0-2-2zM3 17h18a1 1 0 0 1 1 1v1H2v-1a1 1 0 0 1 1-1zm1-2a8 8 0 0 1 16 0H4z"/></svg>
-          <div class="galilee-spec-body">
-            <div><strong>早餐：</strong>機上精緻早餐</div>
-            <div><strong>午餐：</strong>米蘭市區義大利麵風味餐</div>
-            <div><strong>晚餐：</strong>中央車站主廚迎賓晚餐</div>
-          </div>
-        </div>
-        <div class="galilee-spec-cell">
-          <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 7h2M9 11h2M9 15h2M13 7h2M13 11h2M13 15h2"/></svg>
-          <div class="galilee-spec-body">
-            <div>4星 Hilton Milan 希爾頓酒店或同級</div>
-          </div>
-        </div>
-        <div class="galilee-spec-cell">
-          <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/><polygon points="12,11 13.5,14 17,14.5 14.5,17 15,20.5 12,18.8 9,20.5 9.5,17 7,14.5 10.5,14" fill="#b8862d" stroke="none"/></svg>
-          <div class="galilee-spec-body">
-            <div><strong>【團費包含】</strong>★馬爾彭薩快線列車票、★行李專人接送服務。</div>
-          </div>
-        </div>
-      </div>
+          ''' + build_footer_specs(['機上精緻早餐', '米蘭市區義大利麵風味餐', '中央車站主廚迎賓晚餐'], '4星 Hilton Milan 希爾頓酒店或同級', '★馬爾彭薩快線列車票、★行李專人接送服務。') + '''
         </div>
       </div>
 
-      
-      <div class="page-footer">
-        <span class="page-footer-brand">TRAVEL EURO · 隨身慢活手冊</span>
-        <span class="page-footer-num">07</span>
-      </div>
+      ''' + build_page_footer(7) + '''
     </div>
+''')
 
+    # -------------------------------------------------------------------------
+    # PAGE 08: DAY 03 · 米蘭經典城市巡遊 (Full Page Feature!)
+    # -------------------------------------------------------------------------
+    timeline_d3 = [
+        {'icon': ICON_BUS, 'time': '09:30', 'label': '開通通票', 'dur': '搭乘M3地鐵'},
+        {'icon': ICON_SIGHT, 'time': '10:00', 'label': '米蘭大教堂', 'dur': '哥德式外觀留影'},
+        {'icon': ICON_SIGHT, 'time': '11:30', 'label': '艾曼紐迴廊', 'dur': '十九世紀玻璃拱頂'},
+        {'icon': ICON_MEAL, 'time': '12:30', 'label': '燉牛膝午餐', 'dur': '番紅花燉飯'},
+        {'icon': ICON_TRAIN, 'time': '14:30', 'label': '骨董電車1號', 'dur': '穿越市區花園'},
+        {'icon': ICON_MEAL, 'time': '18:30', 'label': '主廚晚餐', 'dur': '米蘭名饌晚宴'}
+    ]
+
+    html.append('''
     <!-- =========================================================================
          PAGE 08: DAY 03 · 米蘭經典城市巡遊
          ========================================================================= -->
@@ -1358,49 +1308,7 @@
           </div>
         </div>
 
-        
-      <div class="galilee-timeline-wrap">
-        <div class="galilee-timeline-track"></div>
-        <div class="galilee-timeline-nodes">
-          
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M4 16V6a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v10a2 2 0 0 1-2 2v2a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-2H9v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-2a2 2 0 0 1-2-2zm2-8h12V6a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v2zm0 2v4h12v-4H6zm1.5 5.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm11 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg></div>
-          <div class="galilee-t-time">09:30</div>
-          <div class="galilee-t-label">開通通票</div>
-          <div class="galilee-t-dur">搭乘M3地鐵</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="#000"/></svg></div>
-          <div class="galilee-t-time">10:00</div>
-          <div class="galilee-t-label">米蘭大教堂</div>
-          <div class="galilee-t-dur">哥德式外觀留影</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="#000"/></svg></div>
-          <div class="galilee-t-time">11:30</div>
-          <div class="galilee-t-label">艾曼紐迴廊</div>
-          <div class="galilee-t-dur">十九世紀玻璃拱頂</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M11 2v9a2 2 0 0 1-2 2H8v9H6v-9H5a2 2 0 0 1-2-2V2h2v6h1V2h2v6h1V2h1zm7 0a4 4 0 0 1 4 4v5a2 2 0 0 1-2 2h-1v9h-2v-9h-1a2 2 0 0 1-2-2V6a4 4 0 0 1 4-4z"/></svg></div>
-          <div class="galilee-t-time">12:30</div>
-          <div class="galilee-t-label">燉牛膝午餐</div>
-          <div class="galilee-t-dur">番紅花燉飯</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M12 2c-4.4 0-8 .6-8 4v10a3 3 0 0 0 3 3l-1.5 1.5V21h13v-.5L17 19a3 3 0 0 0 3-3V6c0-3.4-3.6-4-8-4zm-6 4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v4H6V6zm2 10a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm8 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg></div>
-          <div class="galilee-t-time">14:30</div>
-          <div class="galilee-t-label">骨董電車1號</div>
-          <div class="galilee-t-dur">穿越市區花園</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M11 2v9a2 2 0 0 1-2 2H8v9H6v-9H5a2 2 0 0 1-2-2V2h2v6h1V2h2v6h1V2h1zm7 0a4 4 0 0 1 4 4v5a2 2 0 0 1-2 2h-1v9h-2v-9h-1a2 2 0 0 1-2-2V6a4 4 0 0 1 4-4z"/></svg></div>
-          <div class="galilee-t-time">18:30</div>
-          <div class="galilee-t-label">主廚晚餐</div>
-          <div class="galilee-t-dur">米蘭名饌晚宴</div>
-        </div>
-        </div>
-      </div>
+        ''' + build_timeline(timeline_d3) + '''
 
         <div class="galilee-photo-grid-2">
           <div class="galilee-photo-item">
@@ -1433,38 +1341,30 @@
           <div>搭乘自 1928 年穿梭至今的黃色木造經典電車，伴隨復古鈴鐺聲悠然穿梭於米蘭市區，直達林蔭掩映的蒙塔內利花園，沉浸在優雅的綠意芬多精之中。</div>
         </div>
 
-        
-      <div class="galilee-spec-footer">
-        <div class="galilee-spec-cell">
-          <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4a2 2 0 0 0-2 2h4a2 2 0 0 0-2-2zM3 17h18a1 1 0 0 1 1 1v1H2v-1a1 1 0 0 1 1-1zm1-2a8 8 0 0 1 16 0H4z"/></svg>
-          <div class="galilee-spec-body">
-            <div><strong>早餐：</strong>飯店內美式自助</div>
-            <div><strong>午餐：</strong>迴廊餐廳米蘭燉牛膝與番紅花燉飯</div>
-            <div><strong>晚餐：</strong>中央車站周邊主廚精選晚宴</div>
-          </div>
-        </div>
-        <div class="galilee-spec-cell">
-          <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 7h2M9 11h2M9 15h2M13 7h2M13 11h2M13 15h2"/></svg>
-          <div class="galilee-spec-body">
-            <div>4星 Hilton Milan 希爾頓酒店或同級（連住第 2 晚）</div>
-          </div>
-        </div>
-        <div class="galilee-spec-cell">
-          <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/><polygon points="12,11 13.5,14 17,14.5 14.5,17 15,20.5 12,18.8 9,20.5 9.5,17 7,14.5 10.5,14" fill="#b8862d" stroke="none"/></svg>
-          <div class="galilee-spec-body">
-            <div><strong>【團費包含】</strong>★米蘭 24h 城市通票（含M1-M5地鐵、路面電車無限搭乘）。</div>
-          </div>
-        </div>
-      </div>
+        ''' + build_footer_specs(
+            ['飯店內美式自助', '迴廊餐廳米蘭燉牛膝與番紅花燉飯', '中央車站周邊主廚精選晚宴'],
+            '4星 Hilton Milan 希爾頓酒店或同級（連住第 2 晚）',
+            '★米蘭 24h 城市通票（含M1-M5地鐵、路面電車無限搭乘）。'
+        ) + '''
       </div>
 
-      
-      <div class="page-footer">
-        <span class="page-footer-brand">TRAVEL EURO · 隨身慢活手冊</span>
-        <span class="page-footer-num">08</span>
-      </div>
+      ''' + build_page_footer(8) + '''
     </div>
+''')
 
+    # -------------------------------------------------------------------------
+    # PAGE 09: DAY 04 · 貝爾加莫中世紀古城慢遊 (Full Page Feature!)
+    # -------------------------------------------------------------------------
+    timeline_d4 = [
+        {'icon': ICON_TRAIN, 'time': '09:05', 'label': '列車啟程', 'dur': '大區景觀鐵路'},
+        {'icon': ICON_TRAIN, 'time': '10:30', 'label': '登山纜車', 'dur': '攀登舊城上城'},
+        {'icon': ICON_SIGHT, 'time': '11:00', 'label': '老廣場漫行', 'dur': '科萊奧尼禮拜堂'},
+        {'icon': ICON_MEAL, 'time': '12:30', 'label': '古城午餐', 'dur': '波倫塔玉米糕'},
+        {'icon': ICON_SIGHT, 'time': '14:30', 'label': '威尼斯城牆', 'dur': '世界遺產綠蔭'},
+        {'icon': ICON_TRAIN, 'time': '17:00', 'label': '返回米蘭', 'dur': '希爾頓飯店休憩'}
+    ]
+
+    html.append('''
     <!-- =========================================================================
          PAGE 09: DAY 04 · 貝爾加莫中世紀古城慢遊
          ========================================================================= -->
@@ -1486,49 +1386,7 @@
           </div>
         </div>
 
-        
-      <div class="galilee-timeline-wrap">
-        <div class="galilee-timeline-track"></div>
-        <div class="galilee-timeline-nodes">
-          
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M12 2c-4.4 0-8 .6-8 4v10a3 3 0 0 0 3 3l-1.5 1.5V21h13v-.5L17 19a3 3 0 0 0 3-3V6c0-3.4-3.6-4-8-4zm-6 4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v4H6V6zm2 10a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm8 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg></div>
-          <div class="galilee-t-time">09:05</div>
-          <div class="galilee-t-label">列車啟程</div>
-          <div class="galilee-t-dur">大區景觀鐵路</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M12 2c-4.4 0-8 .6-8 4v10a3 3 0 0 0 3 3l-1.5 1.5V21h13v-.5L17 19a3 3 0 0 0 3-3V6c0-3.4-3.6-4-8-4zm-6 4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v4H6V6zm2 10a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm8 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg></div>
-          <div class="galilee-t-time">10:30</div>
-          <div class="galilee-t-label">登山纜車</div>
-          <div class="galilee-t-dur">攀登舊城上城</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="#000"/></svg></div>
-          <div class="galilee-t-time">11:00</div>
-          <div class="galilee-t-label">老廣場漫行</div>
-          <div class="galilee-t-dur">科萊奧尼禮拜堂</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M11 2v9a2 2 0 0 1-2 2H8v9H6v-9H5a2 2 0 0 1-2-2V2h2v6h1V2h2v6h1V2h1zm7 0a4 4 0 0 1 4 4v5a2 2 0 0 1-2 2h-1v9h-2v-9h-1a2 2 0 0 1-2-2V6a4 4 0 0 1 4-4z"/></svg></div>
-          <div class="galilee-t-time">12:30</div>
-          <div class="galilee-t-label">古城午餐</div>
-          <div class="galilee-t-dur">波倫塔玉米糕</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="#000"/></svg></div>
-          <div class="galilee-t-time">14:30</div>
-          <div class="galilee-t-label">威尼斯城牆</div>
-          <div class="galilee-t-dur">世界遺產綠蔭</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M12 2c-4.4 0-8 .6-8 4v10a3 3 0 0 0 3 3l-1.5 1.5V21h13v-.5L17 19a3 3 0 0 0 3-3V6c0-3.4-3.6-4-8-4zm-6 4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v4H6V6zm2 10a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm8 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg></div>
-          <div class="galilee-t-time">17:00</div>
-          <div class="galilee-t-label">返回米蘭</div>
-          <div class="galilee-t-dur">希爾頓飯店休憩</div>
-        </div>
-        </div>
-      </div>
+        ''' + build_timeline(timeline_d4) + '''
 
         <div class="galilee-photo-grid-2">
           <div class="galilee-photo-item">
@@ -1561,38 +1419,30 @@
           <div>在舊城古老石板小巷裡，品嚐貝爾加莫傳統小巧可愛的金黃玉米糕甜點（Polenta e Osei），搭配一杯手沖義式卡布奇諾，享受歐洲仕紳的悠然午後。</div>
         </div>
 
-        
-      <div class="galilee-spec-footer">
-        <div class="galilee-spec-cell">
-          <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4a2 2 0 0 0-2 2h4a2 2 0 0 0-2-2zM3 17h18a1 1 0 0 1 1 1v1H2v-1a1 1 0 0 1 1-1zm1-2a8 8 0 0 1 16 0H4z"/></svg>
-          <div class="galilee-spec-body">
-            <div><strong>早餐：</strong>飯店內美式自助</div>
-            <div><strong>午餐：</strong>山城觀景餐廳玉米糕燉肉風味料理</div>
-            <div><strong>晚餐：</strong>米蘭市區義式精選晚宴</div>
-          </div>
-        </div>
-        <div class="galilee-spec-cell">
-          <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 7h2M9 11h2M9 15h2M13 7h2M13 11h2M13 15h2"/></svg>
-          <div class="galilee-spec-body">
-            <div>4星 Hilton Milan 希爾頓酒店或同級（連住第 3 晚）</div>
-          </div>
-        </div>
-        <div class="galilee-spec-cell">
-          <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/><polygon points="12,11 13.5,14 17,14.5 14.5,17 15,20.5 12,18.8 9,20.5 9.5,17 7,14.5 10.5,14" fill="#b8862d" stroke="none"/></svg>
-          <div class="galilee-spec-body">
-            <div><strong>【團費包含】</strong>★倫巴底鐵路區間通票、★貝爾加莫登山纜車往返票。</div>
-          </div>
-        </div>
-      </div>
+        ''' + build_footer_specs(
+            ['飯店內美式自助', '山城觀景餐廳玉米糕燉肉風味料理', '米蘭市區義式精選晚宴'],
+            '4星 Hilton Milan 希爾頓酒店或同級（連住第 3 晚）',
+            '★倫巴底鐵路區間通票、★貝爾加莫登山纜車往返票。'
+        ) + '''
       </div>
 
-      
-      <div class="page-footer">
-        <span class="page-footer-brand">TRAVEL EURO · 隨身慢活手冊</span>
-        <span class="page-footer-num">09</span>
-      </div>
+      ''' + build_page_footer(9) + '''
     </div>
+''')
 
+    # -------------------------------------------------------------------------
+    # PAGE 10: DAY 05 · 科莫湖雙城慢遊 (Full Page Feature!)
+    # -------------------------------------------------------------------------
+    timeline_d5 = [
+        {'icon': ICON_TRAIN, 'time': '09:20', 'label': '全景列車', 'dur': '行駛湖東鐵路'},
+        {'icon': ICON_SIGHT, 'time': '10:30', 'label': '瓦倫納慢行', 'dur': '情人懸空步道'},
+        {'icon': ICON_FERRY, 'time': '11:45', 'label': '中央湖區渡輪', 'dur': '湖光山色渡船'},
+        {'icon': ICON_MEAL, 'time': '12:30', 'label': '貝拉焦午餐', 'dur': '湖畔鮮魚美饌'},
+        {'icon': ICON_SIGHT, 'time': '15:00', 'label': '名邸花園散步', 'dur': '梅爾齊莊園遠眺'},
+        {'icon': ICON_TRAIN, 'time': '17:30', 'label': '返回米蘭', 'dur': '整理行囊迎移動'}
+    ]
+
+    html.append('''
     <!-- =========================================================================
          PAGE 10: DAY 05 · 科莫湖雙城慢遊
          ========================================================================= -->
@@ -1614,49 +1464,7 @@
           </div>
         </div>
 
-        
-      <div class="galilee-timeline-wrap">
-        <div class="galilee-timeline-track"></div>
-        <div class="galilee-timeline-nodes">
-          
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M12 2c-4.4 0-8 .6-8 4v10a3 3 0 0 0 3 3l-1.5 1.5V21h13v-.5L17 19a3 3 0 0 0 3-3V6c0-3.4-3.6-4-8-4zm-6 4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v4H6V6zm2 10a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm8 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg></div>
-          <div class="galilee-t-time">09:20</div>
-          <div class="galilee-t-label">全景列車</div>
-          <div class="galilee-t-dur">行駛湖東鐵路</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="#000"/></svg></div>
-          <div class="galilee-t-time">10:30</div>
-          <div class="galilee-t-label">瓦倫納慢行</div>
-          <div class="galilee-t-dur">情人懸空步道</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M20 21c-1.4 0-2.5-.6-3.4-1.5-.9.9-2 1.5-3.4 1.5s-2.5-.6-3.4-1.5c-.9.9-2 1.5-3.4 1.5-1.4 0-2.5-.6-3.4-1.5L2 20.3V18c.8.6 1.9 1 3 1s2.2-.4 3-1c.8.6 1.9 1 3 1s2.2-.4 3-1c.8.6 1.9 1 3 1s2.2-.4 3-1l1 .7V20c-.9.6-2 1-3 1zM4.5 15.5l1.8-7.5H11v-4h2v4h4.7l1.8 7.5c-.8-.3-1.6-.5-2.5-.5-1.4 0-2.5.5-3.5 1.3-.9-.8-2-1.3-3.5-1.3-.9 0-1.7.2-2.5.5z"/></svg></div>
-          <div class="galilee-t-time">11:45</div>
-          <div class="galilee-t-label">中央湖區渡輪</div>
-          <div class="galilee-t-dur">湖光山色渡船</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M11 2v9a2 2 0 0 1-2 2H8v9H6v-9H5a2 2 0 0 1-2-2V2h2v6h1V2h2v6h1V2h1zm7 0a4 4 0 0 1 4 4v5a2 2 0 0 1-2 2h-1v9h-2v-9h-1a2 2 0 0 1-2-2V6a4 4 0 0 1 4-4z"/></svg></div>
-          <div class="galilee-t-time">12:30</div>
-          <div class="galilee-t-label">貝拉焦午餐</div>
-          <div class="galilee-t-dur">湖畔鮮魚美饌</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="#000"/></svg></div>
-          <div class="galilee-t-time">15:00</div>
-          <div class="galilee-t-label">名邸花園散步</div>
-          <div class="galilee-t-dur">梅爾齊莊園遠眺</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M12 2c-4.4 0-8 .6-8 4v10a3 3 0 0 0 3 3l-1.5 1.5V21h13v-.5L17 19a3 3 0 0 0 3-3V6c0-3.4-3.6-4-8-4zm-6 4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v4H6V6zm2 10a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm8 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg></div>
-          <div class="galilee-t-time">17:30</div>
-          <div class="galilee-t-label">返回米蘭</div>
-          <div class="galilee-t-dur">整理行囊迎移動</div>
-        </div>
-        </div>
-      </div>
+        ''' + build_timeline(timeline_d5) + '''
 
         <div class="galilee-photo-grid-2">
           <div class="galilee-photo-item">
@@ -1689,38 +1497,36 @@
           <div>安排搭乘中央湖區觀景渡輪，從水上角度近距離欣賞沿岸百年貴族名流別墅與繁花盛開的臨湖露台，享受最道地的北義湖區慢活假期。</div>
         </div>
 
-        
-      <div class="galilee-spec-footer">
-        <div class="galilee-spec-cell">
-          <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4a2 2 0 0 0-2 2h4a2 2 0 0 0-2-2zM3 17h18a1 1 0 0 1 1 1v1H2v-1a1 1 0 0 1 1-1zm1-2a8 8 0 0 1 16 0H4z"/></svg>
-          <div class="galilee-spec-body">
-            <div><strong>早餐：</strong>飯店內美式自助</div>
-            <div><strong>午餐：</strong>貝拉焦湖畔觀景餐廳鮮魚料理</div>
-            <div><strong>晚餐：</strong>湖區精選主廚私房晚宴</div>
-          </div>
-        </div>
-        <div class="galilee-spec-cell">
-          <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 7h2M9 11h2M9 15h2M13 7h2M13 11h2M13 15h2"/></svg>
-          <div class="galilee-spec-body">
-            <div>4星 Hilton Milan 希爾頓酒店或同級（連住第 4 晚）</div>
-          </div>
-        </div>
-        <div class="galilee-spec-cell">
-          <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/><polygon points="12,11 13.5,14 17,14.5 14.5,17 15,20.5 12,18.8 9,20.5 9.5,17 7,14.5 10.5,14" fill="#b8862d" stroke="none"/></svg>
-          <div class="galilee-spec-body">
-            <div><strong>【團費包含】</strong>★科莫湖中央湖區公共渡輪船票、★倫巴底鐵路通票。</div>
-          </div>
-        </div>
-      </div>
+        ''' + build_footer_specs(
+            ['飯店內美式自助', '貝拉焦湖畔觀景餐廳鮮魚料理', '湖區精選主廚私房晚宴'],
+            '4星 Hilton Milan 希爾頓酒店或同級（連住第 4 晚）',
+            '★科莫湖中央湖區公共渡輪船票、★倫巴底鐵路通票。'
+        ) + '''
       </div>
 
-      
-      <div class="page-footer">
-        <span class="page-footer-brand">TRAVEL EURO · 隨身慢活手冊</span>
-        <span class="page-footer-num">10</span>
-      </div>
+      ''' + build_page_footer(10) + '''
     </div>
+''')
 
+    # -------------------------------------------------------------------------
+    # PAGE 11: DAY 06 & DAY 07 · 大城移動 ➔ 熱那亞世界遺產巡禮
+    # -------------------------------------------------------------------------
+    timeline_d6 = [
+        {'icon': ICON_TRAIN, 'time': '09:10', 'label': 'IC特快列車', 'dur': '一等座專屬車廂'},
+        {'icon': ICON_HOTEL_NODE, 'time': '10:45', 'label': '抵達熱那亞', 'dur': '王子廣場車站'},
+        {'icon': ICON_HOTEL_NODE, 'time': '11:15', 'label': '五星飯店入住', 'dur': '薩伏亞大飯店'},
+        {'icon': ICON_MEAL, 'time': '12:30', 'label': '海鮮午餐', 'dur': '利古里亞風味'},
+        {'icon': ICON_SIGHT, 'time': '15:00', 'label': '舊港碼頭散步', 'dur': '地中海微風'}
+    ]
+    timeline_d7 = [
+        {'icon': ICON_SIGHT, 'time': '09:30', 'label': '舊城石板漫步', 'dur': '加里波第街'},
+        {'icon': ICON_SIGHT, 'time': '10:30', 'label': '羅利宮殿群', 'dur': '世界遺產紅宮白宮'},
+        {'icon': ICON_MEAL, 'time': '12:30', 'label': '正宗青醬麵', 'dur': '熱那亞經典午餐'},
+        {'icon': ICON_SIGHT, 'time': '15:00', 'label': '聖羅倫佐大教堂', 'dur': '黑白條紋大理石'},
+        {'icon': ICON_MEAL, 'time': '18:30', 'label': '海港晚宴', 'dur': '香煎海鱸魚美饌'}
+    ]
+
+    html.append('''
     <!-- =========================================================================
          PAGE 11: DAY 06 & DAY 07
          ========================================================================= -->
@@ -1743,72 +1549,14 @@
               </div>
             </div>
           </div>
-          
-      <div class="galilee-timeline-wrap">
-        <div class="galilee-timeline-track"></div>
-        <div class="galilee-timeline-nodes">
-          
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M12 2c-4.4 0-8 .6-8 4v10a3 3 0 0 0 3 3l-1.5 1.5V21h13v-.5L17 19a3 3 0 0 0 3-3V6c0-3.4-3.6-4-8-4zm-6 4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v4H6V6zm2 10a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm8 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg></div>
-          <div class="galilee-t-time">09:10</div>
-          <div class="galilee-t-label">IC特快列車</div>
-          <div class="galilee-t-dur">一等座專屬車廂</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M19 7h-8v8H3V5H1v15h2v-3h18v3h2v-9a4 4 0 0 0-4-4zm-12 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg></div>
-          <div class="galilee-t-time">10:45</div>
-          <div class="galilee-t-label">抵達熱那亞</div>
-          <div class="galilee-t-dur">王子廣場車站</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M19 7h-8v8H3V5H1v15h2v-3h18v3h2v-9a4 4 0 0 0-4-4zm-12 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg></div>
-          <div class="galilee-t-time">11:15</div>
-          <div class="galilee-t-label">五星飯店入住</div>
-          <div class="galilee-t-dur">薩伏亞大飯店</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M11 2v9a2 2 0 0 1-2 2H8v9H6v-9H5a2 2 0 0 1-2-2V2h2v6h1V2h2v6h1V2h1zm7 0a4 4 0 0 1 4 4v5a2 2 0 0 1-2 2h-1v9h-2v-9h-1a2 2 0 0 1-2-2V6a4 4 0 0 1 4-4z"/></svg></div>
-          <div class="galilee-t-time">12:30</div>
-          <div class="galilee-t-label">海鮮午餐</div>
-          <div class="galilee-t-dur">利古里亞風味</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="#000"/></svg></div>
-          <div class="galilee-t-time">15:00</div>
-          <div class="galilee-t-label">舊港碼頭散步</div>
-          <div class="galilee-t-dur">地中海微風</div>
-        </div>
-        </div>
-      </div>
+          ''' + build_timeline(timeline_d6) + '''
           <div class="galilee-split-content">
             <img src="day06-genova-station.webp" alt="熱那亞車站與五星飯店">
             <div class="galilee-split-text">
               告別時尚米蘭，搭乘 Intercity 特快一等座舒適穿越亞平寧山脈，抵達海洋共和國熱那亞。步行 2 分鐘進駐五星級百年旗艦薩伏亞大飯店，午後漫步至由名建築師皮亞諾重塑的舊港區，享受澄澈蔚藍海風與海鷗鳴唱。
             </div>
           </div>
-          
-      <div class="galilee-spec-footer">
-        <div class="galilee-spec-cell">
-          <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4a2 2 0 0 0-2 2h4a2 2 0 0 0-2-2zM3 17h18a1 1 0 0 1 1 1v1H2v-1a1 1 0 0 1 1-1zm1-2a8 8 0 0 1 16 0H4z"/></svg>
-          <div class="galilee-spec-body">
-            <div><strong>早餐：</strong>飯店內自助式</div>
-            <div><strong>午餐：</strong>利古里亞海鮮義大利麵</div>
-            <div><strong>晚餐：</strong>海港景觀海鮮料理</div>
-          </div>
-        </div>
-        <div class="galilee-spec-cell">
-          <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 7h2M9 11h2M9 15h2M13 7h2M13 11h2M13 15h2"/></svg>
-          <div class="galilee-spec-body">
-            <div>5星 Grand Hotel Savoia 薩伏亞大飯店（連住第1晚）</div>
-          </div>
-        </div>
-        <div class="galilee-spec-cell">
-          <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/><polygon points="12,11 13.5,14 17,14.5 14.5,17 15,20.5 12,18.8 9,20.5 9.5,17 7,14.5 10.5,14" fill="#b8862d" stroke="none"/></svg>
-          <div class="galilee-spec-body">
-            <div><strong>【團費包含】</strong>★Intercity 一等座特快車票。</div>
-          </div>
-        </div>
-      </div>
+          ''' + build_footer_specs(['飯店內自助式', '利古里亞海鮮義大利麵', '海港景觀海鮮料理'], '5星 Grand Hotel Savoia 薩伏亞大飯店（連住第1晚）', '★Intercity 一等座特快車票。') + '''
         </div>
 
         <!-- DAY 07 -->
@@ -1823,82 +1571,34 @@
               </div>
             </div>
           </div>
-          
-      <div class="galilee-timeline-wrap">
-        <div class="galilee-timeline-track"></div>
-        <div class="galilee-timeline-nodes">
-          
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="#000"/></svg></div>
-          <div class="galilee-t-time">09:30</div>
-          <div class="galilee-t-label">舊城石板漫步</div>
-          <div class="galilee-t-dur">加里波第街</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="#000"/></svg></div>
-          <div class="galilee-t-time">10:30</div>
-          <div class="galilee-t-label">羅利宮殿群</div>
-          <div class="galilee-t-dur">世界遺產紅宮白宮</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M11 2v9a2 2 0 0 1-2 2H8v9H6v-9H5a2 2 0 0 1-2-2V2h2v6h1V2h2v6h1V2h1zm7 0a4 4 0 0 1 4 4v5a2 2 0 0 1-2 2h-1v9h-2v-9h-1a2 2 0 0 1-2-2V6a4 4 0 0 1 4-4z"/></svg></div>
-          <div class="galilee-t-time">12:30</div>
-          <div class="galilee-t-label">正宗青醬麵</div>
-          <div class="galilee-t-dur">熱那亞經典午餐</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="#000"/></svg></div>
-          <div class="galilee-t-time">15:00</div>
-          <div class="galilee-t-label">聖羅倫佐大教堂</div>
-          <div class="galilee-t-dur">黑白條紋大理石</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M11 2v9a2 2 0 0 1-2 2H8v9H6v-9H5a2 2 0 0 1-2-2V2h2v6h1V2h2v6h1V2h1zm7 0a4 4 0 0 1 4 4v5a2 2 0 0 1-2 2h-1v9h-2v-9h-1a2 2 0 0 1-2-2V6a4 4 0 0 1 4-4z"/></svg></div>
-          <div class="galilee-t-time">18:30</div>
-          <div class="galilee-t-label">海港晚宴</div>
-          <div class="galilee-t-dur">香煎海鱸魚美饌</div>
-        </div>
-        </div>
-      </div>
+          ''' + build_timeline(timeline_d7) + '''
           <div class="galilee-split-content">
             <img src="day07-palazzi-rolli.webp" alt="羅利宮殿群加里波第街">
             <div class="galilee-split-text">
               深入探訪聯合國教科文組織世界文化遺產「羅利宮殿體系」（Palazzi dei Rolli）。漫步在寬宏典雅的加里波第街，仰望十六世紀航海霸權時期的巴洛克貴族私邸與空中花園，品味最純粹的熱那亞羅勒青醬細麵。
             </div>
           </div>
-          
-      <div class="galilee-spec-footer">
-        <div class="galilee-spec-cell">
-          <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4a2 2 0 0 0-2 2h4a2 2 0 0 0-2-2zM3 17h18a1 1 0 0 1 1 1v1H2v-1a1 1 0 0 1 1-1zm1-2a8 8 0 0 1 16 0H4z"/></svg>
-          <div class="galilee-spec-body">
-            <div><strong>早餐：</strong>飯店內自助式</div>
-            <div><strong>午餐：</strong>正宗熱那亞青醬手工細麵</div>
-            <div><strong>晚餐：</strong>主廚香煎地中海海鱸魚美饌</div>
-          </div>
-        </div>
-        <div class="galilee-spec-cell">
-          <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 7h2M9 11h2M9 15h2M13 7h2M13 11h2M13 15h2"/></svg>
-          <div class="galilee-spec-body">
-            <div>5星 Grand Hotel Savoia 薩伏亞大飯店（連住第2晚）</div>
-          </div>
-        </div>
-        <div class="galilee-spec-cell">
-          <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/><polygon points="12,11 13.5,14 17,14.5 14.5,17 15,20.5 12,18.8 9,20.5 9.5,17 7,14.5 10.5,14" fill="#b8862d" stroke="none"/></svg>
-          <div class="galilee-spec-body">
-            <div><strong>【團費包含】</strong>★熱那亞 Rolli 宮殿博物館門票聯票。</div>
-          </div>
-        </div>
-      </div>
+          ''' + build_footer_specs(['飯店內自助式', '正宗熱那亞青醬手工細麵', '主廚香煎地中海海鱸魚美饌'], '5星 Grand Hotel Savoia 薩伏亞大飯店（連住第2晚）', '★熱那亞 Rolli 宮殿博物館門票聯票。') + '''
         </div>
       </div>
 
-      
-      <div class="page-footer">
-        <span class="page-footer-brand">TRAVEL EURO · 隨身慢活手冊</span>
-        <span class="page-footer-num">11</span>
-      </div>
+      ''' + build_page_footer(11) + '''
     </div>
+''')
 
+    # -------------------------------------------------------------------------
+    # PAGE 12: DAY 08 · 菲諾港與聖馬格利塔海灣慢遊 (Full Page Feature!)
+    # -------------------------------------------------------------------------
+    timeline_d8 = [
+        {'icon': ICON_TRAIN, 'time': '09:40', 'label': '海岸列車', 'dur': '前往聖馬格利塔'},
+        {'icon': ICON_FERRY, 'time': '10:30', 'label': '觀景遊船', 'dur': '巡航蔚藍海灣'},
+        {'icon': ICON_SIGHT, 'time': '11:15', 'label': '菲諾港漫行', 'dur': '粉彩小屋與名流碼頭'},
+        {'icon': ICON_MEAL, 'time': '12:30', 'label': '海灣午餐', 'dur': '地中海青醬海鮮麵'},
+        {'icon': ICON_SIGHT, 'time': '14:30', 'label': '布朗城堡遠眺', 'dur': '俯瞰半月形港灣'},
+        {'icon': ICON_TRAIN, 'time': '17:00', 'label': '返回熱那亞', 'dur': '五星飯店悠閒休憩'}
+    ]
+
+    html.append('''
     <!-- =========================================================================
          PAGE 12: DAY 08 · 菲諾港一日慢遊
          ========================================================================= -->
@@ -1920,49 +1620,7 @@
           </div>
         </div>
 
-        
-      <div class="galilee-timeline-wrap">
-        <div class="galilee-timeline-track"></div>
-        <div class="galilee-timeline-nodes">
-          
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M12 2c-4.4 0-8 .6-8 4v10a3 3 0 0 0 3 3l-1.5 1.5V21h13v-.5L17 19a3 3 0 0 0 3-3V6c0-3.4-3.6-4-8-4zm-6 4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v4H6V6zm2 10a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm8 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg></div>
-          <div class="galilee-t-time">09:40</div>
-          <div class="galilee-t-label">海岸列車</div>
-          <div class="galilee-t-dur">前往聖馬格利塔</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M20 21c-1.4 0-2.5-.6-3.4-1.5-.9.9-2 1.5-3.4 1.5s-2.5-.6-3.4-1.5c-.9.9-2 1.5-3.4 1.5-1.4 0-2.5-.6-3.4-1.5L2 20.3V18c.8.6 1.9 1 3 1s2.2-.4 3-1c.8.6 1.9 1 3 1s2.2-.4 3-1c.8.6 1.9 1 3 1s2.2-.4 3-1l1 .7V20c-.9.6-2 1-3 1zM4.5 15.5l1.8-7.5H11v-4h2v4h4.7l1.8 7.5c-.8-.3-1.6-.5-2.5-.5-1.4 0-2.5.5-3.5 1.3-.9-.8-2-1.3-3.5-1.3-.9 0-1.7.2-2.5.5z"/></svg></div>
-          <div class="galilee-t-time">10:30</div>
-          <div class="galilee-t-label">觀景遊船</div>
-          <div class="galilee-t-dur">巡航蔚藍海灣</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="#000"/></svg></div>
-          <div class="galilee-t-time">11:15</div>
-          <div class="galilee-t-label">菲諾港漫行</div>
-          <div class="galilee-t-dur">粉彩小屋與名流碼頭</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M11 2v9a2 2 0 0 1-2 2H8v9H6v-9H5a2 2 0 0 1-2-2V2h2v6h1V2h2v6h1V2h1zm7 0a4 4 0 0 1 4 4v5a2 2 0 0 1-2 2h-1v9h-2v-9h-1a2 2 0 0 1-2-2V6a4 4 0 0 1 4-4z"/></svg></div>
-          <div class="galilee-t-time">12:30</div>
-          <div class="galilee-t-label">海灣午餐</div>
-          <div class="galilee-t-dur">地中海青醬海鮮麵</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="#000"/></svg></div>
-          <div class="galilee-t-time">14:30</div>
-          <div class="galilee-t-label">布朗城堡遠眺</div>
-          <div class="galilee-t-dur">俯瞰半月形港灣</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M12 2c-4.4 0-8 .6-8 4v10a3 3 0 0 0 3 3l-1.5 1.5V21h13v-.5L17 19a3 3 0 0 0 3-3V6c0-3.4-3.6-4-8-4zm-6 4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v4H6V6zm2 10a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm8 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg></div>
-          <div class="galilee-t-time">17:00</div>
-          <div class="galilee-t-label">返回熱那亞</div>
-          <div class="galilee-t-dur">五星飯店悠閒休憩</div>
-        </div>
-        </div>
-      </div>
+        ''' + build_timeline(timeline_d8) + '''
 
         <div class="galilee-photo-grid-2">
           <div class="galilee-photo-item">
@@ -1995,38 +1653,36 @@
           <div>沿著幽靜平緩的松柏石徑登上布朗城堡（Castello Brown），站在制高點平台俯瞰整座如翡翠般碧綠的深邃海灣，享受遠離喧囂的寧靜奢華時光。</div>
         </div>
 
-        
-      <div class="galilee-spec-footer">
-        <div class="galilee-spec-cell">
-          <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4a2 2 0 0 0-2 2h4a2 2 0 0 0-2-2zM3 17h18a1 1 0 0 1 1 1v1H2v-1a1 1 0 0 1 1-1zm1-2a8 8 0 0 1 16 0H4z"/></svg>
-          <div class="galilee-spec-body">
-            <div><strong>早餐：</strong>飯店內美式自助</div>
-            <div><strong>午餐：</strong>菲諾港露天餐廳青醬海鮮麵風味午餐</div>
-            <div><strong>晚餐：</strong>熱那亞海港經典海鮮燉飯晚宴</div>
-          </div>
-        </div>
-        <div class="galilee-spec-cell">
-          <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 7h2M9 11h2M9 15h2M13 7h2M13 11h2M13 15h2"/></svg>
-          <div class="galilee-spec-body">
-            <div>5星 Grand Hotel Savoia 薩伏亞大飯店（連住第 3 晚）</div>
-          </div>
-        </div>
-        <div class="galilee-spec-cell">
-          <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/><polygon points="12,11 13.5,14 17,14.5 14.5,17 15,20.5 12,18.8 9,20.5 9.5,17 7,14.5 10.5,14" fill="#b8862d" stroke="none"/></svg>
-          <div class="galilee-spec-body">
-            <div><strong>【團費包含】</strong>★聖馬格利塔至菲諾港往返景觀遊船船票。</div>
-          </div>
-        </div>
-      </div>
+        ''' + build_footer_specs(
+            ['飯店內美式自助', '菲諾港露天餐廳青醬海鮮麵風味午餐', '熱那亞海港經典海鮮燉飯晚宴'],
+            '5星 Grand Hotel Savoia 薩伏亞大飯店（連住第 3 晚）',
+            '★聖馬格利塔至菲諾港往返景觀遊船船票。'
+        ) + '''
       </div>
 
-      
-      <div class="page-footer">
-        <span class="page-footer-brand">TRAVEL EURO · 隨身慢活手冊</span>
-        <span class="page-footer-num">12</span>
-      </div>
+      ''' + build_page_footer(12) + '''
     </div>
+''')
 
+    # -------------------------------------------------------------------------
+    # PAGE 13: DAY 09 & DAY 10 · 跨越義法邊界 ➔ 抵達蔚藍海岸尼斯
+    # -------------------------------------------------------------------------
+    timeline_d9 = [
+        {'icon': ICON_TRAIN, 'time': '09:50', 'label': '海岸列車啟程', 'dur': '熱那亞出發'},
+        {'icon': ICON_TRAIN, 'time': '11:50', 'label': '邊界凡蒂米利亞', 'dur': '轉乘TER雙層列車'},
+        {'icon': ICON_HOTEL_NODE, 'time': '12:45', 'label': '抵達尼斯', 'dur': '尼斯市區車站'},
+        {'icon': ICON_HOTEL_NODE, 'time': '13:30', 'label': '入住艾美酒店', 'dur': '英國人散步大道'},
+        {'icon': ICON_SIGHT, 'time': '15:30', 'label': '天使灣初探', 'dur': '地中海純淨海灣'}
+    ]
+    timeline_d10 = [
+        {'icon': ICON_SHOP, 'time': '09:00', 'label': '薩萊亞花市', 'dur': '舊城傳統市集'},
+        {'icon': ICON_SIGHT, 'time': '10:30', 'label': '舊城紅赭小巷', 'dur': '巴洛克教堂'},
+        {'icon': ICON_MEAL, 'time': '12:30', 'label': '尼斯沙拉午餐', 'dur': '道地索卡薄餅'},
+        {'icon': ICON_SIGHT, 'time': '15:00', 'label': '城堡山觀景', 'dur': '搭乘電梯登頂'},
+        {'icon': ICON_MEAL, 'time': '18:30', 'label': '普羅旺斯晚宴', 'dur': '燉牛肉佐紅酒'}
+    ]
+
+    html.append('''
     <!-- =========================================================================
          PAGE 13: DAY 09 & DAY 10
          ========================================================================= -->
@@ -2049,72 +1705,14 @@
               </div>
             </div>
           </div>
-          
-      <div class="galilee-timeline-wrap">
-        <div class="galilee-timeline-track"></div>
-        <div class="galilee-timeline-nodes">
-          
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M12 2c-4.4 0-8 .6-8 4v10a3 3 0 0 0 3 3l-1.5 1.5V21h13v-.5L17 19a3 3 0 0 0 3-3V6c0-3.4-3.6-4-8-4zm-6 4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v4H6V6zm2 10a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm8 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg></div>
-          <div class="galilee-t-time">09:50</div>
-          <div class="galilee-t-label">海岸列車啟程</div>
-          <div class="galilee-t-dur">熱那亞出發</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M12 2c-4.4 0-8 .6-8 4v10a3 3 0 0 0 3 3l-1.5 1.5V21h13v-.5L17 19a3 3 0 0 0 3-3V6c0-3.4-3.6-4-8-4zm-6 4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v4H6V6zm2 10a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm8 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg></div>
-          <div class="galilee-t-time">11:50</div>
-          <div class="galilee-t-label">邊界凡蒂米利亞</div>
-          <div class="galilee-t-dur">轉乘TER雙層列車</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M19 7h-8v8H3V5H1v15h2v-3h18v3h2v-9a4 4 0 0 0-4-4zm-12 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg></div>
-          <div class="galilee-t-time">12:45</div>
-          <div class="galilee-t-label">抵達尼斯</div>
-          <div class="galilee-t-dur">尼斯市區車站</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M19 7h-8v8H3V5H1v15h2v-3h18v3h2v-9a4 4 0 0 0-4-4zm-12 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg></div>
-          <div class="galilee-t-time">13:30</div>
-          <div class="galilee-t-label">入住艾美酒店</div>
-          <div class="galilee-t-dur">英國人散步大道</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="#000"/></svg></div>
-          <div class="galilee-t-time">15:30</div>
-          <div class="galilee-t-label">天使灣初探</div>
-          <div class="galilee-t-dur">地中海純淨海灣</div>
-        </div>
-        </div>
-      </div>
+          ''' + build_timeline(timeline_d9) + '''
           <div class="galilee-split-content">
             <img src="day09-nice-station.webp" alt="抵達尼斯車站與蔚藍海岸">
             <div class="galilee-split-text">
               搭乘全景雙層列車穿越義大利與法國邊界，迎著南法燦爛千陽抵達度假之都尼斯。進駐座落於英國人散步大道 1 號的艾美酒店（連住 5 晚免搬行李），推開窗戶即可飽覽波光粼粼的天使灣海景，開啟純法式慢活篇章。
             </div>
           </div>
-          
-      <div class="galilee-spec-footer">
-        <div class="galilee-spec-cell">
-          <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4a2 2 0 0 0-2 2h4a2 2 0 0 0-2-2zM3 17h18a1 1 0 0 1 1 1v1H2v-1a1 1 0 0 1 1-1zm1-2a8 8 0 0 1 16 0H4z"/></svg>
-          <div class="galilee-spec-body">
-            <div><strong>早餐：</strong>飯店內自助式</div>
-            <div><strong>午餐：</strong>邊境海景餐廳特色午餐</div>
-            <div><strong>晚餐：</strong>尼斯海灣法式主廚晚宴</div>
-          </div>
-        </div>
-        <div class="galilee-spec-cell">
-          <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 7h2M9 11h2M9 15h2M13 7h2M13 11h2M13 15h2"/></svg>
-          <div class="galilee-spec-body">
-            <div>4-5星 Le Méridien Nice 尼斯艾美酒店（連住第1晚）</div>
-          </div>
-        </div>
-        <div class="galilee-spec-cell">
-          <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/><polygon points="12,11 13.5,14 17,14.5 14.5,17 15,20.5 12,18.8 9,20.5 9.5,17 7,14.5 10.5,14" fill="#b8862d" stroke="none"/></svg>
-          <div class="galilee-spec-body">
-            <div><strong>【團費包含】</strong>★義法跨國景觀列車聯票。</div>
-          </div>
-        </div>
-      </div>
+          ''' + build_footer_specs(['飯店內自助式', '邊境海景餐廳特色午餐', '尼斯海灣法式主廚晚宴'], '4-5星 Le Méridien Nice 尼斯艾美酒店（連住第1晚）', '★義法跨國景觀列車聯票。') + '''
         </div>
 
         <!-- DAY 10 -->
@@ -2129,82 +1727,40 @@
               </div>
             </div>
           </div>
-          
-      <div class="galilee-timeline-wrap">
-        <div class="galilee-timeline-track"></div>
-        <div class="galilee-timeline-nodes">
-          
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4H6zm10 8a4 4 0 0 1-8 0" fill="none" stroke="#000" stroke-width="2"/></svg></div>
-          <div class="galilee-t-time">09:00</div>
-          <div class="galilee-t-label">薩萊亞花市</div>
-          <div class="galilee-t-dur">舊城傳統市集</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="#000"/></svg></div>
-          <div class="galilee-t-time">10:30</div>
-          <div class="galilee-t-label">舊城紅赭小巷</div>
-          <div class="galilee-t-dur">巴洛克教堂</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M11 2v9a2 2 0 0 1-2 2H8v9H6v-9H5a2 2 0 0 1-2-2V2h2v6h1V2h2v6h1V2h1zm7 0a4 4 0 0 1 4 4v5a2 2 0 0 1-2 2h-1v9h-2v-9h-1a2 2 0 0 1-2-2V6a4 4 0 0 1 4-4z"/></svg></div>
-          <div class="galilee-t-time">12:30</div>
-          <div class="galilee-t-label">尼斯沙拉午餐</div>
-          <div class="galilee-t-dur">道地索卡薄餅</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="#000"/></svg></div>
-          <div class="galilee-t-time">15:00</div>
-          <div class="galilee-t-label">城堡山觀景</div>
-          <div class="galilee-t-dur">搭乘電梯登頂</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M11 2v9a2 2 0 0 1-2 2H8v9H6v-9H5a2 2 0 0 1-2-2V2h2v6h1V2h2v6h1V2h1zm7 0a4 4 0 0 1 4 4v5a2 2 0 0 1-2 2h-1v9h-2v-9h-1a2 2 0 0 1-2-2V6a4 4 0 0 1 4-4z"/></svg></div>
-          <div class="galilee-t-time">18:30</div>
-          <div class="galilee-t-label">普羅旺斯晚宴</div>
-          <div class="galilee-t-dur">燉牛肉佐紅酒</div>
-        </div>
-        </div>
-      </div>
+          ''' + build_timeline(timeline_d10) + '''
           <div class="galilee-split-content">
             <img src="day10-baie-des-anges.webp" alt="天使灣與英國人散步大道">
             <div class="galilee-split-text">
               清晨漫步至薩萊亞廣場（Cours Saleya）鮮花與蔬果市集，沉浸在薰衣草皂香與普羅旺斯橄欖油香氣中。隨後搭乘免費觀景電梯登上城堡山（Colline du Château），居高臨下俯瞰天使灣那道無與倫比的蔚藍優美弧線。
             </div>
           </div>
-          
-      <div class="galilee-spec-footer">
-        <div class="galilee-spec-cell">
-          <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4a2 2 0 0 0-2 2h4a2 2 0 0 0-2-2zM3 17h18a1 1 0 0 1 1 1v1H2v-1a1 1 0 0 1 1-1zm1-2a8 8 0 0 1 16 0H4z"/></svg>
-          <div class="galilee-spec-body">
-            <div><strong>早餐：</strong>飯店內自助式</div>
-            <div><strong>午餐：</strong>舊城道地尼斯沙拉與鷹嘴豆煎餅</div>
-            <div><strong>晚餐：</strong>南法普羅旺斯燉牛肉風味餐</div>
-          </div>
-        </div>
-        <div class="galilee-spec-cell">
-          <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 7h2M9 11h2M9 15h2M13 7h2M13 11h2M13 15h2"/></svg>
-          <div class="galilee-spec-body">
-            <div>4-5星 Le Méridien Nice 尼斯艾美酒店（連住第2晚）</div>
-          </div>
-        </div>
-        <div class="galilee-spec-cell">
-          <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/><polygon points="12,11 13.5,14 17,14.5 14.5,17 15,20.5 12,18.8 9,20.5 9.5,17 7,14.5 10.5,14" fill="#b8862d" stroke="none"/></svg>
-          <div class="galilee-spec-body">
-            <div><strong>【團費包含】</strong>★尼斯城堡山觀景電梯票券。</div>
-          </div>
-        </div>
-      </div>
+          ''' + build_footer_specs(['飯店內自助式', '舊城道地尼斯沙拉與鷹嘴豆煎餅', '南法普羅旺斯燉牛肉風味餐'], '4-5星 Le Méridien Nice 尼斯艾美酒店（連住第2晚）', '★尼斯城堡山觀景電梯票券。') + '''
         </div>
       </div>
 
-      
-      <div class="page-footer">
-        <span class="page-footer-brand">TRAVEL EURO · 隨身慢活手冊</span>
-        <span class="page-footer-num">13</span>
-      </div>
+      ''' + build_page_footer(13) + '''
     </div>
+''')
 
+    # -------------------------------------------------------------------------
+    # PAGE 14: DAY 11 & DAY 12 · 濱海自由城度假 ➔ 費拉角奢華莊園
+    # -------------------------------------------------------------------------
+    timeline_d11 = [
+        {'icon': ICON_TRAIN, 'time': '10:00', 'label': 'TER列車', 'dur': '沿海鐵道8分鐘'},
+        {'icon': ICON_SIGHT, 'time': '10:30', 'label': '自由城深水港', 'dur': '粉彩漁村漫步'},
+        {'icon': ICON_SIGHT, 'time': '11:30', 'label': '聖皮耶禮拜堂', 'dur': '考克多壁畫藝術'},
+        {'icon': ICON_MEAL, 'time': '12:30', 'label': '碼頭露天午餐', 'dur': '香煎地中海魚排'},
+        {'icon': ICON_TRAIN, 'time': '15:30', 'label': '返回尼斯', 'dur': '艾美酒店海濱放鬆'}
+    ]
+    timeline_d12 = [
+        {'icon': ICON_BUS, 'time': '09:30', 'label': '景觀巴士', 'dur': '費拉角半島'},
+        {'icon': ICON_SIGHT, 'time': '10:15', 'label': '羅斯柴爾德莊園', 'dur': '粉紅宮殿導覽'},
+        {'icon': ICON_MEAL, 'time': '12:30', 'label': '莊園午茶', 'dur': '玫瑰花園露台午餐'},
+        {'icon': ICON_SIGHT, 'time': '14:30', 'label': '九大主題花園', 'dur': '日式、西班牙式庭園'},
+        {'icon': ICON_MEAL, 'time': '18:30', 'label': '地中海晚宴', 'dur': '天使灣夕陽料理'}
+    ]
+
+    html.append('''
     <!-- =========================================================================
          PAGE 14: DAY 11 & DAY 12
          ========================================================================= -->
@@ -2227,72 +1783,14 @@
               </div>
             </div>
           </div>
-          
-      <div class="galilee-timeline-wrap">
-        <div class="galilee-timeline-track"></div>
-        <div class="galilee-timeline-nodes">
-          
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M12 2c-4.4 0-8 .6-8 4v10a3 3 0 0 0 3 3l-1.5 1.5V21h13v-.5L17 19a3 3 0 0 0 3-3V6c0-3.4-3.6-4-8-4zm-6 4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v4H6V6zm2 10a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm8 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg></div>
-          <div class="galilee-t-time">10:00</div>
-          <div class="galilee-t-label">TER列車</div>
-          <div class="galilee-t-dur">沿海鐵道8分鐘</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="#000"/></svg></div>
-          <div class="galilee-t-time">10:30</div>
-          <div class="galilee-t-label">自由城深水港</div>
-          <div class="galilee-t-dur">粉彩漁村漫步</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="#000"/></svg></div>
-          <div class="galilee-t-time">11:30</div>
-          <div class="galilee-t-label">聖皮耶禮拜堂</div>
-          <div class="galilee-t-dur">考克多壁畫藝術</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M11 2v9a2 2 0 0 1-2 2H8v9H6v-9H5a2 2 0 0 1-2-2V2h2v6h1V2h2v6h1V2h1zm7 0a4 4 0 0 1 4 4v5a2 2 0 0 1-2 2h-1v9h-2v-9h-1a2 2 0 0 1-2-2V6a4 4 0 0 1 4-4z"/></svg></div>
-          <div class="galilee-t-time">12:30</div>
-          <div class="galilee-t-label">碼頭露天午餐</div>
-          <div class="galilee-t-dur">香煎地中海魚排</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M12 2c-4.4 0-8 .6-8 4v10a3 3 0 0 0 3 3l-1.5 1.5V21h13v-.5L17 19a3 3 0 0 0 3-3V6c0-3.4-3.6-4-8-4zm-6 4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v4H6V6zm2 10a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm8 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg></div>
-          <div class="galilee-t-time">15:30</div>
-          <div class="galilee-t-label">返回尼斯</div>
-          <div class="galilee-t-dur">艾美酒店海濱放鬆</div>
-        </div>
-        </div>
-      </div>
+          ''' + build_timeline(timeline_d11) + '''
           <div class="galilee-split-content">
             <img src="villefranche.webp" alt="濱海自由城">
             <div class="galilee-split-text">
               搭乘景觀火車僅 8 分鐘即抵達濱海自由城（Villefranche-sur-Mer）。這座保留中世紀原貌的天然良港，赭紅色與鵝黃色古老房舍層疊依山傍水，漫步於十六世紀掩體暗街與藝術家考克多繪製的聖皮耶禮拜堂，享受私密恬靜時光。
             </div>
           </div>
-          
-      <div class="galilee-spec-footer">
-        <div class="galilee-spec-cell">
-          <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4a2 2 0 0 0-2 2h4a2 2 0 0 0-2-2zM3 17h18a1 1 0 0 1 1 1v1H2v-1a1 1 0 0 1 1-1zm1-2a8 8 0 0 1 16 0H4z"/></svg>
-          <div class="galilee-spec-body">
-            <div><strong>早餐：</strong>飯店內自助式</div>
-            <div><strong>午餐：</strong>碼頭水岸露天餐廳海鮮午餐</div>
-            <div><strong>晚餐：</strong>尼斯精選法式小館晚宴</div>
-          </div>
-        </div>
-        <div class="galilee-spec-cell">
-          <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 7h2M9 11h2M9 15h2M13 7h2M13 11h2M13 15h2"/></svg>
-          <div class="galilee-spec-body">
-            <div>4-5星 Le Méridien Nice 尼斯艾美酒店（連住第3晚）</div>
-          </div>
-        </div>
-        <div class="galilee-spec-cell">
-          <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/><polygon points="12,11 13.5,14 17,14.5 14.5,17 15,20.5 12,18.8 9,20.5 9.5,17 7,14.5 10.5,14" fill="#b8862d" stroke="none"/></svg>
-          <div class="galilee-spec-body">
-            <div><strong>【團費包含】</strong>★TER 雙層景觀列車往返票券。</div>
-          </div>
-        </div>
-      </div>
+          ''' + build_footer_specs(['飯店內自助式', '碼頭水岸露天餐廳海鮮午餐', '尼斯精選法式小館晚宴'], '4-5星 Le Méridien Nice 尼斯艾美酒店（連住第3晚）', '★TER 雙層景觀列車往返票券。') + '''
         </div>
 
         <!-- DAY 12 -->
@@ -2307,82 +1805,34 @@
               </div>
             </div>
           </div>
-          
-      <div class="galilee-timeline-wrap">
-        <div class="galilee-timeline-track"></div>
-        <div class="galilee-timeline-nodes">
-          
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M4 16V6a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v10a2 2 0 0 1-2 2v2a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-2H9v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-2a2 2 0 0 1-2-2zm2-8h12V6a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v2zm0 2v4h12v-4H6zm1.5 5.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm11 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg></div>
-          <div class="galilee-t-time">09:30</div>
-          <div class="galilee-t-label">景觀巴士</div>
-          <div class="galilee-t-dur">費拉角半島</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="#000"/></svg></div>
-          <div class="galilee-t-time">10:15</div>
-          <div class="galilee-t-label">羅斯柴爾德莊園</div>
-          <div class="galilee-t-dur">粉紅宮殿導覽</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M11 2v9a2 2 0 0 1-2 2H8v9H6v-9H5a2 2 0 0 1-2-2V2h2v6h1V2h2v6h1V2h1zm7 0a4 4 0 0 1 4 4v5a2 2 0 0 1-2 2h-1v9h-2v-9h-1a2 2 0 0 1-2-2V6a4 4 0 0 1 4-4z"/></svg></div>
-          <div class="galilee-t-time">12:30</div>
-          <div class="galilee-t-label">莊園午茶</div>
-          <div class="galilee-t-dur">玫瑰花園露台午餐</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="#000"/></svg></div>
-          <div class="galilee-t-time">14:30</div>
-          <div class="galilee-t-label">九大主題花園</div>
-          <div class="galilee-t-dur">日式、西班牙式庭園</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M11 2v9a2 2 0 0 1-2 2H8v9H6v-9H5a2 2 0 0 1-2-2V2h2v6h1V2h2v6h1V2h1zm7 0a4 4 0 0 1 4 4v5a2 2 0 0 1-2 2h-1v9h-2v-9h-1a2 2 0 0 1-2-2V6a4 4 0 0 1 4-4z"/></svg></div>
-          <div class="galilee-t-time">18:30</div>
-          <div class="galilee-t-label">地中海晚宴</div>
-          <div class="galilee-t-dur">天使灣夕陽料理</div>
-        </div>
-        </div>
-      </div>
+          ''' + build_timeline(timeline_d12) + '''
           <div class="galilee-split-content">
             <img src="day12-villa-rothschild.webp" alt="羅斯柴爾德莊園花園">
             <div class="galilee-split-text">
               前往歐洲名流隱世半島聖讓費拉角，探訪男爵夫人精心打造的羅斯柴爾德粉紅莊園（Villa Ephrussi de Rothschild）。漫步於法式水上花園、西班牙庭園、日式枯山水等九大主題園林，俯瞰左右兩側蔚藍地中海夾道壯麗景致。
             </div>
           </div>
-          
-      <div class="galilee-spec-footer">
-        <div class="galilee-spec-cell">
-          <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4a2 2 0 0 0-2 2h4a2 2 0 0 0-2-2zM3 17h18a1 1 0 0 1 1 1v1H2v-1a1 1 0 0 1 1-1zm1-2a8 8 0 0 1 16 0H4z"/></svg>
-          <div class="galilee-spec-body">
-            <div><strong>早餐：</strong>飯店內自助式</div>
-            <div><strong>午餐：</strong>莊園玫瑰花園露台輕食午餐</div>
-            <div><strong>晚餐：</strong>南法普羅旺斯海鮮晚宴</div>
-          </div>
-        </div>
-        <div class="galilee-spec-cell">
-          <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 7h2M9 11h2M9 15h2M13 7h2M13 11h2M13 15h2"/></svg>
-          <div class="galilee-spec-body">
-            <div>4-5星 Le Méridien Nice 尼斯艾美酒店（連住第4晚）</div>
-          </div>
-        </div>
-        <div class="galilee-spec-cell">
-          <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/><polygon points="12,11 13.5,14 17,14.5 14.5,17 15,20.5 12,18.8 9,20.5 9.5,17 7,14.5 10.5,14" fill="#b8862d" stroke="none"/></svg>
-          <div class="galilee-spec-body">
-            <div><strong>【團費包含】</strong>★羅斯柴爾德花園莊園門票與語音導覽。</div>
-          </div>
-        </div>
-      </div>
+          ''' + build_footer_specs(['飯店內自助式', '莊園玫瑰花園露台輕食午餐', '南法普羅旺斯海鮮晚宴'], '4-5星 Le Méridien Nice 尼斯艾美酒店（連住第4晚）', '★羅斯柴爾德花園莊園門票與語音導覽。') + '''
         </div>
       </div>
 
-      
-      <div class="page-footer">
-        <span class="page-footer-brand">TRAVEL EURO · 隨身慢活手冊</span>
-        <span class="page-footer-num">14</span>
-      </div>
+      ''' + build_page_footer(14) + '''
     </div>
+''')
 
+    # -------------------------------------------------------------------------
+    # PAGE 15: DAY 13 · 尼斯最後慢活日 (Full Page Feature!)
+    # -------------------------------------------------------------------------
+    timeline_d13 = [
+        {'icon': ICON_TRAIN, 'time': '10:00', 'label': '輕軌移動', 'dur': '尼斯T1路面輕軌'},
+        {'icon': ICON_SIGHT, 'time': '10:30', 'label': '夏卡爾博物館', 'dur': '聖經系列彩繪玻璃'},
+        {'icon': ICON_MEAL, 'time': '12:30', 'label': '馬賽納午餐', 'dur': '新古典主義廣場'},
+        {'icon': ICON_SHOP, 'time': '14:30', 'label': '老佛爺百貨', 'dur': '伴手禮與退稅選購'},
+        {'icon': ICON_SIGHT, 'time': '17:30', 'label': '海濱漫步告別', 'dur': '天使灣金黃夕陽'},
+        {'icon': ICON_MEAL, 'time': '18:30', 'label': '告別晚宴', 'dur': '米其林推薦海景饗宴'}
+    ]
+
+    html.append('''
     <!-- =========================================================================
          PAGE 15: DAY 13 · 尼斯最後慢活日
          ========================================================================= -->
@@ -2404,49 +1854,7 @@
           </div>
         </div>
 
-        
-      <div class="galilee-timeline-wrap">
-        <div class="galilee-timeline-track"></div>
-        <div class="galilee-timeline-nodes">
-          
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M12 2c-4.4 0-8 .6-8 4v10a3 3 0 0 0 3 3l-1.5 1.5V21h13v-.5L17 19a3 3 0 0 0 3-3V6c0-3.4-3.6-4-8-4zm-6 4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v4H6V6zm2 10a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm8 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg></div>
-          <div class="galilee-t-time">10:00</div>
-          <div class="galilee-t-label">輕軌移動</div>
-          <div class="galilee-t-dur">尼斯T1路面輕軌</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="#000"/></svg></div>
-          <div class="galilee-t-time">10:30</div>
-          <div class="galilee-t-label">夏卡爾博物館</div>
-          <div class="galilee-t-dur">聖經系列彩繪玻璃</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M11 2v9a2 2 0 0 1-2 2H8v9H6v-9H5a2 2 0 0 1-2-2V2h2v6h1V2h2v6h1V2h1zm7 0a4 4 0 0 1 4 4v5a2 2 0 0 1-2 2h-1v9h-2v-9h-1a2 2 0 0 1-2-2V6a4 4 0 0 1 4-4z"/></svg></div>
-          <div class="galilee-t-time">12:30</div>
-          <div class="galilee-t-label">馬賽納午餐</div>
-          <div class="galilee-t-dur">新古典主義廣場</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4H6zm10 8a4 4 0 0 1-8 0" fill="none" stroke="#000" stroke-width="2"/></svg></div>
-          <div class="galilee-t-time">14:30</div>
-          <div class="galilee-t-label">老佛爺百貨</div>
-          <div class="galilee-t-dur">伴手禮與退稅選購</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="#000"/></svg></div>
-          <div class="galilee-t-time">17:30</div>
-          <div class="galilee-t-label">海濱漫步告別</div>
-          <div class="galilee-t-dur">天使灣金黃夕陽</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M11 2v9a2 2 0 0 1-2 2H8v9H6v-9H5a2 2 0 0 1-2-2V2h2v6h1V2h2v6h1V2h1zm7 0a4 4 0 0 1 4 4v5a2 2 0 0 1-2 2h-1v9h-2v-9h-1a2 2 0 0 1-2-2V6a4 4 0 0 1 4-4z"/></svg></div>
-          <div class="galilee-t-time">18:30</div>
-          <div class="galilee-t-label">告別晚宴</div>
-          <div class="galilee-t-dur">米其林推薦海景饗宴</div>
-        </div>
-        </div>
-      </div>
+        ''' + build_timeline(timeline_d13) + '''
 
         <div class="galilee-photo-grid-2">
           <div class="galilee-photo-item">
@@ -2479,38 +1887,34 @@
           <div>參觀由現代畫家夏卡爾親自參與策劃興建的藝術殿堂。十七幅以《聖經》創世紀與雅歌為主題的巨幅油畫與純淨藍色馬賽克彩繪玻璃，散發無盡詩意與溫暖光芒。</div>
         </div>
 
-        
-      <div class="galilee-spec-footer">
-        <div class="galilee-spec-cell">
-          <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4a2 2 0 0 0-2 2h4a2 2 0 0 0-2-2zM3 17h18a1 1 0 0 1 1 1v1H2v-1a1 1 0 0 1 1-1zm1-2a8 8 0 0 1 16 0H4z"/></svg>
-          <div class="galilee-spec-body">
-            <div><strong>早餐：</strong>飯店內美式自助</div>
-            <div><strong>午餐：</strong>馬賽納廣場法式小酒館料理</div>
-            <div><strong>晚餐：</strong>天使灣海景告別晚宴</div>
-          </div>
-        </div>
-        <div class="galilee-spec-cell">
-          <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 7h2M9 11h2M9 15h2M13 7h2M13 11h2M13 15h2"/></svg>
-          <div class="galilee-spec-body">
-            <div>4-5星 Le Méridien Nice 尼斯艾美酒店（連住第 5 晚）</div>
-          </div>
-        </div>
-        <div class="galilee-spec-cell">
-          <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/><polygon points="12,11 13.5,14 17,14.5 14.5,17 15,20.5 12,18.8 9,20.5 9.5,17 7,14.5 10.5,14" fill="#b8862d" stroke="none"/></svg>
-          <div class="galilee-spec-body">
-            <div><strong>【團費包含】</strong>★夏卡爾國立博物館門票、★尼斯 24h 輕軌通票。</div>
-          </div>
-        </div>
-      </div>
+        ''' + build_footer_specs(
+            ['飯店內美式自助', '馬賽納廣場法式小酒館料理', '天使灣海景告別晚宴'],
+            '4-5星 Le Méridien Nice 尼斯艾美酒店（連住第 5 晚）',
+            '★夏卡爾國立博物館門票、★尼斯 24h 輕軌通票。'
+        ) + '''
       </div>
 
-      
-      <div class="page-footer">
-        <span class="page-footer-brand">TRAVEL EURO · 隨身慢活手冊</span>
-        <span class="page-footer-num">15</span>
-      </div>
+      ''' + build_page_footer(15) + '''
     </div>
+''')
 
+    # -------------------------------------------------------------------------
+    # PAGE 16: DAY 14–15 · 萬里歸途 ➔ 平安返台
+    # -------------------------------------------------------------------------
+    timeline_d14 = [
+        {'icon': ICON_HOTEL_NODE, 'time': '10:00', 'label': '飯店悠閒退房', 'dur': '整理回台行囊'},
+        {'icon': ICON_BUS, 'time': '10:30', 'label': '專車前往機場', 'dur': '尼斯蔚藍海岸機場'},
+        {'icon': ICON_SHOP, 'time': '11:15', 'label': 'PABLO電子退稅', 'dur': '領隊專人協助'},
+        {'icon': ICON_PLANE, 'time': '14:20', 'label': '登機啟航', 'dur': '飛往國際轉運樞紐'},
+        {'icon': ICON_MEAL, 'time': '16:00', 'label': '機上美饌', 'dur': '空中平穩飛行'}
+    ]
+    timeline_d15 = [
+        {'icon': ICON_PLANE, 'time': '15:30', 'label': '平安降落台北', 'dur': '桃園國際機場'},
+        {'icon': ICON_SHOP, 'time': '16:15', 'label': '提領托運行李', 'dur': '海關通關'},
+        {'icon': ICON_BUS, 'time': '17:00', 'label': '與團員珍重道別', 'dur': '接送返抵溫暖家園'}
+    ]
+
+    html.append('''
     <!-- =========================================================================
          PAGE 16: DAY 14–15
          ========================================================================= -->
@@ -2533,72 +1937,14 @@
               </div>
             </div>
           </div>
-          
-      <div class="galilee-timeline-wrap">
-        <div class="galilee-timeline-track"></div>
-        <div class="galilee-timeline-nodes">
-          
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M19 7h-8v8H3V5H1v15h2v-3h18v3h2v-9a4 4 0 0 0-4-4zm-12 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg></div>
-          <div class="galilee-t-time">10:00</div>
-          <div class="galilee-t-label">飯店悠閒退房</div>
-          <div class="galilee-t-dur">整理回台行囊</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M4 16V6a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v10a2 2 0 0 1-2 2v2a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-2H9v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-2a2 2 0 0 1-2-2zm2-8h12V6a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v2zm0 2v4h12v-4H6zm1.5 5.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm11 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg></div>
-          <div class="galilee-t-time">10:30</div>
-          <div class="galilee-t-label">專車前往機場</div>
-          <div class="galilee-t-dur">尼斯蔚藍海岸機場</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4H6zm10 8a4 4 0 0 1-8 0" fill="none" stroke="#000" stroke-width="2"/></svg></div>
-          <div class="galilee-t-time">11:15</div>
-          <div class="galilee-t-label">PABLO電子退稅</div>
-          <div class="galilee-t-dur">領隊專人協助</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg></div>
-          <div class="galilee-t-time">14:20</div>
-          <div class="galilee-t-label">登機啟航</div>
-          <div class="galilee-t-dur">飛往國際轉運樞紐</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M11 2v9a2 2 0 0 1-2 2H8v9H6v-9H5a2 2 0 0 1-2-2V2h2v6h1V2h2v6h1V2h1zm7 0a4 4 0 0 1 4 4v5a2 2 0 0 1-2 2h-1v9h-2v-9h-1a2 2 0 0 1-2-2V6a4 4 0 0 1 4-4z"/></svg></div>
-          <div class="galilee-t-time">16:00</div>
-          <div class="galilee-t-label">機上美饌</div>
-          <div class="galilee-t-dur">空中平穩飛行</div>
-        </div>
-        </div>
-      </div>
+          ''' + build_timeline(timeline_d14) + '''
           <div class="galilee-split-content">
             <img src="day14-nice-departure.webp" alt="尼斯機場啟程">
             <div class="galilee-split-text">
               享用在南法的最後一頓豐盛自助早餐後，搭乘專車前往尼斯蔚藍海岸國際機場。在領隊全程協助下使用法國 PABLO 電子退稅機台輕鬆掃描退稅單，免去人工排隊等待，滿載豐富伴手禮與難忘回憶登機踏上歸途。
             </div>
           </div>
-          
-      <div class="galilee-spec-footer">
-        <div class="galilee-spec-cell">
-          <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4a2 2 0 0 0-2 2h4a2 2 0 0 0-2-2zM3 17h18a1 1 0 0 1 1 1v1H2v-1a1 1 0 0 1 1-1zm1-2a8 8 0 0 1 16 0H4z"/></svg>
-          <div class="galilee-spec-body">
-            <div><strong>早餐：</strong>飯店內美式自助</div>
-            <div><strong>午餐：</strong>機場候機輕食</div>
-            <div><strong>晚餐：</strong>機上精緻美饌</div>
-          </div>
-        </div>
-        <div class="galilee-spec-cell">
-          <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 7h2M9 11h2M9 15h2M13 7h2M13 11h2M13 15h2"/></svg>
-          <div class="galilee-spec-body">
-            <div>豪華客機夜宿機上</div>
-          </div>
-        </div>
-        <div class="galilee-spec-cell">
-          <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/><polygon points="12,11 13.5,14 17,14.5 14.5,17 15,20.5 12,18.8 9,20.5 9.5,17 7,14.5 10.5,14" fill="#b8862d" stroke="none"/></svg>
-          <div class="galilee-spec-body">
-            <div><strong>【團費包含】</strong>★專屬機場接送、★PABLO 退稅協處服務。</div>
-          </div>
-        </div>
-      </div>
+          ''' + build_footer_specs(['飯店內美式自助', '機場候機輕食', '機上精緻美饌'], '豪華客機夜宿機上', '★專屬機場接送、★PABLO 退稅協處服務。') + '''
         </div>
 
         <!-- DAY 15 -->
@@ -2613,70 +1959,25 @@
               </div>
             </div>
           </div>
-          
-      <div class="galilee-timeline-wrap">
-        <div class="galilee-timeline-track"></div>
-        <div class="galilee-timeline-nodes">
-          
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg></div>
-          <div class="galilee-t-time">15:30</div>
-          <div class="galilee-t-label">平安降落台北</div>
-          <div class="galilee-t-dur">桃園國際機場</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4H6zm10 8a4 4 0 0 1-8 0" fill="none" stroke="#000" stroke-width="2"/></svg></div>
-          <div class="galilee-t-time">16:15</div>
-          <div class="galilee-t-label">提領托運行李</div>
-          <div class="galilee-t-dur">海關通關</div>
-        </div>
-        <div class="galilee-timeline-node">
-          <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24"><path d="M4 16V6a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v10a2 2 0 0 1-2 2v2a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-2H9v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-2a2 2 0 0 1-2-2zm2-8h12V6a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v2zm0 2v4h12v-4H6zm1.5 5.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm11 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg></div>
-          <div class="galilee-t-time">17:00</div>
-          <div class="galilee-t-label">與團員珍重道別</div>
-          <div class="galilee-t-dur">接送返抵溫暖家園</div>
-        </div>
-        </div>
-      </div>
+          ''' + build_timeline(timeline_d15) + '''
           <div class="galilee-split-content">
             <img src="day01-flight.webp" alt="班機平安返台">
             <div class="galilee-split-text">
               班機於午後順利降落台北桃園國際機場。提領行李時與這十五天來朝夕相處的團員好友互道珍重、交換聯絡方式。十五日的熟齡慢活巡禮圓滿落幕，帶著滿滿的異國人文感動與健康活力，重返溫馨甜蜜的家園。
             </div>
           </div>
-          
-      <div class="galilee-spec-footer">
-        <div class="galilee-spec-cell">
-          <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4a2 2 0 0 0-2 2h4a2 2 0 0 0-2-2zM3 17h18a1 1 0 0 1 1 1v1H2v-1a1 1 0 0 1 1-1zm1-2a8 8 0 0 1 16 0H4z"/></svg>
-          <div class="galilee-spec-body">
-            <div><strong>早餐：</strong>機上精緻套餐</div>
-            <div><strong>午餐：</strong>機上精緻輕食</div>
-            <div><strong>晚餐：</strong>溫暖家常料理</div>
-          </div>
-        </div>
-        <div class="galilee-spec-cell">
-          <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 7h2M9 11h2M9 15h2M13 7h2M13 11h2M13 15h2"/></svg>
-          <div class="galilee-spec-body">
-            <div>溫暖的家 Sweet Home</div>
-          </div>
-        </div>
-        <div class="galilee-spec-cell">
-          <svg class="galilee-spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/><polygon points="12,11 13.5,14 17,14.5 14.5,17 15,20.5 12,18.8 9,20.5 9.5,17 7,14.5 10.5,14" fill="#b8862d" stroke="none"/></svg>
-          <div class="galilee-spec-body">
-            <div><strong>【團費包含】</strong>★全程專業領隊隨行服務。</div>
-          </div>
-        </div>
-      </div>
+          ''' + build_footer_specs(['機上精緻套餐', '機上精緻輕食', '溫暖家常料理'], '溫暖的家 Sweet Home', '★全程專業領隊隨行服務。') + '''
         </div>
       </div>
 
-      
-      <div class="page-footer">
-        <span class="page-footer-brand">TRAVEL EURO · 隨身慢活手冊</span>
-        <span class="page-footer-num">16</span>
-      </div>
+      ''' + build_page_footer(16) + '''
     </div>
+''')
 
+    # -------------------------------------------------------------------------
+    # PAGE 17: 實用義大利語與法語雙語對照卡 & 退稅 3 步驟
+    # -------------------------------------------------------------------------
+    html.append('''
     <!-- =========================================================================
          PAGE 17: 實用義大利語與法語日常對照卡 & 退稅 3 步驟
          ========================================================================= -->
@@ -2730,13 +2031,14 @@
         </div>
       </div>
 
-      
-      <div class="page-footer">
-        <span class="page-footer-brand">TRAVEL EURO · 隨身慢活手冊</span>
-        <span class="page-footer-num">17</span>
-      </div>
+      ''' + build_page_footer(17) + '''
     </div>
+''')
 
+    # -------------------------------------------------------------------------
+    # PAGE 18: 旅途花費記帳與伴手禮購物清單
+    # -------------------------------------------------------------------------
+    html.append('''
     <!-- =========================================================================
          PAGE 18: 旅途花費記帳與伴手禮購物清單
          ========================================================================= -->
@@ -2783,13 +2085,14 @@
         </table>
       </div>
 
-      
-      <div class="page-footer">
-        <span class="page-footer-brand">TRAVEL EURO · 隨身慢活手冊</span>
-        <span class="page-footer-num">18</span>
-      </div>
+      ''' + build_page_footer(18) + '''
     </div>
+''')
 
+    # -------------------------------------------------------------------------
+    # PAGE 19: 旅人隨筆與紀念印章收集頁
+    # -------------------------------------------------------------------------
+    html.append('''
     <!-- =========================================================================
          PAGE 19: 旅人隨筆與紀念印章收集頁
          ========================================================================= -->
@@ -2841,13 +2144,14 @@
         </div>
       </div>
 
-      
-      <div class="page-footer">
-        <span class="page-footer-brand">TRAVEL EURO · 隨身慢活手冊</span>
-        <span class="page-footer-num">19</span>
-      </div>
+      ''' + build_page_footer(19) + '''
     </div>
+''')
 
+    # -------------------------------------------------------------------------
+    # PAGE 20: 封底 (Back Cover - Mirroring Galileo Page 24)
+    # -------------------------------------------------------------------------
+    html.append('''
     <!-- =========================================================================
          PAGE 20: 封底 (Back Cover)
          ========================================================================= -->
@@ -2899,7 +2203,18 @@
         </div>
       </div>
     </div>
+''')
 
+    # Close document
+    html.append('''
   </div>
 </body>
-</html>
+</html>''')
+
+    output_path = '/Users/sher/Documents/trvalpremium/print-handbook.html'
+    with open(output_path, 'w', encoding='utf-8') as f:
+        f.write(''.join(html))
+    print(f"Successfully generated refined {output_path} ({len(''.join(html))} characters)!")
+
+if __name__ == '__main__':
+    generate_handbook()
