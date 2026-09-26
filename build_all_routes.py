@@ -570,11 +570,11 @@ ROUTES_DATA = [
         "alert": "絕景提示：沿著下濱海路行駛，可從高處俯瞰濱海自由城海灣的豪華遊艇！",
         "stops": [
             {"time": "09:30", "name": "Port Lympia（舊港起點站）", "coord": [43.6967, 7.2861], "is_start": True},
-            {"time": "09:34", "name": "Saint-Aignan", "coord": [43.6950, 7.2917]},
-            {"time": "09:38", "name": "Léopold II", "coord": [43.7011, 7.3061]},
-            {"time": "09:42", "name": "Octroi（自由城觀景點）", "coord": [43.7072, 7.3139]},
-            {"time": "09:48", "name": "Pont Saint-Jean", "coord": [43.6978, 7.3292]},
-            {"time": "09:54", "name": "Passable / Rothschild（別墅正門口）", "coord": [43.6947, 7.3303], "is_end": True}
+            {"time": "09:34", "name": "Saint-Aignan", "coord": [43.6949, 7.2935]},
+            {"time": "09:38", "name": "Octroi（自由城觀景點 · 俯瞰自由城海灣）", "coord": [43.7021, 7.3078]},
+            {"time": "09:42", "name": "Léopold II（全景高點海濱路）", "coord": [43.7081, 7.3130]},
+            {"time": "09:48", "name": "Pont Saint-Jean（費拉角半島入口 · 下車前一站提示）", "coord": [43.7015, 7.3266]},
+            {"time": "09:54", "name": "Passable / Rothschild（別墅正門口 · 終點下車）", "coord": [43.6947, 7.3303], "is_end": True}
         ]
     }
 ]
