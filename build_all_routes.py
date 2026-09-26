@@ -490,10 +490,10 @@ ROUTES_DATA = [
         "id": "route_16",
         "day": "DAY 10",
         "day_badge": "D10 · 盎格魯大道海景 BRT 快速公車",
-        "title": "AC Hotel Nice 至 薩萊亞花市（公車 12+ 號 · Opéra - Vieille Ville）",
+        "title": "AC Hotel Nice 至 Opéra - Vieille Ville（公車 12+ 號）",
         "origin_name": "Grosso Cum / Promenade 站牌（AC Hotel 門前 · 盎格魯大道海景站）",
         "origin_addr": "Promenade des Anglais / Rue Honoré Sauvan, 06000 Nice, 法國",
-        "dest_name": "Opéra - Vieille Ville 站（歌劇院 · 薩萊亞花市入口）",
+        "dest_name": "Opéra - Vieille Ville 站（歌劇院旁 · 步行 1 分鐘進薩萊亞花市）",
         "dest_addr": "Quai des États-Unis / Rue Saint-François de Paule, 06300 Nice, 法國",
         "dep_time": "09:30",
         "arr_time": "09:38",
@@ -502,18 +502,18 @@ ROUTES_DATA = [
         "ticket_sub": "PASS SUD AZUR 南法通票感應卡（公車與輕軌全線通用）",
         "ticket_price": "持 PASS SUD AZUR 通票搭乘（上車感應）",
         "operator": "尼斯都會大眾運輸 Lignes d'Azur",
-        "operator_note": "走出 AC Hotel 穿越馬路至盎格魯大道海邊站牌「Grosso Cum / Promenade」，搭乘 12+ 號快速公車（BHNS/BRT）沿蔚藍海岸行駛，直達「Opéra - Vieille Ville」站下車，穿過歌劇院即達薩萊亞花市（Cours Saleya）",
+        "operator_note": "走出 AC Hotel 穿越馬路至盎格魯大道海邊站牌「Grosso Cum / Promenade」，搭乘 12+ 號快速公車（BHNS/BRT）沿蔚藍海岸行駛，直達「Opéra - Vieille Ville」站下車，下車過街穿過舊城拱門 1 分鐘即達薩萊亞花市（Cours Saleya）",
         "transit_type": "bus",
         "transit_badge": "🚌 Bus 12+（往 Hôpital Pasteur 方向 · 經舊城歌劇院）",
         "line_color": "#0288d1",
-        "gmaps_url": "https://www.google.com/maps/dir/?api=1&origin=Grosso+Cum+Promenade+Nice&destination=Opera+Vieille+Ville+Nice&travelmode=transit",
+        "gmaps_url": "https://www.google.com/maps/dir/?api=1&origin=Grosso+Cum+Promenade+Nice&destination=Op%C3%A9ra+-+Vieille+Ville,+Nice&travelmode=transit",
         "alert": "絕景下車提示：全程行駛於世界知名的盎格魯大道，右手邊即是天使灣地中海蔚藍波光！前一站為 Albert 1er / Verdun（阿爾貝一世花園），下一站即為「Opéra - Vieille Ville」站下車，下車穿過舊城拱門 1 分鐘直達薩萊亞花市（Cours Saleya）。",
         "stops": [
             {"time": "09:30", "name": "Grosso Cum / Promenade（AC Hotel 門前 · 盎格魯大道海邊站牌 · 起點上車）", "coord": [43.6917, 7.2492], "is_start": True},
             {"time": "09:32", "name": "Gambetta / Promenade", "coord": [43.6938, 7.2546]},
             {"time": "09:34", "name": "Congrès / Promenade（地中海宮殿酒店前）", "coord": [43.6955, 7.2608]},
             {"time": "09:36", "name": "Albert 1er / Verdun（阿爾貝一世花園 · 下車前一站提示）", "coord": [43.6963, 7.2676]},
-            {"time": "09:38", "name": "Opéra - Vieille Ville（終點下車 · 歌劇院旁 · 步行 1 分鐘進薩萊亞花市）", "coord": [43.6953, 7.2725], "is_end": True}
+            {"time": "09:38", "name": "Opéra - Vieille Ville（終點下車 · 歌劇院旁 · 步行 1 分鐘進薩萊亞花市）", "coord": [43.6966, 7.2694], "is_end": True}
         ]
     },
     {
@@ -593,7 +593,7 @@ ROUTE_PDF_MAPPING = {
     "route_13": "13_D08_聖瑪格麗塔_至_Portofino終點站782公車.pdf",
     "route_14": "14_D09_熱那亞王子廣場_至_文提米利亞邊境.pdf",
     "route_15": "15_D09_文提米利亞_至_尼斯城站TER雙層列車.pdf",
-    "route_16": "16_D10_ACHotel_至_尼斯舊城花市公車12號.pdf",
+    "route_16": "16_D10_ACHotel_至_Opéra_Vieille_Ville公車12號.pdf",
     "route_17": "17_D11_尼斯城站_至_濱海自由城TER.pdf",
     "route_18": "18_D12_尼斯舊港_至_費拉角別墅15號公車.pdf",
 }
