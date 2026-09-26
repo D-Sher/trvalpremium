@@ -18,7 +18,7 @@ ROUTES_DATA = [
         "day_badge": "D02 · 機場入境與抵達米蘭",
         "title": "馬爾彭薩機場第一航廈 至 米蘭中央車站",
         "origin_name": "馬爾彭薩機場第一航廈（MXP T1）",
-        "origin_addr": "Aeroporto Malpensa Terminal 1, 21010 Ferno (VA), 義大利",
+        "origin_addr": "Aeroporto di Milano Malpensa Terminal 1, 21010 Ferno VA, 義大利",
         "dest_name": "米蘭中央車站（Milano Centrale）",
         "dest_addr": "Piazza Duca d'Aosta 1, 20124 Milano MI, 義大利",
         "dep_time": "16:11",
@@ -32,10 +32,10 @@ ROUTES_DATA = [
         "transit_type": "train",
         "transit_badge": "🚆 RE 2951 / RE 512977 Milano Centrale",
         "line_color": "#d93025",
-        "gmaps_url": "https://www.google.com/maps/dir/?api=1&origin=Malpensa+Aeroporto+Terminal+1&destination=Milano+Centrale&travelmode=transit",
+        "gmaps_url": "https://maps.app.goo.gl/7iYW9aFGebMAmSUJA",
         "alert": None,
         "stops": [
-            {"time": "16:11", "name": "馬爾彭薩機場第一航廈（MXP T1）", "coord": [45.6274, 8.7124], "is_start": True},
+            {"time": "16:11", "name": "馬爾彭薩機場第一航廈（MXP T1）", "coord": [45.62737, 8.71244], "is_start": True},
             {"time": "16:16", "name": "Ferno-Lonate Pozzolo", "coord": [45.6083, 8.7561]},
             {"time": "16:21", "name": "Busto Arsizio FN", "coord": [45.6111, 8.8519]},
             {"time": "16:24", "name": "Castellanza", "coord": [45.6089, 8.8928]},
@@ -43,7 +43,7 @@ ROUTES_DATA = [
             {"time": "16:36", "name": "Saronno（重要轉乘樞紐）", "coord": [45.5997, 9.0272]},
             {"time": "16:49", "name": "Milano Bovisa Politecnico", "coord": [45.5019, 9.1625]},
             {"time": "16:56", "name": "Milano Porta Garibaldi", "coord": [45.4842, 9.1872]},
-            {"time": "17:07", "name": "米蘭中央車站（Milano Centrale）", "coord": [45.4862, 9.2045], "is_end": True}
+            {"time": "17:07", "name": "米蘭中央車站（Milano Centrale）", "coord": [45.48714, 9.20482], "is_end": True}
         ]
     },
     {
@@ -66,14 +66,14 @@ ROUTES_DATA = [
         "transit_type": "metro",
         "transit_badge": "Ⓜ️ 3 San Donato（M3 黃線）",
         "line_color": "#f9ba00",
-        "gmaps_url": "https://www.google.com/maps/dir/?api=1&origin=Milano+Centrale&destination=Piazza+del+Duomo+Milano&travelmode=transit",
+        "gmaps_url": "https://maps.app.goo.gl/WQV7JywTpDj687Kr5",
         "alert": "提示：Duomo 站人潮較多，請留意隨身隨身包包與貴重物品。",
         "stops": [
-            {"time": "09:30", "name": "Centrale FS", "coord": [45.4862, 9.2045], "is_start": True},
+            {"time": "09:30", "name": "Centrale FS", "coord": [45.48714, 9.20482], "is_start": True},
             {"time": "09:32", "name": "Repubblica", "coord": [45.4786, 9.1969]},
             {"time": "09:33", "name": "Turati", "coord": [45.4744, 9.1936]},
             {"time": "09:34", "name": "Montenapoleone（蒙特拿破崙名品街）", "coord": [45.4697, 9.1925]},
-            {"time": "09:36", "name": "Duomo（大教堂站）", "coord": [45.4642, 9.1895], "is_end": True}
+            {"time": "09:36", "name": "Duomo（大教堂站）", "coord": [45.46372, 9.1906], "is_end": True}
         ]
     },
     {
@@ -82,9 +82,9 @@ ROUTES_DATA = [
         "day_badge": "D03 · 復古電車漫遊花園",
         "title": "斯卡拉大劇院 至 蒙塔內利花園（P.za Cavour）",
         "origin_name": "斯卡拉大劇院（Teatro alla Scala）",
-        "origin_addr": "Piazza della Scala, 20121 Milano MI, 義大利（Via Manzoni 電車站牌）",
+        "origin_addr": "Via Filodrammatici 2, 20121 Milano MI, 義大利",
         "dest_name": "蒙塔內利花園入口（Piazza Cavour 站）",
-        "dest_addr": "Piazza Cavour, 20121 Milano MI, 義大利（蒙塔內利花園西南拱門入口）",
+        "dest_addr": "Piazza Cavour, 20121 Milano MI, 義大利",
         "dep_time": "14:30",
         "arr_time": "14:36",
         "duration": "6 分（3 站直達）",
@@ -96,13 +96,13 @@ ROUTES_DATA = [
         "transit_type": "tram",
         "transit_badge": "🚊 Tram 1（往 Greco Rovereto）",
         "line_color": "#e67e22",
-        "gmaps_url": "https://www.google.com/maps/dir/?api=1&origin=Teatro+alla+Scala,+Milano&destination=Piazza+Cavour,+Milano&travelmode=transit",
+        "gmaps_url": "https://maps.app.goo.gl/LVe87892ZJaP7SuJ9",
         "alert": "下車提示：前一站為 Pisoni，下一站即為 Piazza Cavour 站，下車正對古典拱門入口與杜尼亞尼宮。",
         "stops": [
-            {"time": "14:30", "name": "Teatro alla Scala（斯卡拉大劇院前）", "coord": [45.4674, 9.1898], "is_start": True},
+            {"time": "14:30", "name": "Teatro alla Scala（斯卡拉大劇院前）", "coord": [45.4674, 9.18955], "is_start": True},
             {"time": "14:32", "name": "Montenapoleone M3（蒙特拿破崙街口）", "coord": [45.4699, 9.1926]},
             {"time": "14:34", "name": "Manzoni / Pisoni（下車前一站提示）", "coord": [45.4712, 9.1936]},
-            {"time": "14:36", "name": "Piazza Cavour（下車即達蒙塔內利花園拱門）", "coord": [45.4727, 9.1945], "is_end": True}
+            {"time": "14:36", "name": "Piazza Cavour（下車即達蒙塔內利花園拱門）", "coord": [45.47278, 9.19578], "is_end": True}
         ]
     },
     {
@@ -111,9 +111,9 @@ ROUTES_DATA = [
         "day_badge": "D03 · 晚餐後從容返回飯店",
         "title": "威尼斯門 至 Via Galvani（加爾瓦尼站 · Hilton 門前）",
         "origin_name": "威尼斯門站（Porta Venezia M1）",
-        "origin_addr": "Bastioni di Porta Venezia / Viale Vittorio Veneto, 20124 Milano MI, 義大利",
+        "origin_addr": "Piazza Guglielmo Oberdan, 20129 Milano MI, 義大利",
         "dest_name": "加爾瓦尼站（Via Filzi - Via Galvani · Via Luigi Galvani 街口）",
-        "dest_addr": "Via Fabio Filzi / Via Luigi Galvani, 20124 Milano MI, 義大利（下車即抵 Via Galvani，轉角 1 分鐘達 Hilton Milan）",
+        "dest_addr": "Via Fabio Filzi & Via Luigi Galvani, 20124 Milano MI, 義大利",
         "dep_time": "20:30",
         "arr_time": "20:38",
         "duration": "8 分（4 站直達）",
@@ -125,14 +125,14 @@ ROUTES_DATA = [
         "transit_type": "tram",
         "transit_badge": "🚊 Tram 9（往 Stazione Centrale）",
         "line_color": "#2e7d32",
-        "gmaps_url": "https://www.google.com/maps/dir/?api=1&origin=Porta+Venezia,+Milano&destination=Via+Filzi+Via+Galvani,+Milano&travelmode=transit",
+        "gmaps_url": "https://maps.app.goo.gl/serExZnQmnax3RyZ8",
         "alert": "下車提示：前一站為 Filzi / Pirelli，下一站即為「Via Filzi - Via Galvani」（加爾瓦尼站）下車，站牌正對 Via Luigi Galvani 路口，轉角步行 1 分鐘即達 Hilton Milan（Via Luigi Galvani 12）。",
         "stops": [
-            {"time": "20:30", "name": "P.ta Venezia M1（威尼斯門站）", "coord": [45.4745, 9.2052], "is_start": True},
+            {"time": "20:30", "name": "P.ta Venezia M1（威尼斯門站）", "coord": [45.47418, 9.20595], "is_start": True},
             {"time": "20:32", "name": "V.le Vittorio Veneto", "coord": [45.4771, 9.2028]},
             {"time": "20:34", "name": "P.za Repubblica M3", "coord": [45.4786, 9.1970]},
             {"time": "20:36", "name": "Filzi / Pirelli（下車前一站提示）", "coord": [45.4831, 9.2008]},
-            {"time": "20:38", "name": "Via Filzi / Via Galvani（加爾瓦尼站 · Via Galvani 街口）", "coord": [45.4855, 9.2025], "is_end": True}
+            {"time": "20:38", "name": "Via Filzi / Via Galvani（加爾瓦尼站 · Via Galvani 街口）", "coord": [45.4854, 9.20097], "is_end": True}
         ]
     },
     {
@@ -143,7 +143,7 @@ ROUTES_DATA = [
         "origin_name": "米蘭中央車站（Milano Centrale）",
         "origin_addr": "Piazza Duca d'Aosta 1, 20124 Milano MI, 義大利",
         "dest_name": "貝爾加莫車站（Bergamo Stazione FS）",
-        "dest_addr": "Piazza Guglielmo Marconi, 24122 Bergamo BG, 義大利",
+        "dest_addr": "Piazzale Guglielmo Marconi 7, 24122 Bergamo BG, 義大利",
         "dep_time": "09:05",
         "arr_time": "09:53",
         "duration": "48 分（4 站）",
@@ -155,14 +155,14 @@ ROUTES_DATA = [
         "transit_type": "train",
         "transit_badge": "🚆 RE 2219 Bergamo（直達快車）",
         "line_color": "#1a73e8",
-        "gmaps_url": "https://www.google.com/maps/dir/?api=1&origin=Milano+Centrale&destination=Stazione+di+Bergamo&travelmode=transit",
+        "gmaps_url": "https://maps.app.goo.gl/cNjvrvYM8wyjngiB8",
         "alert": None,
         "stops": [
-            {"time": "09:05", "name": "Milano Centrale", "coord": [45.4862, 9.2045], "is_start": True},
+            {"time": "09:05", "name": "Milano Centrale", "coord": [45.48714, 9.20482], "is_start": True},
             {"time": "09:12", "name": "Milano Lambrate", "coord": [45.4849, 9.2372]},
             {"time": "09:19", "name": "Pioltello-Limito", "coord": [45.4764, 9.3247]},
             {"time": "09:38", "name": "Verdello-Dalmine", "coord": [45.6025, 9.6192]},
-            {"time": "09:53", "name": "Bergamo FS", "coord": [45.6917, 9.6706], "is_end": True}
+            {"time": "09:53", "name": "Bergamo FS", "coord": [45.69043, 9.67505], "is_end": True}
         ]
     },
     {
@@ -171,7 +171,7 @@ ROUTES_DATA = [
         "day_badge": "D04 · 貝爾加莫市區公車",
         "title": "Bergamo 7（車站前）至 Vittorio Emanuele 47（公車 1 號）",
         "origin_name": "Bergamo 7 站牌（火車站前廣場 · Piazzale Guglielmo Marconi 7）",
-        "origin_addr": "Piazzale Guglielmo Marconi, 7, 24122 Bergamo BG, 義大利",
+        "origin_addr": "Piazzale Guglielmo Marconi 7, 24122 Bergamo BG, 義大利",
         "dest_name": "V.le V. Emanuele II, 47（登山纜車站下站前）",
         "dest_addr": "V.le V. Emanuele II, 47, 24121 Bergamo BG, 義大利",
         "dep_time": "10:05",
@@ -185,7 +185,7 @@ ROUTES_DATA = [
         "transit_type": "bus",
         "transit_badge": "🚌 ATB Linea 1（往 Stazione - Citta' Alta 方向 · 車站 ID: 2）",
         "line_color": "#ff6f00",
-        "gmaps_url": "https://maps.app.goo.gl/3rsE8duDiBeigMj58",
+        "gmaps_url": "https://maps.app.goo.gl/KRgHnEdPraNa4FrD6",
         "alert": "下車提示：前一站為 Vittorio Emanuele 19，下一站即為「Vittorio Emanuele 47」站下車，下車正對登山纜車站（Funicolare Bassa）。",
         "stops": [
             {"time": "10:05", "name": "Bergamo 7（火車站前 Piazzale Marconi 7 · 步行出發）", "coord": [45.69043, 9.67505], "is_start": True},
@@ -193,7 +193,7 @@ ROUTES_DATA = [
             {"time": "10:10", "name": "Porta Nuova Chiesa Grazie（新門感恩聖母堂）", "coord": [45.6953, 9.6704]},
             {"time": "10:12", "name": "Vittorio Emanuele 3", "coord": [45.6970, 9.6688]},
             {"time": "10:14", "name": "Vittorio Emanuele 19（下車前一站提示）", "coord": [45.6987, 9.6672]},
-            {"time": "10:15", "name": "Vittorio Emanuele 47（終點下車 · 正對登山纜車站）", "coord": [45.70077, 9.66552], "is_end": True}
+            {"time": "10:15", "name": "Vittorio Emanuele 47（終點下車 · 正對登山纜車站）", "coord": [45.70078, 9.66552], "is_end": True}
         ]
     },
     {
@@ -202,7 +202,7 @@ ROUTES_DATA = [
         "day_badge": "D04 · 聖賈科莫門午後返程",
         "title": "聖賈科莫城門 至 Paleocapa 1 車站前（公車 1 號返程）",
         "origin_name": "Delle Mura - San Giacomo 站牌（聖賈科莫古城門前）",
-        "origin_addr": "Viale delle Mura / Porta San Giacomo, 24129 Bergamo BG, 義大利",
+        "origin_addr": "Viale delle Mura & Via S. Giacomo, 24129 Bergamo BG, 義大利",
         "dest_name": "Paleocapa 1 站（火車站西側 · 步行 1 分鐘進車站月台）",
         "dest_addr": "Via Pietro Paleocapa 1, 24122 Bergamo BG, 義大利",
         "dep_time": "14:30",
@@ -216,15 +216,15 @@ ROUTES_DATA = [
         "transit_type": "bus",
         "transit_badge": "🚌 ATB Linea 1（往 Stazione FS / Aeroporto）",
         "line_color": "#d32f2f",
-        "gmaps_url": "https://www.google.com/maps/dir/?api=1&origin=Viale+delle+Mura+San+Giacomo,+Bergamo&destination=Paleocapa+1,+Bergamo&travelmode=transit",
+        "gmaps_url": "https://maps.app.goo.gl/bY3hHYGRUuS3kkuD8",
         "alert": "返程提示：於聖賈科莫古城門前「Delle Mura - San Giacomo」站牌搭乘 Linea 1 公車下山，於「Paleocapa 1」站下車，下車步行 1 分鐘即達 Bergamo 火車站大廳，搭乘 15:02 發車之 RE 2232 區域快車準時返回米蘭中央車站。",
         "stops": [
-            {"time": "14:30", "name": "Delle Mura - San Giacomo（聖賈科莫門前站牌 · 起點上車）", "coord": [45.7035, 9.6580], "is_start": True},
+            {"time": "14:30", "name": "Delle Mura - San Giacomo（聖賈科莫門前站牌 · 起點上車）", "coord": [45.70138, 9.66289], "is_start": True},
             {"time": "14:33", "name": "Porta Sant'Agostino（穿出古城門）", "coord": [45.7022, 9.6645]},
             {"time": "14:36", "name": "V.le Vittorio Emanuele II / Funicolare", "coord": [45.6983, 9.6689]},
             {"time": "14:39", "name": "Porta Nuova（新門）", "coord": [45.6953, 9.6700]},
             {"time": "14:41", "name": "Viale Papa Giovanni XXIII（下車前一站提示）", "coord": [45.6940, 9.6715]},
-            {"time": "14:42", "name": "Paleocapa 1（終點下車 · 火車站前 · 步行 1 分鐘進車站）", "coord": [45.6920, 9.6721], "is_end": True}
+            {"time": "14:42", "name": "Paleocapa 1（終點下車 · 火車站前 · 步行 1 分鐘進車站）", "coord": [45.69203, 9.67229], "is_end": True}
         ]
     },
     {
@@ -235,7 +235,7 @@ ROUTES_DATA = [
         "origin_name": "米蘭中央車站（Milano Centrale）",
         "origin_addr": "Piazza Duca d'Aosta 1, 20124 Milano MI, 義大利",
         "dest_name": "瓦倫納-埃西諾車站（Varenna-Esino）",
-        "dest_addr": "Via Statale 43, 23829 Varenna LC, 義大利",
+        "dest_addr": "Varenna Esino, 23828 Perledo LC, 義大利",
         "dep_time": "09:20",
         "arr_time": "10:25",
         "duration": "65 分（5 站）",
@@ -247,15 +247,15 @@ ROUTES_DATA = [
         "transit_type": "train",
         "transit_badge": "🚆 RE 2818 Tirano（科莫湖景觀快車）",
         "line_color": "#0f9d58",
-        "gmaps_url": "https://www.google.com/maps/dir/?api=1&origin=Milano+Centrale&destination=Varenna-Esino&travelmode=transit",
+        "gmaps_url": "https://maps.app.goo.gl/UYq827fCUQDeTCmY7",
         "alert": None,
         "stops": [
-            {"time": "09:20", "name": "Milano Centrale", "coord": [45.4862, 9.2045], "is_start": True},
+            {"time": "09:20", "name": "Milano Centrale", "coord": [45.48714, 9.20482], "is_start": True},
             {"time": "09:31", "name": "Monza", "coord": [45.5786, 9.2736]},
             {"time": "09:41", "name": "Carnate-Usmate", "coord": [45.6517, 9.3789]},
             {"time": "10:02", "name": "Lecco（科莫湖南端轉角）", "coord": [45.8561, 9.3958]},
             {"time": "10:15", "name": "Mandello del Lario", "coord": [45.9189, 9.3178]},
-            {"time": "10:25", "name": "Varenna-Esino", "coord": [46.0125, 9.2861], "is_end": True}
+            {"time": "10:25", "name": "Varenna-Esino", "coord": [46.01491, 9.28621], "is_end": True}
         ]
     },
     {
@@ -264,9 +264,9 @@ ROUTES_DATA = [
         "day_badge": "D05 · 科莫湖跨湖渡輪",
         "title": "瓦倫納碼頭 至 貝拉焦碼頭",
         "origin_name": "瓦倫納渡輪碼頭（Varenna Imbarcadero）",
-        "origin_addr": "Piazza del Prato, 23829 Varenna LC, 義大利",
+        "origin_addr": "Via Imbarcadero Piazza Martiri Libertà, 23829 Varenna LC, 義大利",
         "dest_name": "貝拉焦渡輪碼頭（Bellagio Imbarcadero）",
-        "dest_addr": "Lungo Lario Manzoni, 22021 Bellagio CO, 義大利",
+        "dest_addr": "Piazza Giuseppe Mazzini 38, 22021 Bellagio CO, 義大利",
         "dep_time": "11:00",
         "arr_time": "11:15",
         "duration": "15 分（跨湖航行）",
@@ -278,12 +278,12 @@ ROUTES_DATA = [
         "transit_type": "ferry",
         "transit_badge": "⛴️ Traghetto Navigazione Laghi",
         "line_color": "#0288d1",
-        "gmaps_url": "https://www.google.com/maps/dir/?api=1&origin=Varenna+Imbarcadero&destination=Bellagio+Imbarcadero&travelmode=transit",
+        "gmaps_url": "https://maps.app.goo.gl/wvRt7pBbwpGbrCG66",
         "alert": None,
         "stops": [
-            {"time": "11:00", "name": "Varenna 碼頭啟航", "coord": [46.0111, 9.2825], "is_start": True},
+            {"time": "11:00", "name": "Varenna 碼頭啟航", "coord": [46.01389, 9.28283], "is_start": True},
             {"time": "11:08", "name": "科莫湖中心水域（遠眺雙城全景）", "coord": [46.0020, 9.2710]},
-            {"time": "11:15", "name": "抵達 Bellagio 渡輪碼頭", "coord": [45.9892, 9.2633], "is_end": True}
+            {"time": "11:15", "name": "抵達 Bellagio 渡輪碼頭", "coord": [45.98741, 9.26028], "is_end": True}
         ]
     },
     {
@@ -294,7 +294,7 @@ ROUTES_DATA = [
         "origin_name": "米蘭中央車站（Milano Centrale）",
         "origin_addr": "Piazza Duca d'Aosta 1, 20124 Milano MI, 義大利",
         "dest_name": "熱那亞王子廣場車站（Genova Piazza Principe）",
-        "dest_addr": "Piazza Acquaverde, 16134 Genova GE, 義大利",
+        "dest_addr": "Piazza del Principe, 16126 Genova GE, 義大利",
         "dep_time": "09:10",
         "arr_time": "10:48",
         "duration": "1 小時 38 分（5 站直達）",
@@ -306,14 +306,14 @@ ROUTES_DATA = [
         "transit_type": "train",
         "transit_badge": "🚆 Intercity IC 665（一等艙 Prima Classe）",
         "line_color": "#d93025",
-        "gmaps_url": "https://www.google.com/maps/dir/?api=1&origin=Milano+Centrale&destination=Genova+Piazza+Principe&travelmode=transit",
+        "gmaps_url": "https://maps.app.goo.gl/48Ey2uHb7NTHtRwP6",
         "alert": None,
         "stops": [
-            {"time": "09:10", "name": "Milano Centrale", "coord": [45.4862, 9.2045], "is_start": True},
+            {"time": "09:10", "name": "Milano Centrale", "coord": [45.48714, 9.20482], "is_start": True},
             {"time": "09:40", "name": "Pavia（帕維亞）", "coord": [45.1878, 9.1458]},
             {"time": "10:04", "name": "Voghera", "coord": [44.9961, 9.0069]},
             {"time": "10:20", "name": "Tortona", "coord": [44.8967, 8.8617]},
-            {"time": "10:48", "name": "Genova Piazza Principe", "coord": [44.4172, 8.9217], "is_end": True}
+            {"time": "10:48", "name": "Genova Piazza Principe", "coord": [44.41651, 8.91849], "is_end": True}
         ]
     },
     {
@@ -322,7 +322,7 @@ ROUTES_DATA = [
         "day_badge": "D07 · 熱那亞地鐵核心漫遊",
         "title": "熱那亞王子廣場 至 法拉利廣場",
         "origin_name": "王子廣場地鐵站（Principe Metro）",
-        "origin_addr": "Piazza Acquaverde, 16134 Genova GE, 義大利",
+        "origin_addr": "Piazza Acquaverde / Principe Metro, 16126 Genova GE, 義大利",
         "dest_name": "法拉利廣場地鐵站（De Ferrari Metro）",
         "dest_addr": "Piazza Raffaele De Ferrari, 16121 Genova GE, 義大利",
         "dep_time": "09:30",
@@ -336,14 +336,14 @@ ROUTES_DATA = [
         "transit_type": "metro",
         "transit_badge": "🚇 Metropolitana Genova（往 Brignole）",
         "line_color": "#d93025",
-        "gmaps_url": "https://www.google.com/maps/dir/?api=1&origin=Principe+Metro+Genova&destination=De+Ferrari+Metro+Genova&travelmode=transit",
+        "gmaps_url": "https://maps.app.goo.gl/MxCjGBtwe5vxTroa7",
         "alert": None,
         "stops": [
-            {"time": "09:30", "name": "Principe Metro（王子廣場站）", "coord": [44.4167, 8.9208], "is_start": True},
+            {"time": "09:30", "name": "Principe Metro（王子廣場站）", "coord": [44.41629, 8.91944], "is_start": True},
             {"time": "09:32", "name": "Darsena（舊港大學區）", "coord": [44.4139, 8.9264]},
             {"time": "09:34", "name": "San Giorgio（水族館站）", "coord": [44.4092, 8.9286]},
             {"time": "09:36", "name": "Sarzanese / Sant'Agostino", "coord": [44.4056, 8.9317]},
-            {"time": "09:37", "name": "De Ferrari（法拉利廣場圓環噴泉）", "coord": [44.4072, 8.9344], "is_end": True}
+            {"time": "09:37", "name": "De Ferrari（法拉利廣場圓環噴泉）", "coord": [44.4076, 8.93439], "is_end": True}
         ]
     },
     {
@@ -352,9 +352,9 @@ ROUTES_DATA = [
         "day_badge": "D08 · 前往菲諾港門戶",
         "title": "熱那亞王子廣場 至 聖瑪格麗塔利古雷",
         "origin_name": "熱那亞王子廣場車站（Genova Piazza Principe）",
-        "origin_addr": "Piazza Acquaverde, 16134 Genova GE, 義大利",
+        "origin_addr": "Piazza del Principe, 16126 Genova GE, 義大利",
         "dest_name": "聖瑪格麗塔利古雷車站（S. Margherita Ligure）",
-        "dest_addr": "Piazza Nobili 1, 16038 Santa Margherita Ligure GE, 義大利",
+        "dest_addr": "Piazza Nobili 1 / S. Margherita F.S., 16038 Santa Margherita Ligure GE, 義大利",
         "dep_time": "09:47",
         "arr_time": "10:14",
         "duration": "27 分（2 站）",
@@ -366,12 +366,12 @@ ROUTES_DATA = [
         "transit_type": "train",
         "transit_badge": "🚆 Intercity IC 657（一等艙 Prima Classe）",
         "line_color": "#1a73e8",
-        "gmaps_url": "https://www.google.com/maps/dir/?api=1&origin=Genova+Piazza+Principe&destination=Santa+Margherita+Ligure-Portofino&travelmode=transit",
+        "gmaps_url": "https://maps.app.goo.gl/GsoUc1YVimFqa1756",
         "alert": None,
         "stops": [
-            {"time": "09:47", "name": "Genova Piazza Principe", "coord": [44.4172, 8.9217], "is_start": True},
+            {"time": "09:47", "name": "Genova Piazza Principe", "coord": [44.41651, 8.91849], "is_start": True},
             {"time": "09:55", "name": "Genova Brignole", "coord": [44.4064, 8.9472]},
-            {"time": "10:14", "name": "Santa Margherita Ligure-Portofino", "coord": [44.3353, 9.2139], "is_end": True}
+            {"time": "10:14", "name": "Santa Margherita Ligure-Portofino", "coord": [44.33645, 9.21618], "is_end": True}
         ]
     },
     {
@@ -382,7 +382,7 @@ ROUTES_DATA = [
         "origin_name": "聖瑪格麗塔車站（S. Margherita Ligure FS）",
         "origin_addr": "Piazza Nobili 1, 16038 Santa Margherita Ligure GE, 義大利",
         "dest_name": "Portofino 終點站（Portofino / Terminal · Piazza della Libertà）",
-        "dest_addr": "Piazza della Libertà / Via Roma, 16034 Portofino GE, 義大利（下車即達菲諾港核心老港灣）",
+        "dest_addr": "Piazza della Libertà, 16034 Portofino GE, 義大利",
         "dep_time": "10:25",
         "arr_time": "10:43",
         "duration": "18 分（19 站緊貼懸崖碧海）",
@@ -394,10 +394,10 @@ ROUTES_DATA = [
         "transit_type": "bus",
         "transit_badge": "🚌 AMT Linea 782（往 Portofino 終點站）",
         "line_color": "#0288d1",
-        "gmaps_url": "https://www.google.com/maps/dir/?api=1&origin=Stazione+Santa+Margherita+Ligure&destination=Portofino&travelmode=transit",
+        "gmaps_url": "https://maps.app.goo.gl/cBc8NDvorLvxuXHq8",
         "alert": "下車提示：782 號公車全程共 19 站，終點站即為「Portofino / Terminal」（菲諾港終點站）。前一站為 Chiesa S. Martino，下一站即抵達終點站下車，出站即是著名的菲諾港海灣與老港廣場（Piazza Martiri dell'Olivetta）！上車建議坐前進方向左側靠窗賞海景。",
         "stops": [
-            {"time": "10:25", "name": "S. Margherita FS（火車站前起點站 Capolinea）", "coord": [44.3353, 9.2139], "is_start": True},
+            {"time": "10:25", "name": "S. Margherita FS（火車站前起點站 Capolinea）", "coord": [44.33645, 9.21667], "is_start": True},
             {"time": "10:26", "name": "S. Margherita / Poste（郵局）", "coord": [44.3340, 9.2136]},
             {"time": "10:27", "name": "Bar Checco", "coord": [44.3335, 9.2135]},
             {"time": "10:28", "name": "Piazza Vittorio Veneto（海濱花園廣場）", "coord": [44.3325, 9.2140]},
@@ -415,7 +415,7 @@ ROUTES_DATA = [
             {"time": "10:40", "name": "Niasca（尼亞斯卡水上勝地）", "coord": [44.3075, 9.2110]},
             {"time": "10:41", "name": "Hotel Splendido（奢華酒店路口）", "coord": [44.3045, 9.2085]},
             {"time": "10:42", "name": "Portofino / Chiesa S. Martino（聖馬蒂諾教堂 · 下車前一站提示）", "coord": [44.3035, 9.2095]},
-            {"time": "10:43", "name": "Portofino / Terminal（Capolinea 終點站 · 菲諾港老港廣場）", "coord": [44.3032, 9.2105], "is_end": True}
+            {"time": "10:43", "name": "Portofino / Terminal（Capolinea 終點站 · 菲諾港老港廣場）", "coord": [44.30316, 9.20979], "is_end": True}
         ]
     },
     {
@@ -424,9 +424,9 @@ ROUTES_DATA = [
         "day_badge": "D09 · 跨越義法邊境第一段",
         "title": "熱那亞王子廣場 至 文提米利亞邊境車站",
         "origin_name": "熱那亞王子廣場車站（Genova Piazza Principe）",
-        "origin_addr": "Piazza Acquaverde, 16134 Genova GE, 義大利",
+        "origin_addr": "Piazza del Principe, 16126 Genova GE, 義大利",
         "dest_name": "文提米利亞邊境車站（Ventimiglia Stazione FS）",
-        "dest_addr": "Piazza Cesare Battisti 1, 18039 Ventimiglia IM, 義大利",
+        "dest_addr": "Piazza Cesare Battisti / Ventimiglia, 18039 Ventimiglia IM, 義大利",
         "dep_time": "08:58",
         "arr_time": "10:58",
         "duration": "2 小時 00 分（8 站沿海全景）",
@@ -438,10 +438,10 @@ ROUTES_DATA = [
         "transit_type": "train",
         "transit_badge": "🚆 Intercity IC 633（一等艙 Prima Classe）",
         "line_color": "#d93025",
-        "gmaps_url": "https://www.google.com/maps/dir/?api=1&origin=Genova+Piazza+Principe&destination=Ventimiglia+Stazione&travelmode=transit",
+        "gmaps_url": "https://maps.app.goo.gl/GpCfwbp1WDjC1gyV9",
         "alert": None,
         "stops": [
-            {"time": "08:58", "name": "Genova Piazza Principe", "coord": [44.4172, 8.9217], "is_start": True},
+            {"time": "08:58", "name": "Genova Piazza Principe", "coord": [44.41651, 8.91849], "is_start": True},
             {"time": "09:28", "name": "Savona（薩沃納）", "coord": [44.3072, 8.4714]},
             {"time": "09:42", "name": "Finale Ligure Marina", "coord": [44.1706, 8.3486]},
             {"time": "10:01", "name": "Albenga", "coord": [44.0489, 8.2167]},
@@ -449,7 +449,7 @@ ROUTES_DATA = [
             {"time": "10:24", "name": "Imperia（因佩里亞）", "coord": [43.8894, 8.0417]},
             {"time": "10:38", "name": "Sanremo（聖雷莫音樂之城）", "coord": [43.8189, 7.7778]},
             {"time": "10:48", "name": "Bordighera", "coord": [43.7806, 7.6653]},
-            {"time": "10:58", "name": "Ventimiglia（義法邊境車站）", "coord": [43.7917, 7.6083], "is_end": True}
+            {"time": "10:58", "name": "Ventimiglia（義法邊境車站）", "coord": [43.79245, 7.60973], "is_end": True}
         ]
     },
     {
@@ -458,9 +458,9 @@ ROUTES_DATA = [
         "day_badge": "D09 · 跨國雙層全景景觀列車",
         "title": "文提米利亞 至 尼斯城站",
         "origin_name": "文提米利亞邊境車站（Ventimiglia）",
-        "origin_addr": "Piazza Cesare Battisti 1, 18039 Ventimiglia IM, 義大利",
+        "origin_addr": "Piazza Cesare Battisti, 18039 Ventimiglia IM, 義大利",
         "dest_name": "尼斯中央車站（Gare de Nice-Ville）",
-        "dest_addr": "Avenue Thiers, 06000 Nice, 法國",
+        "dest_addr": "Avenue Thiers, 06008 Nice, 法國",
         "dep_time": "15:00",
         "arr_time": "15:50",
         "duration": "50 分（10 站跨國海岸景觀）",
@@ -472,10 +472,10 @@ ROUTES_DATA = [
         "transit_type": "train",
         "transit_badge": "🚆 SNCF TER Zou! 86060（雙層景觀列車）",
         "line_color": "#004b97",
-        "gmaps_url": "https://www.google.com/maps/dir/?api=1&origin=Ventimiglia&destination=Gare+de+Nice-Ville&travelmode=transit",
+        "gmaps_url": "https://maps.app.goo.gl/AWZJn2NJpk5uvbFv6",
         "alert": "座位推薦：請坐前進方向左側（靠海側），從芒通一路到尼斯享受無敵蔚藍海岸！",
         "stops": [
-            {"time": "15:00", "name": "Ventimiglia（邊境起點）", "coord": [43.7917, 7.6083], "is_start": True},
+            {"time": "15:00", "name": "Ventimiglia（邊境起點）", "coord": [43.79124, 7.60759], "is_start": True},
             {"time": "15:07", "name": "Menton Garavan（跨入法國第一站）", "coord": [43.7844, 7.5186]},
             {"time": "15:12", "name": "Menton（芒通）", "coord": [43.7747, 7.4986]},
             {"time": "15:16", "name": "Carnolès", "coord": [43.7631, 7.4764]},
@@ -485,7 +485,7 @@ ROUTES_DATA = [
             {"time": "15:37", "name": "Beaulieu-sur-Mer", "coord": [43.7078, 7.3328]},
             {"time": "15:40", "name": "Villefranche-sur-Mer（自由城海灣）", "coord": [43.7083, 7.3117]},
             {"time": "15:45", "name": "Nice Riquier", "coord": [43.7036, 7.2889]},
-            {"time": "15:50", "name": "Nice-Ville（尼斯中央車站）", "coord": [43.7047, 7.2619], "is_end": True}
+            {"time": "15:50", "name": "Nice-Ville（尼斯中央車站）", "coord": [43.70462, 7.26194], "is_end": True}
         ]
     },
     {
@@ -508,14 +508,14 @@ ROUTES_DATA = [
         "transit_type": "bus",
         "transit_badge": "🚌 Bus 12+（往 Hôpital Pasteur 方向 · 經舊城歌劇院）",
         "line_color": "#0288d1",
-        "gmaps_url": "https://maps.app.goo.gl/oGg9XBUVbuoZt8TL6",
+        "gmaps_url": "https://maps.app.goo.gl/NsS2bdp1kfg1Y53F9",
         "alert": "絕景下車提示：全程行駛於世界知名的盎格魯大道，右手邊即是天使灣地中海蔚藍波光！前一站為 Albert 1er / Verdun（阿爾貝一世花園），下一站即為「Opéra - Vieille Ville」站下車，下車穿過舊城拱門 1 分鐘直達薩萊亞花市（Cours Saleya）。",
         "stops": [
-            {"time": "09:30", "name": "Grosso CUM / Promenade（AC Hotel 門前 · 盎格魯大道海邊站牌 · 起點上車）", "coord": [43.6923, 7.2507], "is_start": True},
+            {"time": "09:30", "name": "Grosso CUM / Promenade（AC Hotel 門前 · 盎格魯大道海邊站牌 · 起點上車）", "coord": [43.69231, 7.25074], "is_start": True},
             {"time": "09:32", "name": "Gambetta / Promenade", "coord": [43.6938, 7.2546]},
             {"time": "09:34", "name": "Congrès / Promenade（地中海宮殿酒店前）", "coord": [43.6955, 7.2608]},
             {"time": "09:35", "name": "Albert 1er / Verdun（阿爾貝一世花園 · 下車前一站提示）", "coord": [43.6963, 7.2676]},
-            {"time": "09:36", "name": "Opéra - Vieille Ville（終點下車 · 歌劇院旁 · 步行 1 分鐘進薩萊亞花市）", "coord": [43.6975, 7.2734], "is_end": True}
+            {"time": "09:36", "name": "Opéra - Vieille Ville（終點下車 · 歌劇院旁 · 步行 1 分鐘進薩萊亞花市）", "coord": [43.69748, 7.2734], "is_end": True}
         ]
     },
     {
@@ -524,7 +524,7 @@ ROUTES_DATA = [
         "day_badge": "D11 · 濱海自由城半日慢遊",
         "title": "尼斯城站 至 濱海自由城",
         "origin_name": "尼斯中央車站（Gare de Nice-Ville）",
-        "origin_addr": "Avenue Thiers, 06000 Nice, 法國",
+        "origin_addr": "Avenue Thiers, 06008 Nice, 法國",
         "dest_name": "濱海自由城車站（Gare de Villefranche-sur-Mer）",
         "dest_addr": "Avenue Georges Clemenceau, 06230 Villefranche-sur-Mer, 法國",
         "dep_time": "09:45",
@@ -538,12 +538,12 @@ ROUTES_DATA = [
         "transit_type": "train",
         "transit_badge": "🚆 SNCF TER Zou!（往 Ventimiglia 方向）",
         "line_color": "#004b97",
-        "gmaps_url": "https://www.google.com/maps/dir/?api=1&origin=Gare+de+Nice-Ville&destination=Gare+de+Villefranche-sur-Mer&travelmode=transit",
+        "gmaps_url": "https://maps.app.goo.gl/Jmj5S49pD76Z6SgLA",
         "alert": None,
         "stops": [
-            {"time": "09:45", "name": "Nice-Ville", "coord": [43.7047, 7.2619], "is_start": True},
+            {"time": "09:45", "name": "Nice-Ville", "coord": [43.70462, 7.26194], "is_start": True},
             {"time": "09:48", "name": "Nice Riquier", "coord": [43.7036, 7.2889]},
-            {"time": "09:52", "name": "Villefranche-sur-Mer", "coord": [43.7083, 7.3117], "is_end": True}
+            {"time": "09:52", "name": "Villefranche-sur-Mer", "coord": [43.70706, 7.31415], "is_end": True}
         ]
     },
     {
@@ -552,7 +552,7 @@ ROUTES_DATA = [
         "day_badge": "D12 · 費拉角貴族莊園巡禮",
         "title": "尼斯舊港 至 羅斯柴爾德花園別墅",
         "origin_name": "尼斯舊港站（Port Lympia）",
-        "origin_addr": "Quai de la Douane, 06300 Nice, 法國",
+        "origin_addr": "Quai Amiral Infernet / Port Lympia, 06300 Nice, 法國",
         "dest_name": "羅斯柴爾德花園別墅正門（Passable / Rothschild）",
         "dest_addr": "1 Avenue Ephrussi de Rothschild, 06230 Saint-Jean-Cap-Ferrat, 法國",
         "dep_time": "09:30",
@@ -566,15 +566,15 @@ ROUTES_DATA = [
         "transit_type": "bus",
         "transit_badge": "🚌 Bus 15（往 Port de Saint-Jean）",
         "line_color": "#0288d1",
-        "gmaps_url": "https://www.google.com/maps/dir/?api=1&origin=Port+Lympia+Nice&destination=Villa+Ephrussi+de+Rothschild&travelmode=transit",
+        "gmaps_url": "https://maps.app.goo.gl/KsrrBWECHJHFNxME6",
         "alert": "絕景提示：沿著下濱海路行駛，可從高處俯瞰濱海自由城海灣的豪華遊艇！",
         "stops": [
-            {"time": "09:30", "name": "Port Lympia（舊港起點站）", "coord": [43.6967, 7.2861], "is_start": True},
+            {"time": "09:30", "name": "Port Lympia（舊港起點站）", "coord": [43.6968, 7.28392], "is_start": True},
             {"time": "09:34", "name": "Saint-Aignan", "coord": [43.6949, 7.2935]},
             {"time": "09:38", "name": "Octroi（自由城觀景點 · 俯瞰自由城海灣）", "coord": [43.7021, 7.3078]},
             {"time": "09:42", "name": "Léopold II（全景高點海濱路）", "coord": [43.7081, 7.3130]},
             {"time": "09:48", "name": "Pont Saint-Jean（費拉角半島入口 · 下車前一站提示）", "coord": [43.7015, 7.3266]},
-            {"time": "09:54", "name": "Passable / Rothschild（別墅正門口 · 終點下車）", "coord": [43.6947, 7.3303], "is_end": True}
+            {"time": "09:54", "name": "Passable / Rothschild（別墅正門口 · 終點下車）", "coord": [43.69665, 7.32847], "is_end": True}
         ]
     }
 ]
