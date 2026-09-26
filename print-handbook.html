@@ -510,24 +510,34 @@
     }
 
     .galilee-spot-heading {
-      font-size: 10.2pt;
+      font-size: 10.0pt;
       font-weight: 700;
       color: #000000;
       margin-bottom: 0.6mm;
       display: flex;
       align-items: baseline;
+      justify-content: space-between;
       gap: 4px;
+    }
+
+    .galilee-spot-heading span:first-child {
+      white-space: nowrap;
+      flex-shrink: 0;
     }
 
     .galilee-spot-heading .en {
       font-weight: 400;
-      font-size: 7.6pt;
+      font-size: 7.2pt;
       color: #666666;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: right;
     }
 
     .galilee-spot-desc {
       font-size: 8.3pt;
-      line-height: 1.42;
+      line-height: 1.46;
       color: #222222;
       text-align: justify;
     }
@@ -622,6 +632,42 @@
       gap: 1.8mm;
       font-size: 7.2pt;
       line-height: 1.28;
+    }
+
+    /* 第 07 頁 (DAY 01 & DAY 02) 舒展與大圖排版微調 */
+    .p07-page .galilee-split-day-block:first-child {
+      margin-bottom: 2.5mm;
+      padding-bottom: 2.2mm;
+    }
+
+    .p07-page .galilee-split-content {
+      margin-bottom: 1.0mm;
+      gap: 3.2mm;
+    }
+
+    .p07-page .galilee-split-content img {
+      width: 48mm;
+      height: 25.5mm;
+    }
+
+    .p07-page .galilee-split-text {
+      font-size: 8.0pt;
+      line-height: 1.45;
+    }
+
+    .p07-page .galilee-split-day-block .galilee-spec-footer {
+      margin-top: 1.2mm;
+      padding-top: 1.0mm;
+    }
+
+    /* 第 09 頁 (DAY 04 貝爾加莫) 舒展與大圖排版微調 */
+    .p09-page .galilee-photo-item img {
+      height: 42.5mm;
+    }
+
+    /* 第 10 頁 (DAY 05 科莫湖) 舒展與大圖排版微調 */
+    .p10-page .galilee-photo-item img {
+      height: 48mm;
     }
 
     /* =========================================================================
@@ -2268,7 +2314,7 @@
     <!-- =========================================================================
          PAGE 07: DAY 01 & DAY 02 (Matching index.html)
          ========================================================================= -->
-    <div class="a5-page">
+    <div class="a5-page p07-page">
       <div class="page-header">
         <span class="page-header-title">DAY 01 & DAY 02</span>
         <span>啟程啟航 · 抵達米蘭</span>
@@ -2414,7 +2460,7 @@
                     <circle cx="12" cy="12" r="4" fill="#000" />
                   </svg></div>
                 <div class="galilee-t-time">17:07</div>
-                <div class="galilee-t-label">中央車站(Milano Centrale)</div>
+                <div class="galilee-t-label">米蘭中央車站</div>
                 <div class="galilee-t-dur">領取米蘭通票</div>
                 <span class="galilee-t-station-cue alert-cue">前站: Garibaldi</span>
               </div>
@@ -2585,7 +2631,7 @@
               <div class="galilee-t-time">20:30</div>
               <div class="galilee-t-label">返回飯店</div>
               <div class="galilee-t-dur">輕軌回 Hilton</div>
-              <span class="galilee-t-station-cue alert-cue">前站: Pirelli</span>
+              <span class="galilee-t-station-cue alert-cue">前站: Filzi-Pirelli</span>
             </div>
           </div>
         </div>
@@ -2616,13 +2662,13 @@
         </div>
 
         <!-- 特色路面電車與花園散步 -->
-        <div class="galilee-sub-feature-box">
+        <div class="galilee-sub-feature-box" style="margin-top: 1.5mm; margin-bottom: 1.8mm;">
           <div class="galilee-sub-feature-title">
             <span>🚃</span> 百年復古路面電車 1 號 Tram 1 & 蒙塔內利花園散步
           </div>
           <div>於斯卡拉大劇院前（起站：Scala 站）搭乘 1928 年穿梭至今的黃色木造經典「復古電車 1 號」直達 P.za
             Cavour（下車前一站：Pisoni），步行進入蒙塔內利花園，漫步杜尼亞尼宮與綠意樹蔭；傍晚漫步至威尼斯門街區享用義式晚餐（FRESCA Pasta Club），餐後搭輕軌 9 號從容返回 Hilton
-            飯店休息（下車前一站：Filzi）。
+            飯店休息（下車前一站：Filzi-Pirelli）。
           </div>
         </div>
 
@@ -2668,7 +2714,7 @@
     <!-- =========================================================================
          PAGE 09: DAY 04 · 貝爾加莫中世紀古城慢遊 (Enlarged Photos Layout)
          ========================================================================= -->
-    <div class="a5-page">
+    <div class="a5-page p09-page">
       <div class="page-header">
         <span class="page-header-title">DAY 04 · BERGAMO CITTA ALTA</span>
         <span>貝爾加莫中世紀古城慢遊</span>
@@ -2779,7 +2825,7 @@
           <div class="galilee-photo-item">
             <img src="bergamo.webp" alt="貝爾加莫 Città Alta 古城與老廣場">
             <div class="galilee-spot-heading">
-              <span>▲ 聖賈科莫老城門與威尼斯城牆</span>
+              <span>▲ 聖賈科莫門與城牆</span>
               <span class="en">Porta San Giacomo</span>
             </div>
             <div class="galilee-spot-desc">
@@ -2790,11 +2836,14 @@
         </div>
 
         <!-- 美食推薦 -->
-        <div class="galilee-sub-feature-box">
-          <div class="galilee-sub-feature-title">
-            <span>🥟</span> 百年名店 Caffè del Tasso 1476 傳統方餃 Casoncelli
+        <div class="galilee-sub-feature-box" style="margin-top: 2.0mm; margin-bottom: 2.2mm; padding: 2.2mm 3.2mm;">
+          <div class="galilee-sub-feature-title" style="font-size: 8.9pt; margin-bottom: 0.8mm;">
+            <span>🥟</span> 百年名店 Caffè del Tasso 1476 傳統方餃與代表甜點
           </div>
-          <div>肉餡、鼠尾草與焦香奶油的古典美味；於老廣場自 1476 年營業至今的歷史咖啡館享用義式濃縮咖啡與午餐，細細品味中世紀山城石板街巷的寧靜與悠閒。</div>
+          <div style="font-size: 8.0pt; line-height: 1.48; color: #2d3748;">
+            • <strong>招牌方餃 Casoncelli：</strong>肉餡、鼠尾草與焦香奶油的古典美味；於老廣場自 1476 年營業至今的歷史咖啡館 Caffè del Tasso 享用午餐。<br>
+            • <strong>代表甜點 Polenta e Osei：</strong>貝爾加莫傳統小鳥杏仁糖玉米糕，漫步老城石板街巷不可錯過的亮眼美味！
+          </div>
         </div>
 
         <div class="galilee-spec-footer">
@@ -2839,7 +2888,7 @@
     <!-- =========================================================================
          PAGE 10: DAY 05 · 科莫湖雙城慢遊 (Enlarged Photos Layout)
          ========================================================================= -->
-    <div class="a5-page">
+    <div class="a5-page p10-page">
       <div class="page-header">
         <span class="page-header-title">DAY 05 · LAKE COMO</span>
         <span>科莫湖雙城慢遊</span>
@@ -2946,7 +2995,7 @@
           <div class="galilee-photo-item">
             <img src="day05-varenna-lake.webp" alt="搭乘渡輪前往對岸貝拉焦">
             <div class="galilee-spot-heading">
-              <span>▲ 瓦倫納情人步道與湖畔別墅</span>
+              <span>▲ 情人步道與湖畔別墅</span>
               <span class="en">Passeggiata & Villa Monastero</span>
             </div>
             <div class="galilee-spot-desc">
@@ -2956,12 +3005,15 @@
           </div>
         </div>
 
-        <!-- 美食推薦 -->
-        <div class="galilee-sub-feature-box">
-          <div class="galilee-sub-feature-title">
-            <span>🐟</span> 科莫湖畔鱸魚燉飯 Risotto al Filetto di Pesce Persico
+        <!-- 美食推薦與渡輪漫遊 -->
+        <div class="galilee-sub-feature-box" style="margin-top: 2.2mm; margin-bottom: 2.5mm; padding: 2.2mm 3.2mm;">
+          <div class="galilee-sub-feature-title" style="font-size: 8.9pt; margin-bottom: 0.8mm;">
+            <span>🐟</span> 科莫湖畔鱸魚燉飯與中央湖區渡輪巡航
           </div>
-          <div>鮮甜湖鱸魚佐香濃奶油燉飯；在貝拉焦景觀餐廳（如 Ristorante Genazzini 1788）坐擁無敵湖景，沉浸於阿爾卑斯湖光山色之間。</div>
+          <div style="font-size: 8.0pt; line-height: 1.48; color: #2d3748;">
+            • <strong>特色美食：</strong>鮮甜湖鱸魚佐香濃奶油燉飯（Risotto al Filetto di Pesce Persico），於貝拉焦景觀餐廳坐擁無敵湖景。<br>
+            • <strong>巡航體驗：</strong>瓦倫納 ↔ 貝拉焦約 15 分鐘精華航段，推薦於渡輪露天甲板眺望阿爾卑斯壯麗雪山倒影！
+          </div>
         </div>
 
         <div class="galilee-spec-footer">
@@ -2992,7 +3044,7 @@
                 fill="#b8862d" stroke="none" />
             </svg>
             <div class="galilee-spec-body">
-              <div><strong>【團費包含】</strong>★RE 2818 快車與回程區間車票、★科莫湖中央湖區渡輪一日票。</div>
+              <div><strong>【團費包含】</strong>★RE 2818 快車去程區間車票、★科莫湖中央湖區渡輪一日票。</div>
             </div>
           </div>
         </div>
@@ -3054,7 +3106,7 @@
                   </svg></div>
                 <div class="galilee-t-time">11:00</div>
                 <div class="galilee-t-label">Savoia 入住</div>
-                <div class="galilee-t-dur">步行 2 分鐘</div>
+                <div class="galilee-t-dur">步行 2 分鐘 寄放行李</div>
               </div>
               <div class="galilee-timeline-node">
                 <div class="galilee-t-icon-box"><svg class="galilee-timeline-icon" viewBox="0 0 24 24">
