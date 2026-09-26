@@ -1157,74 +1157,110 @@ def generate_routes_html():
       }}
     }}
 
-    /* Print Styles */
+    /* Print Styles: Preserve web card layout and fit single page A4 */
     @media print {{
-      .top-app-header, .filter-bar, .card-footer-actions {{
+      .top-app-header, .filter-bar, .action-links {{
         display: none !important;
       }}
       body {{
         background: #fff !important;
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
+        margin: 0 !important;
+        padding: 0 !important;
       }}
       .content-container {{
         max-width: 100% !important;
-        margin: 0 !important;
+        margin: 0 auto !important;
         padding: 0 !important;
       }}
       .route-card {{
-        border: none !important;
-        box-shadow: none !important;
-        padding: 0 !important;
-        margin: 0 !important;
+        background: #fff !important;
+        border: 1px solid #dadce0 !important;
+        border-radius: 12px !important;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05) !important;
+        padding: 14px 18px !important;
+        margin: 0 auto !important;
         page-break-after: always !important;
         break-after: page !important;
         page-break-inside: avoid !important;
         break-inside: avoid !important;
+        box-sizing: border-box !important;
       }}
-      .map-box {{
-        height: var(--print-map-h, 260px) !important;
-        margin-bottom: 8px !important;
+      .route-card.many-stops {{
+        padding: 12px 16px !important;
       }}
-      .route-header-top {{
-        padding-bottom: 6px !important;
-        margin-bottom: 8px !important;
-      }}
-      .day-hero-num {{
-        font-size: 24px !important;
-      }}
-      .route-title-text {{
-        font-size: 15px !important;
-      }}
-      .details-box {{
+      .route-card.super-stops {{
         padding: 10px 14px !important;
       }}
+
+      .route-header-top {{
+        padding-bottom: 8px !important;
+        margin-bottom: 10px !important;
+      }}
+
+      .map-box {{
+        height: 250px !important;
+        border-radius: 8px !important;
+        border: 1px solid #dadce0 !important;
+        margin-bottom: 10px !important;
+      }}
+      .route-card.many-stops .map-box {{
+        height: 195px !important;
+        margin-bottom: 8px !important;
+      }}
+      .route-card.super-stops .map-box {{
+        height: 160px !important;
+        margin-bottom: 6px !important;
+      }}
+
+      .details-box {{
+        padding: 12px 16px !important;
+        border-radius: 8px !important;
+      }}
+      .route-card.many-stops .details-box {{
+        padding: 10px 14px !important;
+      }}
+      .route-card.super-stops .details-box {{
+        padding: 8px 12px !important;
+      }}
+
       .fare-row {{
         padding-bottom: 6px !important;
         margin-bottom: 8px !important;
       }}
+      .transit-timeline {{
+        margin-top: 4px !important;
+      }}
       .t-node {{
-        padding-bottom: 8px !important;
+        padding-bottom: 10px !important;
       }}
       .transit-card-inner {{
+        margin: 6px 0 6px 58px !important;
         padding: 8px 12px !important;
-        margin-top: 4px !important;
-      }}
-      .transit-alert {{
-        margin-top: 4px !important;
-        padding: 4px 8px !important;
-        font-size: 10.5px !important;
       }}
       .stop-series {{
-        margin-top: 4px !important;
+        margin: 4px 0 0 58px !important;
+      }}
+      .stop-series.two-cols {{
+        gap: 2px 14px !important;
       }}
       .stop-row {{
-        font-size: 10px !important;
         margin-bottom: 2px !important;
+        font-size: 10px !important;
+      }}
+      .card-footer-actions {{
+        border-top: 1px solid #e8eaed !important;
+        padding-top: 6px !important;
+        margin-top: 6px !important;
+      }}
+      .official-url {{
+        font-size: 9.5px !important;
+        color: #1a73e8 !important;
       }}
       @page {{
         size: A4 portrait;
-        margin: 8mm 12mm;
+        margin: 7mm 9mm;
       }}
     }}
   </style>
@@ -1278,17 +1314,10 @@ def generate_routes_html():
               </div>
             """)
         stops_html = "".join(stops_rows)
-        series_class = "stop-series two-cols" if len(r["stops"]) > 10 else "stop-series"
-
-        # Adaptive map height for single-page print
-        if len(r["stops"]) > 15:
-            print_map_h = "200px"
-        elif len(r["stops"]) > 8:
-            print_map_h = "230px"
-        elif len(r["stops"]) >= 6 or r.get("alert"):
-            print_map_h = "250px"
-        else:
-            print_map_h = "290px"
+        is_super_stops = len(r["stops"]) > 20
+        is_many_stops = len(r["stops"]) > 10
+        stop_count_class = "super-stops" if is_super_stops else ("many-stops" if is_many_stops else "")
+        series_class = "stop-series two-cols" if is_many_stops else "stop-series"
 
         # Category for filter
         cat = "milan"
@@ -1300,7 +1329,7 @@ def generate_routes_html():
 
         html_content += f"""
     <!-- Route Card: {r['id']} -->
-    <article class="route-card" id="{r['id']}" data-cat="{cat}" style="--active-line-color: {r['line_color']}; --print-map-h: {print_map_h};">
+    <article class="route-card {stop_count_class}" id="{r['id']}" data-cat="{cat}" style="--active-line-color: {r['line_color']};">
       <div class="route-header-top">
         <div class="day-hero-badge">
           <div class="day-hero-num">{r['day']}</div>

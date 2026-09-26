@@ -20,8 +20,13 @@ os.makedirs(SCRATCH_DIR, exist_ok=True)
 def generate_single_route_html(r, temp_html_path):
     alert_html = f'<div class="transit-alert">{r["alert"]}</div>' if r.get("alert") else ""
     
+    is_super_stops = len(r["stops"]) > 20
     is_many_stops = len(r["stops"]) > 10
-    map_height = "250px" if is_many_stops else "360px"
+    map_height = "195px" if is_super_stops else ("250px" if is_many_stops else "350px")
+    card_padding = "10px 18px" if is_super_stops else "16px 20px"
+    details_padding = "10px 14px" if is_super_stops else "14px 18px"
+    fare_margin = "8px" if is_super_stops else "12px"
+    map_margin = "8px" if is_super_stops else "12px"
     series_class = "stop-series two-cols" if is_many_stops else "stop-series"
     
     stops_rows = []
@@ -49,7 +54,7 @@ def generate_single_route_html(r, temp_html_path):
 <style>
   @page {{
     size: A4 portrait;
-    margin: 10mm 14mm;
+    margin: 8mm 10mm;
   }}
   * {{ box-sizing: border-box; }}
   body {{
@@ -63,16 +68,21 @@ def generate_single_route_html(r, temp_html_path):
   }}
   .page-box {{
     width: 100%;
-    max-width: 760px;
+    max-width: 740px;
     margin: 0 auto;
+    background: #fff;
+    border: 1px solid #dadce0;
+    border-radius: 12px;
+    padding: {card_padding};
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
   }}
   .route-header-top {{
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     border-bottom: 1px solid #e8eaed;
-    padding-bottom: 10px;
-    margin-bottom: 12px;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
   }}
   .day-hero-badge {{
     display: flex;
@@ -139,7 +149,7 @@ def generate_single_route_html(r, temp_html_path):
     border-radius: 8px;
     overflow: hidden;
     border: 1px solid #dadce0;
-    margin-bottom: 12px;
+    margin-bottom: {map_margin};
     position: relative;
   }}
   #map {{
@@ -162,7 +172,7 @@ def generate_single_route_html(r, temp_html_path):
   .details-box {{
     border: 1px solid #dadce0;
     border-radius: 8px;
-    padding: 14px 18px;
+    padding: {details_padding};
     background: #fff;
   }}
   .fare-row {{
@@ -170,8 +180,8 @@ def generate_single_route_html(r, temp_html_path):
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #e8eaed;
-    padding-bottom: 10px;
-    margin-bottom: 12px;
+    padding-bottom: 8px;
+    margin-bottom: {fare_margin};
   }}
   .fare-title {{
     font-size: 13px;
