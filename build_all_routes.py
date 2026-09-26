@@ -428,8 +428,8 @@ ROUTES_DATA = [
         "dest_name": "文提米利亞邊境車站（Ventimiglia Stazione FS）",
         "dest_addr": "Piazza Cesare Battisti / Ventimiglia, 18039 Ventimiglia IM, 義大利",
         "dep_time": "08:58",
-        "arr_time": "10:58",
-        "duration": "2 小時 00 分（8 站沿海全景）",
+        "arr_time": "11:05",
+        "duration": "2 小時 07 分（9 站沿海全景直達）",
         "ticket_title": "預訂席位 · 義鐵城際一等艙",
         "ticket_sub": "Trenitalia Intercity · 義大利里維埃拉海岸線",
         "ticket_price": "單程 €21.00 起（持預訂一等艙對號票）",
@@ -442,14 +442,16 @@ ROUTES_DATA = [
         "alert": None,
         "stops": [
             {"time": "08:58", "name": "Genova Piazza Principe", "coord": [44.41651, 8.91849], "is_start": True},
-            {"time": "09:28", "name": "Savona（薩沃納）", "coord": [44.3072, 8.4714]},
-            {"time": "09:42", "name": "Finale Ligure Marina", "coord": [44.1706, 8.3486]},
-            {"time": "10:01", "name": "Albenga", "coord": [44.0489, 8.2167]},
-            {"time": "10:09", "name": "Alassio", "coord": [44.0044, 8.1694]},
-            {"time": "10:24", "name": "Imperia（因佩里亞）", "coord": [43.8894, 8.0417]},
-            {"time": "10:38", "name": "Sanremo（聖雷莫音樂之城）", "coord": [43.8189, 7.7778]},
-            {"time": "10:48", "name": "Bordighera", "coord": [43.7806, 7.6653]},
-            {"time": "10:58", "name": "Ventimiglia（義法邊境車站）", "coord": [43.79245, 7.60973], "is_end": True}
+            {"time": "09:31", "name": "Savona", "coord": [44.30720, 8.47140]},
+            {"time": "09:43", "name": "Finale Ligure Marina", "coord": [44.17060, 8.34860]},
+            {"time": "09:57", "name": "Albenga", "coord": [44.04890, 8.21670]},
+            {"time": "10:04", "name": "Alassio", "coord": [44.00440, 8.16940]},
+            {"time": "10:19", "name": "Diano", "coord": [43.92530, 8.07250]},
+            {"time": "10:27", "name": "Imperia", "coord": [43.88940, 8.04170]},
+            {"time": "10:38", "name": "Taggia Arma", "coord": [43.84460, 7.85530]},
+            {"time": "10:45", "name": "Sanremo", "coord": [43.81890, 7.77780]},
+            {"time": "10:55", "name": "Bordighera", "coord": [43.78060, 7.66530]},
+            {"time": "11:05", "name": "Ventimiglia（義法邊境車站）", "coord": [43.79245, 7.60973], "is_end": True}
         ]
     },
     {
