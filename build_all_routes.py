@@ -236,6 +236,37 @@ ROUTES_DATA = [
     },
     {
         "id": "route_08",
+        "day": "DAY 04",
+        "day_badge": "D04 · 貝爾加莫返程快車",
+        "title": "貝爾加莫車站 至 米蘭中央車站（RE 2232 返程直達）",
+        "origin_name": "貝爾加莫車站（Bergamo Stazione FS）",
+        "origin_addr": "Piazzale Guglielmo Marconi 7, 24122 Bergamo BG, 義大利",
+        "dest_name": "米蘭中央車站（Milano Centrale）",
+        "dest_addr": "Piazza Duca d'Aosta 1, 20124 Milano MI, 義大利",
+        "dep_time": "15:02",
+        "arr_time": "15:50",
+        "duration": "48 分（4 站直達快車）",
+        "ticket_title": "票券與搭乘指引 · Trenord 區域快車（RE 2232）",
+        "ticket_sub": "出示 Trenord APP Wallet QR 供查驗，直達快車免打卡",
+        "ticket_badge_html": '<span class="pill-badge pill-badge-direct">免換直通·免打卡</span>',
+        "ticket_price": '<span class="pill-badge pill-badge-direct">免換直通·免打卡</span>',
+        "operator": "北方鐵路 Trenord / 義大利國鐵",
+        "operator_note": "持 Trenord APP QR 碼直接感應查票；若持實體車票需先於車站月台黃綠色打票機打票啟用",
+        "transit_type": "train",
+        "transit_badge": "🚆 RE 2232 Milano Centrale（直達快車）",
+        "line_color": "#1a73e8",
+        "gmaps_url": "https://maps.app.goo.gl/cNjvrvYM8wyjngiB8",
+        "alert": "下車提示：前一站為 Milano Lambrate，下一站即抵達終點站 Milano Centrale（米蘭中央車站頭端月台到底）。下車步行 3 分鐘即達 Hilton Milan 飯店洗漱放鬆。",
+        "stops": [
+            {"time": "15:02", "name": "Bergamo FS（貝爾加莫火車站 · 始發月台）", "coord": [45.69043, 9.67505], "is_start": True},
+            {"time": "15:17", "name": "Verdello-Dalmine", "coord": [45.6025, 9.6192]},
+            {"time": "15:35", "name": "Pioltello-Limito", "coord": [45.4764, 9.3247]},
+            {"time": "15:43", "name": "Milano Lambrate（下車前一站提示 · 準備行李）", "coord": [45.4849, 9.2372]},
+            {"time": "15:50", "name": "Milano Centrale（米蘭中央車站 · 終點站）", "coord": [45.48714, 9.20482], "is_end": True}
+        ]
+    },
+    {
+        "id": "route_09",
         "day": "DAY 05",
         "day_badge": "D05 · 科莫湖雙城慢遊",
         "title": "米蘭中央車站 至 瓦倫納-埃西諾車站",
@@ -267,7 +298,7 @@ ROUTES_DATA = [
         ]
     },
     {
-        "id": "route_09",
+        "id": "route_10",
         "day": "DAY 05",
         "day_badge": "D05 · 科莫湖跨湖渡輪",
         "title": "瓦倫納碼頭 至 貝拉焦碼頭",
@@ -296,7 +327,39 @@ ROUTES_DATA = [
         ]
     },
     {
-        "id": "route_10",
+        "id": "route_11",
+        "day": "DAY 05",
+        "day_badge": "D05 · 科莫湖返程快車",
+        "title": "瓦倫納-埃西諾車站 至 米蘭中央車站（RE 湖區景觀快車）",
+        "origin_name": "瓦倫納-埃西諾車站（Varenna-Esino）",
+        "origin_addr": "Varenna Esino, 23828 Perledo LC, 義大利",
+        "dest_name": "米蘭中央車站（Milano Centrale）",
+        "dest_addr": "Piazza Duca d'Aosta 1, 20124 Milano MI, 義大利",
+        "dep_time": "15:35",
+        "arr_time": "16:40",
+        "duration": "1 小時 05 分（5 站直達）",
+        "ticket_title": "票券與搭乘指引 · Trenord 科莫湖返程快車（RE 2831）",
+        "ticket_sub": "現場售票機／APP 購票；紙本票上車前務必於黃綠機打票啟用",
+        "ticket_badge_html": '<span class="pill-badge pill-badge-stamp">⚠️ 上車必打卡</span> <span class="pill-badge pill-badge-buy">需現場購票</span>',
+        "ticket_price": '<span class="pill-badge pill-badge-stamp">⚠️ 上車必打卡</span> <span class="pill-badge pill-badge-buy">需現場購票</span>',
+        "operator": "北方鐵路 Trenord / 義大利國鐵",
+        "operator_note": "出發前可於車站售票機或 Trenord APP 購買車票。如持實體紙本車票，進月台前務必於打票機（Convalidatrice）打印戳印，查票極嚴格避免受罰",
+        "transit_type": "train",
+        "transit_badge": "🚆 RE 2831 Milano Centrale（科莫湖景觀快車）",
+        "line_color": "#0f9d58",
+        "gmaps_url": "https://maps.app.goo.gl/UYq827fCUQDeTCmY7",
+        "alert": "下車提示：前一站為 Monza（蒙札），下一站即抵達終點站 Milano Centrale（米蘭中央車站）。沿途右側窗外可回望科莫湖與阿爾卑斯群山倒影，進站後步行 3 分鐘返抵 Hilton Milan 休息。",
+        "stops": [
+            {"time": "15:35", "name": "Varenna-Esino（瓦倫納車站月台 · 起點出發）", "coord": [46.01491, 9.28621], "is_start": True},
+            {"time": "15:46", "name": "Mandello del Lario", "coord": [45.9189, 9.3178]},
+            {"time": "16:01", "name": "Lecco（科莫湖南端樞紐）", "coord": [45.8561, 9.3958]},
+            {"time": "16:19", "name": "Carnate-Usmate", "coord": [45.6517, 9.3789]},
+            {"time": "16:29", "name": "Monza（蒙札 · 下車前一站提示）", "coord": [45.5786, 9.2736]},
+            {"time": "16:40", "name": "Milano Centrale（米蘭中央車站 · 終點站）", "coord": [45.48714, 9.20482], "is_end": True}
+        ]
+    },
+    {
+        "id": "route_12",
         "day": "DAY 06",
         "day_badge": "D06 · 南下熱那亞一等艙",
         "title": "米蘭中央車站 至 熱那亞王子廣場車站",
@@ -327,7 +390,7 @@ ROUTES_DATA = [
         ]
     },
     {
-        "id": "route_11",
+        "id": "route_13",
         "day": "DAY 07",
         "day_badge": "D07 · 熱那亞地鐵核心漫遊",
         "title": "熱那亞王子廣場 至 法拉利廣場",
@@ -358,7 +421,7 @@ ROUTES_DATA = [
         ]
     },
     {
-        "id": "route_12",
+        "id": "route_14",
         "day": "DAY 08",
         "day_badge": "D08 · 前往菲諾港門戶",
         "title": "熱那亞王子廣場 至 聖瑪格麗塔利古雷",
@@ -387,7 +450,7 @@ ROUTES_DATA = [
         ]
     },
     {
-        "id": "route_13",
+        "id": "route_15",
         "day": "DAY 08",
         "day_badge": "D08 · 蔚藍海岸全景公車 · 19 站",
         "title": "聖瑪格麗塔車站 至 Portofino 終點站（782 號公車 · 19 站全景）",
@@ -432,7 +495,7 @@ ROUTES_DATA = [
         ]
     },
     {
-        "id": "route_14",
+        "id": "route_16",
         "day": "DAY 09",
         "day_badge": "D09 · 跨越義法邊境第一段",
         "title": "熱那亞王子廣場 至 文提米利亞邊境車站",
@@ -469,7 +532,7 @@ ROUTES_DATA = [
         ]
     },
     {
-        "id": "route_15",
+        "id": "route_17",
         "day": "DAY 09",
         "day_badge": "D09 · 跨國雙層全景景觀列車",
         "title": "文提米利亞 至 尼斯城站",
@@ -506,7 +569,7 @@ ROUTES_DATA = [
         ]
     },
     {
-        "id": "route_16",
+        "id": "route_18",
         "day": "DAY 10",
         "day_badge": "D10 · 盎格魯大道海景 BRT 快速公車",
         "title": "AC Hotel Nice 至 Opéra - Vieille Ville（公車 12+ 號）",
@@ -537,7 +600,7 @@ ROUTES_DATA = [
         ]
     },
     {
-        "id": "route_17",
+        "id": "route_19",
         "day": "DAY 11",
         "day_badge": "D11 · 濱海自由城半日慢遊",
         "title": "尼斯城站 至 濱海自由城",
@@ -566,7 +629,7 @@ ROUTES_DATA = [
         ]
     },
     {
-        "id": "route_18",
+        "id": "route_20",
         "day": "DAY 12",
         "day_badge": "D12 · 費拉角貴族莊園巡禮",
         "title": "尼斯舊港 至 Passable / Rothschild 站（羅斯柴爾德花園別墅入口）",
@@ -651,17 +714,19 @@ ROUTE_PDF_MAPPING = {
     "route_05": "05_D04_米蘭中央車站_至_貝爾加莫車站.pdf",
     "route_06": "06_D04_貝爾加莫車站_至_Vittorio_Emanuele47.pdf",
     "route_07": "07_D04_Delle_Mura_San_Giacomo_至_Paleocapa1車站返程.pdf",
-    "route_08": "08_D05_米蘭中央車站_至_瓦倫納科莫湖.pdf",
-    "route_09": "09_D05_瓦倫納碼頭_至_貝拉焦跨湖渡輪.pdf",
-    "route_10": "10_D06_米蘭中央車站_至_熱那亞王子廣場.pdf",
-    "route_11": "11_D07_熱那亞王子廣場_至_法拉利廣場地鐵.pdf",
-    "route_12": "12_D08_熱那亞王子廣場_至_聖瑪格麗塔.pdf",
-    "route_13": "13_D08_聖瑪格麗塔_至_Portofino終點站782公車.pdf",
-    "route_14": "14_D09_熱那亞王子廣場_至_文提米利亞邊境.pdf",
-    "route_15": "15_D09_文提米利亞_至_尼斯城站TER雙層列車.pdf",
-    "route_16": "16_D10_ACHotel_至_Opéra_Vieille_Ville公車12號.pdf",
-    "route_17": "17_D11_尼斯城站_至_濱海自由城TER.pdf",
-    "route_18": "18_D12_尼斯舊港_至_費拉角別墅15號公車.pdf",
+    "route_08": "08_D04_貝爾加莫車站_至_米蘭中央車站.pdf",
+    "route_09": "09_D05_米蘭中央車站_至_瓦倫納科莫湖.pdf",
+    "route_10": "10_D05_瓦倫納碼頭_至_貝拉焦跨湖渡輪.pdf",
+    "route_11": "11_D05_瓦倫納_至_米蘭中央車站.pdf",
+    "route_12": "12_D06_米蘭中央車站_至_熱那亞王子廣場.pdf",
+    "route_13": "13_D07_熱那亞王子廣場_至_法拉利廣場地鐵.pdf",
+    "route_14": "14_D08_熱那亞王子廣場_至_聖瑪格麗塔.pdf",
+    "route_15": "15_D08_聖瑪格麗塔_至_Portofino終點站782公車.pdf",
+    "route_16": "16_D09_熱那亞王子廣場_至_文提米利亞邊境.pdf",
+    "route_17": "17_D09_文提米利亞_至_尼斯城站TER雙層列車.pdf",
+    "route_18": "18_D10_ACHotel_至_Opéra_Vieille_Ville公車12號.pdf",
+    "route_19": "19_D11_尼斯城站_至_濱海自由城TER.pdf",
+    "route_20": "20_D12_尼斯舊港_至_費拉角別墅15號公車.pdf",
 }
 
 def generate_routes_html():
@@ -671,7 +736,7 @@ def generate_routes_html():
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>北義 × 南法蔚藍海岸 15 日 · 全程起點到終點路線地圖指引 (18 條 Transit)</title>
+  <title>北義 × 南法蔚藍海岸 15 日 · 全程起點到終點路線地圖指引 (20 條 Transit)</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1343,10 +1408,10 @@ def generate_routes_html():
   <header class="top-app-header">
     <div class="header-inner">
       <div class="brand-title">
-        <span>TRAVEL EURO</span> · 全程起點到終點路線地圖指引 (18 條 Transit)
+        <span>TRAVEL EURO</span> · 全程起點到終點路線地圖指引 (20 條 Transit)
       </div>
       <div class="header-actions">
-        <a href="route/all_routes.pdf" download class="nav-btn nav-btn-gold">📥 下載 18 條路線 PDF 合輯</a>
+        <a href="route/all_routes.pdf" download class="nav-btn nav-btn-gold">📥 下載 20 條路線 PDF 合輯</a>
         <a href="print-handbook.html" class="nav-btn nav-btn-outline">📖 隨身手冊</a>
         <a href="index.html" class="nav-btn nav-btn-outline">🌐 首頁</a>
         <button onclick="window.print()" class="nav-btn nav-btn-outline">🖨️ 列印全書</button>
@@ -1357,10 +1422,10 @@ def generate_routes_html():
   <!-- Filter Chips -->
   <nav class="filter-bar">
     <div class="filter-inner">
-      <button class="filter-chip active" onclick="filterRoutes('all', this)">全部 18 條路線</button>
+      <button class="filter-chip active" onclick="filterRoutes('all', this)">全部 20 條路線</button>
       <button class="filter-chip" onclick="filterRoutes('milan', this)">D02–03 米蘭都會 (4)</button>
-      <button class="filter-chip" onclick="filterRoutes('bergamo', this)">D04 貝爾加莫 (3)</button>
-      <button class="filter-chip" onclick="filterRoutes('como', this)">D05 科莫湖雙城 (2)</button>
+      <button class="filter-chip" onclick="filterRoutes('bergamo', this)">D04 貝爾加莫 (4)</button>
+      <button class="filter-chip" onclick="filterRoutes('como', this)">D05 科莫湖雙城 (3)</button>
       <button class="filter-chip" onclick="filterRoutes('genova', this)">D06–08 熱那亞與菲諾港 (4)</button>
       <button class="filter-chip" onclick="filterRoutes('nice', this)">D09–12 南法尼斯與蔚藍海岸 (5)</button>
     </div>

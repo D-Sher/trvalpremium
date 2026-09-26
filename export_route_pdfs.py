@@ -646,6 +646,11 @@ def export_all():
         pdf_path = os.path.join(OUTPUT_DIR, pdf_name)
         temp_html = os.path.join(SCRATCH_DIR, f"temp_{num_str}.html")
 
+        if os.path.exists(pdf_path) and os.path.getsize(pdf_path) > 1000:
+            print(f"[{idx+1}/{len(ROUTES_DATA)}] Already exists: {os.path.basename(pdf_path)} ({os.path.getsize(pdf_path):,} bytes)")
+            generated_pdfs.append(pdf_path)
+            continue
+
         generate_single_route_html(r, temp_html)
 
         cmd = [
@@ -659,7 +664,7 @@ def export_all():
 
         print(f"[{idx+1}/{len(ROUTES_DATA)}] Generating {os.path.basename(pdf_path)}...")
         try:
-            res = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=15)
+            res = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=35)
             if os.path.exists(pdf_path) and os.path.getsize(pdf_path) > 1000:
                 print(f"  ✓ Success: {os.path.getsize(pdf_path):,} bytes")
                 generated_pdfs.append(pdf_path)
