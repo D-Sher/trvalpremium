@@ -24,9 +24,10 @@ ROUTES_DATA = [
         "dep_time": "16:11",
         "arr_time": "17:07",
         "duration": "56 分（8 站）",
-        "ticket_title": "購票 · 單程成人票價",
-        "ticket_sub": "北方鐵路 Trenord / 現場售票機與線上均可購票",
-        "ticket_price": "單程 €15.00 起",
+        "ticket_title": "票券與搭乘指引 · 馬爾彭薩機場快線（MXP 2951）",
+        "ticket_sub": "持 Trenord APP Wallet QR 掃碼進站；如為義鐵票請完成線上 Check-in",
+        "ticket_badge_html": '<span class="pill-badge pill-badge-direct">免換直通·免打卡</span>',
+        "ticket_price": '<span class="pill-badge pill-badge-direct">免換直通·免打卡</span>',
         "operator": "北方鐵路 Trenord",
         "operator_note": "上車前務必於黃綠色打票機打票啟用；車廂設有專屬大件行李架",
         "transit_type": "train",
@@ -58,9 +59,10 @@ ROUTES_DATA = [
         "dep_time": "09:30",
         "arr_time": "09:36",
         "duration": "6 分（4 站）",
-        "ticket_title": "通票資訊 · 米蘭都會大眾運輸",
-        "ticket_sub": "米蘭城市通票（Milano Pass 24h）無限搭乘",
-        "ticket_price": "持米蘭城市通票搭乘（24H 無限次）",
+        "ticket_title": "通票資訊 · 米蘭都會大眾運輸（Milano Pass 24h）",
+        "ticket_sub": "進地鐵閘門首拍感應啟用通票，全日無限搭乘",
+        "ticket_badge_html": '<span class="pill-badge pill-badge-direct">感應啟用開通</span>',
+        "ticket_price": '<span class="pill-badge pill-badge-direct">感應啟用開通</span>',
         "operator": "米蘭大眾運輸 ATM",
         "operator_note": "持米蘭城市通票 Milano Pass 感應進站；出站直達米蘭大教堂廣場",
         "transit_type": "metro",
@@ -88,9 +90,10 @@ ROUTES_DATA = [
         "dep_time": "14:30",
         "arr_time": "14:36",
         "duration": "6 分（3 站直達）",
-        "ticket_title": "通票資訊 · 米蘭復古路面電車",
-        "ticket_sub": "米蘭城市通票（Milano Pass 24h）無限搭乘",
-        "ticket_price": "持米蘭城市通票搭乘（24H 無限次）",
+        "ticket_title": "通票資訊 · 米蘭復古路面電車（Milano Pass 24h）",
+        "ticket_sub": "憑米蘭城市通票 24h 效期內直接上車搭乘，免重複感應",
+        "ticket_badge_html": '<span class="pill-badge pill-badge-direct">持通票搭乘·免再購票</span>',
+        "ticket_price": '<span class="pill-badge pill-badge-direct">持通票搭乘·免再購票</span>',
         "operator": "米蘭大眾運輸 ATM",
         "operator_note": "持米蘭通票搭乘復古路面電車 1 號沿 Via Manzoni 直行至 P.za Cavour（下車前一站：Pisoni）。出站穿過十九世紀拱門即入蒙塔內利花園，漫步杜尼亞尼宮綠地，傍晚穿越花園至威尼斯門街區晚餐",
         "transit_type": "tram",
@@ -117,9 +120,10 @@ ROUTES_DATA = [
         "dep_time": "20:30",
         "arr_time": "20:38",
         "duration": "8 分（4 站直達）",
-        "ticket_title": "通票資訊 · 米蘭都會輕軌電車",
-        "ticket_sub": "米蘭城市通票（Milano Pass 24h）無限搭乘",
-        "ticket_price": "持米蘭城市通票搭乘（24H 無限次）",
+        "ticket_title": "通票資訊 · 米蘭都會輕軌電車（Milano Pass 24h）",
+        "ticket_sub": "憑米蘭城市通票 24h 效期內直接搭乘返程，免再購票",
+        "ticket_badge_html": '<span class="pill-badge pill-badge-direct">持通票搭乘·免再購票</span>',
+        "ticket_price": '<span class="pill-badge pill-badge-direct">持通票搭乘·免再購票</span>',
         "operator": "米蘭大眾運輸 ATM",
         "operator_note": "威尼斯門晚餐後持米蘭通票搭乘路面輕軌 9 號直達 Via Filzi - Via Galvani 站（加爾瓦尼站）。下車即為 Via Luigi Galvani 街口，轉角 1 分鐘即抵達 Hilton Milan 休息",
         "transit_type": "tram",
@@ -147,9 +151,10 @@ ROUTES_DATA = [
         "dep_time": "09:05",
         "arr_time": "09:53",
         "duration": "48 分（4 站）",
-        "ticket_title": "購票 · 單程成人票價",
-        "ticket_sub": "Trenord 區域快車 / 班次密集準時",
-        "ticket_price": "單程 €6.00 起",
+        "ticket_title": "票券與搭乘指引 · Trenord 區域快車（RE 2219）",
+        "ticket_sub": "出示 Trenord APP Wallet QR 供查驗，直達快車免打卡",
+        "ticket_badge_html": '<span class="pill-badge pill-badge-direct">免換直通·免打卡</span>',
+        "ticket_price": '<span class="pill-badge pill-badge-direct">免換直通·免打卡</span>',
         "operator": "北方鐵路 Trenord / 義大利國鐵",
         "operator_note": "持實體票需於月台黃色打票機打票；抵達後於站前廣場轉搭 1 號公車",
         "transit_type": "train",
@@ -177,9 +182,10 @@ ROUTES_DATA = [
         "dep_time": "10:05",
         "arr_time": "10:15",
         "duration": "10 分（步行 3 分 + 4 站直達）",
-        "ticket_title": "通票資訊 · ATB 貝爾加莫都會交通",
-        "ticket_sub": "貝爾加莫 24h 交通通票（含市區公車與登山纜車）",
-        "ticket_price": "持貝爾加莫 24h 通票搭乘（無限次）",
+        "ticket_title": "通票資訊 · ATB 貝爾加莫都會交通（24h 通票）",
+        "ticket_sub": "已於 ATB Mobile APP 預先購票，上車前於手機 APP 點擊啟用",
+        "ticket_badge_html": '<span class="pill-badge pill-badge-exchange">搭車前手機啟用</span>',
+        "ticket_price": '<span class="pill-badge pill-badge-exchange">搭車前手機啟用</span>',
         "operator": "ATB Bergamo（Azienda Trasporti Bergamo）",
         "operator_note": "出火車站自 Piazzale Marconi 7 站牌（Bergamo 7）步行約 3 分鐘（160公尺）至「Papa Giovanni fermata 2」，搭乘 ATB Linea 1 號公車（往 Stazione - Citta' Alta 方向 · 車站 ID: 2），行經 4 站直達「Vittorio Emanuele 47」站下車，正對登山纜車下站（Funicolare Bassa），過馬路即可轉乘纜車登頂上城",
         "transit_type": "bus",
@@ -208,9 +214,10 @@ ROUTES_DATA = [
         "dep_time": "14:30",
         "arr_time": "14:42",
         "duration": "12 分（公車 1 號下山直達火車站前）",
-        "ticket_title": "通票資訊 · ATB 貝爾加莫都會交通",
-        "ticket_sub": "貝爾加莫 24h 交通通票（回程免再購票）",
-        "ticket_price": "持貝爾加莫 24h 通票搭乘（無限次）",
+        "ticket_title": "通票資訊 · ATB 貝爾加莫都會交通（24h 通票）",
+        "ticket_sub": "ATB 24h 通票效期內自由搭乘公車與纜車返程，免再購票",
+        "ticket_badge_html": '<span class="pill-badge pill-badge-direct">持 24h 通票搭乘</span>',
+        "ticket_price": '<span class="pill-badge pill-badge-direct">持 24h 通票搭乘</span>',
         "operator": "ATB Bergamo",
         "operator_note": "漫步城牆後持貝爾加莫 24h 通票於門前站牌搭乘 1 號公車下山直達「Paleocapa 1」站，下車過街 1 分鐘進火車站月台搭乘 15:02 RE 2232 區域快車返米蘭",
         "transit_type": "bus",
@@ -239,9 +246,10 @@ ROUTES_DATA = [
         "dep_time": "09:20",
         "arr_time": "10:25",
         "duration": "65 分（5 站）",
-        "ticket_title": "購票 · 單程成人票價",
-        "ticket_sub": "Trenord 區域快車 / 建議坐火車前進方向左側欣賞湖景",
-        "ticket_price": "單程 €7.40 起",
+        "ticket_title": "票券與搭乘指引 · Trenord 科莫湖景觀快車（RE 2818）",
+        "ticket_sub": "湖區直達車，出示手機 Trenord APP Wallet QR 碼供查驗即可",
+        "ticket_badge_html": '<span class="pill-badge pill-badge-direct">免換直通·免打卡</span>',
+        "ticket_price": '<span class="pill-badge pill-badge-direct">免換直通·免打卡</span>',
         "operator": "北方鐵路 Trenord",
         "operator_note": "列車過 Lecco 後左側窗外即展開壯麗科莫湖全景，抵達 Varenna 步行 5 分到湖畔",
         "transit_type": "train",
@@ -270,9 +278,10 @@ ROUTES_DATA = [
         "dep_time": "11:00",
         "arr_time": "11:15",
         "duration": "15 分（跨湖航行）",
-        "ticket_title": "通票資訊 · 科莫湖中央湖區渡輪",
-        "ticket_sub": "科莫湖中央湖區渡輪一日票（Centro Lago 一日通票）",
-        "ticket_price": "持科莫湖渡輪一日通票搭乘（當日無限次）",
+        "ticket_title": "通票資訊 · 科莫湖中央湖區渡輪（Centro Lago）",
+        "ticket_sub": "瓦倫納渡輪碼頭窗口出示憑證或換票登船，全日無限搭乘",
+        "ticket_badge_html": '<span class="pill-badge pill-badge-buy">碼頭檢票·登船</span>',
+        "ticket_price": '<span class="pill-badge pill-badge-buy">碼頭檢票·登船</span>',
         "operator": "Navigazione Laghi",
         "operator_note": "持中央湖區渡輪一日通票登船，可至頂層戶外甲板，360 度飽覽科莫湖三叉水域與阿爾卑斯山倒影",
         "transit_type": "ferry",
@@ -298,9 +307,10 @@ ROUTES_DATA = [
         "dep_time": "09:10",
         "arr_time": "10:48",
         "duration": "1 小時 38 分（5 站直達）",
-        "ticket_title": "預訂席位 · 義鐵城際一等艙",
-        "ticket_sub": "Trenitalia Intercity · 舒適對號座",
-        "ticket_price": "單程 €22.00 起（持預訂一等艙對號票）",
+        "ticket_title": "預訂席位 · 義鐵城際一等艙（Trenitalia Intercity）",
+        "ticket_sub": "持預印 A4 紙本對號車票依車廂與座位直接入座，免打卡",
+        "ticket_badge_html": '<span class="pill-badge pill-badge-direct">對號免打卡·直接入座</span>',
+        "ticket_price": '<span class="pill-badge pill-badge-direct">對號免打卡·直接入座</span>',
         "operator": "義大利國鐵 Trenitalia Intercity",
         "operator_note": "一等艙空間寬敞含充電座，出站步行 2 分鐘直達五星 Grand Hotel Savoia",
         "transit_type": "train",
@@ -328,9 +338,10 @@ ROUTES_DATA = [
         "dep_time": "09:30",
         "arr_time": "09:37",
         "duration": "7 分（4 站）",
-        "ticket_title": "通票資訊 · 熱那亞城市通票",
-        "ticket_sub": "Genova City Pass 24h（含 AMT 地鐵與市區公車）",
-        "ticket_price": "持熱那亞城市通票搭乘（24H 無限次）",
+        "ticket_title": "通票資訊 · 熱那亞城市通票（Genova City Pass）",
+        "ticket_sub": "出示憑證條碼掃碼啟用開通，含 AMT 地鐵公車全日無限搭乘",
+        "ticket_badge_html": '<span class="pill-badge pill-badge-exchange">需掃碼開通·全日無限</span>',
+        "ticket_price": '<span class="pill-badge pill-badge-exchange">需掃碼開通·全日無限</span>',
         "operator": "熱那亞大眾運輸 AMT",
         "operator_note": "持熱那亞城市通票搭乘地鐵直達心臟地帶法拉利噴泉廣場，出站即達總督宮與卡洛·費利切劇院",
         "transit_type": "metro",
@@ -358,9 +369,10 @@ ROUTES_DATA = [
         "dep_time": "09:47",
         "arr_time": "10:14",
         "duration": "27 分（2 站）",
-        "ticket_title": "預訂席位 · 義鐵城際一等艙",
-        "ticket_sub": "Trenitalia Intercity · 沿海快線對號座",
-        "ticket_price": "單程 €12.50 起（持預訂一等艙對號票）",
+        "ticket_title": "預訂席位 · 義鐵城際一等艙（Trenitalia Intercity）",
+        "ticket_sub": "沿海快線對號座，持預印 A4 紙本車票依座位直接入座，免打卡",
+        "ticket_badge_html": '<span class="pill-badge pill-badge-direct">對號免打卡·直接入座</span>',
+        "ticket_price": '<span class="pill-badge pill-badge-direct">對號免打卡·直接入座</span>',
         "operator": "義大利國鐵 Trenitalia Intercity",
         "operator_note": "出站即達聖瑪格麗塔站前公車圓環，無縫轉乘 782 號公車直達菲諾港",
         "transit_type": "train",
@@ -386,9 +398,10 @@ ROUTES_DATA = [
         "dep_time": "10:25",
         "arr_time": "10:43",
         "duration": "18 分（19 站緊貼懸崖碧海）",
-        "ticket_title": "通票資訊 · AMT 菲諾港觀光公車",
-        "ticket_sub": "MetDaily 一日票（含 782 觀光公車全日搭乘）",
-        "ticket_price": "持 MetDaily 一日票搭乘（AMT APP 啟用）",
+        "ticket_title": "通票資訊 · AMT 菲諾港觀光公車（MetDaily 一日票）",
+        "ticket_sub": "於 AMT APP 購買一日票，搭公車前於手機 APP 點擊啟用出示",
+        "ticket_badge_html": '<span class="pill-badge pill-badge-buy">需 APP 購票</span> <span class="pill-badge pill-badge-exchange">搭車前啟用</span>',
+        "ticket_price": '<span class="pill-badge pill-badge-buy">需 APP 購票</span> <span class="pill-badge pill-badge-exchange">搭車前啟用</span>',
         "operator": "熱那亞大眾運輸 AMT",
         "operator_note": "持 MetDaily 一日票（AMT APP 啟用條碼）搭乘 782 號公車，緊貼利古里亞海岸線行駛直達 Portofino / Terminal 站（老港廣場旁）",
         "transit_type": "bus",
@@ -430,9 +443,10 @@ ROUTES_DATA = [
         "dep_time": "08:58",
         "arr_time": "11:05",
         "duration": "2 小時 07 分（9 站沿海全景直達）",
-        "ticket_title": "預訂席位 · 義鐵城際一等艙",
-        "ticket_sub": "Trenitalia Intercity · 義大利里維埃拉海岸線",
-        "ticket_price": "單程 €21.00 起（持預訂一等艙對號票）",
+        "ticket_title": "預訂席位 · 義鐵城際一等艙（Trenitalia Intercity）",
+        "ticket_sub": "義大利里維埃拉海岸線直達車，持預印 A4 紙本車票直接入座",
+        "ticket_badge_html": '<span class="pill-badge pill-badge-direct">對號免打卡·直接入座</span>',
+        "ticket_price": '<span class="pill-badge pill-badge-direct">對號免打卡·直接入座</span>',
         "operator": "義大利國鐵 Trenitalia Intercity",
         "operator_note": "列車緊鄰地中海行駛，抵達後於 Sir Thomas 寄放行李並享用正宗熱那亞佛卡夏",
         "transit_type": "train",
@@ -466,9 +480,10 @@ ROUTES_DATA = [
         "dep_time": "15:00",
         "arr_time": "15:50",
         "duration": "50 分（10 站跨國海岸景觀）",
-        "ticket_title": "購票 · 單程跨國區間車票價",
-        "ticket_sub": "法國國鐵 SNCF TER PACA · 邊境站售票機現場購票",
-        "ticket_price": "單程 €8.80（上車前黃色打票機打戳印）",
+        "ticket_title": "購票與搭乘提醒 · 法國國鐵 SNCF TER Zou!",
+        "ticket_sub": "於文提米利亞邊境售票機購買實體紙票，上車前務必於黃色打票機打戳印！",
+        "ticket_badge_html": '<span class="pill-badge pill-badge-stamp">⚠️ 實體紙票必打卡</span> <span class="pill-badge pill-badge-buy">需邊境購票</span>',
+        "ticket_price": '<span class="pill-badge pill-badge-stamp">⚠️ 實體紙票必打卡</span> <span class="pill-badge pill-badge-buy">需邊境購票</span>',
         "operator": "法國國鐵 SNCF TER PACA",
         "operator_note": "於文提米利亞邊境售票機購買 TER 區間票（上車前於黃機打卡），雙層景觀列車上層視野開闊，行經摩納哥、蒙頓、自由城直達尼斯",
         "transit_type": "train",
@@ -502,9 +517,10 @@ ROUTES_DATA = [
         "dep_time": "09:30",
         "arr_time": "09:36",
         "duration": "6 分（4 站沿海直達）",
-        "ticket_title": "通票資訊 · 蔚藍海岸都會交通",
-        "ticket_sub": "PASS SUD AZUR 南法通票感應卡（公車與輕軌全線通用）",
-        "ticket_price": "持 PASS SUD AZUR 通票搭乘（上車感應）",
+        "ticket_title": "通票資訊 · PASS SUD AZUR 蔚藍海岸通票",
+        "ticket_sub": "持 PASS SUD AZUR 實體通票感應卡，搭公車與輕軌上車拍 Validé 柱感應搭乘",
+        "ticket_badge_html": '<span class="pill-badge pill-badge-direct">持通票搭乘·每趟感應</span>',
+        "ticket_price": '<span class="pill-badge pill-badge-direct">持通票搭乘·每趟感應</span>',
         "operator": "尼斯都會大眾運輸 Lignes d'Azur",
         "operator_note": "走出 AC Hotel 穿越馬路至盎格魯大道海邊站牌「Grosso CUM / Promenade」，搭乘 12+ 號快速公車（BHNS/BRT）沿蔚藍海岸行駛，直達「Opéra - Vieille Ville」站下車，下車過街穿過舊城拱門 1 分鐘即達薩萊亞花市（Cours Saleya）",
         "transit_type": "bus",
@@ -532,9 +548,10 @@ ROUTES_DATA = [
         "dep_time": "09:45",
         "arr_time": "09:52",
         "duration": "7 分（2 站直達懸崖海灣）",
-        "ticket_title": "通票資訊 · 蔚藍海岸鐵路與通票",
-        "ticket_sub": "PASS SUD AZUR 蔚藍海岸通票（涵蓋 TER 尼斯↔自由城）",
-        "ticket_price": "持 PASS SUD AZUR 通票搭乘（進出站免購票）",
+        "ticket_title": "通票資訊 · PASS SUD AZUR 蔚藍海岸通票",
+        "ticket_sub": "涵蓋 TER 鐵路區間，持 PASS SUD AZUR 通票感應卡直接進出站搭乘",
+        "ticket_badge_html": '<span class="pill-badge pill-badge-direct">持通票搭乘·自由進站</span>',
+        "ticket_price": '<span class="pill-badge pill-badge-direct">持通票搭乘·自由進站</span>',
         "operator": "法國國鐵 SNCF TER Zou!",
         "operator_note": "持 PASS SUD AZUR 通票搭乘 TER 懸崖景觀列車，出站走下一小段階梯即達金色細石沙灘與 Mayssa Beach 海景餐廳",
         "transit_type": "train",
@@ -560,9 +577,10 @@ ROUTES_DATA = [
         "dep_time": "09:30",
         "arr_time": "10:02",
         "duration": "32 分（步行 7 分 + 27 站景觀公車 25 分）",
-        "ticket_title": "通票資訊 · Lignes d'Azur 觀光公車",
-        "ticket_sub": "PASS SUD AZUR 南法通票感應卡（涵蓋 15 號海濱公車）",
-        "ticket_price": "持 PASS SUD AZUR 通票搭乘（單程 €1.70 上車感應）",
+        "ticket_title": "通票資訊 · PASS SUD AZUR 蔚藍海岸通票",
+        "ticket_sub": "涵蓋 15 號海濱公車，上車刷 PASS SUD AZUR 通票感應卡即可搭乘",
+        "ticket_badge_html": '<span class="pill-badge pill-badge-direct">持通票搭乘·上車感應</span>',
+        "ticket_price": '<span class="pill-badge pill-badge-direct">持通票搭乘·上車感應</span>',
         "operator": "尼斯都會大眾運輸 Lignes d'Azur",
         "operator_note": "自林比亞港碼頭步行約 7 分（500m）至「Port Lympia / Arson」站牌，搭乘 15 號公車（往 Port de Saint-Jean）行經 27 站海濱公路直達「Passable / Rothschild」站下車；站牌旁即為羅斯柴爾德莊園專屬林蔭道入口，漫步 400 公尺即可抵達別墅正門與售票處。",
         "transit_type": "bus",
@@ -914,23 +932,77 @@ def generate_routes_html():
       justify-content: space-between;
       align-items: center;
       border-bottom: 1px solid #e8eaed;
-      padding-bottom: 12px;
-      margin-bottom: 16px;
+      padding-bottom: 10px;
+      margin-bottom: 14px;
+      gap: 12px;
+    }}
+    .fare-info-col {{
+      flex: 1;
+      min-width: 0;
     }}
     .fare-title {{
-      font-size: 14px;
+      font-size: 13.5px;
       font-weight: 700;
       color: #202124;
+      line-height: 1.3;
     }}
     .fare-desc {{
       font-size: 12px;
       color: #5f6368;
+      margin-top: 3px;
+      line-height: 1.35;
+    }}
+    .fare-badge-col {{
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }}
     .fare-val {{
       font-size: 15px;
       font-weight: 700;
       color: #188038;
       text-align: right;
+    }}
+    .pill-badge {{
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 12px;
+      line-height: 1.25;
+      white-space: nowrap;
+      vertical-align: middle;
+      letter-spacing: 0.02em;
+    }}
+    .pill-badge-direct {{
+      background: #f0fdf4;
+      color: #166534;
+      border: 1px solid #bbf7d0;
+      font-weight: 600;
+    }}
+    .pill-badge-exchange {{
+      background: #fef3c7;
+      color: #78350f;
+      border: 1px solid #f59e0b;
+      font-weight: 700;
+    }}
+    .pill-badge-buy {{
+      background: #ffedd5;
+      color: #9a3412;
+      border: 1px solid #f97316;
+      font-weight: 700;
+    }}
+    .pill-badge-stamp {{
+      background: #fee2e2;
+      color: #991b1b;
+      border: 1.5px solid #dc2626;
+      font-weight: 800;
+      box-shadow: 0 1px 3px rgba(220, 38, 38, 0.15);
     }}
 
     /* Timeline matching 1.pdf & 2.pdf */
@@ -1350,11 +1422,11 @@ def generate_routes_html():
 
       <div class="details-box">
         <div class="fare-row">
-          <div>
+          <div class="fare-info-col">
             <div class="fare-title">{r['ticket_title']}</div>
             <div class="fare-desc">{r['ticket_sub']}</div>
           </div>
-          <div class="fare-val">{r['ticket_price']}</div>
+          <div class="fare-badge-col">{r['ticket_badge_html']}</div>
         </div>
 
         <div class="transit-timeline">

@@ -270,22 +270,70 @@ def generate_single_route_html(r, temp_html_path):
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #e8eaed;
-    padding-bottom: 8px;
+    padding-bottom: 6px;
     margin-bottom: {fare_margin};
+    gap: 10px;
+  }}
+  .fare-info-col {{
+    flex: 1;
+    min-width: 0;
   }}
   .fare-title {{
     font-size: 13px;
     font-weight: 700;
     color: #202124;
+    line-height: 1.3;
   }}
   .fare-desc {{
     font-size: 11px;
     color: #5f6368;
+    margin-top: 2px;
+    line-height: 1.35;
   }}
-  .fare-val {{
-    font-size: 14px;
+  .fare-badge-col {{
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: flex-end;
+  }}
+  .pill-badge {{
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 11px;
     font-weight: 700;
-    color: #188038;
+    padding: 2.5px 7px;
+    border-radius: 12px;
+    line-height: 1.25;
+    white-space: nowrap;
+    vertical-align: middle;
+    letter-spacing: 0.02em;
+  }}
+  .pill-badge-direct {{
+    background: #f0fdf4;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+    font-weight: 600;
+  }}
+  .pill-badge-exchange {{
+    background: #fef3c7;
+    color: #78350f;
+    border: 1px solid #f59e0b;
+    font-weight: 700;
+  }}
+  .pill-badge-buy {{
+    background: #ffedd5;
+    color: #9a3412;
+    border: 1px solid #f97316;
+    font-weight: 700;
+  }}
+  .pill-badge-stamp {{
+    background: #fee2e2;
+    color: #991b1b;
+    border: 1.5px solid #dc2626;
+    font-weight: 800;
+    box-shadow: 0 1px 3px rgba(220, 38, 38, 0.15);
   }}
 
   .transit-timeline {{
@@ -464,11 +512,11 @@ def generate_single_route_html(r, temp_html_path):
 
   <div class="details-box">
     <div class="fare-row">
-      <div>
+      <div class="fare-info-col">
         <div class="fare-title">{r['ticket_title']}</div>
         <div class="fare-desc">{r['ticket_sub']}</div>
       </div>
-      <div class="fare-val">{r['ticket_price']}</div>
+      <div class="fare-badge-col">{r['ticket_badge_html']}</div>
     </div>
 
     <div class="transit-timeline">

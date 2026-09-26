@@ -264,23 +264,77 @@
       justify-content: space-between;
       align-items: center;
       border-bottom: 1px solid #e8eaed;
-      padding-bottom: 12px;
-      margin-bottom: 16px;
+      padding-bottom: 10px;
+      margin-bottom: 14px;
+      gap: 12px;
+    }
+    .fare-info-col {
+      flex: 1;
+      min-width: 0;
     }
     .fare-title {
-      font-size: 14px;
+      font-size: 13.5px;
       font-weight: 700;
       color: #202124;
+      line-height: 1.3;
     }
     .fare-desc {
       font-size: 12px;
       color: #5f6368;
+      margin-top: 3px;
+      line-height: 1.35;
+    }
+    .fare-badge-col {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
     .fare-val {
       font-size: 15px;
       font-weight: 700;
       color: #188038;
       text-align: right;
+    }
+    .pill-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 12px;
+      line-height: 1.25;
+      white-space: nowrap;
+      vertical-align: middle;
+      letter-spacing: 0.02em;
+    }
+    .pill-badge-direct {
+      background: #f0fdf4;
+      color: #166534;
+      border: 1px solid #bbf7d0;
+      font-weight: 600;
+    }
+    .pill-badge-exchange {
+      background: #fef3c7;
+      color: #78350f;
+      border: 1px solid #f59e0b;
+      font-weight: 700;
+    }
+    .pill-badge-buy {
+      background: #ffedd5;
+      color: #9a3412;
+      border: 1px solid #f97316;
+      font-weight: 700;
+    }
+    .pill-badge-stamp {
+      background: #fee2e2;
+      color: #991b1b;
+      border: 1.5px solid #dc2626;
+      font-weight: 800;
+      box-shadow: 0 1px 3px rgba(220, 38, 38, 0.15);
     }
 
     /* Timeline matching 1.pdf & 2.pdf */
@@ -669,11 +723,11 @@
 
       <div class="details-box">
         <div class="fare-row">
-          <div>
-            <div class="fare-title">購票 · 單程成人票價</div>
-            <div class="fare-desc">北方鐵路 Trenord / 現場售票機與線上均可購票</div>
+          <div class="fare-info-col">
+            <div class="fare-title">票券與搭乘指引 · 馬爾彭薩機場快線（MXP 2951）</div>
+            <div class="fare-desc">持 Trenord APP Wallet QR 掃碼進站；如為義鐵票請完成線上 Check-in</div>
           </div>
-          <div class="fare-val">單程 €15.00 起</div>
+          <div class="fare-badge-col"><span class="pill-badge pill-badge-direct">免換直通·免打卡</span></div>
         </div>
 
         <div class="transit-timeline">
@@ -803,11 +857,11 @@
 
       <div class="details-box">
         <div class="fare-row">
-          <div>
-            <div class="fare-title">通票資訊 · 米蘭都會大眾運輸</div>
-            <div class="fare-desc">米蘭城市通票（Milano Pass 24h）無限搭乘</div>
+          <div class="fare-info-col">
+            <div class="fare-title">通票資訊 · 米蘭都會大眾運輸（Milano Pass 24h）</div>
+            <div class="fare-desc">進地鐵閘門首拍感應啟用通票，全日無限搭乘</div>
           </div>
-          <div class="fare-val">持米蘭城市通票搭乘（24H 無限次）</div>
+          <div class="fare-badge-col"><span class="pill-badge pill-badge-direct">感應啟用開通</span></div>
         </div>
 
         <div class="transit-timeline">
@@ -913,11 +967,11 @@
 
       <div class="details-box">
         <div class="fare-row">
-          <div>
-            <div class="fare-title">通票資訊 · 米蘭復古路面電車</div>
-            <div class="fare-desc">米蘭城市通票（Milano Pass 24h）無限搭乘</div>
+          <div class="fare-info-col">
+            <div class="fare-title">通票資訊 · 米蘭復古路面電車（Milano Pass 24h）</div>
+            <div class="fare-desc">憑米蘭城市通票 24h 效期內直接上車搭乘，免重複感應</div>
           </div>
-          <div class="fare-val">持米蘭城市通票搭乘（24H 無限次）</div>
+          <div class="fare-badge-col"><span class="pill-badge pill-badge-direct">持通票搭乘·免再購票</span></div>
         </div>
 
         <div class="transit-timeline">
@@ -1017,11 +1071,11 @@
 
       <div class="details-box">
         <div class="fare-row">
-          <div>
-            <div class="fare-title">通票資訊 · 米蘭都會輕軌電車</div>
-            <div class="fare-desc">米蘭城市通票（Milano Pass 24h）無限搭乘</div>
+          <div class="fare-info-col">
+            <div class="fare-title">通票資訊 · 米蘭都會輕軌電車（Milano Pass 24h）</div>
+            <div class="fare-desc">憑米蘭城市通票 24h 效期內直接搭乘返程，免再購票</div>
           </div>
-          <div class="fare-val">持米蘭城市通票搭乘（24H 無限次）</div>
+          <div class="fare-badge-col"><span class="pill-badge pill-badge-direct">持通票搭乘·免再購票</span></div>
         </div>
 
         <div class="transit-timeline">
@@ -1127,11 +1181,11 @@
 
       <div class="details-box">
         <div class="fare-row">
-          <div>
-            <div class="fare-title">購票 · 單程成人票價</div>
-            <div class="fare-desc">Trenord 區域快車 / 班次密集準時</div>
+          <div class="fare-info-col">
+            <div class="fare-title">票券與搭乘指引 · Trenord 區域快車（RE 2219）</div>
+            <div class="fare-desc">出示 Trenord APP Wallet QR 供查驗，直達快車免打卡</div>
           </div>
-          <div class="fare-val">單程 €6.00 起</div>
+          <div class="fare-badge-col"><span class="pill-badge pill-badge-direct">免換直通·免打卡</span></div>
         </div>
 
         <div class="transit-timeline">
@@ -1237,11 +1291,11 @@
 
       <div class="details-box">
         <div class="fare-row">
-          <div>
-            <div class="fare-title">通票資訊 · ATB 貝爾加莫都會交通</div>
-            <div class="fare-desc">貝爾加莫 24h 交通通票（含市區公車與登山纜車）</div>
+          <div class="fare-info-col">
+            <div class="fare-title">通票資訊 · ATB 貝爾加莫都會交通（24h 通票）</div>
+            <div class="fare-desc">已於 ATB Mobile APP 預先購票，上車前於手機 APP 點擊啟用</div>
           </div>
-          <div class="fare-val">持貝爾加莫 24h 通票搭乘（無限次）</div>
+          <div class="fare-badge-col"><span class="pill-badge pill-badge-exchange">搭車前手機啟用</span></div>
         </div>
 
         <div class="transit-timeline">
@@ -1353,11 +1407,11 @@
 
       <div class="details-box">
         <div class="fare-row">
-          <div>
-            <div class="fare-title">通票資訊 · ATB 貝爾加莫都會交通</div>
-            <div class="fare-desc">貝爾加莫 24h 交通通票（回程免再購票）</div>
+          <div class="fare-info-col">
+            <div class="fare-title">通票資訊 · ATB 貝爾加莫都會交通（24h 通票）</div>
+            <div class="fare-desc">ATB 24h 通票效期內自由搭乘公車與纜車返程，免再購票</div>
           </div>
-          <div class="fare-val">持貝爾加莫 24h 通票搭乘（無限次）</div>
+          <div class="fare-badge-col"><span class="pill-badge pill-badge-direct">持 24h 通票搭乘</span></div>
         </div>
 
         <div class="transit-timeline">
@@ -1469,11 +1523,11 @@
 
       <div class="details-box">
         <div class="fare-row">
-          <div>
-            <div class="fare-title">購票 · 單程成人票價</div>
-            <div class="fare-desc">Trenord 區域快車 / 建議坐火車前進方向左側欣賞湖景</div>
+          <div class="fare-info-col">
+            <div class="fare-title">票券與搭乘指引 · Trenord 科莫湖景觀快車（RE 2818）</div>
+            <div class="fare-desc">湖區直達車，出示手機 Trenord APP Wallet QR 碼供查驗即可</div>
           </div>
-          <div class="fare-val">單程 €7.40 起</div>
+          <div class="fare-badge-col"><span class="pill-badge pill-badge-direct">免換直通·免打卡</span></div>
         </div>
 
         <div class="transit-timeline">
@@ -1585,11 +1639,11 @@
 
       <div class="details-box">
         <div class="fare-row">
-          <div>
-            <div class="fare-title">通票資訊 · 科莫湖中央湖區渡輪</div>
-            <div class="fare-desc">科莫湖中央湖區渡輪一日票（Centro Lago 一日通票）</div>
+          <div class="fare-info-col">
+            <div class="fare-title">通票資訊 · 科莫湖中央湖區渡輪（Centro Lago）</div>
+            <div class="fare-desc">瓦倫納渡輪碼頭窗口出示憑證或換票登船，全日無限搭乘</div>
           </div>
-          <div class="fare-val">持科莫湖渡輪一日通票搭乘（當日無限次）</div>
+          <div class="fare-badge-col"><span class="pill-badge pill-badge-buy">碼頭檢票·登船</span></div>
         </div>
 
         <div class="transit-timeline">
@@ -1683,11 +1737,11 @@
 
       <div class="details-box">
         <div class="fare-row">
-          <div>
-            <div class="fare-title">預訂席位 · 義鐵城際一等艙</div>
-            <div class="fare-desc">Trenitalia Intercity · 舒適對號座</div>
+          <div class="fare-info-col">
+            <div class="fare-title">預訂席位 · 義鐵城際一等艙（Trenitalia Intercity）</div>
+            <div class="fare-desc">持預印 A4 紙本對號車票依車廂與座位直接入座，免打卡</div>
           </div>
-          <div class="fare-val">單程 €22.00 起（持預訂一等艙對號票）</div>
+          <div class="fare-badge-col"><span class="pill-badge pill-badge-direct">對號免打卡·直接入座</span></div>
         </div>
 
         <div class="transit-timeline">
@@ -1793,11 +1847,11 @@
 
       <div class="details-box">
         <div class="fare-row">
-          <div>
-            <div class="fare-title">通票資訊 · 熱那亞城市通票</div>
-            <div class="fare-desc">Genova City Pass 24h（含 AMT 地鐵與市區公車）</div>
+          <div class="fare-info-col">
+            <div class="fare-title">通票資訊 · 熱那亞城市通票（Genova City Pass）</div>
+            <div class="fare-desc">出示憑證條碼掃碼啟用開通，含 AMT 地鐵公車全日無限搭乘</div>
           </div>
-          <div class="fare-val">持熱那亞城市通票搭乘（24H 無限次）</div>
+          <div class="fare-badge-col"><span class="pill-badge pill-badge-exchange">需掃碼開通·全日無限</span></div>
         </div>
 
         <div class="transit-timeline">
@@ -1903,11 +1957,11 @@
 
       <div class="details-box">
         <div class="fare-row">
-          <div>
-            <div class="fare-title">預訂席位 · 義鐵城際一等艙</div>
-            <div class="fare-desc">Trenitalia Intercity · 沿海快線對號座</div>
+          <div class="fare-info-col">
+            <div class="fare-title">預訂席位 · 義鐵城際一等艙（Trenitalia Intercity）</div>
+            <div class="fare-desc">沿海快線對號座，持預印 A4 紙本車票依座位直接入座，免打卡</div>
           </div>
-          <div class="fare-val">單程 €12.50 起（持預訂一等艙對號票）</div>
+          <div class="fare-badge-col"><span class="pill-badge pill-badge-direct">對號免打卡·直接入座</span></div>
         </div>
 
         <div class="transit-timeline">
@@ -2001,11 +2055,11 @@
 
       <div class="details-box">
         <div class="fare-row">
-          <div>
-            <div class="fare-title">通票資訊 · AMT 菲諾港觀光公車</div>
-            <div class="fare-desc">MetDaily 一日票（含 782 觀光公車全日搭乘）</div>
+          <div class="fare-info-col">
+            <div class="fare-title">通票資訊 · AMT 菲諾港觀光公車（MetDaily 一日票）</div>
+            <div class="fare-desc">於 AMT APP 購買一日票，搭公車前於手機 APP 點擊啟用出示</div>
           </div>
-          <div class="fare-val">持 MetDaily 一日票搭乘（AMT APP 啟用）</div>
+          <div class="fare-badge-col"><span class="pill-badge pill-badge-buy">需 APP 購票</span> <span class="pill-badge pill-badge-exchange">搭車前啟用</span></div>
         </div>
 
         <div class="transit-timeline">
@@ -2195,11 +2249,11 @@
 
       <div class="details-box">
         <div class="fare-row">
-          <div>
-            <div class="fare-title">預訂席位 · 義鐵城際一等艙</div>
-            <div class="fare-desc">Trenitalia Intercity · 義大利里維埃拉海岸線</div>
+          <div class="fare-info-col">
+            <div class="fare-title">預訂席位 · 義鐵城際一等艙（Trenitalia Intercity）</div>
+            <div class="fare-desc">義大利里維埃拉海岸線直達車，持預印 A4 紙本車票直接入座</div>
           </div>
-          <div class="fare-val">單程 €21.00 起（持預訂一等艙對號票）</div>
+          <div class="fare-badge-col"><span class="pill-badge pill-badge-direct">對號免打卡·直接入座</span></div>
         </div>
 
         <div class="transit-timeline">
@@ -2341,11 +2395,11 @@
 
       <div class="details-box">
         <div class="fare-row">
-          <div>
-            <div class="fare-title">購票 · 單程跨國區間車票價</div>
-            <div class="fare-desc">法國國鐵 SNCF TER PACA · 邊境站售票機現場購票</div>
+          <div class="fare-info-col">
+            <div class="fare-title">購票與搭乘提醒 · 法國國鐵 SNCF TER Zou!</div>
+            <div class="fare-desc">於文提米利亞邊境售票機購買實體紙票，上車前務必於黃色打票機打戳印！</div>
           </div>
-          <div class="fare-val">單程 €8.80（上車前黃色打票機打戳印）</div>
+          <div class="fare-badge-col"><span class="pill-badge pill-badge-stamp">⚠️ 實體紙票必打卡</span> <span class="pill-badge pill-badge-buy">需邊境購票</span></div>
         </div>
 
         <div class="transit-timeline">
@@ -2487,11 +2541,11 @@
 
       <div class="details-box">
         <div class="fare-row">
-          <div>
-            <div class="fare-title">通票資訊 · 蔚藍海岸都會交通</div>
-            <div class="fare-desc">PASS SUD AZUR 南法通票感應卡（公車與輕軌全線通用）</div>
+          <div class="fare-info-col">
+            <div class="fare-title">通票資訊 · PASS SUD AZUR 蔚藍海岸通票</div>
+            <div class="fare-desc">持 PASS SUD AZUR 實體通票感應卡，搭公車與輕軌上車拍 Validé 柱感應搭乘</div>
           </div>
-          <div class="fare-val">持 PASS SUD AZUR 通票搭乘（上車感應）</div>
+          <div class="fare-badge-col"><span class="pill-badge pill-badge-direct">持通票搭乘·每趟感應</span></div>
         </div>
 
         <div class="transit-timeline">
@@ -2597,11 +2651,11 @@
 
       <div class="details-box">
         <div class="fare-row">
-          <div>
-            <div class="fare-title">通票資訊 · 蔚藍海岸鐵路與通票</div>
-            <div class="fare-desc">PASS SUD AZUR 蔚藍海岸通票（涵蓋 TER 尼斯↔自由城）</div>
+          <div class="fare-info-col">
+            <div class="fare-title">通票資訊 · PASS SUD AZUR 蔚藍海岸通票</div>
+            <div class="fare-desc">涵蓋 TER 鐵路區間，持 PASS SUD AZUR 通票感應卡直接進出站搭乘</div>
           </div>
-          <div class="fare-val">持 PASS SUD AZUR 通票搭乘（進出站免購票）</div>
+          <div class="fare-badge-col"><span class="pill-badge pill-badge-direct">持通票搭乘·自由進站</span></div>
         </div>
 
         <div class="transit-timeline">
@@ -2695,11 +2749,11 @@
 
       <div class="details-box">
         <div class="fare-row">
-          <div>
-            <div class="fare-title">通票資訊 · Lignes d'Azur 觀光公車</div>
-            <div class="fare-desc">PASS SUD AZUR 南法通票感應卡（涵蓋 15 號海濱公車）</div>
+          <div class="fare-info-col">
+            <div class="fare-title">通票資訊 · PASS SUD AZUR 蔚藍海岸通票</div>
+            <div class="fare-desc">涵蓋 15 號海濱公車，上車刷 PASS SUD AZUR 通票感應卡即可搭乘</div>
           </div>
-          <div class="fare-val">持 PASS SUD AZUR 通票搭乘（單程 €1.70 上車感應）</div>
+          <div class="fare-badge-col"><span class="pill-badge pill-badge-direct">持通票搭乘·上車感應</span></div>
         </div>
 
         <div class="transit-timeline">
