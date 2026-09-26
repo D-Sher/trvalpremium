@@ -1332,7 +1332,7 @@ def generate_routes_html():
       <div class="global-map-toggle">
         <span class="toggle-label">🌐 地圖視角：</span>
         <button class="global-mode-btn active" id="btn_global_gmap" onclick="setGlobalMapMode('gmap')">Google 即時嵌入</button>
-        <button class="global-mode-btn" id="btn_global_osm" onclick="setGlobalMapMode('osm')">Google 高清列印版</button>
+        <button class="global-mode-btn" id="btn_global_osm" onclick="setGlobalMapMode('osm')">OpenStreetMap 向量</button>
       </div>
     </div>
   </nav>
@@ -1394,7 +1394,7 @@ def generate_routes_html():
             <span class="tab-icon">🌐</span> Google Maps 即時互動視圖
           </button>
           <button type="button" class="map-tab-btn" id="tab_osm_{r['id']}" onclick="toggleMapTab('{r['id']}', 'osm')">
-            <span class="tab-icon">🗺️</span> Google 地圖高清列印視圖
+            <span class="tab-icon">🗺️</span> OpenStreetMap 向量地圖
           </button>
         </div>
         <a href="{r['gmaps_url']}" target="_blank" rel="noopener" class="map-ext-btn">
@@ -1413,12 +1413,12 @@ def generate_routes_html():
           referrerpolicy="no-referrer-when-downgrade">
         </iframe>
 
-        <!-- Leaflet Vector Map with Google Maps Tiles (Underneath, ready for print & high-res view) -->
+        <!-- Leaflet Vector Map with OSM Tiles (Underneath, ready for print & high-res view) -->
         <div id="map_{r['id']}" class="map-render"></div>
 
         <div class="map-credit" id="credit_{r['id']}">
           <span class="credit-text-gmap">Google 地圖即時大眾運輸導航指引 · 可縮放拖曳與點選班次</span>
-          <span class="credit-text-osm" style="display:none;">地圖底圖 &copy; Google Maps · 高解析度大眾運輸路線</span>
+          <span class="credit-text-osm" style="display:none;">地圖資料 &copy; OpenStreetMap · 路線規劃：{r['duration']}</span>
         </div>
       </div>
 
@@ -1511,9 +1511,9 @@ def generate_routes_html():
       }});
       window['leaflet_map_{r['id']}'] = map_{r['id']};
       
-      L.tileLayer('https://{{s}}.google.com/vt/lyrs=m&x={{x}}&y={{y}}&z={{z}}', {{
-        maxZoom: 20,
-        subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+      L.tileLayer('https://{{s}}.tile.openstreetmap.org/{{z}}/{{x}}/{{y}}.png', {{
+        maxZoom: 18,
+        attribution: 'OpenStreetMap'
       }}).addTo(map_{r['id']});
 
       var poly_{r['id']} = L.polyline(stops_{r['id']}, {{
