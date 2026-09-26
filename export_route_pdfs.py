@@ -359,7 +359,7 @@ def generate_single_route_html(r, temp_html_path):
 
   <div class="map-box">
     <div id="map"></div>
-    <div class="map-credit">地圖資料 &copy; OpenStreetMap | 航程規劃：{r['duration']}</div>
+    <div class="map-credit">地圖底圖 &copy; Google Maps · 路線規劃：{r['duration']}</div>
   </div>
 
   <div class="details-box">
@@ -425,8 +425,9 @@ def generate_single_route_html(r, temp_html_path):
     attributionControl: false
   }});
 
-  var tiles = L.tileLayer('https://{{s}}.tile.openstreetmap.org/{{z}}/{{x}}/{{y}}.png', {{
-    maxZoom: 18
+  var tiles = L.tileLayer('https://{{s}}.google.com/vt/lyrs=m&x={{x}}&y={{y}}&z={{z}}', {{
+    maxZoom: 20,
+    subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
   }}).addTo(map);
 
   var poly = L.polyline(stops, {{
