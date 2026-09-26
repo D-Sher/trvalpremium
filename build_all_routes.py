@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Generate comprehensive origin-to-destination route maps for all 17 transit legs
+Generate comprehensive origin-to-destination route maps for all 18 transit legs
 of the 15-day Northern Italy and French Riviera tour, referencing 1.pdf and 2.pdf.
 """
 
@@ -79,36 +79,64 @@ ROUTES_DATA = [
     {
         "id": "route_03",
         "day": "DAY 03",
-        "day_badge": "D03 · 藝文街區體驗",
-        "title": "斯卡拉歌劇院 至 蒙塔內利花園與威尼斯門",
-        "origin_name": "斯卡拉歌劇院（Teatro alla Scala）",
-        "origin_addr": "Piazza della Scala, 20121 Milano MI, 義大利",
-        "dest_name": "蒙塔內利花園 / 威尼斯門（Porta Venezia）",
-        "dest_addr": "Bastioni di Porta Venezia, 20121 Milano MI, 義大利",
+        "day_badge": "D03 · 復古電車漫遊花園",
+        "title": "斯卡拉大劇院 至 蒙塔內利花園（P.za Cavour）",
+        "origin_name": "斯卡拉大劇院（Teatro alla Scala）",
+        "origin_addr": "Piazza della Scala, 20121 Milano MI, 義大利（Via Manzoni 電車站牌）",
+        "dest_name": "蒙塔內利花園入口（Piazza Cavour 站）",
+        "dest_addr": "Piazza Cavour, 20121 Milano MI, 義大利（蒙塔內利花園西南拱門入口）",
         "dep_time": "14:30",
-        "arr_time": "14:42",
-        "duration": "12 分（6 站）",
+        "arr_time": "14:36",
+        "duration": "6 分（3 站直達）",
         "ticket_title": "票券與相關資訊",
-        "ticket_sub": "ATM Milano 經典復古黃色木質路面電車",
+        "ticket_sub": "ATM Milano 經典 1928 年 Carelli 黃色木造路面電車",
         "ticket_price": "米蘭通票 / 單程 €2.20",
         "operator": "米蘭大眾運輸 ATM",
-        "operator_note": "搭乘建於 1928 年的 Carelli 復古電車，木質車廂極具歷史風情",
+        "operator_note": "於劇院前搭乘復古路面電車 1 號沿 Via Manzoni 直行至 P.za Cavour（下車前一站：Pisoni）。出站穿過十九世紀拱門即入蒙塔內利花園，漫步杜尼亞尼宮綠地，傍晚穿越花園至威尼斯門街區晚餐",
         "transit_type": "tram",
         "transit_badge": "🚊 Tram 1（往 Greco Rovereto）",
         "line_color": "#e67e22",
-        "gmaps_url": "https://www.google.com/maps/dir/?api=1&origin=Teatro+alla+Scala&destination=Giardini+Indro+Montanelli+Milano&travelmode=transit",
-        "alert": None,
+        "gmaps_url": "https://www.google.com/maps/dir/?api=1&origin=Teatro+alla+Scala,+Milano&destination=Piazza+Cavour,+Milano&travelmode=transit",
+        "alert": "下車提示：前一站為 Pisoni，下一站即為 Piazza Cavour 站，下車正對古典拱門入口與杜尼亞尼宮。",
         "stops": [
-            {"time": "14:30", "name": "Manzoni Scala", "coord": [45.4674, 9.1898], "is_start": True},
-            {"time": "14:32", "name": "Montenapoleone M3", "coord": [45.4701, 9.1928]},
-            {"time": "14:34", "name": "Piazza Cavour", "coord": [45.4725, 9.1942]},
-            {"time": "14:36", "name": "Turati M3", "coord": [45.4750, 9.1948]},
-            {"time": "14:39", "name": "P.za Repubblica M3", "coord": [45.4786, 9.1970]},
-            {"time": "14:42", "name": "P.ta Venezia M1（花園入口）", "coord": [45.4745, 9.2052], "is_end": True}
+            {"time": "14:30", "name": "Teatro alla Scala（斯卡拉大劇院前）", "coord": [45.4674, 9.1898], "is_start": True},
+            {"time": "14:32", "name": "Montenapoleone M3（蒙特拿破崙街口）", "coord": [45.4699, 9.1926]},
+            {"time": "14:34", "name": "Manzoni / Pisoni（下車前一站提示）", "coord": [45.4712, 9.1936]},
+            {"time": "14:36", "name": "Piazza Cavour（下車即達蒙塔內利花園拱門）", "coord": [45.4727, 9.1945], "is_end": True}
         ]
     },
     {
         "id": "route_04",
+        "day": "DAY 03",
+        "day_badge": "D03 · 晚餐後從容返回飯店",
+        "title": "威尼斯門 至 米蘭中央車站 / Hilton Milan",
+        "origin_name": "威尼斯門站（Porta Venezia M1）",
+        "origin_addr": "Bastioni di Porta Venezia / Viale Vittorio Veneto, 20124 Milano MI, 義大利",
+        "dest_name": "米蘭中央車站 / Hilton Milan（Via Filzi 站）",
+        "dest_addr": "Via Fabio Filzi / Via Pirelli, 20124 Milano MI, 義大利（步行 2 分鐘直達 Hilton Milan）",
+        "dep_time": "20:30",
+        "arr_time": "20:38",
+        "duration": "8 分（4 站直達）",
+        "ticket_title": "票券與相關資訊",
+        "ticket_sub": "ATM Milano 路面輕軌電車 9 號",
+        "ticket_price": "米蘭通票 / 單程 €2.20",
+        "operator": "米蘭大眾運輸 ATM",
+        "operator_note": "於威尼斯門街區晚餐（FRESCA Pasta Club）後，步行至 Viale Vittorio Veneto 搭乘輕軌 9 號直達中央車站西側（下車前一站：Filzi / Pirelli），步行 2 分鐘從容返抵 Hilton Milan 飯店休息",
+        "transit_type": "tram",
+        "transit_badge": "🚊 Tram 9（往 Stazione Centrale）",
+        "line_color": "#2e7d32",
+        "gmaps_url": "https://www.google.com/maps/dir/?api=1&origin=Porta+Venezia,+Milano&destination=Hilton+Milan,+Via+Luigi+Galvani,+Milano&travelmode=transit",
+        "alert": "乘車提示：搭乘 Tram 9 往 Stazione Centrale 方向，於 Via Filzi / Via Pirelli 站下車最靠近 Hilton 飯店。",
+        "stops": [
+            {"time": "20:30", "name": "P.ta Venezia M1（威尼斯門站）", "coord": [45.4745, 9.2052], "is_start": True},
+            {"time": "20:32", "name": "V.le Vittorio Veneto", "coord": [45.4771, 9.2028]},
+            {"time": "20:34", "name": "P.za Repubblica M3", "coord": [45.4786, 9.1970]},
+            {"time": "20:36", "name": "Filzi / Pirelli（下車前一站提示）", "coord": [45.4831, 9.2008]},
+            {"time": "20:38", "name": "Stazione Centrale M2 M3 / Via Filzi（Hilton 門口）", "coord": [45.4855, 9.2025], "is_end": True}
+        ]
+    },
+    {
+        "id": "route_05",
         "day": "DAY 04",
         "day_badge": "D04 · 貝爾加莫中世紀慢遊",
         "title": "米蘭中央車站 至 貝爾加莫車站",
@@ -138,7 +166,7 @@ ROUTES_DATA = [
         ]
     },
     {
-        "id": "route_05",
+        "id": "route_06",
         "day": "DAY 04",
         "day_badge": "D04 · 貝爾加莫登山纜車",
         "title": "貝爾加莫車站 至 貝爾加莫上城老廣場",
@@ -169,7 +197,7 @@ ROUTES_DATA = [
         ]
     },
     {
-        "id": "route_06",
+        "id": "route_07",
         "day": "DAY 05",
         "day_badge": "D05 · 科莫湖雙城慢遊",
         "title": "米蘭中央車站 至 瓦倫納-埃西諾車站",
@@ -200,7 +228,7 @@ ROUTES_DATA = [
         ]
     },
     {
-        "id": "route_07",
+        "id": "route_08",
         "day": "DAY 05",
         "day_badge": "D05 · 科莫湖跨湖渡輪",
         "title": "瓦倫納碼頭 至 貝拉焦碼頭",
@@ -228,7 +256,7 @@ ROUTES_DATA = [
         ]
     },
     {
-        "id": "route_08",
+        "id": "route_09",
         "day": "DAY 06",
         "day_badge": "D06 · 南下熱那亞王子廣場",
         "title": "米蘭中央車站 至 熱那亞王子廣場車站",
@@ -259,7 +287,7 @@ ROUTES_DATA = [
         ]
     },
     {
-        "id": "route_09",
+        "id": "route_10",
         "day": "DAY 07",
         "day_badge": "D07 · 熱那亞地鐵市區巡禮",
         "title": "熱那亞王子廣場 至 法拉利廣場與總督宮",
@@ -289,7 +317,7 @@ ROUTES_DATA = [
         ]
     },
     {
-        "id": "route_10",
+        "id": "route_11",
         "day": "DAY 08",
         "day_badge": "D08 · 前往菲諾港門戶",
         "title": "熱那亞王子廣場 至 聖瑪格麗塔利古雷",
@@ -317,7 +345,7 @@ ROUTES_DATA = [
         ]
     },
     {
-        "id": "route_11",
+        "id": "route_12",
         "day": "DAY 08",
         "day_badge": "D08 · 蔚藍海岸全景公車",
         "title": "聖瑪格麗塔車站 至 菲諾港老港廣場",
@@ -347,7 +375,7 @@ ROUTES_DATA = [
         ]
     },
     {
-        "id": "route_12",
+        "id": "route_13",
         "day": "DAY 09",
         "day_badge": "D09 · 跨越義法邊境第一段",
         "title": "熱那亞王子廣場 至 文提米利亞邊境車站",
@@ -381,7 +409,7 @@ ROUTES_DATA = [
         ]
     },
     {
-        "id": "route_13",
+        "id": "route_14",
         "day": "DAY 09",
         "day_badge": "D09 · 跨國雙層全景景觀列車",
         "title": "文提米利亞 至 尼斯城站",
@@ -417,7 +445,7 @@ ROUTES_DATA = [
         ]
     },
     {
-        "id": "route_14",
+        "id": "route_15",
         "day": "DAY 10",
         "day_badge": "D10 · 尼斯都會輕軌探索",
         "title": "AC Hotel Nice 至 尼斯舊城與薩萊亞花市",
@@ -448,7 +476,7 @@ ROUTES_DATA = [
         ]
     },
     {
-        "id": "route_15",
+        "id": "route_16",
         "day": "DAY 11",
         "day_badge": "D11 · 濱海自由城半日慢遊",
         "title": "尼斯城站 至 濱海自由城",
@@ -476,7 +504,7 @@ ROUTES_DATA = [
         ]
     },
     {
-        "id": "route_16",
+        "id": "route_17",
         "day": "DAY 12",
         "day_badge": "D12 · 費拉角貴族莊園巡禮",
         "title": "尼斯舊港 至 羅斯柴爾德花園別墅",
@@ -507,7 +535,7 @@ ROUTES_DATA = [
         ]
     },
     {
-        "id": "route_17",
+        "id": "route_18",
         "day": "DAY 14",
         "day_badge": "D14 · 平安歸途特快輕軌",
         "title": "AC Hotel Nice 至 尼斯蔚藍海岸機場第二航廈",
@@ -539,6 +567,27 @@ ROUTES_DATA = [
         ]
     }
 ]
+
+ROUTE_PDF_MAPPING = {
+    "route_01": "01_D02_MXP_至_米蘭中央車站.pdf",
+    "route_02": "02_D03_米蘭中央車站_至_米蘭大教堂.pdf",
+    "route_03": "03_D03_斯卡拉大劇院_至_蒙塔內利花園.pdf",
+    "route_04": "04_D03_威尼斯門_至_米蘭中央車站Hilton.pdf",
+    "route_05": "05_D04_米蘭中央車站_至_貝爾加莫車站.pdf",
+    "route_06": "06_D04_貝爾加莫下城_至_上城老廣場纜車.pdf",
+    "route_07": "07_D05_米蘭中央車站_至_瓦倫納科莫湖.pdf",
+    "route_08": "08_D05_瓦倫納碼頭_至_貝拉焦跨湖渡輪.pdf",
+    "route_09": "09_D06_米蘭中央車站_至_熱那亞王子廣場.pdf",
+    "route_10": "10_D07_熱那亞王子廣場_至_法拉利廣場地鐵.pdf",
+    "route_11": "11_D08_熱那亞王子廣場_至_聖瑪格麗塔.pdf",
+    "route_12": "12_D08_聖瑪格麗塔_至_菲諾港782公車.pdf",
+    "route_13": "13_D09_熱那亞王子廣場_至_文提米利亞邊境.pdf",
+    "route_14": "14_D09_文提米利亞_至_尼斯城站TER雙層列車.pdf",
+    "route_15": "15_D10_ACHotel_至_尼斯舊城花市輕軌L2.pdf",
+    "route_16": "16_D11_尼斯城站_至_濱海自由城TER.pdf",
+    "route_17": "17_D12_尼斯舊港_至_費拉角別墅15號公車.pdf",
+    "route_18": "18_D14_ACHotel_至_尼斯機場T2直達輕軌.pdf",
+}
 
 def generate_routes_html():
     """Build the interactive, printable routes.html web application."""
@@ -847,8 +896,8 @@ def generate_routes_html():
       border-color: #1a73e8;
     }}
     .t-pin.end {{
-      border-color: #d93025;
-      background: #d93025;
+      border-color: var(--active-line-color, #d93025);
+      background: var(--active-line-color, #d93025);
     }}
     .t-pin.end::after {{
       content: '';
@@ -1001,6 +1050,7 @@ def generate_routes_html():
       display: inline-flex;
       align-items: center;
       gap: 6px;
+      text-decoration: none;
     }}
     .btn-print-one:hover {{
       background: #f1f3f4;
@@ -1048,10 +1098,10 @@ def generate_routes_html():
   <header class="top-app-header">
     <div class="header-inner">
       <div class="brand-title">
-        <span>TRAVEL EURO</span> · 全程起點到終點路線地圖指引
+        <span>TRAVEL EURO</span> · 全程起點到終點路線地圖指引 (18 條 Transit)
       </div>
       <div class="header-actions">
-        <a href="route/all_routes.pdf" download class="nav-btn nav-btn-gold">📥 下載 17 條路線 PDF 合輯</a>
+        <a href="route/all_routes.pdf" download class="nav-btn nav-btn-gold">📥 下載 18 條路線 PDF 合輯</a>
         <a href="print-handbook.html" class="nav-btn nav-btn-outline">📖 隨身手冊</a>
         <a href="index.html" class="nav-btn nav-btn-outline">🌐 首頁</a>
         <button onclick="window.print()" class="nav-btn nav-btn-outline">🖨️ 列印全書</button>
@@ -1062,8 +1112,8 @@ def generate_routes_html():
   <!-- Filter Chips -->
   <nav class="filter-bar">
     <div class="filter-inner">
-      <button class="filter-chip active" onclick="filterRoutes('all', this)">全部 17 條路線</button>
-      <button class="filter-chip" onclick="filterRoutes('milan', this)">D02–03 米蘭都會 (3)</button>
+      <button class="filter-chip active" onclick="filterRoutes('all', this)">全部 18 條路線</button>
+      <button class="filter-chip" onclick="filterRoutes('milan', this)">D02–03 米蘭都會 (4)</button>
       <button class="filter-chip" onclick="filterRoutes('bergamo', this)">D04 貝爾加莫 (2)</button>
       <button class="filter-chip" onclick="filterRoutes('como', this)">D05 科莫湖雙城 (2)</button>
       <button class="filter-chip" onclick="filterRoutes('genova', this)">D06–08 熱那亞與菲諾港 (4)</button>
@@ -1075,26 +1125,6 @@ def generate_routes_html():
   <!-- Main Content Container -->
   <main class="content-container" id="routes-wrapper">
 """
-
-    ROUTE_PDF_MAPPING = {
-        "route_01": "01_D02_MXP_至_米蘭中央車站.pdf",
-        "route_02": "02_D03_米蘭中央車站_至_米蘭大教堂.pdf",
-        "route_03": "03_D03_斯卡拉歌劇院_至_威尼斯門花園.pdf",
-        "route_04": "04_D04_米蘭中央車站_至_貝爾加莫車站.pdf",
-        "route_05": "05_D04_貝爾加莫下城_至_上城老廣場纜車.pdf",
-        "route_06": "06_D05_米蘭中央車站_至_瓦倫納科莫湖.pdf",
-        "route_07": "07_D05_瓦倫納碼頭_至_貝拉焦跨湖渡輪.pdf",
-        "route_08": "08_D06_米蘭中央車站_至_熱那亞王子廣場.pdf",
-        "route_09": "09_D07_熱那亞王子廣場_至_法拉利廣場地鐵.pdf",
-        "route_10": "10_D08_熱那亞王子廣場_至_聖瑪格麗塔.pdf",
-        "route_11": "11_D08_聖瑪格麗塔_至_菲諾港782公車.pdf",
-        "route_12": "12_D09_熱那亞王子廣場_至_文提米利亞邊境.pdf",
-        "route_13": "13_D09_文提米利亞_至_尼斯城站TER雙層列車.pdf",
-        "route_14": "14_D10_ACHotel_至_尼斯舊城花市輕軌L2.pdf",
-        "route_15": "15_D11_尼斯城站_至_濱海自由城TER.pdf",
-        "route_16": "16_D12_尼斯舊港_至_費拉角別墅15號公車.pdf",
-        "route_17": "17_D14_ACHotel_至_尼斯機場T2直達輕軌.pdf",
-    }
 
     for r in ROUTES_DATA:
         alert_html = f'<div class="transit-alert">{r["alert"]}</div>' if r.get("alert") else ""
@@ -1243,7 +1273,7 @@ def generate_routes_html():
       }}).addTo(map_{r['id']});
 
       map_{r['id']}.fitBounds(poly_{r['id']}.getBounds(), {{
-        padding: [30, 30]
+        padding: [35, 35], maxZoom: 15
       }});
 
       // Origin Pin

@@ -419,7 +419,7 @@ def generate_single_route_html(r, temp_html_path):
   }}).addTo(map);
 
   map.fitBounds(poly.getBounds(), {{
-    padding: [35, 35]
+    padding: [40, 40], maxZoom: 15
   }});
 
   // Start Marker
@@ -457,16 +457,16 @@ def generate_single_route_html(r, temp_html_path):
     with open(temp_html_path, "w", encoding="utf-8") as f:
         f.write(html)
 
+from build_all_routes import ROUTES_DATA, ROUTE_PDF_MAPPING
+
 def export_all():
     generated_pdfs = []
     print(f"Total routes to export: {len(ROUTES_DATA)}")
 
     for idx, r in enumerate(ROUTES_DATA):
         num_str = f"{idx+1:02d}"
-        filename = f"{num_str}_{r['id']}.pdf"
-        # User-friendly descriptive name
-        slug = r['id'].replace('route_', '')
-        pdf_path = os.path.join(OUTPUT_DIR, f"{num_str}_{slug}.pdf")
+        pdf_name = ROUTE_PDF_MAPPING.get(r['id'], f"{num_str}_{r['id']}.pdf")
+        pdf_path = os.path.join(OUTPUT_DIR, pdf_name)
         temp_html = os.path.join(SCRATCH_DIR, f"temp_{num_str}.html")
 
         generate_single_route_html(r, temp_html)
