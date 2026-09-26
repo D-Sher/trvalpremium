@@ -634,33 +634,43 @@
       line-height: 1.28;
     }
 
-    /* 第 07 頁 (DAY 01 & 02) 與 第 11 頁 (DAY 06 & 07) 舒展與大圖排版微調 */
+    /* 第 07 頁 (DAY 01 & 02)、第 11 頁 (DAY 06 & 07)、第 13 頁 (DAY 09 & 10) 與 第 14 頁 (DAY 11 & 12) 舒展與大圖排版微調 */
     .p07-page .galilee-split-day-block:first-child,
-    .p11-page .galilee-split-day-block:first-child {
+    .p11-page .galilee-split-day-block:first-child,
+    .p13-page .galilee-split-day-block:first-child,
+    .p14-page .galilee-split-day-block:first-child {
       margin-bottom: 2.5mm;
       padding-bottom: 2.2mm;
     }
 
     .p07-page .galilee-split-content,
-    .p11-page .galilee-split-content {
+    .p11-page .galilee-split-content,
+    .p13-page .galilee-split-content,
+    .p14-page .galilee-split-content {
       margin-bottom: 1.0mm;
       gap: 3.2mm;
     }
 
     .p07-page .galilee-split-content img,
-    .p11-page .galilee-split-content img {
+    .p11-page .galilee-split-content img,
+    .p13-page .galilee-split-content img,
+    .p14-page .galilee-split-content img {
       width: 48mm;
       height: 25.5mm;
     }
 
     .p07-page .galilee-split-text,
-    .p11-page .galilee-split-text {
+    .p11-page .galilee-split-text,
+    .p13-page .galilee-split-text,
+    .p14-page .galilee-split-text {
       font-size: 8.0pt;
       line-height: 1.45;
     }
 
     .p07-page .galilee-split-day-block .galilee-spec-footer,
-    .p11-page .galilee-split-day-block .galilee-spec-footer {
+    .p11-page .galilee-split-day-block .galilee-spec-footer,
+    .p13-page .galilee-split-day-block .galilee-spec-footer,
+    .p14-page .galilee-split-day-block .galilee-spec-footer {
       margin-top: 1.2mm;
       padding-top: 1.0mm;
     }
@@ -673,6 +683,21 @@
     /* 第 10 頁 (DAY 05 科莫湖) 舒展與大圖排版微調 */
     .p10-page .galilee-photo-item img {
       height: 48mm;
+    }
+
+    /* 第 12 頁 (DAY 08 菲諾港) 舒展與大圖排版微調 */
+    .p12-page .galilee-photo-hero img {
+      height: 44.5mm !important;
+    }
+
+    /* 第 15 頁 (DAY 13 尼斯最後慢活日) 舒展與大圖排版微調 */
+    .p15-page .galilee-photo-item img {
+      height: 46.5mm;
+    }
+
+    /* 第 16 頁 (DAY 14–15 平安歸途) 舒展與大圖排版微調 */
+    .p16-page .galilee-photo-hero img {
+      height: 42.5mm !important;
     }
 
     /* =========================================================================
@@ -3310,7 +3335,7 @@
     <!-- =========================================================================
          PAGE 12: DAY 08 · 菲諾港一日慢遊 (Enlarged Photos Layout)
          ========================================================================= -->
-    <div class="a5-page">
+    <div class="a5-page p12-page">
       <div class="page-header">
         <span class="page-header-title">DAY 08 · PORTOFINO</span>
         <span>菲諾港一日慢遊</span>
@@ -3407,7 +3432,7 @@
         <!-- 全景菲諾港大景橫幅相片 (Panoramic Hero Photo) -->
         <div class="galilee-photo-hero" style="position: relative; margin-bottom: 1.4mm;">
           <img src="portofinomain.webp" alt="全景菲諾港：由全景步道俯瞰粉彩海灣與地中海蔚藍絕景"
-            style="height: 38mm; width: 100%; object-fit: cover; border-radius: 4px; box-shadow: 0 2px 7px rgba(0,0,0,0.1); border: 1px solid rgba(0,0,0,0.08);">
+            style="height: 44.5mm; width: 100%; object-fit: cover; border-radius: 4px; box-shadow: 0 2px 7px rgba(0,0,0,0.1); border: 1px solid rgba(0,0,0,0.08);">
           <div
             style="position: absolute; bottom: 2mm; right: 2.5mm; background: rgba(0,0,0,0.65); color: #fff; font-size: 6.6pt; padding: 1px 6.5px; border-radius: 3px; backdrop-filter: blur(2px);">
             ✦ 全景俯瞰 Punto Panoramico · Portofino
@@ -3420,7 +3445,7 @@
             <span class="en">Portofino & Punto Panoramico</span>
           </div>
           <div class="galilee-spot-desc"
-            style="font-size: 8.2pt; line-height: 1.42; color: #1a202c; text-align: justify;">
+            style="font-size: 8.2pt; line-height: 1.46; color: #1a202c; text-align: justify;">
             09:47 由 Genova Piazza Principe 搭乘城際快車 IC 657（一等艙）出發，沿蔚藍海岸線南下，10:14 抵達海濱勝地 Santa Margherita Ligure。火車站前轉搭 782
             號景觀公車沿著蜿蜒海岸山壁直達 Portofino（菲諾港）。漫步環繞天然海灣的鵝黃、粉橘相間老屋群，登上坡度極平緩的景觀步道「Punto
             Panoramico」，居高臨下遠眺整個馬蹄形港灣、碧綠海水與靜泊其間的奢華遊艇全景。午後搭乘 782 公車返回聖瑪格麗塔海岸小憩喝下午茶，搭乘 15:46 的 IC 674 一等艙於 16:14 返抵熱那亞
@@ -3431,18 +3456,17 @@
         <!-- 美食推薦 -->
         <div class="galilee-sub-feature-box" style="margin-bottom: 1.0mm;">
           <div class="galilee-sub-feature-title" style="font-size: 8.4pt;">
-            <span>🍷</span> 菲諾港海鮮墨魚麵與利古里亞白葡萄酒 Fregola & Frutti di mare
+            <span>🍷</span> 菲諾港海鮮墨魚麵與利古里亞 DOC Vermentino 白葡萄酒
           </div>
-          <div style="font-size: 7.5pt; line-height: 1.34;">
-            地中海海港的極致鮮甜；在海灣第一排景觀餐廳（如 DaV Mare 或 Trattoria Tripoli）享受愜意奢華午宴，沉醉於蔚藍海灣與奢華帆船的悠閒氛圍。
+          <div style="font-size: 7.5pt; line-height: 1.36;">
+            品味利古里亞海港的極致鮮甜；在海灣第一排景觀餐廳（如 DaV Mare 或 Trattoria Tripoli）悠享奢華午宴，隨後漫步港灣小廣場（Piazzetta）品嚐手工義式冰淇淋 Gelato，沉醉於蔚藍海灣與帆船的悠閒氛圍。
           </div>
         </div>
 
         <!-- 慢遊備忘指引 -->
         <div
-          style="background: #fdfbf7; border-left: 3px solid var(--galilee-gold); padding: 0.8mm 2.2mm; border-radius: 0 3px 3px 0; font-size: 6.8pt; line-height: 1.32; color: #2d3748; margin-bottom: 1.1mm;">
-          <strong>782 公車乘車叮嚀：</strong>Santa Margherita 站前 782 公車車程約 15 分鐘，去程建議坐右側欣賞海岸山壁與海灣；回程持 MetDaily 一日票（APP
-          啟用）直接感應上車。全景步道皆為平坦磚石緩坡，適合長輩慢步漫遊。
+          style="background: #fdfbf7; border-left: 3px solid var(--galilee-gold); padding: 1.0mm 2.2mm; border-radius: 0 3px 3px 0; font-size: 7.0pt; line-height: 1.35; color: #2d3748; margin-bottom: 0.8mm;">
+          <strong>782 公車與步道叮嚀：</strong>Santa Margherita 站前 782 公車車程約 15 分鐘，去程建議坐右側靠窗，沿途飽覽 Paraggi 綠寶石海灣；回程持 MetDaily 一日票（APP 啟用）感應上車。全景步道皆為平緩磚石緩坡且設有林蔭海景長椅，長輩慢步漫遊極度舒適。
         </div>
 
         <div class="galilee-spec-footer">
@@ -3487,7 +3511,7 @@
     <!-- =========================================================================
          PAGE 13: DAY 09 & DAY 10 (Matching index.html)
          ========================================================================= -->
-    <div class="a5-page">
+    <div class="a5-page p13-page">
       <div class="page-header">
         <span class="page-header-title">DAY 09 & DAY 10</span>
         <span>跨越國境 · 進駐尼斯</span>
@@ -3633,7 +3657,7 @@
                   </svg></div>
                 <div class="galilee-t-time">09:30</div>
                 <div class="galilee-t-label">輕軌 L2</div>
-                <div class="galilee-t-dur">直達歌劇院站</div>
+                <div class="galilee-t-dur">直達舊城商圈</div>
                 <span class="galilee-t-station-cue">起：Magnan</span>
               </div>
               <div class="galilee-timeline-node">
@@ -3737,7 +3761,7 @@
     <!-- =========================================================================
          PAGE 14: DAY 11 & DAY 12 (Matching index.html)
          ========================================================================= -->
-    <div class="a5-page">
+    <div class="a5-page p14-page">
       <div class="page-header">
         <span class="page-header-title">DAY 11 & DAY 12</span>
         <span>海灣古城 · 貴族莊園</span>
@@ -3997,7 +4021,7 @@
     <!-- =========================================================================
          PAGE 15: DAY 13 · 尼斯最後慢活日 (Enlarged Photos Layout)
          ========================================================================= -->
-    <div class="a5-page">
+    <div class="a5-page p15-page">
       <div class="page-header">
         <span class="page-header-title">DAY 13 · NICE SLOW LIVING</span>
         <span>尼斯最後慢活日</span>
@@ -4081,15 +4105,15 @@
           </div>
         </div>
 
-        <!-- 顯著放大照片排版 (53mm 高度) -->
+        <!-- 顯著放大照片排版 (46.5mm 高度) -->
         <div class="galilee-photo-grid-2">
           <div class="galilee-photo-item">
             <img src="nice-promenade.webp" alt="英國人散步大道的最後一個黃昏">
             <div class="galilee-spot-heading">
-              <span>★ 盎格魯大道藍色座椅與漫步</span>
+              <span>★ 盎格魯大道藍椅漫步</span>
               <span class="en">Promenade des Anglais</span>
             </div>
-            <div class="galilee-spot-desc">
+            <div class="galilee-spot-desc" style="line-height: 1.45;">
               早餐後按照自己的舒服節奏出發，坐在 Promenade des Anglais 標誌性的藍色座椅（Chaises Bleues）吹海風放空，看地中海浪花拍岸，品味南法無拘無束的悠然步調與純淨陽光。
             </div>
           </div>
@@ -4097,10 +4121,10 @@
           <div class="galilee-photo-item">
             <img src="day13-nice-shopping.webp" alt="舊城採買香氛與南法紀念品">
             <div class="galilee-spot-heading">
-              <span>▲ 舊城香氛採買與提早打包</span>
-              <span class="en">Fragonard & Packaging</span>
+              <span>▲ 舊城香氛採買打包</span>
+              <span class="en">Fragonard & Shopping</span>
             </div>
-            <div class="galilee-spot-desc">
+            <div class="galilee-spot-desc" style="line-height: 1.45;">
               漫步馬賽納廣場周邊或舊城，採買正宗南法花宮娜香氛（Fragonard）、薰衣草手工皂與 A L'Olivier 特產橄欖油。午後回飯店小憩並提前打包行李免退房慌亂，傍晚在露台欣賞染金天使灣夕陽。
             </div>
           </div>
@@ -4109,9 +4133,12 @@
         <!-- 伴手禮指南 -->
         <div class="galilee-sub-feature-box">
           <div class="galilee-sub-feature-title">
-            <span>🎁</span> 南法必買香氛與橄欖油伴手禮精選
+            <span>🎁</span> 南法必買香氛與行李打包備忘指引
           </div>
-          <div>格拉斯花宮娜香氛系列、馬賽天然純植物薰衣草香皂、百年名店 A L'Olivier 頂級初榨橄欖油；飯店房內從容打包，無後顧之憂享受最後蔚藍之夜。</div>
+          <div style="font-size: 7.4pt; line-height: 1.40;">
+            <strong>必買伴手禮：</strong>格拉斯花宮娜香氛系列、馬賽天然純植物薰衣草香皂、百年名店 A L'Olivier 頂級初榨橄欖油。<br>
+            <strong>行李打包叮嚀：</strong>液體類伴手禮（橄欖油、香水）請務必以夾鏈袋或衣物妥善包覆放入大託運行李箱；下午留足時間於飯店海景房從容整理行李與海關退稅單據，傍晚漫步無後顧之憂。
+          </div>
         </div>
 
         <div class="galilee-spec-footer">
@@ -4156,7 +4183,7 @@
     <!-- =========================================================================
          PAGE 16: DAY 14–15 · 平安歸途 (Matching index.html)
          ========================================================================= -->
-    <div class="a5-page">
+    <div class="a5-page p16-page">
       <div class="page-header">
         <span class="page-header-title">DAY 14–15 · RETURN HOME</span>
         <span>尼斯 ➔ 杜拜 ➔ 台北平安歸途</span>
@@ -4248,10 +4275,10 @@
 
         <!-- 放大橫幅照片展示 -->
         <div class="galilee-photo-hero">
-          <img src="day14-nice-departure.webp" alt="告別蔚藍海岸，午後從尼斯起飛" style="height: 38mm;">
+          <img src="day14-nice-departure.webp" alt="告別蔚藍海岸，午後從尼斯起飛" style="height: 42.5mm;">
         </div>
 
-        <div style="font-size: 8.2pt; line-height: 1.42; color: #222; margin-bottom: 2mm; text-align: justify;">
+        <div style="font-size: 8.2pt; line-height: 1.45; color: #222; margin-bottom: 1.4mm; text-align: justify;">
           <strong>★ 告別蔚藍海岸與 PABLO 電子退稅：</strong>上午於飯店悠閒享用早餐，10:30 搭乘計程車或輕軌 L2 直達尼斯機場第二航廈（Terminal 2，約 15 分鐘車程）。前往海關
           PABLO 機台感應退稅條碼完成驗證，隨後至阿聯酋航空櫃檯託運行李並領取登機證。<br>
           <strong>★ 飛航杜拜平安返抵國門：</strong>14:30 搭乘阿聯酋航空 EK078 飛往杜拜（DXB），23:35 抵達 Terminal 3 舒適轉機。10/29 03:40 轉搭 EK366
@@ -4260,14 +4287,15 @@
 
         <!-- 平安歸途叮嚀 -->
         <div class="galilee-sub-feature-box"
-          style="margin-bottom: 2mm; padding: 2.2mm 3.2mm; background: #fdfbf7; border-left: 3px solid var(--galilee-gold); border-top: 1px solid #ebd9b6; border-right: 1px solid #ebd9b6; border-bottom: 1px solid #ebd9b6; border-radius: 0 4px 4px 0;">
+          style="margin-bottom: 1.2mm; padding: 2.0mm 3.2mm; background: #fdfbf7; border-left: 3px solid var(--galilee-gold); border-top: 1px solid #ebd9b6; border-right: 1px solid #ebd9b6; border-bottom: 1px solid #ebd9b6; border-radius: 0 4px 4px 0;">
           <div class="galilee-sub-feature-title"
-            style="color: #b8862d; font-size: 8.8pt; margin-bottom: 1.2mm; display: flex; align-items: center; gap: 5px;">
+            style="color: #b8862d; font-size: 8.8pt; margin-bottom: 1.0mm; display: flex; align-items: center; gap: 5px;">
             <span>✈️</span> <strong>✦ 平安歸途叮嚀 · BON VOYAGE DE RETOUR ✦</strong>
           </div>
-          <div style="font-size: 8.1pt; line-height: 1.52; color: #2d3748;">
-            • <strong>機場退稅：</strong>返程請預留 3 小時抵達尼斯蔚藍海岸機場（NCE T2），於托運前至海關 PABLO 機感應退稅單。<br>
-            • <strong>舒適飛行：</strong>機上長途飛行請多補充水分、定時活動伸展雙腿，伴著南法暖陽與海風回憶，安度平穩萬里歸途。
+          <div style="font-size: 8.0pt; line-height: 1.46; color: #2d3748;">
+            • <strong>機場退稅：</strong>返程請預留 3 小時抵達尼斯蔚藍海岸機場（NCE T2），於托運前至海關 PABLO 機掃描感應退稅單。<br>
+            • <strong>隨身證件：</strong>護照、登機證、驗證後之退稅單據與隨身常備藥品請隨身妥善保管，託運行李掌握 25kg 額度。<br>
+            • <strong>舒適飛行：</strong>長途航程請多補充水分、定時活動伸展雙腿，伴著南法暖陽與海風回憶，安度平穩萬里歸途。
           </div>
         </div>
 
