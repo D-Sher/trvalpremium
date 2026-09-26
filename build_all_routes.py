@@ -739,6 +739,13 @@ def generate_routes_html():
       max-width: 1100px;
       margin: 0 auto;
       display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }}
+    .filter-group {{
+      display: flex;
       gap: 8px;
       overflow-x: auto;
       padding-bottom: 2px;
@@ -759,6 +766,37 @@ def generate_routes_html():
       background: var(--navy-dark);
       color: #fff;
       border-color: var(--navy-dark);
+    }}
+    .global-map-toggle {{
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background: #f1f3f4;
+      border: 1px solid #dadce0;
+      padding: 3px 6px;
+      border-radius: 20px;
+    }}
+    .toggle-label {{
+      font-size: 11px;
+      font-weight: 700;
+      color: #5f6368;
+      padding-left: 6px;
+    }}
+    .global-mode-btn {{
+      border: none;
+      background: transparent;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 14px;
+      cursor: pointer;
+      color: #5f6368;
+      transition: all 0.15s ease;
+    }}
+    .global-mode-btn.active {{
+      background: #1a73e8;
+      color: #fff;
+      box-shadow: 0 1px 3px rgba(26,115,232,0.3);
     }}
 
     /* Main Container */
@@ -850,31 +888,112 @@ def generate_routes_html():
       margin-top: 4px;
     }}
 
-    /* Map Box */
+    /* Map Box & Toolbar */
+    .map-toolbar {{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f8f9fa;
+      border: 1px solid #dadce0;
+      border-bottom: none;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      padding: 6px 12px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }}
+    .map-tab-group {{
+      display: flex;
+      gap: 6px;
+    }}
+    .map-tab-btn {{
+      background: #fff;
+      border: 1px solid #dadce0;
+      color: #5f6368;
+      padding: 5px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.15s ease;
+    }}
+    .map-tab-btn:hover {{
+      background: #f1f3f4;
+      color: #202124;
+    }}
+    .map-tab-btn.active {{
+      background: #1a73e8;
+      border-color: #1a73e8;
+      color: #fff;
+      box-shadow: 0 1px 3px rgba(26,115,232,0.3);
+    }}
+    .map-ext-btn {{
+      color: #1a73e8;
+      font-weight: 600;
+      font-size: 12px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 8px;
+      border-radius: 4px;
+      transition: background 0.15s ease;
+    }}
+    .map-ext-btn:hover {{
+      background: #e8f0fe;
+      text-decoration: underline;
+    }}
+
     .map-box {{
       width: 100%;
       height: 380px;
-      border-radius: 8px;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
       overflow: hidden;
       border: 1px solid #dadce0;
       margin-bottom: 16px;
       position: relative;
+      background: #e8eaed;
     }}
-    .map-render {{
+    .gmap-embed-frame {{
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
+      border: none;
+      z-index: 2;
+      display: block;
+    }}
+    .map-render {{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }}
+    .map-box.show-osm .gmap-embed-frame {{
+      display: none;
+    }}
+    .map-box.show-osm .map-render {{
+      z-index: 3;
     }}
     .map-credit {{
       position: absolute;
       bottom: 8px;
       right: 8px;
-      background: rgba(255,255,255,0.9);
+      background: rgba(255,255,255,0.92);
       padding: 3px 8px;
       border-radius: 4px;
       font-size: 11px;
       color: #5f6368;
-      z-index: 1000;
+      z-index: 10;
       box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+      pointer-events: none;
     }}
 
     /* Card Details */
@@ -1134,7 +1253,7 @@ def generate_routes_html():
 
     /* Print Styles */
     @media print {{
-      .top-app-header, .filter-bar, .card-footer-actions {{
+      .top-app-header, .filter-bar, .card-footer-actions, .map-toolbar {{
         display: none !important;
       }}
       body {{
@@ -1154,6 +1273,26 @@ def generate_routes_html():
       }}
       .map-box {{
         height: 350px !important;
+        border: 1px solid #dadce0 !important;
+        border-radius: 8px !important;
+      }}
+      .gmap-embed-frame {{
+        display: none !important;
+      }}
+      .map-render {{
+        position: relative !important;
+        height: 350px !important;
+        width: 100% !important;
+        display: block !important;
+        z-index: 10 !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+      }}
+      .credit-text-gmap {{
+        display: none !important;
+      }}
+      .credit-text-osm {{
+        display: inline !important;
       }}
       @page {{
         size: A4 portrait;
@@ -1179,15 +1318,22 @@ def generate_routes_html():
     </div>
   </header>
 
-  <!-- Filter Chips -->
+  <!-- Filter Chips & Map Mode -->
   <nav class="filter-bar">
     <div class="filter-inner">
-      <button class="filter-chip active" onclick="filterRoutes('all', this)">全部 18 條路線</button>
-      <button class="filter-chip" onclick="filterRoutes('milan', this)">D02–03 米蘭都會 (4)</button>
-      <button class="filter-chip" onclick="filterRoutes('bergamo', this)">D04 貝爾加莫 (3)</button>
-      <button class="filter-chip" onclick="filterRoutes('como', this)">D05 科莫湖雙城 (2)</button>
-      <button class="filter-chip" onclick="filterRoutes('genova', this)">D06–08 熱那亞與菲諾港 (4)</button>
-      <button class="filter-chip" onclick="filterRoutes('nice', this)">D09–12 南法尼斯與蔚藍海岸 (5)</button>
+      <div class="filter-group">
+        <button class="filter-chip active" onclick="filterRoutes('all', this)">全部 18 條路線</button>
+        <button class="filter-chip" onclick="filterRoutes('milan', this)">D02–03 米蘭都會 (4)</button>
+        <button class="filter-chip" onclick="filterRoutes('bergamo', this)">D04 貝爾加莫 (3)</button>
+        <button class="filter-chip" onclick="filterRoutes('como', this)">D05 科莫湖雙城 (2)</button>
+        <button class="filter-chip" onclick="filterRoutes('genova', this)">D06–08 熱那亞與菲諾港 (4)</button>
+        <button class="filter-chip" onclick="filterRoutes('nice', this)">D09–12 南法尼斯與蔚藍海岸 (5)</button>
+      </div>
+      <div class="global-map-toggle">
+        <span class="toggle-label">🌐 地圖視角：</span>
+        <button class="global-mode-btn active" id="btn_global_gmap" onclick="setGlobalMapMode('gmap')">Google 嵌入</button>
+        <button class="global-mode-btn" id="btn_global_osm" onclick="setGlobalMapMode('osm')">簡潔向量</button>
+      </div>
     </div>
   </nav>
 
@@ -1200,6 +1346,10 @@ def generate_routes_html():
         stops_json = json.dumps(r["stops"], ensure_ascii=False)
         pdf_file = ROUTE_PDF_MAPPING.get(r["id"], f"{r['id']}.pdf")
         
+        start_c = r["stops"][0]["coord"]
+        end_c = r["stops"][-1]["coord"]
+        embed_url = f"https://maps.google.com/maps?saddr={start_c[0]},{start_c[1]}&daddr={end_c[0]},{end_c[1]}&dirflg=r&output=embed"
+
         # Intermediate stops rows
         stops_rows = []
         for s in r["stops"][1:-1]:
@@ -1237,9 +1387,39 @@ def generate_routes_html():
         </div>
       </div>
 
-      <div class="map-box">
+      <!-- Map Toolbar -->
+      <div class="map-toolbar">
+        <div class="map-tab-group">
+          <button type="button" class="map-tab-btn active" id="tab_gmap_{r['id']}" onclick="toggleMapTab('{r['id']}', 'gmap')">
+            <span class="tab-icon">🌐</span> Google Maps 即時大眾運輸嵌入
+          </button>
+          <button type="button" class="map-tab-btn" id="tab_osm_{r['id']}" onclick="toggleMapTab('{r['id']}', 'osm')">
+            <span class="tab-icon">🗺️</span> 高解析向量路線圖
+          </button>
+        </div>
+        <a href="{r['gmaps_url']}" target="_blank" rel="noopener" class="map-ext-btn">
+          <span>↗️ 在 Google Maps App 開啟路線</span>
+        </a>
+      </div>
+
+      <div class="map-box" id="mapbox_{r['id']}">
+        <!-- Google Maps Live Embed (Default Active) -->
+        <iframe 
+          id="gmap_frame_{r['id']}"
+          class="gmap-embed-frame"
+          src="{embed_url}"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+
+        <!-- Leaflet Vector Map (Underneath, always ready) -->
         <div id="map_{r['id']}" class="map-render"></div>
-        <div class="map-credit">地圖資料 &copy; OpenStreetMap | 路線規劃：{r['duration']}</div>
+
+        <div class="map-credit" id="credit_{r['id']}">
+          <span class="credit-text-gmap">Google 地圖即時大眾運輸導航指引 · 可縮放拖曳與點選班次</span>
+          <span class="credit-text-osm" style="display:none;">地圖資料 &copy; OpenStreetMap | 路線規劃：{r['duration']}</span>
+        </div>
       </div>
 
       <div class="details-box">
@@ -1329,6 +1509,7 @@ def generate_routes_html():
         attributionControl: false,
         scrollWheelZoom: false
       }});
+      window['leaflet_map_{r['id']}'] = map_{r['id']};
       
       L.tileLayer('https://{{s}}.tile.openstreetmap.org/{{z}}/{{x}}/{{y}}.png', {{
         maxZoom: 18
@@ -1383,6 +1564,62 @@ def generate_routes_html():
   <script>
     // Initialize all Leaflet maps
     {maps_init_js}
+
+    // Toggle individual map tab between Google Maps Live Embed and OSM
+    function toggleMapTab(routeId, mode) {{
+      var mapbox = document.getElementById('mapbox_' + routeId);
+      var btnGmap = document.getElementById('tab_gmap_' + routeId);
+      var btnOsm = document.getElementById('tab_osm_' + routeId);
+      var creditBox = document.getElementById('credit_' + routeId);
+      
+      if (!mapbox) return;
+
+      if (mode === 'gmap') {{
+        mapbox.classList.remove('show-osm');
+        if (btnGmap) btnGmap.classList.add('active');
+        if (btnOsm) btnOsm.classList.remove('active');
+        if (creditBox) {{
+          var tg = creditBox.querySelector('.credit-text-gmap');
+          var to = creditBox.querySelector('.credit-text-osm');
+          if (tg) tg.style.display = 'inline';
+          if (to) to.style.display = 'none';
+        }}
+      }} else {{
+        mapbox.classList.add('show-osm');
+        if (btnGmap) btnGmap.classList.remove('active');
+        if (btnOsm) btnOsm.classList.add('active');
+        if (creditBox) {{
+          var tg = creditBox.querySelector('.credit-text-gmap');
+          var to = creditBox.querySelector('.credit-text-osm');
+          if (tg) tg.style.display = 'none';
+          if (to) to.style.display = 'inline';
+        }}
+        if (window['leaflet_map_' + routeId]) {{
+          setTimeout(function() {{
+            window['leaflet_map_' + routeId].invalidateSize();
+          }}, 60);
+        }}
+      }}
+    }}
+
+    // Global toggle for all 18 cards
+    function setGlobalMapMode(mode) {{
+      var allCards = document.querySelectorAll('.route-card');
+      allCards.forEach(function(card) {{
+        toggleMapTab(card.id, mode);
+      }});
+      var btnGlobalGmap = document.getElementById('btn_global_gmap');
+      var btnGlobalOsm = document.getElementById('btn_global_osm');
+      if (btnGlobalGmap && btnGlobalOsm) {{
+        if (mode === 'gmap') {{
+          btnGlobalGmap.classList.add('active');
+          btnGlobalOsm.classList.remove('active');
+        }} else {{
+          btnGlobalGmap.classList.remove('active');
+          btnGlobalOsm.classList.add('active');
+        }}
+      }}
+    }}
 
     // Filter cards
     function filterRoutes(category, btn) {{
