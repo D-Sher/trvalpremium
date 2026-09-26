@@ -1422,7 +1422,10 @@ def generate_routes_html():
     """
 
     # Add JavaScript to initialize all Leaflet maps
-    maps_init_js = ""
+    # Add JavaScript to initialize all Leaflet maps
+    maps_init_js = """
+    window.routeMaps = {};
+    """
     for r in ROUTES_DATA:
         stops_json = json.dumps([[s["coord"][0], s["coord"][1]] for s in r["stops"]])
         line_color = r["line_color"]
@@ -1435,11 +1438,13 @@ def generate_routes_html():
         attributionControl: false,
         scrollWheelZoom: false
       }});
+      window.routeMaps['{map_id}'] = map_{r['id']};
       window['leaflet_map_{r['id']}'] = map_{r['id']};
       
-      L.tileLayer('https://{{s}}.tile.openstreetmap.org/{{z}}/{{x}}/{{y}}.png', {{
-        maxZoom: 18,
-        attribution: 'OpenStreetMap'
+      // Use OSM France tile layer (fast, open, reliable, no 403 on file://)
+      L.tileLayer('https://{{s}}.tile.openstreetmap.fr/osmfr/{{z}}/{{x}}/{{y}}.png', {{
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap France | &copy; OpenStreetMap'
       }}).addTo(map_{r['id']});
 
       var poly_{r['id']} = L.polyline(stops_{r['id']}, {{
@@ -1492,6 +1497,30 @@ def generate_routes_html():
     // Initialize all Leaflet maps
     {maps_init_js}
 
+    // Auto resize observer to prevent gray areas / missing chunks
+    if (window.ResizeObserver) {{
+      var ro = new ResizeObserver(function(entries) {{
+        for (var i = 0; i < entries.length; i++) {{
+          var tid = entries[i].target.id;
+          if (window.routeMaps && window.routeMaps[tid]) {{
+            window.routeMaps[tid].invalidateSize({{ debounceMoveEvents: true }});
+          }}
+        }}
+      }});
+      document.querySelectorAll('.map-render').forEach(function(el) {{
+        ro.observe(el);
+      }});
+    }}
+
+    // Invalidate on load and after slight delay
+    window.addEventListener('load', function() {{
+      setTimeout(function() {{
+        for (var k in window.routeMaps) {{
+          window.routeMaps[k].invalidateSize();
+        }}
+      }}, 250);
+    }});
+
     // Filter cards
     function filterRoutes(category, btn) {{
       var chips = document.querySelectorAll('.filter-chip');
@@ -1506,8 +1535,13 @@ def generate_routes_html():
           card.style.display = 'none';
         }}
       }});
-      // Trigger map resize so tiles render properly when shown
-      window.dispatchEvent(new Event('resize'));
+
+      // Recalculate tile view for visible maps
+      setTimeout(function() {{
+        for (var k in window.routeMaps) {{
+          window.routeMaps[k].invalidateSize();
+        }}
+      }}, 50);
     }}
 
     // Print single route
@@ -1517,12 +1551,34 @@ def generate_routes_html():
         if (c.id !== cardId) c.style.display = 'none';
         else c.style.display = 'block';
       }});
-      window.print();
-      // restore after print
+
+      var mapObj = window.routeMaps && window.routeMaps['map_' + cardId];
+      if (mapObj) mapObj.invalidateSize();
+
       setTimeout(function() {{
-        cards.forEach(function(c) {{ c.style.display = 'block'; }});
-      }}, 1000);
+        if (mapObj) mapObj.invalidateSize();
+        window.print();
+      }}, 100);
     }}
+
+    // Restore cards and invalidate all map sizes after print dialog closes
+    window.addEventListener('afterprint', function() {{
+      document.querySelectorAll('.route-card').forEach(function(c) {{
+        c.style.display = 'block';
+      }});
+      setTimeout(function() {{
+        for (var k in window.routeMaps) {{
+          window.routeMaps[k].invalidateSize();
+        }}
+      }}, 100);
+    }});
+
+    // Before print, ensure all sizes are fresh
+    window.addEventListener('beforeprint', function() {{
+      for (var k in window.routeMaps) {{
+        window.routeMaps[k].invalidateSize();
+      }}
+    }});
   </script>
 </body>
 </html>

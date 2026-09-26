@@ -435,9 +435,9 @@ def generate_single_route_html(r, temp_html_path):
     attributionControl: false
   }});
 
-  var tiles = L.tileLayer('https://{{s}}.tile.openstreetmap.org/{{z}}/{{x}}/{{y}}.png', {{
-    maxZoom: 18,
-    attribution: 'OpenStreetMap'
+  var tiles = L.tileLayer('https://{{s}}.tile.openstreetmap.fr/osmfr/{{z}}/{{x}}/{{y}}.png', {{
+    maxZoom: 19,
+    attribution: 'OpenStreetMap France'
   }}).addTo(map);
 
   var poly = L.polyline(stops, {{
@@ -451,6 +451,8 @@ def generate_single_route_html(r, temp_html_path):
   map.fitBounds(poly.getBounds(), {{
     padding: [40, 40], maxZoom: 15
   }});
+
+  map.invalidateSize();
 
   // Start Marker
   L.circleMarker(stops[0], {{

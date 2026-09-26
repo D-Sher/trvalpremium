@@ -2932,6 +2932,8 @@
   <script>
     // Initialize all Leaflet maps
     
+    window.routeMaps = {};
+    
     (function() {
       var stops_route_01 = [[45.62737, 8.71244], [45.6083, 8.7561], [45.6111, 8.8519], [45.6089, 8.8928], [45.6133, 8.9483], [45.5997, 9.0272], [45.5019, 9.1625], [45.4842, 9.1872], [45.48714, 9.20482]];
       var map_route_01 = L.map('map_route_01', {
@@ -2939,11 +2941,13 @@
         attributionControl: false,
         scrollWheelZoom: false
       });
+      window.routeMaps['map_route_01'] = map_route_01;
       window['leaflet_map_route_01'] = map_route_01;
       
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 18,
-        attribution: 'OpenStreetMap'
+      // Use OSM France tile layer (fast, open, reliable, no 403 on file://)
+      L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap France | &copy; OpenStreetMap'
       }).addTo(map_route_01);
 
       var poly_route_01 = L.polyline(stops_route_01, {
@@ -2995,11 +2999,13 @@
         attributionControl: false,
         scrollWheelZoom: false
       });
+      window.routeMaps['map_route_02'] = map_route_02;
       window['leaflet_map_route_02'] = map_route_02;
       
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 18,
-        attribution: 'OpenStreetMap'
+      // Use OSM France tile layer (fast, open, reliable, no 403 on file://)
+      L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap France | &copy; OpenStreetMap'
       }).addTo(map_route_02);
 
       var poly_route_02 = L.polyline(stops_route_02, {
@@ -3051,11 +3057,13 @@
         attributionControl: false,
         scrollWheelZoom: false
       });
+      window.routeMaps['map_route_03'] = map_route_03;
       window['leaflet_map_route_03'] = map_route_03;
       
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 18,
-        attribution: 'OpenStreetMap'
+      // Use OSM France tile layer (fast, open, reliable, no 403 on file://)
+      L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap France | &copy; OpenStreetMap'
       }).addTo(map_route_03);
 
       var poly_route_03 = L.polyline(stops_route_03, {
@@ -3107,11 +3115,13 @@
         attributionControl: false,
         scrollWheelZoom: false
       });
+      window.routeMaps['map_route_04'] = map_route_04;
       window['leaflet_map_route_04'] = map_route_04;
       
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 18,
-        attribution: 'OpenStreetMap'
+      // Use OSM France tile layer (fast, open, reliable, no 403 on file://)
+      L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap France | &copy; OpenStreetMap'
       }).addTo(map_route_04);
 
       var poly_route_04 = L.polyline(stops_route_04, {
@@ -3163,11 +3173,13 @@
         attributionControl: false,
         scrollWheelZoom: false
       });
+      window.routeMaps['map_route_05'] = map_route_05;
       window['leaflet_map_route_05'] = map_route_05;
       
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 18,
-        attribution: 'OpenStreetMap'
+      // Use OSM France tile layer (fast, open, reliable, no 403 on file://)
+      L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap France | &copy; OpenStreetMap'
       }).addTo(map_route_05);
 
       var poly_route_05 = L.polyline(stops_route_05, {
@@ -3219,11 +3231,13 @@
         attributionControl: false,
         scrollWheelZoom: false
       });
+      window.routeMaps['map_route_06'] = map_route_06;
       window['leaflet_map_route_06'] = map_route_06;
       
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 18,
-        attribution: 'OpenStreetMap'
+      // Use OSM France tile layer (fast, open, reliable, no 403 on file://)
+      L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap France | &copy; OpenStreetMap'
       }).addTo(map_route_06);
 
       var poly_route_06 = L.polyline(stops_route_06, {
@@ -3275,11 +3289,13 @@
         attributionControl: false,
         scrollWheelZoom: false
       });
+      window.routeMaps['map_route_07'] = map_route_07;
       window['leaflet_map_route_07'] = map_route_07;
       
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 18,
-        attribution: 'OpenStreetMap'
+      // Use OSM France tile layer (fast, open, reliable, no 403 on file://)
+      L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap France | &copy; OpenStreetMap'
       }).addTo(map_route_07);
 
       var poly_route_07 = L.polyline(stops_route_07, {
@@ -3331,11 +3347,13 @@
         attributionControl: false,
         scrollWheelZoom: false
       });
+      window.routeMaps['map_route_08'] = map_route_08;
       window['leaflet_map_route_08'] = map_route_08;
       
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 18,
-        attribution: 'OpenStreetMap'
+      // Use OSM France tile layer (fast, open, reliable, no 403 on file://)
+      L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap France | &copy; OpenStreetMap'
       }).addTo(map_route_08);
 
       var poly_route_08 = L.polyline(stops_route_08, {
@@ -3387,11 +3405,13 @@
         attributionControl: false,
         scrollWheelZoom: false
       });
+      window.routeMaps['map_route_09'] = map_route_09;
       window['leaflet_map_route_09'] = map_route_09;
       
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 18,
-        attribution: 'OpenStreetMap'
+      // Use OSM France tile layer (fast, open, reliable, no 403 on file://)
+      L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap France | &copy; OpenStreetMap'
       }).addTo(map_route_09);
 
       var poly_route_09 = L.polyline(stops_route_09, {
@@ -3443,11 +3463,13 @@
         attributionControl: false,
         scrollWheelZoom: false
       });
+      window.routeMaps['map_route_10'] = map_route_10;
       window['leaflet_map_route_10'] = map_route_10;
       
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 18,
-        attribution: 'OpenStreetMap'
+      // Use OSM France tile layer (fast, open, reliable, no 403 on file://)
+      L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap France | &copy; OpenStreetMap'
       }).addTo(map_route_10);
 
       var poly_route_10 = L.polyline(stops_route_10, {
@@ -3499,11 +3521,13 @@
         attributionControl: false,
         scrollWheelZoom: false
       });
+      window.routeMaps['map_route_11'] = map_route_11;
       window['leaflet_map_route_11'] = map_route_11;
       
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 18,
-        attribution: 'OpenStreetMap'
+      // Use OSM France tile layer (fast, open, reliable, no 403 on file://)
+      L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap France | &copy; OpenStreetMap'
       }).addTo(map_route_11);
 
       var poly_route_11 = L.polyline(stops_route_11, {
@@ -3555,11 +3579,13 @@
         attributionControl: false,
         scrollWheelZoom: false
       });
+      window.routeMaps['map_route_12'] = map_route_12;
       window['leaflet_map_route_12'] = map_route_12;
       
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 18,
-        attribution: 'OpenStreetMap'
+      // Use OSM France tile layer (fast, open, reliable, no 403 on file://)
+      L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap France | &copy; OpenStreetMap'
       }).addTo(map_route_12);
 
       var poly_route_12 = L.polyline(stops_route_12, {
@@ -3611,11 +3637,13 @@
         attributionControl: false,
         scrollWheelZoom: false
       });
+      window.routeMaps['map_route_13'] = map_route_13;
       window['leaflet_map_route_13'] = map_route_13;
       
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 18,
-        attribution: 'OpenStreetMap'
+      // Use OSM France tile layer (fast, open, reliable, no 403 on file://)
+      L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap France | &copy; OpenStreetMap'
       }).addTo(map_route_13);
 
       var poly_route_13 = L.polyline(stops_route_13, {
@@ -3667,11 +3695,13 @@
         attributionControl: false,
         scrollWheelZoom: false
       });
+      window.routeMaps['map_route_14'] = map_route_14;
       window['leaflet_map_route_14'] = map_route_14;
       
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 18,
-        attribution: 'OpenStreetMap'
+      // Use OSM France tile layer (fast, open, reliable, no 403 on file://)
+      L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap France | &copy; OpenStreetMap'
       }).addTo(map_route_14);
 
       var poly_route_14 = L.polyline(stops_route_14, {
@@ -3723,11 +3753,13 @@
         attributionControl: false,
         scrollWheelZoom: false
       });
+      window.routeMaps['map_route_15'] = map_route_15;
       window['leaflet_map_route_15'] = map_route_15;
       
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 18,
-        attribution: 'OpenStreetMap'
+      // Use OSM France tile layer (fast, open, reliable, no 403 on file://)
+      L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap France | &copy; OpenStreetMap'
       }).addTo(map_route_15);
 
       var poly_route_15 = L.polyline(stops_route_15, {
@@ -3779,11 +3811,13 @@
         attributionControl: false,
         scrollWheelZoom: false
       });
+      window.routeMaps['map_route_16'] = map_route_16;
       window['leaflet_map_route_16'] = map_route_16;
       
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 18,
-        attribution: 'OpenStreetMap'
+      // Use OSM France tile layer (fast, open, reliable, no 403 on file://)
+      L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap France | &copy; OpenStreetMap'
       }).addTo(map_route_16);
 
       var poly_route_16 = L.polyline(stops_route_16, {
@@ -3835,11 +3869,13 @@
         attributionControl: false,
         scrollWheelZoom: false
       });
+      window.routeMaps['map_route_17'] = map_route_17;
       window['leaflet_map_route_17'] = map_route_17;
       
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 18,
-        attribution: 'OpenStreetMap'
+      // Use OSM France tile layer (fast, open, reliable, no 403 on file://)
+      L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap France | &copy; OpenStreetMap'
       }).addTo(map_route_17);
 
       var poly_route_17 = L.polyline(stops_route_17, {
@@ -3891,11 +3927,13 @@
         attributionControl: false,
         scrollWheelZoom: false
       });
+      window.routeMaps['map_route_18'] = map_route_18;
       window['leaflet_map_route_18'] = map_route_18;
       
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 18,
-        attribution: 'OpenStreetMap'
+      // Use OSM France tile layer (fast, open, reliable, no 403 on file://)
+      L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap France | &copy; OpenStreetMap'
       }).addTo(map_route_18);
 
       var poly_route_18 = L.polyline(stops_route_18, {
@@ -3941,6 +3979,30 @@
     })();
 
 
+    // Auto resize observer to prevent gray areas / missing chunks
+    if (window.ResizeObserver) {
+      var ro = new ResizeObserver(function(entries) {
+        for (var i = 0; i < entries.length; i++) {
+          var tid = entries[i].target.id;
+          if (window.routeMaps && window.routeMaps[tid]) {
+            window.routeMaps[tid].invalidateSize({ debounceMoveEvents: true });
+          }
+        }
+      });
+      document.querySelectorAll('.map-render').forEach(function(el) {
+        ro.observe(el);
+      });
+    }
+
+    // Invalidate on load and after slight delay
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        for (var k in window.routeMaps) {
+          window.routeMaps[k].invalidateSize();
+        }
+      }, 250);
+    });
+
     // Filter cards
     function filterRoutes(category, btn) {
       var chips = document.querySelectorAll('.filter-chip');
@@ -3955,8 +4017,13 @@
           card.style.display = 'none';
         }
       });
-      // Trigger map resize so tiles render properly when shown
-      window.dispatchEvent(new Event('resize'));
+
+      // Recalculate tile view for visible maps
+      setTimeout(function() {
+        for (var k in window.routeMaps) {
+          window.routeMaps[k].invalidateSize();
+        }
+      }, 50);
     }
 
     // Print single route
@@ -3966,12 +4033,34 @@
         if (c.id !== cardId) c.style.display = 'none';
         else c.style.display = 'block';
       });
-      window.print();
-      // restore after print
+
+      var mapObj = window.routeMaps && window.routeMaps['map_' + cardId];
+      if (mapObj) mapObj.invalidateSize();
+
       setTimeout(function() {
-        cards.forEach(function(c) { c.style.display = 'block'; });
-      }, 1000);
+        if (mapObj) mapObj.invalidateSize();
+        window.print();
+      }, 100);
     }
+
+    // Restore cards and invalidate all map sizes after print dialog closes
+    window.addEventListener('afterprint', function() {
+      document.querySelectorAll('.route-card').forEach(function(c) {
+        c.style.display = 'block';
+      });
+      setTimeout(function() {
+        for (var k in window.routeMaps) {
+          window.routeMaps[k].invalidateSize();
+        }
+      }, 100);
+    });
+
+    // Before print, ensure all sizes are fresh
+    window.addEventListener('beforeprint', function() {
+      for (var k in window.routeMaps) {
+        window.routeMaps[k].invalidateSize();
+      }
+    });
   </script>
 </body>
 </html>
