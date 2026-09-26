@@ -8,14 +8,99 @@ and merge them into route/all_routes.pdf.
 import os
 import subprocess
 import time
+import math
+import urllib.request
+import base64
+import json
+from concurrent.futures import ThreadPoolExecutor
 import fitz
 from build_all_routes import ROUTES_DATA
 
 OUTPUT_DIR = "/Users/sher/Documents/trvalpremium/route"
 CHROME_BIN = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 SCRATCH_DIR = "/Users/sher/.gemini/antigravity-ide/brain/fcdcd534-0006-4243-b243-98e37fb8cd7c/scratch"
+CACHE_DIR = os.path.join(OUTPUT_DIR, ".tile_cache")
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 os.makedirs(SCRATCH_DIR, exist_ok=True)
+os.makedirs(CACHE_DIR, exist_ok=True)
+
+def deg2num(lat_deg, lon_deg, zoom):
+    lat_rad = math.radians(lat_deg)
+    n = 2.0 ** zoom
+    xtile = int((lon_deg + 180.0) / 360.0 * n)
+    ytile = int((1.0 - math.asinh(math.tan(lat_rad)) / math.pi) / 2.0 * n)
+    return (xtile, ytile)
+
+def download_tile(z, x, y):
+    local_path = os.path.join(CACHE_DIR, f"{z}_{x}_{y}.png")
+    if os.path.exists(local_path) and os.path.getsize(local_path) > 500:
+        try:
+            with open(local_path, "rb") as f:
+                return (f"{z}/{x}/{y}", base64.b64encode(f.read()).decode("utf-8"))
+        except Exception:
+            pass
+    
+    url = f"https://a.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png"
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"})
+    try:
+        with urllib.request.urlopen(req, timeout=5) as resp:
+            data = resp.read()
+            with open(local_path, "wb") as f:
+                f.write(data)
+            return (f"{z}/{x}/{y}", base64.b64encode(data).decode("utf-8"))
+    except Exception:
+        # Fallback to Esri
+        esri_url = f"https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}"
+        req2 = urllib.request.Request(esri_url, headers={"User-Agent": "Mozilla/5.0"})
+        try:
+            with urllib.request.urlopen(req2, timeout=5) as resp2:
+                data = resp2.read()
+                with open(local_path, "wb") as f:
+                    f.write(data)
+                return (f"{z}/{x}/{y}", base64.b64encode(data).decode("utf-8"))
+        except Exception:
+            return None
+
+def get_tiles_for_coords(coords, map_w=700, map_h=350, max_z=15):
+    lats = [c[0] for c in coords]
+    lons = [c[1] for c in coords]
+    min_lat, max_lat = min(lats), max(lats)
+    min_lon, max_lon = min(lons), max(lons)
+
+    best_z = 10
+    for z in range(max_z, 8, -1):
+        tl = deg2num(max_lat, min_lon, z)
+        br = deg2num(min_lat, max_lon, z)
+        dx = abs(br[0] - tl[0]) + 1
+        dy = abs(br[1] - tl[1]) + 1
+        if dx * 256 <= (map_w + 140) and dy * 256 <= (map_h + 140):
+            best_z = z
+            break
+            
+    tiles = []
+    # cover best_z and best_z-1 to guarantee 100% tile coverage
+    for z in [best_z, max(8, best_z - 1)]:
+        tl = deg2num(max_lat, min_lon, z)
+        br = deg2num(min_lat, max_lon, z)
+        min_x = min(tl[0], br[0]) - 1
+        max_x = max(tl[0], br[0]) + 1
+        min_y = min(tl[1], br[1]) - 1
+        max_y = max(tl[1], br[1]) + 1
+        for x in range(min_x, max_x + 1):
+            for y in range(min_y, max_y + 1):
+                tiles.append((z, x, y))
+    return tiles
+
+def prefetch_route_tiles(coords):
+    tiles = get_tiles_for_coords(coords)
+    cache = {}
+    with ThreadPoolExecutor(max_workers=8) as ex:
+        futures = [ex.submit(download_tile, z, x, y) for z, x, y in tiles]
+        for f in futures:
+            res = f.result()
+            if res:
+                cache[res[0]] = f"data:image/png;base64,{res[1]}"
+    return cache
 
 def generate_single_route_html(r, temp_html_path):
     alert_html = f'<div class="transit-alert">{r["alert"]}</div>' if r.get("alert") else ""
@@ -41,8 +126,9 @@ def generate_single_route_html(r, temp_html_path):
     stops_html = "".join(stops_rows)
 
     stops_coords = [[s["coord"][0], s["coord"][1]] for s in r["stops"]]
-    import json
     stops_json = json.dumps(stops_coords)
+    b64_cache = prefetch_route_tiles(stops_coords)
+    b64_cache_json = json.dumps(b64_cache)
 
     html = f"""<!DOCTYPE html>
 <html lang="zh-TW">
@@ -155,6 +241,10 @@ def generate_single_route_html(r, temp_html_path):
   #map {{
     width: 100%;
     height: 100%;
+  }}
+  .leaflet-tile {{
+    visibility: inherit !important;
+    opacity: 1 !important;
   }}
   .map-credit {{
     position: absolute;
@@ -435,10 +525,17 @@ def generate_single_route_html(r, temp_html_path):
     attributionControl: false
   }});
 
-  var tiles = L.tileLayer('https://{{s}}.tile.openstreetmap.fr/osmfr/{{z}}/{{x}}/{{y}}.png', {{
-    maxZoom: 19,
-    attribution: 'OpenStreetMap France'
-  }}).addTo(map);
+  var b64Cache = {b64_cache_json};
+  var Base64Layer = L.TileLayer.extend({{
+    getTileUrl: function(coords) {{
+      var key = coords.z + '/' + coords.x + '/' + coords.y;
+      if (b64Cache[key]) {{
+        return b64Cache[key];
+      }}
+      return 'https://a.tile.openstreetmap.fr/osmfr/' + coords.z + '/' + coords.x + '/' + coords.y + '.png';
+    }}
+  }});
+  var tiles = new Base64Layer('', {{ maxZoom: 19 }}).addTo(map);
 
   var poly = L.polyline(stops, {{
     color: '{r['line_color']}',
