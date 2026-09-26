@@ -1046,14 +1046,42 @@
     }
 
     .p04-chron-table th {
-      padding: 0.7mm 1.1mm;
+      padding: 0.75mm 1.2mm;
       font-size: 7.0pt;
     }
 
     .p04-chron-table td {
-      padding: 0.52mm 1.1mm;
-      font-size: 6.8pt;
+      padding: 0.58mm 1.2mm;
+      font-size: 6.9pt;
       line-height: 1.22;
+    }
+
+    .chron-route-name {
+      font-weight: 700;
+      color: #1a202c;
+      font-size: 7.2pt;
+      line-height: 1.25;
+    }
+
+    .chron-vehicle-tag {
+      font-size: 6.3pt;
+      color: #4a5568;
+      margin-top: 0.2mm;
+      font-weight: 500;
+    }
+
+    .chron-time-val {
+      font-weight: 700;
+      color: #1a365d;
+      font-size: 7.1pt;
+      white-space: nowrap;
+    }
+
+    .chron-dur-tag {
+      font-size: 6.2pt;
+      color: #718096;
+      margin-top: 0.2mm;
+      white-space: nowrap;
     }
 
     .chron-day-badge {
@@ -1906,101 +1934,156 @@
         <table class="chron-table p04-chron-table">
           <thead>
             <tr>
-              <th style="width: 10%;">日期／天數</th>
-              <th style="width: 29%;">路線行程／通票名稱</th>
-              <th style="width: 13%;">車次／工具</th>
-              <th style="width: 13%;">時間／效期</th>
-              <th style="width: 35%;">取票型態與動作指引（膠囊標籤）</th>
+              <th style="width: 14%; text-align: center;">日期／天數</th>
+              <th style="width: 36%;">行程路線 ＆ 車次工具</th>
+              <th style="width: 22%;">班次時間／效期</th>
+              <th style="width: 28%;">票券動作指引（重要標籤）</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>10/16</strong> <span class="chron-day-badge">D02</span></td>
-              <td><strong>米蘭機場 ➔ 米蘭中央車站</strong></td>
-              <td>MXP 2951 快線</td>
-              <td>16:11 ➔ 17:07<br><span style="color:#666;">(56 分)</span></td>
-              <td><span class="pill-badge pill-badge-direct">免換直通</span>持 Trenord APP Wallet QR 掃碼進站；如為義鐵票請完成線上 Check-in
+              <td style="text-align: center;"><strong>10/16</strong> <span class="chron-day-badge">D02</span></td>
+              <td>
+                <div class="chron-route-name">米蘭機場 ➔ 米蘭中央車站</div>
+                <div class="chron-vehicle-tag">🚆 MXP 2951 快線</div>
               </td>
-            </tr>
-            <tr>
-              <td><strong>10/16</strong> <span class="chron-day-badge">D02</span></td>
-              <td><strong>米蘭城市通票（Milano Card）</strong></td>
-              <td>實體感應卡</td>
-              <td>抵達領取<br><span style="color:#666;">(連續 24h)</span></td>
-              <td><span class="pill-badge pill-badge-exchange">需現場兌換</span>抵達後於中央車站遊客中心出示憑證領卡</td>
-            </tr>
-            <tr>
-              <td><strong>10/17</strong> <span class="chron-day-badge">D03</span></td>
-              <td><strong>米蘭 M1–M3 地鐵／復古電車</strong></td>
-              <td>市區大眾運輸</td>
-              <td>首刷起算<br><span style="color:#666;">(24 小時有效)</span></td>
-              <td><span class="pill-badge pill-badge-direct">感應啟用開通</span>進地鐵閘門首拍啟用通票，全日無限搭乘</td>
-            </tr>
-            <tr>
-              <td><strong>10/18</strong> <span class="chron-day-badge">D04</span></td>
-              <td><strong>米蘭 ➔ 貝爾加莫（去程）</strong></td>
-              <td>RE 2219 快車</td>
-              <td>09:05 ➔ 09:53<br><span style="color:#666;">(48 分直達)</span></td>
-              <td><span class="pill-badge pill-badge-direct">免換直通</span>出示 Trenord APP Wallet QR 供查驗，免打卡</td>
-            </tr>
-            <tr>
-              <td><strong>10/18</strong> <span class="chron-day-badge">D04</span></td>
-              <td><strong>貝爾加莫 24h 交通通票</strong></td>
-              <td>ATB 巴士與纜車</td>
-              <td>24 小時連續</td>
-              <td><span class="pill-badge pill-badge-exchange">搭車前手動啟用</span>ATB APP 已經購票,需在手機上啟用後使用</td>
-
-            </tr>
-            <tr>
-              <td><strong>10/18</strong> <span class="chron-day-badge">D04</span></td>
-              <td><strong>貝爾加莫 ➔ 米蘭（回程）</strong></td>
-              <td>RE 2232 快車</td>
-              <td>15:02 ➔ 15:50<br><span style="color:#666;">(48 分直達)</span></td>
-              <td><span class="pill-badge pill-badge-direct">免換直通</span>出示手機 Trenord APP Wallet QR 供列車長查驗，免打卡</td>
-            </tr>
-            <tr>
-              <td><strong>10/19</strong> <span class="chron-day-badge">D05</span></td>
-              <td><strong>米蘭 ➔ 瓦倫納（科莫湖）</strong></td>
-              <td>RE 2818 快車</td>
-              <td>09:20 ➔ 10:25<br><span style="color:#666;">(65 分直達)</span></td>
-              <td><span class="pill-badge pill-badge-direct">免換直通</span>湖區直達車，出示手機 Trenord APP Wallet QR 碼即可</td>
-            </tr>
-            <tr>
-              <td><strong>10/19</strong> <span class="chron-day-badge">D05</span></td>
-              <td><strong>科莫湖中央湖區渡輪一日票</strong></td>
-              <td>渡輪 (瓦倫納↔貝拉焦)</td>
-              <td>當日無限次</td>
-              <td><span class="pill-badge pill-badge-buy">碼頭檢票</span>瓦倫納渡輪碼頭窗口出示憑證或購票登船</td>
-            </tr>
-            <tr>
-              <td><strong>10/19</strong> <span class="chron-day-badge">D05</span></td>
-              <td><strong>莫納斯特羅別墅（Villa Monastero）</strong></td>
-              <td>湖畔古典花園</td>
-              <td>午後彈性參觀</td>
-              <td><span class="pill-badge pill-badge-buy">現場購票</span>入口售票處現場購票（花園門票約 €10，約 350 台幣）</td>
-            </tr>
-            <tr>
-              <td><strong>10/19</strong> <span class="chron-day-badge">D05</span></td>
-              <td><strong>瓦倫納 ➔ 米蘭（回程區間車）</strong></td>
-              <td>區域快車 (彈性)</td>
-              <td>約 15:35 前後<br><span style="color:#666;">(約 1 小時)</span></td>
-              <td><span class="pill-badge pill-badge-stamp">⚠️ 上車必打卡</span> <span
-                  class="pill-badge pill-badge-buy">需現場購票</span> 窗口買紙票，<strong style="color: #991b1b;">月台黃機打戳印！</strong>
+              <td>
+                <div class="chron-time-val">16:11 ➔ 17:07</div>
+                <div class="chron-dur-tag">(56 分直達)</div>
               </td>
+              <td><span class="pill-badge pill-badge-direct">免換直通</span></td>
             </tr>
             <tr>
-              <td><strong>10/20</strong> <span class="chron-day-badge">D06</span></td>
-              <td><strong>米蘭中央 ➔ 熱那亞王子廣場</strong></td>
-              <td>IC 659 一等艙</td>
-              <td>09:10 ➔ 10:40<br><span style="color:#666;">(1 小時 30 分)</span></td>
-              <td><span class="pill-badge pill-badge-direct">對號免打卡</span>持預印 A4 紙本依車廂與座位直接入座</td>
+              <td style="text-align: center;"><strong>10/16</strong> <span class="chron-day-badge">D02</span></td>
+              <td>
+                <div class="chron-route-name">米蘭城市通票（Milano Card）</div>
+                <div class="chron-vehicle-tag">🎫 實體感應卡</div>
+              </td>
+              <td>
+                <div class="chron-time-val">抵達領取</div>
+                <div class="chron-dur-tag">(連續 24h)</div>
+              </td>
+              <td><span class="pill-badge pill-badge-exchange">需現場兌換</span></td>
             </tr>
             <tr>
-              <td><strong>10/21</strong> <span class="chron-day-badge">D07</span></td>
-              <td><strong>熱那亞城市通票 24h (紙本條碼)</strong></td>
-              <td>Genova City Pass</td>
-              <td>24 小時有效</td>
-              <td><span class="pill-badge pill-badge-exchange">需掃碼開通</span>出示憑證啟用，含 AMT 地鐵公車與宮殿優惠</td>
+              <td style="text-align: center;"><strong>10/17</strong> <span class="chron-day-badge">D03</span></td>
+              <td>
+                <div class="chron-route-name">米蘭 M1–M3 地鐵／復古電車</div>
+                <div class="chron-vehicle-tag">🚇 市區大眾運輸</div>
+              </td>
+              <td>
+                <div class="chron-time-val">首刷起算</div>
+                <div class="chron-dur-tag">(24 小時有效)</div>
+              </td>
+              <td><span class="pill-badge pill-badge-direct">感應啟用開通</span></td>
+            </tr>
+            <tr>
+              <td style="text-align: center;"><strong>10/18</strong> <span class="chron-day-badge">D04</span></td>
+              <td>
+                <div class="chron-route-name">米蘭 ➔ 貝爾加莫（去程）</div>
+                <div class="chron-vehicle-tag">🚆 RE 2219 快車</div>
+              </td>
+              <td>
+                <div class="chron-time-val">09:05 ➔ 09:53</div>
+                <div class="chron-dur-tag">(48 分直達)</div>
+              </td>
+              <td><span class="pill-badge pill-badge-direct">免換直通</span></td>
+            </tr>
+            <tr>
+              <td style="text-align: center;"><strong>10/18</strong> <span class="chron-day-badge">D04</span></td>
+              <td>
+                <div class="chron-route-name">貝爾加莫 24h 交通通票</div>
+                <div class="chron-vehicle-tag">🚠 ATB 巴士與纜車</div>
+              </td>
+              <td>
+                <div class="chron-time-val">首搭起算</div>
+                <div class="chron-dur-tag">(24 小時連續)</div>
+              </td>
+              <td><span class="pill-badge pill-badge-exchange">搭車前手動啟用</span></td>
+            </tr>
+            <tr>
+              <td style="text-align: center;"><strong>10/18</strong> <span class="chron-day-badge">D04</span></td>
+              <td>
+                <div class="chron-route-name">貝爾加莫 ➔ 米蘭（回程）</div>
+                <div class="chron-vehicle-tag">🚆 RE 2232 快車</div>
+              </td>
+              <td>
+                <div class="chron-time-val">15:02 ➔ 15:50</div>
+                <div class="chron-dur-tag">(48 分直達)</div>
+              </td>
+              <td><span class="pill-badge pill-badge-direct">免換直通</span></td>
+            </tr>
+            <tr>
+              <td style="text-align: center;"><strong>10/19</strong> <span class="chron-day-badge">D05</span></td>
+              <td>
+                <div class="chron-route-name">米蘭 ➔ 瓦倫納（科莫湖）</div>
+                <div class="chron-vehicle-tag">🚆 RE 2818 快車</div>
+              </td>
+              <td>
+                <div class="chron-time-val">09:20 ➔ 10:25</div>
+                <div class="chron-dur-tag">(65 分直達)</div>
+              </td>
+              <td><span class="pill-badge pill-badge-direct">免換直通</span></td>
+            </tr>
+            <tr>
+              <td style="text-align: center;"><strong>10/19</strong> <span class="chron-day-badge">D05</span></td>
+              <td>
+                <div class="chron-route-name">科莫湖中央湖區渡輪一日票</div>
+                <div class="chron-vehicle-tag">⛴️ 渡輪 (瓦倫納↔貝拉焦)</div>
+              </td>
+              <td>
+                <div class="chron-time-val">當日無限次</div>
+                <div class="chron-dur-tag">(自由搭乘)</div>
+              </td>
+              <td><span class="pill-badge pill-badge-buy">碼頭檢票</span></td>
+            </tr>
+            <tr>
+              <td style="text-align: center;"><strong>10/19</strong> <span class="chron-day-badge">D05</span></td>
+              <td>
+                <div class="chron-route-name">莫納斯特羅別墅（Villa Monastero）</div>
+                <div class="chron-vehicle-tag">🏛️ 湖畔古典花園</div>
+              </td>
+              <td>
+                <div class="chron-time-val">午後彈性參觀</div>
+                <div class="chron-dur-tag">(約 2 小時)</div>
+              </td>
+              <td><span class="pill-badge pill-badge-buy">現場購票</span></td>
+            </tr>
+            <tr>
+              <td style="text-align: center;"><strong>10/19</strong> <span class="chron-day-badge">D05</span></td>
+              <td>
+                <div class="chron-route-name">瓦倫納 ➔ 米蘭（回程區間車）</div>
+                <div class="chron-vehicle-tag">🚆 區域快車 (彈性)</div>
+              </td>
+              <td>
+                <div class="chron-time-val">約 15:35 前後</div>
+                <div class="chron-dur-tag">(約 1 小時)</div>
+              </td>
+              <td><span class="pill-badge pill-badge-stamp">⚠️ 上車必打卡</span> <span class="pill-badge pill-badge-buy">需現場購票</span></td>
+            </tr>
+            <tr>
+              <td style="text-align: center;"><strong>10/20</strong> <span class="chron-day-badge">D06</span></td>
+              <td>
+                <div class="chron-route-name">米蘭中央 ➔ 熱那亞王子廣場</div>
+                <div class="chron-vehicle-tag">🚆 IC 659 一等艙</div>
+              </td>
+              <td>
+                <div class="chron-time-val">09:10 ➔ 10:40</div>
+                <div class="chron-dur-tag">(1 小時 30 分)</div>
+              </td>
+              <td><span class="pill-badge pill-badge-direct">對號免打卡</span></td>
+            </tr>
+            <tr>
+              <td style="text-align: center;"><strong>10/21</strong> <span class="chron-day-badge">D07</span></td>
+              <td>
+                <div class="chron-route-name">熱那亞城市通票 24h (紙本條碼)</div>
+                <div class="chron-vehicle-tag">🎫 Genova City Pass</div>
+              </td>
+              <td>
+                <div class="chron-time-val">首掃起算</div>
+                <div class="chron-dur-tag">(24 小時有效)</div>
+              </td>
+              <td><span class="pill-badge pill-badge-exchange">需掃碼開通</span></td>
             </tr>
           </tbody>
         </table>
@@ -2044,89 +2127,133 @@
         <table class="chron-table">
           <thead>
             <tr>
-              <th style="width: 10%;">日期／天數</th>
-              <th style="width: 29%;">路線行程／通票名稱</th>
-              <th style="width: 13%;">車次／工具</th>
-              <th style="width: 13%;">時間／效期</th>
-              <th style="width: 35%;">取票型態與動作指引（膠囊標籤）</th>
+              <th style="width: 14%; text-align: center;">日期／天數</th>
+              <th style="width: 36%;">行程路線 ＆ 車次工具</th>
+              <th style="width: 22%;">班次時間／效期</th>
+              <th style="width: 28%;">票券動作指引（重要標籤）</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>10/22</strong> <span class="chron-day-badge">D08</span></td>
-              <td><strong>熱那亞 ➔ 聖瑪格麗塔（去程）</strong></td>
-              <td>IC 657 一等艙</td>
-              <td>09:47 ➔ 10:14<br><span style="color:#666;">(27 分)</span></td>
-              <td><span class="pill-badge pill-badge-direct">對號免打卡</span>持預印 A4 紙本對號車票直接入座</td>
+              <td style="text-align: center;"><strong>10/22</strong> <span class="chron-day-badge">D08</span></td>
+              <td>
+                <div class="chron-route-name">熱那亞 ➔ 聖瑪格麗塔（去程）</div>
+                <div class="chron-vehicle-tag">🚆 IC 657 一等艙</div>
+              </td>
+              <td>
+                <div class="chron-time-val">09:47 ➔ 10:14</div>
+                <div class="chron-dur-tag">(27 分直達)</div>
+              </td>
+              <td><span class="pill-badge pill-badge-direct">對號免打卡</span></td>
             </tr>
             <tr>
-              <td><strong>10/22</strong> <span class="chron-day-badge">D08</span></td>
-              <td><strong>MetDaily 一日票（菲諾港公車）</strong></td>
-              <td>AMT 782 公車</td>
-              <td>24 小時有效</td>
-              <td><span class="pill-badge pill-badge-buy">需 APP 購票</span>於 AMT APP 購買 ＋ <span
-                  class="pill-badge pill-badge-exchange">搭車前啟用</span></td>
+              <td style="text-align: center;"><strong>10/22</strong> <span class="chron-day-badge">D08</span></td>
+              <td>
+                <div class="chron-route-name">MetDaily 一日票（菲諾港公車）</div>
+                <div class="chron-vehicle-tag">🚌 AMT 782 公車</div>
+              </td>
+              <td>
+                <div class="chron-time-val">啟用起算</div>
+                <div class="chron-dur-tag">(24 小時有效)</div>
+              </td>
+              <td><span class="pill-badge pill-badge-buy">需 APP 購票</span> <span class="pill-badge pill-badge-exchange">搭車前啟用</span></td>
             </tr>
             <tr>
-              <td><strong>10/22</strong> <span class="chron-day-badge">D08</span></td>
-              <td><strong>聖瑪格麗塔 ➔ 熱那亞（回程）</strong></td>
-              <td>IC 674 一等艙</td>
-              <td>15:46 ➔ 16:14<br><span style="color:#666;">(27 分)</span></td>
-              <td><span class="pill-badge pill-badge-direct">對號免打卡</span>持預印 A4 紙本對號車票直接入座</td>
+              <td style="text-align: center;"><strong>10/22</strong> <span class="chron-day-badge">D08</span></td>
+              <td>
+                <div class="chron-route-name">聖瑪格麗塔 ➔ 熱那亞（回程）</div>
+                <div class="chron-vehicle-tag">🚆 IC 674 一等艙</div>
+              </td>
+              <td>
+                <div class="chron-time-val">15:46 ➔ 16:14</div>
+                <div class="chron-dur-tag">(27 分直達)</div>
+              </td>
+              <td><span class="pill-badge pill-badge-direct">對號免打卡</span></td>
             </tr>
             <tr>
-              <td><strong>10/23</strong> <span class="chron-day-badge">D09</span></td>
-              <td><strong>熱那亞 ➔ 文提米利亞邊境</strong></td>
-              <td>IC 633 一等艙</td>
-              <td>08:58 ➔ 10:58<br><span style="color:#666;">(2 小時)</span></td>
-              <td><span class="pill-badge pill-badge-direct">對號免打卡</span>持預印 A4 紙本對號車票直接入座</td>
+              <td style="text-align: center;"><strong>10/23</strong> <span class="chron-day-badge">D09</span></td>
+              <td>
+                <div class="chron-route-name">熱那亞 ➔ 文提米利亞邊境</div>
+                <div class="chron-vehicle-tag">🚆 IC 633 一等艙</div>
+              </td>
+              <td>
+                <div class="chron-time-val">08:58 ➔ 10:58</div>
+                <div class="chron-dur-tag">(2 小時沿海直達)</div>
+              </td>
+              <td><span class="pill-badge pill-badge-direct">對號免打卡</span></td>
             </tr>
             <tr>
-              <td><strong>10/23</strong> <span class="chron-day-badge">D09</span></td>
-              <td><strong>文提米利亞 ➔ 尼斯城（跨國）</strong></td>
-              <td>ZOU! / TER 列車</td>
-              <td>約 15:00 前後<br><span style="color:#666;">(54 分)</span></td>
-              <td><span class="pill-badge pill-badge-stamp">⚠️ 上車必打卡</span> <span
-                  class="pill-badge pill-badge-buy">需邊境購票</span> 售票機買紙票，<strong
-                  style="color: #991b1b;">上車前於黃機打卡！</strong></td>
+              <td style="text-align: center;"><strong>10/23</strong> <span class="chron-day-badge">D09</span></td>
+              <td>
+                <div class="chron-route-name">文提米利亞 ➔ 尼斯城（跨國）</div>
+                <div class="chron-vehicle-tag">🚆 ZOU! / TER 雙層列車</div>
+              </td>
+              <td>
+                <div class="chron-time-val">約 15:00 前後</div>
+                <div class="chron-dur-tag">(50-54 分)</div>
+              </td>
+              <td><span class="pill-badge pill-badge-stamp">⚠️ 上車必打卡</span> <span class="pill-badge pill-badge-buy">需邊境購票</span></td>
             </tr>
             <tr>
-              <td><strong>10/24</strong> <span class="chron-day-badge">D10</span></td>
-              <td><strong>PASS SUD AZUR EXPLORE</strong></td>
-              <td>南法通票感應卡</td>
-              <td>10/24–10/26<br><span style="color:#666;">(彈性開通)</span></td>
-              <td><span class="pill-badge pill-badge-exchange">需車站領卡</span>憑證領實體卡 ＋ <span
-                  class="pill-badge pill-badge-direct">每趟感應搭乘</span>搭輕軌公車拍 Validé 柱</td>
+              <td style="text-align: center;"><strong>10/24</strong> <span class="chron-day-badge">D10</span></td>
+              <td>
+                <div class="chron-route-name">PASS SUD AZUR EXPLORE</div>
+                <div class="chron-vehicle-tag">🎫 南法通票感應卡</div>
+              </td>
+              <td>
+                <div class="chron-time-val">10/24–10/26</div>
+                <div class="chron-dur-tag">(彈性開通 3 日)</div>
+              </td>
+              <td><span class="pill-badge pill-badge-exchange">需車站領卡</span> <span class="pill-badge pill-badge-direct">每趟感應搭乘</span></td>
             </tr>
             <tr>
-              <td><strong>10/25</strong> <span class="chron-day-badge">D11</span></td>
-              <td><strong>尼斯城 ↔ 濱海自由城</strong></td>
-              <td>TER 懸崖景觀車</td>
-              <td>彈性班次<br><span style="color:#666;">(約 7 分鐘)</span></td>
-              <td><span class="pill-badge pill-badge-direct">持通票搭乘</span>PASS SUD AZUR 感應卡直接進站</td>
+              <td style="text-align: center;"><strong>10/25</strong> <span class="chron-day-badge">D11</span></td>
+              <td>
+                <div class="chron-route-name">尼斯城 ↔ 濱海自由城</div>
+                <div class="chron-vehicle-tag">🚆 TER 懸崖景觀車</div>
+              </td>
+              <td>
+                <div class="chron-time-val">彈性班次</div>
+                <div class="chron-dur-tag">(約 7 分鐘)</div>
+              </td>
+              <td><span class="pill-badge pill-badge-direct">持通票搭乘</span></td>
             </tr>
             <tr>
-              <td><strong>10/26</strong> <span class="chron-day-badge">D12</span></td>
-              <td><strong>尼斯 ↔ 費拉角半島</strong></td>
-              <td>15 號海濱公車</td>
-              <td>車程約 25 分</td>
-              <td><span class="pill-badge pill-badge-direct">持通票搭乘</span>上車刷 PASS SUD AZUR 感應卡</td>
+              <td style="text-align: center;"><strong>10/26</strong> <span class="chron-day-badge">D12</span></td>
+              <td>
+                <div class="chron-route-name">尼斯 ↔ 費拉角半島</div>
+                <div class="chron-vehicle-tag">🚌 15 號海濱景觀公車</div>
+              </td>
+              <td>
+                <div class="chron-time-val">車程約 25 分</div>
+                <div class="chron-dur-tag">(班次密集)</div>
+              </td>
+              <td><span class="pill-badge pill-badge-direct">持通票搭乘</span></td>
             </tr>
             <tr>
-              <td><strong>10/26</strong> <span class="chron-day-badge">D12</span></td>
-              <td><strong>羅斯柴爾德花園別墅門票</strong></td>
-              <td>粉紅宮殿門票</td>
-              <td><strong>10:30 音樂噴泉</strong></td>
-              <td><span class="pill-badge pill-badge-direct">團費包含</span>憑預約憑證掃碼入場（含語音導覽與音樂噴泉）</td>
+              <td style="text-align: center;"><strong>10/26</strong> <span class="chron-day-badge">D12</span></td>
+              <td>
+                <div class="chron-route-name">羅斯柴爾德花園別墅門票</div>
+                <div class="chron-vehicle-tag">🏛️ 粉紅宮殿門票</div>
+              </td>
+              <td>
+                <div class="chron-time-val">10:30 音樂噴泉</div>
+                <div class="chron-dur-tag">(參觀約 2 小時)</div>
+              </td>
+              <td><span class="pill-badge pill-badge-direct">團費包含</span></td>
             </tr>
             <tr>
-              <td><strong>10/28</strong> <span class="chron-day-badge">D14</span></td>
-              <td><strong>尼斯市區（AC Hotel）➔ 尼斯機場 T2</strong></td>
-              <td>Uber 專車接送</td>
-              <td>車程約 15 分</td>
-              <td><span class="pill-badge pill-badge-direct">Uber 預約</span>免拖行李直達 T2 航廈大廳，從容辦理 PABLO 電子退稅</td>
+              <td style="text-align: center;"><strong>10/28</strong> <span class="chron-day-badge">D14</span></td>
+              <td>
+                <div class="chron-route-name">尼斯市區（AC Hotel）➔ 尼斯機場 T2</div>
+                <div class="chron-vehicle-tag">🚗 Uber 專車接送</div>
+              </td>
+              <td>
+                <div class="chron-time-val">約 11:30 出發</div>
+                <div class="chron-dur-tag">(車程約 15 分直達)</div>
+              </td>
+              <td><span class="pill-badge pill-badge-direct">Uber 預約</span></td>
             </tr>
-
           </tbody>
         </table>
 
