@@ -487,7 +487,7 @@
        ========================================================================= */
     .galilee-photo-grid-2 {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
       gap: 3.5mm;
       margin-bottom: 1.4mm;
     }
@@ -495,6 +495,7 @@
     .galilee-photo-item {
       display: flex;
       flex-direction: column;
+      min-width: 0;
     }
 
     .galilee-photo-item img {
@@ -518,6 +519,7 @@
       align-items: baseline;
       justify-content: space-between;
       gap: 4px;
+      min-width: 0;
     }
 
     .galilee-spot-heading span:first-child {
@@ -533,6 +535,7 @@
       overflow: hidden;
       text-overflow: ellipsis;
       text-align: right;
+      min-width: 0;
     }
 
     .galilee-spot-desc {
@@ -3026,7 +3029,7 @@
             <img src="day05-varenna-lake.webp" alt="搭乘渡輪前往對岸貝拉焦">
             <div class="galilee-spot-heading">
               <span>▲ 情人步道與湖畔別墅</span>
-              <span class="en">Passeggiata & Villa Monastero</span>
+              <span class="en">Villa Monastero</span>
             </div>
             <div class="galilee-spot-desc">
               午後搭渡輪返回瓦倫納，漫步標誌性「情人紅色水上步道」，往反方向拍可捕捉瓦倫納最經典湖景明信片視角；推薦順遊 Villa Monastero
