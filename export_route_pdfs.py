@@ -43,7 +43,7 @@ def generate_single_route_html(r, temp_html_path):
 <html lang="zh-TW">
 <head>
 <meta charset="utf-8">
-<title>{r['title']} - Google 地圖</title>
+<title>{r['title']}</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <style>
