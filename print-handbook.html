@@ -634,28 +634,33 @@
       line-height: 1.28;
     }
 
-    /* 第 07 頁 (DAY 01 & DAY 02) 舒展與大圖排版微調 */
-    .p07-page .galilee-split-day-block:first-child {
+    /* 第 07 頁 (DAY 01 & 02) 與 第 11 頁 (DAY 06 & 07) 舒展與大圖排版微調 */
+    .p07-page .galilee-split-day-block:first-child,
+    .p11-page .galilee-split-day-block:first-child {
       margin-bottom: 2.5mm;
       padding-bottom: 2.2mm;
     }
 
-    .p07-page .galilee-split-content {
+    .p07-page .galilee-split-content,
+    .p11-page .galilee-split-content {
       margin-bottom: 1.0mm;
       gap: 3.2mm;
     }
 
-    .p07-page .galilee-split-content img {
+    .p07-page .galilee-split-content img,
+    .p11-page .galilee-split-content img {
       width: 48mm;
       height: 25.5mm;
     }
 
-    .p07-page .galilee-split-text {
+    .p07-page .galilee-split-text,
+    .p11-page .galilee-split-text {
       font-size: 8.0pt;
       line-height: 1.45;
     }
 
-    .p07-page .galilee-split-day-block .galilee-spec-footer {
+    .p07-page .galilee-split-day-block .galilee-spec-footer,
+    .p11-page .galilee-split-day-block .galilee-spec-footer {
       margin-top: 1.2mm;
       padding-top: 1.0mm;
     }
@@ -3058,7 +3063,7 @@
     <!-- =========================================================================
          PAGE 11: DAY 06 & DAY 07 (Matching index.html)
          ========================================================================= -->
-    <div class="a5-page">
+    <div class="a5-page p11-page">
       <div class="page-header">
         <span class="page-header-title">DAY 06 & DAY 07</span>
         <span>南下熱那亞 · 歷史港都漫遊</span>
