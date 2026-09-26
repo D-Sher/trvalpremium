@@ -550,24 +550,24 @@ ROUTES_DATA = [
         "id": "route_18",
         "day": "DAY 12",
         "day_badge": "D12 · 費拉角貴族莊園巡禮",
-        "title": "尼斯舊港 至 羅斯柴爾德花園別墅",
+        "title": "尼斯舊港 至 Passable / Rothschild 站（羅斯柴爾德花園別墅入口）",
         "origin_name": "尼斯林比亞港（Port Lympia 碼頭）",
         "origin_addr": "Quai Amiral Infernet / Port Lympia, 06300 Nice, 法國",
-        "dest_name": "羅斯柴爾德花園別墅（Villa Ephrussi de Rothschild）",
-        "dest_addr": "1 Avenue Ephrussi de Rothschild, 06230 Saint-Jean-Cap-Ferrat, 法國",
+        "dest_name": "Passable / Rothschild 站（羅斯柴爾德花園別墅入口站）",
+        "dest_addr": "Avenue Denis Séméria / Passable, 06230 Saint-Jean-Cap-Ferrat, 法國",
         "dep_time": "09:30",
-        "arr_time": "10:07",
-        "duration": "37 分（步行 7 分 + 27 站景觀公車 23 分 + 步行 7 分）",
+        "arr_time": "10:02",
+        "duration": "32 分（步行 7 分 + 27 站景觀公車 25 分）",
         "ticket_title": "通票資訊 · Lignes d'Azur 觀光公車",
         "ticket_sub": "PASS SUD AZUR 南法通票感應卡（涵蓋 15 號海濱公車）",
         "ticket_price": "持 PASS SUD AZUR 通票搭乘（單程 €1.70 上車感應）",
         "operator": "尼斯都會大眾運輸 Lignes d'Azur",
-        "operator_note": "自林比亞港碼頭步行約 7 分（500m）至「Port Lympia / Arson」站牌，搭乘 15 號公車（往 Port de Saint-Jean）行經 27 站海濱公路直達「Passable / Rothschild」站下車，再沿林蔭道步行約 7 分（400m）即達別墅正門售票處。",
+        "operator_note": "自林比亞港碼頭步行約 7 分（500m）至「Port Lympia / Arson」站牌，搭乘 15 號公車（往 Port de Saint-Jean）行經 27 站海濱公路直達「Passable / Rothschild」站下車；站牌旁即為羅斯柴爾德莊園專屬林蔭道入口，漫步 400 公尺即可抵達別墅正門與售票處。",
         "transit_type": "bus",
         "transit_badge": "🚌 Bus 15（往 Port de Saint-Jean）",
         "line_color": "#0288d1",
         "gmaps_url": "https://maps.app.goo.gl/KsrrBWECHJHFNxME6",
-        "alert": "乘車攻略：從林比亞港需先步行 7 分至 Rue Arson「Port Lympia / Arson」公車站上車；下車前一站為「La Rade」，見站牌即按下車鈴，於「Passable / Rothschild」下車後步行 7 分鐘緩坡即抵莊園入口。",
+        "alert": "乘車攻略：從林比亞港需先步行 7 分至 Rue Arson「Port Lympia / Arson」公車站上車；下車前一站為「La Rade」，見站牌即按下車鈴，於「Passable / Rothschild」下車即抵莊園入口。",
         "stops": [
             {"time": "09:30", "name": "尼斯林比亞港（Quai Amiral Infernet · 步行起點）", "coord": [43.69680, 7.28392], "is_start": True},
             {"time": "09:37", "name": "Port Lympia / Arson（15 號公車上車站 · 步行 500m 抵達）", "coord": [43.69880, 7.28634]},
@@ -579,8 +579,7 @@ ROUTES_DATA = [
             {"time": "09:54", "name": "Léopold II（全景高點海濱路）", "coord": [43.70880, 7.31750]},
             {"time": "09:58", "name": "Gare Beaulieu-sur-Mer（濱海博略火車站前）", "coord": [43.70630, 7.33150]},
             {"time": "10:00", "name": "Pont Saint-Jean（費拉角半島入口轉入）", "coord": [43.70140, 7.32680]},
-            {"time": "10:02", "name": "Passable / Rothschild（公車下車站 · 前一站為 La Rade）", "coord": [43.69395, 7.32890]},
-            {"time": "10:07", "name": "羅斯柴爾德花園別墅正門（步行 400m 抵達 · 售票入口）", "coord": [43.69665, 7.32847], "is_end": True}
+            {"time": "10:02", "name": "Passable / Rothschild（終點下車站 · 羅斯柴爾德花園別墅入口）", "coord": [43.69395, 7.32890], "is_end": True}
         ]
     }
 ]
