@@ -168,36 +168,71 @@ ROUTES_DATA = [
     {
         "id": "route_06",
         "day": "DAY 04",
-        "day_badge": "D04 · 貝爾加莫登山纜車",
-        "title": "貝爾加莫車站 至 貝爾加莫上城老廣場",
-        "origin_name": "貝爾加莫火車站（Bergamo FS）",
-        "origin_addr": "Piazza Guglielmo Marconi, 24122 Bergamo BG, 義大利",
-        "dest_name": "貝爾加莫上城老廣場（Piazza Vecchia）",
-        "dest_addr": "Piazza Vecchia, 24129 Bergamo BG, 義大利",
-        "dep_time": "10:15",
-        "arr_time": "10:35",
-        "duration": "20 分（公車接駁 + 百年登山纜車）",
+        "day_badge": "D04 · 貝爾加莫公車直達上城",
+        "title": "貝爾加莫車站 至 貝爾加莫上城老廣場（公車 1 號）",
+        "origin_name": "貝爾加莫火車站前（Bergamo Stazione FS）",
+        "origin_addr": "Piazza Guglielmo Marconi 1, 24122 Bergamo BG, 義大利",
+        "dest_name": "Colle Aperto（第 47 站 · 上城終點站 · 老廣場旁）",
+        "dest_addr": "Largo Colle Aperto, 24129 Bergamo BG, 義大利（穿過古城門步行 3 分鐘達老廣場）",
+        "dep_time": "10:05",
+        "arr_time": "10:22",
+        "duration": "17 分（公車 1 號直達上城第 47 站）",
         "ticket_title": "票券與相關資訊",
-        "ticket_sub": "ATB Bergamo 24H 觀光通票（涵蓋下城公車與登山纜車）",
+        "ticket_sub": "ATB Bergamo 24H 觀光通票（涵蓋市區公車與登山纜車）",
         "ticket_price": "€4.00（24H 通票）",
         "operator": "ATB Bergamo",
-        "operator_note": "火車站前搭 1 號公車至 Funicolare Bassa，轉乘百年傾斜纜車直登 Città Alta",
-        "transit_type": "funicular",
-        "transit_badge": "🚌 ATB Linea 1 ➔ 🚡 Funicolare Città Alta",
+        "operator_note": "站前廣場搭乘 1 號公車直達上城終點 Colle Aperto（第 47 站）。下車穿過古城門即可漫步古街至老廣場（Piazza Vecchia）。亦可於 Funicolare 站下車轉搭登山纜車，車票通用。",
+        "transit_type": "bus",
+        "transit_badge": "🚌 ATB Linea 1（往 Colle Aperto 終點站）",
         "line_color": "#ff6f00",
-        "gmaps_url": "https://www.google.com/maps/dir/?api=1&origin=Stazione+di+Bergamo&destination=Piazza+Vecchia+Bergamo&travelmode=transit",
-        "alert": "景觀提示：纜車站出口即為鞋市廣場，漫步 3 分鐘穿過石板古巷即達老廣場。",
+        "gmaps_url": "https://www.google.com/maps/dir/?api=1&origin=Stazione+di+Bergamo&destination=Colle+Aperto,+Bergamo&travelmode=transit",
+        "alert": "下車提示：搭乘 Linea 1 往 Città Alta 方向，終點站即為「Colle Aperto」（系統標示第 47 站）。下車穿過古城門（Porta Sant'Alessandro）沿 Via Colleoni 步行 3 分鐘即達老廣場（Piazza Vecchia）！",
         "stops": [
-            {"time": "10:15", "name": "Stazione FS（站前 1 號站牌）", "coord": [45.6917, 9.6706], "is_start": True},
-            {"time": "10:19", "name": "Porta Nuova（新門鬧區）", "coord": [45.6953, 9.6700]},
-            {"time": "10:23", "name": "Viale Vittorio Emanuele", "coord": [45.6983, 9.6689]},
-            {"time": "10:27", "name": "Funicolare Bassa（登山纜車下站）", "coord": [45.7008, 9.6669]},
-            {"time": "10:31", "name": "Funicolare Alta（P.za Mercato Scarpe）", "coord": [45.7032, 9.6644]},
-            {"time": "10:35", "name": "Piazza Vecchia（老廣場／聖母聖殿）", "coord": [45.7042, 9.6628], "is_end": True}
+            {"time": "10:05", "name": "Bergamo Stazione FS（站前 1 號公車站牌）", "coord": [45.6917, 9.6706], "is_start": True},
+            {"time": "10:07", "name": "Viale Papa Giovanni XXIII", "coord": [45.6940, 9.6715]},
+            {"time": "10:09", "name": "Porta Nuova（新門 · 下城商務中心）", "coord": [45.6953, 9.6700]},
+            {"time": "10:12", "name": "Viale Vittorio Emanuele II", "coord": [45.6983, 9.6689]},
+            {"time": "10:14", "name": "Funicolare Città Bassa（登山纜車下站 · 可轉乘纜車）", "coord": [45.7008, 9.6669]},
+            {"time": "10:17", "name": "Porta Sant'Agostino（聖奧古斯丁威尼斯城門）", "coord": [45.7022, 9.6645]},
+            {"time": "10:19", "name": "Viale delle Mura（威尼斯城牆全景觀景道）", "coord": [45.7042, 9.6608]},
+            {"time": "10:20", "name": "Porta San Giacomo（聖賈科莫門 · 下車前一站提示）", "coord": [45.7035, 9.6580]},
+            {"time": "10:22", "name": "Colle Aperto（第 47 站 · 終點站 Capolinea · 漫步至老廣場）", "coord": [45.7065, 9.6565], "is_end": True}
         ]
     },
     {
         "id": "route_07",
+        "day": "DAY 04",
+        "day_badge": "D04 · 貝爾加莫午後返程",
+        "title": "貝爾加莫上城 至 貝爾加莫車站（公車 1 號返程）",
+        "origin_name": "Colle Aperto 站牌（Largo Colle Aperto）",
+        "origin_addr": "Largo Colle Aperto, 24129 Bergamo BG, 義大利",
+        "dest_name": "貝爾加莫火車站（Bergamo Stazione FS）",
+        "dest_addr": "Piazza Guglielmo Marconi 1, 24122 Bergamo BG, 義大利（搭乘 15:02 RE 2232 返米蘭）",
+        "dep_time": "14:30",
+        "arr_time": "14:47",
+        "duration": "17 分（公車 1 號直達下城車站）",
+        "ticket_title": "票券與相關資訊",
+        "ticket_sub": "ATB Bergamo 24H 觀光通票（回程免再購票）",
+        "ticket_price": "涵蓋於 24H 通票",
+        "operator": "ATB Bergamo",
+        "operator_note": "於 Colle Aperto 或聖賈科莫門前站牌搭乘 1 號公車下山直達火車站，銜接 15:02 發車之 RE 2232 區域快車返回米蘭中央車站",
+        "transit_type": "bus",
+        "transit_badge": "🚌 ATB Linea 1（往 Stazione FS / Aeroporto）",
+        "line_color": "#d32f2f",
+        "gmaps_url": "https://www.google.com/maps/dir/?api=1&origin=Colle+Aperto,+Bergamo&destination=Stazione+di+Bergamo&travelmode=transit",
+        "alert": "返程提示：於 Colle Aperto 站牌搭乘 Linea 1 往 Stazione / Aeroporto 方向，約 17 分鐘直達貝爾加莫火車站前，無縫銜接 15:02 發車之 RE 2232 區域快車直達米蘭中央車站。",
+        "stops": [
+            {"time": "14:30", "name": "Colle Aperto（上城起點站 Capolinea）", "coord": [45.7065, 9.6565], "is_start": True},
+            {"time": "14:32", "name": "Viale delle Mura / Porta San Giacomo", "coord": [45.7035, 9.6580]},
+            {"time": "14:35", "name": "Porta Sant'Agostino（穿出古城門）", "coord": [45.7022, 9.6645]},
+            {"time": "14:38", "name": "Viale Vittorio Emanuele II / Funicolare", "coord": [45.6983, 9.6689]},
+            {"time": "14:41", "name": "Porta Nuova（新門）", "coord": [45.6953, 9.6700]},
+            {"time": "14:44", "name": "Viale Papa Giovanni XXIII（下車前一站提示）", "coord": [45.6940, 9.6715]},
+            {"time": "14:47", "name": "Bergamo Stazione FS（火車站前 · 抵達車站搭乘 RE 2232 回米蘭）", "coord": [45.6917, 9.6706], "is_end": True}
+        ]
+    },
+    {
+        "id": "route_08",
         "day": "DAY 05",
         "day_badge": "D05 · 科莫湖雙城慢遊",
         "title": "米蘭中央車站 至 瓦倫納-埃西諾車站",
@@ -228,7 +263,7 @@ ROUTES_DATA = [
         ]
     },
     {
-        "id": "route_08",
+        "id": "route_09",
         "day": "DAY 05",
         "day_badge": "D05 · 科莫湖跨湖渡輪",
         "title": "瓦倫納碼頭 至 貝拉焦碼頭",
@@ -256,68 +291,67 @@ ROUTES_DATA = [
         ]
     },
     {
-        "id": "route_09",
+        "id": "route_10",
         "day": "DAY 06",
-        "day_badge": "D06 · 南下熱那亞王子廣場",
+        "day_badge": "D06 · 南下熱那亞一等艙",
         "title": "米蘭中央車站 至 熱那亞王子廣場車站",
         "origin_name": "米蘭中央車站（Milano Centrale）",
         "origin_addr": "Piazza Duca d'Aosta 1, 20124 Milano MI, 義大利",
         "dest_name": "熱那亞王子廣場車站（Genova Piazza Principe）",
         "dest_addr": "Piazza Acquaverde, 16134 Genova GE, 義大利",
         "dep_time": "09:10",
-        "arr_time": "10:40",
-        "duration": "1 小時 30 分（4 站）",
+        "arr_time": "10:48",
+        "duration": "1 小時 38 分（5 站直達）",
         "ticket_title": "預訂席位 · 義鐵城際一等艙",
-        "ticket_sub": "Trenitalia Intercity · 寬敞一等艙保留席位（含行李空間）",
+        "ticket_sub": "Trenitalia Intercity · 舒適寬敞",
         "ticket_price": "一等艙實體票（團費已含）",
         "operator": "義大利國鐵 Trenitalia Intercity",
-        "operator_note": "列車駛越亞平寧山脈直奔利古里亞海岸，出站步行 2 分鐘直達 Savoia 飯店",
+        "operator_note": "一等艙空間寬敞含充電座，出站步行 2 分鐘直達五星 Grand Hotel Savoia",
         "transit_type": "train",
-        "transit_badge": "🚆 Intercity IC 659（一等艙 Prima Classe）",
+        "transit_badge": "🚆 Intercity IC 665（一等艙 Prima Classe）",
         "line_color": "#d93025",
         "gmaps_url": "https://www.google.com/maps/dir/?api=1&origin=Milano+Centrale&destination=Genova+Piazza+Principe&travelmode=transit",
         "alert": None,
         "stops": [
             {"time": "09:10", "name": "Milano Centrale", "coord": [45.4862, 9.2045], "is_start": True},
-            {"time": "09:22", "name": "Milano Rogoredo", "coord": [45.4339, 9.2383]},
-            {"time": "09:38", "name": "Pavia（帕維亞古城）", "coord": [45.1883, 9.1436]},
-            {"time": "09:56", "name": "Voghera", "coord": [44.9961, 9.0069]},
-            {"time": "10:10", "name": "Tortona", "coord": [44.8978, 8.8681]},
-            {"time": "10:40", "name": "Genova Piazza Principe", "coord": [44.4172, 8.9217], "is_end": True}
-        ]
-    },
-    {
-        "id": "route_10",
-        "day": "DAY 07",
-        "day_badge": "D07 · 熱那亞地鐵市區巡禮",
-        "title": "熱那亞王子廣場 至 法拉利廣場與總督宮",
-        "origin_name": "熱那亞王子廣場地鐵站（Principe Metro）",
-        "origin_addr": "Piazza Acquaverde, 16134 Genova GE, 義大利",
-        "dest_name": "法拉利廣場（Piazza De Ferrari）",
-        "dest_addr": "Piazza Raffaele De Ferrari, 16121 Genova GE, 義大利",
-        "dep_time": "09:30",
-        "arr_time": "09:36",
-        "duration": "6 分（4 站）",
-        "ticket_title": "票券與相關資訊",
-        "ticket_sub": "AMT Genova 24H 交通日票（地鐵、公車、登山纜車通用）",
-        "ticket_price": "€4.50（24H 通票）",
-        "operator": "熱那亞大眾運輸 AMT",
-        "operator_note": "地鐵站出口直接銜接法拉利廣場青銅噴泉、總督宮與卡洛費利切劇院",
-        "transit_type": "metro",
-        "transit_badge": "Ⓜ️ Metro Genova（往 Brignole）",
-        "line_color": "#e53935",
-        "gmaps_url": "https://www.google.com/maps/dir/?api=1&origin=Genova+Piazza+Principe&destination=Piazza+De+Ferrari+Genova&travelmode=transit",
-        "alert": None,
-        "stops": [
-            {"time": "09:30", "name": "Principe", "coord": [44.4172, 8.9217], "is_start": True},
-            {"time": "09:32", "name": "Darsena", "coord": [44.4144, 8.9272]},
-            {"time": "09:33", "name": "San Giorgio（舊港海鮮街）", "coord": [44.4092, 8.9297]},
-            {"time": "09:35", "name": "Sarzano/Sant'Agostino", "coord": [44.4047, 8.9325]},
-            {"time": "09:36", "name": "De Ferrari（總督宮與青銅噴泉）", "coord": [44.4072, 8.9342], "is_end": True}
+            {"time": "09:40", "name": "Pavia（帕維亞）", "coord": [45.1878, 9.1458]},
+            {"time": "10:04", "name": "Voghera", "coord": [44.9961, 9.0069]},
+            {"time": "10:20", "name": "Tortona", "coord": [44.8967, 8.8617]},
+            {"time": "10:48", "name": "Genova Piazza Principe", "coord": [44.4172, 8.9217], "is_end": True}
         ]
     },
     {
         "id": "route_11",
+        "day": "DAY 07",
+        "day_badge": "D07 · 熱那亞地鐵核心漫遊",
+        "title": "熱那亞王子廣場 至 法拉利廣場",
+        "origin_name": "王子廣場地鐵站（Principe Metro）",
+        "origin_addr": "Piazza Acquaverde, 16134 Genova GE, 義大利",
+        "dest_name": "法拉利廣場地鐵站（De Ferrari Metro）",
+        "dest_addr": "Piazza Raffaele De Ferrari, 16121 Genova GE, 義大利",
+        "dep_time": "09:30",
+        "arr_time": "09:37",
+        "duration": "7 分（4 站）",
+        "ticket_title": "票券與相關資訊",
+        "ticket_sub": "AMT Genova 市區地鐵 / 感應進站",
+        "ticket_price": "單程 €2.00 / 支援感應支付",
+        "operator": "熱那亞大眾運輸 AMT",
+        "operator_note": "地鐵直達熱那亞心臟地帶法拉利噴泉廣場，出站即達總督宮與卡洛·費利切劇院",
+        "transit_type": "metro",
+        "transit_badge": "🚇 Metropolitana Genova（往 Brignole）",
+        "line_color": "#d93025",
+        "gmaps_url": "https://www.google.com/maps/dir/?api=1&origin=Principe+Metro+Genova&destination=De+Ferrari+Metro+Genova&travelmode=transit",
+        "alert": None,
+        "stops": [
+            {"time": "09:30", "name": "Principe Metro（王子廣場站）", "coord": [44.4167, 8.9208], "is_start": True},
+            {"time": "09:32", "name": "Darsena（舊港大學區）", "coord": [44.4139, 8.9264]},
+            {"time": "09:34", "name": "San Giorgio（水族館站）", "coord": [44.4092, 8.9286]},
+            {"time": "09:36", "name": "Sarzanese / Sant'Agostino", "coord": [44.4056, 8.9317]},
+            {"time": "09:37", "name": "De Ferrari（法拉利廣場圓環噴泉）", "coord": [44.4072, 8.9344], "is_end": True}
+        ]
+    },
+    {
+        "id": "route_12",
         "day": "DAY 08",
         "day_badge": "D08 · 前往菲諾港門戶",
         "title": "熱那亞王子廣場 至 聖瑪格麗塔利古雷",
@@ -345,37 +379,51 @@ ROUTES_DATA = [
         ]
     },
     {
-        "id": "route_12",
+        "id": "route_13",
         "day": "DAY 08",
-        "day_badge": "D08 · 蔚藍海岸全景公車",
-        "title": "聖瑪格麗塔車站 至 菲諾港老港廣場",
+        "day_badge": "D08 · 蔚藍海岸全景公車 · 19 站",
+        "title": "聖瑪格麗塔車站 至 Portofino 終點站（782 號公車 · 19 站全景）",
         "origin_name": "聖瑪格麗塔車站（S. Margherita Ligure FS）",
         "origin_addr": "Piazza Nobili 1, 16038 Santa Margherita Ligure GE, 義大利",
-        "dest_name": "菲諾港老港廣場（Piazza Martiri dell'Olivetta）",
-        "dest_addr": "Piazza Martiri dell'Olivetta, 16034 Portofino GE, 義大利",
+        "dest_name": "Portofino 終點站（Portofino / Terminal · Piazza della Libertà）",
+        "dest_addr": "Piazza della Libertà / Via Roma, 16034 Portofino GE, 義大利（下車即達菲諾港核心老港灣）",
         "dep_time": "10:25",
         "arr_time": "10:43",
-        "duration": "18 分（8 站沿懸崖海灣）",
+        "duration": "18 分（19 站緊貼懸崖碧海）",
         "ticket_title": "票券與相關資訊",
         "ticket_sub": "AMT Genova 蔚藍海岸觀光線 782 號專屬公車",
-        "ticket_price": "單程 €3.00 / 來回 €5.00",
+        "ticket_price": "單程 €5.00 / 支援車上感應信用卡",
         "operator": "熱那亞大眾運輸 AMT",
-        "operator_note": "全程緊貼利古里亞海岸線行駛，途經 Paraggi 翡翠灣，終點直達菲諾港核心",
+        "operator_note": "全程緊貼利古里亞海岸線行駛，途經 Paraggi 翡翠灣與修道院，終點直達 Portofino / Terminal 站（老港廣場旁）",
         "transit_type": "bus",
-        "transit_badge": "🚌 Bus 782 Portofino（海岸全景線）",
+        "transit_badge": "🚌 AMT Linea 782（往 Portofino 終點站）",
         "line_color": "#0288d1",
-        "gmaps_url": "https://www.google.com/maps/dir/?api=1&origin=Stazione+Santa+Margherita+Ligure&destination=Piazza+Martiri+dell'Olivetta+Portofino&travelmode=transit",
-        "alert": "賞景提示：上車請坐前進方向左側靠窗，一路盡享第里雅斯特海灣碧藍美景！",
+        "gmaps_url": "https://www.google.com/maps/dir/?api=1&origin=Stazione+Santa+Margherita+Ligure&destination=Portofino&travelmode=transit",
+        "alert": "下車提示：782 號公車全程共 19 站，終點站即為「Portofino / Terminal」（菲諾港終點站）。前一站為 Chiesa S. Martino，下一站即抵達終點站下車，出站即是著名的菲諾港海灣與老港廣場（Piazza Martiri dell'Olivetta）！上車建議坐前進方向左側靠窗賞海景。",
         "stops": [
-            {"time": "10:25", "name": "S. Margherita FS（站前圓環）", "coord": [44.3353, 9.2139], "is_start": True},
-            {"time": "10:28", "name": "Hotel Regina Elena", "coord": [44.3283, 9.2153]},
-            {"time": "10:33", "name": "Abbazia della Cervara", "coord": [44.3205, 9.2144]},
-            {"time": "10:37", "name": "Paraggi（翡翠綠海水浴場）", "coord": [44.3147, 9.2122]},
-            {"time": "10:43", "name": "Portofino（P.za Martiri dell'Olivetta）", "coord": [44.3039, 9.2094], "is_end": True}
+            {"time": "10:25", "name": "S. Margherita FS（火車站前起點站 Capolinea）", "coord": [44.3353, 9.2139], "is_start": True},
+            {"time": "10:26", "name": "S. Margherita / Poste（郵局）", "coord": [44.3340, 9.2136]},
+            {"time": "10:27", "name": "Bar Checco", "coord": [44.3335, 9.2135]},
+            {"time": "10:28", "name": "Piazza Vittorio Veneto（海濱花園廣場）", "coord": [44.3325, 9.2140]},
+            {"time": "10:29", "name": "Pizzerie", "coord": [44.3315, 9.2148]},
+            {"time": "10:30", "name": "Pescheria（魚市碼頭）", "coord": [44.3305, 9.2152]},
+            {"time": "10:31", "name": "Porto S. Margherita（遊艇港）", "coord": [44.3295, 9.2156]},
+            {"time": "10:32", "name": "Hotel Regina Elena（麗晶酒店前）", "coord": [44.3275, 9.2160]},
+            {"time": "10:33", "name": "Covo di Nord Est（傳奇懸崖俱樂部）", "coord": [44.3235, 9.2175]},
+            {"time": "10:34", "name": "Baretto Punta Pedale", "coord": [44.3210, 9.2170]},
+            {"time": "10:35", "name": "Bivio Via Repellini", "coord": [44.3190, 9.2165]},
+            {"time": "10:36", "name": "Cervara（切爾瓦拉修道院角）", "coord": [44.3175, 9.2185]},
+            {"time": "10:37", "name": "Capo Nord（北角懸崖）", "coord": [44.3140, 9.2180]},
+            {"time": "10:38", "name": "Castello Paraggi（帕拉吉城堡）", "coord": [44.3120, 9.2150]},
+            {"time": "10:39", "name": "Paraggi（帕拉吉翡翠海灣海灘）", "coord": [44.3105, 9.2130]},
+            {"time": "10:40", "name": "Niasca（尼亞斯卡水上勝地）", "coord": [44.3075, 9.2110]},
+            {"time": "10:41", "name": "Hotel Splendido（奢華酒店路口）", "coord": [44.3045, 9.2085]},
+            {"time": "10:42", "name": "Portofino / Chiesa S. Martino（聖馬蒂諾教堂 · 下車前一站提示）", "coord": [44.3035, 9.2095]},
+            {"time": "10:43", "name": "Portofino / Terminal（Capolinea 終點站 · 菲諾港老港廣場）", "coord": [44.3032, 9.2105], "is_end": True}
         ]
     },
     {
-        "id": "route_13",
+        "id": "route_14",
         "day": "DAY 09",
         "day_badge": "D09 · 跨越義法邊境第一段",
         "title": "熱那亞王子廣場 至 文提米利亞邊境車站",
@@ -409,7 +457,7 @@ ROUTES_DATA = [
         ]
     },
     {
-        "id": "route_14",
+        "id": "route_15",
         "day": "DAY 09",
         "day_badge": "D09 · 跨國雙層全景景觀列車",
         "title": "文提米利亞 至 尼斯城站",
@@ -445,7 +493,7 @@ ROUTES_DATA = [
         ]
     },
     {
-        "id": "route_15",
+        "id": "route_16",
         "day": "DAY 10",
         "day_badge": "D10 · 尼斯都會輕軌探索",
         "title": "AC Hotel Nice 至 尼斯舊城與薩萊亞花市",
@@ -476,7 +524,7 @@ ROUTES_DATA = [
         ]
     },
     {
-        "id": "route_16",
+        "id": "route_17",
         "day": "DAY 11",
         "day_badge": "D11 · 濱海自由城半日慢遊",
         "title": "尼斯城站 至 濱海自由城",
@@ -504,7 +552,7 @@ ROUTES_DATA = [
         ]
     },
     {
-        "id": "route_17",
+        "id": "route_18",
         "day": "DAY 12",
         "day_badge": "D12 · 費拉角貴族莊園巡禮",
         "title": "尼斯舊港 至 羅斯柴爾德花園別墅",
@@ -535,7 +583,7 @@ ROUTES_DATA = [
         ]
     },
     {
-        "id": "route_18",
+        "id": "route_19",
         "day": "DAY 14",
         "day_badge": "D14 · 平安歸途特快輕軌",
         "title": "AC Hotel Nice 至 尼斯蔚藍海岸機場第二航廈",
@@ -574,19 +622,20 @@ ROUTE_PDF_MAPPING = {
     "route_03": "03_D03_斯卡拉大劇院_至_蒙塔內利花園.pdf",
     "route_04": "04_D03_威尼斯門_至_Via_Galvani加爾瓦尼站.pdf",
     "route_05": "05_D04_米蘭中央車站_至_貝爾加莫車站.pdf",
-    "route_06": "06_D04_貝爾加莫下城_至_上城老廣場纜車.pdf",
-    "route_07": "07_D05_米蘭中央車站_至_瓦倫納科莫湖.pdf",
-    "route_08": "08_D05_瓦倫納碼頭_至_貝拉焦跨湖渡輪.pdf",
-    "route_09": "09_D06_米蘭中央車站_至_熱那亞王子廣場.pdf",
-    "route_10": "10_D07_熱那亞王子廣場_至_法拉利廣場地鐵.pdf",
-    "route_11": "11_D08_熱那亞王子廣場_至_聖瑪格麗塔.pdf",
-    "route_12": "12_D08_聖瑪格麗塔_至_菲諾港782公車.pdf",
-    "route_13": "13_D09_熱那亞王子廣場_至_文提米利亞邊境.pdf",
-    "route_14": "14_D09_文提米利亞_至_尼斯城站TER雙層列車.pdf",
-    "route_15": "15_D10_ACHotel_至_尼斯舊城花市輕軌L2.pdf",
-    "route_16": "16_D11_尼斯城站_至_濱海自由城TER.pdf",
-    "route_17": "17_D12_尼斯舊港_至_費拉角別墅15號公車.pdf",
-    "route_18": "18_D14_ACHotel_至_尼斯機場T2直達輕軌.pdf",
+    "route_06": "06_D04_貝爾加莫車站_至_貝爾加莫上城老廣場公車1號.pdf",
+    "route_07": "07_D04_貝爾加莫上城_至_貝爾加莫車站公車1號返程.pdf",
+    "route_08": "08_D05_米蘭中央車站_至_瓦倫納科莫湖.pdf",
+    "route_09": "09_D05_瓦倫納碼頭_至_貝拉焦跨湖渡輪.pdf",
+    "route_10": "10_D06_米蘭中央車站_至_熱那亞王子廣場.pdf",
+    "route_11": "11_D07_熱那亞王子廣場_至_法拉利廣場地鐵.pdf",
+    "route_12": "12_D08_熱那亞王子廣場_至_聖瑪格麗塔.pdf",
+    "route_13": "13_D08_聖瑪格麗塔_至_Portofino終點站782公車.pdf",
+    "route_14": "14_D09_熱那亞王子廣場_至_文提米利亞邊境.pdf",
+    "route_15": "15_D09_文提米利亞_至_尼斯城站TER雙層列車.pdf",
+    "route_16": "16_D10_ACHotel_至_尼斯舊城花市輕軌L2.pdf",
+    "route_17": "17_D11_尼斯城站_至_濱海自由城TER.pdf",
+    "route_18": "18_D12_尼斯舊港_至_費拉角別墅15號公車.pdf",
+    "route_19": "19_D14_ACHotel_至_尼斯機場T2直達輕軌.pdf",
 }
 
 def generate_routes_html():
@@ -988,6 +1037,12 @@ def generate_routes_html():
       border-left: 2px solid #dadce0;
       padding-left: 14px;
     }}
+    .stop-series.two-cols {{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px 16px;
+      padding-left: 12px;
+    }}
     .stop-row {{
       font-size: 12px;
       color: #5f6368;
@@ -1142,6 +1197,7 @@ def generate_routes_html():
               </div>
             """)
         stops_html = "".join(stops_rows)
+        series_class = "stop-series two-cols" if len(r["stops"]) > 10 else "stop-series"
 
         # Category for filter
         cat = "milan"
@@ -1209,7 +1265,7 @@ def generate_routes_html():
             </div>
 
             <!-- Intermediate Stops List -->
-            <div class="stop-series">
+            <div class="{series_class}">
               {stops_html}
             </div>
           </div>

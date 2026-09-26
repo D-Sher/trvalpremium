@@ -20,6 +20,10 @@ os.makedirs(SCRATCH_DIR, exist_ok=True)
 def generate_single_route_html(r, temp_html_path):
     alert_html = f'<div class="transit-alert">{r["alert"]}</div>' if r.get("alert") else ""
     
+    is_many_stops = len(r["stops"]) > 10
+    map_height = "250px" if is_many_stops else "360px"
+    series_class = "stop-series two-cols" if is_many_stops else "stop-series"
+    
     stops_rows = []
     for s in r["stops"][1:-1]:
         stops_rows.append(f"""
@@ -122,11 +126,11 @@ def generate_single_route_html(r, temp_html_path):
 
   .map-box {{
     width: 100%;
-    height: 360px;
+    height: {map_height};
     border-radius: 8px;
     overflow: hidden;
     border: 1px solid #dadce0;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
     position: relative;
   }}
   #map {{
@@ -288,16 +292,22 @@ def generate_single_route_html(r, temp_html_path):
   }}
 
   .stop-series {{
-    margin: 8px 0 0 58px;
+    margin: 6px 0 0 58px;
     border-left: 2px solid #dadce0;
     padding-left: 12px;
   }}
+  .stop-series.two-cols {{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px 14px;
+    padding-left: 10px;
+  }}
   .stop-row {{
-    font-size: 11px;
+    font-size: 10px;
     color: #5f6368;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
     display: flex;
-    gap: 10px;
+    gap: 6px;
     align-items: center;
   }}
   .stop-dot {{
@@ -377,7 +387,7 @@ def generate_single_route_html(r, temp_html_path):
           {alert_html}
         </div>
 
-        <div class="stop-series">
+        <div class="{series_class}">
           {stops_html}
         </div>
       </div>
