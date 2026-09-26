@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Export all 17 routes to individual PDF files in /Users/sher/Documents/trvalpremium/route/
+Export all 25 routes to individual PDF files in /Users/sher/Documents/trvalpremium/route/
 and merge them into route/all_routes.pdf.
 """
 

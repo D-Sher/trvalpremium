@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Generate comprehensive origin-to-destination route maps for all 18 transit legs
+Generate comprehensive origin-to-destination route maps for all 25 transit legs
 of the 15-day Northern Italy and French Riviera tour, referencing 1.pdf and 2.pdf.
 """
 
@@ -26,8 +26,8 @@ ROUTES_DATA = [
         "duration": "56 分（8 站）",
         "ticket_title": "票券與搭乘指引 · 馬爾彭薩機場快線（MXP 2951）",
         "ticket_sub": "持 Trenord APP Wallet QR 掃碼進站；如為義鐵票請完成線上 Check-in",
-        "ticket_badge_html": '<span class="pill-badge pill-badge-direct">免換直通·免打卡</span>',
-        "ticket_price": '<span class="pill-badge pill-badge-direct">免換直通·免打卡</span>',
+        "ticket_badge_html": "<span class=\"pill-badge pill-badge-direct\">免換直通·免打卡</span>",
+        "ticket_price": "<span class=\"pill-badge pill-badge-direct\">免換直通·免打卡</span>",
         "operator": "北方鐵路 Trenord",
         "operator_note": "上車前務必於黃綠色打票機打票啟用；車廂設有專屬大件行李架",
         "transit_type": "train",
@@ -61,8 +61,8 @@ ROUTES_DATA = [
         "duration": "6 分（4 站）",
         "ticket_title": "通票資訊 · 米蘭都會大眾運輸（Milano Pass 24h）",
         "ticket_sub": "進地鐵閘門首拍感應啟用通票，全日無限搭乘",
-        "ticket_badge_html": '<span class="pill-badge pill-badge-direct">感應啟用開通</span>',
-        "ticket_price": '<span class="pill-badge pill-badge-direct">感應啟用開通</span>',
+        "ticket_badge_html": "<span class=\"pill-badge pill-badge-direct\">感應啟用開通</span>",
+        "ticket_price": "<span class=\"pill-badge pill-badge-direct\">感應啟用開通</span>",
         "operator": "米蘭大眾運輸 ATM",
         "operator_note": "持米蘭城市通票 Milano Pass 感應進站；出站直達米蘭大教堂廣場",
         "transit_type": "metro",
@@ -92,8 +92,8 @@ ROUTES_DATA = [
         "duration": "6 分（3 站直達）",
         "ticket_title": "通票資訊 · 米蘭復古路面電車（Milano Pass 24h）",
         "ticket_sub": "憑米蘭城市通票 24h 效期內直接上車搭乘，免重複感應",
-        "ticket_badge_html": '<span class="pill-badge pill-badge-direct">持通票搭乘·免再購票</span>',
-        "ticket_price": '<span class="pill-badge pill-badge-direct">持通票搭乘·免再購票</span>',
+        "ticket_badge_html": "<span class=\"pill-badge pill-badge-direct\">持通票搭乘·免再購票</span>",
+        "ticket_price": "<span class=\"pill-badge pill-badge-direct\">持通票搭乘·免再購票</span>",
         "operator": "米蘭大眾運輸 ATM",
         "operator_note": "持米蘭通票搭乘復古路面電車 1 號沿 Via Manzoni 直行至 P.za Cavour（下車前一站：Pisoni）。出站穿過十九世紀拱門即入蒙塔內利花園，漫步杜尼亞尼宮綠地，傍晚穿越花園至威尼斯門街區晚餐",
         "transit_type": "tram",
@@ -122,8 +122,8 @@ ROUTES_DATA = [
         "duration": "8 分（4 站直達）",
         "ticket_title": "通票資訊 · 米蘭都會輕軌電車（Milano Pass 24h）",
         "ticket_sub": "憑米蘭城市通票 24h 效期內直接搭乘返程，免再購票",
-        "ticket_badge_html": '<span class="pill-badge pill-badge-direct">持通票搭乘·免再購票</span>',
-        "ticket_price": '<span class="pill-badge pill-badge-direct">持通票搭乘·免再購票</span>',
+        "ticket_badge_html": "<span class=\"pill-badge pill-badge-direct\">持通票搭乘·免再購票</span>",
+        "ticket_price": "<span class=\"pill-badge pill-badge-direct\">持通票搭乘·免再購票</span>",
         "operator": "米蘭大眾運輸 ATM",
         "operator_note": "威尼斯門晚餐後持米蘭通票搭乘路面輕軌 9 號直達 Via Filzi - Via Galvani 站（加爾瓦尼站）。下車即為 Via Luigi Galvani 街口，轉角 1 分鐘即抵達 Hilton Milan 休息",
         "transit_type": "tram",
@@ -134,7 +134,7 @@ ROUTES_DATA = [
         "stops": [
             {"time": "20:30", "name": "P.ta Venezia M1（威尼斯門站）", "coord": [45.47418, 9.20595], "is_start": True},
             {"time": "20:32", "name": "V.le Vittorio Veneto", "coord": [45.4771, 9.2028]},
-            {"time": "20:34", "name": "P.za Repubblica M3", "coord": [45.4786, 9.1970]},
+            {"time": "20:34", "name": "P.za Repubblica M3", "coord": [45.4786, 9.197]},
             {"time": "20:36", "name": "Filzi / Pirelli（下車前一站提示）", "coord": [45.4831, 9.2008]},
             {"time": "20:38", "name": "Via Filzi / Via Galvani（加爾瓦尼站 · Via Galvani 街口）", "coord": [45.4854, 9.20097], "is_end": True}
         ]
@@ -153,8 +153,8 @@ ROUTES_DATA = [
         "duration": "48 分（4 站）",
         "ticket_title": "票券與搭乘指引 · Trenord 區域快車（RE 2219）",
         "ticket_sub": "出示 Trenord APP Wallet QR 供查驗，直達快車免打卡",
-        "ticket_badge_html": '<span class="pill-badge pill-badge-direct">免換直通·免打卡</span>',
-        "ticket_price": '<span class="pill-badge pill-badge-direct">免換直通·免打卡</span>',
+        "ticket_badge_html": "<span class=\"pill-badge pill-badge-direct\">免換直通·免打卡</span>",
+        "ticket_price": "<span class=\"pill-badge pill-badge-direct\">免換直通·免打卡</span>",
         "operator": "北方鐵路 Trenord / 義大利國鐵",
         "operator_note": "持實體票需於月台黃色打票機打票；抵達後於站前廣場轉搭 1 號公車",
         "transit_type": "train",
@@ -184,8 +184,8 @@ ROUTES_DATA = [
         "duration": "10 分（步行 3 分 + 4 站直達）",
         "ticket_title": "通票資訊 · ATB 貝爾加莫都會交通（24h 通票）",
         "ticket_sub": "已於 ATB Mobile APP 預先購票，上車前於手機 APP 點擊啟用",
-        "ticket_badge_html": '<span class="pill-badge pill-badge-exchange">搭車前手機啟用</span>',
-        "ticket_price": '<span class="pill-badge pill-badge-exchange">搭車前手機啟用</span>',
+        "ticket_badge_html": "<span class=\"pill-badge pill-badge-exchange\">搭車前手機啟用</span>",
+        "ticket_price": "<span class=\"pill-badge pill-badge-exchange\">搭車前手機啟用</span>",
         "operator": "ATB Bergamo（Azienda Trasporti Bergamo）",
         "operator_note": "出火車站自 Piazzale Marconi 7 站牌（Bergamo 7）步行約 3 分鐘（160公尺）至「Papa Giovanni fermata 2」，搭乘 ATB Linea 1 號公車（往 Stazione - Citta' Alta 方向 · 車站 ID: 2），行經 4 站直達「Vittorio Emanuele 47」站下車，正對登山纜車下站（Funicolare Bassa），過馬路即可轉乘纜車登頂上城",
         "transit_type": "bus",
@@ -197,7 +197,7 @@ ROUTES_DATA = [
             {"time": "10:05", "name": "Bergamo 7（火車站前 Piazzale Marconi 7 · 步行出發）", "coord": [45.69043, 9.67505], "is_start": True},
             {"time": "10:08", "name": "Papa Giovanni fermata 2（1 號公車站牌 · 起點上車）", "coord": [45.6918, 9.6738]},
             {"time": "10:10", "name": "Porta Nuova Chiesa Grazie（新門感恩聖母堂）", "coord": [45.6953, 9.6704]},
-            {"time": "10:12", "name": "Vittorio Emanuele 3", "coord": [45.6970, 9.6688]},
+            {"time": "10:12", "name": "Vittorio Emanuele 3", "coord": [45.697, 9.6688]},
             {"time": "10:14", "name": "Vittorio Emanuele 19（下車前一站提示）", "coord": [45.6987, 9.6672]},
             {"time": "10:15", "name": "Vittorio Emanuele 47（終點下車 · 正對登山纜車站）", "coord": [45.70078, 9.66552], "is_end": True}
         ]
@@ -216,8 +216,8 @@ ROUTES_DATA = [
         "duration": "12 分（公車 1 號下山直達火車站前）",
         "ticket_title": "通票資訊 · ATB 貝爾加莫都會交通（24h 通票）",
         "ticket_sub": "ATB 24h 通票效期內自由搭乘公車與纜車返程，免再購票",
-        "ticket_badge_html": '<span class="pill-badge pill-badge-direct">持 24h 通票搭乘</span>',
-        "ticket_price": '<span class="pill-badge pill-badge-direct">持 24h 通票搭乘</span>',
+        "ticket_badge_html": "<span class=\"pill-badge pill-badge-direct\">持 24h 通票搭乘</span>",
+        "ticket_price": "<span class=\"pill-badge pill-badge-direct\">持 24h 通票搭乘</span>",
         "operator": "ATB Bergamo",
         "operator_note": "漫步城牆後持貝爾加莫 24h 通票於門前站牌搭乘 1 號公車下山直達「Paleocapa 1」站，下車過街 1 分鐘進火車站月台搭乘 15:02 RE 2232 區域快車返米蘭",
         "transit_type": "bus",
@@ -229,8 +229,8 @@ ROUTES_DATA = [
             {"time": "14:30", "name": "Delle Mura - San Giacomo（聖賈科莫門前站牌 · 起點上車）", "coord": [45.70138, 9.66289], "is_start": True},
             {"time": "14:33", "name": "Porta Sant'Agostino（穿出古城門）", "coord": [45.7022, 9.6645]},
             {"time": "14:36", "name": "V.le Vittorio Emanuele II / Funicolare", "coord": [45.6983, 9.6689]},
-            {"time": "14:39", "name": "Porta Nuova（新門）", "coord": [45.6953, 9.6700]},
-            {"time": "14:41", "name": "Viale Papa Giovanni XXIII（下車前一站提示）", "coord": [45.6940, 9.6715]},
+            {"time": "14:39", "name": "Porta Nuova（新門）", "coord": [45.6953, 9.67]},
+            {"time": "14:41", "name": "Viale Papa Giovanni XXIII（下車前一站提示）", "coord": [45.694, 9.6715]},
             {"time": "14:42", "name": "Paleocapa 1（終點下車 · 火車站前 · 步行 1 分鐘進車站）", "coord": [45.69203, 9.67229], "is_end": True}
         ]
     },
@@ -248,8 +248,8 @@ ROUTES_DATA = [
         "duration": "48 分（4 站直達快車）",
         "ticket_title": "票券與搭乘指引 · Trenord 區域快車（RE 2232）",
         "ticket_sub": "出示 Trenord APP Wallet QR 供查驗，直達快車免打卡",
-        "ticket_badge_html": '<span class="pill-badge pill-badge-direct">免換直通·免打卡</span>',
-        "ticket_price": '<span class="pill-badge pill-badge-direct">免換直通·免打卡</span>',
+        "ticket_badge_html": "<span class=\"pill-badge pill-badge-direct\">免換直通·免打卡</span>",
+        "ticket_price": "<span class=\"pill-badge pill-badge-direct\">免換直通·免打卡</span>",
         "operator": "北方鐵路 Trenord / 義大利國鐵",
         "operator_note": "持 Trenord APP QR 碼直接感應查票；若持實體車票需先於車站月台黃綠色打票機打票啟用",
         "transit_type": "train",
@@ -279,8 +279,8 @@ ROUTES_DATA = [
         "duration": "65 分（5 站）",
         "ticket_title": "票券與搭乘指引 · Trenord 科莫湖景觀快車（RE 2818）",
         "ticket_sub": "湖區直達車，出示手機 Trenord APP Wallet QR 碼供查驗即可",
-        "ticket_badge_html": '<span class="pill-badge pill-badge-direct">免換直通·免打卡</span>',
-        "ticket_price": '<span class="pill-badge pill-badge-direct">免換直通·免打卡</span>',
+        "ticket_badge_html": "<span class=\"pill-badge pill-badge-direct\">免換直通·免打卡</span>",
+        "ticket_price": "<span class=\"pill-badge pill-badge-direct\">免換直通·免打卡</span>",
         "operator": "北方鐵路 Trenord",
         "operator_note": "列車過 Lecco 後左側窗外即展開壯麗科莫湖全景，抵達 Varenna 步行 5 分到湖畔",
         "transit_type": "train",
@@ -311,8 +311,8 @@ ROUTES_DATA = [
         "duration": "15 分（跨湖航行）",
         "ticket_title": "通票資訊 · 科莫湖中央湖區渡輪（Centro Lago）",
         "ticket_sub": "瓦倫納渡輪碼頭窗口出示憑證或換票登船，全日無限搭乘",
-        "ticket_badge_html": '<span class="pill-badge pill-badge-buy">碼頭檢票·登船</span>',
-        "ticket_price": '<span class="pill-badge pill-badge-buy">碼頭檢票·登船</span>',
+        "ticket_badge_html": "<span class=\"pill-badge pill-badge-buy\">碼頭檢票·登船</span>",
+        "ticket_price": "<span class=\"pill-badge pill-badge-buy\">碼頭檢票·登船</span>",
         "operator": "Navigazione Laghi",
         "operator_note": "持中央湖區渡輪一日通票登船，可至頂層戶外甲板，360 度飽覽科莫湖三叉水域與阿爾卑斯山倒影",
         "transit_type": "ferry",
@@ -322,12 +322,41 @@ ROUTES_DATA = [
         "alert": None,
         "stops": [
             {"time": "11:00", "name": "Varenna 碼頭啟航", "coord": [46.01389, 9.28283], "is_start": True},
-            {"time": "11:08", "name": "科莫湖中心水域（遠眺雙城全景）", "coord": [46.0020, 9.2710]},
+            {"time": "11:08", "name": "科莫湖中心水域（遠眺雙城全景）", "coord": [46.002, 9.271]},
             {"time": "11:15", "name": "抵達 Bellagio 渡輪碼頭", "coord": [45.98741, 9.26028], "is_end": True}
         ]
     },
     {
         "id": "route_11",
+        "day": "DAY 05",
+        "day_badge": "D05 · 科莫湖跨湖渡輪返程",
+        "title": "貝拉焦碼頭 至 瓦倫納碼頭（跨湖渡輪返程）",
+        "origin_name": "貝拉焦渡輪碼頭（Bellagio Imbarcadero）",
+        "origin_addr": "Piazza Giuseppe Mazzini 38, 22021 Bellagio CO, 義大利",
+        "dest_name": "瓦倫納渡輪碼頭（Varenna Imbarcadero）",
+        "dest_addr": "Via Imbarcadero Piazza Martiri Libertà, 23829 Varenna LC, 義大利",
+        "dep_time": "14:00",
+        "arr_time": "14:15",
+        "duration": "15 分（跨湖航行返程）",
+        "ticket_title": "通票資訊 · 科莫湖中央湖區渡輪（Centro Lago）",
+        "ticket_sub": "持中央湖區一日通票（Biglietto Giornaliero）直接排隊登船，免再購票",
+        "ticket_badge_html": "<span class=\"pill-badge pill-badge-direct\">持一日通票登船·免再購票</span>",
+        "ticket_price": "<span class=\"pill-badge pill-badge-direct\">持一日通票登船·免再購票</span>",
+        "operator": "Navigazione Laghi",
+        "operator_note": "貝拉焦午餐與小巷漫遊後，回到 Bellagio 碼頭搭乘 Traghetto 渡輪返回 Varenna。下船後沿湖畔綠廊步道散步 10 分鐘返回 Varenna-Esino 火車站",
+        "transit_type": "ferry",
+        "transit_badge": "⛴️ Traghetto Navigazione Laghi（返程 Varenna）",
+        "line_color": "#0288d1",
+        "gmaps_url": "https://maps.app.goo.gl/wvRt7pBbwpGbrCG66",
+        "alert": "返程提醒：持上午已購買之 Centro Lago 一日通票直接排隊登船；下船出碼頭後順著綠意盎然的「情人步道（Passeggiata degli Innamorati）」往火車站方向步行約 10 分鐘即可抵達 Varenna-Esino 車站。",
+        "stops": [
+            {"time": "14:00", "name": "Bellagio 渡輪碼頭啟航", "coord": [45.98741, 9.26028], "is_start": True},
+            {"time": "14:07", "name": "科莫湖中心水域（回望貝拉焦岬角半島）", "coord": [46.002, 9.271]},
+            {"time": "14:15", "name": "抵達 Varenna 渡輪碼頭（沿情人步道回火車站）", "coord": [46.01389, 9.28283], "is_end": True}
+        ]
+    },
+    {
+        "id": "route_12",
         "day": "DAY 05",
         "day_badge": "D05 · 科莫湖返程快車",
         "title": "瓦倫納-埃西諾車站 至 米蘭中央車站（RE 湖區景觀快車）",
@@ -340,8 +369,8 @@ ROUTES_DATA = [
         "duration": "1 小時 05 分（5 站直達）",
         "ticket_title": "票券與搭乘指引 · Trenord 科莫湖返程快車（RE 2831）",
         "ticket_sub": "現場售票機／APP 購票；紙本票上車前務必於黃綠機打票啟用",
-        "ticket_badge_html": '<span class="pill-badge pill-badge-stamp">⚠️ 上車必打卡</span> <span class="pill-badge pill-badge-buy">需現場購票</span>',
-        "ticket_price": '<span class="pill-badge pill-badge-stamp">⚠️ 上車必打卡</span> <span class="pill-badge pill-badge-buy">需現場購票</span>',
+        "ticket_badge_html": "<span class=\"pill-badge pill-badge-stamp\">⚠️ 上車必打卡</span> <span class=\"pill-badge pill-badge-buy\">需現場購票</span>",
+        "ticket_price": "<span class=\"pill-badge pill-badge-stamp\">⚠️ 上車必打卡</span> <span class=\"pill-badge pill-badge-buy\">需現場購票</span>",
         "operator": "北方鐵路 Trenord / 義大利國鐵",
         "operator_note": "出發前可於車站售票機或 Trenord APP 購買車票。如持實體紙本車票，進月台前務必於打票機（Convalidatrice）打印戳印，查票極嚴格避免受罰",
         "transit_type": "train",
@@ -359,7 +388,7 @@ ROUTES_DATA = [
         ]
     },
     {
-        "id": "route_12",
+        "id": "route_13",
         "day": "DAY 06",
         "day_badge": "D06 · 南下熱那亞一等艙",
         "title": "米蘭中央車站 至 熱那亞王子廣場車站",
@@ -372,8 +401,8 @@ ROUTES_DATA = [
         "duration": "1 小時 38 分（5 站直達）",
         "ticket_title": "預訂席位 · 義鐵城際一等艙（Trenitalia Intercity）",
         "ticket_sub": "持預印 A4 紙本對號車票依車廂與座位直接入座，免打卡",
-        "ticket_badge_html": '<span class="pill-badge pill-badge-direct">對號免打卡·直接入座</span>',
-        "ticket_price": '<span class="pill-badge pill-badge-direct">對號免打卡·直接入座</span>',
+        "ticket_badge_html": "<span class=\"pill-badge pill-badge-direct\">對號免打卡·直接入座</span>",
+        "ticket_price": "<span class=\"pill-badge pill-badge-direct\">對號免打卡·直接入座</span>",
         "operator": "義大利國鐵 Trenitalia Intercity",
         "operator_note": "一等艙空間寬敞含充電座，出站步行 2 分鐘直達五星 Grand Hotel Savoia",
         "transit_type": "train",
@@ -390,7 +419,7 @@ ROUTES_DATA = [
         ]
     },
     {
-        "id": "route_13",
+        "id": "route_14",
         "day": "DAY 07",
         "day_badge": "D07 · 熱那亞地鐵核心漫遊",
         "title": "熱那亞王子廣場 至 法拉利廣場",
@@ -403,8 +432,8 @@ ROUTES_DATA = [
         "duration": "7 分（4 站）",
         "ticket_title": "通票資訊 · 熱那亞城市通票（Genova City Pass）",
         "ticket_sub": "出示憑證條碼掃碼啟用開通，含 AMT 地鐵公車全日無限搭乘",
-        "ticket_badge_html": '<span class="pill-badge pill-badge-exchange">需掃碼開通·全日無限</span>',
-        "ticket_price": '<span class="pill-badge pill-badge-exchange">需掃碼開通·全日無限</span>',
+        "ticket_badge_html": "<span class=\"pill-badge pill-badge-exchange\">需掃碼開通·全日無限</span>",
+        "ticket_price": "<span class=\"pill-badge pill-badge-exchange\">需掃碼開通·全日無限</span>",
         "operator": "熱那亞大眾運輸 AMT",
         "operator_note": "持熱那亞城市通票搭乘地鐵直達心臟地帶法拉利噴泉廣場，出站即達總督宮與卡洛·費利切劇院",
         "transit_type": "metro",
@@ -421,7 +450,7 @@ ROUTES_DATA = [
         ]
     },
     {
-        "id": "route_14",
+        "id": "route_15",
         "day": "DAY 08",
         "day_badge": "D08 · 前往菲諾港門戶",
         "title": "熱那亞王子廣場 至 聖瑪格麗塔利古雷",
@@ -434,8 +463,8 @@ ROUTES_DATA = [
         "duration": "27 分（2 站）",
         "ticket_title": "預訂席位 · 義鐵城際一等艙（Trenitalia Intercity）",
         "ticket_sub": "沿海快線對號座，持預印 A4 紙本車票依座位直接入座，免打卡",
-        "ticket_badge_html": '<span class="pill-badge pill-badge-direct">對號免打卡·直接入座</span>',
-        "ticket_price": '<span class="pill-badge pill-badge-direct">對號免打卡·直接入座</span>',
+        "ticket_badge_html": "<span class=\"pill-badge pill-badge-direct\">對號免打卡·直接入座</span>",
+        "ticket_price": "<span class=\"pill-badge pill-badge-direct\">對號免打卡·直接入座</span>",
         "operator": "義大利國鐵 Trenitalia Intercity",
         "operator_note": "出站即達聖瑪格麗塔站前公車圓環，無縫轉乘 782 號公車直達菲諾港",
         "transit_type": "train",
@@ -450,7 +479,7 @@ ROUTES_DATA = [
         ]
     },
     {
-        "id": "route_15",
+        "id": "route_16",
         "day": "DAY 08",
         "day_badge": "D08 · 蔚藍海岸全景公車 · 19 站",
         "title": "聖瑪格麗塔車站 至 Portofino 終點站（782 號公車 · 19 站全景）",
@@ -463,8 +492,8 @@ ROUTES_DATA = [
         "duration": "18 分（19 站緊貼懸崖碧海）",
         "ticket_title": "通票資訊 · AMT 菲諾港觀光公車（MetDaily 一日票）",
         "ticket_sub": "於 AMT APP 購買一日票，搭公車前於手機 APP 點擊啟用出示",
-        "ticket_badge_html": '<span class="pill-badge pill-badge-buy">需 APP 購票</span> <span class="pill-badge pill-badge-exchange">搭車前刷卡啟用</span>',
-        "ticket_price": '<span class="pill-badge pill-badge-buy">需 APP 購票</span> <span class="pill-badge pill-badge-exchange">搭車前刷卡啟用</span>',
+        "ticket_badge_html": "<span class=\"pill-badge pill-badge-buy\">需 APP 購票</span> <span class=\"pill-badge pill-badge-exchange\">搭車前刷卡啟用</span>",
+        "ticket_price": "<span class=\"pill-badge pill-badge-buy\">需 APP 購票</span> <span class=\"pill-badge pill-badge-exchange\">搭車前刷卡啟用</span>",
         "operator": "熱那亞大眾運輸 AMT",
         "operator_note": "持 MetDaily 一日票（AMT APP 啟用條碼）搭乘 782 號公車，緊貼利古里亞海岸線行駛直達 Portofino / Terminal 站（老港廣場旁）",
         "transit_type": "bus",
@@ -474,28 +503,102 @@ ROUTES_DATA = [
         "alert": "下車提示：782 號公車全程共 19 站，終點站即為「Portofino / Terminal」（菲諾港終點站）。前一站為 Chiesa S. Martino，下一站即抵達終點站下車，出站即是著名的菲諾港海灣與老港廣場（Piazza Martiri dell'Olivetta）！上車建議坐前進方向左側靠窗賞海景。",
         "stops": [
             {"time": "10:25", "name": "S. Margherita FS（火車站前起點站 Capolinea）", "coord": [44.33645, 9.21667], "is_start": True},
-            {"time": "10:26", "name": "S. Margherita / Poste（郵局）", "coord": [44.3340, 9.2136]},
+            {"time": "10:26", "name": "S. Margherita / Poste（郵局）", "coord": [44.334, 9.2136]},
             {"time": "10:27", "name": "Bar Checco", "coord": [44.3335, 9.2135]},
-            {"time": "10:28", "name": "Piazza Vittorio Veneto（海濱花園廣場）", "coord": [44.3325, 9.2140]},
+            {"time": "10:28", "name": "Piazza Vittorio Veneto（海濱花園廣場）", "coord": [44.3325, 9.214]},
             {"time": "10:29", "name": "Pizzerie", "coord": [44.3315, 9.2148]},
             {"time": "10:30", "name": "Pescheria（魚市碼頭）", "coord": [44.3305, 9.2152]},
             {"time": "10:31", "name": "Porto S. Margherita（遊艇港）", "coord": [44.3295, 9.2156]},
-            {"time": "10:32", "name": "Hotel Regina Elena（麗晶酒店前）", "coord": [44.3275, 9.2160]},
+            {"time": "10:32", "name": "Hotel Regina Elena（麗晶酒店前）", "coord": [44.3275, 9.216]},
             {"time": "10:33", "name": "Covo di Nord Est（傳奇懸崖俱樂部）", "coord": [44.3235, 9.2175]},
-            {"time": "10:34", "name": "Baretto Punta Pedale", "coord": [44.3210, 9.2170]},
-            {"time": "10:35", "name": "Bivio Via Repellini", "coord": [44.3190, 9.2165]},
+            {"time": "10:34", "name": "Baretto Punta Pedale", "coord": [44.321, 9.217]},
+            {"time": "10:35", "name": "Bivio Via Repellini", "coord": [44.319, 9.2165]},
             {"time": "10:36", "name": "Cervara（切爾瓦拉修道院角）", "coord": [44.3175, 9.2185]},
-            {"time": "10:37", "name": "Capo Nord（北角懸崖）", "coord": [44.3140, 9.2180]},
-            {"time": "10:38", "name": "Castello Paraggi（帕拉吉城堡）", "coord": [44.3120, 9.2150]},
-            {"time": "10:39", "name": "Paraggi（帕拉吉翡翠海灣海灘）", "coord": [44.3105, 9.2130]},
-            {"time": "10:40", "name": "Niasca（尼亞斯卡水上勝地）", "coord": [44.3075, 9.2110]},
+            {"time": "10:37", "name": "Capo Nord（北角懸崖）", "coord": [44.314, 9.218]},
+            {"time": "10:38", "name": "Castello Paraggi（帕拉吉城堡）", "coord": [44.312, 9.215]},
+            {"time": "10:39", "name": "Paraggi（帕拉吉翡翠海灣海灘）", "coord": [44.3105, 9.213]},
+            {"time": "10:40", "name": "Niasca（尼亞斯卡水上勝地）", "coord": [44.3075, 9.211]},
             {"time": "10:41", "name": "Hotel Splendido（奢華酒店路口）", "coord": [44.3045, 9.2085]},
             {"time": "10:42", "name": "Portofino / Chiesa S. Martino（聖馬蒂諾教堂 · 下車前一站提示）", "coord": [44.3035, 9.2095]},
             {"time": "10:43", "name": "Portofino / Terminal（Capolinea 終點站 · 菲諾港老港廣場）", "coord": [44.30316, 9.20979], "is_end": True}
         ]
     },
     {
-        "id": "route_16",
+        "id": "route_17",
+        "day": "DAY 08",
+        "day_badge": "D08 · 菲諾港全景公車返程 · 19 站",
+        "title": "Portofino 終點站 至 聖瑪格麗塔車站（782 號公車 · 19 站返程）",
+        "origin_name": "Portofino 終點站（Portofino / Terminal · Piazza della Libertà）",
+        "origin_addr": "Piazza della Libertà, 16034 Portofino GE, 義大利",
+        "dest_name": "聖瑪格麗塔車站（S. Margherita Ligure FS）",
+        "dest_addr": "Piazza Nobili 1, 16038 Santa Margherita Ligure GE, 義大利",
+        "dep_time": "14:40",
+        "arr_time": "14:58",
+        "duration": "18 分（19 站絕美海灣返程）",
+        "ticket_title": "通票資訊 · AMT 菲諾港觀光公車（MetDaily 一日票）",
+        "ticket_sub": "持 AMT APP 購買之 MetDaily 一日票（當日無限搭乘），上車出示手機 APP",
+        "ticket_badge_html": "<span class=\"pill-badge pill-badge-direct\">持 MetDaily 一日票·免再購票</span>",
+        "ticket_price": "<span class=\"pill-badge pill-badge-direct\">持 MetDaily 一日票·免再購票</span>",
+        "operator": "熱那亞大眾運輸 AMT",
+        "operator_note": "於 Portofino / Terminal 站牌搭乘 782 號公車返程，原路沿懸崖海岸返回 Santa Margherita Ligure 火車站前圓環，出站直接進入火車站月台",
+        "transit_type": "bus",
+        "transit_badge": "🚌 AMT Linea 782（往 S. Margherita FS 終點站）",
+        "line_color": "#0288d1",
+        "gmaps_url": "https://maps.app.goo.gl/cBc8NDvorLvxuXHq8",
+        "alert": "返程下車提示：全程 19 站，終點站即為聖瑪格麗塔火車站前「S. Margherita FS」站牌圓環，下車步行 30 秒即達車站大廳與月台，準備搭乘 15:46 發車之 IC 674 返熱那亞！上車建議坐前進方向右側靠海賞景。",
+        "stops": [
+            {"time": "14:40", "name": "Portofino / Terminal（Capolinea 起點站 · 菲諾港廣場旁）", "coord": [44.30316, 9.20979], "is_start": True},
+            {"time": "14:41", "name": "Portofino / Chiesa S. Martino（聖馬蒂諾教堂）", "coord": [44.3035, 9.2095]},
+            {"time": "14:42", "name": "Hotel Splendido（奢華酒店路口）", "coord": [44.3045, 9.2085]},
+            {"time": "14:43", "name": "Niasca（尼亞斯卡海灘）", "coord": [44.3075, 9.211]},
+            {"time": "14:44", "name": "Paraggi（帕拉吉翡翠海灣）", "coord": [44.3105, 9.213]},
+            {"time": "14:45", "name": "Castello Paraggi（帕拉吉城堡）", "coord": [44.312, 9.215]},
+            {"time": "14:46", "name": "Capo Nord（北角懸崖）", "coord": [44.314, 9.218]},
+            {"time": "14:47", "name": "Cervara（切爾瓦拉修道院角）", "coord": [44.3175, 9.2185]},
+            {"time": "14:48", "name": "Bivio Via Repellini", "coord": [44.319, 9.2165]},
+            {"time": "14:49", "name": "Baretto Punta Pedale", "coord": [44.321, 9.217]},
+            {"time": "14:50", "name": "Covo di Nord Est（懸崖俱樂部）", "coord": [44.3235, 9.2175]},
+            {"time": "14:51", "name": "Hotel Regina Elena（麗晶酒店前）", "coord": [44.3275, 9.216]},
+            {"time": "14:52", "name": "Porto S. Margherita（遊艇港）", "coord": [44.3295, 9.2156]},
+            {"time": "14:53", "name": "Pescheria（魚市碼頭）", "coord": [44.3305, 9.2152]},
+            {"time": "14:54", "name": "Pizzerie", "coord": [44.3315, 9.2148]},
+            {"time": "14:55", "name": "Piazza Vittorio Veneto（海濱花園廣場）", "coord": [44.3325, 9.214]},
+            {"time": "14:56", "name": "Bar Checco", "coord": [44.3335, 9.2135]},
+            {"time": "14:57", "name": "S. Margherita / Poste（下車前一站提示）", "coord": [44.334, 9.2136]},
+            {"time": "14:58", "name": "S. Margherita FS（終點站下車 · 火車站前廣場圓環）", "coord": [44.33645, 9.21667], "is_end": True}
+        ]
+    },
+    {
+        "id": "route_18",
+        "day": "DAY 08",
+        "day_badge": "D08 · 聖瑪格麗塔返程一等艙",
+        "title": "聖瑪格麗塔利古雷 至 熱那亞王子廣場車站（IC 674 返程直達）",
+        "origin_name": "聖瑪格麗塔利古雷車站（S. Margherita Ligure-Portofino）",
+        "origin_addr": "Piazza Nobili 1 / S. Margherita F.S., 16038 Santa Margherita Ligure GE, 義大利",
+        "dest_name": "熱那亞王子廣場車站（Genova Piazza Principe）",
+        "dest_addr": "Piazza del Principe, 16126 Genova GE, 義大利",
+        "dep_time": "15:46",
+        "arr_time": "16:14",
+        "duration": "28 分（2 站直達快車）",
+        "ticket_title": "預訂席位 · 義鐵城際一等艙（Trenitalia Intercity）",
+        "ticket_sub": "持預印 A4 紙本對號車票依車廂與座位直接入座，免打卡",
+        "ticket_badge_html": "<span class=\"pill-badge pill-badge-direct\">對號免打卡·直接入座</span>",
+        "ticket_price": "<span class=\"pill-badge pill-badge-direct\">對號免打卡·直接入座</span>",
+        "operator": "義大利國鐵 Trenitalia Intercity",
+        "operator_note": "持城際一等艙對號車票上車，沿利古里亞海岸線飛馳，行經 Brignole 後準時抵達熱那亞王子廣場車站，出站步行 2 分鐘返抵 Grand Hotel Savoia 休息",
+        "transit_type": "train",
+        "transit_badge": "🚆 Intercity IC 674（一等艙 Prima Classe）",
+        "line_color": "#1a73e8",
+        "gmaps_url": "https://maps.app.goo.gl/GsoUc1YVimFqa1756",
+        "alert": "下車提示：前一站為 Genova Brignole，下一站即抵達終點站 Genova Piazza Principe。下車後由站前廣場步行 2 分鐘即可返回 Grand Hotel Savoia 飯店。",
+        "stops": [
+            {"time": "15:46", "name": "Santa Margherita Ligure-Portofino（起點出發月台）", "coord": [44.33645, 9.21618], "is_start": True},
+            {"time": "16:05", "name": "Genova Brignole（熱那亞東站 · 下車前一站提示）", "coord": [44.4064, 8.9472]},
+            {"time": "16:14", "name": "Genova Piazza Principe（熱那亞王子廣場 · 終點站）", "coord": [44.41651, 8.91849], "is_end": True}
+        ]
+    },
+    {
+        "id": "route_19",
         "day": "DAY 09",
         "day_badge": "D09 · 跨越義法邊境第一段",
         "title": "熱那亞王子廣場 至 文提米利亞邊境車站",
@@ -508,8 +611,8 @@ ROUTES_DATA = [
         "duration": "2 小時 07 分（9 站沿海全景直達）",
         "ticket_title": "預訂席位 · 義鐵城際一等艙（Trenitalia Intercity）",
         "ticket_sub": "義大利里維埃拉海岸線直達車，持預印 A4 紙本車票直接入座",
-        "ticket_badge_html": '<span class="pill-badge pill-badge-direct">對號免打卡·直接入座</span>',
-        "ticket_price": '<span class="pill-badge pill-badge-direct">對號免打卡·直接入座</span>',
+        "ticket_badge_html": "<span class=\"pill-badge pill-badge-direct\">對號免打卡·直接入座</span>",
+        "ticket_price": "<span class=\"pill-badge pill-badge-direct\">對號免打卡·直接入座</span>",
         "operator": "義大利國鐵 Trenitalia Intercity",
         "operator_note": "列車緊鄰地中海行駛，抵達後於 Sir Thomas 寄放行李並享用正宗熱那亞佛卡夏",
         "transit_type": "train",
@@ -519,20 +622,20 @@ ROUTES_DATA = [
         "alert": None,
         "stops": [
             {"time": "08:58", "name": "Genova Piazza Principe", "coord": [44.41651, 8.91849], "is_start": True},
-            {"time": "09:31", "name": "Savona", "coord": [44.30720, 8.47140]},
-            {"time": "09:43", "name": "Finale Ligure Marina", "coord": [44.17060, 8.34860]},
-            {"time": "09:57", "name": "Albenga", "coord": [44.04890, 8.21670]},
-            {"time": "10:04", "name": "Alassio", "coord": [44.00440, 8.16940]},
-            {"time": "10:19", "name": "Diano", "coord": [43.92530, 8.07250]},
-            {"time": "10:27", "name": "Imperia", "coord": [43.88940, 8.04170]},
-            {"time": "10:38", "name": "Taggia Arma", "coord": [43.84460, 7.85530]},
-            {"time": "10:45", "name": "Sanremo", "coord": [43.81890, 7.77780]},
-            {"time": "10:55", "name": "Bordighera", "coord": [43.78060, 7.66530]},
+            {"time": "09:31", "name": "Savona", "coord": [44.3072, 8.4714]},
+            {"time": "09:43", "name": "Finale Ligure Marina", "coord": [44.1706, 8.3486]},
+            {"time": "09:57", "name": "Albenga", "coord": [44.0489, 8.2167]},
+            {"time": "10:04", "name": "Alassio", "coord": [44.0044, 8.1694]},
+            {"time": "10:19", "name": "Diano", "coord": [43.9253, 8.0725]},
+            {"time": "10:27", "name": "Imperia", "coord": [43.8894, 8.0417]},
+            {"time": "10:38", "name": "Taggia Arma", "coord": [43.8446, 7.8553]},
+            {"time": "10:45", "name": "Sanremo", "coord": [43.8189, 7.7778]},
+            {"time": "10:55", "name": "Bordighera", "coord": [43.7806, 7.6653]},
             {"time": "11:05", "name": "Ventimiglia（義法邊境車站）", "coord": [43.79245, 7.60973], "is_end": True}
         ]
     },
     {
-        "id": "route_17",
+        "id": "route_20",
         "day": "DAY 09",
         "day_badge": "D09 · 跨國雙層全景景觀列車",
         "title": "文提米利亞 至 尼斯城站",
@@ -545,8 +648,8 @@ ROUTES_DATA = [
         "duration": "50 分（10 站跨國海岸景觀）",
         "ticket_title": "購票與搭乘提醒 · 法國國鐵 SNCF TER Zou!",
         "ticket_sub": "於文提米利亞邊境售票機購買實體紙票，上車前務必於黃色打票機打戳印！",
-        "ticket_badge_html": '<span class="pill-badge pill-badge-stamp">⚠️ 實體紙票必打卡</span> <span class="pill-badge pill-badge-buy">需邊境購票</span>',
-        "ticket_price": '<span class="pill-badge pill-badge-stamp">⚠️ 實體紙票必打卡</span> <span class="pill-badge pill-badge-buy">需邊境購票</span>',
+        "ticket_badge_html": "<span class=\"pill-badge pill-badge-stamp\">⚠️ 實體紙票必打卡</span> <span class=\"pill-badge pill-badge-buy\">需邊境購票</span>",
+        "ticket_price": "<span class=\"pill-badge pill-badge-stamp\">⚠️ 實體紙票必打卡</span> <span class=\"pill-badge pill-badge-buy\">需邊境購票</span>",
         "operator": "法國國鐵 SNCF TER PACA",
         "operator_note": "於文提米利亞邊境售票機購買 TER 區間票（上車前於黃機打卡），雙層景觀列車上層視野開闊，行經摩納哥、蒙頓、自由城直達尼斯",
         "transit_type": "train",
@@ -560,7 +663,7 @@ ROUTES_DATA = [
             {"time": "15:12", "name": "Menton（芒通）", "coord": [43.7747, 7.4986]},
             {"time": "15:16", "name": "Carnolès", "coord": [43.7631, 7.4764]},
             {"time": "15:20", "name": "Roquebrune-Cap-Martin", "coord": [43.7583, 7.4569]},
-            {"time": "15:26", "name": "Monaco-Monte-Carlo（摩納哥地下車站）", "coord": [43.7386, 7.4200]},
+            {"time": "15:26", "name": "Monaco-Monte-Carlo（摩納哥地下車站）", "coord": [43.7386, 7.42]},
             {"time": "15:33", "name": "Èze-sur-Mer（艾茲懸崖下海濱）", "coord": [43.7225, 7.3606]},
             {"time": "15:37", "name": "Beaulieu-sur-Mer", "coord": [43.7078, 7.3328]},
             {"time": "15:40", "name": "Villefranche-sur-Mer（自由城海灣）", "coord": [43.7083, 7.3117]},
@@ -569,7 +672,7 @@ ROUTES_DATA = [
         ]
     },
     {
-        "id": "route_18",
+        "id": "route_21",
         "day": "DAY 10",
         "day_badge": "D10 · 盎格魯大道海景 BRT 快速公車",
         "title": "AC Hotel Nice 至 Opéra - Vieille Ville（公車 12+ 號）",
@@ -582,8 +685,8 @@ ROUTES_DATA = [
         "duration": "6 分（4 站沿海直達）",
         "ticket_title": "通票資訊 · PASS SUD AZUR 蔚藍海岸通票",
         "ticket_sub": "持 PASS SUD AZUR 實體通票感應卡，搭公車與輕軌上車拍 Validé 柱感應搭乘",
-        "ticket_badge_html": '<span class="pill-badge pill-badge-direct">持通票搭乘·每趟感應</span>',
-        "ticket_price": '<span class="pill-badge pill-badge-direct">持通票搭乘·每趟感應</span>',
+        "ticket_badge_html": "<span class=\"pill-badge pill-badge-direct\">持通票搭乘·每趟感應</span>",
+        "ticket_price": "<span class=\"pill-badge pill-badge-direct\">持通票搭乘·每趟感應</span>",
         "operator": "尼斯都會大眾運輸 Lignes d'Azur",
         "operator_note": "走出 AC Hotel 穿越馬路至盎格魯大道海邊站牌「Grosso CUM / Promenade」，搭乘 12+ 號快速公車（BHNS/BRT）沿蔚藍海岸行駛，直達「Opéra - Vieille Ville」站下車，下車過街穿過舊城拱門 1 分鐘即達薩萊亞花市（Cours Saleya）",
         "transit_type": "bus",
@@ -600,7 +703,7 @@ ROUTES_DATA = [
         ]
     },
     {
-        "id": "route_19",
+        "id": "route_22",
         "day": "DAY 11",
         "day_badge": "D11 · 濱海自由城半日慢遊",
         "title": "尼斯城站 至 濱海自由城",
@@ -613,8 +716,8 @@ ROUTES_DATA = [
         "duration": "7 分（2 站直達懸崖海灣）",
         "ticket_title": "通票資訊 · PASS SUD AZUR 蔚藍海岸通票",
         "ticket_sub": "涵蓋 TER 鐵路區間，持 PASS SUD AZUR 通票感應卡直接進出站搭乘",
-        "ticket_badge_html": '<span class="pill-badge pill-badge-direct">持通票搭乘·自由進站</span>',
-        "ticket_price": '<span class="pill-badge pill-badge-direct">持通票搭乘·自由進站</span>',
+        "ticket_badge_html": "<span class=\"pill-badge pill-badge-direct\">持通票搭乘·自由進站</span>",
+        "ticket_price": "<span class=\"pill-badge pill-badge-direct\">持通票搭乘·自由進站</span>",
         "operator": "法國國鐵 SNCF TER Zou!",
         "operator_note": "持 PASS SUD AZUR 通票搭乘 TER 懸崖景觀列車，出站走下一小段階梯即達金色細石沙灘與 Mayssa Beach 海景餐廳",
         "transit_type": "train",
@@ -629,7 +732,36 @@ ROUTES_DATA = [
         ]
     },
     {
-        "id": "route_20",
+        "id": "route_23",
+        "day": "DAY 11",
+        "day_badge": "D11 · 濱海自由城午後返程",
+        "title": "濱海自由城 至 尼斯城站（TER 雙層景觀列車返程）",
+        "origin_name": "濱海自由城車站（Gare de Villefranche-sur-Mer）",
+        "origin_addr": "Avenue Georges Clemenceau, 06230 Villefranche-sur-Mer, 法國",
+        "dest_name": "尼斯中央車站（Gare de Nice-Ville）",
+        "dest_addr": "Avenue Thiers, 06008 Nice, 法國",
+        "dep_time": "14:15",
+        "arr_time": "14:22",
+        "duration": "7 分（2 站直達尼斯市中心）",
+        "ticket_title": "通票資訊 · PASS SUD AZUR 蔚藍海岸通票",
+        "ticket_sub": "涵蓋 TER 鐵路區間，持 PASS SUD AZUR 通票感應卡直接感應進出站",
+        "ticket_badge_html": "<span class=\"pill-badge pill-badge-direct\">持通票搭乘·自由進站</span>",
+        "ticket_price": "<span class=\"pill-badge pill-badge-direct\">持通票搭乘·自由進站</span>",
+        "operator": "法國國鐵 SNCF TER Zou!",
+        "operator_note": "老城悠閒午餐漫步後，走回濱海自由城車站搭乘 TER zou! 景觀列車返程。短短 7 分鐘即抵達尼斯中央車站 Nice-Ville",
+        "transit_type": "train",
+        "transit_badge": "🚆 SNCF TER Zou!（往 Grasse / Cannes 方向）",
+        "line_color": "#004b97",
+        "gmaps_url": "https://maps.app.goo.gl/Jmj5S49pD76Z6SgLA",
+        "alert": "返程提醒：自由城車站月台緊鄰蔚藍海灣，持 PASS SUD AZUR 感應進站候車；前一站為 Nice Riquier，下一站即抵達 Nice-Ville 尼斯中央車站，出站可轉乘輕軌 L1 或悠閒漫步。",
+        "stops": [
+            {"time": "14:15", "name": "Villefranche-sur-Mer（自由城月台 · 起點出發）", "coord": [43.70706, 7.31415], "is_start": True},
+            {"time": "14:19", "name": "Nice Riquier（尼斯東部站 · 下車前一站提示）", "coord": [43.7036, 7.2889]},
+            {"time": "14:22", "name": "Nice-Ville（尼斯中央車站 · 終點站）", "coord": [43.70462, 7.26194], "is_end": True}
+        ]
+    },
+    {
+        "id": "route_24",
         "day": "DAY 12",
         "day_badge": "D12 · 費拉角貴族莊園巡禮",
         "title": "尼斯舊港 至 Passable / Rothschild 站（羅斯柴爾德花園別墅入口）",
@@ -642,8 +774,8 @@ ROUTES_DATA = [
         "duration": "32 分（步行 7 分 + 27 站景觀公車 25 分）",
         "ticket_title": "通票資訊 · PASS SUD AZUR 蔚藍海岸通票",
         "ticket_sub": "涵蓋 15 號海濱公車，上車刷 PASS SUD AZUR 通票感應卡即可搭乘",
-        "ticket_badge_html": '<span class="pill-badge pill-badge-direct">持通票搭乘·上車感應</span>',
-        "ticket_price": '<span class="pill-badge pill-badge-direct">持通票搭乘·上車感應</span>',
+        "ticket_badge_html": "<span class=\"pill-badge pill-badge-direct\">持通票搭乘·上車感應</span>",
+        "ticket_price": "<span class=\"pill-badge pill-badge-direct\">持通票搭乘·上車感應</span>",
         "operator": "尼斯都會大眾運輸 Lignes d'Azur",
         "operator_note": "自林比亞港碼頭步行約 7 分（500m）至「Port Lympia / Arson」站牌，搭乘 15 號公車（往 Port de Saint-Jean）行經 27 站海濱公路直達「Passable / Rothschild」站下車；站牌旁即為羅斯柴爾德莊園專屬林蔭道入口，漫步 400 公尺即可抵達別墅正門與售票處。",
         "transit_type": "bus",
@@ -652,35 +784,75 @@ ROUTES_DATA = [
         "gmaps_url": "https://maps.app.goo.gl/KsrrBWECHJHFNxME6",
         "alert": "乘車攻略：從林比亞港需先步行 7 分至 Rue Arson「Port Lympia / Arson」公車站上車；下車前一站為「La Rade」，見站牌即按下車鈴，於「Passable / Rothschild」下車即抵莊園入口。",
         "stops": [
-            {"time": "09:30", "name": "尼斯林比亞港（Quai Amiral Infernet · 步行起點）", "coord": [43.69680, 7.28392], "is_start": True},
-            {"time": "09:37", "name": "Port Lympia / Arson（15 號公車上車站 · 步行 500m 抵達）", "coord": [43.69880, 7.28634]},
-            {"time": "09:38", "name": "Carnot", "coord": [43.69610, 7.29100]},
-            {"time": "09:39", "name": "Gustavin / Carnot", "coord": [43.69450, 7.29350]},
-            {"time": "09:40", "name": "Parc Louisa", "coord": [43.69350, 7.29500]},
-            {"time": "09:41", "name": "Saint-Aignan", "coord": [43.69220, 7.29650]},
-            {"time": "09:41", "name": "Le Président", "coord": [43.69050, 7.29800]},
-            {"time": "09:42", "name": "Les Crêtes / Carnot", "coord": [43.68900, 7.29900]},
-            {"time": "09:44", "name": "Chateau de l'anglais", "coord": [43.68800, 7.29950]},
-            {"time": "09:45", "name": "Maeterlinck", "coord": [43.68720, 7.30050]},
-            {"time": "09:46", "name": "Batterie / Princesse Grâce", "coord": [43.69000, 7.30300]},
-            {"time": "09:47", "name": "Les Hespérides", "coord": [43.69300, 7.30500]},
-            {"time": "09:48", "name": "Escaliers de Verre", "coord": [43.69600, 7.30650]},
-            {"time": "09:49", "name": "Saint-Estève", "coord": [43.69980, 7.30820]},
-            {"time": "09:50", "name": "Octroi / Villefranche-sur-Mer", "coord": [43.70420, 7.31120]},
-            {"time": "09:51", "name": "La Barmassa", "coord": [43.70650, 7.31400]},
-            {"time": "09:52", "name": "Léopold II", "coord": [43.70880, 7.31750]},
-            {"time": "09:53", "name": "Madone Noire", "coord": [43.70950, 7.32100]},
-            {"time": "09:54", "name": "Schifanoia", "coord": [43.70900, 7.32400]},
-            {"time": "09:55", "name": "Ange Gardien", "coord": [43.70750, 7.32700]},
-            {"time": "09:56", "name": "Pont Saint-Jean", "coord": [43.70550, 7.32900]},
-            {"time": "09:57", "name": "Baie des Fourmis", "coord": [43.70480, 7.33080]},
-            {"time": "09:58", "name": "Kerylos", "coord": [43.70400, 7.33250]},
-            {"time": "09:59", "name": "Gare Beaulieu-sur-Mer", "coord": [43.70630, 7.33150]},
-            {"time": "10:00", "name": "Joffre", "coord": [43.70750, 7.33000]},
-            {"time": "10:00", "name": "Montée du Rêve", "coord": [43.70500, 7.32800]},
-            {"time": "10:01", "name": "Pont Saint-Jean / Grasseuil", "coord": [43.70140, 7.32680]},
-            {"time": "10:01", "name": "La Rade", "coord": [43.69750, 7.32750]},
-            {"time": "10:02", "name": "Passable / Rothschild（終點下車站 · 羅斯柴爾德花園別墅入口）", "coord": [43.69395, 7.32890], "is_end": True}
+            {"time": "09:30", "name": "尼斯林比亞港（Quai Amiral Infernet · 步行起點）", "coord": [43.6968, 7.28392], "is_start": True},
+            {"time": "09:37", "name": "Port Lympia / Arson（15 號公車上車站 · 步行 500m 抵達）", "coord": [43.6988, 7.28634]},
+            {"time": "09:38", "name": "Carnot", "coord": [43.6961, 7.291]},
+            {"time": "09:39", "name": "Gustavin / Carnot", "coord": [43.6945, 7.2935]},
+            {"time": "09:40", "name": "Parc Louisa", "coord": [43.6935, 7.295]},
+            {"time": "09:41", "name": "Saint-Aignan", "coord": [43.6922, 7.2965]},
+            {"time": "09:41", "name": "Le Président", "coord": [43.6905, 7.298]},
+            {"time": "09:42", "name": "Les Crêtes / Carnot", "coord": [43.689, 7.299]},
+            {"time": "09:44", "name": "Chateau de l'anglais", "coord": [43.688, 7.2995]},
+            {"time": "09:45", "name": "Maeterlinck", "coord": [43.6872, 7.3005]},
+            {"time": "09:46", "name": "Batterie / Princesse Grâce", "coord": [43.69, 7.303]},
+            {"time": "09:47", "name": "Les Hespérides", "coord": [43.693, 7.305]},
+            {"time": "09:48", "name": "Escaliers de Verre", "coord": [43.696, 7.3065]},
+            {"time": "09:49", "name": "Saint-Estève", "coord": [43.6998, 7.3082]},
+            {"time": "09:50", "name": "Octroi / Villefranche-sur-Mer", "coord": [43.7042, 7.3112]},
+            {"time": "09:51", "name": "La Barmassa", "coord": [43.7065, 7.314]},
+            {"time": "09:52", "name": "Léopold II", "coord": [43.7088, 7.3175]},
+            {"time": "09:53", "name": "Madone Noire", "coord": [43.7095, 7.321]},
+            {"time": "09:54", "name": "Schifanoia", "coord": [43.709, 7.324]},
+            {"time": "09:55", "name": "Ange Gardien", "coord": [43.7075, 7.327]},
+            {"time": "09:56", "name": "Pont Saint-Jean", "coord": [43.7055, 7.329]},
+            {"time": "09:57", "name": "Baie des Fourmis", "coord": [43.7048, 7.3308]},
+            {"time": "09:58", "name": "Kerylos", "coord": [43.704, 7.3325]},
+            {"time": "09:59", "name": "Gare Beaulieu-sur-Mer", "coord": [43.7063, 7.3315]},
+            {"time": "10:00", "name": "Joffre", "coord": [43.7075, 7.33]},
+            {"time": "10:00", "name": "Montée du Rêve", "coord": [43.705, 7.328]},
+            {"time": "10:01", "name": "Pont Saint-Jean / Grasseuil", "coord": [43.7014, 7.3268]},
+            {"time": "10:01", "name": "La Rade", "coord": [43.6975, 7.3275]},
+            {"time": "10:02", "name": "Passable / Rothschild（終點下車站 · 羅斯柴爾德花園別墅入口）", "coord": [43.69395, 7.3289], "is_end": True}
+        ]
+    },
+    {
+        "id": "route_25",
+        "day": "DAY 12",
+        "day_badge": "D12 · 羅斯柴爾德莊園午後返程",
+        "title": "Passable / Rothschild 至 尼斯林比亞港（公車 15 號返程）",
+        "origin_name": "Passable / Rothschild 站（羅斯柴爾德花園別墅前站牌）",
+        "origin_addr": "Avenue Denis Séméria / Passable, 06230 Saint-Jean-Cap-Ferrat, 法國",
+        "dest_name": "尼斯林比亞港站（Port Lympia / Arson · 步行 5 分進舊港碼頭）",
+        "dest_addr": "Place de l'Île de Beauté / Rue Arson, 06300 Nice, 法國",
+        "dep_time": "14:00",
+        "arr_time": "14:32",
+        "duration": "32 分（27 站景觀公車返程 + 步行 5 分）",
+        "ticket_title": "通票資訊 · PASS SUD AZUR 蔚藍海岸通票",
+        "ticket_sub": "涵蓋 15 號公車，上車於 Validé 感應柱刷卡即可搭乘",
+        "ticket_badge_html": "<span class=\"pill-badge pill-badge-direct\">持通票搭乘·上車感應</span>",
+        "ticket_price": "<span class=\"pill-badge pill-badge-direct\">持通票搭乘·上車感應</span>",
+        "operator": "尼斯都會大眾運輸 Lignes d'Azur",
+        "operator_note": "參觀完羅斯柴爾德莊園九大主題花園與享用下午茶後，至莊園門前站牌搭乘 15 號公車（往 Lycée Masséna 方向），沿下坡海灣公路直達「Port Lympia」港灣區下車，漫步林比亞港彩色義式樓房與停靠遊艇",
+        "transit_type": "bus",
+        "transit_badge": "🚌 Bus 15（往 Lycée Masséna 方向 · 經 Port Lympia）",
+        "line_color": "#0288d1",
+        "gmaps_url": "https://maps.app.goo.gl/KsrrBWECHJHFNxME6",
+        "alert": "返程乘車攻略：莊園出口林蔭道漫步出來即達「Passable / Rothschild」站牌；上車坐左側可再賞自由城海灣美景；於「Port Lympia」或「Arson」站下車，出站即為美麗的尼斯林比亞舊港。",
+        "stops": [
+            {"time": "14:00", "name": "Passable / Rothschild（莊園門口站牌 · 起點上車）", "coord": [43.69395, 7.3289], "is_start": True},
+            {"time": "14:02", "name": "La Rade", "coord": [43.6975, 7.3275]},
+            {"time": "14:04", "name": "Pont Saint-Jean", "coord": [43.7055, 7.329]},
+            {"time": "14:06", "name": "Baie des Fourmis（螞蟻灣）", "coord": [43.7048, 7.3308]},
+            {"time": "14:08", "name": "Gare Beaulieu-sur-Mer（濱海博利厄車站）", "coord": [43.7063, 7.3315]},
+            {"time": "14:11", "name": "Léopold II", "coord": [43.7088, 7.3175]},
+            {"time": "14:14", "name": "Octroi / Villefranche-sur-Mer（自由城入口）", "coord": [43.7042, 7.3112]},
+            {"time": "14:17", "name": "Saint-Estève", "coord": [43.6998, 7.3082]},
+            {"time": "14:20", "name": "Maeterlinck（懸崖綠蔭路段）", "coord": [43.6872, 7.3005]},
+            {"time": "14:23", "name": "Saint-Aignan", "coord": [43.6922, 7.2965]},
+            {"time": "14:25", "name": "Parc Louisa", "coord": [43.6935, 7.295]},
+            {"time": "14:28", "name": "Carnot（下車前一站提示）", "coord": [43.6961, 7.291]},
+            {"time": "14:30", "name": "Port Lympia / Arson（公車下車站 · 舊港區）", "coord": [43.6988, 7.28634]},
+            {"time": "14:32", "name": "尼斯林比亞港（Quai Amiral Infernet · 碼頭終點散步）", "coord": [43.6968, 7.28392], "is_end": True}
         ]
     }
 ]
@@ -717,16 +889,21 @@ ROUTE_PDF_MAPPING = {
     "route_08": "08_D04_貝爾加莫車站_至_米蘭中央車站.pdf",
     "route_09": "09_D05_米蘭中央車站_至_瓦倫納科莫湖.pdf",
     "route_10": "10_D05_瓦倫納碼頭_至_貝拉焦跨湖渡輪.pdf",
-    "route_11": "11_D05_瓦倫納_至_米蘭中央車站.pdf",
-    "route_12": "12_D06_米蘭中央車站_至_熱那亞王子廣場.pdf",
-    "route_13": "13_D07_熱那亞王子廣場_至_法拉利廣場地鐵.pdf",
-    "route_14": "14_D08_熱那亞王子廣場_至_聖瑪格麗塔.pdf",
-    "route_15": "15_D08_聖瑪格麗塔_至_Portofino終點站782公車.pdf",
-    "route_16": "16_D09_熱那亞王子廣場_至_文提米利亞邊境.pdf",
-    "route_17": "17_D09_文提米利亞_至_尼斯城站TER雙層列車.pdf",
-    "route_18": "18_D10_ACHotel_至_Opéra_Vieille_Ville公車12號.pdf",
-    "route_19": "19_D11_尼斯城站_至_濱海自由城TER.pdf",
-    "route_20": "20_D12_尼斯舊港_至_費拉角別墅15號公車.pdf",
+    "route_11": "11_D05_貝拉焦碼頭_至_瓦倫納跨湖渡輪返程.pdf",
+    "route_12": "12_D05_瓦倫納_至_米蘭中央車站.pdf",
+    "route_13": "13_D06_米蘭中央車站_至_熱那亞王子廣場.pdf",
+    "route_14": "14_D07_熱那亞王子廣場_至_法拉利廣場地鐵.pdf",
+    "route_15": "15_D08_熱那亞王子廣場_至_聖瑪格麗塔.pdf",
+    "route_16": "16_D08_聖瑪格麗塔_至_Portofino終點站782公車.pdf",
+    "route_17": "17_D08_Portofino終點站_至_聖瑪格麗塔782公車返程.pdf",
+    "route_18": "18_D08_聖瑪格麗塔_至_熱那亞王子廣場IC返程.pdf",
+    "route_19": "19_D09_熱那亞王子廣場_至_文提米利亞邊境.pdf",
+    "route_20": "20_D09_文提米利亞_至_尼斯城站TER雙層列車.pdf",
+    "route_21": "21_D10_ACHotel_至_Opéra_Vieille_Ville公車12號.pdf",
+    "route_22": "22_D11_尼斯城站_至_濱海自由城TER.pdf",
+    "route_23": "23_D11_濱海自由城_至_尼斯城站TER返程.pdf",
+    "route_24": "24_D12_尼斯舊港_至_費拉角別墅15號公車.pdf",
+    "route_25": "25_D12_費拉角別墅_至_尼斯舊港15號公車返程.pdf",
 }
 
 def generate_routes_html():
@@ -736,7 +913,7 @@ def generate_routes_html():
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>北義 × 南法蔚藍海岸 15 日 · 全程起點到終點路線地圖指引 (20 條 Transit)</title>
+  <title>北義 × 南法蔚藍海岸 15 日 · 全程起點到終點路線地圖指引 (25 條 Transit)</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1408,10 +1585,10 @@ def generate_routes_html():
   <header class="top-app-header">
     <div class="header-inner">
       <div class="brand-title">
-        <span>TRAVEL EURO</span> · 全程起點到終點路線地圖指引 (20 條 Transit)
+        <span>TRAVEL EURO</span> · 全程起點到終點路線地圖指引 (25 條 Transit)
       </div>
       <div class="header-actions">
-        <a href="route/all_routes.pdf" download class="nav-btn nav-btn-gold">📥 下載 20 條路線 PDF 合輯</a>
+        <a href="route/all_routes.pdf" download class="nav-btn nav-btn-gold">📥 下載 25 條路線 PDF 合輯</a>
         <a href="print-handbook.html" class="nav-btn nav-btn-outline">📖 隨身手冊</a>
         <a href="index.html" class="nav-btn nav-btn-outline">🌐 首頁</a>
         <button onclick="window.print()" class="nav-btn nav-btn-outline">🖨️ 列印全書</button>
@@ -1422,12 +1599,12 @@ def generate_routes_html():
   <!-- Filter Chips -->
   <nav class="filter-bar">
     <div class="filter-inner">
-      <button class="filter-chip active" onclick="filterRoutes('all', this)">全部 20 條路線</button>
+      <button class="filter-chip active" onclick="filterRoutes('all', this)">全部 25 條路線</button>
       <button class="filter-chip" onclick="filterRoutes('milan', this)">D02–03 米蘭都會 (4)</button>
       <button class="filter-chip" onclick="filterRoutes('bergamo', this)">D04 貝爾加莫 (4)</button>
-      <button class="filter-chip" onclick="filterRoutes('como', this)">D05 科莫湖雙城 (3)</button>
-      <button class="filter-chip" onclick="filterRoutes('genova', this)">D06–08 熱那亞與菲諾港 (4)</button>
-      <button class="filter-chip" onclick="filterRoutes('nice', this)">D09–12 南法尼斯與蔚藍海岸 (5)</button>
+      <button class="filter-chip" onclick="filterRoutes('como', this)">D05 科莫湖雙城 (4)</button>
+      <button class="filter-chip" onclick="filterRoutes('genova', this)">D06–08 熱那亞與菲諾港 (6)</button>
+      <button class="filter-chip" onclick="filterRoutes('nice', this)">D09–12 南法尼斯與蔚藍海岸 (7)</button>
     </div>
   </nav>
 
