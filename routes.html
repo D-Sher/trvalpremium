@@ -1,0 +1,3457 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>北義 × 南法蔚藍海岸 15 日 · 全程起點到終點路線地圖指引 (Google Maps Transit)</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold-dark: #8c6a28;
+      --gold-mid: #b8862d;
+      --gold-light: #f7eed7;
+      --navy-dark: #0b1e36;
+      --navy-sub: #163259;
+      --navy-light: #f0f4f9;
+      --text-main: #202124;
+      --text-sub: #5f6368;
+      --border-line: #dadce0;
+      --bg-page: #f8f9fa;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: var(--text-main);
+      background: var(--bg-page);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.5;
+    }
+
+    /* Top App Bar */
+    .top-app-header {
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-sub) 100%);
+      color: #fff;
+      padding: 16px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    }
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .brand-title {
+      font-family: 'Cinzel', 'Noto Serif TC', serif;
+      font-size: 19px;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .brand-title span {
+      color: var(--gold-mid);
+    }
+    .header-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .nav-btn {
+      padding: 7px 14px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+    }
+    .nav-btn-gold {
+      background: linear-gradient(135deg, #d4af37 0%, #b8862d 100%);
+      color: #0b1e36;
+      border: none;
+    }
+    .nav-btn-gold:hover {
+      background: #e2be4b;
+      box-shadow: 0 2px 8px rgba(212,175,55,0.4);
+    }
+    .nav-btn-outline {
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+    .nav-btn-outline:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: #fff;
+    }
+
+    /* Filter Bar */
+    .filter-bar {
+      background: #fff;
+      border-bottom: 1px solid var(--border-line);
+      padding: 10px 24px;
+      position: sticky;
+      top: 64px;
+      z-index: 999;
+    }
+    .filter-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 2px;
+    }
+    .filter-chip {
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+      background: #f1f3f4;
+      color: #3c4043;
+      border: 1px solid transparent;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s ease;
+    }
+    .filter-chip.active, .filter-chip:hover {
+      background: var(--navy-dark);
+      color: #fff;
+      border-color: var(--navy-dark);
+    }
+
+    /* Main Container */
+    .content-container {
+      max-width: 900px;
+      margin: 24px auto 60px;
+      padding: 0 16px;
+    }
+
+    /* Route Card Styled exactly like 1.pdf & 2.pdf */
+    .route-card {
+      background: #fff;
+      border: 1px solid var(--border-line);
+      border-radius: 12px;
+      margin-bottom: 36px;
+      padding: 22px 24px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      page-break-after: always;
+      position: relative;
+    }
+
+    .route-header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1px solid #e8eaed;
+      padding-bottom: 12px;
+      margin-bottom: 14px;
+    }
+    .google-badge {
+      display: flex;
+      align-items: center;
+      font-size: 21px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    .google-badge span:nth-child(1) { color: #4285F4; }
+    .google-badge span:nth-child(2) { color: #EA4335; }
+    .google-badge span:nth-child(3) { color: #FBBC05; }
+    .google-badge span:nth-child(4) { color: #4285F4; }
+    .google-badge span:nth-child(5) { color: #34A853; }
+    .google-badge span:nth-child(6) { color: #EA4335; }
+    .google-sub {
+      font-size: 13px;
+      color: #5f6368;
+      font-weight: 500;
+      margin-left: 6px;
+    }
+
+    .route-info-col {
+      text-align: right;
+    }
+    .route-day-tag {
+      display: inline-block;
+      background: var(--gold-light);
+      color: var(--gold-dark);
+      border: 1px solid rgba(184,134,45,0.3);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .route-title-text {
+      font-size: 16px;
+      font-weight: 700;
+      color: #202124;
+      line-height: 1.3;
+    }
+    .route-addr-text {
+      font-size: 11px;
+      color: #70757a;
+      margin-top: 2px;
+    }
+    .route-time-text {
+      font-size: 14px;
+      font-weight: 700;
+      color: #1a73e8;
+      margin-top: 4px;
+    }
+
+    /* Map Box */
+    .map-box {
+      width: 100%;
+      height: 380px;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #dadce0;
+      margin-bottom: 16px;
+      position: relative;
+    }
+    .map-render {
+      width: 100%;
+      height: 100%;
+    }
+    .map-credit {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      background: rgba(255,255,255,0.9);
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      color: #5f6368;
+      z-index: 1000;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+    }
+
+    /* Card Details */
+    .details-box {
+      border: 1px solid #e8eaed;
+      border-radius: 8px;
+      padding: 16px 20px;
+      background: #fafafa;
+    }
+    .fare-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #e8eaed;
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+    }
+    .fare-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #202124;
+    }
+    .fare-desc {
+      font-size: 12px;
+      color: #5f6368;
+    }
+    .fare-val {
+      font-size: 15px;
+      font-weight: 700;
+      color: #188038;
+      text-align: right;
+    }
+
+    /* Timeline matching 1.pdf & 2.pdf */
+    .transit-timeline {
+      position: relative;
+      padding-left: 28px;
+      margin-top: 8px;
+    }
+    .t-node {
+      position: relative;
+      padding-bottom: 16px;
+    }
+    .t-node:last-child {
+      padding-bottom: 0;
+    }
+    .t-pin {
+      position: absolute;
+      left: -28px;
+      top: 2px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #fff;
+      border: 3px solid #70757a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .t-pin.start {
+      border-color: #1a73e8;
+    }
+    .t-pin.end {
+      border-color: #d93025;
+      background: #d93025;
+    }
+    .t-pin.end::after {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #fff;
+    }
+    .t-line {
+      position: absolute;
+      left: -20px;
+      top: 20px;
+      bottom: -2px;
+      width: 4px;
+      background: #dadce0;
+    }
+    .t-line.transit-active {
+      background: var(--active-line-color, #d93025);
+    }
+
+    .t-header {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+    .t-time {
+      font-size: 14px;
+      font-weight: 700;
+      color: #202124;
+      min-width: 55px;
+    }
+    .t-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: #202124;
+    }
+    .t-addr {
+      font-size: 12px;
+      color: #70757a;
+      margin-top: 2px;
+      margin-left: 65px;
+    }
+
+    .transit-card-inner {
+      margin: 10px 0 10px 65px;
+      padding: 12px 16px;
+      background: #fff;
+      border-radius: 6px;
+      border: 1px solid #e8eaed;
+      border-left: 4px solid var(--active-line-color, #d93025);
+    }
+    .badge-transit {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--active-line-color, #d93025);
+      color: #fff;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .transit-meta {
+      font-size: 13px;
+      font-weight: 600;
+      color: #3c4043;
+      margin-top: 6px;
+    }
+    .transit-op {
+      font-size: 12px;
+      color: #70757a;
+      margin-top: 3px;
+    }
+    .transit-alert {
+      margin-top: 8px;
+      padding: 6px 10px;
+      background: #fef7e0;
+      border: 1px solid #f9ab00;
+      border-radius: 4px;
+      font-size: 12px;
+      color: #b06000;
+      font-weight: 500;
+    }
+
+    /* Intermediate stops */
+    .stop-series {
+      margin: 10px 0 0 65px;
+      border-left: 2px solid #dadce0;
+      padding-left: 14px;
+    }
+    .stop-row {
+      font-size: 12px;
+      color: #5f6368;
+      margin-bottom: 6px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .stop-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #70757a;
+    }
+    .stop-t {
+      color: #80868b;
+      min-width: 45px;
+    }
+
+    /* Card Actions & Live Link */
+    .card-footer-actions {
+      margin-top: 16px;
+      padding-top: 12px;
+      border-top: 1px solid #e8eaed;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .action-links {
+      display: flex;
+      gap: 8px;
+    }
+    .btn-gmaps {
+      background: #1a73e8;
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.15s ease;
+    }
+    .btn-gmaps:hover {
+      background: #1557b0;
+    }
+    .btn-print-one {
+      background: #fff;
+      border: 1px solid #dadce0;
+      color: #3c4043;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-print-one:hover {
+      background: #f1f3f4;
+    }
+
+    .official-url {
+      font-size: 11px;
+      color: #70757a;
+      word-break: break-all;
+    }
+
+    /* Print Styles */
+    @media print {
+      .top-app-header, .filter-bar, .card-footer-actions {
+        display: none !important;
+      }
+      body {
+        background: #fff !important;
+      }
+      .content-container {
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      .route-card {
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin-bottom: 0 !important;
+        page-break-after: always !important;
+      }
+      .map-box {
+        height: 350px !important;
+      }
+      @page {
+        size: A4 portrait;
+        margin: 12mm 15mm;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top App Bar -->
+  <header class="top-app-header">
+    <div class="header-inner">
+      <div class="brand-title">
+        <span>TRAVEL EURO</span> · 全程起點到終點路線地圖指引
+      </div>
+      <div class="header-actions">
+        <a href="route/all_routes.pdf" download class="nav-btn nav-btn-gold">📥 下載 17 條路線 PDF 合輯</a>
+        <a href="print-handbook.html" class="nav-btn nav-btn-outline">📖 隨身手冊</a>
+        <a href="index.html" class="nav-btn nav-btn-outline">🌐 首頁</a>
+        <button onclick="window.print()" class="nav-btn nav-btn-outline">🖨️ 列印全書</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Filter Chips -->
+  <nav class="filter-bar">
+    <div class="filter-inner">
+      <button class="filter-chip active" onclick="filterRoutes('all', this)">全部 17 條路線</button>
+      <button class="filter-chip" onclick="filterRoutes('milan', this)">D02–03 米蘭都會 (3)</button>
+      <button class="filter-chip" onclick="filterRoutes('bergamo', this)">D04 貝爾加莫 (2)</button>
+      <button class="filter-chip" onclick="filterRoutes('como', this)">D05 科莫湖雙城 (2)</button>
+      <button class="filter-chip" onclick="filterRoutes('genova', this)">D06–08 熱那亞與菲諾港 (4)</button>
+      <button class="filter-chip" onclick="filterRoutes('nice', this)">D09–13 南法尼斯與自由城 (5)</button>
+      <button class="filter-chip" onclick="filterRoutes('airport', this)">D14 機場特快 (1)</button>
+    </div>
+  </nav>
+
+  <!-- Main Content Container -->
+  <main class="content-container" id="routes-wrapper">
+
+    <!-- Route Card: route_01 -->
+    <article class="route-card" id="route_01" data-cat="milan" style="--active-line-color: #d93025;">
+      <div class="route-header-top">
+        <div class="google-badge">
+          <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
+          <span class="google-sub">地圖大眾運輸指引</span>
+        </div>
+        <div class="route-info-col">
+          <span class="route-day-tag">D02 · 機場入境與抵達米蘭</span>
+          <div class="route-title-text">馬爾彭薩機場第一航廈 至 米蘭中央車站</div>
+          <div class="route-addr-text">Aeroporto Malpensa Terminal 1, 2101... 至 Piazza Duca d'Aosta 1, 20124 Milano...</div>
+          <div class="route-time-text">16:11 - 17:07（56 分（8 站））</div>
+        </div>
+      </div>
+
+      <div class="map-box">
+        <div id="map_route_01" class="map-render"></div>
+        <div class="map-credit">地圖資料 &copy; OpenStreetMap | 路線規劃：56 分（8 站）</div>
+      </div>
+
+      <div class="details-box">
+        <div class="fare-row">
+          <div>
+            <div class="fare-title">購票 · 單程成人票價</div>
+            <div class="fare-desc">北方鐵路 Trenord / 現場售票機與線上均可購票</div>
+          </div>
+          <div class="fare-val">€15.00 起</div>
+        </div>
+
+        <div class="transit-timeline">
+          <!-- Start Node -->
+          <div class="t-node">
+            <div class="t-pin start"></div>
+            <div class="t-line"></div>
+            <div class="t-header">
+              <span class="t-time">16:11</span>
+              <span class="t-name">馬爾彭薩機場第一航廈（MXP T1）</span>
+            </div>
+            <div class="t-addr">Aeroporto Malpensa Terminal 1, 21010 Ferno (VA), 義大利</div>
+          </div>
+
+          <!-- Transit Info Block -->
+          <div class="t-node">
+            <div class="t-pin" style="border-color: #d93025; background: #d93025;"></div>
+            <div class="t-line transit-active"></div>
+            <div class="t-header">
+              <span class="t-time">16:11</span>
+              <span class="t-name">搭乘 🚆 RE 2951 / RE 512977 Milano Centrale</span>
+            </div>
+            <div class="transit-card-inner">
+              <span class="badge-transit">🚆 RE 2951 / RE 512977 Milano Centrale</span>
+              <div class="transit-meta">56 分（8 站） · 營運單位：北方鐵路 Trenord</div>
+              <div class="transit-op">上車前務必於黃綠色打票機打票啟用；車廂設有專屬大件行李架</div>
+              
+            </div>
+
+            <!-- Intermediate Stops List -->
+            <div class="stop-series">
+              
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">16:16</span>
+                <span>Ferno-Lonate Pozzolo</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">16:21</span>
+                <span>Busto Arsizio FN</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">16:24</span>
+                <span>Castellanza</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">16:30</span>
+                <span>Rescaldina</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">16:36</span>
+                <span>Saronno（重要轉乘樞紐）</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">16:49</span>
+                <span>Milano Bovisa Politecnico</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">16:56</span>
+                <span>Milano Porta Garibaldi</span>
+              </div>
+            
+            </div>
+          </div>
+
+          <!-- End Node -->
+          <div class="t-node">
+            <div class="t-pin end"></div>
+            <div class="t-header">
+              <span class="t-time">17:07</span>
+              <span class="t-name">抵達：米蘭中央車站（Milano Centrale）</span>
+            </div>
+            <div class="t-addr">Piazza Duca d'Aosta 1, 20124 Milano MI, 義大利</div>
+          </div>
+        </div>
+
+        <div class="card-footer-actions">
+          <div class="action-links">
+            <a href="https://www.google.com/maps/dir/?api=1&origin=Malpensa+Aeroporto+Terminal+1&destination=Milano+Centrale&travelmode=transit" target="_blank" rel="noopener" class="btn-gmaps">
+              🧭 開啟 Google 地圖即時 GPS 導航
+            </a>
+            <a href="route/01_D02_MXP_至_米蘭中央車站.pdf" download class="btn-print-one">
+              📥 下載路線 PDF
+            </a>
+            <button onclick="printSingleRoute('route_01')" class="btn-print-one">
+              🖨️ 列印此路線
+            </button>
+          </div>
+          <div class="official-url">
+            直達連結：https://www.google.com/maps/dir/?api=1&origin=Malpensa+Aeroporto+Terminal+1&destination=Milano+Centrale&travelmode=transit
+          </div>
+        </div>
+      </div>
+    </article>
+    
+    <!-- Route Card: route_02 -->
+    <article class="route-card" id="route_02" data-cat="milan" style="--active-line-color: #f9ba00;">
+      <div class="route-header-top">
+        <div class="google-badge">
+          <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
+          <span class="google-sub">地圖大眾運輸指引</span>
+        </div>
+        <div class="route-info-col">
+          <span class="route-day-tag">D03 · 米蘭經典城市巡遊</span>
+          <div class="route-title-text">米蘭中央車站 至 米蘭大教堂</div>
+          <div class="route-addr-text">Piazza Duca d'Aosta 1, 20124 Milano... 至 Piazza del Duomo, 20123 Milano MI, ...</div>
+          <div class="route-time-text">09:30 - 09:36（6 分（4 站））</div>
+        </div>
+      </div>
+
+      <div class="map-box">
+        <div id="map_route_02" class="map-render"></div>
+        <div class="map-credit">地圖資料 &copy; OpenStreetMap | 路線規劃：6 分（4 站）</div>
+      </div>
+
+      <div class="details-box">
+        <div class="fare-row">
+          <div>
+            <div class="fare-title">票券與相關資訊</div>
+            <div class="fare-desc">ATM Milano · 客服專線 +39 02 4860 7607</div>
+          </div>
+          <div class="fare-val">米蘭通票 / 單程 €2.20</div>
+        </div>
+
+        <div class="transit-timeline">
+          <!-- Start Node -->
+          <div class="t-node">
+            <div class="t-pin start"></div>
+            <div class="t-line"></div>
+            <div class="t-header">
+              <span class="t-time">09:30</span>
+              <span class="t-name">米蘭中央車站（Centrale FS）</span>
+            </div>
+            <div class="t-addr">Piazza Duca d'Aosta 1, 20124 Milano MI, 義大利</div>
+          </div>
+
+          <!-- Transit Info Block -->
+          <div class="t-node">
+            <div class="t-pin" style="border-color: #f9ba00; background: #f9ba00;"></div>
+            <div class="t-line transit-active"></div>
+            <div class="t-header">
+              <span class="t-time">09:30</span>
+              <span class="t-name">搭乘 Ⓜ️ 3 San Donato（M3 黃線）</span>
+            </div>
+            <div class="transit-card-inner">
+              <span class="badge-transit">Ⓜ️ 3 San Donato（M3 黃線）</span>
+              <div class="transit-meta">6 分（4 站） · 營運單位：米蘭大眾運輸 ATM</div>
+              <div class="transit-op">憑米蘭通票 Milano Pass 或感應信用卡進站；出站直達米蘭大教堂廣場</div>
+              <div class="transit-alert">提示：Duomo 站人潮較多，請留意隨身隨身包包與貴重物品。</div>
+            </div>
+
+            <!-- Intermediate Stops List -->
+            <div class="stop-series">
+              
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">09:32</span>
+                <span>Repubblica</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">09:33</span>
+                <span>Turati</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">09:34</span>
+                <span>Montenapoleone（蒙特拿破崙名品街）</span>
+              </div>
+            
+            </div>
+          </div>
+
+          <!-- End Node -->
+          <div class="t-node">
+            <div class="t-pin end"></div>
+            <div class="t-header">
+              <span class="t-time">09:36</span>
+              <span class="t-name">抵達：米蘭大教堂站（Duomo M3）</span>
+            </div>
+            <div class="t-addr">Piazza del Duomo, 20123 Milano MI, 義大利</div>
+          </div>
+        </div>
+
+        <div class="card-footer-actions">
+          <div class="action-links">
+            <a href="https://www.google.com/maps/dir/?api=1&origin=Milano+Centrale&destination=Piazza+del+Duomo+Milano&travelmode=transit" target="_blank" rel="noopener" class="btn-gmaps">
+              🧭 開啟 Google 地圖即時 GPS 導航
+            </a>
+            <a href="route/02_D03_米蘭中央車站_至_米蘭大教堂.pdf" download class="btn-print-one">
+              📥 下載路線 PDF
+            </a>
+            <button onclick="printSingleRoute('route_02')" class="btn-print-one">
+              🖨️ 列印此路線
+            </button>
+          </div>
+          <div class="official-url">
+            直達連結：https://www.google.com/maps/dir/?api=1&origin=Milano+Centrale&destination=Piazza+del+Duomo+Milano&travelmode=transit
+          </div>
+        </div>
+      </div>
+    </article>
+    
+    <!-- Route Card: route_03 -->
+    <article class="route-card" id="route_03" data-cat="milan" style="--active-line-color: #e67e22;">
+      <div class="route-header-top">
+        <div class="google-badge">
+          <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
+          <span class="google-sub">地圖大眾運輸指引</span>
+        </div>
+        <div class="route-info-col">
+          <span class="route-day-tag">D03 · 藝文街區體驗</span>
+          <div class="route-title-text">斯卡拉歌劇院 至 蒙塔內利花園與威尼斯門</div>
+          <div class="route-addr-text">Piazza della Scala, 20121 Milano MI... 至 Bastioni di Porta Venezia, 20121 Mi...</div>
+          <div class="route-time-text">14:30 - 14:42（12 分（6 站））</div>
+        </div>
+      </div>
+
+      <div class="map-box">
+        <div id="map_route_03" class="map-render"></div>
+        <div class="map-credit">地圖資料 &copy; OpenStreetMap | 路線規劃：12 分（6 站）</div>
+      </div>
+
+      <div class="details-box">
+        <div class="fare-row">
+          <div>
+            <div class="fare-title">票券與相關資訊</div>
+            <div class="fare-desc">ATM Milano 經典復古黃色木質路面電車</div>
+          </div>
+          <div class="fare-val">米蘭通票 / 單程 €2.20</div>
+        </div>
+
+        <div class="transit-timeline">
+          <!-- Start Node -->
+          <div class="t-node">
+            <div class="t-pin start"></div>
+            <div class="t-line"></div>
+            <div class="t-header">
+              <span class="t-time">14:30</span>
+              <span class="t-name">斯卡拉歌劇院（Teatro alla Scala）</span>
+            </div>
+            <div class="t-addr">Piazza della Scala, 20121 Milano MI, 義大利</div>
+          </div>
+
+          <!-- Transit Info Block -->
+          <div class="t-node">
+            <div class="t-pin" style="border-color: #e67e22; background: #e67e22;"></div>
+            <div class="t-line transit-active"></div>
+            <div class="t-header">
+              <span class="t-time">14:30</span>
+              <span class="t-name">搭乘 🚊 Tram 1（往 Greco Rovereto）</span>
+            </div>
+            <div class="transit-card-inner">
+              <span class="badge-transit">🚊 Tram 1（往 Greco Rovereto）</span>
+              <div class="transit-meta">12 分（6 站） · 營運單位：米蘭大眾運輸 ATM</div>
+              <div class="transit-op">搭乘建於 1928 年的 Carelli 復古電車，木質車廂極具歷史風情</div>
+              
+            </div>
+
+            <!-- Intermediate Stops List -->
+            <div class="stop-series">
+              
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">14:32</span>
+                <span>Montenapoleone M3</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">14:34</span>
+                <span>Piazza Cavour</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">14:36</span>
+                <span>Turati M3</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">14:39</span>
+                <span>P.za Repubblica M3</span>
+              </div>
+            
+            </div>
+          </div>
+
+          <!-- End Node -->
+          <div class="t-node">
+            <div class="t-pin end"></div>
+            <div class="t-header">
+              <span class="t-time">14:42</span>
+              <span class="t-name">抵達：蒙塔內利花園 / 威尼斯門（Porta Venezia）</span>
+            </div>
+            <div class="t-addr">Bastioni di Porta Venezia, 20121 Milano MI, 義大利</div>
+          </div>
+        </div>
+
+        <div class="card-footer-actions">
+          <div class="action-links">
+            <a href="https://www.google.com/maps/dir/?api=1&origin=Teatro+alla+Scala&destination=Giardini+Indro+Montanelli+Milano&travelmode=transit" target="_blank" rel="noopener" class="btn-gmaps">
+              🧭 開啟 Google 地圖即時 GPS 導航
+            </a>
+            <a href="route/03_D03_斯卡拉歌劇院_至_威尼斯門花園.pdf" download class="btn-print-one">
+              📥 下載路線 PDF
+            </a>
+            <button onclick="printSingleRoute('route_03')" class="btn-print-one">
+              🖨️ 列印此路線
+            </button>
+          </div>
+          <div class="official-url">
+            直達連結：https://www.google.com/maps/dir/?api=1&origin=Teatro+alla+Scala&destination=Giardini+Indro+Montanelli+Milano&travelmode=transit
+          </div>
+        </div>
+      </div>
+    </article>
+    
+    <!-- Route Card: route_04 -->
+    <article class="route-card" id="route_04" data-cat="bergamo" style="--active-line-color: #1a73e8;">
+      <div class="route-header-top">
+        <div class="google-badge">
+          <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
+          <span class="google-sub">地圖大眾運輸指引</span>
+        </div>
+        <div class="route-info-col">
+          <span class="route-day-tag">D04 · 貝爾加莫中世紀慢遊</span>
+          <div class="route-title-text">米蘭中央車站 至 貝爾加莫車站</div>
+          <div class="route-addr-text">Piazza Duca d'Aosta 1, 20124 Milano... 至 Piazza Guglielmo Marconi, 24122 Ber...</div>
+          <div class="route-time-text">09:05 - 09:53（48 分（4 站））</div>
+        </div>
+      </div>
+
+      <div class="map-box">
+        <div id="map_route_04" class="map-render"></div>
+        <div class="map-credit">地圖資料 &copy; OpenStreetMap | 路線規劃：48 分（4 站）</div>
+      </div>
+
+      <div class="details-box">
+        <div class="fare-row">
+          <div>
+            <div class="fare-title">購票 · 單程成人票價</div>
+            <div class="fare-desc">Trenord 區域快車 / 班次密集準時</div>
+          </div>
+          <div class="fare-val">€6.00 起</div>
+        </div>
+
+        <div class="transit-timeline">
+          <!-- Start Node -->
+          <div class="t-node">
+            <div class="t-pin start"></div>
+            <div class="t-line"></div>
+            <div class="t-header">
+              <span class="t-time">09:05</span>
+              <span class="t-name">米蘭中央車站（Milano Centrale）</span>
+            </div>
+            <div class="t-addr">Piazza Duca d'Aosta 1, 20124 Milano MI, 義大利</div>
+          </div>
+
+          <!-- Transit Info Block -->
+          <div class="t-node">
+            <div class="t-pin" style="border-color: #1a73e8; background: #1a73e8;"></div>
+            <div class="t-line transit-active"></div>
+            <div class="t-header">
+              <span class="t-time">09:05</span>
+              <span class="t-name">搭乘 🚆 RE 2219 Bergamo（直達快車）</span>
+            </div>
+            <div class="transit-card-inner">
+              <span class="badge-transit">🚆 RE 2219 Bergamo（直達快車）</span>
+              <div class="transit-meta">48 分（4 站） · 營運單位：北方鐵路 Trenord / 義大利國鐵</div>
+              <div class="transit-op">持實體票需於月台黃色打票機打票；抵達後於站前廣場轉搭 1 號公車</div>
+              
+            </div>
+
+            <!-- Intermediate Stops List -->
+            <div class="stop-series">
+              
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">09:12</span>
+                <span>Milano Lambrate</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">09:19</span>
+                <span>Pioltello-Limito</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">09:38</span>
+                <span>Verdello-Dalmine</span>
+              </div>
+            
+            </div>
+          </div>
+
+          <!-- End Node -->
+          <div class="t-node">
+            <div class="t-pin end"></div>
+            <div class="t-header">
+              <span class="t-time">09:53</span>
+              <span class="t-name">抵達：貝爾加莫車站（Bergamo Stazione FS）</span>
+            </div>
+            <div class="t-addr">Piazza Guglielmo Marconi, 24122 Bergamo BG, 義大利</div>
+          </div>
+        </div>
+
+        <div class="card-footer-actions">
+          <div class="action-links">
+            <a href="https://www.google.com/maps/dir/?api=1&origin=Milano+Centrale&destination=Stazione+di+Bergamo&travelmode=transit" target="_blank" rel="noopener" class="btn-gmaps">
+              🧭 開啟 Google 地圖即時 GPS 導航
+            </a>
+            <a href="route/04_D04_米蘭中央車站_至_貝爾加莫車站.pdf" download class="btn-print-one">
+              📥 下載路線 PDF
+            </a>
+            <button onclick="printSingleRoute('route_04')" class="btn-print-one">
+              🖨️ 列印此路線
+            </button>
+          </div>
+          <div class="official-url">
+            直達連結：https://www.google.com/maps/dir/?api=1&origin=Milano+Centrale&destination=Stazione+di+Bergamo&travelmode=transit
+          </div>
+        </div>
+      </div>
+    </article>
+    
+    <!-- Route Card: route_05 -->
+    <article class="route-card" id="route_05" data-cat="bergamo" style="--active-line-color: #ff6f00;">
+      <div class="route-header-top">
+        <div class="google-badge">
+          <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
+          <span class="google-sub">地圖大眾運輸指引</span>
+        </div>
+        <div class="route-info-col">
+          <span class="route-day-tag">D04 · 貝爾加莫登山纜車</span>
+          <div class="route-title-text">貝爾加莫車站 至 貝爾加莫上城老廣場</div>
+          <div class="route-addr-text">Piazza Guglielmo Marconi, 24122 Ber... 至 Piazza Vecchia, 24129 Bergamo BG, 義...</div>
+          <div class="route-time-text">10:15 - 10:35（20 分（公車接駁 + 百年登山纜車））</div>
+        </div>
+      </div>
+
+      <div class="map-box">
+        <div id="map_route_05" class="map-render"></div>
+        <div class="map-credit">地圖資料 &copy; OpenStreetMap | 路線規劃：20 分（公車接駁 + 百年登山纜車）</div>
+      </div>
+
+      <div class="details-box">
+        <div class="fare-row">
+          <div>
+            <div class="fare-title">票券與相關資訊</div>
+            <div class="fare-desc">ATB Bergamo 24H 觀光通票（涵蓋下城公車與登山纜車）</div>
+          </div>
+          <div class="fare-val">€4.00（24H 通票）</div>
+        </div>
+
+        <div class="transit-timeline">
+          <!-- Start Node -->
+          <div class="t-node">
+            <div class="t-pin start"></div>
+            <div class="t-line"></div>
+            <div class="t-header">
+              <span class="t-time">10:15</span>
+              <span class="t-name">貝爾加莫火車站（Bergamo FS）</span>
+            </div>
+            <div class="t-addr">Piazza Guglielmo Marconi, 24122 Bergamo BG, 義大利</div>
+          </div>
+
+          <!-- Transit Info Block -->
+          <div class="t-node">
+            <div class="t-pin" style="border-color: #ff6f00; background: #ff6f00;"></div>
+            <div class="t-line transit-active"></div>
+            <div class="t-header">
+              <span class="t-time">10:15</span>
+              <span class="t-name">搭乘 🚌 ATB Linea 1 ➔ 🚡 Funicolare Città Alta</span>
+            </div>
+            <div class="transit-card-inner">
+              <span class="badge-transit">🚌 ATB Linea 1 ➔ 🚡 Funicolare Città Alta</span>
+              <div class="transit-meta">20 分（公車接駁 + 百年登山纜車） · 營運單位：ATB Bergamo</div>
+              <div class="transit-op">火車站前搭 1 號公車至 Funicolare Bassa，轉乘百年傾斜纜車直登 Città Alta</div>
+              <div class="transit-alert">景觀提示：纜車站出口即為鞋市廣場，漫步 3 分鐘穿過石板古巷即達老廣場。</div>
+            </div>
+
+            <!-- Intermediate Stops List -->
+            <div class="stop-series">
+              
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">10:19</span>
+                <span>Porta Nuova（新門鬧區）</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">10:23</span>
+                <span>Viale Vittorio Emanuele</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">10:27</span>
+                <span>Funicolare Bassa（登山纜車下站）</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">10:31</span>
+                <span>Funicolare Alta（P.za Mercato Scarpe）</span>
+              </div>
+            
+            </div>
+          </div>
+
+          <!-- End Node -->
+          <div class="t-node">
+            <div class="t-pin end"></div>
+            <div class="t-header">
+              <span class="t-time">10:35</span>
+              <span class="t-name">抵達：貝爾加莫上城老廣場（Piazza Vecchia）</span>
+            </div>
+            <div class="t-addr">Piazza Vecchia, 24129 Bergamo BG, 義大利</div>
+          </div>
+        </div>
+
+        <div class="card-footer-actions">
+          <div class="action-links">
+            <a href="https://www.google.com/maps/dir/?api=1&origin=Stazione+di+Bergamo&destination=Piazza+Vecchia+Bergamo&travelmode=transit" target="_blank" rel="noopener" class="btn-gmaps">
+              🧭 開啟 Google 地圖即時 GPS 導航
+            </a>
+            <a href="route/05_D04_貝爾加莫下城_至_上城老廣場纜車.pdf" download class="btn-print-one">
+              📥 下載路線 PDF
+            </a>
+            <button onclick="printSingleRoute('route_05')" class="btn-print-one">
+              🖨️ 列印此路線
+            </button>
+          </div>
+          <div class="official-url">
+            直達連結：https://www.google.com/maps/dir/?api=1&origin=Stazione+di+Bergamo&destination=Piazza+Vecchia+Bergamo&travelmode=transit
+          </div>
+        </div>
+      </div>
+    </article>
+    
+    <!-- Route Card: route_06 -->
+    <article class="route-card" id="route_06" data-cat="como" style="--active-line-color: #0f9d58;">
+      <div class="route-header-top">
+        <div class="google-badge">
+          <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
+          <span class="google-sub">地圖大眾運輸指引</span>
+        </div>
+        <div class="route-info-col">
+          <span class="route-day-tag">D05 · 科莫湖雙城慢遊</span>
+          <div class="route-title-text">米蘭中央車站 至 瓦倫納-埃西諾車站</div>
+          <div class="route-addr-text">Piazza Duca d'Aosta 1, 20124 Milano... 至 Via Statale 43, 23829 Varenna LC, 義...</div>
+          <div class="route-time-text">09:20 - 10:25（65 分（5 站））</div>
+        </div>
+      </div>
+
+      <div class="map-box">
+        <div id="map_route_06" class="map-render"></div>
+        <div class="map-credit">地圖資料 &copy; OpenStreetMap | 路線規劃：65 分（5 站）</div>
+      </div>
+
+      <div class="details-box">
+        <div class="fare-row">
+          <div>
+            <div class="fare-title">購票 · 單程成人票價</div>
+            <div class="fare-desc">Trenord 區域快車 / 建議坐火車前進方向左側欣賞湖景</div>
+          </div>
+          <div class="fare-val">€7.40 起</div>
+        </div>
+
+        <div class="transit-timeline">
+          <!-- Start Node -->
+          <div class="t-node">
+            <div class="t-pin start"></div>
+            <div class="t-line"></div>
+            <div class="t-header">
+              <span class="t-time">09:20</span>
+              <span class="t-name">米蘭中央車站（Milano Centrale）</span>
+            </div>
+            <div class="t-addr">Piazza Duca d'Aosta 1, 20124 Milano MI, 義大利</div>
+          </div>
+
+          <!-- Transit Info Block -->
+          <div class="t-node">
+            <div class="t-pin" style="border-color: #0f9d58; background: #0f9d58;"></div>
+            <div class="t-line transit-active"></div>
+            <div class="t-header">
+              <span class="t-time">09:20</span>
+              <span class="t-name">搭乘 🚆 RE 2818 Tirano（科莫湖景觀快車）</span>
+            </div>
+            <div class="transit-card-inner">
+              <span class="badge-transit">🚆 RE 2818 Tirano（科莫湖景觀快車）</span>
+              <div class="transit-meta">65 分（5 站） · 營運單位：北方鐵路 Trenord</div>
+              <div class="transit-op">列車過 Lecco 後左側窗外即展開壯麗科莫湖全景，抵達 Varenna 步行 5 分到湖畔</div>
+              
+            </div>
+
+            <!-- Intermediate Stops List -->
+            <div class="stop-series">
+              
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">09:31</span>
+                <span>Monza</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">09:41</span>
+                <span>Carnate-Usmate</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">10:02</span>
+                <span>Lecco（科莫湖南端轉角）</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">10:15</span>
+                <span>Mandello del Lario</span>
+              </div>
+            
+            </div>
+          </div>
+
+          <!-- End Node -->
+          <div class="t-node">
+            <div class="t-pin end"></div>
+            <div class="t-header">
+              <span class="t-time">10:25</span>
+              <span class="t-name">抵達：瓦倫納-埃西諾車站（Varenna-Esino）</span>
+            </div>
+            <div class="t-addr">Via Statale 43, 23829 Varenna LC, 義大利</div>
+          </div>
+        </div>
+
+        <div class="card-footer-actions">
+          <div class="action-links">
+            <a href="https://www.google.com/maps/dir/?api=1&origin=Milano+Centrale&destination=Varenna-Esino&travelmode=transit" target="_blank" rel="noopener" class="btn-gmaps">
+              🧭 開啟 Google 地圖即時 GPS 導航
+            </a>
+            <a href="route/06_D05_米蘭中央車站_至_瓦倫納科莫湖.pdf" download class="btn-print-one">
+              📥 下載路線 PDF
+            </a>
+            <button onclick="printSingleRoute('route_06')" class="btn-print-one">
+              🖨️ 列印此路線
+            </button>
+          </div>
+          <div class="official-url">
+            直達連結：https://www.google.com/maps/dir/?api=1&origin=Milano+Centrale&destination=Varenna-Esino&travelmode=transit
+          </div>
+        </div>
+      </div>
+    </article>
+    
+    <!-- Route Card: route_07 -->
+    <article class="route-card" id="route_07" data-cat="como" style="--active-line-color: #0288d1;">
+      <div class="route-header-top">
+        <div class="google-badge">
+          <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
+          <span class="google-sub">地圖大眾運輸指引</span>
+        </div>
+        <div class="route-info-col">
+          <span class="route-day-tag">D05 · 科莫湖跨湖渡輪</span>
+          <div class="route-title-text">瓦倫納碼頭 至 貝拉焦碼頭</div>
+          <div class="route-addr-text">Piazza del Prato, 23829 Varenna LC,... 至 Lungo Lario Manzoni, 22021 Bellagio...</div>
+          <div class="route-time-text">11:00 - 11:15（15 分（跨湖航行））</div>
+        </div>
+      </div>
+
+      <div class="map-box">
+        <div id="map_route_07" class="map-render"></div>
+        <div class="map-credit">地圖資料 &copy; OpenStreetMap | 路線規劃：15 分（跨湖航行）</div>
+      </div>
+
+      <div class="details-box">
+        <div class="fare-row">
+          <div>
+            <div class="fare-title">購票 · 單程渡輪票價</div>
+            <div class="fare-desc">Gestione Navigazione Laghi 湖區渡輪公司</div>
+          </div>
+          <div class="fare-val">€4.60 起</div>
+        </div>
+
+        <div class="transit-timeline">
+          <!-- Start Node -->
+          <div class="t-node">
+            <div class="t-pin start"></div>
+            <div class="t-line"></div>
+            <div class="t-header">
+              <span class="t-time">11:00</span>
+              <span class="t-name">瓦倫納渡輪碼頭（Varenna Imbarcadero）</span>
+            </div>
+            <div class="t-addr">Piazza del Prato, 23829 Varenna LC, 義大利</div>
+          </div>
+
+          <!-- Transit Info Block -->
+          <div class="t-node">
+            <div class="t-pin" style="border-color: #0288d1; background: #0288d1;"></div>
+            <div class="t-line transit-active"></div>
+            <div class="t-header">
+              <span class="t-time">11:00</span>
+              <span class="t-name">搭乘 ⛴️ Traghetto Navigazione Laghi</span>
+            </div>
+            <div class="transit-card-inner">
+              <span class="badge-transit">⛴️ Traghetto Navigazione Laghi</span>
+              <div class="transit-meta">15 分（跨湖航行） · 營運單位：Navigazione Laghi</div>
+              <div class="transit-op">登船後可至頂層戶外甲板，360 度飽覽科莫湖三叉水域與阿爾卑斯山倒影</div>
+              
+            </div>
+
+            <!-- Intermediate Stops List -->
+            <div class="stop-series">
+              
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">11:08</span>
+                <span>科莫湖中心水域（遠眺雙城全景）</span>
+              </div>
+            
+            </div>
+          </div>
+
+          <!-- End Node -->
+          <div class="t-node">
+            <div class="t-pin end"></div>
+            <div class="t-header">
+              <span class="t-time">11:15</span>
+              <span class="t-name">抵達：貝拉焦渡輪碼頭（Bellagio Imbarcadero）</span>
+            </div>
+            <div class="t-addr">Lungo Lario Manzoni, 22021 Bellagio CO, 義大利</div>
+          </div>
+        </div>
+
+        <div class="card-footer-actions">
+          <div class="action-links">
+            <a href="https://www.google.com/maps/dir/?api=1&origin=Varenna+Imbarcadero&destination=Bellagio+Imbarcadero&travelmode=transit" target="_blank" rel="noopener" class="btn-gmaps">
+              🧭 開啟 Google 地圖即時 GPS 導航
+            </a>
+            <a href="route/07_D05_瓦倫納碼頭_至_貝拉焦跨湖渡輪.pdf" download class="btn-print-one">
+              📥 下載路線 PDF
+            </a>
+            <button onclick="printSingleRoute('route_07')" class="btn-print-one">
+              🖨️ 列印此路線
+            </button>
+          </div>
+          <div class="official-url">
+            直達連結：https://www.google.com/maps/dir/?api=1&origin=Varenna+Imbarcadero&destination=Bellagio+Imbarcadero&travelmode=transit
+          </div>
+        </div>
+      </div>
+    </article>
+    
+    <!-- Route Card: route_08 -->
+    <article class="route-card" id="route_08" data-cat="genova" style="--active-line-color: #d93025;">
+      <div class="route-header-top">
+        <div class="google-badge">
+          <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
+          <span class="google-sub">地圖大眾運輸指引</span>
+        </div>
+        <div class="route-info-col">
+          <span class="route-day-tag">D06 · 南下熱那亞王子廣場</span>
+          <div class="route-title-text">米蘭中央車站 至 熱那亞王子廣場車站</div>
+          <div class="route-addr-text">Piazza Duca d'Aosta 1, 20124 Milano... 至 Piazza Acquaverde, 16134 Genova GE,...</div>
+          <div class="route-time-text">09:10 - 10:40（1 小時 30 分（4 站））</div>
+        </div>
+      </div>
+
+      <div class="map-box">
+        <div id="map_route_08" class="map-render"></div>
+        <div class="map-credit">地圖資料 &copy; OpenStreetMap | 路線規劃：1 小時 30 分（4 站）</div>
+      </div>
+
+      <div class="details-box">
+        <div class="fare-row">
+          <div>
+            <div class="fare-title">預訂席位 · 義鐵城際一等艙</div>
+            <div class="fare-desc">Trenitalia Intercity · 寬敞一等艙保留席位（含行李空間）</div>
+          </div>
+          <div class="fare-val">一等艙實體票（團費已含）</div>
+        </div>
+
+        <div class="transit-timeline">
+          <!-- Start Node -->
+          <div class="t-node">
+            <div class="t-pin start"></div>
+            <div class="t-line"></div>
+            <div class="t-header">
+              <span class="t-time">09:10</span>
+              <span class="t-name">米蘭中央車站（Milano Centrale）</span>
+            </div>
+            <div class="t-addr">Piazza Duca d'Aosta 1, 20124 Milano MI, 義大利</div>
+          </div>
+
+          <!-- Transit Info Block -->
+          <div class="t-node">
+            <div class="t-pin" style="border-color: #d93025; background: #d93025;"></div>
+            <div class="t-line transit-active"></div>
+            <div class="t-header">
+              <span class="t-time">09:10</span>
+              <span class="t-name">搭乘 🚆 Intercity IC 659（一等艙 Prima Classe）</span>
+            </div>
+            <div class="transit-card-inner">
+              <span class="badge-transit">🚆 Intercity IC 659（一等艙 Prima Classe）</span>
+              <div class="transit-meta">1 小時 30 分（4 站） · 營運單位：義大利國鐵 Trenitalia Intercity</div>
+              <div class="transit-op">列車駛越亞平寧山脈直奔利古里亞海岸，出站步行 2 分鐘直達 Savoia 飯店</div>
+              
+            </div>
+
+            <!-- Intermediate Stops List -->
+            <div class="stop-series">
+              
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">09:22</span>
+                <span>Milano Rogoredo</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">09:38</span>
+                <span>Pavia（帕維亞古城）</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">09:56</span>
+                <span>Voghera</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">10:10</span>
+                <span>Tortona</span>
+              </div>
+            
+            </div>
+          </div>
+
+          <!-- End Node -->
+          <div class="t-node">
+            <div class="t-pin end"></div>
+            <div class="t-header">
+              <span class="t-time">10:40</span>
+              <span class="t-name">抵達：熱那亞王子廣場車站（Genova Piazza Principe）</span>
+            </div>
+            <div class="t-addr">Piazza Acquaverde, 16134 Genova GE, 義大利</div>
+          </div>
+        </div>
+
+        <div class="card-footer-actions">
+          <div class="action-links">
+            <a href="https://www.google.com/maps/dir/?api=1&origin=Milano+Centrale&destination=Genova+Piazza+Principe&travelmode=transit" target="_blank" rel="noopener" class="btn-gmaps">
+              🧭 開啟 Google 地圖即時 GPS 導航
+            </a>
+            <a href="route/08_D06_米蘭中央車站_至_熱那亞王子廣場.pdf" download class="btn-print-one">
+              📥 下載路線 PDF
+            </a>
+            <button onclick="printSingleRoute('route_08')" class="btn-print-one">
+              🖨️ 列印此路線
+            </button>
+          </div>
+          <div class="official-url">
+            直達連結：https://www.google.com/maps/dir/?api=1&origin=Milano+Centrale&destination=Genova+Piazza+Principe&travelmode=transit
+          </div>
+        </div>
+      </div>
+    </article>
+    
+    <!-- Route Card: route_09 -->
+    <article class="route-card" id="route_09" data-cat="genova" style="--active-line-color: #e53935;">
+      <div class="route-header-top">
+        <div class="google-badge">
+          <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
+          <span class="google-sub">地圖大眾運輸指引</span>
+        </div>
+        <div class="route-info-col">
+          <span class="route-day-tag">D07 · 熱那亞地鐵市區巡禮</span>
+          <div class="route-title-text">熱那亞王子廣場 至 法拉利廣場與總督宮</div>
+          <div class="route-addr-text">Piazza Acquaverde, 16134 Genova GE,... 至 Piazza Raffaele De Ferrari, 16121 G...</div>
+          <div class="route-time-text">09:30 - 09:36（6 分（4 站））</div>
+        </div>
+      </div>
+
+      <div class="map-box">
+        <div id="map_route_09" class="map-render"></div>
+        <div class="map-credit">地圖資料 &copy; OpenStreetMap | 路線規劃：6 分（4 站）</div>
+      </div>
+
+      <div class="details-box">
+        <div class="fare-row">
+          <div>
+            <div class="fare-title">票券與相關資訊</div>
+            <div class="fare-desc">AMT Genova 24H 交通日票（地鐵、公車、登山纜車通用）</div>
+          </div>
+          <div class="fare-val">€4.50（24H 通票）</div>
+        </div>
+
+        <div class="transit-timeline">
+          <!-- Start Node -->
+          <div class="t-node">
+            <div class="t-pin start"></div>
+            <div class="t-line"></div>
+            <div class="t-header">
+              <span class="t-time">09:30</span>
+              <span class="t-name">熱那亞王子廣場地鐵站（Principe Metro）</span>
+            </div>
+            <div class="t-addr">Piazza Acquaverde, 16134 Genova GE, 義大利</div>
+          </div>
+
+          <!-- Transit Info Block -->
+          <div class="t-node">
+            <div class="t-pin" style="border-color: #e53935; background: #e53935;"></div>
+            <div class="t-line transit-active"></div>
+            <div class="t-header">
+              <span class="t-time">09:30</span>
+              <span class="t-name">搭乘 Ⓜ️ Metro Genova（往 Brignole）</span>
+            </div>
+            <div class="transit-card-inner">
+              <span class="badge-transit">Ⓜ️ Metro Genova（往 Brignole）</span>
+              <div class="transit-meta">6 分（4 站） · 營運單位：熱那亞大眾運輸 AMT</div>
+              <div class="transit-op">地鐵站出口直接銜接法拉利廣場青銅噴泉、總督宮與卡洛費利切劇院</div>
+              
+            </div>
+
+            <!-- Intermediate Stops List -->
+            <div class="stop-series">
+              
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">09:32</span>
+                <span>Darsena</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">09:33</span>
+                <span>San Giorgio（舊港海鮮街）</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">09:35</span>
+                <span>Sarzano/Sant'Agostino</span>
+              </div>
+            
+            </div>
+          </div>
+
+          <!-- End Node -->
+          <div class="t-node">
+            <div class="t-pin end"></div>
+            <div class="t-header">
+              <span class="t-time">09:36</span>
+              <span class="t-name">抵達：法拉利廣場（Piazza De Ferrari）</span>
+            </div>
+            <div class="t-addr">Piazza Raffaele De Ferrari, 16121 Genova GE, 義大利</div>
+          </div>
+        </div>
+
+        <div class="card-footer-actions">
+          <div class="action-links">
+            <a href="https://www.google.com/maps/dir/?api=1&origin=Genova+Piazza+Principe&destination=Piazza+De+Ferrari+Genova&travelmode=transit" target="_blank" rel="noopener" class="btn-gmaps">
+              🧭 開啟 Google 地圖即時 GPS 導航
+            </a>
+            <a href="route/09_D07_熱那亞王子廣場_至_法拉利廣場地鐵.pdf" download class="btn-print-one">
+              📥 下載路線 PDF
+            </a>
+            <button onclick="printSingleRoute('route_09')" class="btn-print-one">
+              🖨️ 列印此路線
+            </button>
+          </div>
+          <div class="official-url">
+            直達連結：https://www.google.com/maps/dir/?api=1&origin=Genova+Piazza+Principe&destination=Piazza+De+Ferrari+Genova&travelmode=transit
+          </div>
+        </div>
+      </div>
+    </article>
+    
+    <!-- Route Card: route_10 -->
+    <article class="route-card" id="route_10" data-cat="genova" style="--active-line-color: #1a73e8;">
+      <div class="route-header-top">
+        <div class="google-badge">
+          <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
+          <span class="google-sub">地圖大眾運輸指引</span>
+        </div>
+        <div class="route-info-col">
+          <span class="route-day-tag">D08 · 前往菲諾港門戶</span>
+          <div class="route-title-text">熱那亞王子廣場 至 聖瑪格麗塔利古雷</div>
+          <div class="route-addr-text">Piazza Acquaverde, 16134 Genova GE,... 至 Piazza Nobili 1, 16038 Santa Marghe...</div>
+          <div class="route-time-text">09:47 - 10:14（27 分（2 站））</div>
+        </div>
+      </div>
+
+      <div class="map-box">
+        <div id="map_route_10" class="map-render"></div>
+        <div class="map-credit">地圖資料 &copy; OpenStreetMap | 路線規劃：27 分（2 站）</div>
+      </div>
+
+      <div class="details-box">
+        <div class="fare-row">
+          <div>
+            <div class="fare-title">預訂席位 · 義鐵城際一等艙</div>
+            <div class="fare-desc">Trenitalia Intercity · 沿海快線</div>
+          </div>
+          <div class="fare-val">一等艙實體票（團費已含）</div>
+        </div>
+
+        <div class="transit-timeline">
+          <!-- Start Node -->
+          <div class="t-node">
+            <div class="t-pin start"></div>
+            <div class="t-line"></div>
+            <div class="t-header">
+              <span class="t-time">09:47</span>
+              <span class="t-name">熱那亞王子廣場車站（Genova Piazza Principe）</span>
+            </div>
+            <div class="t-addr">Piazza Acquaverde, 16134 Genova GE, 義大利</div>
+          </div>
+
+          <!-- Transit Info Block -->
+          <div class="t-node">
+            <div class="t-pin" style="border-color: #1a73e8; background: #1a73e8;"></div>
+            <div class="t-line transit-active"></div>
+            <div class="t-header">
+              <span class="t-time">09:47</span>
+              <span class="t-name">搭乘 🚆 Intercity IC 657（一等艙 Prima Classe）</span>
+            </div>
+            <div class="transit-card-inner">
+              <span class="badge-transit">🚆 Intercity IC 657（一等艙 Prima Classe）</span>
+              <div class="transit-meta">27 分（2 站） · 營運單位：義大利國鐵 Trenitalia Intercity</div>
+              <div class="transit-op">出站即達聖瑪格麗塔站前公車圓環，無縫轉乘 782 號公車直達菲諾港</div>
+              
+            </div>
+
+            <!-- Intermediate Stops List -->
+            <div class="stop-series">
+              
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">09:55</span>
+                <span>Genova Brignole</span>
+              </div>
+            
+            </div>
+          </div>
+
+          <!-- End Node -->
+          <div class="t-node">
+            <div class="t-pin end"></div>
+            <div class="t-header">
+              <span class="t-time">10:14</span>
+              <span class="t-name">抵達：聖瑪格麗塔利古雷車站（S. Margherita Ligure）</span>
+            </div>
+            <div class="t-addr">Piazza Nobili 1, 16038 Santa Margherita Ligure GE, 義大利</div>
+          </div>
+        </div>
+
+        <div class="card-footer-actions">
+          <div class="action-links">
+            <a href="https://www.google.com/maps/dir/?api=1&origin=Genova+Piazza+Principe&destination=Santa+Margherita+Ligure-Portofino&travelmode=transit" target="_blank" rel="noopener" class="btn-gmaps">
+              🧭 開啟 Google 地圖即時 GPS 導航
+            </a>
+            <a href="route/10_D08_熱那亞王子廣場_至_聖瑪格麗塔.pdf" download class="btn-print-one">
+              📥 下載路線 PDF
+            </a>
+            <button onclick="printSingleRoute('route_10')" class="btn-print-one">
+              🖨️ 列印此路線
+            </button>
+          </div>
+          <div class="official-url">
+            直達連結：https://www.google.com/maps/dir/?api=1&origin=Genova+Piazza+Principe&destination=Santa+Margherita+Ligure-Portofino&travelmode=transit
+          </div>
+        </div>
+      </div>
+    </article>
+    
+    <!-- Route Card: route_11 -->
+    <article class="route-card" id="route_11" data-cat="genova" style="--active-line-color: #0288d1;">
+      <div class="route-header-top">
+        <div class="google-badge">
+          <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
+          <span class="google-sub">地圖大眾運輸指引</span>
+        </div>
+        <div class="route-info-col">
+          <span class="route-day-tag">D08 · 蔚藍海岸全景公車</span>
+          <div class="route-title-text">聖瑪格麗塔車站 至 菲諾港老港廣場</div>
+          <div class="route-addr-text">Piazza Nobili 1, 16038 Santa Marghe... 至 Piazza Martiri dell'Olivetta, 16034...</div>
+          <div class="route-time-text">10:25 - 10:43（18 分（8 站沿懸崖海灣））</div>
+        </div>
+      </div>
+
+      <div class="map-box">
+        <div id="map_route_11" class="map-render"></div>
+        <div class="map-credit">地圖資料 &copy; OpenStreetMap | 路線規劃：18 分（8 站沿懸崖海灣）</div>
+      </div>
+
+      <div class="details-box">
+        <div class="fare-row">
+          <div>
+            <div class="fare-title">票券與相關資訊</div>
+            <div class="fare-desc">AMT Genova 蔚藍海岸觀光線 782 號專屬公車</div>
+          </div>
+          <div class="fare-val">單程 €3.00 / 來回 €5.00</div>
+        </div>
+
+        <div class="transit-timeline">
+          <!-- Start Node -->
+          <div class="t-node">
+            <div class="t-pin start"></div>
+            <div class="t-line"></div>
+            <div class="t-header">
+              <span class="t-time">10:25</span>
+              <span class="t-name">聖瑪格麗塔車站（S. Margherita Ligure FS）</span>
+            </div>
+            <div class="t-addr">Piazza Nobili 1, 16038 Santa Margherita Ligure GE, 義大利</div>
+          </div>
+
+          <!-- Transit Info Block -->
+          <div class="t-node">
+            <div class="t-pin" style="border-color: #0288d1; background: #0288d1;"></div>
+            <div class="t-line transit-active"></div>
+            <div class="t-header">
+              <span class="t-time">10:25</span>
+              <span class="t-name">搭乘 🚌 Bus 782 Portofino（海岸全景線）</span>
+            </div>
+            <div class="transit-card-inner">
+              <span class="badge-transit">🚌 Bus 782 Portofino（海岸全景線）</span>
+              <div class="transit-meta">18 分（8 站沿懸崖海灣） · 營運單位：熱那亞大眾運輸 AMT</div>
+              <div class="transit-op">全程緊貼利古里亞海岸線行駛，途經 Paraggi 翡翠灣，終點直達菲諾港核心</div>
+              <div class="transit-alert">賞景提示：上車請坐前進方向左側靠窗，一路盡享第里雅斯特海灣碧藍美景！</div>
+            </div>
+
+            <!-- Intermediate Stops List -->
+            <div class="stop-series">
+              
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">10:28</span>
+                <span>Hotel Regina Elena</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">10:33</span>
+                <span>Abbazia della Cervara</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">10:37</span>
+                <span>Paraggi（翡翠綠海水浴場）</span>
+              </div>
+            
+            </div>
+          </div>
+
+          <!-- End Node -->
+          <div class="t-node">
+            <div class="t-pin end"></div>
+            <div class="t-header">
+              <span class="t-time">10:43</span>
+              <span class="t-name">抵達：菲諾港老港廣場（Piazza Martiri dell'Olivetta）</span>
+            </div>
+            <div class="t-addr">Piazza Martiri dell'Olivetta, 16034 Portofino GE, 義大利</div>
+          </div>
+        </div>
+
+        <div class="card-footer-actions">
+          <div class="action-links">
+            <a href="https://www.google.com/maps/dir/?api=1&origin=Stazione+Santa+Margherita+Ligure&destination=Piazza+Martiri+dell'Olivetta+Portofino&travelmode=transit" target="_blank" rel="noopener" class="btn-gmaps">
+              🧭 開啟 Google 地圖即時 GPS 導航
+            </a>
+            <a href="route/11_D08_聖瑪格麗塔_至_菲諾港782公車.pdf" download class="btn-print-one">
+              📥 下載路線 PDF
+            </a>
+            <button onclick="printSingleRoute('route_11')" class="btn-print-one">
+              🖨️ 列印此路線
+            </button>
+          </div>
+          <div class="official-url">
+            直達連結：https://www.google.com/maps/dir/?api=1&origin=Stazione+Santa+Margherita+Ligure&destination=Piazza+Martiri+dell'Olivetta+Portofino&travelmode=transit
+          </div>
+        </div>
+      </div>
+    </article>
+    
+    <!-- Route Card: route_12 -->
+    <article class="route-card" id="route_12" data-cat="nice" style="--active-line-color: #d93025;">
+      <div class="route-header-top">
+        <div class="google-badge">
+          <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
+          <span class="google-sub">地圖大眾運輸指引</span>
+        </div>
+        <div class="route-info-col">
+          <span class="route-day-tag">D09 · 跨越義法邊境第一段</span>
+          <div class="route-title-text">熱那亞王子廣場 至 文提米利亞邊境車站</div>
+          <div class="route-addr-text">Piazza Acquaverde, 16134 Genova GE,... 至 Piazza Cesare Battisti 1, 18039 Ven...</div>
+          <div class="route-time-text">08:58 - 10:58（2 小時 00 分（8 站沿海全景））</div>
+        </div>
+      </div>
+
+      <div class="map-box">
+        <div id="map_route_12" class="map-render"></div>
+        <div class="map-credit">地圖資料 &copy; OpenStreetMap | 路線規劃：2 小時 00 分（8 站沿海全景）</div>
+      </div>
+
+      <div class="details-box">
+        <div class="fare-row">
+          <div>
+            <div class="fare-title">預訂席位 · 義鐵城際一等艙</div>
+            <div class="fare-desc">Trenitalia Intercity · 義大利里維埃拉海岸線</div>
+          </div>
+          <div class="fare-val">一等艙實體票（團費已含）</div>
+        </div>
+
+        <div class="transit-timeline">
+          <!-- Start Node -->
+          <div class="t-node">
+            <div class="t-pin start"></div>
+            <div class="t-line"></div>
+            <div class="t-header">
+              <span class="t-time">08:58</span>
+              <span class="t-name">熱那亞王子廣場車站（Genova Piazza Principe）</span>
+            </div>
+            <div class="t-addr">Piazza Acquaverde, 16134 Genova GE, 義大利</div>
+          </div>
+
+          <!-- Transit Info Block -->
+          <div class="t-node">
+            <div class="t-pin" style="border-color: #d93025; background: #d93025;"></div>
+            <div class="t-line transit-active"></div>
+            <div class="t-header">
+              <span class="t-time">08:58</span>
+              <span class="t-name">搭乘 🚆 Intercity IC 633（一等艙 Prima Classe）</span>
+            </div>
+            <div class="transit-card-inner">
+              <span class="badge-transit">🚆 Intercity IC 633（一等艙 Prima Classe）</span>
+              <div class="transit-meta">2 小時 00 分（8 站沿海全景） · 營運單位：義大利國鐵 Trenitalia Intercity</div>
+              <div class="transit-op">列車緊鄰地中海行駛，抵達後於 Sir Thomas 寄放行李並享用正宗熱那亞佛卡夏</div>
+              
+            </div>
+
+            <!-- Intermediate Stops List -->
+            <div class="stop-series">
+              
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">09:28</span>
+                <span>Savona（薩沃納）</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">09:42</span>
+                <span>Finale Ligure Marina</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">10:01</span>
+                <span>Albenga</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">10:09</span>
+                <span>Alassio</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">10:24</span>
+                <span>Imperia（因佩里亞）</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">10:38</span>
+                <span>Sanremo（聖雷莫音樂之城）</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">10:48</span>
+                <span>Bordighera</span>
+              </div>
+            
+            </div>
+          </div>
+
+          <!-- End Node -->
+          <div class="t-node">
+            <div class="t-pin end"></div>
+            <div class="t-header">
+              <span class="t-time">10:58</span>
+              <span class="t-name">抵達：文提米利亞邊境車站（Ventimiglia Stazione FS）</span>
+            </div>
+            <div class="t-addr">Piazza Cesare Battisti 1, 18039 Ventimiglia IM, 義大利</div>
+          </div>
+        </div>
+
+        <div class="card-footer-actions">
+          <div class="action-links">
+            <a href="https://www.google.com/maps/dir/?api=1&origin=Genova+Piazza+Principe&destination=Ventimiglia+Stazione&travelmode=transit" target="_blank" rel="noopener" class="btn-gmaps">
+              🧭 開啟 Google 地圖即時 GPS 導航
+            </a>
+            <a href="route/12_D09_熱那亞王子廣場_至_文提米利亞邊境.pdf" download class="btn-print-one">
+              📥 下載路線 PDF
+            </a>
+            <button onclick="printSingleRoute('route_12')" class="btn-print-one">
+              🖨️ 列印此路線
+            </button>
+          </div>
+          <div class="official-url">
+            直達連結：https://www.google.com/maps/dir/?api=1&origin=Genova+Piazza+Principe&destination=Ventimiglia+Stazione&travelmode=transit
+          </div>
+        </div>
+      </div>
+    </article>
+    
+    <!-- Route Card: route_13 -->
+    <article class="route-card" id="route_13" data-cat="nice" style="--active-line-color: #004b97;">
+      <div class="route-header-top">
+        <div class="google-badge">
+          <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
+          <span class="google-sub">地圖大眾運輸指引</span>
+        </div>
+        <div class="route-info-col">
+          <span class="route-day-tag">D09 · 跨國雙層全景景觀列車</span>
+          <div class="route-title-text">文提米利亞 至 尼斯城站</div>
+          <div class="route-addr-text">Piazza Cesare Battisti 1, 18039 Ven... 至 Avenue Thiers, 06000 Nice, 法國...</div>
+          <div class="route-time-text">15:00 - 15:50（50 分（10 站跨國海岸景觀））</div>
+        </div>
+      </div>
+
+      <div class="map-box">
+        <div id="map_route_13" class="map-render"></div>
+        <div class="map-credit">地圖資料 &copy; OpenStreetMap | 路線規劃：50 分（10 站跨國海岸景觀）</div>
+      </div>
+
+      <div class="details-box">
+        <div class="fare-row">
+          <div>
+            <div class="fare-title">通票資訊 · 法國 ZOU! 區域鐵路</div>
+            <div class="fare-desc">Pass ZOU! 3-Day · 蔚藍海岸無限搭乘</div>
+          </div>
+          <div class="fare-val">單程 €8.80 / Pass ZOU!</div>
+        </div>
+
+        <div class="transit-timeline">
+          <!-- Start Node -->
+          <div class="t-node">
+            <div class="t-pin start"></div>
+            <div class="t-line"></div>
+            <div class="t-header">
+              <span class="t-time">15:00</span>
+              <span class="t-name">文提米利亞邊境車站（Ventimiglia）</span>
+            </div>
+            <div class="t-addr">Piazza Cesare Battisti 1, 18039 Ventimiglia IM, 義大利</div>
+          </div>
+
+          <!-- Transit Info Block -->
+          <div class="t-node">
+            <div class="t-pin" style="border-color: #004b97; background: #004b97;"></div>
+            <div class="t-line transit-active"></div>
+            <div class="t-header">
+              <span class="t-time">15:00</span>
+              <span class="t-name">搭乘 🚆 SNCF TER Zou! 86060（雙層景觀列車）</span>
+            </div>
+            <div class="transit-card-inner">
+              <span class="badge-transit">🚆 SNCF TER Zou! 86060（雙層景觀列車）</span>
+              <div class="transit-meta">50 分（10 站跨國海岸景觀） · 營運單位：法國國鐵 SNCF TER PACA (ZOU!)</div>
+              <div class="transit-op">雙層列車上層視野開闊，行經摩納哥、蒙頓、自由城，南法海岸精華盡收眼底</div>
+              <div class="transit-alert">座位推薦：請坐前進方向左側（靠海側），從芒通一路到尼斯享受無敵蔚藍海岸！</div>
+            </div>
+
+            <!-- Intermediate Stops List -->
+            <div class="stop-series">
+              
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">15:07</span>
+                <span>Menton Garavan（跨入法國第一站）</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">15:12</span>
+                <span>Menton（芒通）</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">15:16</span>
+                <span>Carnolès</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">15:20</span>
+                <span>Roquebrune-Cap-Martin</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">15:26</span>
+                <span>Monaco-Monte-Carlo（摩納哥地下車站）</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">15:33</span>
+                <span>Èze-sur-Mer（艾茲懸崖下海濱）</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">15:37</span>
+                <span>Beaulieu-sur-Mer</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">15:40</span>
+                <span>Villefranche-sur-Mer（自由城海灣）</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">15:45</span>
+                <span>Nice Riquier</span>
+              </div>
+            
+            </div>
+          </div>
+
+          <!-- End Node -->
+          <div class="t-node">
+            <div class="t-pin end"></div>
+            <div class="t-header">
+              <span class="t-time">15:50</span>
+              <span class="t-name">抵達：尼斯中央車站（Gare de Nice-Ville）</span>
+            </div>
+            <div class="t-addr">Avenue Thiers, 06000 Nice, 法國</div>
+          </div>
+        </div>
+
+        <div class="card-footer-actions">
+          <div class="action-links">
+            <a href="https://www.google.com/maps/dir/?api=1&origin=Ventimiglia&destination=Gare+de+Nice-Ville&travelmode=transit" target="_blank" rel="noopener" class="btn-gmaps">
+              🧭 開啟 Google 地圖即時 GPS 導航
+            </a>
+            <a href="route/13_D09_文提米利亞_至_尼斯城站TER雙層列車.pdf" download class="btn-print-one">
+              📥 下載路線 PDF
+            </a>
+            <button onclick="printSingleRoute('route_13')" class="btn-print-one">
+              🖨️ 列印此路線
+            </button>
+          </div>
+          <div class="official-url">
+            直達連結：https://www.google.com/maps/dir/?api=1&origin=Ventimiglia&destination=Gare+de+Nice-Ville&travelmode=transit
+          </div>
+        </div>
+      </div>
+    </article>
+    
+    <!-- Route Card: route_14 -->
+    <article class="route-card" id="route_14" data-cat="nice" style="--active-line-color: #d32f2f;">
+      <div class="route-header-top">
+        <div class="google-badge">
+          <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
+          <span class="google-sub">地圖大眾運輸指引</span>
+        </div>
+        <div class="route-info-col">
+          <span class="route-day-tag">D10 · 尼斯都會輕軌探索</span>
+          <div class="route-title-text">AC Hotel Nice 至 尼斯舊城與薩萊亞花市</div>
+          <div class="route-addr-text">65 Rue de France / Prom. des Anglai... 至 Cours Saleya, 06300 Nice, 法國...</div>
+          <div class="route-time-text">09:30 - 09:42（12 分（5 站））</div>
+        </div>
+      </div>
+
+      <div class="map-box">
+        <div id="map_route_14" class="map-render"></div>
+        <div class="map-credit">地圖資料 &copy; OpenStreetMap | 路線規劃：12 分（5 站）</div>
+      </div>
+
+      <div class="details-box">
+        <div class="fare-row">
+          <div>
+            <div class="fare-title">票券與相關資訊</div>
+            <div class="fare-desc">Lignes d'Azur 尼斯都會輕軌交通網</div>
+          </div>
+          <div class="fare-val">單程 €1.70 / 感應卡</div>
+        </div>
+
+        <div class="transit-timeline">
+          <!-- Start Node -->
+          <div class="t-node">
+            <div class="t-pin start"></div>
+            <div class="t-line"></div>
+            <div class="t-header">
+              <span class="t-time">09:30</span>
+              <span class="t-name">AC Hotel 輕軌站（C.U.M. 站）</span>
+            </div>
+            <div class="t-addr">65 Rue de France / Prom. des Anglais, 06000 Nice, 法國</div>
+          </div>
+
+          <!-- Transit Info Block -->
+          <div class="t-node">
+            <div class="t-pin" style="border-color: #d32f2f; background: #d32f2f;"></div>
+            <div class="t-line transit-active"></div>
+            <div class="t-header">
+              <span class="t-time">09:30</span>
+              <span class="t-name">搭乘 🚊 Tramway L2（往 Port Lympia 舊港）</span>
+            </div>
+            <div class="transit-card-inner">
+              <span class="badge-transit">🚊 Tramway L2（往 Port Lympia 舊港）</span>
+              <div class="transit-meta">12 分（5 站） · 營運單位：尼斯都會大眾運輸 Lignes d'Azur</div>
+              <div class="transit-op">走出 AC Hotel 穿過馬路即達 C.U.M. 輕軌地下站，直達舊城免日曬爬坡</div>
+              
+            </div>
+
+            <!-- Intermediate Stops List -->
+            <div class="stop-series">
+              
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">09:33</span>
+                <span>Alsace-Lorraine</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">09:36</span>
+                <span>Jean Médecin（可轉乘輕軌 L1）</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">09:38</span>
+                <span>Durandy</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">09:40</span>
+                <span>Garibaldi / Le Château</span>
+              </div>
+            
+            </div>
+          </div>
+
+          <!-- End Node -->
+          <div class="t-node">
+            <div class="t-pin end"></div>
+            <div class="t-header">
+              <span class="t-time">09:42</span>
+              <span class="t-name">抵達：舊城站（Cathédrale - Vieille Ville / Cours Saleya）</span>
+            </div>
+            <div class="t-addr">Cours Saleya, 06300 Nice, 法國</div>
+          </div>
+        </div>
+
+        <div class="card-footer-actions">
+          <div class="action-links">
+            <a href="https://www.google.com/maps/dir/?api=1&origin=AC+Hotel+Nice&destination=Cours+Saleya+Nice&travelmode=transit" target="_blank" rel="noopener" class="btn-gmaps">
+              🧭 開啟 Google 地圖即時 GPS 導航
+            </a>
+            <a href="route/14_D10_ACHotel_至_尼斯舊城花市輕軌L2.pdf" download class="btn-print-one">
+              📥 下載路線 PDF
+            </a>
+            <button onclick="printSingleRoute('route_14')" class="btn-print-one">
+              🖨️ 列印此路線
+            </button>
+          </div>
+          <div class="official-url">
+            直達連結：https://www.google.com/maps/dir/?api=1&origin=AC+Hotel+Nice&destination=Cours+Saleya+Nice&travelmode=transit
+          </div>
+        </div>
+      </div>
+    </article>
+    
+    <!-- Route Card: route_15 -->
+    <article class="route-card" id="route_15" data-cat="nice" style="--active-line-color: #004b97;">
+      <div class="route-header-top">
+        <div class="google-badge">
+          <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
+          <span class="google-sub">地圖大眾運輸指引</span>
+        </div>
+        <div class="route-info-col">
+          <span class="route-day-tag">D11 · 濱海自由城半日慢遊</span>
+          <div class="route-title-text">尼斯城站 至 濱海自由城</div>
+          <div class="route-addr-text">Avenue Thiers, 06000 Nice, 法國... 至 Avenue Georges Clemenceau, 06230 Vi...</div>
+          <div class="route-time-text">09:45 - 09:52（7 分（2 站直達懸崖海灣））</div>
+        </div>
+      </div>
+
+      <div class="map-box">
+        <div id="map_route_15" class="map-render"></div>
+        <div class="map-credit">地圖資料 &copy; OpenStreetMap | 路線規劃：7 分（2 站直達懸崖海灣）</div>
+      </div>
+
+      <div class="details-box">
+        <div class="fare-row">
+          <div>
+            <div class="fare-title">通票資訊 · 法國 ZOU! 鐵路</div>
+            <div class="fare-desc">Pass ZOU! 3-Day 無限次搭乘</div>
+          </div>
+          <div class="fare-val">單程 €2.30 / Pass ZOU!</div>
+        </div>
+
+        <div class="transit-timeline">
+          <!-- Start Node -->
+          <div class="t-node">
+            <div class="t-pin start"></div>
+            <div class="t-line"></div>
+            <div class="t-header">
+              <span class="t-time">09:45</span>
+              <span class="t-name">尼斯中央車站（Gare de Nice-Ville）</span>
+            </div>
+            <div class="t-addr">Avenue Thiers, 06000 Nice, 法國</div>
+          </div>
+
+          <!-- Transit Info Block -->
+          <div class="t-node">
+            <div class="t-pin" style="border-color: #004b97; background: #004b97;"></div>
+            <div class="t-line transit-active"></div>
+            <div class="t-header">
+              <span class="t-time">09:45</span>
+              <span class="t-name">搭乘 🚆 SNCF TER Zou!（往 Ventimiglia 方向）</span>
+            </div>
+            <div class="transit-card-inner">
+              <span class="badge-transit">🚆 SNCF TER Zou!（往 Ventimiglia 方向）</span>
+              <div class="transit-meta">7 分（2 站直達懸崖海灣） · 營運單位：法國國鐵 SNCF TER Zou!</div>
+              <div class="transit-op">出站走下一小段階梯即達金色細石沙灘與 Mayssa Beach 海景餐廳</div>
+              
+            </div>
+
+            <!-- Intermediate Stops List -->
+            <div class="stop-series">
+              
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">09:48</span>
+                <span>Nice Riquier</span>
+              </div>
+            
+            </div>
+          </div>
+
+          <!-- End Node -->
+          <div class="t-node">
+            <div class="t-pin end"></div>
+            <div class="t-header">
+              <span class="t-time">09:52</span>
+              <span class="t-name">抵達：濱海自由城車站（Gare de Villefranche-sur-Mer）</span>
+            </div>
+            <div class="t-addr">Avenue Georges Clemenceau, 06230 Villefranche-sur-Mer, 法國</div>
+          </div>
+        </div>
+
+        <div class="card-footer-actions">
+          <div class="action-links">
+            <a href="https://www.google.com/maps/dir/?api=1&origin=Gare+de+Nice-Ville&destination=Gare+de+Villefranche-sur-Mer&travelmode=transit" target="_blank" rel="noopener" class="btn-gmaps">
+              🧭 開啟 Google 地圖即時 GPS 導航
+            </a>
+            <a href="route/15_D11_尼斯城站_至_濱海自由城TER.pdf" download class="btn-print-one">
+              📥 下載路線 PDF
+            </a>
+            <button onclick="printSingleRoute('route_15')" class="btn-print-one">
+              🖨️ 列印此路線
+            </button>
+          </div>
+          <div class="official-url">
+            直達連結：https://www.google.com/maps/dir/?api=1&origin=Gare+de+Nice-Ville&destination=Gare+de+Villefranche-sur-Mer&travelmode=transit
+          </div>
+        </div>
+      </div>
+    </article>
+    
+    <!-- Route Card: route_16 -->
+    <article class="route-card" id="route_16" data-cat="nice" style="--active-line-color: #0288d1;">
+      <div class="route-header-top">
+        <div class="google-badge">
+          <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
+          <span class="google-sub">地圖大眾運輸指引</span>
+        </div>
+        <div class="route-info-col">
+          <span class="route-day-tag">D12 · 費拉角貴族莊園巡禮</span>
+          <div class="route-title-text">尼斯舊港 至 羅斯柴爾德花園別墅</div>
+          <div class="route-addr-text">Quai de la Douane, 06300 Nice, 法國... 至 1 Avenue Ephrussi de Rothschild, 06...</div>
+          <div class="route-time-text">09:30 - 09:54（24 分（16 站沿海全景公車））</div>
+        </div>
+      </div>
+
+      <div class="map-box">
+        <div id="map_route_16" class="map-render"></div>
+        <div class="map-credit">地圖資料 &copy; OpenStreetMap | 路線規劃：24 分（16 站沿海全景公車）</div>
+      </div>
+
+      <div class="details-box">
+        <div class="fare-row">
+          <div>
+            <div class="fare-title">票券與相關資訊</div>
+            <div class="fare-desc">Lignes d'Azur 觀光公車 15 號（冷氣低底盤巴士）</div>
+          </div>
+          <div class="fare-val">單程 €1.70 / 感應卡</div>
+        </div>
+
+        <div class="transit-timeline">
+          <!-- Start Node -->
+          <div class="t-node">
+            <div class="t-pin start"></div>
+            <div class="t-line"></div>
+            <div class="t-header">
+              <span class="t-time">09:30</span>
+              <span class="t-name">尼斯舊港站（Port Lympia）</span>
+            </div>
+            <div class="t-addr">Quai de la Douane, 06300 Nice, 法國</div>
+          </div>
+
+          <!-- Transit Info Block -->
+          <div class="t-node">
+            <div class="t-pin" style="border-color: #0288d1; background: #0288d1;"></div>
+            <div class="t-line transit-active"></div>
+            <div class="t-header">
+              <span class="t-time">09:30</span>
+              <span class="t-name">搭乘 🚌 Bus 15（往 Port de Saint-Jean）</span>
+            </div>
+            <div class="transit-card-inner">
+              <span class="badge-transit">🚌 Bus 15（往 Port de Saint-Jean）</span>
+              <div class="transit-meta">24 分（16 站沿海全景公車） · 營運單位：尼斯都會大眾運輸 Lignes d'Azur</div>
+              <div class="transit-op">公車直達別墅大門口 Passable / Rothschild 站，完全免去徒步爬坡困擾</div>
+              <div class="transit-alert">絕景提示：沿著下濱海路行駛，可從高處俯瞰濱海自由城海灣的豪華遊艇！</div>
+            </div>
+
+            <!-- Intermediate Stops List -->
+            <div class="stop-series">
+              
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">09:34</span>
+                <span>Saint-Aignan</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">09:38</span>
+                <span>Léopold II</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">09:42</span>
+                <span>Octroi（自由城觀景點）</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">09:48</span>
+                <span>Pont Saint-Jean</span>
+              </div>
+            
+            </div>
+          </div>
+
+          <!-- End Node -->
+          <div class="t-node">
+            <div class="t-pin end"></div>
+            <div class="t-header">
+              <span class="t-time">09:54</span>
+              <span class="t-name">抵達：羅斯柴爾德花園別墅正門（Passable / Rothschild）</span>
+            </div>
+            <div class="t-addr">1 Avenue Ephrussi de Rothschild, 06230 Saint-Jean-Cap-Ferrat, 法國</div>
+          </div>
+        </div>
+
+        <div class="card-footer-actions">
+          <div class="action-links">
+            <a href="https://www.google.com/maps/dir/?api=1&origin=Port+Lympia+Nice&destination=Villa+Ephrussi+de+Rothschild&travelmode=transit" target="_blank" rel="noopener" class="btn-gmaps">
+              🧭 開啟 Google 地圖即時 GPS 導航
+            </a>
+            <a href="route/16_D12_尼斯舊港_至_費拉角別墅15號公車.pdf" download class="btn-print-one">
+              📥 下載路線 PDF
+            </a>
+            <button onclick="printSingleRoute('route_16')" class="btn-print-one">
+              🖨️ 列印此路線
+            </button>
+          </div>
+          <div class="official-url">
+            直達連結：https://www.google.com/maps/dir/?api=1&origin=Port+Lympia+Nice&destination=Villa+Ephrussi+de+Rothschild&travelmode=transit
+          </div>
+        </div>
+      </div>
+    </article>
+    
+    <!-- Route Card: route_17 -->
+    <article class="route-card" id="route_17" data-cat="airport" style="--active-line-color: #d32f2f;">
+      <div class="route-header-top">
+        <div class="google-badge">
+          <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
+          <span class="google-sub">地圖大眾運輸指引</span>
+        </div>
+        <div class="route-info-col">
+          <span class="route-day-tag">D14 · 平安歸途特快輕軌</span>
+          <div class="route-title-text">AC Hotel Nice 至 尼斯蔚藍海岸機場第二航廈</div>
+          <div class="route-addr-text">65 Rue de France, 06000 Nice, 法國... 至 Aéroport Nice Côte d'Azur Terminal ...</div>
+          <div class="route-time-text">10:30 - 10:52（22 分（10 站直達航廈））</div>
+        </div>
+      </div>
+
+      <div class="map-box">
+        <div id="map_route_17" class="map-render"></div>
+        <div class="map-credit">地圖資料 &copy; OpenStreetMap | 路線規劃：22 分（10 站直達航廈）</div>
+      </div>
+
+      <div class="details-box">
+        <div class="fare-row">
+          <div>
+            <div class="fare-title">票券與相關資訊</div>
+            <div class="fare-desc">Lignes d'Azur 輕軌直達機場線 · 專屬獨立路權不塞車</div>
+          </div>
+          <div class="fare-val">單程 €1.70</div>
+        </div>
+
+        <div class="transit-timeline">
+          <!-- Start Node -->
+          <div class="t-node">
+            <div class="t-pin start"></div>
+            <div class="t-line"></div>
+            <div class="t-header">
+              <span class="t-time">10:30</span>
+              <span class="t-name">AC Hotel 輕軌站（C.U.M. 站）</span>
+            </div>
+            <div class="t-addr">65 Rue de France, 06000 Nice, 法國</div>
+          </div>
+
+          <!-- Transit Info Block -->
+          <div class="t-node">
+            <div class="t-pin" style="border-color: #d32f2f; background: #d32f2f;"></div>
+            <div class="t-line transit-active"></div>
+            <div class="t-header">
+              <span class="t-time">10:30</span>
+              <span class="t-name">搭乘 🚊 Tramway L2（往 Aéroport 機場直達線）</span>
+            </div>
+            <div class="transit-card-inner">
+              <span class="badge-transit">🚊 Tramway L2（往 Aéroport 機場直達線）</span>
+              <div class="transit-meta">22 分（10 站直達航廈） · 營運單位：尼斯都會大眾運輸 Lignes d'Azur</div>
+              <div class="transit-op">列車終點站為 T2 航廈地面月台，出站直達阿聯酋航空 EK078 報到櫃檯與 PABLO 退稅機</div>
+              <div class="transit-alert">退稅提示：請務必在托運行李前，於 T2 出境大廳先完成法國 PABLO 電子條碼掃描。</div>
+            </div>
+
+            <!-- Intermediate Stops List -->
+            <div class="stop-series">
+              
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">10:33</span>
+                <span>Magnan</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">10:36</span>
+                <span>Sainte-Hélène</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">10:39</span>
+                <span>Ferber</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">10:44</span>
+                <span>Grand Arénas（交通樞紐）</span>
+              </div>
+            
+              <div class="stop-row">
+                <span class="stop-dot"></span>
+                <span class="stop-t">10:48</span>
+                <span>Aéroport Terminal 1</span>
+              </div>
+            
+            </div>
+          </div>
+
+          <!-- End Node -->
+          <div class="t-node">
+            <div class="t-pin end"></div>
+            <div class="t-header">
+              <span class="t-time">10:52</span>
+              <span class="t-name">抵達：尼斯蔚藍海岸機場第二航廈（Aéroport Terminal 2）</span>
+            </div>
+            <div class="t-addr">Aéroport Nice Côte d'Azur Terminal 2, 06281 Nice, 法國</div>
+          </div>
+        </div>
+
+        <div class="card-footer-actions">
+          <div class="action-links">
+            <a href="https://www.google.com/maps/dir/?api=1&origin=AC+Hotel+Nice&destination=A%C3%A9roport+Nice+C%C3%B4te+d'Azur+Terminal+2&travelmode=transit" target="_blank" rel="noopener" class="btn-gmaps">
+              🧭 開啟 Google 地圖即時 GPS 導航
+            </a>
+            <a href="route/17_D14_ACHotel_至_尼斯機場T2直達輕軌.pdf" download class="btn-print-one">
+              📥 下載路線 PDF
+            </a>
+            <button onclick="printSingleRoute('route_17')" class="btn-print-one">
+              🖨️ 列印此路線
+            </button>
+          </div>
+          <div class="official-url">
+            直達連結：https://www.google.com/maps/dir/?api=1&origin=AC+Hotel+Nice&destination=A%C3%A9roport+Nice+C%C3%B4te+d'Azur+Terminal+2&travelmode=transit
+          </div>
+        </div>
+      </div>
+    </article>
+    
+  </main>
+
+  <script>
+    // Initialize all Leaflet maps
+    
+    (function() {
+      var stops_route_01 = [[45.6274, 8.7124], [45.6083, 8.7561], [45.6111, 8.8519], [45.6089, 8.8928], [45.6133, 8.9483], [45.5997, 9.0272], [45.5019, 9.1625], [45.4842, 9.1872], [45.4862, 9.2045]];
+      var map_route_01 = L.map('map_route_01', {
+        zoomControl: false,
+        attributionControl: false,
+        scrollWheelZoom: false
+      });
+      
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18
+      }).addTo(map_route_01);
+
+      var poly_route_01 = L.polyline(stops_route_01, {
+        color: '#d93025',
+        weight: 6,
+        opacity: 0.9,
+        lineCap: 'round',
+        lineJoin: 'round'
+      }).addTo(map_route_01);
+
+      map_route_01.fitBounds(poly_route_01.getBounds(), {
+        padding: [30, 30]
+      });
+
+      // Origin Pin
+      L.circleMarker(stops_route_01[0], {
+        radius: 8,
+        color: '#1a73e8',
+        fillColor: '#fff',
+        fillOpacity: 1,
+        weight: 3
+      }).addTo(map_route_01);
+
+      // Destination Pin
+      L.circleMarker(stops_route_01[stops_route_01.length - 1], {
+        radius: 8,
+        color: '#d93025',
+        fillColor: '#d93025',
+        fillOpacity: 1,
+        weight: 3
+      }).addTo(map_route_01);
+
+      // Intermediate station dots
+      for(var i = 1; i < stops_route_01.length - 1; i++) {
+        L.circleMarker(stops_route_01[i], {
+          radius: 4,
+          color: '#d93025',
+          fillColor: '#fff',
+          fillOpacity: 1,
+          weight: 2
+        }).addTo(map_route_01);
+      }
+    })();
+
+    (function() {
+      var stops_route_02 = [[45.4862, 9.2045], [45.4786, 9.1969], [45.4744, 9.1936], [45.4697, 9.1925], [45.4642, 9.1895]];
+      var map_route_02 = L.map('map_route_02', {
+        zoomControl: false,
+        attributionControl: false,
+        scrollWheelZoom: false
+      });
+      
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18
+      }).addTo(map_route_02);
+
+      var poly_route_02 = L.polyline(stops_route_02, {
+        color: '#f9ba00',
+        weight: 6,
+        opacity: 0.9,
+        lineCap: 'round',
+        lineJoin: 'round'
+      }).addTo(map_route_02);
+
+      map_route_02.fitBounds(poly_route_02.getBounds(), {
+        padding: [30, 30]
+      });
+
+      // Origin Pin
+      L.circleMarker(stops_route_02[0], {
+        radius: 8,
+        color: '#1a73e8',
+        fillColor: '#fff',
+        fillOpacity: 1,
+        weight: 3
+      }).addTo(map_route_02);
+
+      // Destination Pin
+      L.circleMarker(stops_route_02[stops_route_02.length - 1], {
+        radius: 8,
+        color: '#f9ba00',
+        fillColor: '#f9ba00',
+        fillOpacity: 1,
+        weight: 3
+      }).addTo(map_route_02);
+
+      // Intermediate station dots
+      for(var i = 1; i < stops_route_02.length - 1; i++) {
+        L.circleMarker(stops_route_02[i], {
+          radius: 4,
+          color: '#f9ba00',
+          fillColor: '#fff',
+          fillOpacity: 1,
+          weight: 2
+        }).addTo(map_route_02);
+      }
+    })();
+
+    (function() {
+      var stops_route_03 = [[45.4674, 9.1898], [45.4701, 9.1928], [45.4725, 9.1942], [45.475, 9.1948], [45.4786, 9.197], [45.4745, 9.2052]];
+      var map_route_03 = L.map('map_route_03', {
+        zoomControl: false,
+        attributionControl: false,
+        scrollWheelZoom: false
+      });
+      
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18
+      }).addTo(map_route_03);
+
+      var poly_route_03 = L.polyline(stops_route_03, {
+        color: '#e67e22',
+        weight: 6,
+        opacity: 0.9,
+        lineCap: 'round',
+        lineJoin: 'round'
+      }).addTo(map_route_03);
+
+      map_route_03.fitBounds(poly_route_03.getBounds(), {
+        padding: [30, 30]
+      });
+
+      // Origin Pin
+      L.circleMarker(stops_route_03[0], {
+        radius: 8,
+        color: '#1a73e8',
+        fillColor: '#fff',
+        fillOpacity: 1,
+        weight: 3
+      }).addTo(map_route_03);
+
+      // Destination Pin
+      L.circleMarker(stops_route_03[stops_route_03.length - 1], {
+        radius: 8,
+        color: '#e67e22',
+        fillColor: '#e67e22',
+        fillOpacity: 1,
+        weight: 3
+      }).addTo(map_route_03);
+
+      // Intermediate station dots
+      for(var i = 1; i < stops_route_03.length - 1; i++) {
+        L.circleMarker(stops_route_03[i], {
+          radius: 4,
+          color: '#e67e22',
+          fillColor: '#fff',
+          fillOpacity: 1,
+          weight: 2
+        }).addTo(map_route_03);
+      }
+    })();
+
+    (function() {
+      var stops_route_04 = [[45.4862, 9.2045], [45.4849, 9.2372], [45.4764, 9.3247], [45.6025, 9.6192], [45.6917, 9.6706]];
+      var map_route_04 = L.map('map_route_04', {
+        zoomControl: false,
+        attributionControl: false,
+        scrollWheelZoom: false
+      });
+      
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18
+      }).addTo(map_route_04);
+
+      var poly_route_04 = L.polyline(stops_route_04, {
+        color: '#1a73e8',
+        weight: 6,
+        opacity: 0.9,
+        lineCap: 'round',
+        lineJoin: 'round'
+      }).addTo(map_route_04);
+
+      map_route_04.fitBounds(poly_route_04.getBounds(), {
+        padding: [30, 30]
+      });
+
+      // Origin Pin
+      L.circleMarker(stops_route_04[0], {
+        radius: 8,
+        color: '#1a73e8',
+        fillColor: '#fff',
+        fillOpacity: 1,
+        weight: 3
+      }).addTo(map_route_04);
+
+      // Destination Pin
+      L.circleMarker(stops_route_04[stops_route_04.length - 1], {
+        radius: 8,
+        color: '#1a73e8',
+        fillColor: '#1a73e8',
+        fillOpacity: 1,
+        weight: 3
+      }).addTo(map_route_04);
+
+      // Intermediate station dots
+      for(var i = 1; i < stops_route_04.length - 1; i++) {
+        L.circleMarker(stops_route_04[i], {
+          radius: 4,
+          color: '#1a73e8',
+          fillColor: '#fff',
+          fillOpacity: 1,
+          weight: 2
+        }).addTo(map_route_04);
+      }
+    })();
+
+    (function() {
+      var stops_route_05 = [[45.6917, 9.6706], [45.6953, 9.67], [45.6983, 9.6689], [45.7008, 9.6669], [45.7032, 9.6644], [45.7042, 9.6628]];
+      var map_route_05 = L.map('map_route_05', {
+        zoomControl: false,
+        attributionControl: false,
+        scrollWheelZoom: false
+      });
+      
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18
+      }).addTo(map_route_05);
+
+      var poly_route_05 = L.polyline(stops_route_05, {
+        color: '#ff6f00',
+        weight: 6,
+        opacity: 0.9,
+        lineCap: 'round',
+        lineJoin: 'round'
+      }).addTo(map_route_05);
+
+      map_route_05.fitBounds(poly_route_05.getBounds(), {
+        padding: [30, 30]
+      });
+
+      // Origin Pin
+      L.circleMarker(stops_route_05[0], {
+        radius: 8,
+        color: '#1a73e8',
+        fillColor: '#fff',
+        fillOpacity: 1,
+        weight: 3
+      }).addTo(map_route_05);
+
+      // Destination Pin
+      L.circleMarker(stops_route_05[stops_route_05.length - 1], {
+        radius: 8,
+        color: '#ff6f00',
+        fillColor: '#ff6f00',
+        fillOpacity: 1,
+        weight: 3
+      }).addTo(map_route_05);
+
+      // Intermediate station dots
+      for(var i = 1; i < stops_route_05.length - 1; i++) {
+        L.circleMarker(stops_route_05[i], {
+          radius: 4,
+          color: '#ff6f00',
+          fillColor: '#fff',
+          fillOpacity: 1,
+          weight: 2
+        }).addTo(map_route_05);
+      }
+    })();
+
+    (function() {
+      var stops_route_06 = [[45.4862, 9.2045], [45.5786, 9.2736], [45.6517, 9.3789], [45.8561, 9.3958], [45.9189, 9.3178], [46.0125, 9.2861]];
+      var map_route_06 = L.map('map_route_06', {
+        zoomControl: false,
+        attributionControl: false,
+        scrollWheelZoom: false
+      });
+      
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18
+      }).addTo(map_route_06);
+
+      var poly_route_06 = L.polyline(stops_route_06, {
+        color: '#0f9d58',
+        weight: 6,
+        opacity: 0.9,
+        lineCap: 'round',
+        lineJoin: 'round'
+      }).addTo(map_route_06);
+
+      map_route_06.fitBounds(poly_route_06.getBounds(), {
+        padding: [30, 30]
+      });
+
+      // Origin Pin
+      L.circleMarker(stops_route_06[0], {
+        radius: 8,
+        color: '#1a73e8',
+        fillColor: '#fff',
+        fillOpacity: 1,
+        weight: 3
+      }).addTo(map_route_06);
+
+      // Destination Pin
+      L.circleMarker(stops_route_06[stops_route_06.length - 1], {
+        radius: 8,
+        color: '#0f9d58',
+        fillColor: '#0f9d58',
+        fillOpacity: 1,
+        weight: 3
+      }).addTo(map_route_06);
+
+      // Intermediate station dots
+      for(var i = 1; i < stops_route_06.length - 1; i++) {
+        L.circleMarker(stops_route_06[i], {
+          radius: 4,
+          color: '#0f9d58',
+          fillColor: '#fff',
+          fillOpacity: 1,
+          weight: 2
+        }).addTo(map_route_06);
+      }
+    })();
+
+    (function() {
+      var stops_route_07 = [[46.0111, 9.2825], [46.002, 9.271], [45.9892, 9.2633]];
+      var map_route_07 = L.map('map_route_07', {
+        zoomControl: false,
+        attributionControl: false,
+        scrollWheelZoom: false
+      });
+      
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18
+      }).addTo(map_route_07);
+
+      var poly_route_07 = L.polyline(stops_route_07, {
+        color: '#0288d1',
+        weight: 6,
+        opacity: 0.9,
+        lineCap: 'round',
+        lineJoin: 'round'
+      }).addTo(map_route_07);
+
+      map_route_07.fitBounds(poly_route_07.getBounds(), {
+        padding: [30, 30]
+      });
+
+      // Origin Pin
+      L.circleMarker(stops_route_07[0], {
+        radius: 8,
+        color: '#1a73e8',
+        fillColor: '#fff',
+        fillOpacity: 1,
+        weight: 3
+      }).addTo(map_route_07);
+
+      // Destination Pin
+      L.circleMarker(stops_route_07[stops_route_07.length - 1], {
+        radius: 8,
+        color: '#0288d1',
+        fillColor: '#0288d1',
+        fillOpacity: 1,
+        weight: 3
+      }).addTo(map_route_07);
+
+      // Intermediate station dots
+      for(var i = 1; i < stops_route_07.length - 1; i++) {
+        L.circleMarker(stops_route_07[i], {
+          radius: 4,
+          color: '#0288d1',
+          fillColor: '#fff',
+          fillOpacity: 1,
+          weight: 2
+        }).addTo(map_route_07);
+      }
+    })();
+
+    (function() {
+      var stops_route_08 = [[45.4862, 9.2045], [45.4339, 9.2383], [45.1883, 9.1436], [44.9961, 9.0069], [44.8978, 8.8681], [44.4172, 8.9217]];
+      var map_route_08 = L.map('map_route_08', {
+        zoomControl: false,
+        attributionControl: false,
+        scrollWheelZoom: false
+      });
+      
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18
+      }).addTo(map_route_08);
+
+      var poly_route_08 = L.polyline(stops_route_08, {
+        color: '#d93025',
+        weight: 6,
+        opacity: 0.9,
+        lineCap: 'round',
+        lineJoin: 'round'
+      }).addTo(map_route_08);
+
+      map_route_08.fitBounds(poly_route_08.getBounds(), {
+        padding: [30, 30]
+      });
+
+      // Origin Pin
+      L.circleMarker(stops_route_08[0], {
+        radius: 8,
+        color: '#1a73e8',
+        fillColor: '#fff',
+        fillOpacity: 1,
+        weight: 3
+      }).addTo(map_route_08);
+
+      // Destination Pin
+      L.circleMarker(stops_route_08[stops_route_08.length - 1], {
+        radius: 8,
+        color: '#d93025',
+        fillColor: '#d93025',
+        fillOpacity: 1,
+        weight: 3
+      }).addTo(map_route_08);
+
+      // Intermediate station dots
+      for(var i = 1; i < stops_route_08.length - 1; i++) {
+        L.circleMarker(stops_route_08[i], {
+          radius: 4,
+          color: '#d93025',
+          fillColor: '#fff',
+          fillOpacity: 1,
+          weight: 2
+        }).addTo(map_route_08);
+      }
+    })();
+
+    (function() {
+      var stops_route_09 = [[44.4172, 8.9217], [44.4144, 8.9272], [44.4092, 8.9297], [44.4047, 8.9325], [44.4072, 8.9342]];
+      var map_route_09 = L.map('map_route_09', {
+        zoomControl: false,
+        attributionControl: false,
+        scrollWheelZoom: false
+      });
+      
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18
+      }).addTo(map_route_09);
+
+      var poly_route_09 = L.polyline(stops_route_09, {
+        color: '#e53935',
+        weight: 6,
+        opacity: 0.9,
+        lineCap: 'round',
+        lineJoin: 'round'
+      }).addTo(map_route_09);
+
+      map_route_09.fitBounds(poly_route_09.getBounds(), {
+        padding: [30, 30]
+      });
+
+      // Origin Pin
+      L.circleMarker(stops_route_09[0], {
+        radius: 8,
+        color: '#1a73e8',
+        fillColor: '#fff',
+        fillOpacity: 1,
+        weight: 3
+      }).addTo(map_route_09);
+
+      // Destination Pin
+      L.circleMarker(stops_route_09[stops_route_09.length - 1], {
+        radius: 8,
+        color: '#e53935',
+        fillColor: '#e53935',
+        fillOpacity: 1,
+        weight: 3
+      }).addTo(map_route_09);
+
+      // Intermediate station dots
+      for(var i = 1; i < stops_route_09.length - 1; i++) {
+        L.circleMarker(stops_route_09[i], {
+          radius: 4,
+          color: '#e53935',
+          fillColor: '#fff',
+          fillOpacity: 1,
+          weight: 2
+        }).addTo(map_route_09);
+      }
+    })();
+
+    (function() {
+      var stops_route_10 = [[44.4172, 8.9217], [44.4064, 8.9472], [44.3353, 9.2139]];
+      var map_route_10 = L.map('map_route_10', {
+        zoomControl: false,
+        attributionControl: false,
+        scrollWheelZoom: false
+      });
+      
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18
+      }).addTo(map_route_10);
+
+      var poly_route_10 = L.polyline(stops_route_10, {
+        color: '#1a73e8',
+        weight: 6,
+        opacity: 0.9,
+        lineCap: 'round',
+        lineJoin: 'round'
+      }).addTo(map_route_10);
+
+      map_route_10.fitBounds(poly_route_10.getBounds(), {
+        padding: [30, 30]
+      });
+
+      // Origin Pin
+      L.circleMarker(stops_route_10[0], {
+        radius: 8,
+        color: '#1a73e8',
+        fillColor: '#fff',
+        fillOpacity: 1,
+        weight: 3
+      }).addTo(map_route_10);
+
+      // Destination Pin
+      L.circleMarker(stops_route_10[stops_route_10.length - 1], {
+        radius: 8,
+        color: '#1a73e8',
+        fillColor: '#1a73e8',
+        fillOpacity: 1,
+        weight: 3
+      }).addTo(map_route_10);
+
+      // Intermediate station dots
+      for(var i = 1; i < stops_route_10.length - 1; i++) {
+        L.circleMarker(stops_route_10[i], {
+          radius: 4,
+          color: '#1a73e8',
+          fillColor: '#fff',
+          fillOpacity: 1,
+          weight: 2
+        }).addTo(map_route_10);
+      }
+    })();
+
+    (function() {
+      var stops_route_11 = [[44.3353, 9.2139], [44.3283, 9.2153], [44.3205, 9.2144], [44.3147, 9.2122], [44.3039, 9.2094]];
+      var map_route_11 = L.map('map_route_11', {
+        zoomControl: false,
+        attributionControl: false,
+        scrollWheelZoom: false
+      });
+      
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18
+      }).addTo(map_route_11);
+
+      var poly_route_11 = L.polyline(stops_route_11, {
+        color: '#0288d1',
+        weight: 6,
+        opacity: 0.9,
+        lineCap: 'round',
+        lineJoin: 'round'
+      }).addTo(map_route_11);
+
+      map_route_11.fitBounds(poly_route_11.getBounds(), {
+        padding: [30, 30]
+      });
+
+      // Origin Pin
+      L.circleMarker(stops_route_11[0], {
+        radius: 8,
+        color: '#1a73e8',
+        fillColor: '#fff',
+        fillOpacity: 1,
+        weight: 3
+      }).addTo(map_route_11);
+
+      // Destination Pin
+      L.circleMarker(stops_route_11[stops_route_11.length - 1], {
+        radius: 8,
+        color: '#0288d1',
+        fillColor: '#0288d1',
+        fillOpacity: 1,
+        weight: 3
+      }).addTo(map_route_11);
+
+      // Intermediate station dots
+      for(var i = 1; i < stops_route_11.length - 1; i++) {
+        L.circleMarker(stops_route_11[i], {
+          radius: 4,
+          color: '#0288d1',
+          fillColor: '#fff',
+          fillOpacity: 1,
+          weight: 2
+        }).addTo(map_route_11);
+      }
+    })();
+
+    (function() {
+      var stops_route_12 = [[44.4172, 8.9217], [44.3072, 8.4714], [44.1706, 8.3486], [44.0489, 8.2167], [44.0044, 8.1694], [43.8894, 8.0417], [43.8189, 7.7778], [43.7806, 7.6653], [43.7917, 7.6083]];
+      var map_route_12 = L.map('map_route_12', {
+        zoomControl: false,
+        attributionControl: false,
+        scrollWheelZoom: false
+      });
+      
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18
+      }).addTo(map_route_12);
+
+      var poly_route_12 = L.polyline(stops_route_12, {
+        color: '#d93025',
+        weight: 6,
+        opacity: 0.9,
+        lineCap: 'round',
+        lineJoin: 'round'
+      }).addTo(map_route_12);
+
+      map_route_12.fitBounds(poly_route_12.getBounds(), {
+        padding: [30, 30]
+      });
+
+      // Origin Pin
+      L.circleMarker(stops_route_12[0], {
+        radius: 8,
+        color: '#1a73e8',
+        fillColor: '#fff',
+        fillOpacity: 1,
+        weight: 3
+      }).addTo(map_route_12);
+
+      // Destination Pin
+      L.circleMarker(stops_route_12[stops_route_12.length - 1], {
+        radius: 8,
+        color: '#d93025',
+        fillColor: '#d93025',
+        fillOpacity: 1,
+        weight: 3
+      }).addTo(map_route_12);
+
+      // Intermediate station dots
+      for(var i = 1; i < stops_route_12.length - 1; i++) {
+        L.circleMarker(stops_route_12[i], {
+          radius: 4,
+          color: '#d93025',
+          fillColor: '#fff',
+          fillOpacity: 1,
+          weight: 2
+        }).addTo(map_route_12);
+      }
+    })();
+
+    (function() {
+      var stops_route_13 = [[43.7917, 7.6083], [43.7844, 7.5186], [43.7747, 7.4986], [43.7631, 7.4764], [43.7583, 7.4569], [43.7386, 7.42], [43.7225, 7.3606], [43.7078, 7.3328], [43.7083, 7.3117], [43.7036, 7.2889], [43.7047, 7.2619]];
+      var map_route_13 = L.map('map_route_13', {
+        zoomControl: false,
+        attributionControl: false,
+        scrollWheelZoom: false
+      });
+      
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18
+      }).addTo(map_route_13);
+
+      var poly_route_13 = L.polyline(stops_route_13, {
+        color: '#004b97',
+        weight: 6,
+        opacity: 0.9,
+        lineCap: 'round',
+        lineJoin: 'round'
+      }).addTo(map_route_13);
+
+      map_route_13.fitBounds(poly_route_13.getBounds(), {
+        padding: [30, 30]
+      });
+
+      // Origin Pin
+      L.circleMarker(stops_route_13[0], {
+        radius: 8,
+        color: '#1a73e8',
+        fillColor: '#fff',
+        fillOpacity: 1,
+        weight: 3
+      }).addTo(map_route_13);
+
+      // Destination Pin
+      L.circleMarker(stops_route_13[stops_route_13.length - 1], {
+        radius: 8,
+        color: '#004b97',
+        fillColor: '#004b97',
+        fillOpacity: 1,
+        weight: 3
+      }).addTo(map_route_13);
+
+      // Intermediate station dots
+      for(var i = 1; i < stops_route_13.length - 1; i++) {
+        L.circleMarker(stops_route_13[i], {
+          radius: 4,
+          color: '#004b97',
+          fillColor: '#fff',
+          fillOpacity: 1,
+          weight: 2
+        }).addTo(map_route_13);
+      }
+    })();
+
+    (function() {
+      var stops_route_14 = [[43.6931, 7.2508], [43.6989, 7.2575], [43.7003, 7.2683], [43.7008, 7.2736], [43.7008, 7.2797], [43.6978, 7.2764]];
+      var map_route_14 = L.map('map_route_14', {
+        zoomControl: false,
+        attributionControl: false,
+        scrollWheelZoom: false
+      });
+      
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18
+      }).addTo(map_route_14);
+
+      var poly_route_14 = L.polyline(stops_route_14, {
+        color: '#d32f2f',
+        weight: 6,
+        opacity: 0.9,
+        lineCap: 'round',
+        lineJoin: 'round'
+      }).addTo(map_route_14);
+
+      map_route_14.fitBounds(poly_route_14.getBounds(), {
+        padding: [30, 30]
+      });
+
+      // Origin Pin
+      L.circleMarker(stops_route_14[0], {
+        radius: 8,
+        color: '#1a73e8',
+        fillColor: '#fff',
+        fillOpacity: 1,
+        weight: 3
+      }).addTo(map_route_14);
+
+      // Destination Pin
+      L.circleMarker(stops_route_14[stops_route_14.length - 1], {
+        radius: 8,
+        color: '#d32f2f',
+        fillColor: '#d32f2f',
+        fillOpacity: 1,
+        weight: 3
+      }).addTo(map_route_14);
+
+      // Intermediate station dots
+      for(var i = 1; i < stops_route_14.length - 1; i++) {
+        L.circleMarker(stops_route_14[i], {
+          radius: 4,
+          color: '#d32f2f',
+          fillColor: '#fff',
+          fillOpacity: 1,
+          weight: 2
+        }).addTo(map_route_14);
+      }
+    })();
+
+    (function() {
+      var stops_route_15 = [[43.7047, 7.2619], [43.7036, 7.2889], [43.7083, 7.3117]];
+      var map_route_15 = L.map('map_route_15', {
+        zoomControl: false,
+        attributionControl: false,
+        scrollWheelZoom: false
+      });
+      
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18
+      }).addTo(map_route_15);
+
+      var poly_route_15 = L.polyline(stops_route_15, {
+        color: '#004b97',
+        weight: 6,
+        opacity: 0.9,
+        lineCap: 'round',
+        lineJoin: 'round'
+      }).addTo(map_route_15);
+
+      map_route_15.fitBounds(poly_route_15.getBounds(), {
+        padding: [30, 30]
+      });
+
+      // Origin Pin
+      L.circleMarker(stops_route_15[0], {
+        radius: 8,
+        color: '#1a73e8',
+        fillColor: '#fff',
+        fillOpacity: 1,
+        weight: 3
+      }).addTo(map_route_15);
+
+      // Destination Pin
+      L.circleMarker(stops_route_15[stops_route_15.length - 1], {
+        radius: 8,
+        color: '#004b97',
+        fillColor: '#004b97',
+        fillOpacity: 1,
+        weight: 3
+      }).addTo(map_route_15);
+
+      // Intermediate station dots
+      for(var i = 1; i < stops_route_15.length - 1; i++) {
+        L.circleMarker(stops_route_15[i], {
+          radius: 4,
+          color: '#004b97',
+          fillColor: '#fff',
+          fillOpacity: 1,
+          weight: 2
+        }).addTo(map_route_15);
+      }
+    })();
+
+    (function() {
+      var stops_route_16 = [[43.6967, 7.2861], [43.695, 7.2917], [43.7011, 7.3061], [43.7072, 7.3139], [43.6978, 7.3292], [43.6947, 7.3303]];
+      var map_route_16 = L.map('map_route_16', {
+        zoomControl: false,
+        attributionControl: false,
+        scrollWheelZoom: false
+      });
+      
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18
+      }).addTo(map_route_16);
+
+      var poly_route_16 = L.polyline(stops_route_16, {
+        color: '#0288d1',
+        weight: 6,
+        opacity: 0.9,
+        lineCap: 'round',
+        lineJoin: 'round'
+      }).addTo(map_route_16);
+
+      map_route_16.fitBounds(poly_route_16.getBounds(), {
+        padding: [30, 30]
+      });
+
+      // Origin Pin
+      L.circleMarker(stops_route_16[0], {
+        radius: 8,
+        color: '#1a73e8',
+        fillColor: '#fff',
+        fillOpacity: 1,
+        weight: 3
+      }).addTo(map_route_16);
+
+      // Destination Pin
+      L.circleMarker(stops_route_16[stops_route_16.length - 1], {
+        radius: 8,
+        color: '#0288d1',
+        fillColor: '#0288d1',
+        fillOpacity: 1,
+        weight: 3
+      }).addTo(map_route_16);
+
+      // Intermediate station dots
+      for(var i = 1; i < stops_route_16.length - 1; i++) {
+        L.circleMarker(stops_route_16[i], {
+          radius: 4,
+          color: '#0288d1',
+          fillColor: '#fff',
+          fillOpacity: 1,
+          weight: 2
+        }).addTo(map_route_16);
+      }
+    })();
+
+    (function() {
+      var stops_route_17 = [[43.6931, 7.2508], [43.6897, 7.2436], [43.6828, 7.2344], [43.6761, 7.2264], [43.6667, 7.2189], [43.6644, 7.2153], [43.6592, 7.2069]];
+      var map_route_17 = L.map('map_route_17', {
+        zoomControl: false,
+        attributionControl: false,
+        scrollWheelZoom: false
+      });
+      
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18
+      }).addTo(map_route_17);
+
+      var poly_route_17 = L.polyline(stops_route_17, {
+        color: '#d32f2f',
+        weight: 6,
+        opacity: 0.9,
+        lineCap: 'round',
+        lineJoin: 'round'
+      }).addTo(map_route_17);
+
+      map_route_17.fitBounds(poly_route_17.getBounds(), {
+        padding: [30, 30]
+      });
+
+      // Origin Pin
+      L.circleMarker(stops_route_17[0], {
+        radius: 8,
+        color: '#1a73e8',
+        fillColor: '#fff',
+        fillOpacity: 1,
+        weight: 3
+      }).addTo(map_route_17);
+
+      // Destination Pin
+      L.circleMarker(stops_route_17[stops_route_17.length - 1], {
+        radius: 8,
+        color: '#d32f2f',
+        fillColor: '#d32f2f',
+        fillOpacity: 1,
+        weight: 3
+      }).addTo(map_route_17);
+
+      // Intermediate station dots
+      for(var i = 1; i < stops_route_17.length - 1; i++) {
+        L.circleMarker(stops_route_17[i], {
+          radius: 4,
+          color: '#d32f2f',
+          fillColor: '#fff',
+          fillOpacity: 1,
+          weight: 2
+        }).addTo(map_route_17);
+      }
+    })();
+
+
+    // Filter cards
+    function filterRoutes(category, btn) {
+      var chips = document.querySelectorAll('.filter-chip');
+      chips.forEach(function(c) { c.classList.remove('active'); });
+      btn.classList.add('active');
+
+      var cards = document.querySelectorAll('.route-card');
+      cards.forEach(function(card) {
+        if (category === 'all' || card.getAttribute('data-cat') === category) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      // Trigger map resize so tiles render properly when shown
+      window.dispatchEvent(new Event('resize'));
+    }
+
+    // Print single route
+    function printSingleRoute(cardId) {
+      var cards = document.querySelectorAll('.route-card');
+      cards.forEach(function(c) {
+        if (c.id !== cardId) c.style.display = 'none';
+        else c.style.display = 'block';
+      });
+      window.print();
+      // restore after print
+      setTimeout(function() {
+        cards.forEach(function(c) { c.style.display = 'block'; });
+      }, 1000);
+    }
+  </script>
+</body>
+</html>

@@ -1134,6 +1134,26 @@
       white-space: nowrap;
     }
 
+    .routes-tool-btn {
+      background: #1a73e8;
+      color: #fff !important;
+      box-shadow: 0 2px 8px rgba(26, 115, 232, .25);
+    }
+
+    .routes-tool-btn:hover {
+      background: #1557b0;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(26, 115, 232, .35);
+    }
+
+    .routes-tool-btn .tool-badge {
+      background: rgba(255, 255, 255, .25);
+      font-size: 10px;
+      padding: 1px 5px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
     .handbook-tool-btn {
       background: var(--primary);
       color: #fff !important;
@@ -1197,11 +1217,11 @@
       }
     }
 
-    /* 🧳 行程大動線區「隨行雙必備」工具卡片整併 */
+    /* 🧳 行程大動線區「隨行三必備」工具卡片整併 */
     .travel-toolkit-grid {
       margin-top: 18px;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
       gap: 14px;
     }
 
@@ -1249,6 +1269,48 @@
       border-color: #b8862d;
       box-shadow: 0 10px 26px rgba(214, 163, 74, .25);
       background: linear-gradient(135deg, #fff 0%, #faf6ee 100%);
+    }
+
+    .route-toolkit-card {
+      background: linear-gradient(135deg, #0b1e36 0%, #1a3a5f 100%);
+      border: 1.5px solid #4285f4;
+      box-shadow: 0 6px 20px rgba(26, 115, 232, .2);
+    }
+
+    .route-toolkit-card:hover {
+      border-color: #8ab4f8;
+      box-shadow: 0 10px 26px rgba(26, 115, 232, .35);
+      background: linear-gradient(135deg, #102a4c 0%, #1e4674 100%);
+    }
+
+    .route-toolkit-card .toolkit-card-title {
+      font-family: "Noto Serif TC", serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: #8ab4f8;
+    }
+
+    .route-toolkit-card .toolkit-card-tag {
+      background: rgba(66, 133, 244, .25);
+      color: #d2e3fc;
+      border: 1px solid rgba(66, 133, 244, .45);
+    }
+
+    .route-toolkit-card .toolkit-card-desc {
+      font-size: 12px;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, .85);
+      margin-bottom: 12px;
+    }
+
+    .route-toolkit-card .toolkit-card-action {
+      margin-top: auto;
+      font-size: 12px;
+      font-weight: 600;
+      color: #8ab4f8;
+      display: flex;
+      align-items: center;
+      gap: 4px;
     }
 
     .toolkit-card-head {
@@ -1336,6 +1398,12 @@
       <div class="brand"><strong id="brand"></strong><small id="code"></small></div>
       <nav id="nav"></nav>
       <div class="nav-tools">
+        <a class="nav-tool-btn routes-tool-btn" href="routes.html" target="_blank"
+          title="開啟 17 條起點到終點路線地圖指引 (Google Maps Transit)">
+          <span>🧭</span>
+          <span>路線地圖</span>
+          <span class="tool-badge">17條</span>
+        </a>
         <a class="nav-tool-btn handbook-tool-btn" href="print-handbook.html" target="_blank"
           title="開啟 A5 隨身旅行手冊 (可列印/存PDF)">
           <span>📖</span>
@@ -1372,7 +1440,7 @@
           <div class="eyebrow" id="principle-eye"></div>
           <figure class="principle-map"><img id="principle-map-img" loading="lazy"></figure>
 
-          <!-- 🧳 旅人隨行雙必備：Google 導覽地圖 + A5 隨身手冊 -->
+          <!-- 🧳 旅人隨行三必備：Google 導覽地圖 + 17 條起訖路線地圖 + A5 隨身手冊 -->
           <div class="travel-toolkit-grid">
             <a href="https://www.google.com/maps/d/u/0/viewer?mid=1i1NniCAh-6yz6sYBBcQNWLX5Ykykln8" target="_blank"
               rel="noopener noreferrer" class="toolkit-card map-card">
@@ -1385,6 +1453,18 @@
                 收錄 10 大每日路線圖層、地鐵電車站牌、渡輪班次、私房拍照景觀點與寄物小店，支援手機 Google Maps App 即時定位與語音導航。
               </div>
               <div class="toolkit-card-action">開啟 Google Maps 導覽 ➔</div>
+            </a>
+
+            <a href="routes.html" target="_blank" class="toolkit-card route-toolkit-card">
+              <div class="toolkit-card-head">
+                <span class="toolkit-card-icon">🧭</span>
+                <span class="toolkit-card-title">起點到終點路線地圖</span>
+                <span class="toolkit-card-tag">17 條 Google Transit</span>
+              </div>
+              <div class="toolkit-card-desc">
+                依據 Google Maps Transit 規格精心建置全 17 條移動路段：機場快線、米蘭地鐵、科莫湖快車渡輪、熱那亞與南法 TER 跨國全景雙層列車。
+              </div>
+              <div class="toolkit-card-action">瀏覽 17 條起訖路線 ➔</div>
             </a>
 
             <a href="print-handbook.html" target="_blank" class="toolkit-card handbook-card">
