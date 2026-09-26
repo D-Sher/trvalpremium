@@ -514,6 +514,8 @@
       }
       body {
         background: #fff !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
       }
       .content-container {
         max-width: 100% !important;
@@ -524,15 +526,55 @@
         border: none !important;
         box-shadow: none !important;
         padding: 0 !important;
-        margin-bottom: 0 !important;
+        margin: 0 !important;
         page-break-after: always !important;
+        break-after: page !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
       }
       .map-box {
-        height: 350px !important;
+        height: var(--print-map-h, 260px) !important;
+        margin-bottom: 8px !important;
+      }
+      .route-header-top {
+        padding-bottom: 6px !important;
+        margin-bottom: 8px !important;
+      }
+      .day-hero-num {
+        font-size: 24px !important;
+      }
+      .route-title-text {
+        font-size: 15px !important;
+      }
+      .details-box {
+        padding: 10px 14px !important;
+      }
+      .fare-row {
+        padding-bottom: 6px !important;
+        margin-bottom: 8px !important;
+      }
+      .t-node {
+        padding-bottom: 8px !important;
+      }
+      .transit-card-inner {
+        padding: 8px 12px !important;
+        margin-top: 4px !important;
+      }
+      .transit-alert {
+        margin-top: 4px !important;
+        padding: 4px 8px !important;
+        font-size: 10.5px !important;
+      }
+      .stop-series {
+        margin-top: 4px !important;
+      }
+      .stop-row {
+        font-size: 10px !important;
+        margin-bottom: 2px !important;
       }
       @page {
         size: A4 portrait;
-        margin: 12mm 15mm;
+        margin: 8mm 12mm;
       }
     }
   </style>
@@ -570,7 +612,7 @@
   <main class="content-container" id="routes-wrapper">
 
     <!-- Route Card: route_01 -->
-    <article class="route-card" id="route_01" data-cat="milan" style="--active-line-color: #d93025;">
+    <article class="route-card" id="route_01" data-cat="milan" style="--active-line-color: #d93025; --print-map-h: 230px;">
       <div class="route-header-top">
         <div class="day-hero-badge">
           <div class="day-hero-num">DAY 02</div>
@@ -704,7 +746,7 @@
     </article>
     
     <!-- Route Card: route_02 -->
-    <article class="route-card" id="route_02" data-cat="milan" style="--active-line-color: #f9ba00;">
+    <article class="route-card" id="route_02" data-cat="milan" style="--active-line-color: #f9ba00; --print-map-h: 250px;">
       <div class="route-header-top">
         <div class="day-hero-badge">
           <div class="day-hero-num">DAY 03</div>
@@ -814,7 +856,7 @@
     </article>
     
     <!-- Route Card: route_03 -->
-    <article class="route-card" id="route_03" data-cat="milan" style="--active-line-color: #e67e22;">
+    <article class="route-card" id="route_03" data-cat="milan" style="--active-line-color: #e67e22; --print-map-h: 250px;">
       <div class="route-header-top">
         <div class="day-hero-badge">
           <div class="day-hero-num">DAY 03</div>
@@ -918,7 +960,7 @@
     </article>
     
     <!-- Route Card: route_04 -->
-    <article class="route-card" id="route_04" data-cat="milan" style="--active-line-color: #2e7d32;">
+    <article class="route-card" id="route_04" data-cat="milan" style="--active-line-color: #2e7d32; --print-map-h: 250px;">
       <div class="route-header-top">
         <div class="day-hero-badge">
           <div class="day-hero-num">DAY 03</div>
@@ -1028,7 +1070,7 @@
     </article>
     
     <!-- Route Card: route_05 -->
-    <article class="route-card" id="route_05" data-cat="bergamo" style="--active-line-color: #1a73e8;">
+    <article class="route-card" id="route_05" data-cat="bergamo" style="--active-line-color: #1a73e8; --print-map-h: 290px;">
       <div class="route-header-top">
         <div class="day-hero-badge">
           <div class="day-hero-num">DAY 04</div>
@@ -1138,7 +1180,7 @@
     </article>
     
     <!-- Route Card: route_06 -->
-    <article class="route-card" id="route_06" data-cat="bergamo" style="--active-line-color: #ff6f00;">
+    <article class="route-card" id="route_06" data-cat="bergamo" style="--active-line-color: #ff6f00; --print-map-h: 250px;">
       <div class="route-header-top">
         <div class="day-hero-badge">
           <div class="day-hero-num">DAY 04</div>
@@ -1254,7 +1296,7 @@
     </article>
     
     <!-- Route Card: route_07 -->
-    <article class="route-card" id="route_07" data-cat="bergamo" style="--active-line-color: #d32f2f;">
+    <article class="route-card" id="route_07" data-cat="bergamo" style="--active-line-color: #d32f2f; --print-map-h: 250px;">
       <div class="route-header-top">
         <div class="day-hero-badge">
           <div class="day-hero-num">DAY 04</div>
@@ -1370,7 +1412,7 @@
     </article>
     
     <!-- Route Card: route_08 -->
-    <article class="route-card" id="route_08" data-cat="como" style="--active-line-color: #0f9d58;">
+    <article class="route-card" id="route_08" data-cat="como" style="--active-line-color: #0f9d58; --print-map-h: 250px;">
       <div class="route-header-top">
         <div class="day-hero-badge">
           <div class="day-hero-num">DAY 05</div>
@@ -1486,7 +1528,7 @@
     </article>
     
     <!-- Route Card: route_09 -->
-    <article class="route-card" id="route_09" data-cat="como" style="--active-line-color: #0288d1;">
+    <article class="route-card" id="route_09" data-cat="como" style="--active-line-color: #0288d1; --print-map-h: 290px;">
       <div class="route-header-top">
         <div class="day-hero-badge">
           <div class="day-hero-num">DAY 05</div>
@@ -1584,7 +1626,7 @@
     </article>
     
     <!-- Route Card: route_10 -->
-    <article class="route-card" id="route_10" data-cat="genova" style="--active-line-color: #d93025;">
+    <article class="route-card" id="route_10" data-cat="genova" style="--active-line-color: #d93025; --print-map-h: 290px;">
       <div class="route-header-top">
         <div class="day-hero-badge">
           <div class="day-hero-num">DAY 06</div>
@@ -1694,7 +1736,7 @@
     </article>
     
     <!-- Route Card: route_11 -->
-    <article class="route-card" id="route_11" data-cat="genova" style="--active-line-color: #d93025;">
+    <article class="route-card" id="route_11" data-cat="genova" style="--active-line-color: #d93025; --print-map-h: 290px;">
       <div class="route-header-top">
         <div class="day-hero-badge">
           <div class="day-hero-num">DAY 07</div>
@@ -1804,7 +1846,7 @@
     </article>
     
     <!-- Route Card: route_12 -->
-    <article class="route-card" id="route_12" data-cat="genova" style="--active-line-color: #1a73e8;">
+    <article class="route-card" id="route_12" data-cat="genova" style="--active-line-color: #1a73e8; --print-map-h: 290px;">
       <div class="route-header-top">
         <div class="day-hero-badge">
           <div class="day-hero-num">DAY 08</div>
@@ -1902,7 +1944,7 @@
     </article>
     
     <!-- Route Card: route_13 -->
-    <article class="route-card" id="route_13" data-cat="genova" style="--active-line-color: #0288d1;">
+    <article class="route-card" id="route_13" data-cat="genova" style="--active-line-color: #0288d1; --print-map-h: 200px;">
       <div class="route-header-top">
         <div class="day-hero-badge">
           <div class="day-hero-num">DAY 08</div>
@@ -2096,7 +2138,7 @@
     </article>
     
     <!-- Route Card: route_14 -->
-    <article class="route-card" id="route_14" data-cat="nice" style="--active-line-color: #d93025;">
+    <article class="route-card" id="route_14" data-cat="nice" style="--active-line-color: #d93025; --print-map-h: 230px;">
       <div class="route-header-top">
         <div class="day-hero-badge">
           <div class="day-hero-num">DAY 09</div>
@@ -2242,7 +2284,7 @@
     </article>
     
     <!-- Route Card: route_15 -->
-    <article class="route-card" id="route_15" data-cat="nice" style="--active-line-color: #004b97;">
+    <article class="route-card" id="route_15" data-cat="nice" style="--active-line-color: #004b97; --print-map-h: 230px;">
       <div class="route-header-top">
         <div class="day-hero-badge">
           <div class="day-hero-num">DAY 09</div>
@@ -2388,7 +2430,7 @@
     </article>
     
     <!-- Route Card: route_16 -->
-    <article class="route-card" id="route_16" data-cat="nice" style="--active-line-color: #0288d1;">
+    <article class="route-card" id="route_16" data-cat="nice" style="--active-line-color: #0288d1; --print-map-h: 250px;">
       <div class="route-header-top">
         <div class="day-hero-badge">
           <div class="day-hero-num">DAY 10</div>
@@ -2498,7 +2540,7 @@
     </article>
     
     <!-- Route Card: route_17 -->
-    <article class="route-card" id="route_17" data-cat="nice" style="--active-line-color: #004b97;">
+    <article class="route-card" id="route_17" data-cat="nice" style="--active-line-color: #004b97; --print-map-h: 290px;">
       <div class="route-header-top">
         <div class="day-hero-badge">
           <div class="day-hero-num">DAY 11</div>
@@ -2596,7 +2638,7 @@
     </article>
     
     <!-- Route Card: route_18 -->
-    <article class="route-card" id="route_18" data-cat="nice" style="--active-line-color: #0288d1;">
+    <article class="route-card" id="route_18" data-cat="nice" style="--active-line-color: #0288d1; --print-map-h: 200px;">
       <div class="route-header-top">
         <div class="day-hero-badge">
           <div class="day-hero-num">DAY 12</div>

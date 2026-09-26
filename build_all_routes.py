@@ -1164,6 +1164,8 @@ def generate_routes_html():
       }}
       body {{
         background: #fff !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
       }}
       .content-container {{
         max-width: 100% !important;
@@ -1174,15 +1176,55 @@ def generate_routes_html():
         border: none !important;
         box-shadow: none !important;
         padding: 0 !important;
-        margin-bottom: 0 !important;
+        margin: 0 !important;
         page-break-after: always !important;
+        break-after: page !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
       }}
       .map-box {{
-        height: 350px !important;
+        height: var(--print-map-h, 260px) !important;
+        margin-bottom: 8px !important;
+      }}
+      .route-header-top {{
+        padding-bottom: 6px !important;
+        margin-bottom: 8px !important;
+      }}
+      .day-hero-num {{
+        font-size: 24px !important;
+      }}
+      .route-title-text {{
+        font-size: 15px !important;
+      }}
+      .details-box {{
+        padding: 10px 14px !important;
+      }}
+      .fare-row {{
+        padding-bottom: 6px !important;
+        margin-bottom: 8px !important;
+      }}
+      .t-node {{
+        padding-bottom: 8px !important;
+      }}
+      .transit-card-inner {{
+        padding: 8px 12px !important;
+        margin-top: 4px !important;
+      }}
+      .transit-alert {{
+        margin-top: 4px !important;
+        padding: 4px 8px !important;
+        font-size: 10.5px !important;
+      }}
+      .stop-series {{
+        margin-top: 4px !important;
+      }}
+      .stop-row {{
+        font-size: 10px !important;
+        margin-bottom: 2px !important;
       }}
       @page {{
         size: A4 portrait;
-        margin: 12mm 15mm;
+        margin: 8mm 12mm;
       }}
     }}
   </style>
@@ -1238,6 +1280,16 @@ def generate_routes_html():
         stops_html = "".join(stops_rows)
         series_class = "stop-series two-cols" if len(r["stops"]) > 10 else "stop-series"
 
+        # Adaptive map height for single-page print
+        if len(r["stops"]) > 15:
+            print_map_h = "200px"
+        elif len(r["stops"]) > 8:
+            print_map_h = "230px"
+        elif len(r["stops"]) >= 6 or r.get("alert"):
+            print_map_h = "250px"
+        else:
+            print_map_h = "290px"
+
         # Category for filter
         cat = "milan"
         if "D04" in r["day_badge"]: cat = "bergamo"
@@ -1248,7 +1300,7 @@ def generate_routes_html():
 
         html_content += f"""
     <!-- Route Card: {r['id']} -->
-    <article class="route-card" id="{r['id']}" data-cat="{cat}" style="--active-line-color: {r['line_color']};">
+    <article class="route-card" id="{r['id']}" data-cat="{cat}" style="--active-line-color: {r['line_color']}; --print-map-h: {print_map_h};">
       <div class="route-header-top">
         <div class="day-hero-badge">
           <div class="day-hero-num">{r['day']}</div>
