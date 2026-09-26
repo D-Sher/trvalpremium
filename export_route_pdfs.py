@@ -74,24 +74,33 @@ def generate_single_route_html(r, temp_html_path):
     padding-bottom: 10px;
     margin-bottom: 12px;
   }}
-  .google-badge {{
-    font-size: 21px;
-    font-weight: 700;
-    letter-spacing: -0.5px;
+  .day-hero-badge {{
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-shrink: 0;
+    white-space: nowrap;
   }}
-  .google-badge span:nth-child(1) {{ color: #4285F4; }}
-  .google-badge span:nth-child(2) {{ color: #EA4335; }}
-  .google-badge span:nth-child(3) {{ color: #FBBC05; }}
-  .google-badge span:nth-child(4) {{ color: #4285F4; }}
-  .google-badge span:nth-child(5) {{ color: #34A853; }}
-  .google-badge span:nth-child(6) {{ color: #EA4335; }}
-  .google-sub {{
+  .day-hero-num {{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Outfit", sans-serif;
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    color: #1a365d;
+    line-height: 1;
+  }}
+  .day-hero-date {{
+    display: inline-block;
+    margin-top: 5px;
     font-size: 13px;
-    color: #5f6368;
-    font-weight: 500;
-    margin-left: 6px;
+    font-weight: 700;
+    color: #996515;
+    background: #fdf7ea;
+    border: 1px solid rgba(184, 134, 45, 0.4);
+    padding: 2px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.2px;
+    white-space: nowrap;
   }}
   .route-info-col {{
     text-align: right;
@@ -336,9 +345,9 @@ def generate_single_route_html(r, temp_html_path):
 <body>
 <div class="page-box">
   <div class="route-header-top">
-    <div class="google-badge">
-      <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
-      <span class="google-sub">地圖</span>
+    <div class="day-hero-badge">
+      <div class="day-hero-num">{r['day']}</div>
+      <div class="day-hero-date">{r['date']}</div>
     </div>
     <div class="route-info-col">
       <span class="route-day-tag">{r['day_badge']}</span>

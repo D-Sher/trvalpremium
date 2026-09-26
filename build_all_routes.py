@@ -577,6 +577,27 @@ ROUTES_DATA = [
     }
 ]
 
+DAY_DATES = {
+    "DAY 01": "10/15（四）",
+    "DAY 02": "10/16（五）",
+    "DAY 03": "10/17（六）",
+    "DAY 04": "10/18（日）",
+    "DAY 05": "10/19（一）",
+    "DAY 06": "10/20（二）",
+    "DAY 07": "10/21（三）",
+    "DAY 08": "10/22（四）",
+    "DAY 09": "10/23（五）",
+    "DAY 10": "10/24（六）",
+    "DAY 11": "10/25（日）",
+    "DAY 12": "10/26（一）",
+    "DAY 13": "10/27（二）",
+    "DAY 14": "10/28（三）",
+    "DAY 15": "10/29（四）",
+}
+
+for r in ROUTES_DATA:
+    r["date"] = DAY_DATES.get(r.get("day", ""), "")
+
 ROUTE_PDF_MAPPING = {
     "route_01": "01_D02_MXP_至_米蘭中央車站.pdf",
     "route_02": "02_D03_米蘭中央車站_至_米蘭大教堂.pdf",
@@ -761,28 +782,38 @@ def generate_routes_html():
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
+      gap: 16px;
       border-bottom: 1px solid #e8eaed;
       padding-bottom: 12px;
       margin-bottom: 14px;
     }}
-    .google-badge {{
+    .day-hero-badge {{
       display: flex;
-      align-items: center;
-      font-size: 21px;
-      font-weight: 700;
-      letter-spacing: -0.5px;
+      flex-direction: column;
+      align-items: flex-start;
+      flex-shrink: 0;
+      white-space: nowrap;
     }}
-    .google-badge span:nth-child(1) {{ color: #4285F4; }}
-    .google-badge span:nth-child(2) {{ color: #EA4335; }}
-    .google-badge span:nth-child(3) {{ color: #FBBC05; }}
-    .google-badge span:nth-child(4) {{ color: #4285F4; }}
-    .google-badge span:nth-child(5) {{ color: #34A853; }}
-    .google-badge span:nth-child(6) {{ color: #EA4335; }}
-    .google-sub {{
+    .day-hero-num {{
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Outfit", sans-serif;
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      color: #1a365d;
+      line-height: 1;
+    }}
+    .day-hero-date {{
+      display: inline-block;
+      margin-top: 5px;
       font-size: 13px;
-      color: #5f6368;
-      font-weight: 500;
-      margin-left: 6px;
+      font-weight: 700;
+      color: #996515;
+      background: #fdf7ea;
+      border: 1px solid rgba(184, 134, 45, 0.4);
+      padding: 2px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.2px;
+      white-space: nowrap;
     }}
 
     .route-info-col {{
@@ -1077,6 +1108,28 @@ def generate_routes_html():
       word-break: break-all;
     }}
 
+    @media (max-width: 680px) {{
+      .route-card {{
+        padding: 16px 14px;
+      }}
+      .route-header-top {{
+        gap: 12px;
+      }}
+      .day-hero-num {{
+        font-size: 22px;
+      }}
+      .day-hero-date {{
+        font-size: 11px;
+        padding: 1px 6px;
+      }}
+      .route-title-text {{
+        font-size: 14px;
+      }}
+      .route-time-text {{
+        font-size: 12px;
+      }}
+    }}
+
     /* Print Styles */
     @media print {{
       .top-app-header, .filter-bar, .card-footer-actions {{
@@ -1170,9 +1223,9 @@ def generate_routes_html():
     <!-- Route Card: {r['id']} -->
     <article class="route-card" id="{r['id']}" data-cat="{cat}" style="--active-line-color: {r['line_color']};">
       <div class="route-header-top">
-        <div class="google-badge">
-          <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
-          <span class="google-sub">地圖大眾運輸指引</span>
+        <div class="day-hero-badge">
+          <div class="day-hero-num">{r['day']}</div>
+          <div class="day-hero-date">{r['date']}</div>
         </div>
         <div class="route-info-col">
           <span class="route-day-tag">{r['day_badge']}</span>

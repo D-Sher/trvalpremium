@@ -159,28 +159,38 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
+      gap: 16px;
       border-bottom: 1px solid #e8eaed;
       padding-bottom: 12px;
       margin-bottom: 14px;
     }
-    .google-badge {
+    .day-hero-badge {
       display: flex;
-      align-items: center;
-      font-size: 21px;
-      font-weight: 700;
-      letter-spacing: -0.5px;
+      flex-direction: column;
+      align-items: flex-start;
+      flex-shrink: 0;
+      white-space: nowrap;
     }
-    .google-badge span:nth-child(1) { color: #4285F4; }
-    .google-badge span:nth-child(2) { color: #EA4335; }
-    .google-badge span:nth-child(3) { color: #FBBC05; }
-    .google-badge span:nth-child(4) { color: #4285F4; }
-    .google-badge span:nth-child(5) { color: #34A853; }
-    .google-badge span:nth-child(6) { color: #EA4335; }
-    .google-sub {
+    .day-hero-num {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Outfit", sans-serif;
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      color: #1a365d;
+      line-height: 1;
+    }
+    .day-hero-date {
+      display: inline-block;
+      margin-top: 5px;
       font-size: 13px;
-      color: #5f6368;
-      font-weight: 500;
-      margin-left: 6px;
+      font-weight: 700;
+      color: #996515;
+      background: #fdf7ea;
+      border: 1px solid rgba(184, 134, 45, 0.4);
+      padding: 2px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.2px;
+      white-space: nowrap;
     }
 
     .route-info-col {
@@ -475,6 +485,28 @@
       word-break: break-all;
     }
 
+    @media (max-width: 680px) {
+      .route-card {
+        padding: 16px 14px;
+      }
+      .route-header-top {
+        gap: 12px;
+      }
+      .day-hero-num {
+        font-size: 22px;
+      }
+      .day-hero-date {
+        font-size: 11px;
+        padding: 1px 6px;
+      }
+      .route-title-text {
+        font-size: 14px;
+      }
+      .route-time-text {
+        font-size: 12px;
+      }
+    }
+
     /* Print Styles */
     @media print {
       .top-app-header, .filter-bar, .card-footer-actions {
@@ -540,9 +572,9 @@
     <!-- Route Card: route_01 -->
     <article class="route-card" id="route_01" data-cat="milan" style="--active-line-color: #d93025;">
       <div class="route-header-top">
-        <div class="google-badge">
-          <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
-          <span class="google-sub">地圖大眾運輸指引</span>
+        <div class="day-hero-badge">
+          <div class="day-hero-num">DAY 02</div>
+          <div class="day-hero-date">10/16（五）</div>
         </div>
         <div class="route-info-col">
           <span class="route-day-tag">D02 · 機場入境與抵達米蘭</span>
@@ -674,9 +706,9 @@
     <!-- Route Card: route_02 -->
     <article class="route-card" id="route_02" data-cat="milan" style="--active-line-color: #f9ba00;">
       <div class="route-header-top">
-        <div class="google-badge">
-          <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
-          <span class="google-sub">地圖大眾運輸指引</span>
+        <div class="day-hero-badge">
+          <div class="day-hero-num">DAY 03</div>
+          <div class="day-hero-date">10/17（六）</div>
         </div>
         <div class="route-info-col">
           <span class="route-day-tag">D03 · 米蘭經典城市巡遊</span>
@@ -784,9 +816,9 @@
     <!-- Route Card: route_03 -->
     <article class="route-card" id="route_03" data-cat="milan" style="--active-line-color: #e67e22;">
       <div class="route-header-top">
-        <div class="google-badge">
-          <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
-          <span class="google-sub">地圖大眾運輸指引</span>
+        <div class="day-hero-badge">
+          <div class="day-hero-num">DAY 03</div>
+          <div class="day-hero-date">10/17（六）</div>
         </div>
         <div class="route-info-col">
           <span class="route-day-tag">D03 · 復古電車漫遊花園</span>
@@ -888,9 +920,9 @@
     <!-- Route Card: route_04 -->
     <article class="route-card" id="route_04" data-cat="milan" style="--active-line-color: #2e7d32;">
       <div class="route-header-top">
-        <div class="google-badge">
-          <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
-          <span class="google-sub">地圖大眾運輸指引</span>
+        <div class="day-hero-badge">
+          <div class="day-hero-num">DAY 03</div>
+          <div class="day-hero-date">10/17（六）</div>
         </div>
         <div class="route-info-col">
           <span class="route-day-tag">D03 · 晚餐後從容返回飯店</span>
@@ -998,9 +1030,9 @@
     <!-- Route Card: route_05 -->
     <article class="route-card" id="route_05" data-cat="bergamo" style="--active-line-color: #1a73e8;">
       <div class="route-header-top">
-        <div class="google-badge">
-          <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
-          <span class="google-sub">地圖大眾運輸指引</span>
+        <div class="day-hero-badge">
+          <div class="day-hero-num">DAY 04</div>
+          <div class="day-hero-date">10/18（日）</div>
         </div>
         <div class="route-info-col">
           <span class="route-day-tag">D04 · 貝爾加莫中世紀慢遊</span>
@@ -1108,9 +1140,9 @@
     <!-- Route Card: route_06 -->
     <article class="route-card" id="route_06" data-cat="bergamo" style="--active-line-color: #ff6f00;">
       <div class="route-header-top">
-        <div class="google-badge">
-          <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
-          <span class="google-sub">地圖大眾運輸指引</span>
+        <div class="day-hero-badge">
+          <div class="day-hero-num">DAY 04</div>
+          <div class="day-hero-date">10/18（日）</div>
         </div>
         <div class="route-info-col">
           <span class="route-day-tag">D04 · 貝爾加莫市區公車</span>
@@ -1212,9 +1244,9 @@
     <!-- Route Card: route_07 -->
     <article class="route-card" id="route_07" data-cat="bergamo" style="--active-line-color: #d32f2f;">
       <div class="route-header-top">
-        <div class="google-badge">
-          <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
-          <span class="google-sub">地圖大眾運輸指引</span>
+        <div class="day-hero-badge">
+          <div class="day-hero-num">DAY 04</div>
+          <div class="day-hero-date">10/18（日）</div>
         </div>
         <div class="route-info-col">
           <span class="route-day-tag">D04 · 聖賈科莫門午後返程</span>
@@ -1328,9 +1360,9 @@
     <!-- Route Card: route_08 -->
     <article class="route-card" id="route_08" data-cat="como" style="--active-line-color: #0f9d58;">
       <div class="route-header-top">
-        <div class="google-badge">
-          <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
-          <span class="google-sub">地圖大眾運輸指引</span>
+        <div class="day-hero-badge">
+          <div class="day-hero-num">DAY 05</div>
+          <div class="day-hero-date">10/19（一）</div>
         </div>
         <div class="route-info-col">
           <span class="route-day-tag">D05 · 科莫湖雙城慢遊</span>
@@ -1444,9 +1476,9 @@
     <!-- Route Card: route_09 -->
     <article class="route-card" id="route_09" data-cat="como" style="--active-line-color: #0288d1;">
       <div class="route-header-top">
-        <div class="google-badge">
-          <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
-          <span class="google-sub">地圖大眾運輸指引</span>
+        <div class="day-hero-badge">
+          <div class="day-hero-num">DAY 05</div>
+          <div class="day-hero-date">10/19（一）</div>
         </div>
         <div class="route-info-col">
           <span class="route-day-tag">D05 · 科莫湖跨湖渡輪</span>
@@ -1542,9 +1574,9 @@
     <!-- Route Card: route_10 -->
     <article class="route-card" id="route_10" data-cat="genova" style="--active-line-color: #d93025;">
       <div class="route-header-top">
-        <div class="google-badge">
-          <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
-          <span class="google-sub">地圖大眾運輸指引</span>
+        <div class="day-hero-badge">
+          <div class="day-hero-num">DAY 06</div>
+          <div class="day-hero-date">10/20（二）</div>
         </div>
         <div class="route-info-col">
           <span class="route-day-tag">D06 · 南下熱那亞一等艙</span>
@@ -1652,9 +1684,9 @@
     <!-- Route Card: route_11 -->
     <article class="route-card" id="route_11" data-cat="genova" style="--active-line-color: #d93025;">
       <div class="route-header-top">
-        <div class="google-badge">
-          <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
-          <span class="google-sub">地圖大眾運輸指引</span>
+        <div class="day-hero-badge">
+          <div class="day-hero-num">DAY 07</div>
+          <div class="day-hero-date">10/21（三）</div>
         </div>
         <div class="route-info-col">
           <span class="route-day-tag">D07 · 熱那亞地鐵核心漫遊</span>
@@ -1762,9 +1794,9 @@
     <!-- Route Card: route_12 -->
     <article class="route-card" id="route_12" data-cat="genova" style="--active-line-color: #1a73e8;">
       <div class="route-header-top">
-        <div class="google-badge">
-          <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
-          <span class="google-sub">地圖大眾運輸指引</span>
+        <div class="day-hero-badge">
+          <div class="day-hero-num">DAY 08</div>
+          <div class="day-hero-date">10/22（四）</div>
         </div>
         <div class="route-info-col">
           <span class="route-day-tag">D08 · 前往菲諾港門戶</span>
@@ -1860,9 +1892,9 @@
     <!-- Route Card: route_13 -->
     <article class="route-card" id="route_13" data-cat="genova" style="--active-line-color: #0288d1;">
       <div class="route-header-top">
-        <div class="google-badge">
-          <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
-          <span class="google-sub">地圖大眾運輸指引</span>
+        <div class="day-hero-badge">
+          <div class="day-hero-num">DAY 08</div>
+          <div class="day-hero-date">10/22（四）</div>
         </div>
         <div class="route-info-col">
           <span class="route-day-tag">D08 · 蔚藍海岸全景公車 · 19 站</span>
@@ -2054,9 +2086,9 @@
     <!-- Route Card: route_14 -->
     <article class="route-card" id="route_14" data-cat="nice" style="--active-line-color: #d93025;">
       <div class="route-header-top">
-        <div class="google-badge">
-          <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
-          <span class="google-sub">地圖大眾運輸指引</span>
+        <div class="day-hero-badge">
+          <div class="day-hero-num">DAY 09</div>
+          <div class="day-hero-date">10/23（五）</div>
         </div>
         <div class="route-info-col">
           <span class="route-day-tag">D09 · 跨越義法邊境第一段</span>
@@ -2188,9 +2220,9 @@
     <!-- Route Card: route_15 -->
     <article class="route-card" id="route_15" data-cat="nice" style="--active-line-color: #004b97;">
       <div class="route-header-top">
-        <div class="google-badge">
-          <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
-          <span class="google-sub">地圖大眾運輸指引</span>
+        <div class="day-hero-badge">
+          <div class="day-hero-num">DAY 09</div>
+          <div class="day-hero-date">10/23（五）</div>
         </div>
         <div class="route-info-col">
           <span class="route-day-tag">D09 · 跨國雙層全景景觀列車</span>
@@ -2334,9 +2366,9 @@
     <!-- Route Card: route_16 -->
     <article class="route-card" id="route_16" data-cat="nice" style="--active-line-color: #0288d1;">
       <div class="route-header-top">
-        <div class="google-badge">
-          <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
-          <span class="google-sub">地圖大眾運輸指引</span>
+        <div class="day-hero-badge">
+          <div class="day-hero-num">DAY 10</div>
+          <div class="day-hero-date">10/24（六）</div>
         </div>
         <div class="route-info-col">
           <span class="route-day-tag">D10 · 盎格魯大道海景 BRT 快速公車</span>
@@ -2444,9 +2476,9 @@
     <!-- Route Card: route_17 -->
     <article class="route-card" id="route_17" data-cat="nice" style="--active-line-color: #004b97;">
       <div class="route-header-top">
-        <div class="google-badge">
-          <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
-          <span class="google-sub">地圖大眾運輸指引</span>
+        <div class="day-hero-badge">
+          <div class="day-hero-num">DAY 11</div>
+          <div class="day-hero-date">10/25（日）</div>
         </div>
         <div class="route-info-col">
           <span class="route-day-tag">D11 · 濱海自由城半日慢遊</span>
@@ -2542,9 +2574,9 @@
     <!-- Route Card: route_18 -->
     <article class="route-card" id="route_18" data-cat="nice" style="--active-line-color: #0288d1;">
       <div class="route-header-top">
-        <div class="google-badge">
-          <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
-          <span class="google-sub">地圖大眾運輸指引</span>
+        <div class="day-hero-badge">
+          <div class="day-hero-num">DAY 12</div>
+          <div class="day-hero-date">10/26（一）</div>
         </div>
         <div class="route-info-col">
           <span class="route-day-tag">D12 · 費拉角貴族莊園巡禮</span>
